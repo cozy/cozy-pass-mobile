@@ -74,7 +74,7 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore</MtouchExtraArgs>
+    <MtouchExtraArgs>--optimize=experimental-xforms-product-type --nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
