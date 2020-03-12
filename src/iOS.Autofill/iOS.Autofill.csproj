@@ -25,7 +25,7 @@
     <MtouchDebug>true</MtouchDebug>
     <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
-    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchFastDev>true</MtouchFastDev>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchSdkVersion>12.0</MtouchSdkVersion>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
