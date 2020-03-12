@@ -5,11 +5,11 @@
 	<key>MinimumOSVersion</key>
 	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Bitwarden</string>
+	<string>Cozy Pass</string>
 	<key>CFBundleName</key>
-	<string>Bitwarden</string>
+	<string>Cozy Pass</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.8bit.bitwarden</string>
+	<string>io.cozy.pass.mobile</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2.3.0</string>
 	<key>CFBundleVersion</key>
@@ -21,11 +21,11 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>bitwarden</string>
+				<string>cozypass</string>
 				<string>org-appextension-feature-password-management</string>
 			</array>
 			<key>CFBundleURLName</key>
-			<string>com.8bit.bitwarden.url</string>
+			<string>io.cozy.pass.url</string>
 		</dict>
 	</array>
 	<key>CFBundleLocalizations</key>

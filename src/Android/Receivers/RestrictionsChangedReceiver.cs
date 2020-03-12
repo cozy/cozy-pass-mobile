@@ -8,7 +8,7 @@ using Bit.Droid.Utilities;
 
 namespace Bit.Droid.Receivers
 {
-    [BroadcastReceiver(Name = "com.x8bit.bitwarden.RestrictionsChangedReceiver", Exported = false)]
+    [BroadcastReceiver(Name = "io.cozy.pass.RestrictionsChangedReceiver", Exported = false)]
     [IntentFilter(new[] { Intent.ActionApplicationRestrictionsChanged })]
     public class RestrictionsChangedReceiver : BroadcastReceiver
     {

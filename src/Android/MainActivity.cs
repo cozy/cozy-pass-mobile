@@ -27,7 +27,7 @@ namespace Bit.Droid
         Theme = "@style/LightTheme.Splash",
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    [Register("com.x8bit.bitwarden.MainActivity")]
+    [Register("io.cozy.pass.MainActivity")]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private IDeviceActionService _deviceActionService;
@@ -215,7 +215,7 @@ namespace Bit.Droid
                 {
                     // camera
                     var file = new Java.IO.File(FilesDir, "temp_camera_photo.jpg");
-                    uri = FileProvider.GetUriForFile(this, "com.x8bit.bitwarden.fileprovider", file);
+                    uri = FileProvider.GetUriForFile(this, "io.cozy.pass.fileprovider", file);
                     fileName = $"photo_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}.jpg";
                 }
 

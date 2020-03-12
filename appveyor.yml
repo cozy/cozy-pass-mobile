@@ -79,8 +79,8 @@ build_script:
       echo "keystorepass=\"$FDROID_KEYSTORE_PASSWORD\"" >>config.py
       echo "local_copy_dir=\"$TEMP_DIR\"" >>config.py
       mkdir -p repo
-      curl -Lo repo/com.x8bit.bitwarden-fdroid.apk \
-        https://github.com/bitwarden/mobile/releases/download/$APPVEYOR_REPO_TAG_NAME/com.x8bit.bitwarden-fdroid.apk
+      curl -Lo repo/io.cozy.pass-fdroid.apk \
+        https://github.com/bitwarden/mobile/releases/download/$APPVEYOR_REPO_TAG_NAME/io.cozy.pass-fdroid.apk
       fdroid update
       fdroid server update
       cd ..
@@ -98,8 +98,8 @@ build_script:
       if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       .\src\Android\ci-build-apks.ps1
       if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
-      Push-AppveyorArtifact .\com.x8bit.bitwarden.apk
-      Push-AppveyorArtifact .\com.x8bit.bitwarden-fdroid.apk
+      Push-AppveyorArtifact .\io.cozy.pass.apk
+      Push-AppveyorArtifact .\io.cozy.pass-fdroid.apk
     }
 
 on_success:
@@ -114,7 +114,7 @@ on_success:
       cd store\google\Publisher\bin\Release\netcoreapp2.0
       dotnet Publisher.dll `
         $env:APPVEYOR_BUILD_FOLDER\store\google\Publisher\play_creds.json `
-        $env:APPVEYOR_BUILD_FOLDER\com.x8bit.bitwarden.apk `
+        $env:APPVEYOR_BUILD_FOLDER\io.cozy.pass.apk `
         alpha
       cd $env:APPVEYOR_BUILD_FOLDER
     }

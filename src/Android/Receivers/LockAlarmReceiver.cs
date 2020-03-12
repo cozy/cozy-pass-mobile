@@ -4,7 +4,7 @@ using Bit.Core.Utilities;
 
 namespace Bit.Droid.Receivers
 {
-    [BroadcastReceiver(Name = "com.x8bit.bitwarden.LockAlarmReceiver", Exported = false)]
+    [BroadcastReceiver(Name = "io.cozy.pass.LockAlarmReceiver", Exported = false)]
     public class LockAlarmReceiver : BroadcastReceiver
     {
         public async override void OnReceive(Context context, Intent intent)
