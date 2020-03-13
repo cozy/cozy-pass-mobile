@@ -31,10 +31,15 @@ namespace Bit.App.Utilities
                 Application.Current.Resources.MergedDictionaries.Add(new Black());
                 UsingLightTheme = false;
             }
-            else if(name == "nord")
+            else if (name == "nord")
             {
                 Application.Current.Resources.MergedDictionaries.Add(new Nord());
                 UsingLightTheme = false;
+            }
+            else if (name == "cozy")
+            {
+                Application.Current.Resources.MergedDictionaries.Add(new Cozy());
+                UsingLightTheme = true;
             }
             else if(name == "light")
             {

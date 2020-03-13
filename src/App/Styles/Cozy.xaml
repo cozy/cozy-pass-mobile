@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Bit.App.Styles.Cozy">
+    <Color x:Key="TextColor">#000000</Color>
+    <Color x:Key="PrimaryColor">#297EF2</Color>
+    <Color x:Key="DangerColor">#F52D2D</Color>
+    <Color x:Key="SuccessColor">#35CE68</Color>
+    <Color x:Key="InfoColor">#FFC644</Color>
+    <Color x:Key="WarningColor">#FC6D00</Color>
+    <Color x:Key="MutedColor">#95999D</Color>
+    <Color x:Key="PasswordNumberColor">#007fde</Color>
+    <Color x:Key="PasswordSpecialColor">#DD0505</Color>
+    <Color x:Key="ButtonColor">#297EF2</Color>
+    <Color x:Key="InputPlaceholderColor">#95999D</Color>
+
+    <Color x:Key="BackgroundColor">#ffffff</Color>
+    <Color x:Key="SplashBackgroundColor">#F5F6F7</Color>
+    <Color x:Key="BorderColor">#D6D8Da</Color>
+    <Color x:Key="DisabledIconColor">#D6D8Da</Color>
+
+    <Color x:Key="BoxBorderColor">#D6D8Da</Color>
+    <Color x:Key="BoxHeaderTextColor">#297EF2</Color>
+
+    <Color x:Key="TitleTextColor">#ffffff</Color>
+    <Color x:Key="TitleEntryTextColor">#ffffff</Color>
+    <Color x:Key="TitleEntryPlaceholderColor">#C2DCFF</Color>
+
+    <Color x:Key="ListItemBorderColor">#f0f0f0</Color>
+    <Color x:Key="ListSectionBorderColor">#D6D8Da</Color>
+    <Color x:Key="ListSectionBorderBottomColor">#D6D8Da</Color>
+    <Color x:Key="ListHeaderTextColor">#297EF2</Color>
+    <Color x:Key="ListHeaderBackgroundColor">#F5F6F7</Color>
+
+    <Color x:Key="SliderThumbColor">Default</Color>
+    <Color x:Key="SliderThumbBorderColor">#b5b5b5</Color>
+    <Color x:Key="SliderTrackMinColor">#297EF2</Color>
+    <Color x:Key="SliderTrackMaxColor">#D6D8Da</Color>
+    
+    <Color x:Key="SwitchOnColor">#297EF2</Color>
+
+    <Color x:Key="ButtonTextColor">#000000</Color>
+    <Color x:Key="ButtonBackgroundColor">#D6D8Da</Color>
+
+    <Color x:Key="FabColor">#297EF2</Color>
+    <Color x:Key="FabPressedColor">#0B61D6</Color>
+
+    <Color x:Key="TabBarBackgroundColor">#ffffff</Color>
+    <Color x:Key="TabBarItemColor">#757575</Color>
+    <Color x:Key="TabBarSelectedItemColor">#297EF2</Color>
+
+    <Color x:Key="NavigationBarBackgroundColor">#297EF2</Color>
+    <Color x:Key="NavigationBarTextColor">#ffffff</Color>
+</ResourceDictionary>
