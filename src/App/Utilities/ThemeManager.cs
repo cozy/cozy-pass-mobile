@@ -56,7 +56,7 @@ namespace Bit.App.Utilities
                 }
                 else
                 {
-                    Application.Current.Resources.MergedDictionaries.Add(new Light());
+                    Application.Current.Resources.MergedDictionaries.Add(new Cozy());
                     UsingLightTheme = true;
                 }
             }
