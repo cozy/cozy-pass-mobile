@@ -177,33 +177,39 @@ namespace Bit.App.Pages
                 }
                 if(MainPage)
                 {
+                    var loginGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.Login,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.Login) ?
+                                _typeCounts[CipherType.Login] : 0).ToString("N0")
+                    };
+                    var cardGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.Card,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.Card) ?
+                                _typeCounts[CipherType.Card] : 0).ToString("N0")
+                    };
+                    var identityGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.Identity,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.Identity) ?
+                                _typeCounts[CipherType.Identity] : 0).ToString("N0")
+                    };
+                    var noteGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.SecureNote,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.SecureNote) ?
+                                _typeCounts[CipherType.SecureNote] : 0).ToString("N0")
+                    };
+
+
                     groupedItems.Add(new GroupingsPageListGroup(
                         AppResources.Types, 4, uppercaseGroupNames, !hasFavorites)
-                    {
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.Login,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.Login) ?
-                                _typeCounts[CipherType.Login] : 0).ToString("N0")
-                        },
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.Card,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.Card) ?
-                                _typeCounts[CipherType.Card] : 0).ToString("N0")
-                        },
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.Identity,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.Identity) ?
-                                _typeCounts[CipherType.Identity] : 0).ToString("N0")
-                        },
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.SecureNote,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.SecureNote) ?
-                                _typeCounts[CipherType.SecureNote] : 0).ToString("N0")
-                        },
+                     {
+                         loginGroup,
+                         cardGroup,
+                         identityGroup,
+                         noteGroup
                     });
                 }
                 if(NestedFolders?.Any() ?? false)
