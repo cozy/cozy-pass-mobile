@@ -373,6 +373,10 @@ namespace Bit.App.Pages
                 NestedCollections = await _collectionService.GetAllNestedAsync(Collections);
                 HasCollections = NestedCollections.Any();
                 Ciphers = _allCiphers;
+
+                #region cozy
+                await _userService.CacheCozyOrganizationId();
+                #endregion
             }
             else
             {

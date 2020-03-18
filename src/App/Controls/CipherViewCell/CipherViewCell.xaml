@@ -81,7 +81,7 @@
                 VerticalOptions="Center"
                 StyleClass="list-title-icon"
                 Margin="5, 0, 0, 0"
-                Text="&#xf1e0;"
+                Text="{ Binding SharedIconText, Mode=OneWay}"
                 IsVisible="{Binding Cipher.Shared, Mode=OneWay}"
                 AutomationProperties.IsInAccessibleTree="True"
                 AutomationProperties.Name="{u:I18n Shared}" />
