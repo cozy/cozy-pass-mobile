@@ -22,10 +22,10 @@ namespace Bit.Droid.Accessibility
     [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Bitwarden")]
     [IntentFilter(new string[] { "android.accessibilityservice.AccessibilityService" })]
     [MetaData("android.accessibilityservice", Resource = "@xml/accessibilityservice")]
-    [Register("com.x8bit.bitwarden.Accessibility.AccessibilityService")]
+    [Register("io.cozy.pass.Accessibility.AccessibilityService")]
     public class AccessibilityService : Android.AccessibilityServices.AccessibilityService
     {
-        private const string BitwardenPackage = "com.x8bit.bitwarden";
+        private const string BitwardenPackage = "io.cozy.pass";
         private const string BitwardenWebsite = "vault.bitwarden.com";
 
         private IStorageService _storageService;

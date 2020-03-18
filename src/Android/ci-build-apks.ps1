@@ -38,8 +38,8 @@ echo "########################################"
 echo "##### Copy Release apk to project root"
 echo "########################################"
 
-$signedApkPath = $($rootPath + "\src\Android\bin\Release\com.x8bit.bitwarden-Signed.apk");
-$signedApkDestPath = $($rootPath + "\com.x8bit.bitwarden.apk");
+$signedApkPath = $($rootPath + "\src\Android\bin\Release\io.cozy.pass-Signed.apk");
+$signedApkDestPath = $($rootPath + "\io.cozy.pass.apk");
 
 Copy-Item $signedApkPath $signedApkDestPath
 
@@ -133,8 +133,8 @@ echo "########################################"
 echo "##### Copy FDroid apk to project root"
 echo "########################################"
 
-$signedApkPath = $($rootPath + "\src\Android\bin\FDroid\com.x8bit.bitwarden-Signed.apk");
-$signedApkDestPath = $($rootPath + "\com.x8bit.bitwarden-fdroid.apk");
+$signedApkPath = $($rootPath + "\src\Android\bin\FDroid\io.cozy.pass-Signed.apk");
+$signedApkDestPath = $($rootPath + "\io.cozy.pass-fdroid.apk");
 
 Copy-Item $signedApkPath $signedApkDestPath
 

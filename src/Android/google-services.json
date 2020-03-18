@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1093287226212:android:f8d67b786db1b844",
         "android_client_info": {
-          "package_name": "com.x8bit.bitwarden"
+          "package_name": "io.cozy.pass"
         }
       },
       "oauth_client": [

@@ -307,7 +307,8 @@ namespace Bit.App.Pages
             }
             var manageItems = new List<SettingsPageListItem>
             {
-                new SettingsPageListItem { Name = AppResources.Folders },
+                // Cozy customization: we deactivate folder management
+                // new SettingsPageListItem { Name = AppResources.Folders },
                 new SettingsPageListItem { Name = AppResources.Sync, SubLabel = _lastSyncDate }
             };
             var securityItems = new List<SettingsPageListItem>
@@ -342,7 +343,8 @@ namespace Bit.App.Pages
             }
             var accountItems = new List<SettingsPageListItem>
             {
-                new SettingsPageListItem { Name = AppResources.ChangeMasterPassword },
+                // Cozy customization: we deactivate changing master password from app
+                // new SettingsPageListItem { Name = AppResources.ChangeMasterPassword },
                 new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
                 new SettingsPageListItem { Name = AppResources.LogOut }
             };

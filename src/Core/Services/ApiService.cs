@@ -452,6 +452,11 @@ namespace Bit.Core.Services
                 var responseJsonString = await response.Content.ReadAsStringAsync();
                 var tokenResponse = JsonConvert.DeserializeObject<IdentityTokenResponse>(responseJsonString);
                 await _tokenService.SetTokensAsync(tokenResponse.AccessToken, tokenResponse.RefreshToken);
+
+                #region cozy
+                _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
+                #endregion
+
                 return tokenResponse;
             }
             else

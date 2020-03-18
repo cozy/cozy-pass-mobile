@@ -225,5 +225,16 @@ namespace Bit.Core.Services
             // Standard base64 decoder
             return Convert.FromBase64String(output);
         }
+
+        #region cozy
+        public string RegistrationAccessToken { get; private set; }
+        public string ClientId { get; private set; }
+
+        public void SetClientInfos(string clientId, string registrationAccessToken)
+        {
+            ClientId = clientId;
+            RegistrationAccessToken = registrationAccessToken;
+        }
+        #endregion
     }
 }

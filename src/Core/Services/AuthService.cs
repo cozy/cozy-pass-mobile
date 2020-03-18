@@ -287,6 +287,11 @@ namespace Bit.Core.Services
             {
                 await _tokenService.SetTwoFactorTokenAsync(tokenResponse.TwoFactorToken, email);
             }
+
+            #region cozy
+            _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
+            #endregion
+
             await _tokenService.SetTokensAsync(tokenResponse.AccessToken, tokenResponse.RefreshToken);
             await _userService.SetInformationAsync(_tokenService.GetUserId(), _tokenService.GetEmail(),
                 _kdf.Value, _kdfIterations.Value);

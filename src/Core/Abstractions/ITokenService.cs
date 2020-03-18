@@ -25,5 +25,11 @@ namespace Bit.Core.Abstractions
         Task SetTwoFactorTokenAsync(string token, string email);
         bool TokenNeedsRefresh(int minutes = 5);
         int TokenSecondsRemaining();
+
+        #region cozy
+        string ClientId { get; }
+        string RegistrationAccessToken { get; }
+        void SetClientInfos(string clientId, string registrationAccessToken);
+        #endregion
     }
 }

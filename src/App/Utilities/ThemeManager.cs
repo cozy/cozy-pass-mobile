@@ -31,10 +31,15 @@ namespace Bit.App.Utilities
                 Application.Current.Resources.MergedDictionaries.Add(new Black());
                 UsingLightTheme = false;
             }
-            else if(name == "nord")
+            else if (name == "nord")
             {
                 Application.Current.Resources.MergedDictionaries.Add(new Nord());
                 UsingLightTheme = false;
+            }
+            else if (name == "cozy")
+            {
+                Application.Current.Resources.MergedDictionaries.Add(new Cozy());
+                UsingLightTheme = true;
             }
             else if(name == "light")
             {
@@ -51,7 +56,7 @@ namespace Bit.App.Utilities
                 }
                 else
                 {
-                    Application.Current.Resources.MergedDictionaries.Add(new Light());
+                    Application.Current.Resources.MergedDictionaries.Add(new Cozy());
                     UsingLightTheme = true;
                 }
             }
@@ -79,7 +84,7 @@ namespace Bit.App.Utilities
         {
             return Xamarin.Essentials.Preferences.Get(
                 string.Format(PreferencesStorageService.KeyFormat, Constants.ThemeKey), default(string),
-                !android ? "group.com.8bit.bitwarden" : default(string));
+                !android ? "group.io.cozy.pass.mobile" : default(string));
         }
     }
 }

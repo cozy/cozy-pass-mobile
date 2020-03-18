@@ -175,38 +175,54 @@ namespace Bit.App.Pages
                     groupedItems.Add(new GroupingsPageListGroup(favListItems, AppResources.Favorites,
                         favListItems.Count, uppercaseGroupNames, true));
                 }
-                if(MainPage)
+
+                // Cozy customization: We deactivate showing of groups (login, credit cards, identities etc...),
+                // this is why we have a "false" here, not to change the original code too much.
+                var shouldShowGroups = MainPage && false;
+                if(shouldShowGroups)
                 {
+                    var loginGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.Login,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.Login) ?
+                                _typeCounts[CipherType.Login] : 0).ToString("N0")
+                    };
+                    var cardGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.Card,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.Card) ?
+                                _typeCounts[CipherType.Card] : 0).ToString("N0")
+                    };
+                    var identityGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.Identity,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.Identity) ?
+                                _typeCounts[CipherType.Identity] : 0).ToString("N0")
+                    };
+                    var noteGroup = new GroupingsPageListItem
+                    {
+                        Type = CipherType.SecureNote,
+                        ItemCount = (_typeCounts.ContainsKey(CipherType.SecureNote) ?
+                                _typeCounts[CipherType.SecureNote] : 0).ToString("N0")
+                    };
+
+
                     groupedItems.Add(new GroupingsPageListGroup(
                         AppResources.Types, 4, uppercaseGroupNames, !hasFavorites)
-                    {
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.Login,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.Login) ?
-                                _typeCounts[CipherType.Login] : 0).ToString("N0")
-                        },
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.Card,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.Card) ?
-                                _typeCounts[CipherType.Card] : 0).ToString("N0")
-                        },
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.Identity,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.Identity) ?
-                                _typeCounts[CipherType.Identity] : 0).ToString("N0")
-                        },
-                        new GroupingsPageListItem
-                        {
-                            Type = CipherType.SecureNote,
-                            ItemCount = (_typeCounts.ContainsKey(CipherType.SecureNote) ?
-                                _typeCounts[CipherType.SecureNote] : 0).ToString("N0")
-                        },
+                     {
+                         loginGroup,
+                         cardGroup,
+                         identityGroup,
+                         noteGroup
                     });
                 }
-                if(NestedFolders?.Any() ?? false)
+
+                var hasAnyFolder = NestedFolders?.Any() ?? false;
+
+                // Cozy customization: We deactivate showing of folders, this is why we have a "false" here,
+                // not to change the original code too much.
+                var shouldShowFolders = false && hasAnyFolder;
+                if (shouldShowFolders)
                 {
                     var folderListItems = NestedFolders.Select(f =>
                     {
@@ -220,7 +236,10 @@ namespace Bit.App.Pages
                     groupedItems.Add(new GroupingsPageListGroup(folderListItems, AppResources.Folders,
                         folderListItems.Count, uppercaseGroupNames, !MainPage));
                 }
-                if(NestedCollections?.Any() ?? false)
+
+                var hasAnyCollections = NestedCollections?.Any() ?? false;
+                var shouldShowCollections = false && hasAnyCollections;
+                if (shouldShowCollections)
                 {
                     var collectionListItems = NestedCollections.Select(c => new GroupingsPageListItem
                     {
@@ -353,6 +372,7 @@ namespace Bit.App.Pages
                 Collections = await _collectionService.GetAllDecryptedAsync();
                 NestedCollections = await _collectionService.GetAllNestedAsync(Collections);
                 HasCollections = NestedCollections.Any();
+                Ciphers = _allCiphers;
             }
             else
             {
