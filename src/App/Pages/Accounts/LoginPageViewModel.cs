@@ -37,7 +37,7 @@ namespace Bit.App.Pages
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _environmentService = ServiceContainer.Resolve<IEnvironmentService>("environmentService");
 
-            PageTitle = AppResources.Bitwarden;
+            PageTitle = AppResources.CozyPass;
             TogglePasswordCommand = new Command(TogglePassword);
             LogInCommand = new Command(async () => await LogInAsync());
         }
