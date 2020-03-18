@@ -22,5 +22,10 @@ namespace Bit.Core.Abstractions
         Task ReplaceOrganizationsAsync(Dictionary<string, OrganizationData> organizations);
         Task SetInformationAsync(string userId, string email, KdfType kdf, int kdfIterations);
         Task SetSecurityStampAsync(string stamp);
+
+        #region cozy
+        string CozyOrganizationId { get; }
+        Task CacheCozyOrganizationId();
+        #endregion
     }
 }
