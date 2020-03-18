@@ -29,12 +29,12 @@
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row">
                     <Label
-                        Text="{u:I18n EmailAddress}"
+                        Text="{u:I18n CozyURL}"
                         StyleClass="box-label" />
                     <Entry
                         x:Name="_email"
                         Text="{Binding Email}"
-                        Keyboard="Email"
+                        Keyboard="Url"
                         StyleClass="box-value" />
                 </StackLayout>
                 <Grid StyleClass="box-row">
@@ -47,7 +47,7 @@
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
                     <Label
-                        Text="{u:I18n MasterPassword}"
+                        Text="{u:I18n CozyPassword}"
                         StyleClass="box-label"
                         Grid.Row="0"
                         Grid.Column="0" />

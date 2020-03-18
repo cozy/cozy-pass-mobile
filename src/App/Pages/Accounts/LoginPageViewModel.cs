@@ -4,6 +4,7 @@ using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
+using Bit.Core.Models.Data;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -20,6 +21,7 @@ namespace Bit.App.Pages
         private readonly IStorageService _storageService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly IStateService _stateService;
+        private readonly IEnvironmentService _environmentService;
 
         private bool _showPassword;
         private string _email;
@@ -33,6 +35,7 @@ namespace Bit.App.Pages
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
+            _environmentService = ServiceContainer.Resolve<IEnvironmentService>("environmentService");
 
             PageTitle = AppResources.Bitwarden;
             TogglePasswordCommand = new Command(TogglePassword);
@@ -76,6 +79,20 @@ namespace Bit.App.Pages
             RememberEmail = rememberEmail.GetValueOrDefault(true);
         }
 
+        #region cozy
+        private string GetEmailFromCozyURL() {
+            var cozyURL = Email;
+            return string.Concat("me@", Email);
+        }
+
+        private async Task ConfigureEnvironmentFromCozyURLAsync() {
+            var cozyURL = Email;
+            var environmentData = new EnvironmentUrlData();
+            environmentData.Base = string.Concat("https://", cozyURL, "/bitwarden");
+            await _environmentService.SetUrlsAsync(environmentData);
+        }
+        #endregion
+
         public async Task LogInAsync()
         {
             if(Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
@@ -91,12 +108,17 @@ namespace Bit.App.Pages
                     AppResources.Ok);
                 return;
             }
-            if(!Email.Contains("@"))
+
+            #region cozy
+            // Deactivate test on Email since Email has been used for the CozyURL
+            if (false && !Email.Contains("@"))
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred, AppResources.InvalidEmail, AppResources.Ok);
                 return;
             }
-            if(string.IsNullOrWhiteSpace(MasterPassword))
+            #endregion
+
+            if (string.IsNullOrWhiteSpace(MasterPassword))
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred,
                     string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword),
@@ -108,7 +130,13 @@ namespace Bit.App.Pages
             try
             {
                 await _deviceActionService.ShowLoadingAsync(AppResources.LoggingIn);
-                var response = await _authService.LogInAsync(Email, MasterPassword);
+
+                #region cozy
+                await ConfigureEnvironmentFromCozyURLAsync();
+                var email = GetEmailFromCozyURL();
+                var response = await _authService.LogInAsync(email, MasterPassword);
+                #endregion
+
                 MasterPassword = string.Empty;
                 if(RememberEmail)
                 {
