@@ -56,6 +56,7 @@ namespace Bit.Core.Utilities
             var passwordGenerationService = new PasswordGenerationService(cryptoService, storageService,
                 cryptoFunctionService);
             var totpService = new TotpService(storageService, cryptoFunctionService);
+            var cozyClientService = new CozyClientService(tokenService, apiService);
             var authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
                 i18nService, platformUtilsService, messagingService, lockService);
             var exportService = new ExportService(folderService, cipherService);
@@ -84,6 +85,7 @@ namespace Bit.Core.Utilities
             Register<IAuditService>("auditService", auditService);
             Register<IEnvironmentService>("environmentService", environmentService);
             Register<IEventService>("eventService", eventService);
+            Register<ICozyClientService>("cozyClientService", cozyClientService);
         }
 
         public static void Register<T>(string serviceName, T obj)

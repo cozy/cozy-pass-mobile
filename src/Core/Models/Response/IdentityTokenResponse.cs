@@ -15,5 +15,12 @@ namespace Bit.Core.Models.Response
         public string PrivateKey { get; set; }
         public string Key { get; set; }
         public string TwoFactorToken { get; set; }
+
+        #region cozy
+        [JsonProperty("client_id")]
+        public string ClientId { get; set; }
+        [JsonProperty("registration_access_token")]
+        public string RegistrationAccessToken { get; set; }
+        #endregion cozy
     }
 }

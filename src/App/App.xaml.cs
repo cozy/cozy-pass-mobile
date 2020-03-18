@@ -37,6 +37,7 @@ namespace Bit.App
         private readonly IStorageService _storageService;
         private readonly IStorageService _secureStorageService;
         private readonly IDeviceActionService _deviceActionService;
+        private readonly ICozyClientService _cozyClientService;
         private readonly AppOptions _appOptions;
 
         public App(AppOptions appOptions)
@@ -63,6 +64,7 @@ namespace Bit.App
                 "passwordGenerationService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService") as MobileI18nService;
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             Bootstrap();
             _broadcasterService.Subscribe(nameof(App), async (message) =>
@@ -242,7 +244,8 @@ namespace Bit.App
                 _collectionService.ClearAsync(userId),
                 _passwordGenerationService.ClearAsync(),
                 _lockService.ClearAsync(),
-                _stateService.PurgeAsync());
+                _stateService.PurgeAsync(),
+                _cozyClientService.LogoutAsync());
             _lockService.FingerprintLocked = true;
             _searchService.ClearIndex();
             _authService.LogOut(() =>
