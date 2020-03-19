@@ -2,6 +2,7 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="Bit.App.Styles.Cozy">
+    <!-- Tool to view the colors https://codesandbox.io/s/gracious-goldstine-kl1nw -->
     <Color x:Key="TextColor">#000000</Color>
     <Color x:Key="PrimaryColor">#297EF2</Color>
     <Color x:Key="DangerColor">#F52D2D</Color>
