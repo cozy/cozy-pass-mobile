@@ -1,55 +1,55 @@
 [
   {
     "dests": [
-      ".././src/iOS/Resources/logo.png",
-      ".././src/iOS.Extension/Resources/logo.png",
-      ".././src/iOS.Autofill/Resources/logo.png",
-      ".././src/Android/Resources/drawable/logo.png"
+      "../src/iOS/Resources/logo.png",
+      "../src/iOS.Extension/Resources/logo.png",
+      "../src/iOS.Autofill/Resources/logo.png",
+      "../src/Android/Resources/drawable/logo.png"
     ],
     "src": "./Resources/common/logo.png"
   },
   {
     "dests": [
-      ".././src/iOS.Extension/Resources/logo@2x.png",
-      ".././src/iOS.Autofill/Resources/logo@2x.png",
-      ".././src/iOS/Resources/logo@2x.png",
-      ".././src/Android/Resources/drawable-hdpi/logo.png"
+      "../src/iOS.Extension/Resources/logo@2x.png",
+      "../src/iOS.Autofill/Resources/logo@2x.png",
+      "../src/iOS/Resources/logo@2x.png",
+      "../src/Android/Resources/drawable-hdpi/logo.png"
     ],
     "src": "./Resources/common/logo@2x.png"
   },
   {
     "dests": [
-      ".././src/iOS/Resources/logo@3x.png",
-      ".././src/iOS.Extension/Resources/logo@3x.png",
-      ".././src/iOS.Autofill/Resources/logo@3x.png",
-      ".././src/Android/Resources/drawable-xxhdpi/logo.png"
+      "../src/iOS/Resources/logo@3x.png",
+      "../src/iOS.Extension/Resources/logo@3x.png",
+      "../src/iOS.Autofill/Resources/logo@3x.png",
+      "../src/Android/Resources/drawable-xxhdpi/logo.png"
     ],
     "src": "./Resources/common/logo@3x.png"
   },
   {
     "dests": [
-      ".././src/iOS/Resources/logo_white.png",
-      ".././src/iOS.Extension/Resources/logo_white.png",
-      ".././src/iOS.Autofill/Resources/logo_white.png",
-      ".././src/Android/Resources/drawable/logo_white.png"
+      "../src/iOS/Resources/logo_white.png",
+      "../src/iOS.Extension/Resources/logo_white.png",
+      "../src/iOS.Autofill/Resources/logo_white.png",
+      "../src/Android/Resources/drawable/logo_white.png"
     ],
     "src": "./Resources/common/logo_white.png"
   },
   {
     "dests": [
-      ".././src/iOS.Extension/Resources/logo_white@2x.png",
-      ".././src/iOS.Autofill/Resources/logo_white@2x.png",
-      ".././src/iOS/Resources/logo_white@2x.png",
-      ".././src/Android/Resources/drawable-hdpi/logo_white.png"
+      "../src/iOS.Extension/Resources/logo_white@2x.png",
+      "../src/iOS.Autofill/Resources/logo_white@2x.png",
+      "../src/iOS/Resources/logo_white@2x.png",
+      "../src/Android/Resources/drawable-hdpi/logo_white.png"
     ],
     "src": "./Resources/common/logo_white@2x.png"
   },
   {
     "dests": [
-      ".././src/iOS.Autofill/Resources/logo_white@3x.png",
-      ".././src/iOS.Extension/Resources/logo_white@3x.png",
-      ".././src/iOS/Resources/logo_white@3x.png",
-      ".././src/Android/Resources/drawable-xxhdpi/logo_white.png"
+      "../src/iOS.Autofill/Resources/logo_white@3x.png",
+      "../src/iOS.Extension/Resources/logo_white@3x.png",
+      "../src/iOS/Resources/logo_white@3x.png",
+      "../src/Android/Resources/drawable-xxhdpi/logo_white.png"
     ],
     "src": "./Resources/common/logo_white@2x.png"
   },
