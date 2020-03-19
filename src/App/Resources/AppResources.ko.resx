@@ -378,7 +378,7 @@
     <value>웹 사이트 방문</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>도움이 필요하거나 뉴스, 이메일 또는 Bitwarden을 사용하는 방법이 궁금하시면 웹 사이트를 방문하세요.</value>
+    <value>도움이 필요하거나 뉴스, 이메일 또는 Cozy Pass을 사용하는 방법이 궁금하시면 웹 사이트를 방문하세요.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>웹 사이트</value>
@@ -400,7 +400,7 @@
     <value>앱 확장 프로그램</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>웹 사이트 및 앱에서 자동 완성 서비스를 사용하려면 Bitwarden 접근성 서비스를 사용 설정하세요.</value>
+    <value>웹 사이트 및 앱에서 자동 완성 서비스를 사용하려면 Cozy Pass 접근성 서비스를 사용 설정하세요.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>자동 완성 서비스</value>
@@ -412,16 +412,16 @@
     <value>Bitwarden 앱 확장 프로그램</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>보관함에 새 로그인을 추가하는 가장 쉬운 방법은 Bitwarden 확장 프로그램을 사용하는 것입니다. "설정" 화면으로 이동하여 Bitwarden 확장 프로그램에 대해 더 자세히 알아보세요.</value>
+    <value>보관함에 새 로그인을 추가하는 가장 쉬운 방법은 Bitwarden 확장 프로그램을 사용하는 것입니다. "설정" 화면으로 이동하여 Cozy Pass 확장 프로그램에 대해 더 자세히 알아보세요.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Safari 및 다른 앱에서 Bitwarden을 사용하여 로그인을 자동 완성하세요.</value>
+    <value>Safari 및 다른 앱에서 Cozy Pass을 사용하여 로그인을 자동 완성하세요.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Bitwarden 자동 완성 서비스</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>자동 완성 서비스를 사용하려면 Bitwarden 접근성 서비스를 사용 설정하세요.</value>
+    <value>자동 완성 서비스를 사용하려면 Cozy Pass 접근성 서비스를 사용 설정하세요.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>이메일 변경</value>
@@ -467,7 +467,7 @@
     <value>앱 확장 프로그램 활성화</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Safari에서는 공유 아이콘을 사용하면 Bitwarden을 찾을 수 있습니다(참고: 메뉴의 아래쪽 줄을 오른쪽으로 스크롤하세요).</value>
+    <value>Safari에서는 공유 아이콘을 사용하면 Cozy Pass을 찾을 수 있습니다(참고: 메뉴의 아래쪽 줄을 오른쪽으로 스크롤하세요).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,13 +480,13 @@
     <value>이제 Safari, Chrome 및 다른 앱에서 로그인에 간단히 접근할 수 있습니다.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Safari 및 Chrome에서는 공유 아이콘을 사용하면 Bitwarden을 찾을 수 있습니다(참고: 공유 메뉴의 아래쪽 줄을 오른쪽으로 스크롤하세요).</value>
+    <value>Safari 및 Chrome에서는 공유 아이콘을 사용하면 Cozy Pass을 찾을 수 있습니다(참고: 공유 메뉴의 아래쪽 줄을 오른쪽으로 스크롤하세요).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>확장 프로그램을 실행하려면 메뉴에서 Bitwarden 아이콘을 누르세요.</value>
+    <value>확장 프로그램을 실행하려면 메뉴에서 Cozy Pass 아이콘을 누르세요.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Safari 및 다른 앱에서 Bitwarden을 사용 설정하려면 메뉴의 아래쪽 줄에서 "기타" 아이콘을 누르세요.</value>
+    <value>Safari 및 다른 앱에서 Cozy Pass을 사용 설정하려면 메뉴의 아래쪽 줄에서 "기타" 아이콘을 누르세요.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>즐겨찾기</value>
@@ -573,7 +573,7 @@
     <value>기타 설정</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>확장 프로그램을 사용하려면 먼저 Bitwarden 앱에 로그인해야 합니다.</value>
+    <value>확장 프로그램을 사용하려면 먼저 Cozy Pass 앱에 로그인해야 합니다.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>잠그지 않음</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>옵션 기본값은 Bitwarden 앱의 비밀번호 생성기에서 설정할 수 있습니다.</value>
+    <value>옵션 기본값은 Cozy Pass 앱의 비밀번호 생성기에서 설정할 수 있습니다.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>옵션</value>
@@ -738,7 +738,7 @@
     <value>접근성 설정 열기</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Android 접근성 설정 화면에서 "Bitwarden" 항목을 누르세요.</value>
+    <value>1. Android 접근성 설정 화면에서 "Cozy Pass" 항목을 누르세요.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. 토글을 눌러 사용 설정하고 확인을 누르세요.</value>
@@ -753,7 +753,7 @@
     <value>상태</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Bitwarden Auto-fill Service by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Cozy Pass Auto-fill Service by navigating to the "Settings" screen.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>자동 완성</value>
@@ -970,7 +970,7 @@
     <value>자체 호스팅 환경</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>온-프레미스 Bitwarden이 호스팅되고 있는 서버의 기본 URL을 지정하세요.</value>
+    <value>온-프레미스 Cozy Pass이 호스팅되고 있는 서버의 기본 URL을 지정하세요.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>서버 URL</value>
@@ -1156,7 +1156,7 @@
     <value>Bitwarden 자동 완성 서비스는 기기의 다른 앱에서 로그인, 신용 카드 및 신원 정보를 입력하기 위해 Android 자동완성 프레임워크를 사용합니다.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>다른 앱에서 로그인, 신용 카드, 신원 정보를 자동으로 채우려면 Bitwarden 자동완성 서비스를 사용하세요.</value>
+    <value>다른 앱에서 로그인, 신용 카드, 신원 정보를 자동으로 채우려면 Cozy Pass 자동완성 서비스를 사용하세요.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>자동완성 설정 열기</value>
@@ -1269,7 +1269,7 @@
     <value>자동 완성 활성화!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>자동 완성을 사용하려면 먼저 Bitwarden 앱에 로그인해야 합니다.</value>
+    <value>자동 완성을 사용하려면 먼저 Cozy Pass 앱에 로그인해야 합니다.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>앱과 웹 사이트에 로그인할 때 키보드에서 바로 실행할 수 있습니다.</value>
@@ -1296,13 +1296,13 @@
     <value>4. 자동 완성을 켜세요.</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. "Bitwarden"을 선택하세요.</value>
+    <value>5. "Cozy Pass"을 선택하세요.</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>비밀번호 자동 완성</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Bitwarden Password AutoFill extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>잘못된 이메일 주소입니다.</value>
@@ -1455,7 +1455,7 @@
     <value>5분</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application.</value>
+    <value>Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Logged in as {0} on {1}.</value>
@@ -1529,7 +1529,7 @@
     <value>끝내기</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Are you sure you want to exit Bitwarden?</value>
+    <value>Are you sure you want to exit Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>On App Restart</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Bitwarden from the "Settings" screen.</value>
+    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Cozy Pass from the "Settings" screen.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Your theme changes will apply when the app is restarted.</value>

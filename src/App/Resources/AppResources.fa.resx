@@ -378,7 +378,7 @@
     <value>از وب‌سایت ما دیدن کنید</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>برای کمک گرفتن، اخبار، رایانامه ما، و یا آموزش بیشتر برای استفاده از Bitwarden از وب سایت ما دیدن کنید.</value>
+    <value>برای کمک گرفتن، اخبار، رایانامه ما، و یا آموزش بیشتر برای استفاده از Cozy Pass از وب سایت ما دیدن کنید.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>وب‌سایت</value>
@@ -400,7 +400,7 @@
     <value>افزونه برنامه</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>از قابلیت دسترسی Bitwarden برای پر کردن خودکار ورود به سیستم خود در سراسر برنامه‌ها و وب استفاده کنید.</value>
+    <value>از قابلیت دسترسی Cozy Pass برای پر کردن خودکار ورود به سیستم خود در سراسر برنامه‌ها و وب استفاده کنید.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>سرویس پر کردن خودکار</value>
@@ -412,16 +412,16 @@
     <value>افزونه برنامه Bitwarden</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>ساده‌ترین روش برای افزودن اطلاعات ورود به گاوصندوق از طریق افزونه برنامه Bitwarden است. برای اطلاع بیشتر از چگونگی استفاده از افزونه برنامه صفحه "تنظیمات" را ببینید.</value>
+    <value>ساده‌ترین روش برای افزودن اطلاعات ورود به گاوصندوق از طریق افزونه برنامه Cozy Pass است. برای اطلاع بیشتر از چگونگی استفاده از افزونه برنامه صفحه "تنظیمات" را ببینید.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>با Bitwarden در سافاری و دیگر برنامه‌ها می‌توانید از قابلیت پر کردن خودکار در ورودهایتان استفاده کنید.</value>
+    <value>با Cozy Pass در سافاری و دیگر برنامه‌ها می‌توانید از قابلیت پر کردن خودکار در ورودهایتان استفاده کنید.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>سرویس پرکردن خودکار Bitwarden</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>از قابلیت دسترسی Bitwarden برای تکمیل خودکار ورود به سیستم خود در سراسر برنامه‌ها و وب استفاده کنید.</value>
+    <value>از قابلیت دسترسی Cozy Pass برای تکمیل خودکار ورود به سیستم خود در سراسر برنامه‌ها و وب استفاده کنید.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>تغییر رایانامه</value>
@@ -467,7 +467,7 @@
     <value>افزونه برنامه را فعال کنید</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>در سافاری، Bitwarden را با استفاده از آیکون اشتراک‌گذاری پیدا کنید (راهنمایی: به سمت راست در ردیف پایین منو بروید).</value>
+    <value>در سافاری، Cozy Pass را با استفاده از آیکون اشتراک‌گذاری پیدا کنید (راهنمایی: به سمت راست در ردیف پایین منو بروید).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,13 +480,13 @@
     <value>اطلاعات ورود شما حالا از سافاری، کروم، و دیگر برنامه‌های پشتیبانی شده به راحتی قابل دسترسی است.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>در سافاری و کروم، Bitwarden را با استفاده از آیکون اشتراک‌گذاری پیدا کنید (راهنمایی: به سمت راست در ردیف پایین منو بروید).</value>
+    <value>در سافاری و کروم، Cozy Pass را با استفاده از آیکون اشتراک‌گذاری پیدا کنید (راهنمایی: به سمت راست در ردیف پایین منو بروید).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>برای راه اندازی افزونه به آیکون Bitwarden در منو ضربه بزنید.</value>
+    <value>برای راه اندازی افزونه به آیکون Cozy Pass در منو ضربه بزنید.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>برای فعال‌سازی Bitwarden در سافاری و سایر برنامه‌ها، نماد "بیشتر" را در پایین ردیف منو ضربه بزنید.</value>
+    <value>برای فعال‌سازی Cozy Pass در سافاری و سایر برنامه‌ها، نماد "بیشتر" را در پایین ردیف منو ضربه بزنید.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>مورد علاقه</value>
@@ -573,7 +573,7 @@
     <value>تنظیمات بیشتر</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>شما بایستی به برنامه اصلی Bitwarden وارد شوید تا بتوانید از افزونه استفاده کنید.</value>
+    <value>شما بایستی به برنامه اصلی Cozy Pass وارد شوید تا بتوانید از افزونه استفاده کنید.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>هرگز</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>گزینه های پیش فرض از ابزار تولید رمز عبور Bitwarden تنظیم شد.</value>
+    <value>گزینه های پیش فرض از ابزار تولید رمز عبور Cozy Pass تنظیم شد.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>گزینه‌ها</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>زمانی که شما یک اطلاع رسانی پر کردن خودکار Bitwarden را میبینید، میتوانید برای اجرای پر کردن خودکار ضربه بزنید.</value>
+    <value>زمانی که شما یک اطلاع رسانی پر کردن خودکار Cozy Pass را میبینید، میتوانید برای اجرای پر کردن خودکار ضربه بزنید.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>برای پر کردن خودکار یک اطلاع رسانی در گاوصندوقتان این اطلاع رسانی را ضربه بزنید.</value>
@@ -738,7 +738,7 @@
     <value>باز کردن تنظیمات دستیابی</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. در صفحه تنظیمات دستیابی اندروید، "Bitwarden" را در قسمت سرویس ها لمس کنید.</value>
+    <value>1. در صفحه تنظیمات دستیابی اندروید، "Cozy Pass" را در قسمت سرویس ها لمس کنید.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>۲. روشن کردن را انتخاب کنید و تأیید را بفشارید.</value>
@@ -753,7 +753,7 @@
     <value>وضعیت</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>ساده ترین روش برای افزودن اطلاعات ورود به گاوصندوقتان از سرویس پر کردن خودکار Bitwarden است. برای اطلاعات بیشتر درباره استفاده از سرویس پر کردن خودکار Bitwarden است مرور کردن صفحه "تنظیمات" است.</value>
+    <value>ساده ترین روش برای افزودن اطلاعات ورود به گاوصندوقتان از سرویس پر کردن خودکار Bitwarden است. برای اطلاعات بیشتر درباره استفاده از سرویس پر کردن خودکار Cozy Pass است مرور کردن صفحه "تنظیمات" است.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>پر کردن خودکار</value>
@@ -970,7 +970,7 @@
     <value>محیط خود میزبان</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>آدرس اینترنتی پایه فرضی نصب Bitwarden میزبانی شده را مشخص کنید.</value>
+    <value>آدرس اینترنتی پایه فرضی نصب Cozy Pass میزبانی شده را مشخص کنید.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>آدرس اینترنتی سرور</value>
@@ -1153,10 +1153,10 @@
     <value>سرویس دستیابی به پر کردن خودکار</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>سرویس خودکار Bitwarden با استفاده از چهار چوب پر کردن خودکار اندروید برای کمک به پر کردن ورودی ها، کارت های اعتباری و اطلاعات هویت به سایر برنامه ها در دستگاه شما کمک می کند.</value>
+    <value>سرویس خودکار Cozy Pass با استفاده از چهار چوب پر کردن خودکار اندروید برای کمک به پر کردن ورودی ها، کارت های اعتباری و اطلاعات هویت به سایر برنامه ها در دستگاه شما کمک می کند.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>از سرویس پر کردن خودکار Bitwarden برای پر کردن ورودها، کارتهای اعتباری، و اطلاعات هویتی درون اپلیکیشن ها استفاده کنید.</value>
+    <value>از سرویس پر کردن خودکار Cozy Pass برای پر کردن ورودها، کارتهای اعتباری، و اطلاعات هویتی درون اپلیکیشن ها استفاده کنید.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>باز کردن تنظیمات پر کردن خودکار</value>
@@ -1269,7 +1269,7 @@
     <value>پرکردن خودکار فعال شد!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>شما بایستی به برنامه اصلی Bitwarden وارد شوید تا بتوانید از پرکردن خودکار استفاده کنید.</value>
+    <value>شما بایستی به برنامه اصلی Cozy Pass وارد شوید تا بتوانید از پرکردن خودکار استفاده کنید.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Your logins are now easily accessable right from your keyboard while logging into apps and websites.</value>
@@ -1296,13 +1296,13 @@
     <value>۴. روشن کردن پرکردن خودکار</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>۵. انتخاب "Bitwarden"</value>
+    <value>۵. انتخاب "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>پرکردن خودکار کلمه عبور</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>ساده ترین روش برای افزودن اطلاعات ورود به گاوصندوق از طریق افزونه پرکردن خودکار رمز عبور Bitwarden است. برای اطلاع بیشتر از چگونگی استفاده از پرکردن خودکار رمز عبور Bitwarden مرورکردن صفحه "تنظیمات" است.</value>
+    <value>ساده ترین روش برای افزودن اطلاعات ورود به گاوصندوق از طریق افزونه پرکردن خودکار رمز عبور Bitwarden است. برای اطلاع بیشتر از چگونگی استفاده از پرکردن خودکار رمز عبور Cozy Pass مرورکردن صفحه "تنظیمات" است.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>نشانی رایانامه نامعتبر است.</value>
@@ -1529,7 +1529,7 @@
     <value>خروج</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>آیا مطمئنید که می‌خواهید از Bitwarden خارج شوید؟</value>
+    <value>آیا مطمئنید که می‌خواهید از Cozy Pass خارج شوید؟</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>راه اندازی مجدد در برنامه</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>پرکردن خودکار دسترسی ایمن به گاوصندوق Bitwarden شما را از سایر وبسایت ها و برنامه ها آسان تر میکند. بنظر میرسد که سرویس پرکردن خودکار را برای Bitwarden فعال نکرده اید. از صفحه "تنظیمات" Bitwarden پرکردن خودکار رافعال کنید.</value>
+    <value>پرکردن خودکار دسترسی ایمن به گاوصندوق Bitwarden شما را از سایر وبسایت ها و برنامه ها آسان تر میکند. بنظر میرسد که سرویس پرکردن خودکار را برای Bitwarden فعال نکرده اید. از صفحه "تنظیمات" Cozy Pass پرکردن خودکار رافعال کنید.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>تغییرات شما در ظاهر برنامه بعد از اینکه برنامه را دوباره آغاز کردید اعمال می‌شود.</value>

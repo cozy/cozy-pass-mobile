@@ -378,7 +378,7 @@
     <value>Besøk nettsidene våre</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Besøk vårt nettsted for å få hjelp, nyheter, sende oss E-poster, og/eller lære mer om å bruke Bitwarden.</value>
+    <value>Besøk vårt nettsted for å få hjelp, nyheter, sende oss E-poster, og/eller lære mer om å bruke Cozy Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Nettsted</value>
@@ -400,7 +400,7 @@
     <value>App-utvidelse</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Bruk Bitwarden sin tilgjengelighetstjeneste for å auto-utfylle dine innlogginger på apper og på nettet.</value>
+    <value>Bruk Cozy Pass sin tilgjengelighetstjeneste for å auto-utfylle dine innlogginger på apper og på nettet.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Auto-utfyllingstjeneste</value>
@@ -412,16 +412,16 @@
     <value>Bitwarden App-utvidelse</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er fra Bitwarden sin apputvidelse. Lær mer om å bruke bitwarden-apputvidelsen ved å navigere til "Innstillinger"-skjermen.</value>
+    <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er fra Cozy Pass sin apputvidelse. Lær mer om å bruke bitwarden-apputvidelsen ved å navigere til "Innstillinger"-skjermen.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Bruk Bitwarden i Safari og i andre apper for å auto-utfylle dine innlogginger.</value>
+    <value>Bruk Cozy Pass i Safari og i andre apper for å auto-utfylle dine innlogginger.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Bitwarden Auto-utfyllingstjeneste</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Bruk Bitwarden sin tilgjengelighetstjeneste for å auto-utfylle dine innlogginger.</value>
+    <value>Bruk Cozy Pass sin tilgjengelighetstjeneste for å auto-utfylle dine innlogginger.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Endre E-postadresse</value>
@@ -467,7 +467,7 @@
     <value>Aktiver apputvidelsen</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>I Safari, finn Bitwarden ved å bruke deleikonet (Hint: Skroll til høyre på menyens bunnrekke).</value>
+    <value>I Safari, finn Cozy Pass ved å bruke deleikonet (Hint: Skroll til høyre på menyens bunnrekke).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,13 +480,13 @@
     <value>Dine innlogginger er nå lett tilgjengelige fra Safari, Chrome, og mange andre støttede apper.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>I Safari og Chrome, finn Bitwarden ved å bruke deleikonet (Hint: Skroll til høyre på delemenyens bunnrekke).</value>
+    <value>I Safari og Chrome, finn Cozy Pass ved å bruke deleikonet (Hint: Skroll til høyre på delemenyens bunnrekke).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Tast på Bitwarden-ikonet i menyen for å starte utvidelsen.</value>
+    <value>Tast på Cozy Pass-ikonet i menyen for å starte utvidelsen.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>For å skru på Bitwarden i Safari og i andre apper, trykk på "Mer"-ikonet på bunnrekken i menyen.</value>
+    <value>For å skru på Cozy Pass i Safari og i andre apper, trykk på "Mer"-ikonet på bunnrekken i menyen.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favoritt</value>
@@ -573,7 +573,7 @@
     <value>Flere innstillinger</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Du må logge inn på Bitwarden sin hovedapp før du kan bruke utvidelsen.</value>
+    <value>Du må logge inn på Cozy Pass sin hovedapp før du kan bruke utvidelsen.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Aldri</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Alternativenes standardvalg er bestemt av passordgeneratorverktøyet til Bitwarden sin hovedapp.</value>
+    <value>Alternativenes standardvalg er bestemt av passordgeneratorverktøyet til Cozy Pass sin hovedapp.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Alternativer</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Når du ser en auto-utfyllingsbeskjed fra Bitwarden, kan du trykke på den for å starte auto-utfyllingstjenesten.</value>
+    <value>Når du ser en auto-utfyllingsbeskjed fra Cozy Pass, kan du trykke på den for å starte auto-utfyllingstjenesten.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Trykk på denne beskjeden for å auto-utfylle en gjenstand fra ditt hvelv.</value>
@@ -738,7 +738,7 @@
     <value>Åpne tilgjengelighetsinnstillinger</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1) På Android sin meny for tilgjengelighetsinnstillinger, trykk på "Bitwarden" i Tjenester-listen.</value>
+    <value>1) På Android sin meny for tilgjengelighetsinnstillinger, trykk på "Cozy Pass" i Tjenester-listen.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2) Skru på bryteren, og trykk på OK for å akseptere.</value>
@@ -753,7 +753,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er fra Bitwarden sin auto-utfyllingstjeneste. Lær mer om å bruke Bitwarden sin auto-utfyllingstjeneste ved å navigere til "Innstillinger"-skjermen.</value>
+    <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er fra Bitwarden sin auto-utfyllingstjeneste. Lær mer om å bruke Cozy Pass sin auto-utfyllingstjeneste ved å navigere til "Innstillinger"-skjermen.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Auto-utfylling</value>
@@ -970,7 +970,7 @@
     <value>Selvbetjent miljø</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Spesifiser grunn-nettadressen til din selvbetjente Bitwarden-installasjon.</value>
+    <value>Spesifiser grunn-nettadressen til din selvbetjente Cozy Pass-installasjon.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Tjener-nettadresse</value>
@@ -1156,7 +1156,7 @@
     <value>Bitwarden sin auto-utfyllingstjeneste bruker Android Autofill Framework for å bidra til å fylle inn innlogginger, bankkort og identifikasjonsinfo inn i andre apper på din enhet.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Bruk Bitwarden sin auto-utfyllingstjeneste for å fylle ut innlogginger, bankkort og identifikasjonsinfo i andre apper.</value>
+    <value>Bruk Cozy Pass sin auto-utfyllingstjeneste for å fylle ut innlogginger, bankkort og identifikasjonsinfo i andre apper.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Åpne auto-utfyllingsinnstillingene</value>
@@ -1269,7 +1269,7 @@
     <value>Autoutfylling aktivert!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Du må logge deg inn på Bitwarden-hovedappen før du kan bruke autoutfylling.</value>
+    <value>Du må logge deg inn på Cozy Pass-hovedappen før du kan bruke autoutfylling.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Innloggingene dine er nå lett tilgjengelige fra tastaturet når du skal logge deg inn på apper og nettsteder.</value>
@@ -1296,13 +1296,13 @@
     <value>4. Slå på Autoutfyll</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Velg «Bitwarden»</value>
+    <value>5. Velg «Cozy Pass»</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Passord-autoutfylling</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er å bruke «Bitwarden-passordautoutfylling»-utvidelsen. Lær mer om «Bitwarden-passordautoutfylling»-utvidelsen ved å gå til «Innstillinger»-siden.</value>
+    <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er å bruke «Bitwarden-passordautoutfylling»-utvidelsen. Lær mer om «Cozy Pass-passordautoutfylling»-utvidelsen ved å gå til «Innstillinger»-siden.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Ugyldig E-postadresse.</value>
@@ -1455,7 +1455,7 @@
     <value>5 minutter</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Angi PIN-koden din for å låse opp Bitwarden. PIN-innstillingene tilbakestilles hvis du logger deg helt ut av programmet.</value>
+    <value>Angi PIN-koden din for å låse opp Cozy Pass. PIN-innstillingene tilbakestilles hvis du logger deg helt ut av programmet.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Logget på som {0} gjennom {1}.</value>
@@ -1529,7 +1529,7 @@
     <value>Avslutt</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Er du sikker på at du vil lukke Bitwarden?</value>
+    <value>Er du sikker på at du vil lukke Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>Ved app-omstart</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-utfylling gjør det lett å få sikker tilgang til Bitwarden-hvelvet ditt fra andre nettsteder og apper. Det ser ut til at du ikke har skrudd på noen auto-utfyllingstjenester for Bitwarden. Du kan skru på auto-utfylling for Bitwarden i «Innstillinger»-menyen.</value>
+    <value>Auto-utfylling gjør det lett å få sikker tilgang til Bitwarden-hvelvet ditt fra andre nettsteder og apper. Det ser ut til at du ikke har skrudd på noen auto-utfyllingstjenester for Bitwarden. Du kan skru på auto-utfylling for Cozy Pass i «Innstillinger»-menyen.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Temaendringene dine vil gjelde når appen startes på nytt.</value>

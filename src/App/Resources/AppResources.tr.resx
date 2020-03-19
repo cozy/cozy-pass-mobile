@@ -400,7 +400,7 @@
     <value>Uygulama uzantısı</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Uygulamalarınızdaki ve internetteki oturumlarınızı otomatik olarak doldurmak için Bitwarden erişilebilirlik hizmetini kullanın.</value>
+    <value>Uygulamalarınızdaki ve internetteki oturumlarınızı otomatik olarak doldurmak için Cozy Pass erişilebilirlik hizmetini kullanın.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Otomatik doldurma servisi</value>
@@ -412,10 +412,10 @@
     <value>Bitwarden Uygulama Uzantısı</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Uygulama Uzantısıdır. Bitwarden Uygulama Uzantısının kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
+    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Uygulama Uzantısıdır. Cozy Pass Uygulama Uzantısının kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Giriş bilgilerinizi otomatik doldurmak için Safari ve diğer uygulamalarda Bitwarden kullanın.</value>
+    <value>Giriş bilgilerinizi otomatik doldurmak için Safari ve diğer uygulamalarda Cozy Pass kullanın.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Bitwarden otomatik doldur servisi</value>
@@ -753,7 +753,7 @@
     <value>Durum</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Otomatik Doldurma Hizmetidir. Bitwarden Otomatik Doldurma Hizmetinin kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
+    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Otomatik Doldurma Hizmetidir. Cozy Pass Otomatik Doldurma Hizmetinin kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Otomatik doldur</value>
@@ -1269,7 +1269,7 @@
     <value>Otomatik Doldur Etkinleştirildi!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Otomatik Doldurmayı kullanabilmeniz için Bitwarden ana uygulamasında giriş yapmalısınız.</value>
+    <value>Otomatik Doldurmayı kullanabilmeniz için Cozy Pass ana uygulamasında giriş yapmalısınız.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Uygulamalara ve web sitelerine giriş yaparken, giriş bilgileriniz artık klavyenizden kolayca erişilebilir.</value>
@@ -1296,13 +1296,13 @@
     <value>4. Otomatik doldurmayı etkinleştirin</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. "Bitwarden" seçin</value>
+    <value>5. "Cozy Pass" seçin</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Parola Otomatik Doldurma</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Parola Otomatik Doldurma uzantısını kullanmaktır. Bitwarden Parola Otomatik Doldurma uzantısının kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
+    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Parola Otomatik Doldurma uzantısını kullanmaktır. Cozy Pass Parola Otomatik Doldurma uzantısının kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Geçersiz e-posta adresi.</value>
@@ -1554,7 +1554,7 @@
     <value>Uygulama Yeniden Başlatılırken</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Otomatik doldurma, Bitwarden kasanıza diğer web sitelerinden ve uygulamalardan güvenli bir şekilde erişmenizi kolaylaştırır. Bitwarden için otomatik doldurma hizmetini etkinleştirmemiş gibi görünüyorsunuz. "Ayarlar" ekranından Bitwarden için otomatik doldurmayı etkinleştirin.</value>
+    <value>Otomatik doldurma, Bitwarden kasanıza diğer web sitelerinden ve uygulamalardan güvenli bir şekilde erişmenizi kolaylaştırır. Bitwarden için otomatik doldurma hizmetini etkinleştirmemiş gibi görünüyorsunuz. "Ayarlar" ekranından Cozy Pass için otomatik doldurmayı etkinleştirin.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Tema değişiklikleriniz uygulama yeniden başlatıldığında geçerli olacaktır.</value>

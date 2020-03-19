@@ -394,7 +394,7 @@
     <value>Visiter notre site web</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Visitez notre site web pour obtenir de l'aide, lire les actualités, nous écrire et/ou apprendre à mieux utiliser Bitwarden.</value>
+    <value>Visitez notre site web pour obtenir de l'aide, lire les actualités, nous écrire et/ou apprendre à mieux utiliser Cozy Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Site web</value>
@@ -416,7 +416,7 @@
     <value>Extension de l'application</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Utiliser le service d'accessibilité de Bitwarden pour remplir automatiquement vos identifiants sur les applis et le web.</value>
+    <value>Utiliser le service d'accessibilité de Cozy Pass pour remplir automatiquement vos identifiants sur les applis et le web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Service de remplissage automatique</value>
@@ -428,16 +428,16 @@
     <value>Extension de l'application Bitwarden</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de l'application Bitwarden. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
+    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de l'application Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Utilisez Bitwarden dans Safari et d'autres applications pour le remplissage automatique de vos identifiants.</value>
+    <value>Utilisez Cozy Pass dans Safari et d'autres applications pour le remplissage automatique de vos identifiants.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Service de saisie automatique Bitwarden</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Utilisez le service d'accessibilité de Bitwarden pour remplir automatiquement vos identifiants.</value>
+    <value>Utilisez le service d'accessibilité de Cozy Pass pour remplir automatiquement vos identifiants.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Changer d'e-mail</value>
@@ -486,7 +486,7 @@
     <value>Activez l'extension de l'application</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Sur Safari, trouvez Bitwarden en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
+    <value>Sur Safari, trouvez Cozy Pass en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -499,13 +499,13 @@
     <value>Vos identifiants sont désormais facilement accessibles depuis Safari, Chrome, et d'autres applications supportées.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Sur Safari et Chrome, trouvez Bitwarden en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
+    <value>Sur Safari et Chrome, trouvez Cozy Pass en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Appuyez sur l'icône Bitwarden dans le menu pour lancer l'extension.</value>
+    <value>Appuyez sur l'icône Cozy Pass dans le menu pour lancer l'extension.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Pour activer Bitwarden sur Safari et d'autres applications, appuyez sur l'icône "plus" sur la ligne du bas du menu.</value>
+    <value>Pour activer Cozy Pass sur Safari et d'autres applications, appuyez sur l'icône "plus" sur la ligne du bas du menu.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favori</value>
@@ -592,7 +592,7 @@
     <value>Plus de paramètres</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Vous devez vous identifier sur l'application principale Bitwarden avant d'utiliser l'extension.</value>
+    <value>Vous devez vous identifier sur l'application principale Cozy Pass avant d'utiliser l'extension.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Jamais</value>
@@ -617,7 +617,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Les options par défaut sont définies depuis l'outil de génération de mot de passe de l'application principale Bitwarden.</value>
+    <value>Les options par défaut sont définies depuis l'outil de génération de mot de passe de l'application principale Cozy Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
@@ -748,7 +748,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Lorsque vous voyez une notification de remplissage automatique de la part de Bitwarden, vous pouvez la toucher pour démarrer le service de remplissage automatique.</value>
+    <value>Lorsque vous voyez une notification de remplissage automatique de la part de Cozy Pass, vous pouvez la toucher pour démarrer le service de remplissage automatique.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Touchez cette notification pour remplir automatiquement vos informations de connexion à partir de votre coffre.</value>
@@ -757,7 +757,7 @@
     <value>Ouvrir les paramètres d'accessibilité</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Dans les paramètres d'accessibilité d'Android, sélectionnez « Bitwarden » dans la section « Services ».</value>
+    <value>1. Dans les paramètres d'accessibilité d'Android, sélectionnez « Cozy Pass » dans la section « Services ».</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Activez l'interrupteur et appuyez sur OK pour accepter.</value>
@@ -772,7 +772,7 @@
     <value>État</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser le service de remplissage automatique de Bitwarden. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
+    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser le service de remplissage automatique de Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Remplissage automatique</value>
@@ -989,7 +989,7 @@
     <value>Environnement auto-hébergé</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Spécifiez l'URL de base de votre installation Bitwarden auto-hébergée.</value>
+    <value>Spécifiez l'URL de base de votre installation Cozy Pass auto-hébergée.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL du serveur</value>
@@ -1172,10 +1172,10 @@
     <value>Service d'accessibilité pour la saisie automatique</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Le service de saisie automatique de Bitwarden utilise l'outil de saisie automatique d'Android pour aider à saisir les identifiants, les cartes de crédit et les informations d'identité dans d'autres applis sur votre appareil.</value>
+    <value>Le service de saisie automatique de Cozy Pass utilise l'outil de saisie automatique d'Android pour aider à saisir les identifiants, les cartes de crédit et les informations d'identité dans d'autres applis sur votre appareil.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Utilisez le service d'accessibilité de Bitwarden pour la saisie automatique de vos identifiants.</value>
+    <value>Utilisez le service d'accessibilité de Cozy Pass pour la saisie automatique de vos identifiants.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Ouvrir les paramètres de saisie automatique</value>
@@ -1288,7 +1288,7 @@
     <value>Remplissage automatique activé !</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Vous devez vous identifier sur l'application principale Bitwarden avant d'utiliser le remplissage automatique des mots de passe.</value>
+    <value>Vous devez vous identifier sur l'application principale Cozy Pass avant d'utiliser le remplissage automatique des mots de passe.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Vos identifiants sont désormais facilement accessibles directement depuis votre clavier lorsque vous vous connectez à des applications et des sites web.</value>
@@ -1315,13 +1315,13 @@
     <value>4. Activez "Préremplir mots de passe"</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Sélectionnez "Bitwarden"</value>
+    <value>5. Sélectionnez "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Remplissage automatique des mots de passe</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de remplissage automatique de mots de passe de Bitwarden. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
+    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de remplissage automatique de mots de passe de Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Adresse e-mail invalide.</value>
@@ -1474,7 +1474,7 @@
     <value>5 minutes</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Définissez votre code PIN pour déverrouiller Bitwarden. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application.</value>
+    <value>Définissez votre code PIN pour déverrouiller Cozy Pass. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Connecté en tant que {0} sur {1}.</value>
@@ -1548,7 +1548,7 @@
     <value>Quitter</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Êtes-vous sûr de vouloir quitter Bitwarden ?</value>
+    <value>Êtes-vous sûr de vouloir quitter Cozy Pass ?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Voulez-vous avoir à déverrouiller avec votre mot de passe lorsque l'application est redémarrée ?</value>
@@ -1573,7 +1573,7 @@
     <value>Au redémarrage de l'application</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Le remplissage automatique permet d'accéder facilement à votre coffre Bitwarden depuis d'autres sites et applications. Il semble que vous n'ayez pas activé de service de remplissage automatique pour Bitwarden. Activez le remplissage automatique pour Bitwarden à partir de l'écran "Paramètres".</value>
+    <value>Le remplissage automatique permet d'accéder facilement à votre coffre Bitwarden depuis d'autres sites et applications. Il semble que vous n'ayez pas activé de service de remplissage automatique pour Bitwarden. Activez le remplissage automatique pour Cozy Pass à partir de l'écran "Paramètres".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Vos modifications de thème s'appliqueront lorsque l'application sera redémarrée.</value>

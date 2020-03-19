@@ -378,7 +378,7 @@
     <value>造訪我們的網站</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>瀏覽我們的網站以取得協助、了解新消息、傳送電子郵件給我們或瀏覽更多使用 Bitwarden 的秘訣。</value>
+    <value>瀏覽我們的網站以取得協助、了解新消息、傳送電子郵件給我們或瀏覽更多使用 Cozy Pass 的秘訣。</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>網站</value>
@@ -400,7 +400,7 @@
     <value>App 小工具</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>使用 Bitwarden 協助工具服務在應用程式和網站中自動填入您的登入資料。</value>
+    <value>使用 Cozy Pass 協助工具服務在應用程式和網站中自動填入您的登入資料。</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>自動填入</value>
@@ -412,16 +412,16 @@
     <value>Bitwarden App 小工具</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Bitwarden App 小工具是新增登入資訊到密碼庫的最簡單方法。請至「設定」頁面了解更多關於 Bitwarden App 小工具的使用資訊。</value>
+    <value>Bitwarden App 小工具是新增登入資訊到密碼庫的最簡單方法。請至「設定」頁面了解更多關於 Cozy Pass App 小工具的使用資訊。</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>在 Safari 和其他應用程式中使用 Bitwarden 自動填入登入資料。</value>
+    <value>在 Safari 和其他應用程式中使用 Cozy Pass 自動填入登入資料。</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Bitwarden 自動填入服務</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>使用 Bitwarden 無障礙服務自動填入您的登入資料。</value>
+    <value>使用 Cozy Pass 無障礙服務自動填入您的登入資料。</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>變更電子郵件</value>
@@ -467,7 +467,7 @@
     <value>啟用 App 小工具</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>在 Safari 中的分享功能尋找 Bitwarden 圖示(提示：在最底行的最右邊)。</value>
+    <value>在 Safari 中的分享功能尋找 Cozy Pass 圖示(提示：在最底行的最右邊)。</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,13 +480,13 @@
     <value>現在可以在 Safari、Chrome 以及其他支援的程式中方便地存取您的登入資料了。</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>在 Safari 或 Chrome 中的分享功能尋找 Bitwarden 圖示(提示：在最底行的最右邊)。</value>
+    <value>在 Safari 或 Chrome 中的分享功能尋找 Cozy Pass 圖示(提示：在最底行的最右邊)。</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>在選單中按一下 Bitwarden 圖示啟動小工具。</value>
+    <value>在選單中按一下 Cozy Pass 圖示啟動小工具。</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>要在 Safari 或其他程式開啟 Bitwarden ，請在最底行的最右邊按 "更多" 圖示。</value>
+    <value>要在 Safari 或其他程式開啟 Cozy Pass ，請在最底行的最右邊按 "更多" 圖示。</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>我的最愛</value>
@@ -573,7 +573,7 @@
     <value>更多設定</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>您必須先登入 Bitwarden 才可使用小工具。</value>
+    <value>您必須先登入 Cozy Pass 才可使用小工具。</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>永不</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>選項預設值是由 Bitwarden 中的密碼產生器設定的。</value>
+    <value>選項預設值是由 Cozy Pass 中的密碼產生器設定的。</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>進階選項</value>
@@ -626,7 +626,7 @@
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
-    <value>為 Bitwarden 評分</value>
+    <value>為 Cozy Pass 評分</value>
   </data>
   <data name="RateTheAppDescription" xml:space="preserve">
     <value>給我們留個好評吧！</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>當您看見 Bitwarden 的自動填入通知時，可以點選它以啟用自動填入服務。</value>
+    <value>當您看見 Cozy Pass 的自動填入通知時，可以點選它以啟用自動填入服務。</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>按此自動填入存在密碼庫的登入資料。</value>
@@ -738,7 +738,7 @@
     <value>開啟協助工具設定</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. 在 Android 的協助工具設定中，按一下服務中的 "Bitwarden" 。</value>
+    <value>1. 在 Android 的協助工具設定中，按一下服務中的 "Cozy Pass" 。</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. 按一下開關，再按“確定”。</value>
@@ -753,7 +753,7 @@
     <value>狀態</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Bitwarden 自動填入服務是新增登入資料的最簡單方法。請到 “設定” 頁面了解更多使用 Bitwarden 自動填入服務的方法 。</value>
+    <value>Bitwarden 自動填入服務是新增登入資料的最簡單方法。請到 “設定” 頁面了解更多使用 Cozy Pass 自動填入服務的方法 。</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>自動填入</value>
@@ -1132,7 +1132,7 @@
     <value>圖示伺服器 URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>使用 Bitwarden 自動填入</value>
+    <value>使用 Cozy Pass 自動填入</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>密碼庫已鎖定</value>
@@ -1156,7 +1156,7 @@
     <value>Bitwarden 自動填入服務使用 Android 自動填入框架來幫助您將登入資料、信用卡和身分資訊填入至裝置上的其他應用程式中。</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>使用 Bitwarden 自動填入服務 ，幫您在網頁和應用程式中自動填入登入資料。</value>
+    <value>使用 Cozy Pass 自動填入服務 ，幫您在網頁和應用程式中自動填入登入資料。</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>開啟自動填入設定</value>
@@ -1269,7 +1269,7 @@
     <value>自動填入已啟用！</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>您必須先登入 Bitwarden 應用程式，才可以使用自動填入功能。</value>
+    <value>您必須先登入 Cozy Pass 應用程式，才可以使用自動填入功能。</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>現在您可以在登入應用程式或網站時，輕鬆地存取登入資料了。</value>
@@ -1281,7 +1281,7 @@
     <value>您可以直接從鍵盤存取密碼庫以快速的自動填入密碼。</value>
   </data>
   <data name="AutofillTurnOn" xml:space="preserve">
-    <value>請按照以下步驟開啟 Bitwarden 自動填入功能：</value>
+    <value>請按照以下步驟開啟 Cozy Pass 自動填入功能：</value>
   </data>
   <data name="AutofillTurnOn1" xml:space="preserve">
     <value>1. 前往 iOS 的“設定”應用程式</value>
@@ -1296,13 +1296,13 @@
     <value>4. 開啟自動填入功能</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. 選擇 "Bitwarden"</value>
+    <value>5. 選擇 "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>自動填入密碼</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>使用 Bitwarden 自動填入密碼小工具是新增登入資訊到密碼庫的最簡單方法。請至「設定」頁面了解更多關於 Bitwarden 自動填入密碼小工具的使用資訊。</value>
+    <value>使用 Bitwarden 自動填入密碼小工具是新增登入資訊到密碼庫的最簡單方法。請至「設定」頁面了解更多關於 Cozy Pass 自動填入密碼小工具的使用資訊。</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>無效的電子郵件地址。</value>
@@ -1455,7 +1455,7 @@
     <value>5 分鐘</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>設定您用來解鎖 Bitwarden 的 PIN 碼。您的 PIN 設定將在您完全結束本應用程式時被重設。</value>
+    <value>設定您用來解鎖 Cozy Pass 的 PIN 碼。您的 PIN 設定將在您完全結束本應用程式時被重設。</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>已在 {1} 以 {0} 身份登入。</value>
@@ -1529,7 +1529,7 @@
     <value>結束</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>您確定要結束 Bitwarden 嗎？</value>
+    <value>您確定要結束 Cozy Pass 嗎？</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>當應用程式重新啟動時，是否要求用主密碼來解鎖？</value>
@@ -1554,7 +1554,7 @@
     <value>於程式重新啟動時</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>「自動填入」使其他網站及 App 能更簡單地安全存取您的 Bitwarden 密碼庫。看起來您尚未啟用 Bitwarden 的自動填入服務。請在「設定」畫面啟用 Bitwarden 的自動填入。</value>
+    <value>「自動填入」使其他網站及 App 能更簡單地安全存取您的 Bitwarden 密碼庫。看起來您尚未啟用 Bitwarden 的自動填入服務。請在「設定」畫面啟用 Cozy Pass 的自動填入。</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>App 重新啟動之後，您的主題變更將會被套用。</value>

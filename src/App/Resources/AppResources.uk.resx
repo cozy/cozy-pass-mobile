@@ -378,7 +378,7 @@
     <value>Відвідайте наш веб-сайт</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо Bitwarden.</value>
+    <value>Відвідайте наш веб-сайт, щоб прочитати новини, написати нам, або дізнатися більше про те, як ми використовуємо Cozy Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Веб-сайт</value>
@@ -400,7 +400,7 @@
     <value>Розширення</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Використовуйте службу автозаповнення Bitwarden, щоб автоматично вводити паролі в програмах та на веб-сайтах.</value>
+    <value>Використовуйте службу автозаповнення Cozy Pass, щоб автоматично вводити паролі в програмах та на веб-сайтах.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Служба автозаповнення</value>
@@ -412,16 +412,16 @@
     <value>Розширення Bitwarden</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Найлегшим способом додавання нових записів у сховище є використання розширення Bitwarden. Дізнайтеся більше про використання розширення Bitwarden в меню "Налаштування".</value>
+    <value>Найлегшим способом додавання нових записів у сховище є використання розширення Bitwarden. Дізнайтеся більше про використання розширення Cozy Pass в меню "Налаштування".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Використовуйте Bitwarden в Safari та інших програмах для автоматичного заповнення паролів.</value>
+    <value>Використовуйте Cozy Pass в Safari та інших програмах для автоматичного заповнення паролів.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Служба автозаповнення Bitwarden</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Використовуйте службу автозаповнення Bitwarden, щоб автоматично вводити паролі.</value>
+    <value>Використовуйте службу автозаповнення Cozy Pass, щоб автоматично вводити паролі.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Змінити адресу е-пошти</value>
@@ -467,7 +467,7 @@
     <value>Увімкнути розширення</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>В Safari знайдіть Bitwarden, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню).</value>
+    <value>В Safari знайдіть Cozy Pass, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,13 +480,13 @@
     <value>Тепер ви можете легко отримувати доступ до своїх записів з Safari, Chrome та інших підтримуваних програм.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>В Safari та Chrome знайдіть Bitwarden, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню Поділитися).</value>
+    <value>В Safari та Chrome знайдіть Cozy Pass, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню Поділитися).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Торкніться піктограми Bitwarden в меню для запуску розширення.</value>
+    <value>Торкніться піктограми Cozy Pass в меню для запуску розширення.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Щоб увімкнути Bitwarden в Safari та інших програмах, торкніться піктограми "Ще" в нижньому рядку меню.</value>
+    <value>Щоб увімкнути Cozy Pass в Safari та інших програмах, торкніться піктограми "Ще" в нижньому рядку меню.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Обране</value>
@@ -573,7 +573,7 @@
     <value>Додаткові налаштування</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Ви повинні увійти в основну програму Bitwarden, щоб використовувати розширення.</value>
+    <value>Ви повинні увійти в основну програму Cozy Pass, щоб використовувати розширення.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Ніколи</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Типові параметри задаються в генераторі паролів основної програми Bitwarden.</value>
+    <value>Типові параметри задаються в генераторі паролів основної програми Cozy Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Додатково</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Коли ви бачите сповіщення автозаповнення Bitwarden, ви можете торкнутися його для запуску служби автозаповнення.</value>
+    <value>Коли ви бачите сповіщення автозаповнення Cozy Pass, ви можете торкнутися його для запуску служби автозаповнення.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Торкніться цього сповіщення для автозаповнення пароля.</value>
@@ -738,7 +738,7 @@
     <value>Відкрити налаштування доступності</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. На екрані налаштувань доступності Android, оберіть службу "Bitwarden".</value>
+    <value>1. На екрані налаштувань доступності Android, оберіть службу "Cozy Pass".</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Змініть положення перемикача й схваліть запит.</value>
@@ -753,7 +753,7 @@
     <value>Статус</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Найлегшим способом додавання нових записів у сховище є використання служби автозаповнення Bitwarden. Дізнайтеся більше про використання служби автозаповнення Bitwarden в меню "Налаштування".</value>
+    <value>Найлегшим способом додавання нових записів у сховище є використання служби автозаповнення Bitwarden. Дізнайтеся більше про використання служби автозаповнення Cozy Pass в меню "Налаштування".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Автозаповнення</value>
@@ -970,7 +970,7 @@
     <value>Середовище власного хостингу</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Вкажіть основну URL-адресу вашого локально розміщеного встановлення Bitwarden.</value>
+    <value>Вкажіть основну URL-адресу вашого локально розміщеного встановлення Cozy Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL-адреса сервера</value>
@@ -1153,10 +1153,10 @@
     <value>Служба автозаповнення</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Служба автозаповнення Bitwarden використовує Android Autofill Framework для заповнення паролів, кредитних карток та особистої інформації в інших програмах на вашому пристрої.</value>
+    <value>Служба автозаповнення Cozy Pass використовує Android Autofill Framework для заповнення паролів, кредитних карток та особистої інформації в інших програмах на вашому пристрої.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Використовуйте службу автозаповнення Bitwarden, щоб автоматично вводити паролі, кредитні картки та особисту інформацію в інших програмах.</value>
+    <value>Використовуйте службу автозаповнення Cozy Pass, щоб автоматично вводити паролі, кредитні картки та особисту інформацію в інших програмах.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Відкрити налаштування автозаповнення</value>
@@ -1269,7 +1269,7 @@
     <value>Автозаповнення активовано!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Ви повинні увійти в основну програму Bitwarden, щоб використовувати автозаповнення.</value>
+    <value>Ви повинні увійти в основну програму Cozy Pass, щоб використовувати автозаповнення.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Тепер ви можете легко отримувати доступ до своїх записів з клавіатури під час входу в програмах і на веб-сайтах.</value>
@@ -1296,13 +1296,13 @@
     <value>4. Увімкніть автозаповнення</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Оберіть "Bitwarden"</value>
+    <value>5. Оберіть "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Автозаповнення паролів</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Найлегшим способом додавання нових записів у сховище є використання розширення для автозаповнення Bitwarden. Дізнайтеся більше про використання розширення для автозаповнення Bitwarden в меню "Налаштування".</value>
+    <value>Найлегшим способом додавання нових записів у сховище є використання розширення для автозаповнення Bitwarden. Дізнайтеся більше про використання розширення для автозаповнення Cozy Pass в меню "Налаштування".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Неправильна адреса е-пошти.</value>
@@ -1455,7 +1455,7 @@
     <value>5 хвилин</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Встановіть PIN-код для розблокування Bitwarden. Налаштування PIN-коду будуть скинуті, якщо ви коли-небудь повністю вийдете з програми.</value>
+    <value>Встановіть PIN-код для розблокування Cozy Pass. Налаштування PIN-коду будуть скинуті, якщо ви коли-небудь повністю вийдете з програми.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Ви увійшли як {0} на {1}.</value>
@@ -1529,7 +1529,7 @@
     <value>Вийти</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Ви впевнені, що хочете вийти з Bitwarden?</value>
+    <value>Ви впевнені, що хочете вийти з Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Ви хочете вимагати розблокування головним паролем при перезапуску програми?</value>
@@ -1554,7 +1554,7 @@
     <value>При перезапуску програми</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Автозаповнення дозволяє безпечно отримувати доступ до вашого сховища Bitwarden з інших веб-сайтів та програм. Схоже, що ви не активували функцію автозаповнення Bitwarden. Увімкніть автозаповнення на екрані налаштувань.</value>
+    <value>Автозаповнення дозволяє безпечно отримувати доступ до вашого сховища Bitwarden з інших веб-сайтів та програм. Схоже, що ви не активували функцію автозаповнення Cozy Pass. Увімкніть автозаповнення на екрані налаштувань.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Зміни теми застосуються після перезапуску додатка.</value>
