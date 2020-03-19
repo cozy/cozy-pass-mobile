@@ -378,7 +378,7 @@
     <value>Odwiedź naszą stronę</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i/lub dowiedzieć się, jak używać Bitwarden.</value>
+    <value>Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i/lub dowiedzieć się, jak używać Cozy Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Strona</value>
@@ -400,7 +400,7 @@
     <value>Rozszerzenie aplikacji</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Użyj usługi ułatwień dostępu Bitwarden, aby korzystać z automatycznego wypełniania danych logowania w aplikacjach i na stronach internetowych.</value>
+    <value>Użyj usługi ułatwień dostępu Cozy Pass, aby korzystać z automatycznego wypełniania danych logowania w aplikacjach i na stronach internetowych.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Usługa automatycznego wypełniania</value>
@@ -412,16 +412,16 @@
     <value>Rozszerzenie aplikacji Bitwarden</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest Rozszerzenie Aplikacji Bitwarden. Więcej informacji o używaniu Rozszerzenia Aplikacji Bitwarden znajdziesz w widoku "Ustawienia".</value>
+    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest Rozszerzenie Aplikacji Bitwarden. Więcej informacji o używaniu Rozszerzenia Aplikacji Cozy Pass znajdziesz w widoku "Ustawienia".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Użyj Bitwarden w Safari i innych aplikacjach do automatycznego wypełniania danych logowania.</value>
+    <value>Użyj Cozy Pass w Safari i innych aplikacjach do automatycznego wypełniania danych logowania.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Usługa automatycznego wypełniania Bitwarden</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Użyj usługi ułatwień dostępu Bitwarden do automatycznego wypełniania danych logowania.</value>
+    <value>Użyj usługi ułatwień dostępu Cozy Pass do automatycznego wypełniania danych logowania.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Zmień adres e-mail</value>
@@ -467,7 +467,7 @@
     <value>Włącz Rozszerzenie Aplikacji</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>W Safari, znajdź Bitwarden przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu do prawej strony).</value>
+    <value>W Safari, znajdź Cozy Pass przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu do prawej strony).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,10 +480,10 @@
     <value>Twoje dane logowania są teraz łatwo dostępne z Safari, Chrome i innych obsługiwanych aplikacji.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>W Safari i Chrome, znajdź Bitwarden przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu udostępniania do prawej strony).</value>
+    <value>W Safari i Chrome, znajdź Cozy Pass przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu udostępniania do prawej strony).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Naciśnij ikonę Bitwarden w menu, aby uruchomić rozszerzenie.</value>
+    <value>Naciśnij ikonę Cozy Pass w menu, aby uruchomić rozszerzenie.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
     <value>Aby włączyć Bbitwarden w Safari i innych aplikacjach, dotknij ikonę "więcej" w dolnym rzędzie menu.</value>
@@ -573,7 +573,7 @@
     <value>Więcej ustawień</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Musisz zalogować się do aplikacji głównej Bitwarden, zanim będziesz mógł używać rozszerzenia.</value>
+    <value>Musisz zalogować się do aplikacji głównej Cozy Pass, zanim będziesz mógł używać rozszerzenia.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Nigdy</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Opcje domyślne są pobierane z narzędzia generatora haseł głównej aplikacji Bitwarden.</value>
+    <value>Opcje domyślne są pobierane z narzędzia generatora haseł głównej aplikacji Cozy Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opcje</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Kiedy widzisz powiadomienie automatycznego wypełniania Bitwarden, możesz je dotknąć, aby uruchomić tę usługę.</value>
+    <value>Kiedy widzisz powiadomienie automatycznego wypełniania Cozy Pass, możesz je dotknąć, aby uruchomić tę usługę.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Dotknij to powiadomienie, aby automatycznie wypełnić danymi z sejfu.</value>
@@ -738,7 +738,7 @@
     <value>Otwórz ustawienia ułatwień dostępu</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Na ekranie ustawień ułatwień dostępu Android dotknij "Bitwarden" na liście usług.</value>
+    <value>1. Na ekranie ustawień ułatwień dostępu Android dotknij "Cozy Pass" na liście usług.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Przestaw przełącznik i naciśnij OK, aby zaakceptować.</value>
@@ -753,7 +753,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest Rozszerzenie Aplikacji Bitwarden. Więcej informacji o używaniu Rozszerzenia Aplikacji Bitwarden znajdziesz w widoku "Ustawienia".</value>
+    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest Rozszerzenie Aplikacji Bitwarden. Więcej informacji o używaniu Rozszerzenia Aplikacji Cozy Pass znajdziesz w widoku "Ustawienia".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Automatyczne wypełnianie</value>
@@ -970,7 +970,7 @@
     <value>Samodzielnie hostowane środowisko</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Podaj podstawowy adres URL hostowanej przez Ciebie instalacji Bitwarden.</value>
+    <value>Podaj podstawowy adres URL hostowanej przez Ciebie instalacji Cozy Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL serwera</value>
@@ -1153,10 +1153,10 @@
     <value>Autouzupełnienie – ułatwienia dostępu</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Usługa Autouzupełniania Bitwarden wykorzystuje Androidowy Framework by pomóc wypełniać dane logowania, kart kredytowych i osobistych informacji w aplikacjach na twoim urządzeniu.</value>
+    <value>Usługa Autouzupełniania Cozy Pass wykorzystuje Androidowy Framework by pomóc wypełniać dane logowania, kart kredytowych i osobistych informacji w aplikacjach na twoim urządzeniu.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Użyj usługi autouzupełniania Bitwarden żeby wypełnić pola logowania, dane kart kredytowych i informacje osobiste w innych aplikacjach.</value>
+    <value>Użyj usługi autouzupełniania Cozy Pass żeby wypełnić pola logowania, dane kart kredytowych i informacje osobiste w innych aplikacjach.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Otwórz ustawienia autouzupełniania</value>
@@ -1269,7 +1269,7 @@
     <value>Autouzupełnianie aktywowane!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Musisz zalogować się do aplikacji głównej Bitwarden, zanim będziesz mógł używać autouzupełniania.</value>
+    <value>Musisz zalogować się do aplikacji głównej Cozy Pass, zanim będziesz mógł używać autouzupełniania.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Twoje dane logowania są teraz łatwo dostępne bezpośrednio z klawiatury podczas logowania się do aplikacji i witryn internetowych.</value>
@@ -1296,13 +1296,13 @@
     <value>4. Włącz Autouzupełnianie</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Wybierz "Bitwarden"</value>
+    <value>5. Wybierz "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Autouzupełnianie haseł</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest rozszerzenie Autouzupełniania Haseł Bitwarden. Więcej informacji o używaniu rozszerzenia Autouzupełniania Haseł Bitwarden znajdziesz w widoku "Ustawienia".</value>
+    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest rozszerzenie Autouzupełniania Haseł Bitwarden. Więcej informacji o używaniu rozszerzenia Autouzupełniania Haseł Cozy Pass znajdziesz w widoku "Ustawienia".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Niepoprawny adres e-mail.</value>
@@ -1529,7 +1529,7 @@
     <value>Wyjdź</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Czy na pewno chcesz zamknąć Bitwarden?</value>
+    <value>Czy na pewno chcesz zamknąć Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>Po restarcie aplikacji</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Autouzupełnianie ułatwia bezpieczny dostęp do Twojego sejfu Bitwarden z innych stron i aplikacji. Wygląda na to, że nie włączyłeś usługi autouzupełniania dla Bitwarden. Włącz ją na ekranie "Ustawienia".</value>
+    <value>Autouzupełnianie ułatwia bezpieczny dostęp do Twojego sejfu Bitwarden z innych stron i aplikacji. Wygląda na to, że nie włączyłeś usługi autouzupełniania dla Cozy Pass. Włącz ją na ekranie "Ustawienia".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Zmiana motywu zostanie zastosowana po restarcie aplikacji.</value>

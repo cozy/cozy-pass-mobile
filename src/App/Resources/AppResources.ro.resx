@@ -378,7 +378,7 @@
     <value>Vizitați-ne site-ul web</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Vizitaţi site-ul nostru pentru a primi ajutor, ştiri, pentru a trimite e-mail, şi/sau aflaţi mai multe despre cum să utilizaţi Bitwarden.</value>
+    <value>Vizitaţi site-ul nostru pentru a primi ajutor, ştiri, pentru a trimite e-mail, şi/sau aflaţi mai multe despre cum să utilizaţi Cozy Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Site web</value>
@@ -400,7 +400,7 @@
     <value>Extensie aplicaţie</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Utilizați serviciul de accesibilitate Bitwarden pentru a completa automat datele de autentificare între aplicații și pagini web.</value>
+    <value>Utilizați serviciul de accesibilitate Cozy Pass pentru a completa automat datele de autentificare între aplicații și pagini web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Serviciul completare automată</value>
@@ -412,16 +412,16 @@
     <value>Extensia aplicaţiei Bitwarden</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicaţiei Bitwarden. Aflați mai multe despre utilizarea extensiei aplicaţiei Bitwarden accesând ecranul "Setări".</value>
+    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicaţiei Bitwarden. Aflați mai multe despre utilizarea extensiei aplicaţiei Cozy Pass accesând ecranul "Setări".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Utilizați Bitwarden în Safari și în alte aplicații pentru a completa automat datele de autentificare.</value>
+    <value>Utilizați Cozy Pass în Safari și în alte aplicații pentru a completa automat datele de autentificare.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Serviciul de completare automată Bitwarden</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Utilizați serviciul Bitwarden pentru a completa automat datele de autentificare.</value>
+    <value>Utilizați serviciul Cozy Pass pentru a completa automat datele de autentificare.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Schimbați adresa de e-mail</value>
@@ -467,7 +467,7 @@
     <value>Activați extensia aplicației</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>În Safari, găsiţi Bitwarden utilizând pictograma de partajare (indiciu: derulaţi la dreapta pe rândul de jos al meniului).</value>
+    <value>În Safari, găsiţi Cozy Pass utilizând pictograma de partajare (indiciu: derulaţi la dreapta pe rândul de jos al meniului).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -480,13 +480,13 @@
     <value>Datele dvs. de conectare sunt acum uşor accesibile din Safari, Chrome şi alte aplicaţii suportate.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>În Safari şi Chrome, găsiţi Bitwarden utilizând pictograma de partajare (indiciu: derulaţi la dreapta pe rândul de jos al meniului partajare).</value>
+    <value>În Safari şi Chrome, găsiţi Cozy Pass utilizând pictograma de partajare (indiciu: derulaţi la dreapta pe rândul de jos al meniului partajare).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Atingeţi pictograma Bitwarden din meniu pentru a lansa extensia.</value>
+    <value>Atingeţi pictograma Cozy Pass din meniu pentru a lansa extensia.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Pentru a activa Bitwarden în Safari şi alte aplicaţii, atingeţi pictograma "mai multe" pe rândul de jos al meniului.</value>
+    <value>Pentru a activa Cozy Pass în Safari şi alte aplicaţii, atingeţi pictograma "mai multe" pe rândul de jos al meniului.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favorit</value>
@@ -573,7 +573,7 @@
     <value>Mai multe setări</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Tu trebuie să vă autentificaţi în aplicaţia principală Bitwarden înainte de a utiliza extensia.</value>
+    <value>Tu trebuie să vă autentificaţi în aplicaţia principală Cozy Pass înainte de a utiliza extensia.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Niciodată</value>
@@ -598,7 +598,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Opțiunile implicite sunt setate de instrumentul principal al generatorului de parole al aplicației Bitwarden.</value>
+    <value>Opțiunile implicite sunt setate de instrumentul principal al generatorului de parole al aplicației Cozy Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opțiuni</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Atunci când vedeți o notificare de completare automată Bitwarden, puteți s-o atingeți pentru a lansa serviciul de completare automată.</value>
+    <value>Atunci când vedeți o notificare de completare automată Cozy Pass, puteți s-o atingeți pentru a lansa serviciul de completare automată.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Atingeți această notificare pentru a completa automat o autentificare din seiful dvs.</value>
@@ -738,7 +738,7 @@
     <value>Deschidere setări de accesibilitate</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. În ecranul Accesibilitate din setările Android, atingeți "Bitwarden" sub titlul Servicii.</value>
+    <value>1. În ecranul Accesibilitate din setările Android, atingeți "Cozy Pass" sub titlul Servicii.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Activați comutatorul și apăsați OK pentru a accepta.</value>
@@ -753,7 +753,7 @@
     <value>Stare</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din Serviciul de completare automată Bitwarden. Aflați mai multe despre utilizarea Serviciului de completare automată Bitwarden accesând ecranul "Setări".</value>
+    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din Serviciul de completare automată Bitwarden. Aflați mai multe despre utilizarea Serviciului de completare automată Cozy Pass accesând ecranul "Setări".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Completare automată</value>
@@ -970,7 +970,7 @@
     <value>Mediu găzduit în mod automat</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Specificați adresa URL de bază a instalării Bitwarden.</value>
+    <value>Specificați adresa URL de bază a instalării Cozy Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL-ul serverului</value>
@@ -1153,10 +1153,10 @@
     <value>Serviciul de accesibilitate pentru completare automată</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Serviciul de completare automată Bitwarden folosește Android Autofill Framework pentru a asista completarea informațiilor de autentificare și a celor asociate cardurilor și identităților în alte aplicații de pe dispozitivul dvs.</value>
+    <value>Serviciul de completare automată Cozy Pass folosește Android Autofill Framework pentru a asista completarea informațiilor de autentificare și a celor asociate cardurilor și identităților în alte aplicații de pe dispozitivul dvs.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Serviciul de completare automată Bitwarden se folosește pentru a completa informațiile de autentificare și cele asociate cardurilor și identităților în alte aplicații.</value>
+    <value>Serviciul de completare automată Cozy Pass se folosește pentru a completa informațiile de autentificare și cele asociate cardurilor și identităților în alte aplicații.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Setări de completare automată</value>
@@ -1269,7 +1269,7 @@
     <value>Auto Completare Activată!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Trebuie să te loghezi în aplicația Bitwarden înainte să folosești Auto Completarea.</value>
+    <value>Trebuie să te loghezi în aplicația Cozy Pass înainte să folosești Auto Completarea.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Your logins are now easily accessable right from your keyboard while logging into apps and websites.</value>
@@ -1296,13 +1296,13 @@
     <value>Activați Auto Completare</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Selectează "Bitwarden"</value>
+    <value>5. Selectează "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Auto Completare Parolă</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicaţiei Bitwarden. Aflați mai multe despre utilizarea extensiei aplicaţiei Bitwarden accesând ecranul "Setări".</value>
+    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicaţiei Bitwarden. Aflați mai multe despre utilizarea extensiei aplicaţiei Cozy Pass accesând ecranul "Setări".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Adresă de email greșită.</value>
@@ -1455,7 +1455,7 @@
     <value>5 minute</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Setaţi codul PIN de deblocare Bitwarden. Setările codului PIN vor fi resetate dacă vă deconectaţi vreodată din aplicație.</value>
+    <value>Setaţi codul PIN de deblocare Cozy Pass. Setările codului PIN vor fi resetate dacă vă deconectaţi vreodată din aplicație.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Autentificat ca {0} în {1}.</value>
@@ -1554,7 +1554,7 @@
     <value>La repornirea aplicației</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Completarea automată simplifică accesarea securizată a seifului Bitwarden de pe alte site-uri web și aplicații. Se pare că nu ați activat un serviciu de completare automată pentru Bitwarden. Activați completarea automată pentru Bitwarden din ecranul „Setări”.</value>
+    <value>Completarea automată simplifică accesarea securizată a seifului Bitwarden de pe alte site-uri web și aplicații. Se pare că nu ați activat un serviciu de completare automată pentru Bitwarden. Activați completarea automată pentru Cozy Pass din ecranul „Setări”.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Modificările temei se vor aplica după repornirea aplicației.</value>
