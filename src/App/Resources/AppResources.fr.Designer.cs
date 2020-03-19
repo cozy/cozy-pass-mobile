@@ -125,6 +125,12 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string CozyURLPlaceholder {
+            get {
+                return ResourceManager.GetString("CozyURLPlaceholder", resourceCulture);
+            }
+        }
+        
         internal static string CozyPassword {
             get {
                 return ResourceManager.GetString("CozyPassword", resourceCulture);

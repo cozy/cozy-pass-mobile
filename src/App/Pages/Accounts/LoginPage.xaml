@@ -34,6 +34,7 @@
                     <Entry
                         x:Name="_email"
                         Text="{Binding Email}"
+                        Placeholder="{u:I18n CozyURLPlaceholder}"
                         Keyboard="Url"
                         StyleClass="box-value" />
                 </StackLayout>
