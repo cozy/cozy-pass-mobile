@@ -1,13 +1,11 @@
 ﻿using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
-using Bit.Core.Models.Domain;
-using Bit.Core.Models.Request;
 using Bit.Core.Models.Response;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
+using Bit.Core.Models.Data;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -24,15 +22,18 @@ namespace Bit.Core.Services
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly ITokenService _tokenService;
         private readonly IApiService _apiService;
+        private readonly IEnvironmentService _environmentService;
 
         private string ApiBaseUrl { get; set; }
 
         public CozyClientService(
             ITokenService tokenService,
-            IApiService apiService)
+            IApiService apiService,
+            IEnvironmentService environmentService)
         {
             _tokenService = tokenService;
             _apiService = apiService;
+            _environmentService = environmentService;
         }
 
         private async Task<string> GetTokenAsync() {
@@ -165,6 +166,18 @@ namespace Bit.Core.Services
         private bool IsJsonResponse(HttpResponseMessage response)
         {
             return (response.Content?.Headers?.ContentType?.MediaType ?? string.Empty) == "application/json";
+        }
+
+        public string GetEmailFromCozyURL(string cozyURL)
+        {
+            return string.Concat("me@", cozyURL);
+        }
+
+        public async Task ConfigureEnvironmentFromCozyURLAsync(string cozyURL)
+        {
+            var environmentData = new EnvironmentUrlData();
+            environmentData.Base = string.Concat("https://", cozyURL, "/bitwarden");
+            await _environmentService.SetUrlsAsync(environmentData);
         }
     }
 }

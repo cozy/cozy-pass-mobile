@@ -56,12 +56,12 @@ namespace Bit.Core.Utilities
             var passwordGenerationService = new PasswordGenerationService(cryptoService, storageService,
                 cryptoFunctionService);
             var totpService = new TotpService(storageService, cryptoFunctionService);
-            var cozyClientService = new CozyClientService(tokenService, apiService);
+            var environmentService = new EnvironmentService(apiService, storageService);
+            var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
             var authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
                 i18nService, platformUtilsService, messagingService, lockService);
             var exportService = new ExportService(folderService, cipherService);
             var auditService = new AuditService(cryptoFunctionService, apiService);
-            var environmentService = new EnvironmentService(apiService, storageService);
             var eventService = new EventService(storageService, apiService, userService, cipherService);
 
             Register<IStateService>("stateService", stateService);
