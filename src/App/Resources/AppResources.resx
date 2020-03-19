@@ -172,7 +172,7 @@
     <comment>Placeholder for Cozy URL input</comment>
   </data>
   <data name="CozyPassword" xml:space="preserve">
-    <value>Cozy password</value>
+    <value>Your Cozy password</value>
     <comment>Label for Cozy password</comment>
   </data>
   <data name="Credits" xml:space="preserve">
@@ -473,6 +473,9 @@
   <data name="EnterEmailForHint" xml:space="preserve">
     <value>Enter your account email address to receive your master password hint.</value>
   </data>
+  <data name="EnterCozyURLForHint" xml:space="preserve">
+    <value>Enter your Cozy URL to receive your password hint.</value>
+  </data>
   <data name="ExntesionReenable" xml:space="preserve">
     <value>Re-enable App Extension</value>
   </data>
@@ -514,7 +517,7 @@
     <value>Generate Password</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Get your master password hint</value>
+    <value>Get your password hint</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Import Items</value>

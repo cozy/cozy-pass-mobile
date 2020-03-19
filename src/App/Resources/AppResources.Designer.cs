@@ -659,6 +659,12 @@ namespace Bit.App.Resources {
             }
         }
         
+        public static string EnterCozyURLForHint {
+            get {
+                return ResourceManager.GetString("EnterCozyURLForHint", resourceCulture);
+            }
+        }
+        
         public static string ExntesionReenable {
             get {
                 return ResourceManager.GetString("ExntesionReenable", resourceCulture);

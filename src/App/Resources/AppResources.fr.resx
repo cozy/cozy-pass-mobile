@@ -473,6 +473,9 @@
   <data name="EnterEmailForHint" xml:space="preserve">
     <value>Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître.</value>
   </data>
+  <data name="EnterEmailForHint" xml:space="preserve">
+    <value>Saisissez l'URL de votre Cozy pour recevoir l'indice de votre mot de passe.</value>
+  </data>
   <data name="ExntesionReenable" xml:space="preserve">
     <value>Activez à nouveau l'extension de l'application</value>
   </data>
@@ -514,7 +517,7 @@
     <value>Générer un mot de passe</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Obtenir votre indice de mot de passe maître</value>
+    <value>Obtenir votre indice de mot de passe</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Importer des éléments</value>
