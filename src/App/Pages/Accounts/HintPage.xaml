@@ -21,18 +21,19 @@
         <StackLayout StyleClass="box">
             <StackLayout StyleClass="box-row">
                 <Label
-                    Text="{u:I18n EmailAddress}"
+                    Text="{u:I18n CozyURL}"
                     StyleClass="box-label" />
                 <Entry
                     x:Name="_email"
                     Text="{Binding Email}"
                     Keyboard="Email"
                     StyleClass="box-value"
+                    Placeholder="{u:I18n CozyURLPlaceholder}"
                     ReturnType="Go"
                     ReturnCommand="{Binding SubmitCommand}" />
             </StackLayout>
             <Label
-                Text="{u:I18n EnterEmailForHint}"
+                Text="{u:I18n EnterCozyURLForHint}"
                 StyleClass="box-footer-label" />
         </StackLayout>
     </ScrollView>

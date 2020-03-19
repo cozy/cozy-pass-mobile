@@ -159,6 +159,18 @@
     <value>Copy username</value>
     <comment>The button text that allows a user to copy the login's username to their clipboard.</comment>
   </data>
+  <data name="CozyPass" xml:space="preserve">
+    <value>Cozy Pass</value>
+    <comment>Name of the app</comment>
+  </data>
+  <data name="CozyURL" xml:space="preserve">
+    <value>URL of your Cozy (cozyname.mycozy.cloud)</value>
+    <comment>Label for Cozy URL input</comment>
+  </data>
+  <data name="CozyPassword" xml:space="preserve">
+    <value>Cozy password</value>
+    <comment>Label for Cozy password</comment>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>

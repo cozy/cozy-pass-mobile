@@ -20,6 +20,7 @@ namespace Bit.App.Pages
         private readonly IStorageService _storageService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly IStateService _stateService;
+        private readonly ICozyClientService _cozyClientService;
 
         private bool _showPassword;
         private string _email;
@@ -33,8 +34,9 @@ namespace Bit.App.Pages
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
-            PageTitle = AppResources.Bitwarden;
+            PageTitle = AppResources.CozyPass;
             TogglePasswordCommand = new Command(TogglePassword);
             LogInCommand = new Command(async () => await LogInAsync());
         }
@@ -91,12 +93,17 @@ namespace Bit.App.Pages
                     AppResources.Ok);
                 return;
             }
-            if(!Email.Contains("@"))
+
+            #region cozy
+            // Deactivate test on Email since Email has been used for the CozyURL
+            if (false && !Email.Contains("@"))
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred, AppResources.InvalidEmail, AppResources.Ok);
                 return;
             }
-            if(string.IsNullOrWhiteSpace(MasterPassword))
+            #endregion
+
+            if (string.IsNullOrWhiteSpace(MasterPassword))
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred,
                     string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword),
@@ -108,7 +115,16 @@ namespace Bit.App.Pages
             try
             {
                 await _deviceActionService.ShowLoadingAsync(AppResources.LoggingIn);
-                var response = await _authService.LogInAsync(Email, MasterPassword);
+
+                #region cozy
+                // Email field is used as CozyURL, it is not renamed not to change the original code
+                // too much.
+                var cozyURL = Email;
+                await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
+                var email = _cozyClientService.GetEmailFromCozyURL(cozyURL);
+                var response = await _authService.LogInAsync(email, MasterPassword);
+                #endregion
+
                 MasterPassword = string.Empty;
                 if(RememberEmail)
                 {

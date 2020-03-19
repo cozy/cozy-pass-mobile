@@ -159,6 +159,22 @@
     <value>Copy Username</value>
     <comment>The button text that allows a user to copy the login's username to their clipboard.</comment>
   </data>
+  <data name="CozyPass" xml:space="preserve">
+    <value>Cozy Pass</value>
+    <comment>Name of the app</comment>
+  </data>
+  <data name="CozyURL" xml:space="preserve">
+    <value>Your Cozy URL</value>
+    <comment>Label for Cozy URL input</comment>
+  </data>
+  <data name="CozyURLPlaceholder" xml:space="preserve">
+    <value>claudedouillet.mycozy.cloud</value>
+    <comment>Placeholder for Cozy URL input</comment>
+  </data>
+  <data name="CozyPassword" xml:space="preserve">
+    <value>Your Cozy password</value>
+    <comment>Label for Cozy password</comment>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>
@@ -457,6 +473,9 @@
   <data name="EnterEmailForHint" xml:space="preserve">
     <value>Enter your account email address to receive your master password hint.</value>
   </data>
+  <data name="EnterCozyURLForHint" xml:space="preserve">
+    <value>Enter your Cozy URL to receive your password hint.</value>
+  </data>
   <data name="ExntesionReenable" xml:space="preserve">
     <value>Re-enable App Extension</value>
   </data>
@@ -498,7 +517,7 @@
     <value>Generate Password</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Get your master password hint</value>
+    <value>Get your password hint</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Import Items</value>
