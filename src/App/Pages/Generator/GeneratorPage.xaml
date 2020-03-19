@@ -15,6 +15,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <u:InverseBoolConverter x:Key="inverseBool" />
+            <u:ToggleArrowConverter x:Key="toggleArrow" />
             <ToolbarItem Text="{u:I18n Close}" Clicked="Close_Clicked" Order="Primary" Priority="-1"
                          x:Name="_closeItem" x:Key="closeItem" />
             <ToolbarItem Text="{u:I18n Select}"
@@ -54,10 +55,32 @@
                         Clicked="Copy_Clicked"></Button>
             </StackLayout>
             <StackLayout StyleClass="box">
-                <StackLayout StyleClass="box-row-header">
-                    <Label Text="{u:I18n Options, Header=True}"
-                           StyleClass="box-header, box-header-platform" />
-                </StackLayout>
+                <Grid StyleClass="box-row" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="24" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <controls:FaLabel
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="{ Binding OptionsToggled, Converter={StaticResource toggleArrow }}"
+                        StyleClass="box-label" />
+                    <Button Text="{u:I18n Options}"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Clicked="ToggleOptions_Clicked"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        StyleClass="box-header, box-header-platform" />
+                </Grid>
+            </StackLayout>
+            <StackLayout IsVisible="{ Binding OptionsToggled }">
                 <StackLayout StyleClass="box-row, box-row-input">
                     <Label
                         Text="{u:I18n Type}"

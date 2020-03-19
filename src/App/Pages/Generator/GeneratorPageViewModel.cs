@@ -3,6 +3,7 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -26,6 +27,7 @@ namespace Bit.App.Pages
         private int _minSpecial;
         private int _length = 5;
         private int _numWords = 3;
+        private bool _optionsToggled = false;
         private string _wordSeparator;
         private bool _capitalize;
         private bool _includeNumber;
@@ -283,6 +285,20 @@ namespace Bit.App.Pages
             await _platformUtilsService.CopyToClipboardAsync(Password);
             _platformUtilsService.ShowToast("success", null,
                 string.Format(AppResources.ValueHasBeenCopied, AppResources.Password));
+        }
+
+        public bool OptionsToggled
+        {
+            get => _optionsToggled;
+            set
+            {
+                SetProperty(ref _optionsToggled, value);
+            }
+        }
+
+        public async Task ToggleOptionsAsync()
+        {
+            OptionsToggled = !OptionsToggled;
         }
 
         private void LoadFromOptions()

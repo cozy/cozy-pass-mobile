@@ -120,5 +120,10 @@ namespace Bit.App.Pages
                 await Navigation.PopModalAsync();
             }
         }
+
+        private async void ToggleOptions_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await _vm.ToggleOptionsAsync();
+        }
     }
 }
