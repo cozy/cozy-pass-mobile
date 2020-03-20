@@ -145,6 +145,9 @@
     <Compile Update="Styles\Android.xaml.cs">
       <DependentUpon>Android.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Styles\Cozy.xaml.cs">
+      <DependentUpon>Cozy.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

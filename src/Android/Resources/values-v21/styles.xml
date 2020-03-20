@@ -8,4 +8,6 @@
   </style>
   <style name="NordTheme" parent="NordTheme.Base">
   </style>
+  <style name="CozyTheme" parent="CozyTheme.Base">
+  </style>
 </resources>

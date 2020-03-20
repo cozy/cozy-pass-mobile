@@ -7,7 +7,7 @@ using System;
 
 namespace Bit.Droid.Accessibility
 {
-    [Activity(Theme = "@style/LightTheme.Splash", WindowSoftInputMode = SoftInput.StateHidden)]
+    [Activity(Theme = "@style/CozyTheme.Splash", WindowSoftInputMode = SoftInput.StateHidden)]
     public class AccessibilityActivity : Activity
     {
         private DateTime? _lastLaunch = null;

@@ -109,6 +109,20 @@ namespace Bit.iOS.Core.Utilities
                 NavBarBackgroundColor = Xamarin.Forms.Color.FromHex("#2e3440").ToUIColor();
                 NavBarTextColor = Xamarin.Forms.Color.FromHex("#e5e9f0").ToUIColor();
             }
+            else if (theme == "cozy")
+            {
+                MutedColor = Xamarin.Forms.Color.FromHex("#95999D").ToUIColor();
+                SuccessColor = Xamarin.Forms.Color.FromHex("#35CE68").ToUIColor();
+                BackgroundColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+                SplashBackgroundColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+                PrimaryColor = Xamarin.Forms.Color.FromHex("#297EF2").ToUIColor();
+                TextColor = Xamarin.Forms.Color.FromHex("#000000").ToUIColor();
+                PlaceholderColor = Xamarin.Forms.Color.FromHex("#95999D").ToUIColor();
+                SeparatorColor = Xamarin.Forms.Color.FromHex("#D6D8Da").ToUIColor();
+                ListHeaderBackgroundColor = Xamarin.Forms.Color.FromHex("#297EF2").ToUIColor();
+                NavBarBackgroundColor = Xamarin.Forms.Color.FromHex("#297EF2").ToUIColor();
+                NavBarTextColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+            }
             else
             {
                 LightTheme = true;

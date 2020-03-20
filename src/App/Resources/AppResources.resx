@@ -267,7 +267,7 @@
     <comment>Title for the alert when internet connection is required to continue.</comment>
   </data>
   <data name="InvalidMasterPassword" xml:space="preserve">
-    <value>Invalid Master Password. Try again.</value>
+    <value>Invalid password. Try again.</value>
   </data>
   <data name="InvalidPIN" xml:space="preserve">
     <value>Invalid PIN. Try again.</value>

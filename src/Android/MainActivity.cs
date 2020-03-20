@@ -22,9 +22,9 @@ using Android.Support.V4.Content;
 namespace Bit.Droid
 {
     [Activity(
-        Label = "Bitwarden",
+        Label = "Cozy Pass",
         Icon = "@mipmap/ic_launcher",
-        Theme = "@style/LightTheme.Splash",
+        Theme = "@style/CozyTheme.Splash",
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     [Register("io.cozy.pass.MainActivity")]
