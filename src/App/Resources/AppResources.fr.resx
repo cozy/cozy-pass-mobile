@@ -379,7 +379,7 @@
     <value>S'authentifier avec l'empreinte</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>S'authentifier avec le mot de passe maître</value>
+    <value>S'authentifier avec le mot de passe</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>S'authentifier avec un code PIN</value>
@@ -446,10 +446,10 @@
     <value>Vous pouvez changer votre adresse e-mail depuis le coffre web sur bitwarden.com. Voulez-vous visiter le site web maintenant ?</value>
   </data>
   <data name="ChangeMasterPassword" xml:space="preserve">
-    <value>Changer le mot de passe maître</value>
+    <value>Changer le mot de passe</value>
   </data>
   <data name="ChangePasswordConfirmation" xml:space="preserve">
-    <value>Vous pouvez changer votre mot de passe maître depuis le coffre web sur bitwarden.com. Voulez-vous visiter le site web maintenant ?</value>
+    <value>Vous pouvez changer votre mot de passe depuis le coffre web sur bitwarden.com. Voulez-vous visiter le site web maintenant ?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
@@ -471,7 +471,7 @@
     <value>Activer la synchronisation automatique</value>
   </data>
   <data name="EnterEmailForHint" xml:space="preserve">
-    <value>Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître.</value>
+    <value>Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe.</value>
   </data>
   <data name="EnterEmailForHint" xml:space="preserve">
     <value>Saisissez l'URL de votre Cozy pour recevoir l'indice de votre mot de passe.</value>
@@ -569,16 +569,16 @@
     <value>La confirmation du mot de passe est erronée.</value>
   </data>
   <data name="MasterPasswordDescription" xml:space="preserve">
-    <value>Le mot de passe maître correspond au mot de passe utilisé pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le retrouver en cas d'oubli.</value>
+    <value>Le mot de passe correspond au mot de passe utilisé pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le retrouver en cas d'oubli.</value>
   </data>
   <data name="MasterPasswordHint" xml:space="preserve">
-    <value>Indice de mot de passe maître (facultatif)</value>
+    <value>Indice de mot de passe (facultatif)</value>
   </data>
   <data name="MasterPasswordHintDescription" xml:space="preserve">
-    <value>Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli.</value>
+    <value>Un indice de mot de passe peut vous aider à vous rappeler de votre mot de passe en cas d'oubli.</value>
   </data>
   <data name="MasterPasswordLengthValMessage" xml:space="preserve">
-    <value>Le mot de passe maître doit faire plus de 8 caractères.</value>
+    <value>Le mot de passe doit faire plus de 8 caractères.</value>
   </data>
   <data name="MinNumbers" xml:space="preserve">
     <value>Nombre minimum de chiffres</value>
@@ -654,7 +654,7 @@
     <value>Regénérer un mot de passe</value>
   </data>
   <data name="RetypeMasterPassword" xml:space="preserve">
-    <value>Saisir à nouveau le mot de passe maître</value>
+    <value>Saisir à nouveau le mot de passe</value>
   </data>
   <data name="SearchVault" xml:space="preserve">
     <value>Recherche dans le coffre</value>
@@ -1481,7 +1481,7 @@
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer.</value>
+    <value>Votre coffre est verrouillé. Vérifiez votre mot de passe pour continuer.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Votre coffre est verrouillé. Vérifiez votre code PIN pour continuer.</value>
@@ -1551,7 +1551,7 @@
     <value>Êtes-vous sûr de vouloir quitter Bitwarden ?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>Voulez-vous avoir à déverrouiller avec votre mot de passe maître lorsque l'application est redémarrée ?</value>
+    <value>Voulez-vous avoir à déverrouiller avec votre mot de passe lorsque l'application est redémarrée ?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Noir</value>
