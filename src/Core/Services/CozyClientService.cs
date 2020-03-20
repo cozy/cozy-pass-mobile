@@ -123,7 +123,7 @@ namespace Bit.Core.Services
             {
                 var resp = await FetchJSONAsync<object, LogoutResponse>(
                      HttpMethod.Delete,
-                     string.Concat("auth/register/", clientId),
+                     $"auth/register/{clientId}",
                      null,
                      false,
                      registrationAccessToken
