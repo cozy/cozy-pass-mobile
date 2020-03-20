@@ -116,5 +116,17 @@
 	<string>Use Face ID to unlock your vault.</string>
 	<key>NFCReaderUsageDescription</key>
 	<string>Use Yubikeys for two-factor authentication.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>cozy.tools</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+
 </dict>
 </plist>
