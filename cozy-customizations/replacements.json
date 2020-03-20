@@ -80,7 +80,7 @@
 
   {
     "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher.png"],
-    "src": "./Resources/android/ic_launcher-72.png"
+    "src": "./Resources/android/icon-pass-72.png"
   },
   {
     "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher_foreground.png"],
@@ -92,7 +92,7 @@
   },
   {
     "dests": ["../src/Android/Resources/mipmap-mdpi/ic_launcher.png"],
-    "src": "./Resources/android/ic_launcher-48.png"
+    "src": "./Resources/android/icon-pass-48.png"
   },
   {
     "dests": ["../src/Android/Resources/mipmap-mdpi/ic_launcher_foreground.png"],
@@ -104,7 +104,7 @@
   },
   {
     "dests": ["../src/Android/Resources/mipmap-xhdpi/ic_launcher.png"],
-    "src": "./Resources/android/ic_launcher-96.png"
+    "src": "./Resources/android/icon-pass-96.png"
   },
   {
     "dests": ["../src/Android/Resources/mipmap-xhdpi/ic_launcher_foreground.png"],
@@ -116,7 +116,7 @@
   },
   {
     "dests": ["../src/Android/Resources/mipmap-xxhdpi/ic_launcher.png"],
-    "src": "./Resources/android/ic_launcher-144.png"
+    "src": "./Resources/android/icon-pass-144.png"
   },
   {
     "dests": ["../src/Android/Resources/mipmap-xxhdpi/ic_launcher_foreground.png"],
@@ -128,7 +128,7 @@
   },
   {
     "dests": ["../src/Android/Resources/mipmap-xxxhdpi/ic_launcher.png"],
-    "src": "./Resources/android/ic_launcher-192.png"
+    "src": "./Resources/android/icon-pass-192.png"
   },
   {
     "dests": ["../src/Android/Resources/mipmap-xxxhdpi/ic_launcher_foreground.png"],
