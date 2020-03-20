@@ -22,7 +22,7 @@ using Android.Support.V4.Content;
 namespace Bit.Droid
 {
     [Activity(
-        Label = "Bitwarden",
+        Label = "Cozy Pass",
         Icon = "@mipmap/ic_launcher",
         Theme = "@style/LightTheme.Splash",
         MainLauncher = true,
