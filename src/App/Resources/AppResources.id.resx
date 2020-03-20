@@ -409,7 +409,7 @@
     <value>Hindari Karakter Ambigu</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Ekstensi Aplikasi Bitwarden</value>
+    <value>Ekstensi Aplikasi Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>The easiest way to add new logins to your vault is from the Bitwarden App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
@@ -418,7 +418,7 @@
     <value>Gunakan Cozy Pass di Safari dan aplikasi lainnya untuk mengisi otomatis info masuk Anda.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Layanan Pengisian Otomatis Bitwarden</value>
+    <value>Layanan Pengisian Otomatis Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Gunakan layanan aksesibilitas Cozy Pass untuk mengisi otomatis info masuk Anda.</value>
@@ -622,7 +622,7 @@
     <value>Anda yakin ingin menimpa sandi saat ini?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden membuat brankas Anda disinkronkan secara otomatis dengan menggunakan notifikasi. Untuk pengalaman yang sebaik mungkin, silakan pilih "Oke" pada saran berikut ketika diminta untuk mengaktifkan notifikasi.</value>
+    <value>Cozy Pass membuat brankas Anda disinkronkan secara otomatis dengan menggunakan notifikasi. Untuk pengalaman yang sebaik mungkin, silakan pilih "Oke" pada saran berikut ketika diminta untuk mengaktifkan notifikasi.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Lihat Item</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Brankas Web Bitwarden</value>
+    <value>Brankas Web Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Kehilangan aplikasi autentikasi?</value>
@@ -1132,7 +1132,7 @@
     <value>URL Server Ikon</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Isi otomatis dengan Bitwarden</value>
+    <value>Isi otomatis dengan Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Brankas terkunci</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Cozy Pass allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export Vault</value>
@@ -1462,7 +1462,7 @@
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your master password to continue.</value>
+    <value>Your vault is locked. Verify your password to continue.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Your vault is locked. Verify your PIN code to continue.</value>
@@ -1532,7 +1532,7 @@
     <value>Apakah anda yakin ingin keluar dari Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Hitam</value>

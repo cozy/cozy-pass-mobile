@@ -409,7 +409,7 @@
     <value>Evitar caracteres ambiguos</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extensión de Aplicación de Bitwarden</value>
+    <value>Extensión de Aplicación de Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>La forma mas fácil de añadir nuevas entradas a tu caja fuerte es utilizando la Extensión de Navegador de Cozy Pass. Aprende más sobre como utilizar este servicio yendo a la sección "Herramientas".</value>
@@ -418,7 +418,7 @@
     <value>Utiliza Cozy Pass en Safari y otras aplicaciones para autorellenar tus entradas.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Servicio de Autorellenado de Bitwarden</value>
+    <value>Servicio de Autorellenado de Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Utiliza el servicio de accesibilidad de Cozy Pass para autorellenar entradas.</value>
@@ -622,7 +622,7 @@
     <value>¿Estás seguro de que quieres sobreescribir la contraseña actual?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden mantiene tu caja fuerte automáticamente sincronizada utilizando notificaciones push. Para tener la mejor experiencia posible, por favor, pulsa "Permitir" en la próxima notificación donde se te pregunta si quieres habilitar las notificaciones push.</value>
+    <value>Cozy Pass mantiene tu caja fuerte automáticamente sincronizada utilizando notificaciones push. Para tener la mejor experiencia posible, por favor, pulsa "Permitir" en la próxima notificación donde se te pregunta si quieres habilitar las notificaciones push.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Ver elemento</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Caja fuerte web de Bitwarden</value>
+    <value>Caja fuerte web de Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>¿Has perdido la autenticación en dos pasos?</value>
@@ -1132,7 +1132,7 @@
     <value>URL del servidor de iconos</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Autorellenar con Bitwarden</value>
+    <value>Autorellenar con Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Caja fuerte bloqueada</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden te permite compartir tu caja fuerte con otras personas utilizando una cuenta de organización. ¿Quieres visitar la web bitwarden.com para conocer más?</value>
+    <value>Cozy Pass te permite compartir tu caja fuerte con otras personas utilizando una cuenta de organización. ¿Quieres visitar la web bitwarden.com para conocer más?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exportar caja fuerte</value>
@@ -1532,7 +1532,7 @@
     <value>¿Estás seguro de que deseas salir de Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Negro</value>

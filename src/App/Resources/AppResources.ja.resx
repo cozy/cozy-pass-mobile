@@ -400,7 +400,7 @@
     <value>App Extension</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Bitwarden ユーザー補助サービスを使ってアプリやウェブサイトでログイン情報を自動入力します。</value>
+    <value>Cozy Pass ユーザー補助サービスを使ってアプリやウェブサイトでログイン情報を自動入力します。</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>自動入力サービス</value>
@@ -409,7 +409,7 @@
     <value>あいまいな文字を省く</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden App Extension</value>
+    <value>Cozy Pass App Extension</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>ログイン情報を保管庫に追加する一番簡単な方法はApp Extensionを使うことです。詳しくは「設定」画面に進んでください。</value>
@@ -418,10 +418,10 @@
     <value>Safari などのアプリで Cozy Pass を使ってログイン情報を自動入力します。</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden 自動入力サービス</value>
+    <value>Cozy Pass 自動入力サービス</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Bitwarden ユーザー補助サービスを使ってログイン情報を自動入力します。</value>
+    <value>Cozy Pass ユーザー補助サービスを使ってログイン情報を自動入力します。</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>メールアドレスの変更</value>
@@ -486,7 +486,7 @@
     <value>メニューの Cozy Pass アイコンをタップして拡張機能を起動してください。</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Bitwarden を Safari などのアプリで開くには、メニューの一番下の行の「詳細」をタップしてください。</value>
+    <value>Cozy Pass を Safari などのアプリで開くには、メニューの一番下の行の「詳細」をタップしてください。</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>お気に入り</value>
@@ -504,7 +504,7 @@
     <value>アイテムのインポート</value>
   </data>
   <data name="ImportItemsConfirmation" xml:space="preserve">
-    <value>Bitwarden.com ウェブ保管庫から一括でインポートできます。ウェブサイトを開きますか？</value>
+    <value>Cozy Pass.com ウェブ保管庫から一括でインポートできます。ウェブサイトを開きますか？</value>
   </data>
   <data name="ImportItemsDescription" xml:space="preserve">
     <value>他のパスワード管理アプリからアイテムを一括インポートします。</value>
@@ -622,7 +622,7 @@
     <value>現在のパスワードを上書きしてよろしいですか?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden はプッシュ通知を使って自動的に保管庫を同期します。プッシュ通知を有効化するかどうかプロンプトが出たら「許可する」を押してください。</value>
+    <value>Cozy Pass はプッシュ通知を使って自動的に保管庫を同期します。プッシュ通知を有効化するかどうかプロンプトが出たら「許可する」を押してください。</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>アイテムの表示</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden ウェブ保管庫</value>
+    <value>Cozy Pass ウェブ保管庫</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>認証アプリを無くしてしまった場合</value>
@@ -729,7 +729,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Bitwarden 自動入力通知が表示されたら、タップして自動入力サービスを起動できます。</value>
+    <value>Cozy Pass 自動入力通知が表示されたら、タップして自動入力サービスを起動できます。</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>この通知をタップすると保管庫から自動入力します。</value>
@@ -1132,7 +1132,7 @@
     <value>アイコンのサーバー URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Bitwarden で自動入力</value>
+    <value>Cozy Pass で自動入力</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>保管庫はロックされています</value>
@@ -1153,10 +1153,10 @@
     <value>自動入力ユーザー補助サービス</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Bitwarden 自動入力サービスは Android の Autofill Framework を使ってログイン情報やクレジットカード、ID情報をお使いのアプリに入力するのを補助します。</value>
+    <value>Cozy Pass 自動入力サービスは Android の Autofill Framework を使ってログイン情報やクレジットカード、ID情報をお使いのアプリに入力するのを補助します。</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Bitwarden 自動入力サービスを使ってログイン情報やクレジットカード、ID情報などをアプリで自動入力します。</value>
+    <value>Cozy Pass 自動入力サービスを使ってログイン情報やクレジットカード、ID情報などをアプリで自動入力します。</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>自動入力設定を開く</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwardenでは、組織アカウントを使用して保管庫を他の人と共有できます。 詳細はbitwarden.comのウェブサイトをご覧ください。</value>
+    <value>Cozy Passでは、組織アカウントを使用して保管庫を他の人と共有できます。 詳細はbitwarden.comのウェブサイトをご覧ください。</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>保管庫のエクスポート</value>
@@ -1455,7 +1455,7 @@
     <value>5 分</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Bitwarden のロックを解除するための PIN コードを設定します。アプリから完全にログアウトすると、PIN 設定はリセットされます。</value>
+    <value>Cozy Pass のロックを解除するための PIN コードを設定します。アプリから完全にログアウトすると、PIN 設定はリセットされます。</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>{0} として {1} にログインしました。</value>
@@ -1529,7 +1529,7 @@
     <value>終了</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Bitwarden を終了しますか？</value>
+    <value>Cozy Pass を終了しますか？</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>アプリを再起動したときにマスターパスワードでのロック解除を必須としますか？</value>

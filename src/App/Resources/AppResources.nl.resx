@@ -409,7 +409,7 @@
     <value>Dubbelzinnige tekens vermijden</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden app-extensie</value>
+    <value>Cozy Pass app-extensie</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>De eenvoudigste manier om nieuwe logins toe te voegen aan je kluis is via de Bitwarden-app-extensie. Leer meer over het gebruik van de Cozy Pass-app-extensie via "Instellingen".</value>
@@ -418,7 +418,7 @@
     <value>Gebruik Cozy Pass in Safari en andere apps om je inloggegevens automatisch in te vullen.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden auto-invuldienst</value>
+    <value>Cozy Pass auto-invuldienst</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Gebruik de Cozy Pass-toegankelijkheidsdienst voor het automatisch invullen van je inloggegevens.</value>
@@ -622,7 +622,7 @@
     <value>Weet je zeker dat je het huidige wachtwoord wilt overschrijven?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden gebruikt pushberichten om je kluis automatisch te synchroniseren. Druk in het volgende dialoogvenster op "Toestaan" om pushberichten in te schakelen.</value>
+    <value>Cozy Pass gebruikt pushberichten om je kluis automatisch te synchroniseren. Druk in het volgende dialoogvenster op "Toestaan" om pushberichten in te schakelen.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Item weergeven</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden Webkluis</value>
+    <value>Cozy Pass Webkluis</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Authenticatie-app kwijt?</value>
@@ -1132,7 +1132,7 @@
     <value>Pictogrammenserver-URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Automatisch invullen met Bitwarden</value>
+    <value>Automatisch invullen met Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Kluis is vergrendeld</value>

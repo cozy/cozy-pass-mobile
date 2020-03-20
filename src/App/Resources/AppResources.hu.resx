@@ -409,7 +409,7 @@
     <value>Félreérthető karakterek mellőzése</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden alkalmazás bővítmény</value>
+    <value>Cozy Pass alkalmazás bővítmény</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden alkalmazás kiegészítőből. További információ olvasható a Cozy Pass alkalmazás kiegészítő használatáról a  "Beállítások" képernyőn.</value>
@@ -418,7 +418,7 @@
     <value>A Cozy Pass használata Safariban és más alkalmazásokban a bejelentkezések automatikus kitöltéséhez.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden automatikus kitöltő szolgáltatás</value>
+    <value>Cozy Pass automatikus kitöltő szolgáltatás</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>A Cozy Pass kisegítő szolgáltatás használata bejelentkezések automatikus kitöltéséhez.</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden lehetővé teszi egy szervezeti fiók használatával a fiók megosztását másokkal. Szeretnél többet megtudni a bitwarden.com weboldalon?</value>
+    <value>Cozy Pass lehetővé teszi egy szervezeti fiók használatával a fiók megosztását másokkal. Szeretnél többet megtudni a bitwarden.com weboldalon?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Széf exportálása</value>
@@ -1532,7 +1532,7 @@
     <value>Biztos vagy benne, hogy kilépsz?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Fekete</value>

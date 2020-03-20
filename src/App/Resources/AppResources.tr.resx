@@ -409,7 +409,7 @@
     <value>Belirsiz Karakterler Kullanma</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden Uygulama Uzantısı</value>
+    <value>Cozy Pass Uygulama Uzantısı</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Bitwarden Uygulama Uzantısıdır. Cozy Pass Uygulama Uzantısının kullanımı hakkında daha fazla bilgi edinmek için "Ayarlar" ekranına gidin.</value>
@@ -418,7 +418,7 @@
     <value>Giriş bilgilerinizi otomatik doldurmak için Safari ve diğer uygulamalarda Cozy Pass kullanın.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden otomatik doldur servisi</value>
+    <value>Cozy Pass otomatik doldur servisi</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Giriş bilgilerinizi otomatik olarak doldurmak için bitwarden erişim hizmetini kullanın.</value>
@@ -702,7 +702,7 @@
     <value>Hesabı Görüntüle</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden Web Kasası</value>
+    <value>Cozy Pass Web Kasası</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Kimlik doğrulama uygulamanızı kayıp mı ettiniz?</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden bir kuruluş hesabı kullanarak başkalarıyla kasanızı paylaşmanızı sağlar. Daha fazla bilgi için bitwarden.com sitesini ziyaret etmek ister misiniz?</value>
+    <value>Cozy Pass bir kuruluş hesabı kullanarak başkalarıyla kasanızı paylaşmanızı sağlar. Daha fazla bilgi için bitwarden.com sitesini ziyaret etmek ister misiniz?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Kasayı Dışa Aktar</value>
@@ -1455,7 +1455,7 @@
     <value>5 dakika</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Bitwarden'ı açmak için bir PIN kodu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır.</value>
+    <value>Cozy Pass'ı açmak için bir PIN kodu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>{1} üzerinde {0} olarak oturum açıldı.</value>
@@ -1529,7 +1529,7 @@
     <value>Çıkış</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Bitwarden'den çıkmak istediğinize emin misiniz?</value>
+    <value>Cozy Pass'den çıkmak istediğinize emin misiniz?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Uygulama kapatılıp açıldıktan sonra kilidi PIN yerine ana şifre ile açmak istiyor musunuz?</value>

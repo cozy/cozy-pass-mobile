@@ -409,7 +409,7 @@
     <value>از کاراکترهای مبهم اجتناب کن</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>افزونه برنامه Bitwarden</value>
+    <value>افزونه برنامه Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>ساده‌ترین روش برای افزودن اطلاعات ورود به گاوصندوق از طریق افزونه برنامه Cozy Pass است. برای اطلاع بیشتر از چگونگی استفاده از افزونه برنامه صفحه "تنظیمات" را ببینید.</value>
@@ -418,7 +418,7 @@
     <value>با Cozy Pass در سافاری و دیگر برنامه‌ها می‌توانید از قابلیت پر کردن خودکار در ورودهایتان استفاده کنید.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>سرویس پرکردن خودکار Bitwarden</value>
+    <value>سرویس پرکردن خودکار Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>از قابلیت دسترسی Cozy Pass برای تکمیل خودکار ورود به سیستم خود در سراسر برنامه‌ها و وب استفاده کنید.</value>
@@ -622,7 +622,7 @@
     <value>آیا از بازنویسی بر روی رمز عبور فعلی مطمئن هستید؟</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden گاوصندوق شما را بصورت خودکار از طریق نشان دادن اطلاعیه ها به هنگام سازی میکند. برای بهترین تجربه کاربری ممکن، لطفاً زمانی که از شما پرسیده شد "مجاز" را سریعاً انتخاب کنید تا نمایش اعلانیه ها فعال شود.</value>
+    <value>Cozy Pass گاوصندوق شما را بصورت خودکار از طریق نشان دادن اطلاعیه ها به هنگام سازی میکند. برای بهترین تجربه کاربری ممکن، لطفاً زمانی که از شما پرسیده شد "مجاز" را سریعاً انتخاب کنید تا نمایش اعلانیه ها فعال شود.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>مشاهده مورد</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>گاوصندوق وب Bitwarden</value>
+    <value>گاوصندوق وب Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>برنامه تأیید کننده از دست رفته؟</value>
@@ -1132,7 +1132,7 @@
     <value>آدرس سرور آیکون ها</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>پر کردن خودکار با Bitwarden</value>
+    <value>پر کردن خودکار با Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>گاوصندوق قفل شد</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden به شما اجازه می دهد با استفاده از سازماندهی حساب، گاوصندوقهای خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟</value>
+    <value>Cozy Pass به شما اجازه می دهد با استفاده از سازماندهی حساب، گاوصندوقهای خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>خروجی گرفتن از گاوصندوق</value>
@@ -1532,7 +1532,7 @@
     <value>آیا مطمئنید که می‌خواهید از Cozy Pass خارج شوید؟</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>سیاه</value>

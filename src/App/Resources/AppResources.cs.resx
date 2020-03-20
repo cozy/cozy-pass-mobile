@@ -409,7 +409,7 @@
     <value>Použít nezaměnitelné znaky</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Rozšíření aplikace Bitwarden</value>
+    <value>Rozšíření aplikace Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Nejjednodušší způsob přidání nových přihlášení do trezoru je z rozšíření Bitwarden. Další informace o používání rozšíření Cozy Pass získáte klepnutím na obrazovku Nastavení.</value>
@@ -622,7 +622,7 @@
     <value>Opravdu chcete přepsat aktuální heslo?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden udržuje váš trezor automaticky synchronizovaný pomocí nabízených oznámení. Pro nejlepší možný zážitek klikněte prosím na následující výzvě na "Ok", pokud budete požádáni o jejich povolení.</value>
+    <value>Cozy Pass udržuje váš trezor automaticky synchronizovaný pomocí nabízených oznámení. Pro nejlepší možný zážitek klikněte prosím na následující výzvě na "Ok", pokud budete požádáni o jejich povolení.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -1132,7 +1132,7 @@
     <value>URL serveru ikonek</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Automatické vyplnění s aplikací Bitwarden</value>
+    <value>Automatické vyplnění s aplikací Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Trezor je zamknutý</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden umožňuje sdílet váš trezor s ostatními prostřednictvím účtu organizace. Chcete přejít na bitwarden.com a dozvědět se víc?</value>
+    <value>Cozy Pass umožňuje sdílet váš trezor s ostatními prostřednictvím účtu organizace. Chcete přejít na bitwarden.com a dozvědět se víc?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exportovat přihlašovací údaje</value>

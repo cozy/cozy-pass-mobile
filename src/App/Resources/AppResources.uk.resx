@@ -409,7 +409,7 @@
     <value>Уникати неоднозначних символів</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Розширення Bitwarden</value>
+    <value>Розширення Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Найлегшим способом додавання нових записів у сховище є використання розширення Bitwarden. Дізнайтеся більше про використання розширення Cozy Pass в меню "Налаштування".</value>
@@ -418,7 +418,7 @@
     <value>Використовуйте Cozy Pass в Safari та інших програмах для автоматичного заповнення паролів.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Служба автозаповнення Bitwarden</value>
+    <value>Служба автозаповнення Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Використовуйте службу автозаповнення Cozy Pass, щоб автоматично вводити паролі.</value>
@@ -622,7 +622,7 @@
     <value>Ви дійсно хочете перезаписати поточний пароль?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden автоматично синхронізує ваше сховище за допомогою push-сповіщень. Для найкращої роботи оберіть "Дозволити" в наступному запиті про увімкнення push-сповіщень.</value>
+    <value>Cozy Pass автоматично синхронізує ваше сховище за допомогою push-сповіщень. Для найкращої роботи оберіть "Дозволити" в наступному запиті про увімкнення push-сповіщень.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Перегляд запису</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Веб-сховище Bitwarden</value>
+    <value>Веб-сховище Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Втратили доступ до програми перевірки?</value>
@@ -1132,7 +1132,7 @@
     <value>URL-адреса сервера піктограм</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Автозаповнення з Bitwarden</value>
+    <value>Автозаповнення з Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Сховище заблоковано</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden дозволяє вам надавати доступ до свого сховища іншим за допомогою облікового запису організації. Чи не бажаєте перейти на веб-сайт bitwarden.com, щоб дізнатися більше?</value>
+    <value>Cozy Pass дозволяє вам надавати доступ до свого сховища іншим за допомогою облікового запису організації. Чи не бажаєте перейти на веб-сайт bitwarden.com, щоб дізнатися більше?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Експорт сховища</value>

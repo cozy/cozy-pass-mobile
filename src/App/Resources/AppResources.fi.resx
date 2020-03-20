@@ -409,7 +409,7 @@
     <value>Vältä epäselviä merkkejä</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden-sovelluslaajennus</value>
+    <value>Cozy Pass-sovelluslaajennus</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Cozy Passin sovelluslaajennusta. Lue lisää sovelluslaajennuksesta "Työkalut"-kohdassa.</value>
@@ -418,7 +418,7 @@
     <value>Käytä bitwardenia Safarissa ja muissa sovelluksissa kirjautumistietojen automaattiseen täydennykseen.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwardenin automaattinen täyttö ‑palvelu</value>
+    <value>Cozy Passin automaattinen täyttö ‑palvelu</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Use the bitwarden accessibility service to auto-fill your logins.</value>
@@ -702,7 +702,7 @@
     <value>Näytä kohde</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwardenin verkkoholvi</value>
+    <value>Cozy Passin verkkoholvi</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Etkö pysty käyttämään todennussovellustasi?</value>
@@ -1296,7 +1296,7 @@
     <value>4. Kytke automaattinen täyttö päälle</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Valitse Bitwarden</value>
+    <value>5. Valitse Cozy Pass</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Salasanojen automaattitäyttö</value>
@@ -1532,7 +1532,7 @@
     <value>Oletko varma, että haluat poistua Cozy Passista?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Musta</value>

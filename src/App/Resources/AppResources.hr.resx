@@ -409,7 +409,7 @@
     <value>Izbjegavajte dvosmislene znakove</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden Proširenje aplikacije</value>
+    <value>Cozy Pass Proširenje aplikacije</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Najlakši način za dodavanje novih prijava u Vaš trezor je iz proširenja aplikacije Bitwarden. Saznajte više o upotrebi proširenja aplikacije Cozy Pass odlaskom na zaslon "Postavke".</value>
@@ -418,7 +418,7 @@
     <value>Upotrijebite Cozy Pass u Safariju i drugim aplikacijama da biste automatski ispunili prijave.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden usluga automatskog popunjavanja</value>
+    <value>Cozy Pass usluga automatskog popunjavanja</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Upotrijebite uslugu pristupačnosti usluge Cozy Pass da biste automatski ispunili prijave.</value>
@@ -622,7 +622,7 @@
     <value>Jeste li sigurni da želite prebrisati trenutnu zaporku?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden automatski sinkronizira Vaš trezor pomoću push obavijesti. Za najbolji mogući doživljaj, molimo odaberite "Ok" u sljedećem upitu kada se zatraži da omogućite push obavijesti.</value>
+    <value>Cozy Pass automatski sinkronizira Vaš trezor pomoću push obavijesti. Za najbolji mogući doživljaj, molimo odaberite "Ok" u sljedećem upitu kada se zatraži da omogućite push obavijesti.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Prikaz stavke</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden Web trezor</value>
+    <value>Cozy Pass Web trezor</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Izgubljena aplikacija autentifikatora?</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden omogućuje dijeljenje trezora s drugima pomoću računa organizacije. Želite li posjetiti web stranicu bitwarden.com da biste saznali više?</value>
+    <value>Cozy Pass omogućuje dijeljenje trezora s drugima pomoću računa organizacije. Želite li posjetiti web stranicu bitwarden.com da biste saznali više?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Izvoz trezora</value>

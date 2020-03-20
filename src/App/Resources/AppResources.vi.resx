@@ -409,7 +409,7 @@
     <value>Tránh các ký tự không rõ ràng</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Phần mở rộng Bitwarden</value>
+    <value>Phần mở rộng Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>The easiest way to add new logins to your vault is from the Bitwarden App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
@@ -418,7 +418,7 @@
     <value>Sử dụng Cozy Pass trong Safari và các ứng dụng khác để tự động điền thông tin đăng nhập của bạn.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Dịch vụ tự động điền Bitwarden</value>
+    <value>Dịch vụ tự động điền Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Cấp quyền truy cập sử dụng để Cozy Pass tự động điền thông tin đăng nhập giúp bạn.</value>
@@ -498,7 +498,7 @@
     <value>Tạo mật khẩu</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Nhận gợi ý mật khẩu Bitwarden</value>
+    <value>Nhận gợi ý mật khẩu Cozy Pass</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Nhập mục</value>
@@ -622,7 +622,7 @@
     <value>Bạn có chắc chắn muốn ghi đè mật khẩu hiện tại không?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden giữ kho mật khẩu của bạn luôn được đồng bộ tự động hóa bằng cách sử dụng thông báo đẩy. Để mang lại trải nghiệm tốt nhất, hãy chọn "Đồng ý" trên bảng thông báo sau khi được yêu cầu bật thông báo đẩy.</value>
+    <value>Cozy Pass giữ kho mật khẩu của bạn luôn được đồng bộ tự động hóa bằng cách sử dụng thông báo đẩy. Để mang lại trải nghiệm tốt nhất, hãy chọn "Đồng ý" trên bảng thông báo sau khi được yêu cầu bật thông báo đẩy.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Xem mục</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Trang web Bitwarden</value>
+    <value>Trang web Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Mất ứng dụng xác thực?</value>
@@ -1132,7 +1132,7 @@
     <value>Biểu tượng địa chỉ máy chủ</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Tự động điền với Bitwarden</value>
+    <value>Tự động điền với Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Kho đã khóa</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Cozy Pass allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export Vault</value>
@@ -1462,7 +1462,7 @@
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your master password to continue.</value>
+    <value>Your vault is locked. Verify your password to continue.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Your vault is locked. Verify your PIN code to continue.</value>
@@ -1532,7 +1532,7 @@
     <value>Are you sure you want to exit Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Black</value>

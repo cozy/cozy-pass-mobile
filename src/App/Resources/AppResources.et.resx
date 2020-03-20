@@ -409,7 +409,7 @@
     <value>Väldi ebamääraseid kirjamärke</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden rakenduse laiendus</value>
+    <value>Cozy Pass rakenduse laiendus</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Lihtsaim viis uute sisselogimise andmete lisamiseks on kasutada Bitwardeni rakenduse laiendust. Lisateavet Cozy Passi rakenduse laienduse kasutamiseks leiad menüüst "Seaded".</value>
@@ -418,7 +418,7 @@
     <value>Kasuta Cozy Passit Safaris ja teistes rakendusestes kontoandmete sisestamiseks.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwardeni automaattäite teenus</value>
+    <value>Cozy Passi automaattäite teenus</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Kasuta kontoandmete sisestamiseks Cozy Passi juurdepääsetavuse teenust.</value>
@@ -486,7 +486,7 @@
     <value>Lisa käivitamiseks vajuta menüüs Cozy Passi ikoonile.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Bitwardeni sisselülitamiseks Safaris ja teistes rakendustes vajuta alumisel menüül "more" ikoonile.</value>
+    <value>Cozy Passi sisselülitamiseks Safaris ja teistes rakendustes vajuta alumisel menüül "more" ikoonile.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Lemmik</value>
@@ -622,7 +622,7 @@
     <value>Oled kindel, et soovid olemasolevat parooli asendada?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden hoiab hoidla automaatselt sünkroonis läbi push teavituste. Parima võimaliku kogemuse saamiseks vajuta järgnevas märkekastis "Allow", et sünkroniseerimine lubada.</value>
+    <value>Cozy Pass hoiab hoidla automaatselt sünkroonis läbi push teavituste. Parima võimaliku kogemuse saamiseks vajuta järgnevas märkekastis "Allow", et sünkroniseerimine lubada.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +702,7 @@
     <value>Kirje vaatamine</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwardeni Veebihoidla</value>
+    <value>Cozy Passi Veebihoidla</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Kaotasid autentiseerimise rakenduse?</value>
@@ -1153,7 +1153,7 @@
     <value>Juurdepääsetavuse teenus</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Bitwardeni automaattäite teenus kasutab Androidi Autofill raamistikku. See aitab telefonis olevatesse rakendustesse sisestada kontoandmeid, krediitkaardi andmeid ja muud personaalset infot.</value>
+    <value>Cozy Passi automaattäite teenus kasutab Androidi Autofill raamistikku. See aitab telefonis olevatesse rakendustesse sisestada kontoandmeid, krediitkaardi andmeid ja muud personaalset infot.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Kasuta Cozy Passi automaattäite teenust, et sisestada teistesse rakendustesse kontoandmeid, krediitkaardi andmeid ja muud informatsiooni.</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwardeniga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?</value>
+    <value>Cozy Passiga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Ekspordi hoidla</value>
@@ -1532,7 +1532,7 @@
     <value>Kas soovid tõesti Cozy Passi sulgeda?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Must</value>
