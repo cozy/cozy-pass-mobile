@@ -159,6 +159,8 @@
     <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <BundleResource Include="Resources\shared-with-cozy-icon.png" />
+    <BundleResource Include="Resources\shared-with-cozy-icon%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
