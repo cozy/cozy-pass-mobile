@@ -83,7 +83,7 @@
                         StyleClass="box-header, box-header-platform" />
                 </Grid>
             </StackLayout>
-            <StackLayout IsVisible="{ Binding OptionsToggled }">
+            <StackLayout StyleClass="box" IsVisible="{ Binding OptionsToggled }">
                 <StackLayout StyleClass="box-row, box-row-input">
                     <Label
                         Text="{u:I18n Type}"
