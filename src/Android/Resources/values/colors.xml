@@ -37,4 +37,8 @@
   <color name="darkgray">#333333</color>
   <color name="gray">#738182</color>
   <color name="lightgray">#efeff4</color>
+
+  <!-- Cozy theme -->
+  <color name="cozy_primary">#297EF2</color>
+  <color name="cozy_notificationBar">#0d60d1</color>
 </resources>

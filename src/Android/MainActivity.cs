@@ -24,7 +24,7 @@ namespace Bit.Droid
     [Activity(
         Label = "Cozy Pass",
         Icon = "@mipmap/ic_launcher",
-        Theme = "@style/LightTheme.Splash",
+        Theme = "@style/CozyTheme.Splash",
         MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     [Register("io.cozy.pass.MainActivity")]
