@@ -412,7 +412,7 @@
     <value>bitwarden App Extension</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden App Extension. Learn more about using the Bitwarden App Extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Bitwarden App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Use bitwarden in Safari and other apps to auto-fill your logins.</value>
@@ -753,7 +753,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Bitwarden Auto-fill Service by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Cozy Pass Auto-fill Service by navigating to the "Settings" screen.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Auto-fill</value>
@@ -1269,7 +1269,7 @@
     <value>AutoFill Activated!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>You must log into the main Bitwarden app before you can use AutoFill.</value>
+    <value>You must log into the main Cozy Pass app before you can use AutoFill.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Your logins are now easily accessable right from your keyboard while logging into apps and websites.</value>
@@ -1296,13 +1296,13 @@
     <value>4. Turn on AutoFill</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Select "Bitwarden"</value>
+    <value>5. Select "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Password AutoFill</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Bitwarden Password AutoFill extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Invalid email address.</value>
@@ -1455,7 +1455,7 @@
     <value>5 minutes</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application.</value>
+    <value>Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Logged in as {0} on {1}.</value>
@@ -1529,7 +1529,7 @@
     <value>Exit</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Are you sure you want to exit Bitwarden?</value>
+    <value>Are you sure you want to exit Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>On App Restart</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Bitwarden from the "Settings" screen.</value>
+    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Cozy Pass from the "Settings" screen.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Your theme changes will apply when the app is restarted.</value>

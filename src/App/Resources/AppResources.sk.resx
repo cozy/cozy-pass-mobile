@@ -412,7 +412,7 @@
     <value>bitwarden rozšírenie aplikácie</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Bitwarden rozšírenia aplikácie. Ďalšie informácie o používaní Bitwarden rozšírenia aplikácie získate prechodom do obrazovky Nastavení.</value>
+    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Bitwarden rozšírenia aplikácie. Ďalšie informácie o používaní Cozy Pass rozšírenia aplikácie získate prechodom do obrazovky Nastavení.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Použiť bitwarden v Safari a iných aplikáciach pre automatické vypĺňanie prihlasovacích údajov.</value>
@@ -1296,13 +1296,13 @@
     <value>4. Zapnite automatické dopĺňanie</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Vyberte "Bitwarden"</value>
+    <value>5. Vyberte "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Automatické vypĺňanie hesiel</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Bitwarden rozšírenia pre automatické vypĺňanie. Ďalšie informácie o používaní rozšírenia pre automatické dopĺňanie získate prechodom na obrazovku Nastavení.</value>
+    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Cozy Pass rozšírenia pre automatické vypĺňanie. Ďalšie informácie o používaní rozšírenia pre automatické dopĺňanie získate prechodom na obrazovku Nastavení.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Neplatná emailová adresa.</value>
@@ -1455,7 +1455,7 @@
     <value>5 minút</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Nastaviť kód PIN na odomknutie Bitwarden. Nastavenie PIN sa vynuluje, ak úplne odhlásite z aplikácie.</value>
+    <value>Nastaviť kód PIN na odomknutie Cozy Pass. Nastavenie PIN sa vynuluje, ak úplne odhlásite z aplikácie.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Prihlásený ako {0} na {1}.</value>
@@ -1529,7 +1529,7 @@
     <value>Ukončiť</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Naozaj chcete ukončiť Bitwarden?</value>
+    <value>Naozaj chcete ukončiť Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>Po reštarte aplikácie</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automatické dopĺňanie umožňuje jednoducho pristupovať k vašemu trezoru z iných stránok a plaikácii. Vyzerá že ste službu automatického dopĺňania pomocou Bitwarden nezapli. Zapnúť ju môžete na obrazove "Nastavenia".</value>
+    <value>Automatické dopĺňanie umožňuje jednoducho pristupovať k vašemu trezoru z iných stránok a plaikácii. Vyzerá že ste službu automatického dopĺňania pomocou Cozy Pass nezapli. Zapnúť ju môžete na obrazove "Nastavenia".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Zmena nastavení vzhľadu sa prejaví po opätovnom štarte aplikácie.</value>

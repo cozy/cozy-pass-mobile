@@ -378,7 +378,7 @@
     <value>Käy sivustollamme</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Käy sivustollamme, jossa voit saada apua Bitwardenin käyttämisessä, lukea palvelun uutisia tai lähettää meille sähköpostia.</value>
+    <value>Käy sivustollamme, jossa voit saada apua Cozy Passin käyttämisessä, lukea palvelun uutisia tai lähettää meille sähköpostia.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>SIvusto</value>
@@ -400,7 +400,7 @@
     <value>Sovelluslaajennus</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Käytä Bitwardenin esteettömyyspalvelua kirjautumiskenttien automaattiseen täyttämiseen sovelluksissa ja verkossa.</value>
+    <value>Käytä Cozy Passin esteettömyyspalvelua kirjautumiskenttien automaattiseen täyttämiseen sovelluksissa ja verkossa.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Automaattinen täyttö ‑palvelu</value>
@@ -412,7 +412,7 @@
     <value>Bitwarden-sovelluslaajennus</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Bitwardenin sovelluslaajennusta. Lue lisää sovelluslaajennuksesta "Työkalut"-kohdassa.</value>
+    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Cozy Passin sovelluslaajennusta. Lue lisää sovelluslaajennuksesta "Työkalut"-kohdassa.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Käytä bitwardenia Safarissa ja muissa sovelluksissa kirjautumistietojen automaattiseen täydennykseen.</value>
@@ -738,7 +738,7 @@
     <value>Avaa esteettömyysasetukset</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Valitse esteettömyysasetuksissa Palvelut-otsikon alta ”Bitwarden”.</value>
+    <value>1. Valitse esteettömyysasetuksissa Palvelut-otsikon alta ”Cozy Pass”.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Laita asetus päälle ja paina OK-painiketta hyväksyäksesi.</value>
@@ -753,7 +753,7 @@
     <value>Tila</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Bitwardenin automaattista täydennystä. Lue lisää täydennyspalvelusta "Työkalut"-kohdassa.</value>
+    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Cozy Passin automaattista täydennystä. Lue lisää täydennyspalvelusta "Työkalut"-kohdassa.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Täytä automaattisesti</value>
@@ -970,7 +970,7 @@
     <value>Itse ylläpidetty ohjelmistoympäristö</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Syötä omalla palvelimella ylläpitämäsi Bitwarden-asennuksen kanta-URL.</value>
+    <value>Syötä omalla palvelimella ylläpitämäsi Cozy Pass-asennuksen kanta-URL.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Palvelimen URL</value>
@@ -1132,7 +1132,7 @@
     <value>Kuvakepalvelimen URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Täytä automaattisesti Bitwardenilla</value>
+    <value>Täytä automaattisesti Cozy Passilla</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Holvi on lukittu</value>
@@ -1156,7 +1156,7 @@
     <value>The bitwarden auto-fill service uses the Android Autofill Framework to assist in filling logins, credit cards, and identity information into other apps on your device.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Käytä Bitwardenin esteettömyyspalvelua täyttääksesi automaattisesti käyttäjätunnukset, kortti- ja henkilöllisyystiedot muihin sovelluksiin.</value>
+    <value>Käytä Cozy Passin esteettömyyspalvelua täyttääksesi automaattisesti käyttäjätunnukset, kortti- ja henkilöllisyystiedot muihin sovelluksiin.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Avaa automaattisen täytön asetukset</value>
@@ -1269,7 +1269,7 @@
     <value>Automaattinen täyttö kytketty päälle!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Sinun on kirjauduttava Bitwardenin pääsovellukseen ennen kuin voit käyttää automaattista täydennystä.</value>
+    <value>Sinun on kirjauduttava Cozy Passin pääsovellukseen ennen kuin voit käyttää automaattista täydennystä.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Your logins are now easily accessable right from your keyboard while logging into apps and websites.</value>
@@ -1302,7 +1302,7 @@
     <value>Salasanojen automaattitäyttö</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Bitwardenin sovelluslaajennusta. Lue lisää sovelluslaajennuksesta "Työkalut"-kohdassa.</value>
+    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on käyttää Cozy Passin sovelluslaajennusta. Lue lisää sovelluslaajennuksesta "Työkalut"-kohdassa.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Virheellinen sähköpostiosoite.</value>
@@ -1434,7 +1434,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Voit jakaa Bitwardenilla holvisi sisällön muiden kanssa käyttämällä organisaatiotiliä. Haluatko käydä bitwarden.com-sivustolla lukemassa lisää?</value>
+    <value>Voit jakaa Cozy Passilla holvisi sisällön muiden kanssa käyttämällä organisaatiotiliä. Haluatko käydä bitwarden.com-sivustolla lukemassa lisää?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Vie holvi</value>
@@ -1455,7 +1455,7 @@
     <value>5 minuuttia</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Aseta PIN-koodi Bitwardenin avaamista varten. PIN-asetukset nollautuvat, jos kirjaudut täysin ulos sovelluksesta.</value>
+    <value>Aseta PIN-koodi Cozy Passin avaamista varten. PIN-asetukset nollautuvat, jos kirjaudut täysin ulos sovelluksesta.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>{0} kirjattu sivustolle {1}.</value>
@@ -1529,7 +1529,7 @@
     <value>Poistu</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Oletko varma, että haluat poistua Bitwardenista?</value>
+    <value>Oletko varma, että haluat poistua Cozy Passista?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your master password when the application is restarted?</value>
@@ -1554,7 +1554,7 @@
     <value>Ohjelman uudelleenkäynnistyksen yhteydessä</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automaattinen täyttö tekee Bitwarden-holviiisi pääsystä muista ohjelmista ja sivustoista helppoa. Et näytä kytkeneen automaattista täyttöä päälle. Voit tehdä sen Asetukset-näytöstä.</value>
+    <value>Automaattinen täyttö tekee Cozy Pass-holviiisi pääsystä muista ohjelmista ja sivustoista helppoa. Et näytä kytkeneen automaattista täyttöä päälle. Voit tehdä sen Asetukset-näytöstä.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Teemamuutokset tulevat voimaan, kun sovellus käynnistetään uudelleen.</value>
