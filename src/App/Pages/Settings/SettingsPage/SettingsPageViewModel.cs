@@ -23,6 +23,7 @@ namespace Bit.App.Pages
         private readonly IStorageService _storageService;
         private readonly ISyncService _syncService;
         private readonly ICozyClientService _cozyClientService;
+        private readonly II18nService _i18nService;
 
         private bool _supportsFingerprint;
         private bool _pin;
@@ -55,6 +56,7 @@ namespace Bit.App.Pages
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
 
             GroupedItems = new ExtendedObservableCollection<SettingsPageListGroup>();
             PageTitle = AppResources.Settings;
@@ -94,8 +96,11 @@ namespace Bit.App.Pages
         }
 
         public void Help()
-        {
-            _platformUtilsService.LaunchUri("https://support.cozy.io/category/378-gestionnaire-de-mots-de-passe");
+        {  
+	    var frSupportURL = "https://support.cozy.io/category/378-gestionnaire-de-mots-de-passe";
+	    var enSupportURL = "https://help.cozy.io/category/395-password-manager";
+	    var lang = _i18nService.Culture.TwoLetterISOLanguageName; 
+            _platformUtilsService.LaunchUri(lang == "fr" ? frSupportURL : enSupportURL);
         }
 
         public async Task FingerprintAsync()
