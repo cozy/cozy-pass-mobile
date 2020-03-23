@@ -235,6 +235,9 @@
     <value>Mene sivustolle</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Tuki</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Tuki ja palaute</value>
   </data>

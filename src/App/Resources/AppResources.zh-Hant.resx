@@ -235,6 +235,9 @@
     <value>前往網站</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>協助與意見反應</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>協助與意見反應</value>
   </data>

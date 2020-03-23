@@ -245,6 +245,12 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
         internal static string HelpAndFeedback {
             get {
                 return ResourceManager.GetString("HelpAndFeedback", resourceCulture);

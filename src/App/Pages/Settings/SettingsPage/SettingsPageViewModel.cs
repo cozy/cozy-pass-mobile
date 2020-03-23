@@ -95,7 +95,7 @@ namespace Bit.App.Pages
 
         public void Help()
         {
-            _platformUtilsService.LaunchUri("https://help.bitwarden.com/");
+            _platformUtilsService.LaunchUri("https://support.cozy.io/category/378-gestionnaire-de-mots-de-passe");
         }
 
         public async Task FingerprintAsync()
@@ -365,7 +365,7 @@ namespace Bit.App.Pages
             {
                 new SettingsPageListItem { Name = AppResources.Options },
                 new SettingsPageListItem { Name = AppResources.About },
-                new SettingsPageListItem { Name = AppResources.HelpAndFeedback },
+                new SettingsPageListItem { Name = AppResources.Help },
                 new SettingsPageListItem { Name = AppResources.RateTheApp }
             };
             GroupedItems.ResetWithRange(new List<SettingsPageListGroup>

@@ -235,6 +235,9 @@
     <value>Ir a la web</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Ayuda &amp; Comentarios</value>
   </data>

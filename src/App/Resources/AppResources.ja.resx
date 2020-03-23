@@ -235,6 +235,9 @@
     <value>ウェブサイトを開く</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>助けて</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>ヘルプとフィードバック</value>
   </data>
