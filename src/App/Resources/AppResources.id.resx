@@ -415,7 +415,7 @@
     <value>Ekstensi Aplikasi Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Cozy Pass App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Gunakan Cozy Pass di Safari dan aplikasi lainnya untuk mengisi otomatis info masuk Anda.</value>
