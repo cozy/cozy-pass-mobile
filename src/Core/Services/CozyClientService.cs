@@ -178,7 +178,7 @@ namespace Bit.Core.Services
         public async Task ConfigureEnvironmentFromCozyURLAsync(string cozyURL)
         {
             var environmentData = new EnvironmentUrlData();
-            var scheme = cozyURL.StartsWith("http://") ? "" : "https://";
+            var scheme = (cozyURL.StartsWith("http://") || cozyURL.StartsWith("https://")) ? "" : "https://";
             var baseURL = string.Concat(scheme, cozyURL, "/bitwarden");
             environmentData.Base = baseURL;
             await _environmentService.SetUrlsAsync(environmentData);
