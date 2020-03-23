@@ -5,9 +5,9 @@
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Bitwarden</string>
+	<string>Cozy Pass</string>
 	<key>CFBundleName</key>
-	<string>Bitwarden Autofill</string>
+	<string>Cozy Pass Autofill</string>
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile.autofill</string>
 	<key>CFBundleShortVersionString</key>
