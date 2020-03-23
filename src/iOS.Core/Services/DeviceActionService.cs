@@ -238,14 +238,15 @@ namespace Bit.iOS.Core.Services
         public void RateApp()
         {
             string uri = null;
-            if(SystemMajorVersion() < 11)
+            var appId = "1502262449";
+            if (SystemMajorVersion() < 11)
             {
                 uri = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews" +
-                    "?id=1137397744&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software";
+                   $"?id={appId}&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software";
             }
             else
             {
-                uri = "itms-apps://itunes.apple.com/us/app/id1137397744?action=write-review";
+                uri = $"itms-apps://itunes.apple.com/us/app/id{appId}?action=write-review";
             }
             Device.OpenUri(new Uri(uri));
         }
