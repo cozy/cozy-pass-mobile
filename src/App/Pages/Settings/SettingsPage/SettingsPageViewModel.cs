@@ -355,8 +355,9 @@ namespace Bit.App.Pages
             {
                 new SettingsPageListItem { Name = AppResources.ImportItems },
                 new SettingsPageListItem { Name = AppResources.ExportVault },
-                new SettingsPageListItem { Name = AppResources.ShareVault },
-                new SettingsPageListItem { Name = AppResources.WebVault }
+                // Cozy customization: we deactivate web vault and share vault
+                // new SettingsPageListItem { Name = AppResources.ShareVault },
+                // new SettingsPageListItem { Name = AppResources.WebVault }
             };
             var otherItems = new List<SettingsPageListItem>
             {
