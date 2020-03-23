@@ -81,15 +81,29 @@
   { "dests":[
     "../src/iOS.Autofill/Resources/Icon.png",
     "../src/iOS.Extension/Resources/Icon.png"
-  ], "src": "Resources/ios/icon-pass-40.png" },
+  ], "src": "Resources/ios/icon-pass-mono.png" },
   { "dests":[
     "../src/iOS.Autofill/Resources/Icon@2x.png",
     "../src/iOS.Extension/Resources/Icon@2x.png"
-  ], "src": "Resources/ios/icon-pass-80.png" },
+  ], "src": "Resources/ios/icon-pass-mono@2x.png" },
   { "dests":[
-    "../src/iOS.Extension/Resources/Icon@3x.png",
+    "../src/iOS.Autofill/Resources/Icon@3x.png",
     "../src/iOS.Extension/Resources/Icon@3x.png"
-  ], "src": "Resources/ios/icon-pass-120.png" },
+  ], "src": "Resources/ios/icon-pass-mono@2x.png" },
+
+  {
+    "src": "Resources/iOS/ext-icon.png",
+    "dests": ["../src/iOS.Extension/Resources/ext-icon.png"]
+  },
+  {
+    "src": "Resources/iOS/ext-icon@2x.png",
+    "dests": ["../src/iOS.Extension/Resources/ext-icon@2x.png"]
+  },
+  {
+    "src": "Resources/iOS/ext-icon@3x.png",
+    "dests": ["../src/iOS.Extension/Resources/ext-icon@3x.png"]
+  },
+
   {
     "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher.png"],
     "src": "./Resources/android/icon-pass-72.png"
