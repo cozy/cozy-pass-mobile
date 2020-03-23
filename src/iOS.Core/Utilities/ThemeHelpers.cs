@@ -7,6 +7,10 @@ namespace Bit.iOS.Core.Utilities
     {
         public static bool LightTheme = true;
         public static bool UsingOsDarkTheme = false;
+
+
+        #region cozy
+        /*
         public static UIColor SplashBackgroundColor = Xamarin.Forms.Color.FromHex("#efeff4").ToUIColor();
         public static UIColor BackgroundColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
         public static UIColor MutedColor = Xamarin.Forms.Color.FromHex("#777777").ToUIColor();
@@ -18,6 +22,20 @@ namespace Bit.iOS.Core.Utilities
         public static UIColor ListHeaderBackgroundColor = Xamarin.Forms.Color.FromHex("#efeff4").ToUIColor();
         public static UIColor NavBarBackgroundColor = Xamarin.Forms.Color.FromHex("#3c8dbc").ToUIColor();
         public static UIColor NavBarTextColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+        */
+
+        public static UIColor MutedColor = Xamarin.Forms.Color.FromHex("#95999D").ToUIColor();
+        public static UIColor SuccessColor = Xamarin.Forms.Color.FromHex("#35CE68").ToUIColor();
+        public static UIColor BackgroundColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+        public static UIColor SplashBackgroundColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+        public static UIColor PrimaryColor = Xamarin.Forms.Color.FromHex("#297EF2").ToUIColor();
+        public static UIColor TextColor = Xamarin.Forms.Color.FromHex("#000000").ToUIColor();
+        public static UIColor PlaceholderColor = Xamarin.Forms.Color.FromHex("#95999D").ToUIColor();
+        public static UIColor SeparatorColor = Xamarin.Forms.Color.FromHex("#D6D8Da").ToUIColor();
+        public static UIColor ListHeaderBackgroundColor = Xamarin.Forms.Color.FromHex("#297EF2").ToUIColor();
+        public static UIColor NavBarBackgroundColor = Xamarin.Forms.Color.FromHex("#297EF2").ToUIColor();
+        public static UIColor NavBarTextColor = Xamarin.Forms.Color.FromHex("#ffffff").ToUIColor();
+        #endregion
 
         public static void SetAppearance(string theme, bool usingOsDarkTheme)
         {
