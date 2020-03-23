@@ -346,9 +346,11 @@ namespace Bit.App.Pages
             }
             var accountItems = new List<SettingsPageListItem>
             {
-                // Cozy customization: we deactivate changing master password from app
+                // Cozy customization: we deactivate
+                // - changing master password from app
+                // - fingerprint phrase functionality
                 // new SettingsPageListItem { Name = AppResources.ChangeMasterPassword },
-                new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
+                //new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
                 new SettingsPageListItem { Name = AppResources.LogOut }
             };
             var toolsItems = new List<SettingsPageListItem>
