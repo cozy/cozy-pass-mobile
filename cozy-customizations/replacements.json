@@ -78,6 +78,18 @@
   { "dests": ["../src/Android/Resources/drawable-xxhdpi/icon.png"], "src": "Resources/android/icon-pass-144.png" },
   { "dests": ["../src/Android/Resources/drawable-xxxhdpi/icon.png"], "src": "Resources/android/icon-pass-192.png" },
 
+  { "dests":[
+    "../src/iOS.Autofill/Resources/Icon.png",
+    "../src/iOS.Extension/Resources/Icon.png"
+  ], "src": "Resources/ios/icon-pass-40.png" },
+  { "dests":[
+    "../src/iOS.Autofill/Resources/Icon@2x.png",
+    "../src/iOS.Extension/Resources/Icon@2x.png"
+  ], "src": "Resources/ios/icon-pass-80.png" },
+  { "dests":[
+    "../src/iOS.Extension/Resources/Icon@3x.png",
+    "../src/iOS.Extension/Resources/Icon@3x.png"
+  ], "src": "Resources/ios/icon-pass-120.png" },
   {
     "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher.png"],
     "src": "./Resources/android/icon-pass-72.png"
