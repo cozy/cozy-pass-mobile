@@ -43,9 +43,11 @@ namespace Bit.Core.Services
 
         private string GetCozyURL() {
             var apiBaseUrl = new Uri(_apiService.ApiBaseUrl);
-            var builder = new UriBuilder();
-            builder.Host = apiBaseUrl.Host;
-            builder.Scheme = apiBaseUrl.Scheme;
+            var builder = new UriBuilder
+            {
+                Host = apiBaseUrl.Host,
+                Scheme = apiBaseUrl.Scheme
+            };
             return builder.ToString();
         }
 
@@ -180,6 +182,17 @@ namespace Bit.Core.Services
             var baseURL = string.Concat(scheme, cozyURL, "/bitwarden");
             environmentData.Base = baseURL;
             await _environmentService.SetUrlsAsync(environmentData);
+        }
+
+        public string GenerateURIForApp(string appName)
+        {
+            var url = GetCozyURL();
+            var builder = new UriBuilder(url);
+            var host = builder.Host;
+            var parts = host.Split('.');
+            parts[0] = $"{parts[0]}-{appName}";
+            builder.Host = string.Join(".", parts);
+            return builder.ToString();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Bit.App.Pages
         private readonly ILockService _lockService;
         private readonly IStorageService _storageService;
         private readonly ISyncService _syncService;
+        private readonly ICozyClientService _cozyClientService;
 
         private bool _supportsFingerprint;
         private bool _pin;
@@ -53,6 +54,7 @@ namespace Bit.App.Pages
             _lockService = ServiceContainer.Resolve<ILockService>("lockService");
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             GroupedItems = new ExtendedObservableCollection<SettingsPageListGroup>();
             PageTitle = AppResources.Settings;
@@ -124,7 +126,8 @@ namespace Bit.App.Pages
 
         public void Import()
         {
-            _platformUtilsService.LaunchUri("https://help.bitwarden.com/article/import-data/");
+            var passwordsURL = _cozyClientService.GenerateURIForApp("passwords");
+            _platformUtilsService.LaunchUri(passwordsURL);
         }
 
         public void WebVault()

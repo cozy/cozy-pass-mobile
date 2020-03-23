@@ -11,5 +11,6 @@ namespace Bit.Core.Abstractions
         Task<LogoutResponse> LogoutAsync();
         string GetEmailFromCozyURL(string cozyURL);
         Task ConfigureEnvironmentFromCozyURLAsync(string cozyURL);
+        string GenerateURIForApp(string appname);
     }
 }
