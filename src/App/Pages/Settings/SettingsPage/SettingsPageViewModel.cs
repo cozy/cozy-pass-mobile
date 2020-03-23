@@ -22,6 +22,8 @@ namespace Bit.App.Pages
         private readonly ILockService _lockService;
         private readonly IStorageService _storageService;
         private readonly ISyncService _syncService;
+        private readonly ICozyClientService _cozyClientService;
+        private readonly II18nService _i18nService;
 
         private bool _supportsFingerprint;
         private bool _pin;
@@ -53,6 +55,8 @@ namespace Bit.App.Pages
             _lockService = ServiceContainer.Resolve<ILockService>("lockService");
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
 
             GroupedItems = new ExtendedObservableCollection<SettingsPageListGroup>();
             PageTitle = AppResources.Settings;
@@ -92,8 +96,11 @@ namespace Bit.App.Pages
         }
 
         public void Help()
-        {
-            _platformUtilsService.LaunchUri("https://help.bitwarden.com/");
+        {  
+	    var frSupportURL = "https://support.cozy.io/category/378-gestionnaire-de-mots-de-passe";
+	    var enSupportURL = "https://help.cozy.io/category/395-password-manager";
+	    var lang = _i18nService.Culture.TwoLetterISOLanguageName; 
+            _platformUtilsService.LaunchUri(lang == "fr" ? frSupportURL : enSupportURL);
         }
 
         public async Task FingerprintAsync()
@@ -124,7 +131,8 @@ namespace Bit.App.Pages
 
         public void Import()
         {
-            _platformUtilsService.LaunchUri("https://help.bitwarden.com/article/import-data/");
+            var passwordsURL = _cozyClientService.GenerateURIForApp("passwords");
+            _platformUtilsService.LaunchUri(passwordsURL);
         }
 
         public void WebVault()
@@ -343,23 +351,26 @@ namespace Bit.App.Pages
             }
             var accountItems = new List<SettingsPageListItem>
             {
-                // Cozy customization: we deactivate changing master password from app
+                // Cozy customization: we deactivate
+                // - changing master password from app
+                // - fingerprint phrase functionality
                 // new SettingsPageListItem { Name = AppResources.ChangeMasterPassword },
-                new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
+                //new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
                 new SettingsPageListItem { Name = AppResources.LogOut }
             };
             var toolsItems = new List<SettingsPageListItem>
             {
                 new SettingsPageListItem { Name = AppResources.ImportItems },
                 new SettingsPageListItem { Name = AppResources.ExportVault },
-                new SettingsPageListItem { Name = AppResources.ShareVault },
-                new SettingsPageListItem { Name = AppResources.WebVault }
+                // Cozy customization: we deactivate web vault and share vault
+                // new SettingsPageListItem { Name = AppResources.ShareVault },
+                // new SettingsPageListItem { Name = AppResources.WebVault }
             };
             var otherItems = new List<SettingsPageListItem>
             {
                 new SettingsPageListItem { Name = AppResources.Options },
                 new SettingsPageListItem { Name = AppResources.About },
-                new SettingsPageListItem { Name = AppResources.HelpAndFeedback },
+                new SettingsPageListItem { Name = AppResources.Help },
                 new SettingsPageListItem { Name = AppResources.RateTheApp }
             };
             GroupedItems.ResetWithRange(new List<SettingsPageListGroup>

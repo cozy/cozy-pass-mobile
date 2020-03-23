@@ -235,6 +235,9 @@
     <value>Gå til nettstedet</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hjelp</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Hjelp og tilbakemelding</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Unngå forvekslingsbare tegn</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden App-utvidelse</value>
+    <value>Cozy Pass App-utvidelse</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Den enkleste måten å legge til nye innlogginger i hvelvet ditt, er fra Cozy Pass sin apputvidelse. Lær mer om å bruke bitwarden-apputvidelsen ved å navigere til "Innstillinger"-skjermen.</value>
@@ -418,7 +421,7 @@
     <value>Bruk Cozy Pass i Safari og i andre apper for å auto-utfylle dine innlogginger.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden Auto-utfyllingstjeneste</value>
+    <value>Cozy Pass Auto-utfyllingstjeneste</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Bruk Cozy Pass sin tilgjengelighetstjeneste for å auto-utfylle dine innlogginger.</value>
@@ -622,7 +625,7 @@
     <value>Er du sikker på at du vil overskrive det nåværende passordet?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden holder ditt hvelv automatisk synkronisert ved å bruke push-beskjeder. For den beste opplevelsen, vennligst velg "Tillat" på den følgende oppspretten når du blir bedt om å aktivere push-beskjeder.</value>
+    <value>Cozy Pass holder ditt hvelv automatisk synkronisert ved å bruke push-beskjeder. For den beste opplevelsen, vennligst velg "Tillat" på den følgende oppspretten når du blir bedt om å aktivere push-beskjeder.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Vis gjenstand</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden Netthvelv</value>
+    <value>Cozy Pass Netthvelv</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Har du mistet din autentiseringsapp?</value>
@@ -1132,7 +1135,7 @@
     <value>Ikonenes tjenernettadresse</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Auto-utfyll med Bitwarden</value>
+    <value>Auto-utfyll med Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Hvelvet er låst</value>
@@ -1153,7 +1156,7 @@
     <value>Auto-utfyllingstilgjengelighetstjeneste</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Bitwarden sin auto-utfyllingstjeneste bruker Android Autofill Framework for å bidra til å fylle inn innlogginger, bankkort og identifikasjonsinfo inn i andre apper på din enhet.</value>
+    <value>Cozy Pass sin auto-utfyllingstjeneste bruker Android Autofill Framework for å bidra til å fylle inn innlogginger, bankkort og identifikasjonsinfo inn i andre apper på din enhet.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Bruk Cozy Pass sin auto-utfyllingstjeneste for å fylle ut innlogginger, bankkort og identifikasjonsinfo i andre apper.</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden lar deg dele hvelvet ditt med andre ved å bruke en organisasjonskonto. Vil du besøke bitwarden.com-nettstedet for å lære mer?</value>
+    <value>Cozy Pass lar deg dele hvelvet ditt med andre ved å bruke en organisasjonskonto. Vil du besøke bitwarden.com-nettstedet for å lære mer?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Eksporter hvelvet</value>
@@ -1532,7 +1535,7 @@
     <value>Er du sikker på at du vil lukke Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Svart</value>

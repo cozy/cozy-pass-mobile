@@ -235,6 +235,9 @@
     <value>Accesaţi la site-ul web</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ajutor si feedback</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Ajutor si feedback</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Evitați caracterele ambigue</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extensia aplicaţiei Bitwarden</value>
+    <value>Extensia aplicaţiei Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicaţiei Bitwarden. Aflați mai multe despre utilizarea extensiei aplicaţiei Cozy Pass accesând ecranul "Setări".</value>
@@ -418,7 +421,7 @@
     <value>Utilizați Cozy Pass în Safari și în alte aplicații pentru a completa automat datele de autentificare.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Serviciul de completare automată Bitwarden</value>
+    <value>Serviciul de completare automată Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Utilizați serviciul Cozy Pass pentru a completa automat datele de autentificare.</value>
@@ -622,7 +625,7 @@
     <value>Sunteţi sigur că doriţi să suprascrieţi parola curentă?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden păstrează seiful dvs. sincronizat utilizând notificările "push". Pentru cele mai bune rezultate posibile, selectați "Ok" la următorul mesaj când vi se solicită să activați notificările "push".</value>
+    <value>Cozy Pass păstrează seiful dvs. sincronizat utilizând notificările "push". Pentru cele mai bune rezultate posibile, selectați "Ok" la următorul mesaj când vi se solicită să activați notificările "push".</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Vizualizare articol</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Seif Web Bitwarden</value>
+    <value>Seif Web Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Ai pierdut aplicația de autentificare?</value>
@@ -1132,7 +1135,7 @@
     <value>URL server de pictograme</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Completare automată cu Bitwarden</value>
+    <value>Completare automată cu Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Seiful este blocat</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?</value>
+    <value>Cozy Pass vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export seif</value>
@@ -1532,7 +1535,7 @@
     <value>Sunteți sigur că doriți să ieșiți?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Neagră</value>

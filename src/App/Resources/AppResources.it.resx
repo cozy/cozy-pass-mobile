@@ -235,6 +235,9 @@
     <value>Vai al sito</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aiuto</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Aiuto e feedback</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Evita Caratteri Ambigui</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Estensione App Bitwarden</value>
+    <value>Estensione App Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Il modo più semplice per aggiungere nuovi login al tuo cassaforte è dall'estensione Bitwarden App. Scopri di più sull'utilizzo dell'estensione Cozy Pass App navigando nella schermata "Impostazioni".</value>
@@ -418,7 +421,7 @@
     <value>Usa Cozy Pass su Safari e altre app per auto-completare i tuoi login.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Servizio Auto-Completamento Bitwarden</value>
+    <value>Servizio Auto-Completamento Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Usa il servizio di accessibilità Cozy Pass per auto-completare i tuoi login.</value>
@@ -622,7 +625,7 @@
     <value>Sei sicuro di voler sovrascrivere la password corrente?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden mantiene la tua cassaforte automaticamente sincronizzata utilizzando le notifiche push. Per la migliore esperienza possibile, si prega di selezionare "Consenti" sul menu seguente quando viene richiesto di abilitare le notifiche push.</value>
+    <value>Cozy Pass mantiene la tua cassaforte automaticamente sincronizzata utilizzando le notifiche push. Per la migliore esperienza possibile, si prega di selezionare "Consenti" sul menu seguente quando viene richiesto di abilitare le notifiche push.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Visualizza Elemento</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cassaforte Web Bitwarden</value>
+    <value>Cassaforte Web Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Perso l'app di autenticazione?</value>
@@ -1132,7 +1135,7 @@
     <value>URL del Server Icone</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Auto-completamento con Bitwarden</value>
+    <value>Auto-completamento con Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>La cassaforte è bloccata</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden ti permette di condividere la tua cassaforte con altri utilizzando un account di organizzazione. Vuoi visitare il sito di bitwarden.com per saperne di più?</value>
+    <value>Cozy Pass ti permette di condividere la tua cassaforte con altri utilizzando un account di organizzazione. Vuoi visitare il sito di bitwarden.com per saperne di più?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Esporta cassaforte</value>
@@ -1532,7 +1535,7 @@
     <value>Sei sicuro di voler uscire da Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Nero</value>

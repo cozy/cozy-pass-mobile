@@ -235,6 +235,9 @@
     <value>Vés al lloc web</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Ajuda i comentaris</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Eviteu caràcters ambigus</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extensió de l'aplicació Bitwarden</value>
+    <value>Extensió de l'aplicació Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és amb l'extensió d'aplicació Cozy Pass. Obteniu més informació sobre el seu ús en la pantalla "Eines".</value>
@@ -418,7 +421,7 @@
     <value>Utilitzeu Cozy Pass en Safari i altres aplicacions per omplir automàticament els vostres inicis de sessió.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Servei d'emplenament automàtic de Bitwarden</value>
+    <value>Servei d'emplenament automàtic de Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Utilitzeu el servei d'accessibilitat Cozy Pass per omplir automàticament els inicis de sessió.</value>
@@ -622,7 +625,7 @@
     <value>Esteu segur que voleu sobreescriure la contrasenya actual?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden manté la vostra caixa forta sincronitzada automàticament mitjançant notificacions push. Per obtenir la millor experiència possible, seleccioneu "Permetre" al següent indicador quan se us demane que habiliteu les notificacions push.</value>
+    <value>Cozy Pass manté la vostra caixa forta sincronitzada automàticament mitjançant notificacions push. Per obtenir la millor experiència possible, seleccioneu "Permetre" al següent indicador quan se us demane que habiliteu les notificacions push.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Visualitza l'element</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Caixa forta web de Bitwarden</value>
+    <value>Caixa forta web de Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Heu perdut l'aplicació autenticadora?</value>
@@ -1132,7 +1135,7 @@
     <value>URL del servidor d'icones</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Ompli automàticament amb Bitwarden</value>
+    <value>Ompli automàticament amb Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>La caixa forta està bloquejada</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden us permet compartir la vostra caixa forta amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?</value>
+    <value>Cozy Pass us permet compartir la vostra caixa forta amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exporta caixa forta</value>

@@ -247,6 +247,9 @@
     <value>Go to website</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Help and feedback</value>
   </data>
@@ -263,7 +266,7 @@
     <comment>Title for the alert when internet connection is required to continue.</comment>
   </data>
   <data name="InvalidMasterPassword" xml:space="preserve">
-    <value>Invalid master password. Try again.</value>
+    <value>Invalid password. Try again.</value>
   </data>
   <data name="InvalidPIN" xml:space="preserve">
     <value>Invalid PIN. Try again.</value>
@@ -375,7 +378,7 @@
     <value>Verify fingerprint</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Verify master password</value>
+    <value>Verify password</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>Verify PIN</value>
@@ -421,7 +424,7 @@
     <value>Avoid ambiguous characters</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden app extension</value>
+    <value>Cozy Pass app extension</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>The easiest way to add new logins to your vault is from the Bitwarden app extension. Learn more about using the Cozy Pass app extension by navigating to the "Settings" screen.</value>
@@ -430,7 +433,7 @@
     <value>Use Cozy Pass in Safari and other apps to auto-fill your logins.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden auto-fill service</value>
+    <value>Cozy Pass auto-fill service</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Use the Cozy Pass accessibility service to auto-fill your logins.</value>
@@ -442,10 +445,10 @@
     <value>You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?</value>
   </data>
   <data name="ChangeMasterPassword" xml:space="preserve">
-    <value>Change master password</value>
+    <value>Change password</value>
   </data>
   <data name="ChangePasswordConfirmation" xml:space="preserve">
-    <value>You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?</value>
+    <value>You can change your password on the bitwarden.com web vault. Do you want to visit the website now?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
@@ -467,7 +470,7 @@
     <value>Enable automatic syncing</value>
   </data>
   <data name="EnterEmailForHint" xml:space="preserve">
-    <value>Enter your account email address to receive your master password hint.</value>
+    <value>Enter your account email address to receive your password hint.</value>
   </data>
   <data name="ExntesionReenable" xml:space="preserve">
     <value>Re-enable app extension</value>
@@ -510,7 +513,7 @@
     <value>Generate password</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Get your master password hint</value>
+    <value>Get your password hint</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Import items</value>
@@ -562,13 +565,13 @@
     <value>Password confirmation is not correct.</value>
   </data>
   <data name="MasterPasswordDescription" xml:space="preserve">
-    <value>The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it.</value>
+    <value>The master password is the password you use to access your vault. It is very important that you do not forget your password. There is no way to recover the password in the event that you forget it.</value>
   </data>
   <data name="MasterPasswordHint" xml:space="preserve">
     <value>Master password hint (optional)</value>
   </data>
   <data name="MasterPasswordHintDescription" xml:space="preserve">
-    <value>A master password hint can help you remember your password if you forget it.</value>
+    <value>A password hint can help you remember your password if you forget it.</value>
   </data>
   <data name="MasterPasswordLengthValMessage" xml:space="preserve">
     <value>Master password must be at least 8 characters long.</value>
@@ -628,13 +631,13 @@
     <value>Password hint</value>
   </data>
   <data name="PasswordHintAlert" xml:space="preserve">
-    <value>We've sent you an email with your master password hint.</value>
+    <value>We've sent you an email with your password hint.</value>
   </data>
   <data name="PasswordOverrideAlert" xml:space="preserve">
     <value>Are you sure you want to overwrite the current password?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden keeps your vault automatically synced by using push notifications. For the best possible experience, please select "Allow" on the following prompt when asked to enable push notifications.</value>
+    <value>Cozy Pass keeps your vault automatically synced by using push notifications. For the best possible experience, please select "Allow" on the following prompt when asked to enable push notifications.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -647,7 +650,7 @@
     <value>Regenerate password</value>
   </data>
   <data name="RetypeMasterPassword" xml:space="preserve">
-    <value>Re-type master password</value>
+    <value>Re-type password</value>
   </data>
   <data name="SearchVault" xml:space="preserve">
     <value>Search vault</value>
@@ -714,7 +717,7 @@
     <value>View item</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden web vault</value>
+    <value>Cozy Pass web vault</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Lost authenticator app?</value>
@@ -1144,7 +1147,7 @@
     <value>Icons server URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Auto-fill with Bitwarden</value>
+    <value>Auto-fill with Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Vault is locked</value>
@@ -1446,7 +1449,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden allows you to share your vault with others by using an organisation account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Cozy Pass allows you to share your vault with others by using an organisation account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export vault</value>
@@ -1474,7 +1477,7 @@
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your master password to continue.</value>
+    <value>Your vault is locked. Verify your password to continue.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Your vault is locked. Verify your PIN code to continue.</value>
@@ -1544,7 +1547,7 @@
     <value>Are you sure you want to exit Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>Do you want to require unlocking with your master password when the application is restarted?</value>
+    <value>Do you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Black</value>

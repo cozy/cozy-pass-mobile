@@ -235,6 +235,9 @@
     <value>Prejsť na stránku</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Pomoc a spätná väzba</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Pomoc a spätná väzba</value>
   </data>
@@ -1153,7 +1156,7 @@
     <value>Služba automatického vypĺňania pre zjednodušený prístup</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Bitwarden služba automatického vypĺňania využíva Android Autofill Framework pre zjednodušenie vypĺňania prihlasovacích údajov, kreditných kariet a identít v aplikáciách vo vašom zariadení.</value>
+    <value>Cozy Pass služba automatického vypĺňania využíva Android Autofill Framework pre zjednodušenie vypĺňania prihlasovacích údajov, kreditných kariet a identít v aplikáciách vo vašom zariadení.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Použite službu zjednodušenia prístupu bitwarden pre automatické vypĺňanie.</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden vám umožňuje zdieľať váš trezor s ostatnými ak používate konto v Organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?</value>
+    <value>Cozy Pass vám umožňuje zdieľať váš trezor s ostatnými ak používate konto v Organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export trezoru</value>
@@ -1532,7 +1535,7 @@
     <value>Naozaj chcete ukončiť Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Čierna</value>

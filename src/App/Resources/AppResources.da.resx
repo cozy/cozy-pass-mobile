@@ -235,6 +235,9 @@
     <value>Gå til hjemmeside</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hjælp</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Hjælp og feedback</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Undgå tvetydige tegn</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden app-udvidelse</value>
+    <value>Cozy Pass app-udvidelse</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Den letteste måde at tilføje nye logins til din boks er fra Bitwarden app-udvidelsen. Få mere at vide om brugen af Cozy Pass app-udvidelsen ved at gå til skærmen "Indstillinger".</value>
@@ -418,7 +421,7 @@
     <value>Benyt Cozy Pass i Safari og andre apps til autoudfyldelse af dine logins.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden autoudfyldningstjeneste</value>
+    <value>Cozy Pass autoudfyldningstjeneste</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Benyt Cozy Passs hjælpefunktion til autoudfyldning af dine logins.</value>
@@ -622,7 +625,7 @@
     <value>Er du sikker du vil overskrive den aktuelle adgangskode?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden holder automatisk din boks synkroniseret ved hjælp af push-notifikationer. For den bedst mulige oplevelse bør du vælge "Tillad" i den følgende prompt for at aktivere push-notifikationer.</value>
+    <value>Cozy Pass holder automatisk din boks synkroniseret ved hjælp af push-notifikationer. For den bedst mulige oplevelse bør du vælge "Tillad" i den følgende prompt for at aktivere push-notifikationer.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Vis element</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden web-boks</value>
+    <value>Cozy Pass web-boks</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Mistet autentificerings-app?</value>
@@ -1132,7 +1135,7 @@
     <value>Ikonserver URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Autoudfyld med Bitwarden</value>
+    <value>Autoudfyld med Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Boksen er låst</value>
@@ -1153,7 +1156,7 @@
     <value>Autoudfyld hjælpefunktion</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Bitwarden autoudfyld tjenesten bruger Androids AutoFyld framework til at hjælpe med at udfylde logins, kreditkort og identitetsoplysninger i andre apps på din enhed.</value>
+    <value>Cozy Pass autoudfyld tjenesten bruger Androids AutoFyld framework til at hjælpe med at udfylde logins, kreditkort og identitetsoplysninger i andre apps på din enhed.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Brug Cozy Pass autoudfyld tjenesten til at udfylde logins, kreditkort og identitetsoplysninger i andre apps.</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden giver dig mulighed for at dele din boks med andre ved at bruge en organisationskonto. Vil du besøge webstedet bitwarden.com for at få mere at vide?</value>
+    <value>Cozy Pass giver dig mulighed for at dele din boks med andre ved at bruge en organisationskonto. Vil du besøge webstedet bitwarden.com for at få mere at vide?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Eksportér boks</value>

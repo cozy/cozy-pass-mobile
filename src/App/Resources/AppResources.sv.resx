@@ -235,6 +235,9 @@
     <value>Gå till webbplats</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hjälp och återkoppling</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Hjälp och återkoppling</value>
   </data>
@@ -409,16 +412,16 @@
     <value>Undvik tvetydiga tecken</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden apptillägg</value>
+    <value>Cozy Pass apptillägg</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Cozy Pass App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Använd Cozy Pass i Safari och andra applikationer för att automatiskt fylla i din inloggningsinformation.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwardens hjälpmedelsservice för automatisk ifyllnad</value>
+    <value>Cozy Passs hjälpmedelsservice för automatisk ifyllnad</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Använd Cozy Passs tillgänglighetstjänst för att automatiskt fylla i din inloggningsinformation.</value>
@@ -622,7 +625,7 @@
     <value>Är du säker på att du vill skriva över det nuvarande lösenordet?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden håller ditt valv uppdaterat automatiskt genom att använda push-aviseringar. För den bästa möjliga upplevelsen vänligen välj "Tillåt" på förfrågan om du vill aktivera push-aviseringar.</value>
+    <value>Cozy Pass håller ditt valv uppdaterat automatiskt genom att använda push-aviseringar. För den bästa möjliga upplevelsen vänligen välj "Tillåt" på förfrågan om du vill aktivera push-aviseringar.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Visa objekt</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden webbvalv</value>
+    <value>Cozy Pass webbvalv</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Förlorat autentiseringsapp?</value>
@@ -1132,7 +1135,7 @@
     <value>Ikoner Server-URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Fyll i automatiskt med Bitwarden</value>
+    <value>Fyll i automatiskt med Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Valvet är låst</value>
@@ -1153,7 +1156,7 @@
     <value>Tillgänglighetstjänst för automatisk ifyllnad</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Bitwardens tillgänglighetstjänst för automatisk ifyllnad använder Android Autofill Framework för att assistera med att fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar på din enhet.</value>
+    <value>Cozy Passs tillgänglighetstjänst för automatisk ifyllnad använder Android Autofill Framework för att assistera med att fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar på din enhet.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Använd Cozy Passs tillgänglighetstjänst för att automatiskt fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar.</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Cozy Pass allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export Vault</value>
@@ -1462,7 +1465,7 @@
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your master password to continue.</value>
+    <value>Your vault is locked. Verify your password to continue.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Your vault is locked. Verify your PIN code to continue.</value>
@@ -1532,7 +1535,7 @@
     <value>Are you sure you want to exit Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Black</value>

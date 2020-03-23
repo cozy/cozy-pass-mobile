@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About" xml:space="preserve">
-    <value>О Bitwarden</value>
+    <value>О Cozy Pass</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Добавить</value>
@@ -234,6 +234,9 @@
   <data name="GoToWebsite" xml:space="preserve">
     <value>Перейти на сайт</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Помощь и обратная связь</value>
   </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Помощь и обратная связь</value>
@@ -409,7 +412,7 @@
     <value>Избегать неоднозначных символов</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Расширение Bitwarden</value>
+    <value>Расширение Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Самый простой способ добавить новые логины в ваше хранилище это расширение Bitwarden. Дополнительные сведения об использовании расширения Cozy Pass в разделе 'Настройки'.</value>
@@ -418,7 +421,7 @@
     <value>Используйте Cozy Pass в Safari и других приложениях для автозаполнения логинов.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Служба автозаполнения Bitwarden</value>
+    <value>Служба автозаполнения Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Используйте службу специальных возможностей Cozy Pass для автоматического заполнения ваших логинов.</value>
@@ -622,7 +625,7 @@
     <value>Вы хотите перезаписать текущий пароль?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden обеспечивает автоматическую синхронизацию хранилища при помощи push-уведомлений. Для вашего максимального удобства, пожалуйста, выберите "Разрешить" при появлении предложения включить push-уведомления.</value>
+    <value>Cozy Pass обеспечивает автоматическую синхронизацию хранилища при помощи push-уведомлений. Для вашего максимального удобства, пожалуйста, выберите "Разрешить" при появлении предложения включить push-уведомления.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Просмотр элемента</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Веб-хранилище Bitwarden</value>
+    <value>Веб-хранилище Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Потеряли доступ к приложению для аутентификации?</value>
@@ -1132,7 +1135,7 @@
     <value>URL-адрес сервера значков</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Автозаполнение Bitwarden</value>
+    <value>Автозаполнение Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Хранилище заблокировано</value>
@@ -1296,7 +1299,7 @@
     <value>4. Включите автозаполнение</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Выберите Bitwarden</value>
+    <value>5. Выберите Cozy Pass</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Автозаполнение паролей</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden позволяет делиться своим хранилищем с другими пользователями, используя учетную запись организации. Хотите посетить сайт bitwarden.com, чтобы узнать больше?</value>
+    <value>Cozy Pass позволяет делиться своим хранилищем с другими пользователями, используя учетную запись организации. Хотите посетить сайт bitwarden.com, чтобы узнать больше?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Экспортировать хранилище</value>

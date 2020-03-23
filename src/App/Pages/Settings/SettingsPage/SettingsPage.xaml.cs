@@ -85,7 +85,7 @@ namespace Bit.App.Pages
             {
                 await _vm.AboutAsync();
             }
-            else if(item.Name == AppResources.HelpAndFeedback)
+            else if(item.Name == AppResources.Help)
             {
                 _vm.Help();
             }

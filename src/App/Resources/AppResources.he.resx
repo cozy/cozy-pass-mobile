@@ -235,6 +235,9 @@
     <value>עבור לאתר</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>עזרה</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>עזרה ומשוב</value>
   </data>
@@ -409,7 +412,7 @@
     <value>המנע מאותיות ותוים דומים</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>תוסף האפליקציה של Bitwarden</value>
+    <value>תוסף האפליקציה של Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>הדרך הקלה ביותר להוספת סיסמאות לכספת היא דרך התוסף של Bitwarden. למד עוד אודות השימוש בתוסף של Cozy Pass בעזרת פתיחת חלון "הגדרות".</value>
@@ -418,7 +421,7 @@
     <value>השתמש בCozy Pass בדפדפן Safari ואפליקציות נוספות כדי לבצע כתיבה אוטומטית של הסיסמאות שלך.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>שירות השלמה אוטומטית של Bitwarden</value>
+    <value>שירות השלמה אוטומטית של Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>השתמש בשירות הנגישות של Cozy Pass כדי למלא בצורה אוטומטית את פרטי החיבור שלך.</value>
@@ -702,7 +705,7 @@
     <value>צפה בפריט</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>כספת באתר Bitwarden</value>
+    <value>כספת באתר Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>הסרת את אפליקצית האימות?</value>
@@ -1133,7 +1136,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>כתובת השרת עבור האייקון</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>השלמה אוטומטית עם Bitwarden</value>
+    <value>השלמה אוטומטית עם Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>הכספת נעולה</value>

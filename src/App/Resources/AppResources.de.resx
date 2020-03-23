@@ -235,6 +235,9 @@
     <value>Webseite besuchen</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Hilfe und Feedback</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Mehrdeutige Zeichen vermeiden</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden App Erweiterung</value>
+    <value>Cozy Pass App Erweiterung</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Die einfachste Möglichkeit, neue Anmeldedaten zu Ihrem Tresor hinzuzufügen, ist die Bitwarden App Erweiterung. Erfahren Sie mehr über die Cozy Pass App Erweiterung, indem Sie zu dem "Einstellungen"-Bildschirm navigieren.</value>
@@ -418,7 +421,7 @@
     <value>Nutze Cozy Pass in Safari und anderen Apps, um Zugangsdaten automatisch einzufügen.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden Auto-Ausfüllen Funktion</value>
+    <value>Cozy Pass Auto-Ausfüllen Funktion</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Verwende den Cozy Pass Dienst in den Bedienungshilfen um deine Zugangsdaten automatisch einzufügen.</value>
@@ -622,7 +625,7 @@
     <value>Bist du sicher, dass du das aktuelle Passwort überschreiben möchtest?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden aktualisiert deinen Tresor mit Pushbenachrichtigungen. Für die bestmögliche Benutzererfahrung tippe im folgenden Dialogfenster auf "Ok", um Pushbenachrichtigungen zu aktivieren.</value>
+    <value>Cozy Pass aktualisiert deinen Tresor mit Pushbenachrichtigungen. Für die bestmögliche Benutzererfahrung tippe im folgenden Dialogfenster auf "Ok", um Pushbenachrichtigungen zu aktivieren.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -702,7 +705,7 @@
     <value>Eintrag anzeigen</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden Web-Tresor</value>
+    <value>Cozy Pass Web-Tresor</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Authentifizierungs-App verloren?</value>
@@ -1434,7 +1437,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden erlaubt es Ihnen, Ihren Tresor mit anderen zu teilen, indem Sie ein Organisationskonto verwenden. Möchten Sie die bitwarden.com Website besuchen, um mehr zu erfahren?</value>
+    <value>Cozy Pass erlaubt es Ihnen, Ihren Tresor mit anderen zu teilen, indem Sie ein Organisationskonto verwenden. Möchten Sie die bitwarden.com Website besuchen, um mehr zu erfahren?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Tresor exportieren</value>
@@ -1532,7 +1535,7 @@
     <value>Sind Sie sicher, dass Sie Cozy Pass verlassen möchten?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your master password when the application is restarted?</value>
+    <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Schwarz</value>

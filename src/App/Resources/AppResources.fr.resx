@@ -251,6 +251,9 @@
     <value>Visiter le site web</value>
     <comment>The button text that allows user to launch the website to their web browser.</comment>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aide</value>
+  </data>
   <data name="HelpAndFeedback" xml:space="preserve">
     <value>Aide et retour</value>
   </data>
@@ -267,7 +270,7 @@
     <comment>Title for the alert when internet connection is required to continue.</comment>
   </data>
   <data name="InvalidMasterPassword" xml:space="preserve">
-    <value>Mot de passe maître invalide. Veuillez réessayer.</value>
+    <value>Mot de passe invalide. Veuillez réessayer.</value>
   </data>
   <data name="InvalidPIN" xml:space="preserve">
     <value>PIN invalide. Veuillez réessayer.</value>
@@ -292,7 +295,7 @@
     <value>Êtes-vous sûr(e) de vouloir vous déconnecter ?</value>
   </data>
   <data name="MasterPassword" xml:space="preserve">
-    <value>Mot de passe maître</value>
+    <value>Mot de passe</value>
     <comment>Label for a master password.</comment>
   </data>
   <data name="More" xml:space="preserve">
@@ -425,7 +428,7 @@
     <value>Évitez les caractères ambigus</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extension de l'application Bitwarden</value>
+    <value>Extension de l'application Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de l'application Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
@@ -434,7 +437,7 @@
     <value>Utilisez Cozy Pass dans Safari et d'autres applications pour le remplissage automatique de vos identifiants.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Service de saisie automatique Bitwarden</value>
+    <value>Service de saisie automatique Cozy Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Utilisez le service d'accessibilité de Cozy Pass pour remplir automatiquement vos identifiants.</value>
@@ -641,7 +644,7 @@
     <value>Êtes-vous sûr(e) de vouloir écraser le mot de passe existant ?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden conserve automatiquement votre coffre synchronisé en utilisant des notifications push. Pour la meilleure expérience possible, veuillez choisir "Ok" sur la boîte de dialogue suivante (activation des notifications push).</value>
+    <value>Cozy Pass conserve automatiquement votre coffre synchronisé en utilisant des notifications push. Pour la meilleure expérience possible, veuillez choisir "Ok" sur la boîte de dialogue suivante (activation des notifications push).</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -721,7 +724,7 @@
     <value>Afficher l'élément</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Coffre web Bitwarden</value>
+    <value>Coffre web Cozy Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Application d'authentification perdue ?</value>
@@ -1151,7 +1154,7 @@
     <value>URL du serveur d’icônes</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Saisie automatique avec Bitwarden</value>
+    <value>Saisie automatique avec Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Le coffre est verrouillé</value>
@@ -1453,7 +1456,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Bitwarden vous permet de partager votre coffre avec d'autres personnes en utilisant un compte d'organisation. Souhaitez-vous visiter le site web bitwarden.com pour en savoir plus ?</value>
+    <value>Cozy Pass vous permet de partager votre coffre avec d'autres personnes en utilisant un compte d'organisation. Souhaitez-vous visiter le site web bitwarden.com pour en savoir plus ?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exporter le coffre</value>
