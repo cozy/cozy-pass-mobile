@@ -184,7 +184,7 @@ namespace Bit.Core.Services
             await _environmentService.SetUrlsAsync(environmentData);
         }
 
-        public string GenerateURIForApp(string appName)
+        public string GetURLForApp(string appName)
         {
             var url = GetCozyURL();
             var builder = new UriBuilder(url);
