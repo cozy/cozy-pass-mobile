@@ -1630,4 +1630,7 @@
   <data name="ExportVaultSuccess" xml:space="preserve">
     <value>Vault exported successfully</value>
   </data>
+  <data name="RegistrationSuccess" xml:space="preserve">
+    <value>Registration was successful, you can login now</value>
+  </data>
 </root>

@@ -12,12 +12,14 @@ namespace Bit.App.Pages
         private IMessagingService _messagingService;
         private IPlatformUtilsService _platformUtilsService;
         private II18nService _i18nService;
+        private ICozyClientService _cozyClientService;
 
         public HomePage()
         {
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             _messagingService.Send("showStatusBar", false);
             InitializeComponent();
@@ -50,7 +52,8 @@ namespace Bit.App.Pages
             {
                 #region cozy
                 var lang = _i18nService.Culture.TwoLetterISOLanguageName;
-                _platformUtilsService.LaunchUri($"https://manager.cozycloud.cc/cozy/create?lang={lang}");
+                var uri = _cozyClientService.GetRegistrationURL(lang: lang);
+                _platformUtilsService.LaunchUri(uri);
                 // Navigation.PushModalAsync(new NavigationPage(new RegisterPage(this)));
                 #endregion
             }

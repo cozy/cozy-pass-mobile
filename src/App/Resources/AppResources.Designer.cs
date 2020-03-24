@@ -2866,5 +2866,11 @@ namespace Bit.App.Resources {
                 return ResourceManager.GetString("ExportVaultSuccess", resourceCulture);
             }
         }
+        
+        public static string RegistrationSuccess {
+            get {
+                return ResourceManager.GetString("RegistrationSuccess", resourceCulture);
+            }
+        }
     }
 }

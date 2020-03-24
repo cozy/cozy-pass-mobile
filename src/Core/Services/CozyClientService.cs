@@ -24,6 +24,9 @@ namespace Bit.Core.Services
         private readonly IApiService _apiService;
         private readonly IEnvironmentService _environmentService;
 
+        private string _registrationState;
+        private string _registrationSecret;
+
         private string ApiBaseUrl { get; set; }
 
         public CozyClientService(
@@ -193,6 +196,65 @@ namespace Bit.Core.Services
             parts[0] = $"{parts[0]}-{appName}";
             builder.Host = string.Join(".", parts);
             return builder.ToString();
+        }
+
+        private string GenerateRandomValue() {
+            var rand = new Random();
+            var d = rand.NextDouble();
+            return BitConverter.DoubleToInt64Bits(d).ToString("X");
+        }
+
+        private void GenerateOnboardingSecretAndState() {
+            _registrationSecret = GenerateRandomValue();
+            _registrationState = GenerateRandomValue();
+        }
+
+        public bool CheckStateAndSecretInOnboardingCallbackURL(Uri url)
+        {
+            var query = url.Query;
+            var queryDict = System.Web.HttpUtility.ParseQueryString(query);
+            var urlState = queryDict.Get("state");
+            return urlState == _registrationState;
+        }
+
+        public string GetRegistrationURL(string lang)
+        {
+
+            var doctypes = new [] {
+                "com.bitwarden.profiles",
+                "com.bitwarden.ciphers",
+                "com.bitwarden.folders",
+                "com.bitwarden.organizations",
+                "io.cozy.konnectors",
+                "io.cozy.apps.suggestions"
+            };
+
+            GenerateOnboardingSecretAndState();
+
+            var logoURI = "https://files.cozycloud.cc/pass/logo-pass.png";
+            var policyURI = "https://files.cozycloud.cc/cgu.pdf";
+            var softwareID = "io.cozy.pass.mobile";
+
+            var data = new
+            {
+                software_id = softwareID,
+                client_name = "Cozy Pass",
+                client_kind = "mobile",
+                logo_uri = logoURI,
+                policy_uri = policyURI,
+                scopes = doctypes,
+                redirect_uri = "cozypass://onboarded", //"https://links.mycozy.cloud/pass",
+                onboarding = new
+                {
+                    app = softwareID,
+                    permissions = doctypes,
+                    secret = _registrationSecret,
+                    state = _registrationState
+                }
+            };
+            var json = JsonConvert.SerializeObject(data);
+            var escaped = Uri.EscapeDataString(json);
+            return $"https://manager.cozycloud.cc/cozy/create?domain=cozy.rocks&lang={lang}&onboarding={escaped}";
         }
     }
 }

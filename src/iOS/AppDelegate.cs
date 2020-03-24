@@ -40,6 +40,8 @@ namespace Bit.iOS
         private IStorageService _storageService;
         private ILockService _lockService;
         private IEventService _eventService;
+        private IPlatformUtilsService _platformUtilsService;
+        private ICozyClientService _cozyClientService;
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -52,6 +54,8 @@ namespace Bit.iOS
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _lockService = ServiceContainer.Resolve<ILockService>("lockService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
+            _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             LoadApplication(new App.App(null));
             iOSCoreHelpers.AppearanceAdjustments(_deviceActionService);
@@ -221,8 +225,29 @@ namespace Bit.iOS
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
             NSObject annotation)
         {
+            #region cozy
+            var urlStr = url.ToString();
+            if (urlStr.Contains("onboarded"))
+            {
+                if (_cozyClientService.CheckStateAndSecretInOnboardingCallbackURL(new Uri(urlStr)))
+                {
+                    DisplayOnboardedDialogAsync();
+                }
+                
+            }
+            #endregion
             return true;
         }
+
+        #region cozy
+        private async void DisplayOnboardedDialogAsync() {
+            // We have to wait a bit, since we do not want a Dialog to appear when the splashscreen
+            // is displayed. Otherwise, after dismissing the dialog, we stay on the splashscreen.
+            await Task.Delay(500);
+            await _platformUtilsService.ShowDialogAsync(AppResources.RegistrationSuccess, AppResources.CozyPass,
+                            AppResources.Close);
+        }
+        #endregion
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {

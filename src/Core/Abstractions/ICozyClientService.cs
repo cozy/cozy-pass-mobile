@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Net.Http;
 using Bit.Core.Models.Response;
+using System;
 
 namespace Bit.Core.Abstractions
 {
@@ -12,5 +13,7 @@ namespace Bit.Core.Abstractions
         string GetEmailFromCozyURL(string cozyURL);
         Task ConfigureEnvironmentFromCozyURLAsync(string cozyURL);
         string GetURLForApp(string appname);
+        string GetRegistrationURL(string lang);
+        bool CheckStateAndSecretInOnboardingCallbackURL(Uri url);
     }
 }
