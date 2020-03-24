@@ -32,6 +32,7 @@ namespace Bit.App.Pages
         private Dictionary<string, int> _folderCounts = new Dictionary<string, int>();
         private Dictionary<string, int> _collectionCounts = new Dictionary<string, int>();
         private Dictionary<CipherType, int> _typeCounts = new Dictionary<CipherType, int>();
+        private readonly Dictionary<CipherType, List<CipherView>> _cipherPerType = new Dictionary<CipherType, List<CipherView>>();
 
         private readonly ICipherService _cipherService;
         private readonly IFolderService _folderService;
@@ -77,8 +78,6 @@ namespace Bit.App.Pages
         public bool HasCiphers { get; set; }
         public bool HasFolders { get; set; }
         public bool HasCollections { get; set; }
-        public bool ShowNoFolderCiphers => (NoFolderCiphers?.Count ?? int.MaxValue) < NoFolderListSize &&
-            (!Collections?.Any() ?? true);
         public List<CipherView> Ciphers { get; set; }
         public List<CipherView> FavoriteCiphers { get; set; }
         public List<CipherView> NoFolderCiphers { get; set; }
@@ -161,7 +160,7 @@ namespace Bit.App.Pages
             try
             {
                 await LoadDataAsync();
-                if(ShowNoFolderCiphers && (NestedFolders?.Any() ?? false))
+                if(NestedFolders?.Any() ?? false)
                 {
                     // Remove "No Folder" from folder listing
                     NestedFolders = NestedFolders.GetRange(0, NestedFolders.Count - 1);
@@ -176,53 +175,23 @@ namespace Bit.App.Pages
                         favListItems.Count, uppercaseGroupNames, true));
                 }
 
-                // Cozy customization: We deactivate showing of groups (login, credit cards, identities etc...),
-                // this is why we have a "false" here, not to change the original code too much.
-                var shouldShowGroups = MainPage && false;
-                if(shouldShowGroups)
+                if(MainPage)
                 {
-                    var loginGroup = new GroupingsPageListItem
+                    foreach (var entry in _cipherPerType)
                     {
-                        Type = CipherType.Login,
-                        ItemCount = (_typeCounts.ContainsKey(CipherType.Login) ?
-                                _typeCounts[CipherType.Login] : 0).ToString("N0")
-                    };
-                    var cardGroup = new GroupingsPageListItem
-                    {
-                        Type = CipherType.Card,
-                        ItemCount = (_typeCounts.ContainsKey(CipherType.Card) ?
-                                _typeCounts[CipherType.Card] : 0).ToString("N0")
-                    };
-                    var identityGroup = new GroupingsPageListItem
-                    {
-                        Type = CipherType.Identity,
-                        ItemCount = (_typeCounts.ContainsKey(CipherType.Identity) ?
-                                _typeCounts[CipherType.Identity] : 0).ToString("N0")
-                    };
-                    var noteGroup = new GroupingsPageListItem
-                    {
-                        Type = CipherType.SecureNote,
-                        ItemCount = (_typeCounts.ContainsKey(CipherType.SecureNote) ?
-                                _typeCounts[CipherType.SecureNote] : 0).ToString("N0")
-                    };
+                        var ciphers = entry.Value;
+                        var items = ciphers.Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
+                        if (items.Count > 0)
+                        {
+                            groupedItems.Add(new GroupingsPageListGroup(items, GroupingsPageListItem.GetNameFromType(entry.Key),
+                                items.Count, uppercaseGroupNames, true));
+                        }
+                    }
 
-
-                    groupedItems.Add(new GroupingsPageListGroup(
-                        AppResources.Types, 4, uppercaseGroupNames, !hasFavorites)
-                     {
-                         loginGroup,
-                         cardGroup,
-                         identityGroup,
-                         noteGroup
-                    });
                 }
 
                 var hasAnyFolder = NestedFolders?.Any() ?? false;
-
-                // Cozy customization: We deactivate showing of folders, this is why we have a "false" here,
-                // not to change the original code too much.
-                var shouldShowFolders = false && hasAnyFolder;
-                if (shouldShowFolders)
+                if (hasAnyFolder)
                 {
                     var folderListItems = NestedFolders.Select(f =>
                     {
@@ -238,7 +207,7 @@ namespace Bit.App.Pages
                 }
 
                 var hasAnyCollections = NestedCollections?.Any() ?? false;
-                var shouldShowCollections = false && hasAnyCollections;
+                var shouldShowCollections = hasAnyCollections;
                 if (shouldShowCollections)
                 {
                     var collectionListItems = NestedCollections.Select(c => new GroupingsPageListItem
@@ -255,13 +224,6 @@ namespace Bit.App.Pages
                     var ciphersListItems = Ciphers.Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
                     groupedItems.Add(new GroupingsPageListGroup(ciphersListItems, AppResources.Items,
                         ciphersListItems.Count, uppercaseGroupNames, !MainPage && !groupedItems.Any()));
-                }
-                if(ShowNoFolderCiphers)
-                {
-                    var noFolderCiphersListItems = NoFolderCiphers.Select(
-                        c => new GroupingsPageListItem { Cipher = c }).ToList();
-                    groupedItems.Add(new GroupingsPageListGroup(noFolderCiphersListItems, AppResources.FolderNone,
-                        noFolderCiphersListItems.Count, uppercaseGroupNames, false));
                 }
                 GroupedItems.ResetWithRange(groupedItems);
             }
@@ -360,6 +322,11 @@ namespace Bit.App.Pages
             _folderCounts.Clear();
             _collectionCounts.Clear();
             _typeCounts.Clear();
+            _cipherPerType.Clear();
+            _cipherPerType[CipherType.Login] = new List<CipherView>();
+            _cipherPerType[CipherType.SecureNote] = new List<CipherView>();
+            _cipherPerType[CipherType.Identity] = new List<CipherView>();
+            _cipherPerType[CipherType.SecureNote] = new List<CipherView>();
             HasFolders = false;
             HasCollections = false;
             Filter = null;
@@ -372,7 +339,6 @@ namespace Bit.App.Pages
                 Collections = await _collectionService.GetAllDecryptedAsync();
                 NestedCollections = await _collectionService.GetAllNestedAsync(Collections);
                 HasCollections = NestedCollections.Any();
-                Ciphers = _allCiphers;
 
                 #region cozy
                 await _userService.CacheCozyOrganizationId();
@@ -451,6 +417,12 @@ namespace Bit.App.Pages
                     {
                         _typeCounts.Add(c.Type, 1);
                     }
+
+                    if(!_cipherPerType.ContainsKey(c.Type))
+                    {
+                        _cipherPerType[c.Type] = new List<CipherView>();
+                    }
+                    _cipherPerType[c.Type].Add(c);
                 }
 
                 var fId = c.FolderId ?? "none";
