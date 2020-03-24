@@ -227,27 +227,14 @@ namespace Bit.iOS
         {
             #region cozy
             var urlStr = url.ToString();
-            if (urlStr.Contains("onboarded"))
+            if (urlStr.Contains("onboarded") && _cozyClientService.CheckStateAndSecretInOnboardingCallbackURL(new Uri(urlStr)))
             {
-                if (_cozyClientService.CheckStateAndSecretInOnboardingCallbackURL(new Uri(urlStr)))
-                {
-                    DisplayOnboardedDialogAsync();
-                }
-                
+                _messagingService.Send("onboarded");
+               
             }
             #endregion
             return true;
         }
-
-        #region cozy
-        private async void DisplayOnboardedDialogAsync() {
-            // We have to wait a bit, since we do not want a Dialog to appear when the splashscreen
-            // is displayed. Otherwise, after dismissing the dialog, we stay on the splashscreen.
-            await Task.Delay(500);
-            await _platformUtilsService.ShowDialogAsync(AppResources.RegistrationSuccess, AppResources.CozyPass,
-                            AppResources.Close);
-        }
-        #endregion
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
         {
