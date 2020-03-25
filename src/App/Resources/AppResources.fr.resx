@@ -1612,4 +1612,7 @@
   <data name="RegistrationSuccess" xml:space="preserve">
     <value>L'inscription s'est déroulée sans anicroche, vous pouvez vous connecter maintenant.</value>
   </data>
+  <data name="PurchasePremiumMembership" xml:space="preserve">
+    <value>Adhésion Premium</value>
+  </data>
 </root>

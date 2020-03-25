@@ -175,6 +175,13 @@ namespace Bit.App.Pages
             }
         }
 
+        public void PurchasePremiumMembership()
+        {
+            var lang = _i18nService.Culture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
+            var uri = $"https://cozy.io/{lang}/pricing/";
+            _platformUtilsService.LaunchUri(uri);
+        }
+
         public async Task LogOutAsync()
         {
             var confirmed = await _platformUtilsService.ShowDialogAsync(AppResources.LogoutConfirmation,
@@ -356,7 +363,8 @@ namespace Bit.App.Pages
                 // - fingerprint phrase functionality
                 // new SettingsPageListItem { Name = AppResources.ChangeMasterPassword },
                 //new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
-                new SettingsPageListItem { Name = AppResources.LogOut }
+                new SettingsPageListItem { Name = AppResources.LogOut },
+                new SettingsPageListItem { Name = AppResources.PurchasePremiumMembership }
             };
             var toolsItems = new List<SettingsPageListItem>
             {

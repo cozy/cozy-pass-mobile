@@ -2824,5 +2824,11 @@ namespace Bit.App.Resources {
                 return ResourceManager.GetString("RegistrationSuccess", resourceCulture);
             }
         }
+        
+        internal static string PurchasePremiumMembership {
+            get {
+                return ResourceManager.GetString("PurchasePremiumMembership", resourceCulture);
+            }
+        }
     }
 }

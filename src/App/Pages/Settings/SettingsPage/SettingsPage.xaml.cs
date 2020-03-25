@@ -137,6 +137,10 @@ namespace Bit.App.Pages
             {
                 await _vm.UpdatePinAsync();
             }
+            else if (item.Name == AppResources.PurchasePremiumMembership)
+            {
+                _vm.PurchasePremiumMembership();
+            }
             else
             {
                 var fingerprintName = AppResources.Fingerprint;

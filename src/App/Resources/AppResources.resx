@@ -1633,4 +1633,7 @@
   <data name="RegistrationSuccess" xml:space="preserve">
     <value>Registration was successful, you can login now</value>
   </data>
+  <data name="PurchasePremiumMembership" xml:space="preserve">
+    <value>Premium Membership</value>
+  </data>
 </root>
