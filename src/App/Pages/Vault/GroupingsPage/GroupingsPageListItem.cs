@@ -1,6 +1,7 @@
 ﻿using Bit.App.Resources;
 using Bit.Core.Enums;
 using Bit.Core.Models.View;
+using System.Collections.Generic;
 
 namespace Bit.App.Pages
 {
@@ -14,6 +15,7 @@ namespace Bit.App.Pages
         public CipherView Cipher { get; set; }
         public CipherType? Type { get; set; }
         public string ItemCount { get; set; }
+        public List<CipherView> Items { get; set; }
         public bool FuzzyAutofill { get; set; }
 
         public string Name
@@ -34,25 +36,26 @@ namespace Bit.App.Pages
                 }
                 else if(Type != null)
                 {
-                    switch(Type.Value)
-                    {
-                        case CipherType.Login:
-                            _name = AppResources.TypeLogin;
-                            break;
-                        case CipherType.SecureNote:
-                            _name = AppResources.TypeSecureNote;
-                            break;
-                        case CipherType.Card:
-                            _name = AppResources.TypeCard;
-                            break;
-                        case CipherType.Identity:
-                            _name = AppResources.TypeIdentity;
-                            break;
-                        default:
-                            break;
-                    }
+                    return GetNameFromType(Type);
                 }
                 return _name;
+            }
+        }
+
+        static public string GetNameFromType(CipherType? type)
+        {
+            switch (type.Value)
+            {
+                case CipherType.Login:
+                    return AppResources.TypeLogin;
+                case CipherType.SecureNote:
+                    return AppResources.TypeSecureNote;
+                case CipherType.Card:
+                    return AppResources.TypeCard;
+                case CipherType.Identity:
+                    return AppResources.TypeIdentity;
+                default:
+                    return null;
             }
         }
 
