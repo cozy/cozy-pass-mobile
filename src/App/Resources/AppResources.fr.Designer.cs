@@ -2818,5 +2818,11 @@ namespace Bit.App.Resources {
                 return ResourceManager.GetString("UseBiometricsToUnlock", resourceCulture);
             }
         }
+        
+        internal static string RegistrationSuccess {
+            get {
+                return ResourceManager.GetString("RegistrationSuccess", resourceCulture);
+            }
+        }
     }
 }

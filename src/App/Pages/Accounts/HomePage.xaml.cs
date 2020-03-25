@@ -4,20 +4,25 @@ using Bit.Core.Utilities;
 using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Bit.App.Resources;
 
 namespace Bit.App.Pages
 {
     public partial class HomePage : BaseContentPage
     {
-        private IMessagingService _messagingService;
-        private IPlatformUtilsService _platformUtilsService;
-        private II18nService _i18nService;
+        private readonly IMessagingService _messagingService;
+        private readonly IPlatformUtilsService _platformUtilsService;
+        private readonly II18nService _i18nService;
+        private readonly ICozyClientService _cozyClientService;
+        private readonly IBroadcasterService _broadcasterService;
 
         public HomePage()
         {
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
 
             _messagingService.Send("showStatusBar", false);
             InitializeComponent();
@@ -34,6 +39,29 @@ namespace Bit.App.Pages
         {
             base.OnAppearing();
             _messagingService.Send("showStatusBar", false);
+            CheckOnboarded();
+            _broadcasterService.Subscribe(nameof(HomePage), (message) =>
+            {
+                if (message.Command == "onboarded")
+                {
+                    CheckOnboarded();
+                }
+            });
+        }
+
+        public void CheckOnboarded ()
+        {
+            if (_cozyClientService.CheckStateAndSecretInOnboardingCallbackURL())
+            {
+                _cozyClientService.OnboardedURL = null;
+                HasOnboarded();
+            }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _broadcasterService.Unsubscribe(nameof(HomePage));
         }
 
         private void LogIn_Clicked(object sender, EventArgs e)
@@ -44,17 +72,42 @@ namespace Bit.App.Pages
             }
         }
 
+
         private void Register_Clicked(object sender, EventArgs e)
         {
             if(DoOnce())
             {
                 #region cozy
                 var lang = _i18nService.Culture.TwoLetterISOLanguageName;
-                _platformUtilsService.LaunchUri($"https://manager.cozycloud.cc/cozy/create?lang={lang}");
+                var uri = _cozyClientService.GetRegistrationURL(lang: lang);
+                _platformUtilsService.LaunchUri(uri);
                 // Navigation.PushModalAsync(new NavigationPage(new RegisterPage(this)));
                 #endregion
             }
         }
+
+        private void HasOnboarded()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                // A delay is needed here since otherwise we can show the Dialog
+                // while a splashscreen is showing, and this prevents the splashscreen
+                // to be removed.
+                await Task.Delay(500);
+                await DisplayOnboardedDialogAsync();
+                await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+            });
+   
+        }
+
+        #region cozy
+        private async Task DisplayOnboardedDialogAsync()
+        {
+            await _platformUtilsService.ShowDialogAsync(AppResources.RegistrationSuccess, AppResources.CozyPass,
+                            AppResources.Close);
+        }
+        #endregion
+
 
         private void Settings_Clicked(object sender, EventArgs e)
         {

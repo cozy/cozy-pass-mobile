@@ -1609,4 +1609,7 @@
   <data name="UseBiometricsToUnlock" xml:space="preserve">
     <value>Utiliser une empreinte biométrique pour déverrouiller</value>
   </data>
+  <data name="RegistrationSuccess" xml:space="preserve">
+    <value>L'inscription s'est déroulée sans anicroche, vous pouvez vous connecter maintenant.</value>
+  </data>
 </root>

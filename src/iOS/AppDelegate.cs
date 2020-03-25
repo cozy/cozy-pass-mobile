@@ -40,6 +40,8 @@ namespace Bit.iOS
         private IStorageService _storageService;
         private ILockService _lockService;
         private IEventService _eventService;
+        private IPlatformUtilsService _platformUtilsService;
+        private ICozyClientService _cozyClientService;
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
@@ -52,6 +54,8 @@ namespace Bit.iOS
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _lockService = ServiceContainer.Resolve<ILockService>("lockService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
+            _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             LoadApplication(new App.App(null));
             iOSCoreHelpers.AppearanceAdjustments(_deviceActionService);
@@ -221,6 +225,15 @@ namespace Bit.iOS
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
             NSObject annotation)
         {
+            #region cozy
+            var urlStr = url.ToString();
+            if (urlStr.Contains("onboarded"))
+            {
+                _cozyClientService.OnboardedURL = new Uri(urlStr);
+                _messagingService.Send("onboarded");
+               
+            }
+            #endregion
             return true;
         }
 

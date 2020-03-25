@@ -21,6 +21,10 @@ using Android.Support.V4.Content;
 
 namespace Bit.Droid
 {
+    [IntentFilter(
+    new[] { Intent.ActionView },
+    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+    DataScheme = "cozypass")]
     [Activity(
         Label = "Cozy Pass",
         Icon = "@mipmap/ic_launcher",
@@ -37,6 +41,8 @@ namespace Bit.Droid
         private IAppIdService _appIdService;
         private IStorageService _storageService;
         private IEventService _eventService;
+        private ICozyClientService _cozyClientService;
+
         private PendingIntent _lockAlarmPendingIntent;
         private PendingIntent _clearClipboardPendingIntent;
         private PendingIntent _eventUploadPendingIntent;
@@ -67,6 +73,7 @@ namespace Bit.Droid
             _appIdService = ServiceContainer.Resolve<IAppIdService>("appIdService");
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -143,7 +150,13 @@ namespace Bit.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            if(_deviceActionService.SupportsNfc())
+
+            if (Intent.Data?.Scheme == "cozypass")
+            {
+                OnOpenURL(Intent.DataString);
+            }
+
+            if (_deviceActionService.SupportsNfc())
             {
                 try
                 {
@@ -152,6 +165,15 @@ namespace Bit.Droid
                 catch { }
             }
             var setRestrictions = AndroidHelpers.SetPreconfiguredRestrictionSettingsAsync(this);
+        }
+
+        public void OnOpenURL(string urlStr)
+        {
+            if (urlStr.Contains("onboarded"))
+            {
+                _cozyClientService.OnboardedURL = new Uri(urlStr);
+                _messagingService.Send("onboarded");
+            }
         }
 
         protected override void OnNewIntent(Intent intent)
