@@ -39,13 +39,23 @@ namespace Bit.App.Pages
         {
             base.OnAppearing();
             _messagingService.Send("showStatusBar", false);
+            CheckOnboarded();
             _broadcasterService.Subscribe(nameof(HomePage), (message) =>
             {
                 if (message.Command == "onboarded")
                 {
-                    HasRegisteredAsync();
+                    CheckOnboarded();
                 }
             });
+        }
+
+        public void CheckOnboarded ()
+        {
+            if (_cozyClientService.CheckStateAndSecretInOnboardingCallbackURL())
+            {
+                _cozyClientService.OnboardedURL = null;
+                HasOnboarded();
+            }
         }
 
         protected override void OnDisappearing()
@@ -76,11 +86,8 @@ namespace Bit.App.Pages
             }
         }
 
-        private async void HasRegisteredAsync()
+        private void HasOnboarded()
         {
-            // We have to wait a bit, since we do not want a Dialog to appear when the splashscreen
-            // is displayed. Otherwise, after dismissing the dialog, we stay on the splashscreen.
-            await Task.Delay(500);
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await DisplayOnboardedDialogAsync();

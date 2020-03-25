@@ -28,6 +28,7 @@ namespace Bit.Core.Services
         private string _registrationSecret;
 
         private string ApiBaseUrl { get; set; }
+        public Uri OnboardedURL { get; set; }
 
         public CozyClientService(
             ITokenService tokenService,
@@ -209,9 +210,13 @@ namespace Bit.Core.Services
             _registrationState = GenerateRandomValue();
         }
 
-        public bool CheckStateAndSecretInOnboardingCallbackURL(Uri url)
+        public bool CheckStateAndSecretInOnboardingCallbackURL()
         {
-            var query = url.Query;
+            if (OnboardedURL == null)
+            {
+                return false;
+            }
+            var query = OnboardedURL.Query;
             var queryDict = System.Web.HttpUtility.ParseQueryString(query);
             var urlState = queryDict.Get("state");
             return urlState == _registrationState;

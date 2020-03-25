@@ -153,7 +153,7 @@ namespace Bit.Droid
 
             if (Intent.Data?.Scheme == "cozypass")
             {
-                OnOpenURLAsync(Intent.DataString);
+                OnOpenURL(Intent.DataString);
             }
 
             if (_deviceActionService.SupportsNfc())
@@ -167,13 +167,11 @@ namespace Bit.Droid
             var setRestrictions = AndroidHelpers.SetPreconfiguredRestrictionSettingsAsync(this);
         }
 
-        public async void OnOpenURLAsync(string urlStr)
+        public void OnOpenURL(string urlStr)
         {
-            if (urlStr.Contains("onboarded") && _cozyClientService.CheckStateAndSecretInOnboardingCallbackURL(new Uri(urlStr)))
+            if (urlStr.Contains("onboarded"))
             {
-                // Need to wait for the HomePage view to appear
-                // otherwise the "onboarded" message is not received
-                await Task.Delay(500);
+                _cozyClientService.OnboardedURL = new Uri(urlStr);
                 _messagingService.Send("onboarded");
             }
         }

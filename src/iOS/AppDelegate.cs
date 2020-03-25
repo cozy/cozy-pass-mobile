@@ -227,8 +227,9 @@ namespace Bit.iOS
         {
             #region cozy
             var urlStr = url.ToString();
-            if (urlStr.Contains("onboarded") && _cozyClientService.CheckStateAndSecretInOnboardingCallbackURL(new Uri(urlStr)))
+            if (urlStr.Contains("onboarded"))
             {
+                _cozyClientService.OnboardedURL = new Uri(urlStr);
                 _messagingService.Send("onboarded");
                
             }
