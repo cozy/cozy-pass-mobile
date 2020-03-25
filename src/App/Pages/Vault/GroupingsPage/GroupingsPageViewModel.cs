@@ -177,13 +177,23 @@ namespace Bit.App.Pages
 
                 if(MainPage)
                 {
-                    foreach (var entry in _cipherPerType)
+                    var order = new List<CipherType>
                     {
-                        var ciphers = entry.Value;
+                        CipherType.Identity,
+                        CipherType.Card,
+                        CipherType.Login
+                    };
+                    foreach (var type in order)
+                    {
+                        List<CipherView> ciphers;
+                        if (!_cipherPerType.TryGetValue(type, out ciphers))
+                        {
+                            continue;
+                        }
                         var items = ciphers.Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
                         if (items.Count > 0)
                         {
-                            groupedItems.Add(new GroupingsPageListGroup(items, GroupingsPageListItem.GetNameFromType(entry.Key),
+                            groupedItems.Add(new GroupingsPageListGroup(items, GroupingsPageListItem.GetNameFromType(type),
                                 items.Count, uppercaseGroupNames, true));
                         }
                     }
