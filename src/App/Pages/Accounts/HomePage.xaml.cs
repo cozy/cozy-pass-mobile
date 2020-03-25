@@ -90,6 +90,10 @@ namespace Bit.App.Pages
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
+                // A delay is needed here since otherwise we can show the Dialog
+                // while a splashscreen is showing, and this prevents the splashscreen
+                // to be removed.
+                await Task.Delay(500);
                 await DisplayOnboardedDialogAsync();
                 await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
             });
