@@ -11,9 +11,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile.autofill</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.0</string>
+	<string>2.3.5</string>
 	<key>CFBundleVersion</key>
-	<string>63</string>
+	<string>68</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
