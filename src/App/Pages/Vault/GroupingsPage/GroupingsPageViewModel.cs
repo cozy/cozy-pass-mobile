@@ -207,7 +207,7 @@ namespace Bit.App.Pages
                 }
 
                 var hasAnyCollections = NestedCollections?.Any() ?? false;
-                var shouldShowCollections = hasAnyCollections;
+                var shouldShowCollections = hasAnyCollections && false;
                 if (shouldShowCollections)
                 {
                     var collectionListItems = NestedCollections.Select(c => new GroupingsPageListItem
