@@ -40,13 +40,16 @@
     <ScrollView Padding="0, 0, 0, 20">
         <StackLayout Spacing="0" Padding="0">
             <StackLayout StyleClass="box">
-                <controls:MonoLabel
-                    Text="{Binding ColoredPassword, Mode=OneWay}"
-                    TextType="Html"
-                    Margin="0, 20"
-                    StyleClass="text-lg"
-                    HorizontalTextAlignment="Center"
-                    LineBreakMode="CharacterWrap" />
+                <FlexLayout Direction="Column"
+                            AlignItems="Center">
+                    <controls:MonoLabel
+                        Text="{Binding ColoredPassword, Mode=OneWay}"
+                        TextType="Html"
+                        Margin="0, 20"
+                        StyleClass="text-lg"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="CharacterWrap" />
+                </FlexLayout>
                 <Button Text="{u:I18n CopyPassword}"
                         HorizontalOptions="FillAndExpand"
                         TextColor="{StaticResource Key=NavigationBarTextColor}"
