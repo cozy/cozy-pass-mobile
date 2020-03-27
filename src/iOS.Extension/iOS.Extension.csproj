@@ -75,12 +75,12 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignKey>Apple Distribution: Cozy Cloud (3AKXFMV43J)</CodesignKey>
     <MtouchExtraArgs>--optimize=experimental-xforms-product-type --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <MtouchLink>Full</MtouchLink>
-    <CodesignProvision>Dist: Bitwarden Ext</CodesignProvision>
+    <CodesignProvision>Cozy Pass Find Login Action Distribution Profile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
