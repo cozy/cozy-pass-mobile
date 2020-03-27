@@ -131,7 +131,7 @@ namespace Bit.App.Pages
 
         public void Import()
         {
-            var passwordsURL = _cozyClientService.GetURLForApp("passwords");
+            var passwordsURL = _cozyClientService.GetURLForApp("passwords", fragment: "/installation/import");
             _platformUtilsService.LaunchUri(passwordsURL);
         }
 

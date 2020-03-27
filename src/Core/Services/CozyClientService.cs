@@ -188,7 +188,7 @@ namespace Bit.Core.Services
             await _environmentService.SetUrlsAsync(environmentData);
         }
 
-        public string GetURLForApp(string appName)
+        public string GetURLForApp(string appName, string fragment = null)
         {
             var url = GetCozyURL();
             var builder = new UriBuilder(url);
@@ -196,6 +196,10 @@ namespace Bit.Core.Services
             var parts = host.Split('.');
             parts[0] = $"{parts[0]}-{appName}";
             builder.Host = string.Join(".", parts);
+            if (fragment != null)
+            {
+                builder.Fragment = fragment;
+            }
             return builder.ToString();
         }
 
