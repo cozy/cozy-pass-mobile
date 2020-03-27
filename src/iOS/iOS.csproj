@@ -74,11 +74,12 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>Apple Distribution: Cozy Cloud (3AKXFMV43J)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
     <MtouchExtraArgs>--optimize=experimental-xforms-product-type --nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
+    <CodesignProvision>Cozy Pass Distribution Profile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
