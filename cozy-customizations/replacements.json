@@ -163,5 +163,19 @@
   {
     "dests": ["../src/Android/Resources/mipmap-xxxhdpi/ic_launcher_round.png"],
     "src": "./Resources/android/ic_launcher_round-192.png"
+  },
+  {
+    "dests": [
+      "../src/Android/Resources/drawable/shared-with-cozy-icon.png",
+      "../src/iOS/Resources/shared-with-cozy-icon.png"
+    ],
+    "src": "./Resources/common/shared-with-cozy-icon.png"
+  },
+  {
+    "dests": [
+      "../src/Android/Resources/drawable-hdpi/shared-with-cozy-icon.png",
+      "../src/iOS/Resources/shared-with-cozy-icon@2x.png"
+    ],
+    "src": "./Resources/common/shared-with-cozy-icon@2x.png"
   }
 ]

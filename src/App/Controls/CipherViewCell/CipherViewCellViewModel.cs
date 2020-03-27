@@ -17,7 +17,7 @@ namespace Bit.App.Controls
             set {
                 SetProperty(ref _cipher, value, () => {
                     #region cozy
-                    TriggerPropertyChanged(nameof(SharedIconText));
+                    TriggerPropertyChanged(nameof(CozyShared));
                     #endregion
                 });
             }
@@ -25,9 +25,6 @@ namespace Bit.App.Controls
 
 
         #region cozy
-        private static readonly string shareIcon = "\uf1e0";
-        private static readonly string cloudIcon = "\uf0c2";
-
         private IUserService _userService;
 
         public CipherViewCellViewModel()
@@ -35,25 +32,20 @@ namespace Bit.App.Controls
             _userService = ServiceContainer.Resolve<IUserService>("userService"); ;
         }
 
-        public static readonly BindableProperty SharedIconTextProperty = BindableProperty.Create(
-           nameof(SharedIconText),
-           typeof(string),
+        public static readonly BindableProperty CozySharedProperty = BindableProperty.Create(
+           nameof(CozyShared),
+           typeof(bool),
            typeof(CipherViewCellViewModel),
-           string.Empty
+           false
        );
 
-        public string SharedIconText {
+        public bool CozyShared
+        {
             get
             {
                 var cozyOrganizationId = _userService.CozyOrganizationId;
-                if (_cipher.OrganizationId == cozyOrganizationId)
-                {
-                    return CipherViewCellViewModel.cloudIcon;
-                } else
-                {
-                    return CipherViewCellViewModel.shareIcon;
-                }
-                
+                return _cipher.OrganizationId == cozyOrganizationId;
+
             }
         }
         #endregion
