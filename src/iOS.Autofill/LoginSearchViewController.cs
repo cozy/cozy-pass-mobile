@@ -27,7 +27,14 @@ namespace Bit.iOS.Autofill
             CancelBarButton.Title = AppResources.Cancel;
             SearchBar.Placeholder = AppResources.Search;
             SearchBar.BackgroundColor = SearchBar.BarTintColor = ThemeHelpers.ListHeaderBackgroundColor;
-            if(!ThemeHelpers.LightTheme)
+            if (UIDevice.CurrentDevice.CheckSystemVersion(13, 0))
+            {
+#pragma warning disable XI0002 // Notifies you from using newer Apple APIs when targeting an older OS version
+                SearchBar.SearchTextField.TextColor = ThemeHelpers.TextColor;
+#pragma warning restore XI0002 // Notifies you from using newer Apple APIs when targeting an older OS version
+            }
+            
+            if (!ThemeHelpers.LightTheme)
             {
                 SearchBar.KeyboardAppearance = UIKeyboardAppearance.Dark;
             }
