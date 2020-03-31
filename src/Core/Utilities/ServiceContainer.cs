@@ -47,8 +47,10 @@ namespace Bit.Core.Utilities
             searchService = new SearchService(cipherService);
             var lockService = new LockService(cryptoService, userService, platformUtilsService, storageService,
                 folderService, cipherService, collectionService, searchService, messagingService, null);
+            var environmentService = new EnvironmentService(apiService, storageService);
+            var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
             var syncService = new SyncService(userService, apiService, settingsService, folderService,
-                cipherService, cryptoService, collectionService, storageService, messagingService, (bool expired) =>
+                cipherService, cryptoService, collectionService, storageService, messagingService, cozyClientService, (bool expired) =>
                 {
                     messagingService.Send("logout", expired);
                     return Task.FromResult(0);
@@ -56,8 +58,6 @@ namespace Bit.Core.Utilities
             var passwordGenerationService = new PasswordGenerationService(cryptoService, storageService,
                 cryptoFunctionService);
             var totpService = new TotpService(storageService, cryptoFunctionService);
-            var environmentService = new EnvironmentService(apiService, storageService);
-            var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
             var authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
                 i18nService, platformUtilsService, messagingService, lockService);
             var exportService = new ExportService(folderService, cipherService);

@@ -122,6 +122,10 @@ namespace Bit.Core.Services
             }
         }
 
+        public async Task UpdateSynchronizedAtAsync() {
+            await FetchJSONAsync<object, object>(HttpMethod.Post, "settings/synchronized", null, false);
+        }
+
         public async Task<LogoutResponse> LogoutAsync() {
             var clientId = _tokenService.ClientId;
             var registrationAccessToken = _tokenService.RegistrationAccessToken;

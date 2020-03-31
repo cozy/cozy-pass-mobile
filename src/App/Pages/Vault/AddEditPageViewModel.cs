@@ -91,8 +91,7 @@ namespace Bit.App.Pages
             {
                 new KeyValuePair<string, CipherType>(AppResources.TypeLogin, CipherType.Login),
                 new KeyValuePair<string, CipherType>(AppResources.TypeCard, CipherType.Card),
-                new KeyValuePair<string, CipherType>(AppResources.TypeIdentity, CipherType.Identity),
-                new KeyValuePair<string, CipherType>(AppResources.TypeSecureNote, CipherType.SecureNote),
+                new KeyValuePair<string, CipherType>(AppResources.TypeIdentity, CipherType.Identity)
             };
             CardBrandOptions = new List<KeyValuePair<string, string>>
             {

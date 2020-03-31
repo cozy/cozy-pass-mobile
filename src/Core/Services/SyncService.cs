@@ -23,6 +23,7 @@ namespace Bit.Core.Services
         private readonly ICollectionService _collectionService;
         private readonly IStorageService _storageService;
         private readonly IMessagingService _messagingService;
+        private readonly ICozyClientService _cozyClientService;
         private readonly Func<bool, Task> _logoutCallbackAsync;
 
         public SyncService(
@@ -35,6 +36,7 @@ namespace Bit.Core.Services
             ICollectionService collectionService,
             IStorageService storageService,
             IMessagingService messagingService,
+            ICozyClientService cozyClientService,
             Func<bool, Task> logoutCallbackAsync)
         {
             _userService = userService;
@@ -46,6 +48,11 @@ namespace Bit.Core.Services
             _collectionService = collectionService;
             _storageService = storageService;
             _messagingService = messagingService;
+
+            #region cozy
+            _cozyClientService = cozyClientService;
+            #endregion
+
             _logoutCallbackAsync = logoutCallbackAsync;
         }
 
@@ -69,6 +76,10 @@ namespace Bit.Core.Services
                 return;
             }
             await _storageService.SaveAsync(string.Format(Keys_LastSyncFormat, userId), date);
+
+            #region cozy
+            await _cozyClientService.UpdateSynchronizedAtAsync();
+            #endregion
         }
 
         public async Task<bool> FullSyncAsync(bool forceSync, bool allowThrowOnError = false)
