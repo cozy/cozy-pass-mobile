@@ -142,7 +142,6 @@
     <Compile Include="Tiles\MyVaultTileService.cs" />
     <Compile Include="Utilities\AndroidHelpers.cs" />
     <Compile Include="Utilities\CustomFingerprintDialogFragment.cs" />
-    <Compile Include="Utilities\HockeyAppCrashManagerListener.cs" />
     <Compile Include="Utilities\StaticStore.cs" />
   </ItemGroup>
   <ItemGroup>

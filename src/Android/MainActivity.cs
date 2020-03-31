@@ -85,11 +85,6 @@ namespace Bit.Droid
                 Window.AddFlags(Android.Views.WindowManagerFlags.Secure);
             }
 
-#if !FDROID
-            var hockeyAppListener = new HockeyAppCrashManagerListener(_appIdService, _userService);
-            var hockeyAppTask = hockeyAppListener.InitAsync(this);
-#endif
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             _appOptions = GetOptions();

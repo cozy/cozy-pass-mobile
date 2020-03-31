@@ -9,7 +9,6 @@ using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Bit.iOS.Core.Services;
 using Foundation;
-using HockeyApp.iOS;
 using UIKit;
 
 namespace Bit.iOS.Core.Utilities
@@ -21,14 +20,6 @@ namespace Bit.iOS.Core.Utilities
         public static string AppExtensionId = "io.cozy.pass.mobile.find-login-action-extension";
         public static string AppGroupId = "group.io.cozy.pass.mobile";
         public static string AccessGroup = "3AKXFMV43J.io.cozy.pass.mobile";
-
-        public static void RegisterHockeyApp()
-        {
-            var crashManagerDelegate = new HockeyAppCrashManagerDelegate(
-                ServiceContainer.Resolve<IAppIdService>("appIdService"),
-                ServiceContainer.Resolve<IUserService>("userService"));
-            var task = crashManagerDelegate.InitAsync();
-        }
 
         public static void RegisterLocalServices()
         {

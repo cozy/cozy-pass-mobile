@@ -295,7 +295,6 @@ namespace Bit.iOS
             RegisterPush();
             var deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             ServiceContainer.Init(deviceActionService.DeviceUserAgent);
-            iOSCoreHelpers.RegisterHockeyApp();
             _pushHandler = new iOSPushNotificationHandler(
                 ServiceContainer.Resolve<IPushNotificationListenerService>("pushNotificationListenerService"));
             _nfcDelegate = new NFCReaderDelegate((success, message) =>
