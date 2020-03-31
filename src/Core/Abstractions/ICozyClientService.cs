@@ -16,5 +16,6 @@ namespace Bit.Core.Abstractions
         string GetURLForApp(string appname, string fragment);
         string GetRegistrationURL(string lang);
         bool CheckStateAndSecretInOnboardingCallbackURL();
+        Task UpdateSynchronizedAtAsync();
     }
 }
