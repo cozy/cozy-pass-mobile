@@ -19,13 +19,13 @@ using Java.Util;
 
 namespace Bit.Droid.Accessibility
 {
-    [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Bitwarden")]
+    [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Cozy Pass")]
     [IntentFilter(new string[] { "android.accessibilityservice.AccessibilityService" })]
     [MetaData("android.accessibilityservice", Resource = "@xml/accessibilityservice")]
     [Register("io.cozy.pass.Accessibility.AccessibilityService")]
     public class AccessibilityService : Android.AccessibilityServices.AccessibilityService
     {
-        private const string BitwardenPackage = "io.cozy.pass";
+        private const string BitwardenPackage = "io.cozy.pass.mobile";
         private const string BitwardenWebsite = "vault.bitwarden.com";
 
         private IStorageService _storageService;
