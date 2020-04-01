@@ -184,16 +184,24 @@ namespace Bit.Core.Services
             return (response.Content?.Headers?.ContentType?.MediaType ?? string.Empty) == "application/json";
         }
 
-        public string GetEmailFromCozyURL(string cozyURL)
+        private string NormalizeUserCozyURL(string userCozyURL)
         {
-            return string.Concat("me@", cozyURL);
+            var scheme = (userCozyURL.StartsWith("http://") || userCozyURL.StartsWith("https://")) ? "" : "https://";
+            return $"{scheme}{userCozyURL}";
         }
 
-        public async Task ConfigureEnvironmentFromCozyURLAsync(string cozyURL)
+        public string GetEmailFromCozyURL(string userCozyURL) {
+            var normalizedURL = NormalizeUserCozyURL(userCozyURL);
+            var url = new Uri(normalizedURL);
+            var host = url.Host;
+            return $"me@{host}";
+        }
+
+        public async Task ConfigureEnvironmentFromCozyURLAsync(string userCozyURL)
         {
             var environmentData = new EnvironmentUrlData();
-            var scheme = (cozyURL.StartsWith("http://") || cozyURL.StartsWith("https://")) ? "" : "https://";
-            var baseURL = string.Concat(scheme, cozyURL, "/bitwarden");
+            var cozyURL = NormalizeUserCozyURL(userCozyURL); 
+            var baseURL = $"{cozyURL}/bitwarden";
             environmentData.Base = baseURL;
             await _environmentService.SetUrlsAsync(environmentData);
         }
