@@ -231,10 +231,16 @@ namespace Bit.iOS
             {
                 _cozyClientService.OnboardedURL = new Uri(urlStr);
                 _messagingService.Send("onboarded");
-               
+                DismissRegistrationController();
             }
             #endregion
             return true;
+        }
+
+        private void DismissRegistrationController() {
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var vc = window.RootViewController;
+            vc.DismissViewController(true, null);
         }
 
         public override void FailedToRegisterForRemoteNotifications(UIApplication application, NSError error)
