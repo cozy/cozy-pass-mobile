@@ -281,7 +281,11 @@ namespace Bit.Core.Services
             };
             var json = JsonConvert.SerializeObject(data);
             var escaped = Uri.EscapeDataString(json);
-            return $"https://manager.cozycloud.cc/cozy/create?domain=cozy.rocks&lang={lang}&onboarding={escaped}";
+            var domain = "mycozy.cloud";
+            #if DEBUG
+	          domain = "cozy.rocks";
+	        #endif
+            return $"https://manager.cozycloud.cc/cozy/create?domain={domain}&lang={lang}&onboarding={escaped}";
         }
     }
 }
