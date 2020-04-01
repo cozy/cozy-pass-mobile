@@ -123,7 +123,13 @@ namespace Bit.Core.Services
         }
 
         public async Task UpdateSynchronizedAtAsync() {
-            await FetchJSONAsync<object, object>(HttpMethod.Post, "settings/synchronized", null, false);
+            try
+            {
+                await FetchJSONAsync<object, object>(HttpMethod.Post, "settings/synchronized", null, false);
+            } catch
+            {
+                return;
+            }
         }
 
         public async Task<LogoutResponse> LogoutAsync() {
