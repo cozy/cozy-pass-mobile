@@ -364,7 +364,7 @@ namespace Bit.App.Pages
                 // new SettingsPageListItem { Name = AppResources.ChangeMasterPassword },
                 //new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
                 new SettingsPageListItem { Name = AppResources.LogOut },
-                new SettingsPageListItem { Name = AppResources.PurchasePremiumMembership }
+                // new SettingsPageListItem { Name = AppResources.PurchasePremiumMembership }
             };
             var toolsItems = new List<SettingsPageListItem>
             {
