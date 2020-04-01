@@ -5,6 +5,9 @@ using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Bit.App.Resources;
+using SafariServices;
+using Foundation;
+using UIKit;
 
 namespace Bit.App.Pages
 {
@@ -72,17 +75,44 @@ namespace Bit.App.Pages
             }
         }
 
+        private void OpenRegistrationPageIOS(string url) {
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var vc = window.RootViewController;
+            var sfvc = new SFSafariViewController(new NSUrl(url), true);
+            vc.PresentViewController(sfvc, true, null);
+
+            // After subscribing, the user is redirected to a URL custom scheme
+            // that is picked up in AppDelegate. The SafariViewController is
+            // closed there since messages on the broadcast service are not
+            // received by the HomePage while the SafariViewController is
+            // presented
+        }
+
+        private void OpenRegistrationPageAndroid(string url)
+        {
+            _platformUtilsService.LaunchUri(url);
+        }
+
+        private void OpenRegistrationPage()
+        {
+            var lang = _i18nService.Culture.TwoLetterISOLanguageName;
+            var url = _cozyClientService.GetRegistrationURL(lang: lang);
+            if (Device.RuntimePlatform == Device.iOS) {
+                OpenRegistrationPageIOS(url);
+            } else {
+                OpenRegistrationPageAndroid(url);
+            }
+        }
+
 
         private void Register_Clicked(object sender, EventArgs e)
         {
             if(DoOnce())
             {
-                #region cozy
-                var lang = _i18nService.Culture.TwoLetterISOLanguageName;
-                var uri = _cozyClientService.GetRegistrationURL(lang: lang);
-                _platformUtilsService.LaunchUri(uri);
+#region cozy
+                OpenRegistrationPage();
                 // Navigation.PushModalAsync(new NavigationPage(new RegisterPage(this)));
-                #endregion
+#endregion
             }
         }
 
@@ -100,13 +130,13 @@ namespace Bit.App.Pages
    
         }
 
-        #region cozy
+#region cozy
         private async Task DisplayOnboardedDialogAsync()
         {
             await _platformUtilsService.ShowDialogAsync(AppResources.RegistrationSuccess, AppResources.CozyPass,
                             AppResources.Close);
         }
-        #endregion
+#endregion
 
 
         private void Settings_Clicked(object sender, EventArgs e)
