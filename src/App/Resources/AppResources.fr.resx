@@ -1480,7 +1480,7 @@
     <value>Définissez votre code PIN pour déverrouiller Cozy Pass. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
-    <value>Connecté en tant sur {1}.</value>
+    <value>Connecté sur {1}.</value>
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
