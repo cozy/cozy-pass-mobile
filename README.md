@@ -1,16 +1,29 @@
-[![appveyor build](https://ci.appveyor.com/api/projects/status/github/bitwarden/mobile?branch=master&svg=true)](https://ci.appveyor.com/project/bitwarden/mobile)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-mobile/localized.svg)](https://crowdin.com/project/bitwarden-mobile)
-[![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
-# Bitwarden Mobile Application
+[Cozy] Pass 
+=======================
 
-<a href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden" target="_blank"><img alt="Get it on Google Play" src="https://imgur.com/YQzmZi9.png" width="153" height="46"></a> <a href="https://mobileapp.bitwarden.com/fdroid/" target="_blank"><img alt="Get it on Google Play" src="https://i.imgur.com/HDicnzz.png" width="154" height="46"></a> <a href="https://itunes.apple.com/us/app/bitwarden-free-password-manager/id1137397744?mt=8" target="_blank"><img src="https://imgur.com/GdGqPMY.png" width="135" height="40"></a>
 
-The Bitwarden mobile application is written in C# with Xamarin Android, Xamarin iOS, and Xamarin Forms.
+What's Cozy?
+------------
 
-<img src="https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/mobile-android-myvault.png" alt="" width="300" height="533" /> <img src="https://raw.githubusercontent.com/bitwarden/brand/master/screenshots/mobile-ios-myvault.png" alt="" width="300" height="533" />
+![Cozy Logo](https://cdn.rawgit.com/cozy/cozy-guidelines/master/templates/cozy_logo_small.svg)
 
+[Cozy] is a platform that brings all your web services in the same private space.  With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
+
+
+# What's Cozy Pass
+
+Cozy Pass remembers and synchronises all your passwords for you. By installing the password manager, your digital life will be more secure and simple.
+
+
+<a href="https://play.google.com/store/apps/details?id=io.cozy.pass" target="_blank"><img alt="Get it on Google Play" src="https://imgur.com/YQzmZi9.png" width="153" height="46"></a> <a href="https://apps.apple.com/us/app/cozy-pass/id1502262449" target="_blank"><img src="https://imgur.com/GdGqPMY.png" width="135" height="40"></a>
+
+
+Cozy Pass is built on [Bitwarden](https://github.com/bitwarden/mobile)
 # Build/Run
+
+The Cozy Pass mobile application is written in C# with Xamarin Android, Xamarin iOS, and Xamarin Forms.
+
 
 **Requirements**
 
