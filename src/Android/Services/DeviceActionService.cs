@@ -72,7 +72,7 @@ namespace Bit.Droid.Services
             {
                 if(string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"Bitwarden_Mobile/{Xamarin.Essentials.AppInfo.VersionString} " +
+                    _userAgent = $"io.cozy.pass.mobile-{Xamarin.Essentials.AppInfo.VersionString} " +
                         $"(Android {Build.VERSION.Release}; SDK {Build.VERSION.Sdk}; Model {Build.Model})";
                 }
                 return _userAgent;

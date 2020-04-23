@@ -43,7 +43,7 @@ namespace Bit.iOS.Core.Services
             {
                 if(string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"CozyPass_Mobile/{Xamarin.Essentials.AppInfo.VersionString} " +
+                    _userAgent = $"io.cozy.pass.mobile-{Xamarin.Essentials.AppInfo.VersionString} " +
                         $"(iOS {UIDevice.CurrentDevice.SystemVersion}; Model {UIDevice.CurrentDevice.Model})";
                 }
                 return _userAgent;
