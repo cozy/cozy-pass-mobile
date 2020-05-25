@@ -23,8 +23,13 @@ namespace Bit.Core.Models.Domain
                 }
                 else
                 {
-                    domainPropInfo.SetValue(domain,
-                        dataObjProp != null ? new CipherString(dataObjProp as string) : null, null);
+                    domainPropInfo.SetValue(
+                        domain,
+                        dataObjProp != null && !string.IsNullOrWhiteSpace(dataObjProp as string)
+                            ? new CipherString(dataObjProp as string)
+                            : null,
+                        null
+                    );
                 }
             }
         }
