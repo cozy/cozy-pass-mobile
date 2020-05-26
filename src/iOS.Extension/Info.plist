@@ -11,7 +11,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile.find-login-action-extension</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.3.8</string>
+	<string>2.3.9</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
@@ -104,6 +104,6 @@
 		<string>com.apple.ui-services</string>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>71</string>
+	<string>72</string>
 </dict>
 </plist>
