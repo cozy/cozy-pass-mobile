@@ -253,7 +253,8 @@ namespace Bit.Core.Services
                 "com.bitwarden.folders",
                 "com.bitwarden.organizations",
                 "io.cozy.konnectors",
-                "io.cozy.apps.suggestions"
+                "io.cozy.apps.suggestions",
+                "io.cozy.support"
             };
 
             GenerateOnboardingSecretAndState();
