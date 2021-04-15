@@ -13,6 +13,10 @@
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 	<application android:label="Cozy Pass" android:theme="@style/CozyTheme.Splash" android:allowBackup="false" tools:replace="android:allowBackup" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:networkSecurityConfig="@xml/network_security_config">
+		<meta-data android:name="firebase_analytics_collection_deactivated" android:value="true" />
+		<meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
+		<meta-data android:name="google_analytics_ssaid_collection_enabled" android:value="false" />
+
 		<provider android:name="android.support.v4.content.FileProvider" android:authorities="io.cozy.pass.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths" />
 		</provider>
