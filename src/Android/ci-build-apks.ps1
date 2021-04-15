@@ -102,18 +102,6 @@ $safetyNetNode.ParentNode.RemoveChild($safetyNetNode);
 $xml.Save($androidPath);
 
 echo "########################################"
-echo "##### Uninstall from App.csproj"
-echo "########################################"
-
-$xml=New-Object XML;
-$xml.Load($appPath);
-
-$hockeyNode=$xml.SelectSingleNode("/Project/ItemGroup/PackageReference[@Include='HockeySDK.Xamarin']");
-$hockeyNode.ParentNode.RemoveChild($hockeyNode);
-
-$xml.Save($appPath);
-
-echo "########################################"
 echo "##### Restore NuGet"
 echo "########################################"
 
