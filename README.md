@@ -33,7 +33,7 @@ The Cozy Pass mobile application is written in C# with Xamarin Android, Xamarin 
 **Run the app**
 
 - Open the solution file in Visual Studio.
-- Restore the nuget packages.
+- Restore the nuget packages (Menu Project > Restore NuGet packages).
 - Build and run the app.
 
 # Contribute
