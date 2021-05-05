@@ -161,7 +161,8 @@ namespace Bit.App.Pages
                 AppResources.TwoStepLogin, AppResources.Yes, AppResources.Cancel);
             if(confirmed)
             {
-                _platformUtilsService.LaunchUri("https://help.bitwarden.com/article/setup-two-step-login/");
+                var twoFAURL = _cozyClientService.GetURLForApp("settings", fragment: "/profile");
+                _platformUtilsService.LaunchUri(twoFAURL);
             }
         }
 
