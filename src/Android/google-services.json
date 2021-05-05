@@ -1,39 +1,36 @@
 {
   "project_info": {
-    "project_number": "1093287226212",
-    "firebase_url": "https://bitwarden-dev.firebaseio.com",
-    "project_id": "bitwarden-dev",
-    "storage_bucket": "bitwarden-dev.appspot.com"
+    "project_number": "364431471956",
+    "project_id": "cozy-pass-mobile",
+    "storage_bucket": "cozy-pass-mobile.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1093287226212:android:f8d67b786db1b844",
+        "mobilesdk_app_id": "1:364431471956:android:23c8a2c82fc9ef003104c1",
         "android_client_info": {
           "package_name": "io.cozy.pass"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1093287226212-m4mv8ho387tdgosc9lsltnmruul7ouo0.apps.googleusercontent.com",
+          "client_id": "364431471956-og1csv1jl9h52ceaf7b7n267ptrk1156.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4Xkn0do7Ky_OLff2L_7MXeNK6s-JVgXg"
+          "current_key": "AIzaSyCn89KbPitC7EgnGICOgd-Ft5yCjhq9nn0"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364431471956-og1csv1jl9h52ceaf7b7n267ptrk1156.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
