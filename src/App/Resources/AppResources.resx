@@ -172,7 +172,7 @@
     <comment>Placeholder for Cozy URL input</comment>
   </data>
   <data name="CozyPassword" xml:space="preserve">
-    <value>Your Cozy password</value>
+    <value>Password</value>
     <comment>Label for Cozy password</comment>
   </data>
   <data name="Credits" xml:space="preserve">

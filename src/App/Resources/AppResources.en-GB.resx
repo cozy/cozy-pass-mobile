@@ -168,7 +168,7 @@
     <comment>Label for Cozy URL input</comment>
   </data>
   <data name="CozyPassword" xml:space="preserve">
-    <value>Cozy password</value>
+    <value>Password</value>
     <comment>Label for Cozy password</comment>
   </data>
   <data name="Credits" xml:space="preserve">
