@@ -117,8 +117,8 @@
     <MtouchLink>Full</MtouchLink>
     <MtouchSdkVersion>10.2</MtouchSdkVersion>
     <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignProvision>Dist: Bitwarden Ext</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Cozy Pass Find Login Action Distribution Profile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhoneSimulator'">
     <OutputPath>bin\iPhoneSimulator\Ad-Hoc\</OutputPath>

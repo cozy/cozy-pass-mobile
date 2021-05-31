@@ -116,8 +116,8 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchSdkVersion>10.2</MtouchSdkVersion>
     <CodesignKey>iPhone Distribution</CodesignKey>
-    <CodesignProvision>Dist: Autofill</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Cozy Pass Autofill Distribution Profile</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhoneSimulator'">
     <OutputPath>bin\iPhoneSimulator\Ad-Hoc\</OutputPath>
