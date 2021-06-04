@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Bit.App.Resources;
 
-
-#if __IOS__
 using SafariServices;
 using Foundation;
 using UIKit;
-#endif
 
 namespace Bit.App.Pages
 {
@@ -81,7 +78,6 @@ namespace Bit.App.Pages
 
         
         private void OpenRegistrationPageIOS(string url) {
-            #if __IOS__
             var window = UIApplication.SharedApplication.KeyWindow;
             var vc = window.RootViewController;
             var sfvc = new SFSafariViewController(new NSUrl(url), true);
@@ -92,7 +88,6 @@ namespace Bit.App.Pages
             // closed there since messages on the broadcast service are not
             // received by the HomePage while the SafariViewController is
             // presented
-            #endif
         }
 
 
