@@ -244,7 +244,14 @@ namespace Bit.Core.Services
                         decCiphers.Add(c);
                     }
                     var tasks = new List<Task>();
-                    var ciphers = await GetAllAsync();
+
+                    var orgKeys = await _cryptoService.GetOrgKeysAsync();
+                    var orgIds = orgKeys.Keys;
+
+                    var ciphers = (await GetAllAsync())
+                        .Where(cipher => cipher.OrganizationId == null || orgIds.Contains(cipher.OrganizationId))
+                        .ToList();
+
                     foreach(var cipher in ciphers)
                     {
                         tasks.Add(decryptAndAddCipherAsync(cipher));
