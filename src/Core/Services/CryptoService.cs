@@ -85,7 +85,10 @@ namespace Bit.Core.Services
 
         public async Task SetOrgKeysAsync(IEnumerable<ProfileOrganizationResponse> orgs)
         {
-            var orgKeys = orgs.ToDictionary(org => org.Id, org => org.Key);
+            var orgKeys = orgs
+                .Where(org => org.Key != "")
+                .ToDictionary(org => org.Id, org => org.Key);
+
             _orgKeys = null;
             await _storageService.SaveAsync(Keys_EncOrgKeys, orgKeys);
         }
@@ -247,6 +250,8 @@ namespace Bit.Core.Services
                     var setKey = false;
                     foreach(var org in encOrgKeys)
                     {
+                        if (string.IsNullOrWhiteSpace(org.Value)) continue;
+
                         var decValue = await RsaDecryptAsync(org.Value);
                         orgKeys.Add(org.Key, new SymmetricCryptoKey(decValue));
                         setKey = true;
