@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -14,33 +15,39 @@ namespace Bit.iOS.Autofill.Utilities
     {
         public async static Task TableRowSelectedAsync(UITableView tableView, NSIndexPath indexPath,
             ExtensionTableSource tableSource, CredentialProviderViewController cpViewController,
-            UITableViewController controller, string loginAddSegue)
+            UITableViewController controller, IPasswordRepromptService passwordRepromptService,
+            string loginAddSegue)
         {
             tableView.DeselectRow(indexPath, true);
             tableView.EndEditing(true);
 
-            if(tableSource.Items == null || tableSource.Items.Count() == 0)
+            if (tableSource.Items == null || tableSource.Items.Count() == 0)
             {
                 controller.PerformSegue(loginAddSegue, tableSource);
                 return;
             }
             var item = tableSource.Items.ElementAt(indexPath.Row);
-            if(item == null)
+            if (item == null)
             {
                 cpViewController.CompleteRequest();
                 return;
             }
 
-            if(!string.IsNullOrWhiteSpace(item.Username) && !string.IsNullOrWhiteSpace(item.Password))
+            if (item.Reprompt != Bit.Core.Enums.CipherRepromptType.None && !await passwordRepromptService.ShowPasswordPromptAsync())
+            {
+                return;
+            }
+
+            if (!string.IsNullOrWhiteSpace(item.Username) && !string.IsNullOrWhiteSpace(item.Password))
             {
                 string totp = null;
                 var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
                 var disableTotpCopy = await storageService.GetAsync<bool?>(Bit.Core.Constants.DisableAutoTotpCopyKey);
-                if(!disableTotpCopy.GetValueOrDefault(false))
+                if (!disableTotpCopy.GetValueOrDefault(false))
                 {
                     var userService = ServiceContainer.Resolve<IUserService>("userService");
                     var canAccessPremiumAsync = await userService.CanAccessPremiumAsync();
-                    if(!string.IsNullOrWhiteSpace(item.Totp) &&
+                    if (!string.IsNullOrWhiteSpace(item.Totp) &&
                         (canAccessPremiumAsync || item.CipherView.OrganizationUseTotp))
                     {
                         var totpService = ServiceContainer.Resolve<ITotpService>("totpService");
@@ -49,11 +56,11 @@ namespace Bit.iOS.Autofill.Utilities
                 }
                 cpViewController.CompleteRequest(item.Id, item.Username, item.Password, totp);
             }
-            else if(!string.IsNullOrWhiteSpace(item.Username) || !string.IsNullOrWhiteSpace(item.Password) ||
+            else if (!string.IsNullOrWhiteSpace(item.Username) || !string.IsNullOrWhiteSpace(item.Password) ||
                 !string.IsNullOrWhiteSpace(item.Totp))
             {
                 var sheet = Dialogs.CreateActionSheet(item.Name, controller);
-                if(!string.IsNullOrWhiteSpace(item.Username))
+                if (!string.IsNullOrWhiteSpace(item.Username))
                 {
                     sheet.AddAction(UIAlertAction.Create(AppResources.CopyUsername, UIAlertActionStyle.Default, a =>
                     {
@@ -67,7 +74,7 @@ namespace Bit.iOS.Autofill.Utilities
                     }));
                 }
 
-                if(!string.IsNullOrWhiteSpace(item.Password))
+                if (!string.IsNullOrWhiteSpace(item.Password))
                 {
                     sheet.AddAction(UIAlertAction.Create(AppResources.CopyPassword, UIAlertActionStyle.Default, a =>
                     {
@@ -82,12 +89,12 @@ namespace Bit.iOS.Autofill.Utilities
                     }));
                 }
 
-                if(!string.IsNullOrWhiteSpace(item.Totp))
+                if (!string.IsNullOrWhiteSpace(item.Totp))
                 {
                     sheet.AddAction(UIAlertAction.Create(AppResources.CopyTotp, UIAlertActionStyle.Default, async a =>
                     {
                         var totp = await tableSource.GetTotpAsync(item);
-                        if(string.IsNullOrWhiteSpace(totp))
+                        if (string.IsNullOrWhiteSpace(totp))
                         {
                             return;
                         }

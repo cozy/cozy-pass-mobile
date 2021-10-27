@@ -15,7 +15,6 @@ using Foundation;
 using LocalAuthentication;
 using MobileCoreServices;
 using Photos;
-using Plugin.Fingerprint;
 using UIKit;
 using Xamarin.Forms;
 
@@ -41,7 +40,7 @@ namespace Bit.iOS.Core.Services
         {
             get
             {
-                if(string.IsNullOrWhiteSpace(_userAgent))
+                if (string.IsNullOrWhiteSpace(_userAgent))
                 {
                     _userAgent = $"io.cozy.pass.mobile-{Xamarin.Essentials.AppInfo.VersionString} " +
                         $"(iOS {UIDevice.CurrentDevice.SystemVersion}; Model {UIDevice.CurrentDevice.Model})";
@@ -59,7 +58,7 @@ namespace Bit.iOS.Core.Services
 
         public void Toast(string text, bool longDuration = false)
         {
-            if(!_toast?.Dismissed ?? false)
+            if (!_toast?.Dismissed ?? false)
             {
                 _toast.Dismiss(false);
             }
@@ -67,10 +66,9 @@ namespace Bit.iOS.Core.Services
             {
                 Duration = TimeSpan.FromSeconds(longDuration ? 5 : 3)
             };
-            if(TabBarVisible())
-            {
-                _toast.BottomMargin = 55;
-            }
+            _toast.BottomMargin = 110;
+            _toast.LeftMargin = 20;
+            _toast.RightMargin = 20;
             _toast.Show();
             _toast.DismissCallback = () =>
             {
@@ -81,7 +79,7 @@ namespace Bit.iOS.Core.Services
 
         public Task ShowLoadingAsync(string text)
         {
-            if(_progressAlert != null)
+            if (_progressAlert != null)
             {
                 HideLoadingAsync().GetAwaiter().GetResult();
             }
@@ -90,7 +88,8 @@ namespace Bit.iOS.Core.Services
 
             var loadingIndicator = new UIActivityIndicatorView(new CGRect(10, 5, 50, 50));
             loadingIndicator.HidesWhenStopped = true;
-            loadingIndicator.ActivityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray;
+            loadingIndicator.ActivityIndicatorViewStyle = ThemeHelpers.LightTheme ? UIActivityIndicatorViewStyle.Gray :
+                UIActivityIndicatorViewStyle.White;
             loadingIndicator.StartAnimating();
 
             _progressAlert = UIAlertController.Create(null, text, UIAlertControllerStyle.Alert);
@@ -105,10 +104,12 @@ namespace Bit.iOS.Core.Services
         public Task HideLoadingAsync()
         {
             var result = new TaskCompletionSource<int>();
-            if(_progressAlert == null)
+            if (_progressAlert == null)
             {
                 result.TrySetResult(0);
+                return result.Task;
             }
+
             _progressAlert.DismissViewController(false, () => result.TrySetResult(0));
             _progressAlert.Dispose();
             _progressAlert = null;
@@ -144,9 +145,9 @@ namespace Bit.iOS.Core.Services
             var url = new NSUrl(GetTempPath());
             var tmpFiles = NSFileManager.DefaultManager.GetDirectoryContent(url, null,
                 NSDirectoryEnumerationOptions.SkipsHiddenFiles, out NSError error);
-            if(error == null && tmpFiles.Length > 0)
+            if (error == null && tmpFiles.Length > 0)
             {
-                foreach(var item in tmpFiles)
+                foreach (var item in tmpFiles)
                 {
                     NSFileManager.DefaultManager.Remove(item, out NSError itemError);
                 }
@@ -180,7 +181,7 @@ namespace Bit.iOS.Core.Services
             });
             picker.DidPickDocumentPicker += (sender, e) =>
             {
-                if(SystemMajorVersion() < 11)
+                if (SystemMajorVersion() < 11)
                 {
                     e.DocumentPicker.DidPickDocument += DocumentPicker_DidPickDocument;
                 }
@@ -191,7 +192,7 @@ namespace Bit.iOS.Core.Services
                 controller.PresentViewController(e.DocumentPicker, true, null);
             };
             var root = UIApplication.SharedApplication.KeyWindow.RootViewController;
-            if(picker.PopoverPresentationController != null && root != null)
+            if (picker.PopoverPresentationController != null && root != null)
             {
                 picker.PopoverPresentationController.SourceView = root.View;
                 picker.PopoverPresentationController.SourceRect = root.View.Bounds;
@@ -202,7 +203,7 @@ namespace Bit.iOS.Core.Services
 
         public Task<string> DisplayPromptAync(string title = null, string description = null,
             string text = null, string okButtonText = null, string cancelButtonText = null,
-            bool numericKeyboard = false, bool autofocus = true)
+            bool numericKeyboard = false, bool autofocus = true, bool password = false)
         {
             var result = new TaskCompletionSource<string>();
             var alert = UIAlertController.Create(title ?? string.Empty, description, UIAlertControllerStyle.Alert);
@@ -221,11 +222,14 @@ namespace Bit.iOS.Core.Services
             {
                 input = x;
                 input.Text = text ?? string.Empty;
-                if(numericKeyboard)
+                if (numericKeyboard)
                 {
                     input.KeyboardType = UIKeyboardType.NumberPad;
                 }
-                if(!ThemeHelpers.LightTheme)
+                if (password) {
+                    input.SecureTextEntry = true;
+                }
+                if (!ThemeHelpers.LightTheme)
                 {
                     input.KeyboardAppearance = UIKeyboardAppearance.Dark;
                 }
@@ -253,13 +257,13 @@ namespace Bit.iOS.Core.Services
 
         public bool SupportsFaceBiometric()
         {
-            if(SystemMajorVersion() < 11)
+            if (SystemMajorVersion() < 11)
             {
                 return false;
             }
-            using(var context = new LAContext())
+            using (var context = new LAContext())
             {
-                if(!context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out var e))
+                if (!context.CanEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, out var e))
                 {
                     return false;
                 }
@@ -272,31 +276,13 @@ namespace Bit.iOS.Core.Services
             return Task.FromResult(SupportsFaceBiometric());
         }
 
-        public async Task<bool> BiometricAvailableAsync()
-        {
-            try
-            {
-                return await CrossFingerprint.Current.IsAvailableAsync();
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public bool UseNativeBiometric()
-        {
-            return false;
-        }
-
-        public Task<bool> AuthenticateBiometricAsync(string text = null)
-        {
-            throw new NotSupportedException();
-        }
-
         public bool SupportsNfc()
         {
-            return CoreNFC.NFCNdefReaderSession.ReadingAvailable;
+            if(Application.Current is App.App currentApp && !currentApp.Options.IosExtension)
+            {
+                return CoreNFC.NFCNdefReaderSession.ReadingAvailable;
+            }
+            return false;
         }
 
         public bool SupportsCamera()
@@ -312,7 +298,7 @@ namespace Bit.iOS.Core.Services
         public int SystemMajorVersion()
         {
             var versionParts = UIDevice.CurrentDevice.SystemVersion.Split('.');
-            if(versionParts.Length > 0 && int.TryParse(versionParts[0], out var version))
+            if (versionParts.Length > 0 && int.TryParse(versionParts[0], out var version))
             {
                 return version;
             }
@@ -329,14 +315,14 @@ namespace Bit.iOS.Core.Services
         {
             var result = new TaskCompletionSource<string>();
             var alert = UIAlertController.Create(title ?? string.Empty, message, UIAlertControllerStyle.Alert);
-            if(!string.IsNullOrWhiteSpace(cancel))
+            if (!string.IsNullOrWhiteSpace(cancel))
             {
                 alert.AddAction(UIAlertAction.Create(cancel, UIAlertActionStyle.Cancel, x =>
                 {
                     result.TrySetResult(cancel);
                 }));
             }
-            foreach(var button in buttons)
+            foreach (var button in buttons)
             {
                 alert.AddAction(UIAlertAction.Create(button, UIAlertActionStyle.Default, x =>
                 {
@@ -345,6 +331,45 @@ namespace Bit.iOS.Core.Services
             }
             var vc = GetPresentedViewController();
             vc?.PresentViewController(alert, true, null);
+            return result.Task;
+        }
+
+        public Task<string> DisplayActionSheetAsync(string title, string cancel, string destruction,
+            params string[] buttons)
+        {
+            if (Application.Current is App.App app && app.Options != null && !app.Options.IosExtension)
+            {
+                return app.MainPage.DisplayActionSheet(title, cancel, destruction, buttons);
+            }
+            var result = new TaskCompletionSource<string>();
+            var vc = GetPresentedViewController();
+            var sheet = UIAlertController.Create(title, null, UIAlertControllerStyle.ActionSheet);
+            if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                var x = vc.View.Bounds.Width / 2;
+                var y = vc.View.Bounds.Bottom;
+                var rect = new CGRect(x, y, 0, 0);
+
+                sheet.PopoverPresentationController.SourceView = vc.View;
+                sheet.PopoverPresentationController.SourceRect = rect;
+                sheet.PopoverPresentationController.PermittedArrowDirections = UIPopoverArrowDirection.Unknown;
+            }
+            foreach (var button in buttons)
+            {
+                sheet.AddAction(UIAlertAction.Create(button, UIAlertActionStyle.Default,
+                    x => result.TrySetResult(button)));
+            }
+            if (!string.IsNullOrWhiteSpace(destruction))
+            {
+                sheet.AddAction(UIAlertAction.Create(destruction, UIAlertActionStyle.Destructive,
+                    x => result.TrySetResult(destruction)));
+            }
+            if (!string.IsNullOrWhiteSpace(cancel))
+            {
+                sheet.AddAction(UIAlertAction.Create(cancel, UIAlertActionStyle.Cancel,
+                    x => result.TrySetResult(cancel)));
+            }
+            vc.PresentViewController(sheet, true, null);
             return result.Task;
         }
 
@@ -373,6 +398,16 @@ namespace Bit.iOS.Core.Services
             throw new NotImplementedException();
         }
 
+        public void DisableAutofillService()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool AutofillServicesEnabled()
+        {
+            throw new NotImplementedException();
+        }
+
         public string GetBuildNumber()
         {
             return NSBundle.MainBundle.InfoDictionary["CFBundleVersion"].ToString();
@@ -388,25 +423,45 @@ namespace Bit.iOS.Core.Services
             throw new NotImplementedException();
         }
 
-        public bool UsingDarkTheme()
+        public long GetActiveTime()
         {
-            try
+            // Fall back to UnixTimeMilliseconds in case this approach stops working. We'll lose clock-change
+            // protection but the lock functionality will continue to work.
+            return iOSHelpers.GetSystemUpTimeMilliseconds() ?? DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+        }
+
+        public void CloseMainApp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SupportsFido2()
+        {
+            // FIDO2 WebAuthn supported on 13.3+
+            var versionParts = UIDevice.CurrentDevice.SystemVersion.Split('.');
+            if (versionParts.Length > 0 && int.TryParse(versionParts[0], out var version))
             {
-                if(SystemMajorVersion() > 12)
+                if (version == 13)
                 {
-                    return UIScreen.MainScreen.TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark;
+                    if (versionParts.Length > 1 && int.TryParse(versionParts[1], out var minorVersion))
+                    {
+                        return minorVersion >= 3;
+                    }
+                }
+                else if (version > 13)
+                {
+                    return true;
                 }
             }
-            catch { }
             return false;
         }
 
         private void ImagePicker_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
         {
-            if(sender is UIImagePickerController picker)
+            if (sender is UIImagePickerController picker)
             {
                 string fileName = null;
-                if(e.Info.TryGetValue(UIImagePickerController.ReferenceUrl, out NSObject urlObj))
+                if (e.Info.TryGetValue(UIImagePickerController.ReferenceUrl, out NSObject urlObj))
                 {
                     var result = PHAsset.FetchAssets(new NSUrl[] { (urlObj as NSUrl) }, null);
                     fileName = result?.firstObject?.ValueForKey(new NSString("filename"))?.ToString();
@@ -414,9 +469,9 @@ namespace Bit.iOS.Core.Services
                 fileName = fileName ?? $"photo_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}.jpg";
                 var lowerFilename = fileName?.ToLowerInvariant();
                 byte[] data;
-                if(lowerFilename != null && (lowerFilename.EndsWith(".jpg") || lowerFilename.EndsWith(".jpeg")))
+                if (lowerFilename != null && (lowerFilename.EndsWith(".jpg") || lowerFilename.EndsWith(".jpeg")))
                 {
-                    using(var imageData = e.OriginalImage.AsJPEG())
+                    using (var imageData = e.OriginalImage.AsJPEG())
                     {
                         data = new byte[imageData.Length];
                         System.Runtime.InteropServices.Marshal.Copy(imageData.Bytes, data, 0,
@@ -425,7 +480,7 @@ namespace Bit.iOS.Core.Services
                 }
                 else
                 {
-                    using(var imageData = e.OriginalImage.AsPNG())
+                    using (var imageData = e.OriginalImage.AsPNG())
                     {
                         data = new byte[imageData.Length];
                         System.Runtime.InteropServices.Marshal.Copy(imageData.Bytes, data, 0,
@@ -439,7 +494,7 @@ namespace Bit.iOS.Core.Services
 
         private void ImagePicker_Canceled(object sender, EventArgs e)
         {
-            if(sender is UIImagePickerController picker)
+            if (sender is UIImagePickerController picker)
             {
                 picker.DismissViewController(true, null);
             }
@@ -458,15 +513,15 @@ namespace Bit.iOS.Core.Services
         private UIViewController GetVisibleViewController(UIViewController controller = null)
         {
             controller = controller ?? UIApplication.SharedApplication.KeyWindow.RootViewController;
-            if(controller.PresentedViewController == null)
+            if (controller.PresentedViewController == null)
             {
                 return controller;
             }
-            if(controller.PresentedViewController is UINavigationController)
+            if (controller.PresentedViewController is UINavigationController)
             {
                 return ((UINavigationController)controller.PresentedViewController).VisibleViewController;
             }
-            if(controller.PresentedViewController is UITabBarController)
+            if (controller.PresentedViewController is UITabBarController)
             {
                 return ((UITabBarController)controller.PresentedViewController).SelectedViewController;
             }
@@ -477,7 +532,7 @@ namespace Bit.iOS.Core.Services
         {
             var window = UIApplication.SharedApplication.KeyWindow;
             var vc = window.RootViewController;
-            while(vc.PresentedViewController != null)
+            while (vc.PresentedViewController != null)
             {
                 vc = vc.PresentedViewController;
             }
@@ -503,10 +558,10 @@ namespace Bit.iOS.Core.Services
             url.StartAccessingSecurityScopedResource();
             var doc = new UIDocument(url);
             var fileName = doc.LocalizedName;
-            if(string.IsNullOrWhiteSpace(fileName))
+            if (string.IsNullOrWhiteSpace(fileName))
             {
                 var path = doc.FileUrl?.ToString();
-                if(path != null)
+                if (path != null)
                 {
                     path = WebUtility.UrlDecode(path);
                     var split = path.LastIndexOf('/');

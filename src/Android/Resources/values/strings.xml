@@ -16,6 +16,9 @@
   <string name="PasswordGenerator">
     Password Generator
   </string>
+  <string name="AutoFillTile">
+    Auto-fill
+  </string>
   <string name="SelfHostedServerUrl">
     Self-hosted server URL
   </string>

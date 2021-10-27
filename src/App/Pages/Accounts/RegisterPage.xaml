@@ -20,7 +20,7 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{u:I18n Close}" Clicked="Close_Clicked" Order="Primary" Priority="-1" />
+        <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" Order="Primary" Priority="-1" />
         <ToolbarItem Text="{u:I18n Submit}" Clicked="Submit_Clicked" />
     </ContentPage.ToolbarItems>
 
@@ -122,6 +122,39 @@
                 <Label
                     Text="{u:I18n MasterPasswordHintDescription}"
                     StyleClass="box-footer-label" />
+            </StackLayout>
+            <StackLayout StyleClass="box">
+                <StackLayout StyleClass="box-row, box-row-switch"
+                            IsVisible="{Binding ShowTerms}">
+                    <Switch
+                        IsToggled="{Binding AcceptPolicies}"
+                        StyleClass="box-value"
+                        HorizontalOptions="Start"
+                        Margin="{Binding SwitchMargin}"/>
+                    <Label StyleClass="box-footer-label"
+                           HorizontalOptions="Fill">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{u:I18n AcceptPolicies}" />
+                                <Span Text="{u:I18n TermsOfService}"
+                                      TextColor="{DynamicResource HyperlinkColor}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PoliciesClickCommand}"
+                                                              CommandParameter="https://bitwarden.com/terms/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text=", " />
+                                <Span Text="{u:I18n PrivacyPolicy}"
+                                      TextColor="{DynamicResource HyperlinkColor}">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PoliciesClickCommand}"
+                                                              CommandParameter="https://bitwarden.com/privacy/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ScrollView>

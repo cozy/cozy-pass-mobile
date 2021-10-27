@@ -12,11 +12,16 @@ namespace Bit.iOS.Core.Utilities
     {
         public static async Task ReplaceAllIdentities()
         {
-            if(await AutofillEnabled())
+            if (await AutofillEnabled())
             {
                 var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
-                var lockService = ServiceContainer.Resolve<ILockService>("lockService");
-                if(await lockService.IsLockedAsync())
+                var timeoutAction = await storageService.GetAsync<string>(Bit.Core.Constants.VaultTimeoutActionKey);
+                if (timeoutAction == "logOut")
+                {
+                    return;
+                }
+                var vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
+                if (await vaultTimeoutService.IsLockedAsync())
                 {
                     await storageService.SaveAsync(Constants.AutofillNeedsIdentityReplacementKey, true);
                     return;
@@ -24,15 +29,15 @@ namespace Bit.iOS.Core.Utilities
                 var cipherService = ServiceContainer.Resolve<ICipherService>("cipherService");
                 var identities = new List<ASPasswordCredentialIdentity>();
                 var ciphers = await cipherService.GetAllDecryptedAsync();
-                foreach(var cipher in ciphers)
+                foreach (var cipher in ciphers.Where(x => !x.IsDeleted))
                 {
                     var identity = ToCredentialIdentity(cipher);
-                    if(identity != null)
+                    if (identity != null)
                     {
                         identities.Add(identity);
                     }
                 }
-                if(identities.Any())
+                if (identities.Any())
                 {
                     await ASCredentialIdentityStore.SharedStore?.ReplaceCredentialIdentitiesAsync(identities.ToArray());
                     await storageService.SaveAsync(Constants.AutofillNeedsIdentityReplacementKey, false);
@@ -42,6 +47,12 @@ namespace Bit.iOS.Core.Utilities
 
         public static async Task<bool> IdentitiesCanIncremental()
         {
+            var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
+            var timeoutAction = await storageService.GetAsync<string>(Bit.Core.Constants.VaultTimeoutActionKey);
+            if (timeoutAction == "logOut")
+            {
+                return false;
+            }
             var state = await ASCredentialIdentityStore.SharedStore?.GetCredentialIdentityStoreStateAsync();
             return state != null && state.Enabled && state.SupportsIncrementalUpdates;
         }
@@ -56,7 +67,7 @@ namespace Bit.iOS.Core.Utilities
         {
             var cipherService = ServiceContainer.Resolve<ICipherService>("cipherService");
             var cipher = await cipherService.GetAsync(cipherId);
-            if(cipher == null)
+            if (cipher == null)
             {
                 return null;
             }
@@ -66,17 +77,17 @@ namespace Bit.iOS.Core.Utilities
 
         public static ASPasswordCredentialIdentity ToCredentialIdentity(CipherView cipher)
         {
-            if(!cipher?.Login?.Uris?.Any() ?? true)
+            if (!cipher?.Login?.Uris?.Any() ?? true)
             {
                 return null;
             }
             var uri = cipher.Login.Uris.FirstOrDefault(u => u.Match != Bit.Core.Enums.UriMatchType.Never)?.Uri;
-            if(string.IsNullOrWhiteSpace(uri))
+            if (string.IsNullOrWhiteSpace(uri))
             {
                 return null;
             }
             var username = cipher.Login.Username;
-            if(string.IsNullOrWhiteSpace(username))
+            if (string.IsNullOrWhiteSpace(username))
             {
                 return null;
             }

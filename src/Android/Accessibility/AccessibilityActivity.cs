@@ -4,6 +4,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using System;
+using Bit.Core.Abstractions;
+using Bit.Core.Utilities;
 
 namespace Bit.Droid.Accessibility
 {
@@ -16,13 +18,13 @@ namespace Bit.Droid.Accessibility
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            LaunchMainActivity(Intent, 932473);
+            HandleIntent(Intent, 932473);
         }
 
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
-            LaunchMainActivity(intent, 489729);
+            HandleIntent(intent, 489729);
         }
 
         protected override void OnDestroy()
@@ -33,7 +35,7 @@ namespace Bit.Droid.Accessibility
         protected override void OnResume()
         {
             base.OnResume();
-            if(!Intent.HasExtra("uri"))
+            if (!Intent.HasExtra("uri"))
             {
                 Finish();
                 return;
@@ -44,7 +46,7 @@ namespace Bit.Droid.Accessibility
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            if(data == null)
+            if (data == null)
             {
                 AccessibilityHelpers.LastCredentials = null;
             }
@@ -52,7 +54,7 @@ namespace Bit.Droid.Accessibility
             {
                 try
                 {
-                    if(data.GetStringExtra("canceled") != null)
+                    if (data.GetStringExtra("canceled") != null)
                     {
                         AccessibilityHelpers.LastCredentials = null;
                     }
@@ -78,23 +80,38 @@ namespace Bit.Droid.Accessibility
             Finish();
         }
 
+        private void HandleIntent(Intent callingIntent, int requestCode)
+        {
+            if (callingIntent?.GetBooleanExtra("autofillTileClicked", false) ?? false)
+            {
+                Intent.RemoveExtra("autofillTileClicked");
+                var messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
+                messagingService.Send("OnAutofillTileClick");
+                Finish();
+            }
+            else
+            {
+                LaunchMainActivity(callingIntent, requestCode);
+            }
+        }
+
         private void LaunchMainActivity(Intent callingIntent, int requestCode)
         {
             _lastQueriedUri = callingIntent?.GetStringExtra("uri");
-            if(_lastQueriedUri == null)
+            if (_lastQueriedUri == null)
             {
                 Finish();
                 return;
             }
             var now = DateTime.UtcNow;
-            if(_lastLaunch.HasValue && (now - _lastLaunch.Value) <= TimeSpan.FromSeconds(2))
+            if (_lastLaunch.HasValue && (now - _lastLaunch.Value) <= TimeSpan.FromSeconds(2))
             {
                 return;
             }
 
             _lastLaunch = now;
             var intent = new Intent(this, typeof(MainActivity));
-            if(!callingIntent.Flags.HasFlag(ActivityFlags.LaunchedFromHistory))
+            if (!callingIntent.Flags.HasFlag(ActivityFlags.LaunchedFromHistory))
             {
                 intent.PutExtra("uri", _lastQueriedUri);
             }

@@ -41,7 +41,7 @@ namespace Bit.iOS.Core.Views
                 BackgroundColor = ThemeHelpers.BackgroundColor
             };
 
-            if(!ThemeHelpers.LightTheme)
+            if (!ThemeHelpers.LightTheme)
             {
                 TextField.KeyboardAppearance = UIKeyboardAppearance.Dark;
             }
@@ -56,7 +56,7 @@ namespace Bit.iOS.Core.Views
             var doneButton = new UIBarButtonItem(UIBarButtonSystemItem.Done, (o, a) =>
             {
                 var s = (PickerSource)Picker.Model;
-                if(s.SelectedIndex == -1 && Items != null && Items.Count > 0)
+                if (s.SelectedIndex == -1 && Items != null && Items.Count > 0)
                 {
                     UpdatePickerSelectedIndex(0);
                 }
@@ -81,7 +81,7 @@ namespace Bit.iOS.Core.Views
                 NSLayoutConstraint.Create(ContentView, NSLayoutAttribute.Trailing, NSLayoutRelation.Equal, Label, NSLayoutAttribute.Trailing, 1f, 15f)
             });
 
-            if(height.HasValue)
+            if (height.HasValue)
             {
                 ContentView.AddConstraint(
                     NSLayoutConstraint.Create(TextField, NSLayoutAttribute.Height, NSLayoutRelation.Equal, null, NSLayoutAttribute.NoAttribute, 1f, height.Value));
@@ -93,6 +93,8 @@ namespace Bit.iOS.Core.Views
         public UITextField TextField { get; set; }
         public UILabel Label { get; set; }
         public UIPickerView Picker { get; set; } = new UIPickerView();
+
+        public event EventHandler ValueChanged;
 
         public List<string> Items
         {
@@ -120,7 +122,7 @@ namespace Bit.iOS.Core.Views
         {
             TextField.Text = SelectedIndex == -1 || Items == null ? "" : Items[SelectedIndex];
             Picker.ReloadAllComponents();
-            if(Items == null || Items.Count == 0)
+            if (Items == null || Items.Count == 0)
             {
                 return;
             }
@@ -187,7 +189,7 @@ namespace Bit.iOS.Core.Views
 
             public override void Selected(UIPickerView picker, nint row, nint component)
             {
-                if(_cell.Items.Count == 0)
+                if (_cell.Items.Count == 0)
                 {
                     SelectedItem = null;
                     SelectedIndex = -1;
@@ -199,6 +201,7 @@ namespace Bit.iOS.Core.Views
                 }
 
                 _cell.UpdatePickerFromModel(this);
+                _cell.ValueChanged?.Invoke(this, null);
             }
         }
     }

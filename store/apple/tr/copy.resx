@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,21 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>bitwarden Parola Yöneticisi</value>
+    <value>Bitwarden Parola Yöneticisi</value>
     <comment>Max 30 characters</comment>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden, tüm giriş bilgilerinizi ve şifrelerinizi saklamanın ve tüm cihazlarınız arasında senkronize edilmesini kolaylaştırmanın en kolay ve en güvenli yoludur. bitwarden uygulama eklentisi, Safari veya Chrome aracılığıyla herhangi bir web sitesinde hızlı bir şekilde oturum açmanıza izin verir ve diğer yüzlerce popüler uygulama tarafından desteklenmektedir.
+    <value>Bitwarden, Inc., 8bit Solutions LLC’nin ana şirketidir.
 
-Parola hırsızlığı ciddi bir problemdir. Kullandığınız web siteleri ve uygulamalar her gün saldırı altında. Güvenlik açıkları olabiliyor ve parolalarınız çalınıyor. Uygulamalarda ve web sitelerinde aynı şifreleri tekrar kullandığınızda bilgisayar korsanları e-postanıza, banka ve diğer önemli hesaplarınıza kolayca erişebilir.
+THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET VE BİRÇOK MEDYA KURULUŞUNA GÖRE EN İYİ PAROLA YÖNETİCİSİ.
 
-Güvenlik uzmanları, oluşturduğunuz her hesap için rastgele oluşturulmuş farklı şifreler kullanmanızı öneriyor. Ancak tüm bu şifreleri nasıl yönetiyorsunuz? bitwarden, parolalarınızı oluşturmanız, depolamanız ve bunlara erişmenizi kolaylaştırır.
+Sınırsız sayıda parolayı istediğiniz kadar cihazda yönetin, saklayın, koruyun ve paylaşın. Bitwarden; herkesin evde, işte veya yolda kullanabileceği açık kaynaklı parola yönetim çözümleri sunuyor.
 
-bitwarden, tüm giriş bilgilerinizi, tüm cihazlarınızla senkronize edilen şifreli kasada saklar. Cihazınızdan ayrılmadan önce tamamen şifrelendiğinden verilerinize yalnızca siz erişebilirsiniz. bitwarden'daki ekip bile, biz istesek bile verilerinizi okuyamayız. Verileriniz AES-256 bit şifreleme, karıştırılmış sağlamalar ve PBKDF2 SHA-256 ile mühürlenmiştir.</value>
-    <comment>Max 4000 characters</comment>
+Sık kullandığınız web siteleri için güvenlik gereksinimlerinize uygun, güçlü, benzersiz ve rastgele parolalar oluşturabilirsiniz.
+
+Bitwarden Send, şifrelenmiş bilgileri (dosyalar ve düz metinler) herkese hızlı bir şekilde iletmenizi sağlıyor.
+
+Bitwarden, parolaları iş arkadaşlarınızla güvenli bir şekilde paylaşabilmeniz için şirketlere yönelik Teams ve Enterprise paketleri de sunuyor.
+
+Neden Bitwarden?
+
+Üst düzey şifreleme
+Parolalarınız gelişmiş uçtan uca şifreleme (AES-256 bit, salted hashtag ve PBKDF2 SHA-256) ile korunuyor, böylece verileriniz güvende ve gizli kalıyor.
+
+Dahili parola oluşturucu
+Sık kullandığınız web siteleri için güvenlik gereksinimlerinize uygun, güçlü, benzersiz ve rastgele parolalar oluşturabilirsiniz.
+
+Çeviriler
+Bitwarden 40 dilde kullanılabiliyor ve gönüllü topluluğumuz sayesinde çeviri sayısı giderek artıyor.
+
+Her platformla uyumlu uygulamalar
+Bitwarden kasanızdaki hassas verilere her tarayıcıdan, mobil cihazdan veya masaüstü işletim sisteminden ulaşabilir ve onları paylaşabilirsiniz.</value>
+  <comment>Max 4000 characters</comment>
   </data>
   <data name="Keywords" xml:space="preserve">
-    <value>bitwarden,bit warden,8bit,parola,şifre,ücretsiz parola yöneticisi,parola yöneticisi,hesap yönetimi</value>
+    <value>bit warden,8bit,parola,şifre,bedava parola yöneticisi,parola yöneticisi,şifre yöneticisi</value>
     <comment>Max 100 characters</comment>
   </data>
   <data name="Screenshot1" xml:space="preserve">
@@ -142,12 +160,12 @@ bitwarden, tüm giriş bilgilerinizi, tüm cihazlarınızla senkronize edilen ş
     <value>Otomatik olarak güçlü, rastgele ve güvenli parolalar oluşturun</value>
   </data>
   <data name="Screenshot3" xml:space="preserve">
-    <value>Kasanızı; Touch ID ile PIN kodu veya ana parola ile koruyun</value>
+    <value>Kasanızı Touch ID, PIN kodu veya ana parolayla koruyun</value>
   </data>
   <data name="Screenshot4" xml:space="preserve">
-    <value>Safari, Chrome ve diğer yüzlerce uygulamada hesap bilgilerinizi otomatik doldurun</value>
+    <value>Safari, Chrome ve yüzlerce uygulamada hesap bilgilerinizi otomatik doldurun</value>
   </data>
   <data name="Screenshot5" xml:space="preserve">
-    <value>Hesabınzı eşitleyin ve birden fazla cıhazdan kasanıza ulaşın</value>
+    <value>Hesabınızı senkronize ederek kasanıza tüm cihazlarınızdan ulaşın</value>
   </data>
 </root>

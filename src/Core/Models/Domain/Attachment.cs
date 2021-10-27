@@ -30,8 +30,8 @@ namespace Bit.Core.Models.Domain
         public string Url { get; set; }
         public string Size { get; set; }
         public string SizeName { get; set; }
-        public CipherString Key { get; set; }
-        public CipherString FileName { get; set; }
+        public EncString Key { get; set; }
+        public EncString FileName { get; set; }
 
         public async Task<AttachmentView> DecryptAsync(string orgId)
         {
@@ -40,7 +40,7 @@ namespace Bit.Core.Models.Domain
                 "FileName"
             }, orgId);
             
-            if(Key != null)
+            if (Key != null)
             {
                 var cryptoService = ServiceContainer.Resolve<ICryptoService>("cryptoService");
                 try

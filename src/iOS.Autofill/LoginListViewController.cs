@@ -9,6 +9,7 @@ using Bit.iOS.Autofill.Utilities;
 using Bit.iOS.Core.Utilities;
 using Bit.Core.Utilities;
 using Bit.Core.Abstractions;
+using Bit.App.Abstractions;
 
 namespace Bit.iOS.Autofill
 {
@@ -16,10 +17,14 @@ namespace Bit.iOS.Autofill
     {
         public LoginListViewController(IntPtr handle)
             : base(handle)
-        { }
+        {
+            DismissModalAction = Cancel;
+            PasswordRepromptService = ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService");
+        }
 
         public Context Context { get; set; }
         public CredentialProviderViewController CPViewController { get; set; }
+        public IPasswordRepromptService PasswordRepromptService { get; private set; }
 
         public async override void ViewDidLoad()
         {
@@ -35,13 +40,18 @@ namespace Bit.iOS.Autofill
             var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             var needsAutofillReplacement = await storageService.GetAsync<bool?>(
                 Core.Constants.AutofillNeedsIdentityReplacementKey);
-            if(needsAutofillReplacement.GetValueOrDefault())
+            if (needsAutofillReplacement.GetValueOrDefault())
             {
                 await ASHelpers.ReplaceAllIdentities();
             }
         }
 
         partial void CancelBarButton_Activated(UIBarButtonItem sender)
+        {
+            Cancel();
+        }
+
+        private void Cancel()
         {
             CPViewController.CompleteRequest();
         }
@@ -58,18 +68,22 @@ namespace Bit.iOS.Autofill
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if(segue.DestinationViewController is UINavigationController navController)
+            if (segue.DestinationViewController is UINavigationController navController)
             {
-                if(navController.TopViewController is LoginAddViewController addLoginController)
+                if (navController.TopViewController is LoginAddViewController addLoginController)
                 {
                     addLoginController.Context = Context;
                     addLoginController.LoginListController = this;
+                    segue.DestinationViewController.PresentationController.Delegate =
+                        new CustomPresentationControllerDelegate(addLoginController.DismissModalAction);
                 }
-                if(navController.TopViewController is LoginSearchViewController searchLoginController)
+                if (navController.TopViewController is LoginSearchViewController searchLoginController)
                 {
                     searchLoginController.Context = Context;
                     searchLoginController.CPViewController = CPViewController;
                     searchLoginController.FromList = true;
+                    segue.DestinationViewController.PresentationController.Delegate =
+                        new CustomPresentationControllerDelegate(searchLoginController.DismissModalAction);
                 }
             }
         }
@@ -98,7 +112,7 @@ namespace Bit.iOS.Autofill
             public async override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
                 await AutofillHelpers.TableRowSelectedAsync(tableView, indexPath, this,
-                    _controller.CPViewController, _controller, "loginAddSegue");
+                    _controller.CPViewController, _controller, _controller.PasswordRepromptService, "loginAddSegue");
             }
         }
     }

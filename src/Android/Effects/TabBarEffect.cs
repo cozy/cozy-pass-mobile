@@ -1,7 +1,6 @@
-﻿using Android.Support.Design.BottomNavigation;
-using Android.Support.Design.Widget;
-using Android.Views;
+﻿using Android.Views;
 using Bit.Droid.Effects;
+using Google.Android.Material.BottomNavigation;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -13,11 +12,11 @@ namespace Bit.Droid.Effects
     {
         protected override void OnAttached()
         {
-            if(!(Container.GetChildAt(0) is ViewGroup layout))
+            if (!(Container.GetChildAt(0) is ViewGroup layout))
             {
                 return;
             }
-            if(!(layout.GetChildAt(1) is BottomNavigationView bottomNavigationView))
+            if (!(layout.GetChildAt(1) is BottomNavigationView bottomNavigationView))
             {
                 return;
             }

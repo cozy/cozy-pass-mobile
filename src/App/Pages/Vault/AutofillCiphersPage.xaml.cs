@@ -4,7 +4,10 @@ using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Utilities;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
+using Bit.App.Controls;
+using Bit.App.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -13,6 +16,7 @@ namespace Bit.App.Pages
     {
         private readonly AppOptions _appOptions;
         private readonly IPlatformUtilsService _platformUtilsService;
+        private readonly IVaultTimeoutService _vaultTimeoutService;
 
         private AutofillCiphersPageViewModel _vm;
 
@@ -22,22 +26,30 @@ namespace Bit.App.Pages
             InitializeComponent();
             _vm = BindingContext as AutofillCiphersPageViewModel;
             _vm.Page = this;
-            _fab.Clicked = AddButton_Clicked;
             _vm.Init(appOptions);
 
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
+            _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            if (!await AppHelpers.IsVaultTimeoutImmediateAsync())
+            {
+                await _vaultTimeoutService.CheckVaultTimeoutAsync();
+            }
+            if (await _vaultTimeoutService.IsLockedAsync())
+            {
+                return;
+            }
             await LoadOnAppearedAsync(_mainLayout, false, async () =>
             {
                 try
                 {
                     await _vm.LoadAsync();
                 }
-                catch(Exception e) when(e.Message.Contains("No key."))
+                catch (Exception e) when(e.Message.Contains("No key."))
                 {
                     await Task.Delay(1000);
                     await _vm.LoadAsync();
@@ -45,14 +57,23 @@ namespace Bit.App.Pages
             }, _mainContent);
         }
 
-        private async void RowSelected(object sender, SelectedItemChangedEventArgs e)
+        protected override bool OnBackButtonPressed()
         {
-            ((ListView)sender).SelectedItem = null;
-            if(!DoOnce())
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                _appOptions.Uri = null;
+            }
+            return base.OnBackButtonPressed();
+        }
+
+        private async void RowSelected(object sender, SelectionChangedEventArgs e)
+        {
+            ((ExtendedCollectionView)sender).SelectedItem = null;
+            if (!DoOnce())
             {
                 return;
             }
-            if(e.SelectedItem is GroupingsPageListItem item && item.Cipher != null)
+            if (e.CurrentSelection?.FirstOrDefault() is GroupingsPageListItem item && item.Cipher != null)
             {
                 await _vm.SelectCipherAsync(item.Cipher, item.FuzzyAutofill);
             }
@@ -60,11 +81,11 @@ namespace Bit.App.Pages
 
         private async void AddButton_Clicked(object sender, System.EventArgs e)
         {
-            if(!DoOnce())
+            if (!DoOnce())
             {
                 return;
             }
-            if(_appOptions.FillType.HasValue && _appOptions.FillType != CipherType.Login)
+            if (_appOptions.FillType.HasValue && _appOptions.FillType != CipherType.Login)
             {
                 var pageForOther = new AddEditPage(type: _appOptions.FillType, fromAutofill: true);
                 await Navigation.PushModalAsync(new NavigationPage(pageForOther));
@@ -79,12 +100,6 @@ namespace Bit.App.Pages
         {
             var page = new CiphersPage(null, autofillUrl: _vm.Uri);
             Application.Current.MainPage = new NavigationPage(page);
-            _platformUtilsService.ShowToast("info", null,
-                string.Format(AppResources.BitwardenAutofillServiceSearch, _vm.Name),
-                new System.Collections.Generic.Dictionary<string, object>
-                {
-                    ["longDuration"] = true
-                });
         }
     }
 }

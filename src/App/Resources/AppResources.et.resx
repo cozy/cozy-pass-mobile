@@ -313,6 +313,9 @@
     <value>Salvesta</value>
     <comment>Button text for a save operation (verb).</comment>
   </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
   <data name="Saving" xml:space="preserve">
     <value>Salvestan...</value>
     <comment>Message shown when interacting with the server</comment>
@@ -344,7 +347,7 @@
     <comment>The title for the tools page.</comment>
   </data>
   <data name="URI" xml:space="preserve">
-    <value>URL</value>
+    <value>URI</value>
     <comment>Label for a uri/url.</comment>
   </data>
   <data name="UseFingerprintToUnlock" xml:space="preserve">
@@ -366,7 +369,7 @@
     <value>Kinnita sõrmejäljega</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Kinnita ülemparooliga</value>
+    <value>Autendi ülemparooliga</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>Kinnita PIN</value>
@@ -418,7 +421,7 @@
     <value>Lihtsaim viis uute sisselogimise andmete lisamiseks on kasutada Bitwardeni rakenduse laiendust. Lisateavet Cozy Passi rakenduse laienduse kasutamiseks leiad menüüst "Seaded".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Kasuta Cozy Passit Safaris ja teistes rakendusestes kontoandmete sisestamiseks.</value>
+    <value>Kasuta Cozy Passit Safaris ja teistes rakendustes kontoandmete sisestamiseks.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Cozy Passi automaattäite teenus</value>
@@ -513,7 +516,7 @@
     <value>Kiire viis oma konto- ja muude andmete importimiseks teistest paroolihalduritest.</value>
   </data>
   <data name="LastSync" xml:space="preserve">
-    <value>Viimane sünkronisatsioon:</value>
+    <value>Viimane sünkroniseerimine:</value>
   </data>
   <data name="Length" xml:space="preserve">
     <value>Pikkus</value>
@@ -521,23 +524,29 @@
   <data name="Lock" xml:space="preserve">
     <value>Lukusta</value>
   </data>
-  <data name="LockOption15Minutes" xml:space="preserve">
+  <data name="FifteenMinutes" xml:space="preserve">
     <value>15 minuti pärast</value>
   </data>
-  <data name="LockOption1Hour" xml:space="preserve">
+  <data name="OneHour" xml:space="preserve">
     <value>1 tunni pärast</value>
   </data>
-  <data name="LockOption1Minute" xml:space="preserve">
+  <data name="OneMinute" xml:space="preserve">
     <value>1 minuti pärast</value>
   </data>
-  <data name="LockOption4Hours" xml:space="preserve">
+  <data name="FourHours" xml:space="preserve">
     <value>4 tunni pärast</value>
   </data>
-  <data name="LockOptionImmediately" xml:space="preserve">
+  <data name="Immediately" xml:space="preserve">
     <value>Koheselt</value>
   </data>
-  <data name="LockOptions" xml:space="preserve">
-    <value>Lukustamine</value>
+  <data name="VaultTimeout" xml:space="preserve">
+    <value>Hoidla ajalõpp</value>
+  </data>
+  <data name="VaultTimeoutAction" xml:space="preserve">
+    <value>Hoidla ajalõpu tegevus</value>
+  </data>
+  <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
+    <value>Väljalogimine eemaldab hoidlale ligipääsu ning nõuab pärast ajalõpu perioodi uuesti autentimist. Oled kindel, et soovid seda valikut kasutada?</value>
   </data>
   <data name="LoggingIn" xml:space="preserve">
     <value>Sisselogimine...</value>
@@ -556,7 +565,7 @@
     <value>Ülemparool on parool, millega pääsed oma kontole ligi. On äärmiselt tähtis, et ülemparool ei ununeks. Selle parooli taastamine ei ole mingil moel võimalik.</value>
   </data>
   <data name="MasterPasswordHint" xml:space="preserve">
-    <value>Ülemparooli vihje (ei ole kohutuslik)</value>
+    <value>Ülemparooli vihje (ei ole kohustuslik)</value>
   </data>
   <data name="MasterPasswordHintDescription" xml:space="preserve">
     <value>Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud.</value>
@@ -708,7 +717,7 @@
     <value>Cozy Passi Veebihoidla</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
-    <value>Kaotasid autentiseerimise rakenduse?</value>
+    <value>Kaotasid autentimise rakenduse?</value>
   </data>
   <data name="Items" xml:space="preserve">
     <value>Kirjet</value>
@@ -731,8 +740,8 @@
     <value>Hoidlas puuduvad {0} kontod.</value>
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
-  <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Kui näed Cozy Passi automaatse täitmise märguannet, saad sellele vajutada ja oma kontoandmed automaatselt sisestada.</value>
+  <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
+    <value>Kui vajutad sisendväljale ning näed Cozy Passi akent, saad sellele vajutada ning kontoandmeid ja paroole sisestada.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Vajuta andmete automaatseks sisestamiseks.</value>
@@ -759,7 +768,7 @@
     <value>Lihtsaim viis hoidlasse kontosid lisada on läbi Bitwardeni automaattäite teenuse. Rohkem infot selle kohta leiad Cozy Passi rakenduse menüüst "Seaded".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
-    <value>Automaattäide</value>
+    <value>Täida automaatselt</value>
   </data>
   <data name="AutofillOrView" xml:space="preserve">
     <value>Soovid seda kirjet sisestada või vaadata?</value>
@@ -779,37 +788,19 @@
   <data name="BitwardenAutofillServiceSearch" xml:space="preserve">
     <value>Otsid "{0}" automaattäite kirjet.</value>
   </data>
-  <data name="ShareVault" xml:space="preserve">
-    <value>Jaga oma hoidlat</value>
-  </data>
-  <data name="AutofillPasswordField" xml:space="preserve">
-    <value>Paroolivälja valimisel</value>
-  </data>
-  <data name="AutofillPasswordFieldDescription" xml:space="preserve">
-    <value>Otsi ekraanilt täitmiseks mõeldud välju ning näita automaattäite teavitust ainult siis, kui valitud on parooli väli. See valik võib aidata akut säästa.</value>
-  </data>
-  <data name="AutofillPersistNotification" xml:space="preserve">
-    <value>Püsiv märguanne</value>
-  </data>
-  <data name="AutofillPersistNotificationDescription" xml:space="preserve">
-    <value>Paku alati automaattäite märguannet ning kontrolli välju alles pärast automaatse täitmise valiku kasutamist. See valik võib aidata akut säästa.</value>
-  </data>
-  <data name="AutofillAlways" xml:space="preserve">
-    <value>Otsi alati</value>
-  </data>
-  <data name="AutofillAlwaysDescription" xml:space="preserve">
-    <value>Otsi ekraanilt sisselogimise välju ning näita automaattäite teavitust paroolivälja leidmisel. See on vaikeseade.</value>
+  <data name="LearnOrg" xml:space="preserve">
+    <value>Learn About Organizations</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Rakendust "{0}" ei ole võimalik avada.</value>
     <comment>Message shown when trying to launch an app that does not exist on the user's device.</comment>
   </data>
   <data name="AuthenticatorAppTitle" xml:space="preserve">
-    <value>Autentiseerimise rakendus</value>
+    <value>Autentimise rakendus</value>
     <comment>For 2FA</comment>
   </data>
   <data name="EnterVerificationCodeApp" xml:space="preserve">
-    <value>Sisesta autentiseerimise rakendusest 6 kohaline number.</value>
+    <value>Sisesta autentimise rakendusest 6 kohaline number.</value>
     <comment>For 2FA</comment>
   </data>
   <data name="EnterVerificationCodeEmail" xml:space="preserve">
@@ -821,7 +812,7 @@
     <comment>For 2FA whenever there are no available providers on this device.</comment>
   </data>
   <data name="NoTwoStepAvailable" xml:space="preserve">
-    <value>Sellel kontol on aktiveeritud kaheastmeline kinnitus. Siiski ei toeta ükski aktiveeritud kaheastmelise kinnitamise teenus seda konkreetset seadet. Palun kasuta ühilduvat seadet ja/või lisa uus kaheastmelise teenuse pakkuja, mis töötab rohkemates seadmetes (näiteks mõni autentiseerimise rakendus).</value>
+    <value>Sellel kontol on aktiveeritud kaheastmeline kinnitus. Siiski ei toeta ükski aktiveeritud kaheastmelise kinnitamise teenus seda konkreetset seadet. Palun kasuta ühilduvat seadet ja/või lisa uus kaheastmelise teenuse pakkuja, mis töötab rohkemates seadmetes (näiteks mõni autentimise rakendus).</value>
   </data>
   <data name="RecoveryCodeTitle" xml:space="preserve">
     <value>Taastamise kood</value>
@@ -877,17 +868,17 @@
     <comment>The placeholder will show the file size of the attachment. Ex "25 MB"</comment>
   </data>
   <data name="AuthenticatorKey" xml:space="preserve">
-    <value>Autentiseerimise võti (TOTP)</value>
+    <value>Autentimise võti (TOTP)</value>
   </data>
   <data name="VerificationCodeTotp" xml:space="preserve">
     <value>Kinnituskood (TOTP)</value>
     <comment>Totp code label</comment>
   </data>
   <data name="AuthenticatorKeyAdded" xml:space="preserve">
-    <value>Autentiseerimise võti on lisatud.</value>
+    <value>Autentimise võti on lisatud.</value>
   </data>
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
-    <value>Autentiseerimise võtme lugemine nurjus.</value>
+    <value>Autentimise võtme lugemine nurjus.</value>
   </data>
   <data name="CameraInstructionBottom" xml:space="preserve">
     <value>Skaneering toimub automaatselt.</value>
@@ -908,7 +899,7 @@
     <value>Kopeeri TOTP</value>
   </data>
   <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>Kui sinu sisselogimise andmetele on juurde lisatud autentiseerimise võti, kopeeritakse TOTP kood automaattäite kasutamisel lõikepuhvrisse.</value>
+    <value>Kui sinu sisselogimise andmetele on juurde lisatud autentimise võti, kopeeritakse TOTP kood automaattäite kasutamisel lõikepuhvrisse.</value>
   </data>
   <data name="DisableAutoTotpCopy" xml:space="preserve">
     <value>Keela automaatne TOTP kopeerimine</value>
@@ -1135,7 +1126,7 @@
     <value>Ikoonide serveri URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Täida automaatselt Cozy Passiga</value>
+    <value>Täida Cozy Passiga</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Hoidla on lukus</value>
@@ -1151,6 +1142,9 @@
   </data>
   <data name="NoItemsFolder" xml:space="preserve">
     <value>Selles kaustas ei ole kirjeid.</value>
+  </data>
+  <data name="NoItemsTrash" xml:space="preserve">
+    <value>Prügikast on tühi.</value>
   </data>
   <data name="AutofillAccessibilityService" xml:space="preserve">
     <value>Juurdepääsetavuse teenus</value>
@@ -1205,10 +1199,10 @@
     <value>Eemalda</value>
   </data>
   <data name="NewUri" xml:space="preserve">
-    <value>Uus URL</value>
+    <value>Uus URI</value>
   </data>
   <data name="URIPosition" xml:space="preserve">
-    <value>URL {0}</value>
+    <value>URI {0}</value>
     <comment>Label for a uri/url with position. i.e. URI 1, URI 2, etc</comment>
   </data>
   <data name="BaseDomain" xml:space="preserve">
@@ -1232,7 +1226,7 @@
     <value>Algab</value>
   </data>
   <data name="URIMatchDetection" xml:space="preserve">
-    <value>URL sobivuse tuvastamine</value>
+    <value>URI sobivuse tuvastamine</value>
   </data>
   <data name="MatchDetection" xml:space="preserve">
     <value>Sobivuse tuvastamine</value>
@@ -1275,7 +1269,7 @@
     <value>Pead enne Automaattäite kasutamist Cozy Passi rakendusse sisse logima.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
-    <value>Sinu kontoandmed on otse klaviatuurilt ligipääsetavad. Saad nüüd kergemini äppides ja veebilehtel sisse logida.</value>
+    <value>Sinu kontoandmed on otse klaviatuurilt ligipääsetavad. Saad nüüd kergemini äppides ja veebilehtedel sisse logida.</value>
   </data>
   <data name="AutofillSetup2" xml:space="preserve">
     <value>Soovitame teised Automaattäite valikud Seadetest välja lülitada, kui sa neid enam ei kasuta.</value>
@@ -1326,7 +1320,7 @@
     <value>Kõik kirjed</value>
   </data>
   <data name="URIs" xml:space="preserve">
-    <value>URL-id</value>
+    <value>URI-d</value>
     <comment>Plural form of a URI</comment>
   </data>
   <data name="CheckingPassword" xml:space="preserve">
@@ -1390,6 +1384,10 @@
   <data name="NoCollectionsToList" xml:space="preserve">
     <value>Puuduvad kollektsioonid, mida kuvada.</value>
   </data>
+  <data name="MovedItemToOrg" xml:space="preserve">
+    <value>{0} moved to {1}.</value>
+    <comment>ex: Item moved to Organization.</comment>
+  </data>
   <data name="ItemShared" xml:space="preserve">
     <value>Kirje on jagatud.</value>
   </data>
@@ -1402,11 +1400,14 @@
   <data name="ShareItem" xml:space="preserve">
     <value>Jaga kirjet</value>
   </data>
+  <data name="MoveToOrganization" xml:space="preserve">
+    <value>Move to Organization</value>
+  </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Puuduvad organisatsioonid, mida kuvada.</value>
   </data>
-  <data name="ShareDesc" xml:space="preserve">
-    <value>Vali organisatsioon, millega soovid seda kirjet jagada. Jagamisega saab kirje omanikuks organisatsioon. Pärast kirje jagamist ei ole sa enam selle otsene omanik.</value>
+  <data name="MoveToOrgDesc" xml:space="preserve">
+    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Sõnade arv</value>
@@ -1436,7 +1437,7 @@
     <value>Konto sõrmejälje fraas</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
-  <data name="ShareVaultConfirmation" xml:space="preserve">
+  <data name="LearnOrgConfirmation" xml:space="preserve">
     <value>Cozy Passiga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
@@ -1451,11 +1452,8 @@
   <data name="Unlock" xml:space="preserve">
     <value>Lukusta lahti</value>
   </data>
-  <data name="LockOption30Minutes" xml:space="preserve">
+  <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 minuti pärast</value>
-  </data>
-  <data name="LockOption5Minutes" xml:space="preserve">
-    <value>5 minuti pärast</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
     <value>Määra Cozy Passi lahtilukustamiseks PIN kood. Rakendusest täielikult välja logides nullitakse ka PIN koodi seaded.</value>
@@ -1481,9 +1479,6 @@
   <data name="FiveMinutes" xml:space="preserve">
     <value>5 minuti pärast</value>
   </data>
-  <data name="OneMinute" xml:space="preserve">
-    <value>1 minuti pärast</value>
-  </data>
   <data name="TenSeconds" xml:space="preserve">
     <value>10 sekundi pärast</value>
   </data>
@@ -1505,11 +1500,11 @@
     <comment>Clipboard is the operating system thing where you copy/paste data to on your device.</comment>
   </data>
   <data name="DefaultUriMatchDetection" xml:space="preserve">
-    <value>Vaikse URL-i sobivuse tuvastamine</value>
+    <value>Vaike URI sobivuse tuvastamine</value>
     <comment>Default URI match detection for auto-fill.</comment>
   </data>
   <data name="DefaultUriMatchDetectionDescription" xml:space="preserve">
-    <value>Vali vaikeviis, kuidas kirje ja URL-i sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada.</value>
+    <value>Vali vaikeviis, kuidas kirje ja URI-i sobivus tuvastatakse. Seda kasutatakse näiteks siis, kui lehele üritatakse automaatselt andmeid sisestada.</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>Kujundus</value>
@@ -1518,12 +1513,8 @@
   <data name="ThemeDescription" xml:space="preserve">
     <value>Muuda rakenduse värvikujundust.</value>
   </data>
-  <data name="RestartIsRequired" xml:space="preserve">
-    <value>Nõutav on rakenduse taaskäivitamine.</value>
-    <comment>Referring to restarting the application.</comment>
-  </data>
-  <data name="Restarting" xml:space="preserve">
-    <value>Taaskäivitub...</value>
+  <data name="ThemeDefault" xml:space="preserve">
+    <value>Default (System)</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Kopeeri märkus</value>
@@ -1532,7 +1523,7 @@
     <value>Välju</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Kas soovid tõesti Cozy Passi sulgeda?</value>
+    <value>Soovid tõesti Cozy Passi sulgeda?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your password when the application is restarted?</value>
@@ -1542,10 +1533,10 @@
     <comment>The color black</comment>
   </data>
   <data name="BlacklistedUris" xml:space="preserve">
-    <value>Musta nimerkirja URL-id</value>
+    <value>Musta nimekirja URI-d</value>
   </data>
   <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>Musta nimekirja pandud URL-ide puhul ei pakuta automaattäitmist. Eralda nimed komaga. Nt: "https://twitter.com, androidapp://com.twitter.android".</value>
+    <value>Musta nimekirja pandud URI-de puhul ei pakuta automaattäitmist. Eralda nimed komaga. Nt: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
   <data name="DisableSavePrompt" xml:space="preserve">
     <value>Keela "Lisa konto andmed"</value>
@@ -1553,7 +1544,7 @@
   <data name="DisableSavePromptDescription" xml:space="preserve">
     <value>"Lisa konto andmed" märguanne ilmub pärast esimest sisselogimist ning võimaldab kontoandmeid salvestada.</value>
   </data>
-  <data name="LockOptionOnRestart" xml:space="preserve">
+  <data name="OnRestart" xml:space="preserve">
     <value>Äpi taaskäivitamisel</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
@@ -1585,9 +1576,487 @@
     <value>Kinnita läbi biomeetria.</value>
   </data>
   <data name="Biometrics" xml:space="preserve">
-    <value>Biomeetria</value>
+    <value>biomeetriaga</value>
   </data>
   <data name="UseBiometricsToUnlock" xml:space="preserve">
     <value>Kasuta lahtilukustamiseks biomeetriat</value>
+  </data>
+  <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
+    <value>Bitwarden vajab tähelepanu! Vaata Seaded - Juurdepääsetavuse teenuse seaded.</value>
+  </data>
+  <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
+    <value>3. Ava Androidi rakenduste seaded. Leia üles Bitwarden, liigu sektsiooni "Täpsemalt" ning vajuta "Kuva peal" valikule ning lülita see sisse.</value>
+  </data>
+  <data name="OverlayPermission" xml:space="preserve">
+    <value>Õigus</value>
+  </data>
+  <data name="BitwardenAutofillServiceOpenOverlayPermissionSettings" xml:space="preserve">
+    <value>Ava Kuva peal seaded</value>
+  </data>
+  <data name="BitwardenAutofillServiceStep3" xml:space="preserve">
+    <value>3. Ava Androidi rakenduste seaded. Leia üles Bitwarden, liigu sektsiooni "Täpsemalt" ning vajuta "Kuva peal" valikule ning lülita see sisse.</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Keelatud</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>Lubatud</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>Failivorming</value>
+  </data>
+  <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
+    <value>Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine.</value>
+  </data>
+  <data name="ExportVaultWarning" xml:space="preserve">
+    <value>Eksporditav fail sisaldab hoidla sisu, mis on krüpteeringuta. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist.</value>
+  </data>
+  <data name="EncExportKeyWarning" xml:space="preserve">
+    <value>Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida.</value>
+  </data>
+  <data name="EncExportAccountWarning" xml:space="preserve">
+    <value>Iga Bitwardeni kasutaja krüpteerimisvõti on unikaalne. Eksporditud andmeid ei saa importida teise Bitwardeni kasutajakontosse.</value>
+  </data>
+  <data name="ExportVaultConfirmationTitle" xml:space="preserve">
+    <value>Hoidla eksportimise kinnitamine</value>
+    <comment>Title for the alert to confirm vault exports.</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Hoiatus</value>
+  </data>
+  <data name="ExportVaultFailure" xml:space="preserve">
+    <value>Hoidla eksportimisel ilmnes tõrge. Probleemi jätkumisel teosta eksportimine veebihoidla kaudu.</value>
+  </data>
+  <data name="ExportVaultSuccess" xml:space="preserve">
+    <value>Hoidla on edukalt eksporditud</value>
+  </data>
+  <data name="Clone" xml:space="preserve">
+    <value>Klooni</value>
+    <comment>Clone an entity (verb).</comment>
+  </data>
+  <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
+    <value>Organisatsiooni seaded mõjutavad parooli genereerija sätteid</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Ava</value>
+    <comment>Button text for an open operation (verb).</comment>
+  </data>
+  <data name="UnableToSaveAttachment" xml:space="preserve">
+    <value>Manuse salvestamisel ilmnes tõrge. Probleemi jätkumisel lisa fail läbi veebihoidla.</value>
+  </data>
+  <data name="SaveAttachmentSuccess" xml:space="preserve">
+    <value>Manus on edukalt lisatud</value>
+  </data>
+  <data name="AutofillTileAccessibilityRequired" xml:space="preserve">
+    <value>Palun lülita "Automaattäite juurdepääsetavuse teenus" Bitwardeni seadetest sisse, et Automaattäite kasti kasutada.</value>
+  </data>
+  <data name="AutofillTileUriNotFound" xml:space="preserve">
+    <value>Paroolivälju ei tuvastatud</value>
+  </data>
+  <data name="SoftDeleting" xml:space="preserve">
+    <value>Prügikasti teisaldamine...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemSoftDeleted" xml:space="preserve">
+    <value>Kirje on prügikasti saadetud.</value>
+    <comment>Confirmation message after successfully soft-deleting a login</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Taasta</value>
+    <comment>Restores an entity (verb).</comment>
+  </data>
+  <data name="Restoring" xml:space="preserve">
+    <value>Taastamine...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemRestored" xml:space="preserve">
+    <value>Kirje on taastatud.</value>
+    <comment>Confirmation message after successfully restoring a soft-deleted item</comment>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Prügikast</value>
+    <comment>(noun) Location of deleted items which have not yet been permanently deleted</comment>
+  </data>
+  <data name="SearchTrash" xml:space="preserve">
+    <value>Otsi prügikastist</value>
+    <comment>(action prompt) Label for the search text field when viewing the trash folder</comment>
+  </data>
+  <data name="DoYouReallyWantToPermanentlyDeleteCipher" xml:space="preserve">
+    <value>Oled kindel, et soovid kirje(d) jäädavalt kustutada? Seda ei saa tagasi võtta.</value>
+    <comment>Confirmation alert message when permanently deleteing a cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToRestoreCipher" xml:space="preserve">
+    <value>Oled kindel, et soovid selle kirje taastada?</value>
+    <comment>Confirmation alert message when restoring a soft-deleted cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToSoftDeleteCipher" xml:space="preserve">
+    <value>Oled kindel, et soovid kirje(d) prügikasti teisaldada?</value>
+    <comment>Confirmation alert message when soft-deleting a cipher.</comment>
+  </data>
+  <data name="BiometricInvalidated" xml:space="preserve">
+    <value>Automaattäite kinnitamine läbi biomeetria on keelatud. Oodatakse ülemparooli sisestamist.</value>
+  </data>
+  <data name="BiometricInvalidatedExtension" xml:space="preserve">
+    <value>Automaattäite kinnitamine läbi biomeetria on keelatud. Oodatakse ülemparooli sisestamist.</value>
+  </data>
+  <data name="EnableSyncOnRefresh" xml:space="preserve">
+    <value>Luba allatõmbel sünkroniseerimine</value>
+  </data>
+  <data name="EnableSyncOnRefreshDescription" xml:space="preserve">
+    <value>Hoidla sünkroonimine ekraanil allatõmbamisel.</value>
+  </data>
+  <data name="LogInSso" xml:space="preserve">
+    <value>Enterprise Single Sign-On</value>
+  </data>
+  <data name="LogInSsoSummary" xml:space="preserve">
+    <value>Kiire sisselogimine läbi organisatsiooni ühekordne sisselogimise portaali. Jätkamiseks sisesta organisatsiooni identifikaator.</value>
+  </data>
+  <data name="OrgIdentifier" xml:space="preserve">
+    <value>Organisatsiooni identifikaator</value>
+  </data>
+  <data name="LoginSsoError" xml:space="preserve">
+    <value>Hetkel pole SSO-ga sisselogimine võimalik</value>
+  </data>
+  <data name="SetMasterPassword" xml:space="preserve">
+    <value>Määra ülemparool</value>
+  </data>
+  <data name="SetMasterPasswordSummary" xml:space="preserve">
+    <value>SSO-ga sisselogimise kinnitamiseks tuleb määrata ülemparool. See kaitseb sinu hoidlat ning võimaldab sellele ligi pääseda.</value>
+  </data>
+  <data name="MasterPasswordPolicyInEffect" xml:space="preserve">
+    <value>Üks või enam organisatsiooni eeskirja nõuavad, et ülemparool vastaks nendele nõudmistele:</value>
+  </data>
+  <data name="PolicyInEffectMinComplexity" xml:space="preserve">
+    <value>Minimaalne keerulisuse skoor {0}</value>
+  </data>
+  <data name="PolicyInEffectMinLength" xml:space="preserve">
+    <value>Minimaalne pikkus {0}</value>
+  </data>
+  <data name="PolicyInEffectUppercase" xml:space="preserve">
+    <value>Sisaldab üht või enamat suurtähte</value>
+  </data>
+  <data name="PolicyInEffectLowercase" xml:space="preserve">
+    <value>Sisaldab üht või enamat väiketähte</value>
+  </data>
+  <data name="PolicyInEffectNumbers" xml:space="preserve">
+    <value>Sisaldab üht või rohkem numbreid</value>
+  </data>
+  <data name="PolicyInEffectSpecial" xml:space="preserve">
+    <value>Sisaldab üht või enamat järgnevatest märkidest: {0}</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationTitle" xml:space="preserve">
+    <value>Parool on vale</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationMessage" xml:space="preserve">
+    <value>Parool ei vasta organisatsiooni nõuetele. Vaata see üle ning proovi uuesti.</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laadimine</value>
+  </data>
+  <data name="AcceptPolicies" xml:space="preserve">
+    <value>Nupu aktiveerimisel nõustud järgnevaga:</value>
+  </data>
+  <data name="AcceptPoliciesError" xml:space="preserve">
+    <value>Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud.</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Kasutustingimused</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Privaatsuspoliitika</value>
+  </data>
+  <data name="AccessibilityDrawOverPermissionAlert" xml:space="preserve">
+    <value>Bitwarden vajab tähelepanu! Vaata Bitwardeni menüüd Seaded -> Automaattäite teenused ning luba valik „Kuva peal“</value>
+  </data>
+  <data name="AutofillServices" xml:space="preserve">
+    <value>Automaattäite teenused</value>
+  </data>
+  <data name="InlineAutofill" xml:space="preserve">
+    <value>Kasuta klaviatuuriülest sisestust</value>
+  </data>
+  <data name="InlineAutofillDescription" xml:space="preserve">
+    <value>Kasuta klaviatuuriülest sisestust, kui sinu klaviatuur seda toetab. Kui klaviatuur seda funktsiooni ei toeta (või see on väljalülitatud), kasutatakse tavalist Automaattäite meetodit.</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Kasuta juurdepääsetavust</value>
+  </data>
+  <data name="AccessibilityDescription" xml:space="preserve">
+    <value>Kasuta rakendustes ja veebis andmete sisestamiseks Bitwardeni juurdepääsetavuse teenust. Aktiveerimisel kuvatakse logimisväljadele vajutamisel väike hüpikaken.</value>
+  </data>
+  <data name="AccessibilityDescription2" xml:space="preserve">
+    <value>Kasuta Bitwardeni juurdepääsetavuse teenust, et rakendustes ja veebis kontoandmeid sisestada. (Vajalik on valiku „Kuva peal“ sisselülitamine).</value>
+  </data>
+  <data name="AccessibilityDescription3" xml:space="preserve">
+    <value>Kasuta Bitwardeni juurdepääsetavuse teenust, nägemaks Automaattäite valikute listi ja/või selleks, et näidata hüpikakent, kasutades „Kuva peal“ (kui see on sisse lülitatud).</value>
+  </data>
+  <data name="AccessibilityDescription4" xml:space="preserve">
+    <value>Vajalik Automaattäite valikute listi nägemiseks ning selleks, et toetada Automaattäite teenust läbi valiku „Kuva peal“ (kui see on sisse lülitatud).</value>
+  </data>
+  <data name="DrawOver" xml:space="preserve">
+    <value>Kasuta Kuva peal</value>
+  </data>
+  <data name="DrawOverDescription" xml:space="preserve">
+    <value>Sisselülitatuna lubatakse Bitwardeni juurdepääsetavuse teenusel kuvada hüpikakent (kui valitud on sisselogimise väli).</value>
+  </data>
+  <data name="DrawOverDescription2" xml:space="preserve">
+    <value>Sisselülitatuna lubatakse Bitwardeni juurdepääsetavuse teenusel kuvada hüpikakent (kui valitud on sisselogimise väli). See aitab kontoandmeid lihtsamini sisestada.</value>
+  </data>
+  <data name="DrawOverDescription3" xml:space="preserve">
+    <value>Sisselülitatuna kuvatakse hüpikakent, et võimaldada sisselogimist vanemates äppides, mis ei toeta Androidi Autofill raamistikku.</value>
+  </data>
+  <data name="PersonalOwnershipSubmitError" xml:space="preserve">
+    <value>Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest.</value>
+  </data>
+  <data name="PersonalOwnershipPolicyInEffect" xml:space="preserve">
+    <value>Organisatsiooni poliitika piirab kirje omaniku valikuvõimalusi.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AllSends" xml:space="preserve">
+    <value>Kõik Sendid</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Sends" xml:space="preserve">
+    <value>Sendid</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>Sisesta Sendi nimi (kohustuslik).</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>Tekst</value>
+  </data>
+  <data name="TypeTextInfo" xml:space="preserve">
+    <value>Tekst, mida soovid saata.</value>
+  </data>
+  <data name="HideTextByDefault" xml:space="preserve">
+    <value>Sendi avamisel peida tekst automaatselt</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeFile" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="TypeFileInfo" xml:space="preserve">
+    <value>Fail, mida soovid saata.</value>
+  </data>
+  <data name="DeletionDate" xml:space="preserve">
+    <value>Kustutamise kuupäev</value>
+  </data>
+  <data name="DeletionTime" xml:space="preserve">
+    <value>Kustutamise aeg</value>
+  </data>
+  <data name="DeletionDateInfo" xml:space="preserve">
+    <value>Send kustutatakse määratud kuupäeval ja kellaajal jäädavalt.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PendingDelete" xml:space="preserve">
+    <value>Kustutamise ootel</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Aegumiskuupäev</value>
+  </data>
+  <data name="ExpirationTime" xml:space="preserve">
+    <value>Aegumise kellaaeg</value>
+  </data>
+  <data name="ExpirationDateInfo" xml:space="preserve">
+    <value>Selle valimisel ei pääse sellele Sendile enam pärast määratud kuupäeva ligi.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Aegunud</value>
+  </data>
+  <data name="MaximumAccessCount" xml:space="preserve">
+    <value>Maksimaalne ligipääsude arv</value>
+  </data>
+  <data name="MaximumAccessCountInfo" xml:space="preserve">
+    <value>Selle valimisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="MaximumAccessCountReached" xml:space="preserve">
+    <value>Maksimaalne ligipääsude arv on saavutatud</value>
+  </data>
+  <data name="CurrentAccessCount" xml:space="preserve">
+    <value>Hetkeline ligipääsude arv</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Uus Parool</value>
+  </data>
+  <data name="PasswordInfo" xml:space="preserve">
+    <value>Soovi korral nõua parooli, millega Sendile ligi pääseb.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="RemovePassword" xml:space="preserve">
+    <value>Eemalda parool</value>
+  </data>
+  <data name="AreYouSureRemoveSendPassword" xml:space="preserve">
+    <value>Soovid kindlasti selle parooli eemaldada?</value>
+  </data>
+  <data name="RemovingSendPassword" xml:space="preserve">
+    <value>Parooli eemaldamine</value>
+  </data>
+  <data name="SendPasswordRemoved" xml:space="preserve">
+    <value>Parool on eemaldatud</value>
+  </data>
+  <data name="NotesInfo" xml:space="preserve">
+    <value>Privaatne märkus selle Sendi kohta.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="DisableSend" xml:space="preserve">
+    <value>Keela see Send, et keegi ei pääseks sellele ligi.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NoSends" xml:space="preserve">
+    <value>Kontol pole ühtegi Sendi.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddASend" xml:space="preserve">
+    <value>Lisa Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="CopyLink" xml:space="preserve">
+    <value>Kopeeri link</value>
+  </data>
+  <data name="ShareLink" xml:space="preserve">
+    <value>Jaga linki</value>
+  </data>
+  <data name="SendLink" xml:space="preserve">
+    <value>Sendi link</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SearchSends" xml:space="preserve">
+    <value>Otsi Sende</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="EditSend" xml:space="preserve">
+    <value>Muuda Sendi</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddSend" xml:space="preserve">
+    <value>Lisa Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AreYouSureDeleteSend" xml:space="preserve">
+    <value>Soovid tõesti selle Sendi kustutada?</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDeleted" xml:space="preserve">
+    <value>Send on kustutatud.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendUpdated" xml:space="preserve">
+    <value>Send on uuendatud.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NewSendCreated" xml:space="preserve">
+    <value>Uus Send on loodud.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1 päev</value>
+  </data>
+  <data name="TwoDays" xml:space="preserve">
+    <value>2 päeva</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3 päeva</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7 päeva</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30 päeva</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Kohandatud</value>
+  </data>
+  <data name="ShareOnSave" xml:space="preserve">
+    <value>Jaga seda Sendi salvestamise ajal.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDisabledWarning" xml:space="preserve">
+    <value>Ettevõtte poliitika kohaselt saad ainult olemasolevat Sendi kustutada.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AboutSend" xml:space="preserve">
+    <value>Rohkem infot</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="HideEmail" xml:space="preserve">
+    <value>Ära näita saajatele minu e-posti aadressi.</value>
+  </data>
+  <data name="SendOptionsPolicyInEffect" xml:space="preserve">
+    <value>Organisatsiooni seaded mõjutavad sinu Sendi sätteid.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFilePremiumRequired" xml:space="preserve">
+    <value>Tasuta kontoga on võimalik saata ainult tekste. Failide saatmiseks on vajalik omada tasulist kontot.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFileEmailVerificationRequired" xml:space="preserve">
+    <value>Sendi kasutamiseks pead kinnitama oma e-posti aadressi. Saad seda teha veebihoidlas.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Nõutav on ülemparool</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Ülemparooli kinnitamine</value>
+  </data>
+  <data name="PasswordConfirmationDesc" xml:space="preserve">
+    <value>See tegevus on kaitstud. Jätkamiseks sisesta oma ülemparool.</value>
+  </data>
+  <data name="CaptchaRequired" xml:space="preserve">
+    <value>Captcha Required</value>
+  </data>
+  <data name="CaptchaFailed" xml:space="preserve">
+    <value>Captcha Failed. Please try again.</value>
+  </data>
+  <data name="UpdatedMasterPassword" xml:space="preserve">
+    <value>Updated Master Password</value>
+  </data>
+  <data name="UpdateMasterPassword" xml:space="preserve">
+    <value>Update Master Password</value>
+  </data>
+  <data name="UpdateMasterPasswordWarning" xml:space="preserve">
+    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+  </data>
+  <data name="UpdatingPassword" xml:space="preserve">
+    <value>Updating Password</value>
+  </data>
+  <data name="UpdatePasswordError" xml:space="preserve">
+    <value>Currently unable to update password</value>
+  </data>
+  <data name="Fido2Title" xml:space="preserve">
+    <value>FIDO2 WebAuthn</value>
+  </data>
+  <data name="Fido2Instruction" xml:space="preserve">
+    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+  </data>
+  <data name="Fido2Desc" xml:space="preserve">
+    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+  </data>
+  <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
+    <value>Authenticate WebAuthn</value>
+  </data>
+  <data name="Fido2ReturnToApp" xml:space="preserve">
+    <value>Return to App</value>
+  </data>
+  <data name="Fido2CheckBrowser" xml:space="preserve">
+    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+  </data>
+  <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
+    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+  </data>
+  <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
+    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+  </data>
+  <data name="VaultTimeoutToLarge" xml:space="preserve">
+    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+  </data>
+  <data name="DisablePersonalVaultExportPolicyInEffect">
+    <value>One or more organization policies prevents your from exporting your personal vault.</value>
   </data>
 </root>

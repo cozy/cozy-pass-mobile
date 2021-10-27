@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,21 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden</value>
+    <value>Bitwarden - Gestore di Password</value>
     <comment>Max 30 characters</comment>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>bitwarden è il modo più semplice e sicuro per salvare tutti i tuoi login e password tenendoli contemporantemente sincronizzati su tutti i tuoi dispositivi. L'estensione app di bitwarden ti permette di loggarti velocemente in ogni sito attraverso Safari o Chrome ed è supportata da centinaia di altre popolari app.
+    <value>Bitwarden è il modo più semplice e sicuro per salvare tutti i tuoi login e password mantenendoli sincronizzati su tutti i tuoi dispositivi. L'estensione di Bitwarden ti permette di loggarti velocemente su ogni sito utilizzando Safari o Chrome ed è supportata da centinaia di altre popolari app.
 
-Il furto di password è un problema serio. I siti e le app che utilizzi sono sotto attacco ogni giorno. Falle di sicurezza possono essere trovate e le tue password rubate. Quando riutilizzi la stessa password su più app e siti gli hacker possono facilmente accedere alla tua email, banca, e altri account importanti.
+Il furto di password è un problema serio. I siti e le app che utilizzi sono sotto attacco quotidianamente. I tuoi account possono essere violati e le tue password rubate. Quando riutilizzi la stessa password su più app e siti, gli hacker possono facilmente accedere alla tua email, al tuo conto bancario e ad altri account importanti.
 
-Gli esperti di sicurezza raccomandano di utilizzare password casuali e diverse per ogni account che crei. Ma come gestire tutte quelle password? bitwarden ti rende facile creare, salvare e accedere alle tue password.
+Gli esperti di sicurezza raccomandano di utilizzare password casuali e diverse per ogni account che crei. Ma come gestirle tutte? Bitwarden facilita la creazione, l'archiviazione e l'accesso alle tue password.
 
-bitwarden salva tutti i tuoi login in una cassaforte criptata che si sincronizza su tutti i tuoi dispositivi. Poichè è completamente criptata ancora prima di lasciare il tuo dispositivo, solo tu puoi accedere ai tuoi dati. Nemmeno il team di bitwarden può leggere i tuoi dati, anche se volessero. I tuoi dati sono criptati con algoritmo AES-256, salted hashing, e PBKDF2 SHA-256.</value>
-    <comment>Max 4000 characters</comment>
+Bitwarden salva tutti i tuoi login in una cassaforte sincronizzata su tutti i tuoi dispositivi. Poiché completamente cifrata, solo tu puoi accedere ai tuoi dati. Nemmeno il team di Bitwarden può leggere i tuoi dati, anche volendo. Questi sono infatti cifrati con algoritmo AES-256, salted hashing e PBKDF2 SHA-256.
+
+Bitwarden è 100% open source. Il codice sorgente è ospitato su GitHub e tutti sono liberi di revisionarlo, verificarlo e contribuire alla codebase di Bitwarden.</value>
+  <comment>Max 4000 characters</comment>
   </data>
   <data name="Keywords" xml:space="preserve">
-    <value>bitwarden,bit warden,8bit,password,login,free password manager,password manager,login manager,password manager gratis,password manager gratuito</value>
+    <value>bitwarden,8bit,password,password manager gratis,password manager,login manager</value>
     <comment>Max 100 characters</comment>
   </data>
   <data name="Screenshot1" xml:space="preserve">

@@ -7,6 +7,8 @@ using Bit.App.Resources;
 using Bit.iOS.Core.Views;
 using Bit.iOS.Autofill.Utilities;
 using Bit.iOS.Core.Utilities;
+using Bit.App.Abstractions;
+using Bit.Core.Utilities;
 
 namespace Bit.iOS.Autofill
 {
@@ -14,11 +16,15 @@ namespace Bit.iOS.Autofill
     {
         public LoginSearchViewController(IntPtr handle)
             : base(handle)
-        { }
+        {
+            DismissModalAction = Cancel;
+            PasswordRepromptService = ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService");
+        }
 
         public Context Context { get; set; }
         public CredentialProviderViewController CPViewController { get; set; }
         public bool FromList { get; set; }
+        public IPasswordRepromptService PasswordRepromptService { get; private set; }
 
         public async override void ViewDidLoad()
         {
@@ -54,7 +60,12 @@ namespace Bit.iOS.Autofill
 
         partial void CancelBarButton_Activated(UIBarButtonItem sender)
         {
-            if(FromList)
+            Cancel();
+        }
+
+        private void Cancel()
+        {
+            if (FromList)
             {
                 DismissViewController(true, null);
             }
@@ -71,12 +82,14 @@ namespace Bit.iOS.Autofill
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if(segue.DestinationViewController is UINavigationController navController)
+            if (segue.DestinationViewController is UINavigationController navController)
             {
-                if(navController.TopViewController is LoginAddViewController addLoginController)
+                if (navController.TopViewController is LoginAddViewController addLoginController)
                 {
                     addLoginController.Context = Context;
                     addLoginController.LoginSearchController = this;
+                    segue.DestinationViewController.PresentationController.Delegate =
+                        new CustomPresentationControllerDelegate(addLoginController.DismissModalAction);
                 }
             }
         }
@@ -105,7 +118,8 @@ namespace Bit.iOS.Autofill
             public async override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
                 await AutofillHelpers.TableRowSelectedAsync(tableView, indexPath, this,
-                    _controller.CPViewController, _controller, "loginAddFromSearchSegue");
+                    _controller.CPViewController, _controller, _controller.PasswordRepromptService,
+                    "loginAddFromSearchSegue");
             }
         }
     }

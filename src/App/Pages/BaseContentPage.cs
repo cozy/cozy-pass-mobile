@@ -3,6 +3,8 @@ using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using System;
 using System.Threading.Tasks;
+using Bit.App.Abstractions;
+using Bit.App.Utilities;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -12,6 +14,7 @@ namespace Bit.App.Pages
     public class BaseContentPage : ContentPage
     {
         private IStorageService _storageService;
+        private IDeviceActionService _deviceActionService;
 
         protected int ShowModalAnimationDelay = 400;
         protected int ShowPageAnimationDelay = 100;
@@ -20,6 +23,7 @@ namespace Bit.App.Pages
         {
             if (Device.RuntimePlatform == Device.iOS)
             {
+                On<iOS>().SetUseSafeArea(true);
                 On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FullScreen);
             }
         }
@@ -34,7 +38,7 @@ namespace Bit.App.Pages
 
         public bool DoOnce(Action action = null, int milliseconds = 1000)
         {
-            if(LastPageAction.HasValue && (DateTime.UtcNow - LastPageAction.Value).TotalMilliseconds < milliseconds)
+            if (LastPageAction.HasValue && (DateTime.UtcNow - LastPageAction.Value).TotalMilliseconds < milliseconds)
             {
                 // Last action occurred recently.
                 return false;
@@ -50,9 +54,10 @@ namespace Bit.App.Pages
             {
                 IsRunning = true,
                 VerticalOptions = LayoutOptions.CenterAndExpand,
-                HorizontalOptions = LayoutOptions.Center
+                HorizontalOptions = LayoutOptions.Center,
+                Color = ThemeManager.GetResourceColor("PrimaryColor"),
             };
-            if(targetView != null)
+            if (targetView != null)
             {
                 targetView.Content = indicator;
             }
@@ -68,9 +73,9 @@ namespace Bit.App.Pages
             async Task DoWorkAsync()
             {
                 await workFunction.Invoke();
-                if(sourceView != null)
+                if (sourceView != null)
                 {
-                    if(targetView != null)
+                    if (targetView != null)
                     {
                         targetView.Content = sourceView;
                     }
@@ -80,7 +85,7 @@ namespace Bit.App.Pages
                     }
                 }
             }
-            if(Device.RuntimePlatform == Device.iOS)
+            if (Device.RuntimePlatform == Device.iOS)
             {
                 await DoWorkAsync();
                 return;
@@ -101,18 +106,22 @@ namespace Bit.App.Pages
             });
         }
 
-        private void SetStorageService()
+        private void SetServices()
         {
-            if(_storageService == null)
+            if (_storageService == null)
             {
                 _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
+            }
+            if (_deviceActionService == null)
+            {
+                _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             }
         }
 
         private void SaveActivity()
         {
-            SetStorageService();
-            _storageService.SaveAsync(Constants.LastActiveKey, DateTime.UtcNow);
+            SetServices();
+            _storageService.SaveAsync(Constants.LastActiveTimeKey, _deviceActionService.GetActiveTime());
         }
     }
 }

@@ -1,14 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Android.Content;
 using Android.Service.Autofill;
 using Android.Widget;
 using System.Linq;
 using Android.App;
 using System.Threading.Tasks;
+using Android.App.Slices;
+using Android.Graphics;
+using Android.Graphics.Drawables;
+using Android.OS;
+using Android.Runtime;
+using Android.Widget.Inline;
 using Bit.App.Resources;
 using Bit.Core.Enums;
 using Android.Views.Autofill;
+using AndroidX.AutoFill.Inline;
+using AndroidX.AutoFill.Inline.V1;
 using Bit.Core.Abstractions;
+using SaveFlags = Android.Service.Autofill.SaveFlags;
 
 namespace Bit.Droid.Autofill
 {
@@ -16,52 +26,104 @@ namespace Bit.Droid.Autofill
     {
         private static int _pendingIntentId = 0;
 
-        // These browser work natively with the autofill framework
+        // These browsers work natively with the Autofill Framework
+        //
+        // Be sure:
+        //   - to keep these entries sorted alphabetically and
+        //
+        //   - ... to keep this list in sync with values in AccessibilityHelpers.SupportedBrowsers [Section A], too.
         public static HashSet<string> TrustedBrowsers = new HashSet<string>
         {
+            "com.duckduckgo.mobile.android",
+            "com.google.android.googlequicksearchbox",
             "org.mozilla.focus",
             "org.mozilla.klar",
-            "com.duckduckgo.mobile.android",
         };
 
-        // These browsers work using the compatibility shim for the autofill framework
+        // These browsers work using the compatibility shim for the Autofill Framework
+        //
+        // Be sure:
+        //   - to keep these entries sorted alphabetically,
+        //   - to keep this list in sync with values in Resources/xml/autofillservice.xml, and
+        //
+        //   - ... to keep this list in sync with values in AccessibilityHelpers.SupportedBrowsers [Section A], too.
         public static HashSet<string> CompatBrowsers = new HashSet<string>
         {
-            "org.mozilla.firefox",
-            "org.mozilla.firefox_beta",
-            "com.microsoft.emmx",
-            "com.android.chrome",
-            "com.chrome.beta",
+            "alook.browser",
+            "com.amazon.cloud9",
             "com.android.browser",
+            "com.android.chrome",
+            "com.android.htmlviewer",
+            "com.avast.android.secure.browser",
+            "com.avg.android.secure.browser",
             "com.brave.browser",
+            "com.brave.browser_beta",
+            "com.brave.browser_default",
+            "com.brave.browser_dev",
+            "com.brave.browser_nightly",
+            "com.chrome.beta",
+            "com.chrome.canary",
+            "com.chrome.dev",
+            "com.cookiegames.smartcookie",
+            "com.cookiejarapps.android.smartcookieweb",
+            "com.ecosia.android",
+            "com.google.android.apps.chrome",
+            "com.google.android.apps.chrome_dev",
+            "com.jamal2367.styx",
+            "com.kiwibrowser.browser",
+            "com.microsoft.emmx",
+            "com.microsoft.emmx.beta",
+            "com.microsoft.emmx.canary",
+            "com.microsoft.emmx.dev",
+            "com.mmbox.browser",
+            "com.mmbox.xbrowser",
+            "com.mycompany.app.soulbrowser",
+            "com.naver.whale",
             "com.opera.browser",
             "com.opera.browser.beta",
             "com.opera.mini.native",
-            "com.chrome.dev",
-            "com.chrome.canary",
-            "com.google.android.apps.chrome",
-            "com.google.android.apps.chrome_dev",
-            "com.yandex.browser",
+            "com.opera.mini.native.beta",
+            "com.opera.touch",
+            "com.qwant.liberty",
             "com.sec.android.app.sbrowser",
             "com.sec.android.app.sbrowser.beta",
-            "org.codeaurora.swe.browser",
-            "com.amazon.cloud9",
+            "com.stoutner.privacybrowser.free",
+            "com.stoutner.privacybrowser.standard",
+            "com.vivaldi.browser",
+            "com.vivaldi.browser.snapshot",
+            "com.vivaldi.browser.sopranos",
+            "com.yandex.browser",
+            "com.z28j.feel",
+            "idm.internet.download.manager",
+            "idm.internet.download.manager.adm.lite",
+            "idm.internet.download.manager.plus",
+            "io.github.forkmaintainers.iceraven",
+            "mark.via",
             "mark.via.gp",
+            "net.slions.fulguris.full.download",
+            "net.slions.fulguris.full.download.debug",            
+            "net.slions.fulguris.full.playstore",
+            "net.slions.fulguris.full.playstore.debug",
+            "org.adblockplus.browser",
+            "org.adblockplus.browser.beta",
             "org.bromite.bromite",
+            "org.bromite.chromium",
             "org.chromium.chrome",
-            "com.kiwibrowser.browser",
-            "com.ecosia.android",
-            "com.opera.mini.native.beta",
-            "org.mozilla.fennec_aurora",
-            "org.mozilla.fennec_fdroid",
-            "com.qwant.liberty",
-            "com.opera.touch",
+            "org.codeaurora.swe.browser",
+            "org.gnu.icecat",
             "org.mozilla.fenix",
             "org.mozilla.fenix.nightly",
+            "org.mozilla.fennec_aurora",
+            "org.mozilla.fennec_fdroid",
+            "org.mozilla.firefox",
+            "org.mozilla.firefox_beta",
             "org.mozilla.reference.browser",
             "org.mozilla.rocket",
             "org.torproject.torbrowser",
-            "com.vivaldi.browser",
+            "org.torproject.torbrowser_alpha",
+            "org.ungoogled.chromium.extensions.stable",
+            "org.ungoogled.chromium.stable",
+            "us.spotco.fennec_dos",
         };
 
         // The URLs are blacklisted from autofilling
@@ -75,69 +137,124 @@ namespace Bit.Droid.Autofill
 
         public static async Task<List<FilledItem>> GetFillItemsAsync(Parser parser, ICipherService cipherService)
         {
-            if(parser.FieldCollection.FillableForLogin)
+            if (parser.FieldCollection.FillableForLogin)
             {
                 var ciphers = await cipherService.GetAllDecryptedByUrlAsync(parser.Uri);
-                if(ciphers.Item1.Any() || ciphers.Item2.Any())
+                if (ciphers.Item1.Any() || ciphers.Item2.Any())
                 {
                     var allCiphers = ciphers.Item1.ToList();
                     allCiphers.AddRange(ciphers.Item2.ToList());
-                    return allCiphers.Select(c => new FilledItem(c)).ToList();
+                    var nonPromptCiphers = allCiphers.Where(cipher => cipher.Reprompt == CipherRepromptType.None);
+                    return nonPromptCiphers.Select(c => new FilledItem(c)).ToList();
                 }
             }
-            else if(parser.FieldCollection.FillableForCard)
+            else if (parser.FieldCollection.FillableForCard)
             {
                 var ciphers = await cipherService.GetAllDecryptedAsync();
-                return ciphers.Where(c => c.Type == CipherType.Card).Select(c => new FilledItem(c)).ToList();
+                return ciphers.Where(c => c.Type == CipherType.Card && c.Reprompt == CipherRepromptType.None).Select(c => new FilledItem(c)).ToList();
             }
             return new List<FilledItem>();
         }
 
-        public static FillResponse BuildFillResponse(Parser parser, List<FilledItem> items, bool locked)
+        public static FillResponse BuildFillResponse(Parser parser, List<FilledItem> items, bool locked,
+            bool inlineAutofillEnabled, FillRequest fillRequest = null)
         {
-            var responseBuilder = new FillResponse.Builder();
-            if(items != null && items.Count > 0)
+            // Acquire inline presentation specs on Android 11+
+            IList<InlinePresentationSpec> inlinePresentationSpecs = null;
+            var inlinePresentationSpecsCount = 0;
+            var inlineMaxSuggestedCount = 0;
+            if (inlineAutofillEnabled && fillRequest != null && (int)Build.VERSION.SdkInt >= 30)
             {
-                foreach(var item in items)
+                var inlineSuggestionsRequest = fillRequest.InlineSuggestionsRequest;
+                inlineMaxSuggestedCount = inlineSuggestionsRequest?.MaxSuggestionCount ?? 0;
+                inlinePresentationSpecs = inlineSuggestionsRequest?.InlinePresentationSpecs;
+                inlinePresentationSpecsCount = inlinePresentationSpecs?.Count ?? 0;
+            }
+            
+            // Build response
+            var responseBuilder = new FillResponse.Builder();
+            if (items != null && items.Count > 0)
+            {
+                var maxItems = items.Count;
+                if (inlineMaxSuggestedCount > 0)
                 {
-                    var dataset = BuildDataset(parser.ApplicationContext, parser.FieldCollection, item);
-                    if(dataset != null)
+                    // -1 to adjust for 'open vault' option
+                    maxItems = Math.Min(maxItems, inlineMaxSuggestedCount - 1);
+                }
+                for (int i = 0; i < maxItems; i++)
+                {
+                    InlinePresentationSpec inlinePresentationSpec = null;
+                    if (inlinePresentationSpecs != null)
+                    {
+                        if (i < inlinePresentationSpecsCount)
+                        {
+                            inlinePresentationSpec = inlinePresentationSpecs[i];
+                        }
+                        else
+                        {
+                            // If the max suggestion count is larger than the number of specs in the list, then
+                            // the last spec is used for the remainder of the suggestions
+                            inlinePresentationSpec = inlinePresentationSpecs[inlinePresentationSpecsCount - 1];
+                        }
+                    }
+                    var dataset = BuildDataset(parser.ApplicationContext, parser.FieldCollection, items[i], 
+                        inlinePresentationSpec);
+                    if (dataset != null)
                     {
                         responseBuilder.AddDataset(dataset);
                     }
                 }
             }
             responseBuilder.AddDataset(BuildVaultDataset(parser.ApplicationContext, parser.FieldCollection,
-                parser.Uri, locked));
-            AddSaveInfo(parser, responseBuilder, parser.FieldCollection);
+                parser.Uri, locked, inlinePresentationSpecs));
+            AddSaveInfo(parser, fillRequest, responseBuilder, parser.FieldCollection);
             responseBuilder.SetIgnoredIds(parser.FieldCollection.IgnoreAutofillIds.ToArray());
             return responseBuilder.Build();
         }
 
-        public static Dataset BuildDataset(Context context, FieldCollection fields, FilledItem filledItem)
+        public static Dataset BuildDataset(Context context, FieldCollection fields, FilledItem filledItem,
+            InlinePresentationSpec inlinePresentationSpec = null)
         {
-            var datasetBuilder = new Dataset.Builder(
-                BuildListView(filledItem.Name, filledItem.Subtitle, filledItem.Icon, context));
-            if(filledItem.ApplyToFields(fields, datasetBuilder))
+            var overlayPresentation = BuildOverlayPresentation(
+                filledItem.Name,
+                filledItem.Subtitle,
+                filledItem.Icon,
+                context);
+            
+            var inlinePresentation = BuildInlinePresentation(
+                inlinePresentationSpec, 
+                filledItem.Name, 
+                filledItem.Subtitle, 
+                filledItem.Icon, 
+                null, 
+                context);
+
+            var datasetBuilder = new Dataset.Builder(overlayPresentation);
+            if (inlinePresentation != null)
+            {
+                datasetBuilder.SetInlinePresentation(inlinePresentation);
+            }
+            if (filledItem.ApplyToFields(fields, datasetBuilder))
             {
                 return datasetBuilder.Build();
             }
             return null;
         }
 
-        public static Dataset BuildVaultDataset(Context context, FieldCollection fields, string uri, bool locked)
+        public static Dataset BuildVaultDataset(Context context, FieldCollection fields, string uri, bool locked,
+            IList<InlinePresentationSpec> inlinePresentationSpecs = null)
         {
             var intent = new Intent(context, typeof(MainActivity));
             intent.PutExtra("autofillFramework", true);
-            if(fields.FillableForLogin)
+            if (fields.FillableForLogin)
             {
                 intent.PutExtra("autofillFrameworkFillType", (int)CipherType.Login);
             }
-            else if(fields.FillableForCard)
+            else if (fields.FillableForCard)
             {
                 intent.PutExtra("autofillFrameworkFillType", (int)CipherType.Card);
             }
-            else if(fields.FillableForIdentity)
+            else if (fields.FillableForIdentity)
             {
                 intent.PutExtra("autofillFrameworkFillType", (int)CipherType.Identity);
             }
@@ -149,24 +266,36 @@ namespace Bit.Droid.Autofill
             var pendingIntent = PendingIntent.GetActivity(context, ++_pendingIntentId, intent,
                 PendingIntentFlags.CancelCurrent);
 
-            var view = BuildListView(
+            var overlayPresentation = BuildOverlayPresentation(
                 AppResources.AutofillWithBitwarden,
                 locked ? AppResources.VaultIsLocked : AppResources.GoToMyVault,
                 Resource.Drawable.icon,
                 context);
 
-            var datasetBuilder = new Dataset.Builder(view);
-            datasetBuilder.SetAuthentication(pendingIntent.IntentSender);
+            var inlinePresentation = BuildInlinePresentation(
+                inlinePresentationSpecs?.Last(), 
+                AppResources.Bitwarden, 
+                locked ? AppResources.VaultIsLocked : AppResources.MyVault, 
+                Resource.Drawable.icon, 
+                pendingIntent, 
+                context);
+
+            var datasetBuilder = new Dataset.Builder(overlayPresentation);
+            if (inlinePresentation != null)
+            {
+                datasetBuilder.SetInlinePresentation(inlinePresentation);
+            }
+            datasetBuilder.SetAuthentication(pendingIntent?.IntentSender);
 
             // Dataset must have a value set. We will reset this in the main activity when the real item is chosen.
-            foreach(var autofillId in fields.AutofillIds)
+            foreach (var autofillId in fields.AutofillIds)
             {
                 datasetBuilder.SetValue(autofillId, AutofillValue.ForText("PLACEHOLDER"));
             }
             return datasetBuilder.Build();
         }
 
-        public static RemoteViews BuildListView(string text, string subtext, int iconId, Context context)
+        public static RemoteViews BuildOverlayPresentation(string text, string subtext, int iconId, Context context)
         {
             var packageName = context.PackageName;
             var view = new RemoteViews(packageName, Resource.Layout.autofill_listitem);
@@ -176,29 +305,105 @@ namespace Bit.Droid.Autofill
             return view;
         }
 
-        public static void AddSaveInfo(Parser parser, FillResponse.Builder responseBuilder, FieldCollection fields)
+        public static InlinePresentation BuildInlinePresentation(InlinePresentationSpec inlinePresentationSpec,
+            string text, string subtext, int iconId, PendingIntent pendingIntent, Context context)
+        {
+            if ((int)Build.VERSION.SdkInt < 30 || inlinePresentationSpec == null)
+            {
+                return null;
+            }
+            if (pendingIntent == null)
+            {
+                // InlinePresentation requires nonNull pending intent (even though we only utilize one for the
+                // "my vault" presentation) so we're including an empty one here
+                pendingIntent = PendingIntent.GetService(context, 0, new Intent(),
+                    PendingIntentFlags.OneShot | PendingIntentFlags.UpdateCurrent);
+            }
+            var slice = CreateInlinePresentationSlice(
+                inlinePresentationSpec,
+                text,
+                subtext,
+                iconId,
+                "Autofill option",
+                pendingIntent,
+                context);
+            if (slice != null)
+            {
+                return new InlinePresentation(slice, inlinePresentationSpec, false);
+            }
+            return null;
+        }
+
+        private static Slice CreateInlinePresentationSlice(
+            InlinePresentationSpec inlinePresentationSpec,
+            string text,
+            string subtext,
+            int iconId,
+            string contentDescription,
+            PendingIntent pendingIntent,
+            Context context)
+        {
+            var imeStyle = inlinePresentationSpec.Style;
+            if (!UiVersions.GetVersions(imeStyle).Contains(UiVersions.InlineUiVersion1))
+            {
+                return null;
+            }
+            var contentBuilder = InlineSuggestionUi.NewContentBuilder(pendingIntent)
+                .SetContentDescription(contentDescription);
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                contentBuilder.SetTitle(text);
+            }
+            if (!string.IsNullOrWhiteSpace(subtext))
+            {
+                contentBuilder.SetSubtitle(subtext);
+            }
+            if (iconId > 0)
+            {
+                var icon = Icon.CreateWithResource(context, iconId);
+                if (icon != null)
+                {
+                    if (iconId == Resource.Drawable.icon)
+                    {
+                        // Don't tint our logo
+                        icon.SetTintBlendMode(BlendMode.Dst);
+                    }
+                    contentBuilder.SetStartIcon(icon);
+                }
+            }
+            return contentBuilder.Build().JavaCast<InlineSuggestionUi.Content>()?.Slice;
+        }
+
+        public static void AddSaveInfo(Parser parser, FillRequest fillRequest, FillResponse.Builder responseBuilder, 
+            FieldCollection fields)
         {
             // Docs state that password fields cannot be reliably saved in Compat mode since they will show as
             // masked values.
-            var compatBrowser = CompatBrowsers.Contains(parser.PackageName);
-            if(compatBrowser && fields.SaveType == SaveDataType.Password)
+            bool? compatRequest = null;
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Q && fillRequest != null)
+            {
+                // Attempt to automatically establish compat request mode on Android 10+
+                compatRequest = (fillRequest.Flags | FillRequest.FlagCompatibilityModeRequest) == fillRequest.Flags;
+            }
+            var compatBrowser = compatRequest ?? CompatBrowsers.Contains(parser.PackageName);
+            if (compatBrowser && fields.SaveType == SaveDataType.Password)
             {
                 return;
             }
 
             var requiredIds = fields.GetRequiredSaveFields();
-            if(fields.SaveType == SaveDataType.Generic || requiredIds.Length == 0)
+            if (fields.SaveType == SaveDataType.Generic || requiredIds.Length == 0)
             {
                 return;
             }
 
             var saveBuilder = new SaveInfo.Builder(fields.SaveType, requiredIds);
             var optionalIds = fields.GetOptionalSaveIds();
-            if(optionalIds.Length > 0)
+            if (optionalIds.Length > 0)
             {
                 saveBuilder.SetOptionalIds(optionalIds);
             }
-            if(compatBrowser)
+            if (compatBrowser)
             {
                 saveBuilder.SetFlags(SaveFlags.SaveOnAllViewsInvisible);
             }

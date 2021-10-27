@@ -33,7 +33,7 @@ namespace Bit.App.Pages
             _collectionService = ServiceContainer.Resolve<ICollectionService>("collectionService");
             Collections = new ExtendedObservableCollection<CollectionViewModel>();
             OrganizationOptions = new List<KeyValuePair<string, string>>();
-            PageTitle = AppResources.Share;
+            PageTitle = AppResources.MoveToOrganization;
         }
 
         public string CipherId { get; set; }
@@ -45,7 +45,7 @@ namespace Bit.App.Pages
             get => _organizationSelectedIndex;
             set
             {
-                if(SetProperty(ref _organizationSelectedIndex, value))
+                if (SetProperty(ref _organizationSelectedIndex, value))
                 {
                     OrganizationChanged();
                 }
@@ -75,7 +75,7 @@ namespace Bit.App.Pages
 
             var cipherDomain = await _cipherService.GetAsync(CipherId);
             _cipher = await cipherDomain.DecryptAsync();
-            if(OrganizationId == null && OrganizationOptions.Any())
+            if (OrganizationId == null && OrganizationOptions.Any())
             {
                 OrganizationId = OrganizationOptions.First().Value;
             }
@@ -87,13 +87,13 @@ namespace Bit.App.Pages
         public async Task<bool> SubmitAsync()
         {
             var selectedCollectionIds = Collections?.Where(c => c.Checked).Select(c => c.Collection.Id);
-            if(!selectedCollectionIds?.Any() ?? true)
+            if (!selectedCollectionIds?.Any() ?? true)
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred, AppResources.SelectOneCollection,
                     AppResources.Ok);
                 return false;
             }
-            if(Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle);
@@ -109,23 +109,25 @@ namespace Bit.App.Pages
                 await _deviceActionService.ShowLoadingAsync(AppResources.Saving);
                 await _cipherService.ShareWithServerAsync(cipherView, OrganizationId, checkedCollectionIds);
                 await _deviceActionService.HideLoadingAsync();
-                _platformUtilsService.ShowToast("success", null, AppResources.ItemShared);
+                var movedItemToOrgText = string.Format(AppResources.MovedItemToOrg, cipherView.Name,
+                   (await _userService.GetOrganizationAsync(OrganizationId)).Name);
+                _platformUtilsService.ShowToast("success", null, movedItemToOrgText);
                 await Page.Navigation.PopModalAsync();
                 return true;
             }
-            catch(ApiException e)
+            catch (ApiException e)
             {
                 await _deviceActionService.HideLoadingAsync();
-                if(e?.Error != null)
+                if (e?.Error != null)
                 {
                     await _platformUtilsService.ShowDialogAsync(e.Error.GetSingleMessage(),
                         AppResources.AnErrorHasOccurred);
                 }
             }
-            catch(System.Exception e)
+            catch (System.Exception e)
             {
                 await _deviceActionService.HideLoadingAsync();
-                if(e.Message != null)
+                if (e.Message != null)
                 {
                     await _platformUtilsService.ShowDialogAsync(e.Message, AppResources.AnErrorHasOccurred);
                 }
@@ -135,7 +137,7 @@ namespace Bit.App.Pages
 
         private void OrganizationChanged()
         {
-            if(OrganizationSelectedIndex > -1)
+            if (OrganizationSelectedIndex > -1)
             {
                 OrganizationId = OrganizationOptions[OrganizationSelectedIndex].Value;
                 FilterCollections();
@@ -144,7 +146,7 @@ namespace Bit.App.Pages
 
         private void FilterCollections()
         {
-            if(OrganizationId == null || !_writeableCollections.Any())
+            if (OrganizationId == null || !_writeableCollections.Any())
             {
                 Collections.ResetWithRange(new List<CollectionViewModel>());
             }

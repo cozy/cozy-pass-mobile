@@ -1,4 +1,5 @@
 using System;
+using Bit.iOS.Core.Views;
 using Foundation;
 using UIKit;
 
@@ -8,7 +9,9 @@ namespace Bit.iOS.Autofill
     {
         public LoginAddViewController(IntPtr handle)
             : base(handle)
-        { }
+        {
+            DismissModalAction = Cancel;
+        }
 
         public LoginListViewController LoginListController { get; set; }
         public LoginSearchViewController LoginSearchController { get; set; }
@@ -25,6 +28,11 @@ namespace Bit.iOS.Autofill
 
         partial void CancelBarButton_Activated(UIBarButtonItem sender)
         {
+            Cancel();
+        }
+        
+        private void Cancel()
+        {
             DismissViewController(true, null);
         }
 
@@ -35,12 +43,14 @@ namespace Bit.iOS.Autofill
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if(segue.DestinationViewController is UINavigationController navController)
+            if (segue.DestinationViewController is UINavigationController navController)
             {
-                if(navController.TopViewController is PasswordGeneratorViewController passwordGeneratorController)
+                if (navController.TopViewController is PasswordGeneratorViewController passwordGeneratorController)
                 {
                     passwordGeneratorController.PasswordOptions = Context.PasswordOptions;
                     passwordGeneratorController.Parent = this;
+                    segue.DestinationViewController.PresentationController.Delegate =
+                        new CustomPresentationControllerDelegate(passwordGeneratorController.DismissModalAction);
                 }
             }
         }

@@ -16,6 +16,16 @@ namespace Bit.Core.Models.Export
             Code = obj.Code;
         }
 
+        public Card(Domain.Card obj)
+        {
+            CardholderName = obj.CardholderName?.EncryptedString;
+            Brand = obj.Brand?.EncryptedString;
+            Number = obj.Number?.EncryptedString;
+            ExpMonth = obj.ExpMonth?.EncryptedString;
+            ExpYear = obj.ExpYear?.EncryptedString;
+            Code = obj.Code?.EncryptedString;
+        }
+
         public string CardholderName { get; set; }
         public string Brand { get; set; }
         public string Number { get; set; }
@@ -25,7 +35,7 @@ namespace Bit.Core.Models.Export
 
         public static CardView ToView(Card req, CardView view = null)
         {
-            if(view == null)
+            if (view == null)
             {
                 view = new CardView();
             }

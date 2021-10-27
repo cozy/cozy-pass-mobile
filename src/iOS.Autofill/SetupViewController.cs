@@ -10,7 +10,9 @@ namespace Bit.iOS.Autofill
     {
         public SetupViewController(IntPtr handle)
             : base(handle)
-        { }
+        {
+            DismissModalAction = Cancel;
+        }
 
         public CredentialProviderViewController CPViewController { get; set; }
 
@@ -25,6 +27,7 @@ namespace Bit.iOS.Autofill
 
             ActivatedLabel.Text = AppResources.AutofillActivated;
             ActivatedLabel.Font = UIFont.FromDescriptor(descriptor, descriptor.PointSize * 1.3f);
+            ActivatedLabel.TextColor = ThemeHelpers.SuccessColor;
 
             BackButton.Title = AppResources.Back;
             base.ViewDidLoad();
@@ -32,6 +35,11 @@ namespace Bit.iOS.Autofill
         }
 
         partial void BackButton_Activated(UIBarButtonItem sender)
+        {
+            Cancel();
+        }
+
+        private void Cancel()
         {
             CPViewController.CompleteRequest();
         }

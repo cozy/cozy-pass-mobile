@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,40 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Title" xml:space="preserve">
-    <value>Bitwarden Upravitelj Lozinki</value>
+    <value>Bitwarden upravitelj lozinki</value>
     <comment>Max 30 characters</comment>
   </data>
   <data name="ShortDescription" xml:space="preserve">
-    <value>Bitwarden je upravitelj prijava i lozinki koji pomaže da ste zaštićeni online.</value>
+    <value>Bitwarden je upravitelj korisničkih imena i lozinki koji pomaže da ste zaštićeni online.</value>
     <comment>Max 80 characters</comment>
   </data>
   <data name="FullDesciption" xml:space="preserve">
-    <value>Bitwarden je najlakši i najsigurniji način pohranjivanja svih Vaših prijava i lozinki, dok su iste sinkronizirane među svim Vašim uređajima.
+    <value>Bitwarden, Inc. je vlasnik tvrtke 8bit Solutions LLC.
 
-Krađa lozinki ozbiljan je problem. Web-lokacije i aplikacije koje upotrebljavate svakodnevno su napadnute. Pojavljuju se sigurnosne povrede, a Vaše lozinke su ukradene. Ako ponovno upotrebljavate iste zaporke u aplikacijama i web-lokacijama, hakeri mogu lako pristupiti Vašoj e-pošti, banci i drugim važnim računima.
+THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET I DRUGI ODABRALI SU BITWARDEN ZA NAJBOLJI UPRAVITELJ LOZINKI. 
 
-Sigurnosni stručnjaci preporučuju da koristite različitu, nasumično generiranu lozinku za svaki račun koji stvorite. Ali kako upravljati svim tim lozinkama? Bitwarden vam olakšava stvaranje, pohranu i pristup lozinkama.
+Upravljajte, spremajte, osigurajte i dijelite neograničen broj lozinki na neograničenom broju uređaja bilo gdje. Bitwarden omogućuje upravljanje lozinkama, bazirano na otvorenom kodu, svima, bilo kod kuće, na poslu ili u pokretu.
 
-Bitwarden pohranjuje sve Vaše prijave u šifrirani trezor koji se sinkronizira na svim Vašim uređajima. Budući da je potpuno šifriran prije nego ikada napusti uređaj, samo Vi imate pristup podacima. Čak ni tim u Bitwardenu ne može vidjeti Vaše podatke. Vaši su podaci zapečaćeni s AES-256 bitnim šifriranjem, salt hashom i PBKDF2 SHA-256.</value>
-    <comment>Max 4000 characters</comment>
+Generirajte jake, jedinstvene i nasumične lozinke bazirane na sigurnosnim zahtjevima za svaku web stranicu koju često posjećujete.
+
+Bitwarden Send omoguzćuje jednostavno i brzo slanje šifriranih podataka --- datoteki ili teksta -- direktno, bilo kome.
+
+Bitwarden nudi Teams i Enterprise planove za tvrtke kako biste sigurno mogli dijeliti lozinke s kolegama na poslu.
+
+Zašto odabrati Bitwarden?
+
+Svjetski priznata enkripcija
+Lozinke su zaštićene naprednim end-to-end šifriranjem (AES-256 bit, salted hashtag i PBKDF2 SHA-256) kako bi vaši osobni podaci ostali sigurni i samo vaši.
+
+Ugrađen generator lozinki
+Generirajte jake, jedinstvene i nasumične lozinke bazirane na sigurnosnim zahtjevima za svako web mjesto koje često posjećujete.
+
+Svjetski dostupan 
+Bitwarden je, zahvaljujući našoj globalnoj zajednici, dostupan na više od 40 jezika.
+
+Podržani svi OS
+Osigurajte i sigurno dijelite osjetljive podatke sadržane u vašem Bitwarden trezoru iz bilo kojeg preglednika, mobilnog uređaja ili stolnog računala s bilo kojim OS.</value>
+  <comment>Max 4000 characters</comment>
   </data>
   <data name="FeatureGraphic" xml:space="preserve">
-    <value>Siguran i besplatan upravitelj lozinki za sve Vaše uređaje</value>
+    <value>Siguran i besplatan upravitelj lozinki za sve tvoje uređaje</value>
   </data>
   <data name="Screenshot1" xml:space="preserve">
-    <value>Upravljajte svim svojim prijavama i lozinkama iz sigurnog trezora</value>
+    <value>Upravljaj svojim korisničkim imenima i lozinkama iz sigurnog trezora</value>
   </data>
   <data name="Screenshot2" xml:space="preserve">
-    <value>Automatski generirajte jake, nasumične i sigurne lozinke</value>
+    <value>Automatski generiraj jake, nasumične i sigurne lozinke</value>
   </data>
   <data name="Screenshot3" xml:space="preserve">
-    <value>Zaštitite svoj trezor pomoću otiska prsta, PIN koda ili glavne lozinke</value>
+    <value>Zaštiti svoj trezor pomoću otiska prsta, PIN-a ili glavne lozinke</value>
   </data>
   <data name="Screenshot4" xml:space="preserve">
     <value>Brzo automatsko popunjavanje prijava iz web preglednika i drugih aplikacija</value>
   </data>
   <data name="Screenshot5" xml:space="preserve">
-    <value>Sinkronizirajte i pristupite trezoru s više uređaja
+    <value>Sinkroniziraj i pristupi trezoru s više uređaja
 
 - Telefon
 - Tablet

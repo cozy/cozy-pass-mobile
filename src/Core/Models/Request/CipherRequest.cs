@@ -3,6 +3,7 @@ using Bit.Core.Models.Api;
 using Bit.Core.Models.Domain;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Bit.Core.Models.Request
 {
@@ -16,8 +17,10 @@ namespace Bit.Core.Models.Request
             Name = cipher.Name?.EncryptedString;
             Notes = cipher.Notes?.EncryptedString;
             Favorite = cipher.Favorite;
+            LastKnownRevisionDate = cipher.RevisionDate;
+            Reprompt = cipher.Reprompt;
 
-            switch(Type)
+            switch (Type)
             {
                 case CipherType.Login:
                     Login = new LoginApi
@@ -87,11 +90,11 @@ namespace Bit.Core.Models.Request
                 LastUsedDate = ph.LastUsedDate
             }).ToList();
 
-            if(cipher.Attachments != null)
+            if (cipher.Attachments != null)
             {
                 Attachments = new Dictionary<string, string>();
                 Attachments2 = new Dictionary<string, AttachmentRequest>();
-                foreach(var attachment in cipher.Attachments)
+                foreach (var attachment in cipher.Attachments)
                 {
                     var fileName = attachment.FileName?.EncryptedString;
                     Attachments.Add(attachment.Id, fileName);
@@ -118,5 +121,7 @@ namespace Bit.Core.Models.Request
         public List<PasswordHistoryRequest> PasswordHistory { get; set; }
         public Dictionary<string, string> Attachments { get; set; }
         public Dictionary<string, AttachmentRequest> Attachments2 { get; set; }
+        public DateTime LastKnownRevisionDate { get; set; }
+        public CipherRepromptType Reprompt { get; set; }
     }
 }

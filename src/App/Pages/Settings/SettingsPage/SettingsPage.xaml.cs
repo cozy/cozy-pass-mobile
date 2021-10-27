@@ -1,7 +1,10 @@
-﻿using Bit.App.Abstractions;
+﻿using System.ComponentModel;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.Core.Utilities;
+using System.Linq;
 using System.Threading.Tasks;
+using Bit.App.Controls;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -33,7 +36,7 @@ namespace Bit.App.Pages
 
         protected override bool OnBackButtonPressed()
         {
-            if(Device.RuntimePlatform == Device.Android && _tabsPage != null)
+            if (Device.RuntimePlatform == Device.Android && _tabsPage != null)
             {
                 _tabsPage.ResetToVaultPage();
                 return true;
@@ -41,99 +44,109 @@ namespace Bit.App.Pages
             return base.OnBackButtonPressed();
         }
 
-        private async void RowSelected(object sender, SelectedItemChangedEventArgs e)
+        async void OnTimePickerPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
-            ((ListView)sender).SelectedItem = null;
-            if(!DoOnce())
+            var s = (TimePicker) sender;
+            var time = s.Time.TotalMinutes;
+            if (s.IsFocused && args.PropertyName == "Time")
+            {
+                await _vm.VaultTimeoutAsync(false, (int)time);
+            }
+        }
+
+        private async void RowSelected(object sender, SelectionChangedEventArgs e)
+        {
+            ((ExtendedCollectionView)sender).SelectedItem = null;
+            if (!DoOnce())
             {
                 return;
             }
-            if(!(e.SelectedItem is SettingsPageListItem item))
+            if (!(e.CurrentSelection?.FirstOrDefault() is SettingsPageListItem item))
             {
                 return;
             }
 
-            if(item.Name == AppResources.Sync)
+            if (item.Name == AppResources.Sync)
             {
                 await Navigation.PushModalAsync(new NavigationPage(new SyncPage()));
             }
-            else if(item.Name == AppResources.AutofillAccessibilityService)
+            else if (item.Name == AppResources.AutofillServices)
             {
-                await Navigation.PushModalAsync(new NavigationPage(new AccessibilityServicePage(this)));
+                await Navigation.PushModalAsync(new NavigationPage(new AutofillServicesPage(this)));
             }
-            else if(item.Name == AppResources.AutofillService)
-            {
-                await Navigation.PushModalAsync(new NavigationPage(new AutofillServicePage(this)));
-            }
-            else if(item.Name == AppResources.PasswordAutofill)
+            else if (item.Name == AppResources.PasswordAutofill)
             {
                 await Navigation.PushModalAsync(new NavigationPage(new AutofillPage()));
             }
-            else if(item.Name == AppResources.AppExtension)
+            else if (item.Name == AppResources.AppExtension)
             {
                 await Navigation.PushModalAsync(new NavigationPage(new ExtensionPage()));
             }
-            else if(item.Name == AppResources.Options)
+            else if (item.Name == AppResources.Options)
             {
                 await Navigation.PushModalAsync(new NavigationPage(new OptionsPage()));
             }
-            else if(item.Name == AppResources.Folders)
+            else if (item.Name == AppResources.Folders)
             {
                 await Navigation.PushModalAsync(new NavigationPage(new FoldersPage()));
             }
-            else if(item.Name == AppResources.About)
+            else if (item.Name == AppResources.About)
             {
                 await _vm.AboutAsync();
             }
-            else if(item.Name == AppResources.Help)
+            else if (item.Name == AppResources.Help)
             {
                 _vm.Help();
             }
-            else if(item.Name == AppResources.FingerprintPhrase)
+            else if (item.Name == AppResources.FingerprintPhrase)
             {
                 await _vm.FingerprintAsync();
             }
-            else if(item.Name == AppResources.RateTheApp)
+            else if (item.Name == AppResources.RateTheApp)
             {
                 _vm.Rate();
             }
-            else if(item.Name == AppResources.ImportItems)
+            else if (item.Name == AppResources.ImportItems)
             {
                 _vm.Import();
             }
-            else if(item.Name == AppResources.ExportVault)
+            else if (item.Name == AppResources.ExportVault)
             {
                 await Navigation.PushModalAsync(new NavigationPage(new ExportVaultPage()));
             }
-            else if(item.Name == AppResources.ShareVault)
+            else if (item.Name == AppResources.LearnOrg)
             {
                 await _vm.ShareAsync();
             }
-            else if(item.Name == AppResources.WebVault)
+            else if (item.Name == AppResources.WebVault)
             {
                 _vm.WebVault();
             }
-            else if(item.Name == AppResources.ChangeMasterPassword)
+            else if (item.Name == AppResources.ChangeMasterPassword)
             {
                 await _vm.ChangePasswordAsync();
             }
-            else if(item.Name == AppResources.TwoStepLogin)
+            else if (item.Name == AppResources.TwoStepLogin)
             {
                 await _vm.TwoStepAsync();
             }
-            else if(item.Name == AppResources.LogOut)
+            else if (item.Name == AppResources.LogOut)
             {
                 await _vm.LogOutAsync();
             }
-            else if(item.Name == AppResources.LockNow)
+            else if (item.Name == AppResources.LockNow)
             {
                 await _vm.LockAsync();
             }
-            else if(item.Name == AppResources.LockOptions)
+            else if (item.Name == AppResources.VaultTimeout)
             {
-                await _vm.LockOptionsAsync();
+                await _vm.VaultTimeoutAsync();
             }
-            else if(item.Name == AppResources.UnlockWithPIN)
+            else if (item.Name == AppResources.VaultTimeoutAction)
+            {
+                await _vm.VaultTimeoutActionAsync();
+            }
+            else if (item.Name == AppResources.UnlockWithPIN)
             {
                 await _vm.UpdatePinAsync();
             }
@@ -143,19 +156,15 @@ namespace Bit.App.Pages
             }
             else
             {
-                var fingerprintName = AppResources.Fingerprint;
-                if(Device.RuntimePlatform == Device.iOS)
+                var biometricName = AppResources.Biometrics;
+                if (Device.RuntimePlatform == Device.iOS)
                 {
                     var supportsFace = await _deviceActionService.SupportsFaceBiometricAsync();
-                    fingerprintName = supportsFace ? AppResources.FaceID : AppResources.TouchID;
+                    biometricName = supportsFace ? AppResources.FaceID : AppResources.TouchID;
                 }
-                else if(Device.RuntimePlatform == Device.Android && _deviceActionService.UseNativeBiometric())
+                if (item.Name == string.Format(AppResources.UnlockWith, biometricName))
                 {
-                    fingerprintName = AppResources.Biometrics;
-                }
-                if(item.Name == string.Format(AppResources.UnlockWith, fingerprintName))
-                {
-                    await _vm.UpdateFingerprintAsync();
+                    await _vm.UpdateBiometricAsync();
                 }
             }
         }

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,46 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Title" xml:space="preserve">
-    <value>Bitwarden Password Manager</value>
+    <value>Bitwarden Wagwoordbestuurder</value>
     <comment>Max 30 characters</comment>
   </data>
   <data name="ShortDescription" xml:space="preserve">
-    <value>Bitwarden is a login and password manager that helps keep you safe while online.</value>
+    <value>Bitwarden is ’n aanteken- en wagwoordbestuurder wat u help om veilig te bly wanneer u aanlyn is.</value>
     <comment>Max 80 characters</comment>
   </data>
   <data name="FullDesciption" xml:space="preserve">
-    <value>Bitwarden is the easiest and safest way to store all of your logins and passwords while conveniently keeping them synced between all of your devices.
+    <value>Bitwarden, Inc. is die moederbedryf van 8bit Solutions LLC.
 
-Password theft is a serious problem. The websites and apps that you use are under attack every day. Security breaches occur and your passwords are stolen. When you reuse the same passwords across apps and websites hackers can easily access your email, bank, and other important accounts.
+BESTE WAGWOORDBESTUURDER VOLGENS THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET EN ANDER.
 
-Security experts recommend that you use a different, randomly generated password for every account that you create. But how do you manage all those passwords? Bitwarden makes it easy for you to create, store, and access your passwords.
+Beheer, bewaar, beveilig en deel ’n onbeperkte aantal wagwoorde op ’n onbeperkte aantal toestelle, waar u ookal is. Bitwarden bied oopbronwagwoordbestuuroplossings voor elk, hetsy tuis, op kantoor of op die pad.
 
-Bitwarden stores all of your logins in an encrypted vault that syncs across all of your devices. Since it's fully encrypted before it ever leaves your device, only you have access to your data. Not even the team at Bitwarden can read your data, even if we wanted to. Your data is sealed with AES-256 bit encryption, salted hashing, and PBKDF2 SHA-256.
+Genereer sterk, unieke en lukrake wagwoorde gebaseer op beveiligingsvereistes vir elke webwerf wat u besoek.
 
-Bitwarden is 100% open source software. The source code for Bitwarden is hosted on GitHub and everyone is free to review, audit, and contribute to the Bitwarden codebase.</value>
-    <comment>Max 4000 characters</comment>
+Bitwarden Send verstuur geënkripteerde inligting --- lêers en skoonteks -- vinnig regstreeks aan enigeen.
+
+Bitwarden bied Span- en Ondernemingsplanne vir maatskappye, sodat u wagwoorde veilig met kollega’s kan deel.
+
+Waarom Bitwarden:
+
+Eersteklasenkripsie
+Wagwoorde word beskerm met gevorderde eind-tot-eind-enkodering (AES-256 bit, salted hashtag en PBKDF2 SHA-256) sodat u data veilig en privaat bly.
+
+Ingeboude wagwoordgenereerder
+Genereer sterk, unieke en lukrake wagwoorde gebaseer op beveiligingsvereistes vir elke webwerf wat u besoek.
+
+Wêreldwye vertalings
+Bitwarden-vertalings bestaan ​​in 40 tale en groei danksy ons wêreldwye gemeenskap.
+
+Kruisplatformtoepassings
+Beveilig en deel gevoelige data in u Bitwarden kluis vanuit enige blaaier, mobiele toestel of werkskermbedryfstelsel, en meer.</value>
+  <comment>Max 4000 characters</comment>
   </data>
   <data name="FeatureGraphic" xml:space="preserve">
-    <value>A secure and free password manager for all of your devices</value>
+    <value>’n Veilige en gratis wagwoordbestuurder vir al u toestelle</value>
   </data>
   <data name="Screenshot1" xml:space="preserve">
-    <value>Manage all your logins and passwords from a secure vault</value>
+    <value>Bestuur al u aantekeninge en wagwoorde vanuit ’n beveiligde kluis</value>
   </data>
   <data name="Screenshot2" xml:space="preserve">
-    <value>Automatically generate strong, random, and secure passwords</value>
+    <value>Genereer outomaties sterk, lukrake en veilige wagwoorde</value>
   </data>
   <data name="Screenshot3" xml:space="preserve">
-    <value>Protect your vault with fingerprint, PIN code, or master password</value>
+    <value>Beskerm u kluis met vingerafdruk, PIN-kode of hoofwagwoord</value>
   </data>
   <data name="Screenshot4" xml:space="preserve">
-    <value>Quickly auto-fill logins from within your web browser and other apps</value>
+    <value>Vul aantekeninge vinnig in vanuit u webblaaiers en ander toeps</value>
   </data>
   <data name="Screenshot5" xml:space="preserve">
-    <value>Sync and access your vault from multiple devices
+    <value>Sinchronisasie en toegang tot u kluis op meerdere toestelle
 
-- Phone
+- Slimfoon
 - Tablet
-- Desktop
-- Web</value>
+- Rekenaar
+- Web (internet)</value>
   </data>
 </root>

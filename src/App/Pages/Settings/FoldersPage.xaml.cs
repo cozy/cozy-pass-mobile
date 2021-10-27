@@ -1,5 +1,7 @@
 ﻿using Bit.Core.Models.View;
 using System;
+using System.Linq;
+using Bit.App.Controls;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -15,15 +17,11 @@ namespace Bit.App.Pages
             _vm = BindingContext as FoldersPageViewModel;
             _vm.Page = this;
 
-            if(Device.RuntimePlatform == Device.iOS)
+            if (Device.RuntimePlatform == Device.iOS)
             {
                 _absLayout.Children.Remove(_fab);
                 ToolbarItems.Add(_closeItem);
                 ToolbarItems.Add(_addItem);
-            }
-            else
-            {
-                _fab.Clicked = AddButton_Clicked;
             }
         }
 
@@ -36,14 +34,14 @@ namespace Bit.App.Pages
             }, _mainContent);
         }
 
-        private async void RowSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void RowSelected(object sender, SelectionChangedEventArgs e)
         {
-            ((ListView)sender).SelectedItem = null;
-            if(!DoOnce())
+            ((ExtendedCollectionView)sender).SelectedItem = null;
+            if (!DoOnce())
             {
                 return;
             }
-            if(!(e.SelectedItem is FolderView folder))
+            if (!(e.CurrentSelection?.FirstOrDefault() is FolderView folder))
             {
                 return;
             }
@@ -53,7 +51,7 @@ namespace Bit.App.Pages
 
         private async void AddButton_Clicked(object sender, EventArgs e)
         {
-            if(DoOnce())
+            if (DoOnce())
             {
                 var page = new FolderAddEditPage();
                 await Navigation.PushModalAsync(new NavigationPage(page));
@@ -62,7 +60,7 @@ namespace Bit.App.Pages
 
         private async void Close_Clicked(object sender, System.EventArgs e)
         {
-            if(DoOnce())
+            if (DoOnce())
             {
                 await Navigation.PopModalAsync();
             }

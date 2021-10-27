@@ -313,6 +313,9 @@
     <value>Lưu</value>
     <comment>Button text for a save operation (verb).</comment>
   </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
   <data name="Saving" xml:space="preserve">
     <value>Đang lưu...</value>
     <comment>Message shown when interacting with the server</comment>
@@ -415,7 +418,7 @@
     <value>Phần mở rộng Cozy Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Cozy Pass App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
+    <value>Cách dễ nhất để thêm đăng nhập mới vào kho của bạn là từ Phần mở rộng Cozy Pass. Tìm hiểu thêm về cách sử dụng Phần mở rộng Cozy Pass bằng cách điều hướng đến màn hình "Cài đặt".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Sử dụng Cozy Pass trong Safari và các ứng dụng khác để tự động điền thông tin đăng nhập của bạn.</value>
@@ -521,23 +524,29 @@
   <data name="Lock" xml:space="preserve">
     <value>Khóa</value>
   </data>
-  <data name="LockOption15Minutes" xml:space="preserve">
+  <data name="FifteenMinutes" xml:space="preserve">
     <value>15 phút</value>
   </data>
-  <data name="LockOption1Hour" xml:space="preserve">
+  <data name="OneHour" xml:space="preserve">
     <value>1 giờ</value>
   </data>
-  <data name="LockOption1Minute" xml:space="preserve">
+  <data name="OneMinute" xml:space="preserve">
     <value>1 phút</value>
   </data>
-  <data name="LockOption4Hours" xml:space="preserve">
+  <data name="FourHours" xml:space="preserve">
     <value>4 giờ</value>
   </data>
-  <data name="LockOptionImmediately" xml:space="preserve">
+  <data name="Immediately" xml:space="preserve">
     <value>Tức thì</value>
   </data>
-  <data name="LockOptions" xml:space="preserve">
-    <value>Khóa lại sau</value>
+  <data name="VaultTimeout" xml:space="preserve">
+    <value>Thời Gian Chờ Của Kho</value>
+  </data>
+  <data name="VaultTimeoutAction" xml:space="preserve">
+    <value>Hành Động Khi Hết Thời Gian Chờ</value>
+  </data>
+  <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
+    <value>Đăng xuất sẽ xóa tất các truy cập vào kho của bạn và yêu cầu xác thực trực tuyến sau khi khoảng thời gian chờ hết. Bạn có chắc bạn muốn dùng cài đặt này?</value>
   </data>
   <data name="LoggingIn" xml:space="preserve">
     <value>Đang đăng nhập...</value>
@@ -731,8 +740,8 @@
     <value>Không có mục nào trong kho của bạn thích hợp với {0}.</value>
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
-  <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Khi bạn thấy thông báo tự động điền của Cozy Pass, bạn có thể nhấn vào nó để chạy dịch vụ tự động điền.</value>
+  <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
+    <value>Khi bạn chọn một trường nhập liệu và thấy thông báo tự động điền của Cozy Pass, bạn có thể chạp vào nó để mở tự động điền tiêu chuẩn.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Chạm vào thông báo này để tự động điền thông tin đăng nhập từ kho của bạn.</value>
@@ -756,7 +765,7 @@
     <value>Trạng thái</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Cozy Pass Auto-fill Service by navigating to the "Settings" screen.</value>
+    <value>Cách dễ nhất để thêm một đăng nhập mới vào kho của bạn là bằng dịch vụ Tự động điền của Cozy Pass. Tìm hiểu thêm về cách sử dụng dịch vụ Tự động điền của Cozy Pass trong trang 'Cài đặt'.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Tự động điền</value>
@@ -779,26 +788,8 @@
   <data name="BitwardenAutofillServiceSearch" xml:space="preserve">
     <value>Bạn đang tìm kiếm một tự động đăng nhập cho '{0}'.</value>
   </data>
-  <data name="ShareVault" xml:space="preserve">
-    <value>Chia sẻ kho mật khẩu của bạn</value>
-  </data>
-  <data name="AutofillPasswordField" xml:space="preserve">
-    <value>Quét khi bạn chọn trường Mật khẩu</value>
-  </data>
-  <data name="AutofillPasswordFieldDescription" xml:space="preserve">
-    <value>Chỉ quét các trường trên màn hình và cung cấp thông báo tự động điền khi bạn chọn trường mật khẩu. Cài đặt này có thể giúp tiết kiệm pin.</value>
-  </data>
-  <data name="AutofillPersistNotification" xml:space="preserve">
-    <value>Thông báo liên tục</value>
-  </data>
-  <data name="AutofillPersistNotificationDescription" xml:space="preserve">
-    <value>Luôn cung cấp thông báo tự động điền và chỉ quét các trường sau khi thử tự động điền. Cài đặt này có thể giúp tiết kiệm pin.</value>
-  </data>
-  <data name="AutofillAlways" xml:space="preserve">
-    <value>Luôn luôn quét</value>
-  </data>
-  <data name="AutofillAlwaysDescription" xml:space="preserve">
-    <value>Luôn quét các trường trên màn hình và chỉ cung cấp thông báo tự động điền nếu tìm thấy trường mật khẩu. Đây là thiết lập mặc định.</value>
+  <data name="LearnOrg" xml:space="preserve">
+    <value>Learn About Organizations</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Không thể mở ứng dụng "{0}".</value>
@@ -1152,6 +1143,9 @@
   <data name="NoItemsFolder" xml:space="preserve">
     <value>Không có mục nào trong thư mục này.</value>
   </data>
+  <data name="NoItemsTrash" xml:space="preserve">
+    <value>Không có khoản mục nào trong thùng rác!</value>
+  </data>
   <data name="AutofillAccessibilityService" xml:space="preserve">
     <value>Tự động điền bằng trợ năng</value>
   </data>
@@ -1261,333 +1255,808 @@
     <value>Bạn có thể cần dùng dịch vụ trợ năng vì một số ứng dụng không hỗ trợ dịch vụ tự động điền của Android.</value>
   </data>
   <data name="DatePasswordUpdated" xml:space="preserve">
-    <value>Password Updated</value>
+    <value>Mật khẩu đã được cập nhật</value>
     <comment>ex. Date this password was updated</comment>
   </data>
   <data name="DateUpdated" xml:space="preserve">
-    <value>Updated</value>
+    <value>Đã được cập nhật</value>
     <comment>ex. Date this item was updated</comment>
   </data>
   <data name="AutofillActivated" xml:space="preserve">
-    <value>AutoFill Activated!</value>
+    <value>Tự động điền đã được kích hoạt!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>You must log into the main Cozy Pass app before you can use AutoFill.</value>
+    <value>Bạn phải đăng nhập vào ứng dụng Cozy Pass trước khi sử dụng Tự động điền.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
-    <value>Your logins are now easily accessable right from your keyboard while logging into apps and websites.</value>
+    <value>Tên và mật khẩu có quyền tự động điền từ bàn phím khi bạn sử dụng ứng dụng hay website.</value>
   </data>
   <data name="AutofillSetup2" xml:space="preserve">
-    <value>We recommend disabling any other AutoFill apps under Settings if you do not plan to use them.</value>
+    <value>Chúng tôi khuyên nên vô hiệu hóa các ứng dụng tự động điền khác trong Cài đặt nếu bạn không có ý định sử dụng chúng.</value>
   </data>
   <data name="BitwardenAutofillDescription" xml:space="preserve">
-    <value>Access your vault directly from your keyboard to quickly autofill passwords.</value>
+    <value>Thông tin tự động điền vào trên bàn phím bằng việc truy cập trực tiếp vào mục lưu trữ dữ liệu.</value>
   </data>
   <data name="AutofillTurnOn" xml:space="preserve">
-    <value>To enable password autofill on your device, follow these instructions:</value>
+    <value>Để mở chức năng tự động điền mật khẩu trên thiết bị của bạn, xin làm theo hướng dẫn dưới đây:</value>
   </data>
   <data name="AutofillTurnOn1" xml:space="preserve">
-    <value>1. Go to the iOS "Settings" app</value>
+    <value>1. Truy cập vào ứng dụng "Cài đặt" của iOS</value>
   </data>
   <data name="AutofillTurnOn2" xml:space="preserve">
-    <value>2. Tap "Passwords &amp; Accounts"</value>
+    <value>2. Chọn "Mật khẩu &amp; Tài khoản"</value>
   </data>
   <data name="AutofillTurnOn3" xml:space="preserve">
-    <value>3. Tap "AutoFill Passwords"</value>
+    <value>3. Chọn "Tự động điền mật khẩu"</value>
   </data>
   <data name="AutofillTurnOn4" xml:space="preserve">
-    <value>4. Turn on AutoFill</value>
+    <value>4. Mở Tự động điền mật khẩu</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Select "Cozy Pass"</value>
+    <value>5. Chọn "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
-    <value>Password AutoFill</value>
+    <value>Tự động điền mật khẩu</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
+    <value>Cách dễ nhất để thêm đăng nhập mới vào kho của bạn là bằng cách sử dụng tiện ích mở rộng Tự động điền mật khẩu của Cozy Pass. Tìm hiểu thêm về cách sử dụng tiện ích mở rộng Tự động điền mật khẩu của Cozy Pass bằng cách điều hướng đến màn hình "Cài đặt".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
-    <value>Invalid email address.</value>
+    <value>Địa chỉ email không hợp lệ.</value>
   </data>
   <data name="Cards" xml:space="preserve">
-    <value>Cards</value>
+    <value>Thẻ</value>
   </data>
   <data name="Identities" xml:space="preserve">
-    <value>Identities</value>
+    <value>Danh tính</value>
   </data>
   <data name="Logins" xml:space="preserve">
-    <value>Logins</value>
+    <value>Đăng nhập</value>
   </data>
   <data name="SecureNotes" xml:space="preserve">
-    <value>Secure Notes</value>
+    <value>Ghi chú bảo mật</value>
   </data>
   <data name="AllItems" xml:space="preserve">
-    <value>All Items</value>
+    <value>Tất cả các mục</value>
   </data>
   <data name="URIs" xml:space="preserve">
-    <value>URIs</value>
+    <value>Đường dẫn</value>
     <comment>Plural form of a URI</comment>
   </data>
   <data name="CheckingPassword" xml:space="preserve">
-    <value>Checking password...</value>
+    <value>Đang kiểm tra mật khẩu...</value>
     <comment>A loading message when doing an exposed password check.</comment>
   </data>
   <data name="CheckPassword" xml:space="preserve">
-    <value>Check if password has been exposed.</value>
+    <value>Kiểm tra xem mật khẩu có bị lộ không.</value>
   </data>
   <data name="PasswordExposed" xml:space="preserve">
-    <value>This password has been exposed {0} time(s) in data breaches. You should change it.</value>
+    <value>Mật khẩu này đã bị lộ {0} lần trong các lần rò rĩ dữ liệu. Bạn nên thay đổi nó.</value>
   </data>
   <data name="PasswordSafe" xml:space="preserve">
-    <value>This password was not found in any known data breaches. It should be safe to use.</value>
+    <value>Mật khẩu này không được tìm thấy trong bất kỳ các lần rò rĩ dữ liệu nào nào được biết đến. Nó an toàn để sử dụng.</value>
   </data>
   <data name="IdentityName" xml:space="preserve">
-    <value>Identity Name</value>
+    <value>Tên đầy đủ</value>
   </data>
   <data name="Value" xml:space="preserve">
-    <value>Value</value>
+    <value>Giá trị</value>
   </data>
   <data name="PasswordHistory" xml:space="preserve">
-    <value>Password History</value>
+    <value>Lịch sử Mật khẩu</value>
   </data>
   <data name="Types" xml:space="preserve">
-    <value>Types</value>
+    <value>Các loại</value>
   </data>
   <data name="NoPasswordsToList" xml:space="preserve">
-    <value>No passwords to list.</value>
+    <value>Không có mật khẩu nào để liệt kê.</value>
   </data>
   <data name="NoItemsToList" xml:space="preserve">
-    <value>There are no items to list.</value>
+    <value>Không có mục nào để liệt kê.</value>
   </data>
   <data name="SearchCollection" xml:space="preserve">
-    <value>Search collection</value>
+    <value>Tìm kiếm bộ sưu tập</value>
   </data>
   <data name="SearchFolder" xml:space="preserve">
-    <value>Search folder</value>
+    <value>Tìm kiếm thư mục</value>
   </data>
   <data name="SearchType" xml:space="preserve">
-    <value>Search type</value>
+    <value>Tìm theo loại</value>
   </data>
   <data name="Type" xml:space="preserve">
-    <value>Type</value>
+    <value>Loại</value>
   </data>
   <data name="MoveDown" xml:space="preserve">
-    <value>Move Down</value>
+    <value>Chuyển xuống</value>
   </data>
   <data name="MoveUp" xml:space="preserve">
-    <value>Move Up</value>
+    <value>Chuyển lên</value>
   </data>
   <data name="Miscellaneous" xml:space="preserve">
-    <value>Miscellaneous</value>
+    <value>Khác</value>
   </data>
   <data name="Ownership" xml:space="preserve">
-    <value>Ownership</value>
+    <value>Quyền sở hữu</value>
   </data>
   <data name="WhoOwnsThisItem" xml:space="preserve">
-    <value>Who owns this item?</value>
+    <value>Ai sở hữu mục này?</value>
   </data>
   <data name="NoCollectionsToList" xml:space="preserve">
-    <value>There are no collections to list.</value>
+    <value>Không có bộ sưu tập nào để liệt kê.</value>
+  </data>
+  <data name="MovedItemToOrg" xml:space="preserve">
+    <value>{0} moved to {1}.</value>
+    <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
-    <value>Item has been shared.</value>
+    <value>Mục đã được chia sẻ.</value>
   </data>
   <data name="SelectOneCollection" xml:space="preserve">
-    <value>You must select at least one collection.</value>
+    <value>Bạn phải chọn ít nhất một bộ sưu tập.</value>
   </data>
   <data name="Share" xml:space="preserve">
-    <value>Share</value>
+    <value>Chia sẻ</value>
   </data>
   <data name="ShareItem" xml:space="preserve">
-    <value>Share Item</value>
+    <value>Chia sẻ mục này</value>
+  </data>
+  <data name="MoveToOrganization" xml:space="preserve">
+    <value>Move to Organization</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
-    <value>No organizations to list.</value>
+    <value>Không có tổ chức để liệt kê.</value>
   </data>
-  <data name="ShareDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared.</value>
+  <data name="MoveToOrgDesc" xml:space="preserve">
+    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
-    <value>Number of Words</value>
+    <value>Số lượng chữ</value>
   </data>
   <data name="Passphrase" xml:space="preserve">
-    <value>Passphrase</value>
+    <value>Cụm từ mật khẩu</value>
   </data>
   <data name="WordSeparator" xml:space="preserve">
-    <value>Word Separator</value>
+    <value>Dấu tách từ</value>
   </data>
   <data name="Clear" xml:space="preserve">
-    <value>Clear</value>
+    <value>Xoá</value>
     <comment>To clear something out. example: To clear browser history.</comment>
   </data>
   <data name="Generator" xml:space="preserve">
-    <value>Generator</value>
+    <value>Tạo mật khẩu</value>
     <comment>Short for "Password Generator"</comment>
   </data>
   <data name="NoFoldersToList" xml:space="preserve">
-    <value>There are no folders to list.</value>
+    <value>Không có thư mục để liệt kê.</value>
   </data>
   <data name="FingerprintPhrase" xml:space="preserve">
-    <value>Fingerprint Phrase</value>
+    <value>Cụm từ mật khẩu</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="YourAccountsFingerprint" xml:space="preserve">
-    <value>Your account's fingerprint phrase</value>
+    <value>Cụm từ mật khẩu của tài khoản của bạn</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
-  <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+  <data name="LearnOrgConfirmation" xml:space="preserve">
+    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
-    <value>Export Vault</value>
+    <value>Trích xuất kho</value>
   </data>
   <data name="LockNow" xml:space="preserve">
-    <value>Lock Now</value>
+    <value>Khóa ngay</value>
   </data>
   <data name="PIN" xml:space="preserve">
-    <value>PIN</value>
+    <value>Mã PIN</value>
   </data>
   <data name="Unlock" xml:space="preserve">
-    <value>Unlock</value>
+    <value>Mở khóa</value>
   </data>
-  <data name="LockOption30Minutes" xml:space="preserve">
-    <value>30 minutes</value>
-  </data>
-  <data name="LockOption5Minutes" xml:space="preserve">
-    <value>5 minutes</value>
+  <data name="ThirtyMinutes" xml:space="preserve">
+    <value>30 phút</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
+    <value>Đặt mã PIN của bạn để mở khóa Cozy Pass. Cài đặt mã PIN của bạn sẽ bị xóa nếu bạn hoàn toàn đăng xuất khỏi ứng dụng.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
-    <value>Logged in as {0} on {1}.</value>
+    <value>Đã đăng nhập là {0} trên {1}</value>
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your password to continue.</value>
+    <value>Kho của bạn đã bị khóa. Xác minh mật khẩu chính của bạn để mở.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
-    <value>Your vault is locked. Verify your PIN code to continue.</value>
+    <value>Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở.</value>
   </data>
   <data name="Dark" xml:space="preserve">
-    <value>Dark</value>
+    <value>Tối</value>
     <comment>A dark color</comment>
   </data>
   <data name="Light" xml:space="preserve">
-    <value>Light</value>
+    <value>Sáng</value>
     <comment>A light color</comment>
   </data>
   <data name="FiveMinutes" xml:space="preserve">
-    <value>5 minutes</value>
-  </data>
-  <data name="OneMinute" xml:space="preserve">
-    <value>1 minute</value>
+    <value>5 phút</value>
   </data>
   <data name="TenSeconds" xml:space="preserve">
-    <value>10 seconds</value>
+    <value>10 giây</value>
   </data>
   <data name="ThirtySeconds" xml:space="preserve">
-    <value>30 seconds</value>
+    <value>30 giây</value>
   </data>
   <data name="TwentySeconds" xml:space="preserve">
-    <value>20 seconds</value>
+    <value>20 giây</value>
   </data>
   <data name="TwoMinutes" xml:space="preserve">
-    <value>2 minutes</value>
+    <value>2 phút</value>
   </data>
   <data name="ClearClipboard" xml:space="preserve">
-    <value>Clear Clipboard</value>
+    <value>Xóa bộ nhớ tạm</value>
     <comment>Clipboard is the operating system thing where you copy/paste data to on your device.</comment>
   </data>
   <data name="ClearClipboardDescription" xml:space="preserve">
-    <value>Automatically clear copied values from your clipboard.</value>
+    <value>Tự động xóa các giá trị đã sao chép khỏi bộ nhớ tạm.</value>
     <comment>Clipboard is the operating system thing where you copy/paste data to on your device.</comment>
   </data>
   <data name="DefaultUriMatchDetection" xml:space="preserve">
-    <value>Default URI Match Detection</value>
+    <value>Phương thức kiểm tra URI mặc định</value>
     <comment>Default URI match detection for auto-fill.</comment>
   </data>
   <data name="DefaultUriMatchDetectionDescription" xml:space="preserve">
-    <value>Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill.</value>
+    <value>Chọn phương thức mặc định để kiểm tra so sánh URI cho các đăng nhập khi xử lí các hành động như là tự động điền.</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>Theme</value>
+    <value>Giao diện</value>
     <comment>Color theme</comment>
   </data>
   <data name="ThemeDescription" xml:space="preserve">
-    <value>Change the application's color theme.</value>
+    <value>Thay đổi màu giao diện của ứng dụng.</value>
   </data>
-  <data name="RestartIsRequired" xml:space="preserve">
-    <value>Restart is required.</value>
-    <comment>Referring to restarting the application.</comment>
-  </data>
-  <data name="Restarting" xml:space="preserve">
-    <value>Restarting...</value>
+  <data name="ThemeDefault" xml:space="preserve">
+    <value>Default (System)</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
-    <value>Copy Notes</value>
+    <value>Sao chép ghi chú</value>
   </data>
   <data name="Exit" xml:space="preserve">
-    <value>Exit</value>
+    <value>Thoát</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Are you sure you want to exit Cozy Pass?</value>
+    <value>Bạn có chắc muốn thoát Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
-    <value>Black</value>
+    <value>Đen</value>
     <comment>The color black</comment>
   </data>
   <data name="BlacklistedUris" xml:space="preserve">
-    <value>Blacklisted URIs</value>
+    <value>Các URI bị cho vào danh sách đen</value>
   </data>
   <data name="BlacklistedUrisDescription" xml:space="preserve">
     <value>URIs that are blacklisted will not offer auto-fill. The list of apps should be comma separated. Ex: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
   <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Disable Save Prompt</value>
+    <value>Vô hiệu hóa Thông báo Thêm Mục</value>
   </data>
   <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>The "Save Prompt" automatically prompts you to save new items to your vault whenever you enter them for the first time.</value>
+    <value>"Thông Báo Thêm Mục" sẽ nhắc bạn thêm mục mới vào kho mỗi khi bạn nhập lần đầu tiên.</value>
   </data>
-  <data name="LockOptionOnRestart" xml:space="preserve">
-    <value>On App Restart</value>
+  <data name="OnRestart" xml:space="preserve">
+    <value>Khi khởi động lại ứng dụng</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Cozy Pass from the "Settings" screen.</value>
+    <value>Tự động điền giúp dễ dàng an toàn truy cập kho Cozy Pass của bạn từ các trang web khác và các ứng dụng. Có vẻ như không mở chức năng tự động điền cho Cozy Pass. Mở chức năng tự động điền cho Cozy Pass ở màn hình "Cài đặt".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
-    <value>Your theme changes will apply when the app is restarted.</value>
+    <value>Thay đổi về giao diện của bạn sẽ được áp dụng khi ứng dụng khởi động lại.</value>
   </data>
   <data name="Capitalize" xml:space="preserve">
-    <value>Capitalize</value>
+    <value>Viết hoa</value>
     <comment>ex. Uppercase the first character of a word.</comment>
   </data>
   <data name="IncludeNumber" xml:space="preserve">
-    <value>Include Number</value>
+    <value>Bao gồm cả số</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Tải xuống</value>
   </data>
   <data name="Shared" xml:space="preserve">
-    <value>Shared</value>
+    <value>Đã chia sẻ</value>
   </data>
   <data name="ToggleVisibility" xml:space="preserve">
     <value>Toggle Visiblity</value>
   </data>
   <data name="LoginExpired" xml:space="preserve">
-    <value>Your login session has expired.</value>
+    <value>Phiên đăng nhập của bạn đã hết hạn.</value>
   </data>
   <data name="BiometricsDirection" xml:space="preserve">
-    <value>Use biometrics to verify.</value>
+    <value>Sử dụng phương thức sinh trắc học để xác nhận.</value>
   </data>
   <data name="Biometrics" xml:space="preserve">
-    <value>Biometrics</value>
+    <value>Phương thức sinh trắc học</value>
   </data>
   <data name="UseBiometricsToUnlock" xml:space="preserve">
-    <value>Use Biometrics To Unlock</value>
+    <value>Sử dụng phương thức sinh trắc học để mở khóa</value>
+  </data>
+  <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
+    <value>Bitwarden cần sự chú ý - Kiểm tra "Tự động điền bằng trợ năng" trong Cài đặt của Bitwarden</value>
+  </data>
+  <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
+    <value>3. Ở màn hình Cài đặt Ứng dụng Android cho Bitwarden, chọn "Hiển thị lên trên các ứng dụng khác" (dưới mục "Nâng cao") và chạm vào tùy chọn bật/tắt để cho phép hiển thị đè.</value>
+  </data>
+  <data name="OverlayPermission" xml:space="preserve">
+    <value>Phân quyền</value>
+  </data>
+  <data name="BitwardenAutofillServiceOpenOverlayPermissionSettings" xml:space="preserve">
+    <value>Mở màn hình cài đặt phân quyền</value>
+  </data>
+  <data name="BitwardenAutofillServiceStep3" xml:space="preserve">
+    <value>3. Ở màn hình Cài đặt Ứng dụng Android cho Bitwarden, chọn "Hiển thị lên trên các ứng dụng khác" (dưới mục "Nâng cao") và gạt tùy chọn bật/tắt để cho phép hiển thị đè.</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Đã từ chối</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>Đã chấp thuận</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>Định dạng tập tin</value>
+  </data>
+  <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
+    <value>Nhập mật khẩu chính để trích xuất kho của bạn.</value>
+  </data>
+  <data name="ExportVaultWarning" xml:space="preserve">
+    <value>Bản trích xuất này chứ dữ liệu kho của bạn dưới một định dạng không được mã hóa. Bạn không nên lưu trữ hay gửi tập tin trích xuất thông qua phương thức không an toàn (như email). Xóa nó ngay lập tức khi bạn đã sử dụng xong.</value>
+  </data>
+  <data name="EncExportKeyWarning" xml:space="preserve">
+    <value>This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file.</value>
+  </data>
+  <data name="EncExportAccountWarning" xml:space="preserve">
+    <value>Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account.</value>
+  </data>
+  <data name="ExportVaultConfirmationTitle" xml:space="preserve">
+    <value>Xác nhận xuất mật khẩu ra file csv</value>
+    <comment>Title for the alert to confirm vault exports.</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Cảnh báo</value>
+  </data>
+  <data name="ExportVaultFailure" xml:space="preserve">
+    <value>Có vấn đề trong việc trích xuất kho của bạn. Nếu vấn đề vẫn tiếp tục, bạn sẽ phải trích xuất từ kho nền web.</value>
+  </data>
+  <data name="ExportVaultSuccess" xml:space="preserve">
+    <value>Trích xuất kho thành công</value>
+  </data>
+  <data name="Clone" xml:space="preserve">
+    <value>Tạo bản sao</value>
+    <comment>Clone an entity (verb).</comment>
+  </data>
+  <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
+    <value>Có một hoặc vài chính sách của tổ chức đang làm ảnh hưởng đến cài đặt tạo mật khẩu của bạn</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Mở</value>
+    <comment>Button text for an open operation (verb).</comment>
+  </data>
+  <data name="UnableToSaveAttachment" xml:space="preserve">
+    <value>Có vấn đề khi lưu tập đính kèm này. If vấn đề này vẫn tiếp tục, bạn có thể lưu nó từ kho nền web.</value>
+  </data>
+  <data name="SaveAttachmentSuccess" xml:space="preserve">
+    <value>Tập tin đính kèm được lưu thành công</value>
+  </data>
+  <data name="AutofillTileAccessibilityRequired" xml:space="preserve">
+    <value>Hãy mở "Tự động điền bằng trợ năng" từ Cài đặt của Bitwarden để sử dụng chức năng tự động điền.</value>
+  </data>
+  <data name="AutofillTileUriNotFound" xml:space="preserve">
+    <value>Không tìm thấy trường mật khẩu nào</value>
+  </data>
+  <data name="SoftDeleting" xml:space="preserve">
+    <value>Đang gửi vào thùng rác...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemSoftDeleted" xml:space="preserve">
+    <value>Mục đã được đưa vào thùng rác.</value>
+    <comment>Confirmation message after successfully soft-deleting a login</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Khôi phục</value>
+    <comment>Restores an entity (verb).</comment>
+  </data>
+  <data name="Restoring" xml:space="preserve">
+    <value>Đang khôi phục...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemRestored" xml:space="preserve">
+    <value>Mục đã được khôi phục.</value>
+    <comment>Confirmation message after successfully restoring a soft-deleted item</comment>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Thùng rác</value>
+    <comment>(noun) Location of deleted items which have not yet been permanently deleted</comment>
+  </data>
+  <data name="SearchTrash" xml:space="preserve">
+    <value>Tìm kiếm thùng rác</value>
+    <comment>(action prompt) Label for the search text field when viewing the trash folder</comment>
+  </data>
+  <data name="DoYouReallyWantToPermanentlyDeleteCipher" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa hoàn toàn nó không? Thao tác này không thể được khôi phục.</value>
+    <comment>Confirmation alert message when permanently deleteing a cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToRestoreCipher" xml:space="preserve">
+    <value>Bạn có thực sự muốn khôi phục mục này?</value>
+    <comment>Confirmation alert message when restoring a soft-deleted cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToSoftDeleteCipher" xml:space="preserve">
+    <value>Bạn có thực sự muốn đưa vào thùng rác?</value>
+    <comment>Confirmation alert message when soft-deleting a cipher.</comment>
+  </data>
+  <data name="BiometricInvalidated" xml:space="preserve">
+    <value>Xác thực sinh trắc học bị vô hiệu hoá vì cần xác nhận password tổng </value>
+  </data>
+  <data name="BiometricInvalidatedExtension" xml:space="preserve">
+    <value>Phương thức xác nhận sinh trắc học bị vô hiệu hóa do cần xác nhận mật khẩu chính</value>
+  </data>
+  <data name="EnableSyncOnRefresh" xml:space="preserve">
+    <value>Kích hoạt đồng bộ khi làm tươi(refresh)</value>
+  </data>
+  <data name="EnableSyncOnRefreshDescription" xml:space="preserve">
+    <value>Đồng bộ hóa kho bằng cử chỉ vuốt xuống</value>
+  </data>
+  <data name="LogInSso" xml:space="preserve">
+    <value>Đăng nhập theo tài khoản tổ chức</value>
+  </data>
+  <data name="LogInSsoSummary" xml:space="preserve">
+    <value>Đăng nhập nhanh bằng cách sử dụng cổng đăng nhập của tổ chức. Vui lòng nhập thông tin nhận dạng tổ chức để bắt đầu</value>
+  </data>
+  <data name="OrgIdentifier" xml:space="preserve">
+    <value>Nhận dạng tổ chức</value>
+  </data>
+  <data name="LoginSsoError" xml:space="preserve">
+    <value>Phương thức đăng nhập SSO hiện không khả dụng</value>
+  </data>
+  <data name="SetMasterPassword" xml:space="preserve">
+    <value>Tạo mật khẩu chính</value>
+  </data>
+  <data name="SetMasterPasswordSummary" xml:space="preserve">
+    <value>Để hoàn thành việc truy cập bằng phương thức SSO, vui lòng tạo mật khẩu chính để truy cập và bảo vệ kho</value>
+  </data>
+  <data name="MasterPasswordPolicyInEffect" xml:space="preserve">
+    <value>Một hay nhiều chính sách của tổ chức yêu cầu tiêu chuẩn về mật khẩu chính theo yêu cầu sau đây:</value>
+  </data>
+  <data name="PolicyInEffectMinComplexity" xml:space="preserve">
+    <value>Điểm phức tạp tối thiểu {0}</value>
+  </data>
+  <data name="PolicyInEffectMinLength" xml:space="preserve">
+    <value>Độ dài mật khẩu tối thiểu: {0}</value>
+  </data>
+  <data name="PolicyInEffectUppercase" xml:space="preserve">
+    <value>Có chứa một hay nhiều ký tự viết hoa</value>
+  </data>
+  <data name="PolicyInEffectLowercase" xml:space="preserve">
+    <value>Có chứa một hay nhiều ký tự viết thường</value>
+  </data>
+  <data name="PolicyInEffectNumbers" xml:space="preserve">
+    <value>Có chứa một hay nhiều số</value>
+  </data>
+  <data name="PolicyInEffectSpecial" xml:space="preserve">
+    <value>Có chứa một hay nhiều ký tự đặc biệt sau: {0}</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationTitle" xml:space="preserve">
+    <value>Mật khẩu sai. Ahihi đồ ngốc 😃</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationMessage" xml:space="preserve">
+    <value>Mật khẩu không khớp với yêu cầu của tổ chức. Vui lòng kiểm tra chính sách mật khẩu và thử lại</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Đang tải</value>
+  </data>
+  <data name="AcceptPolicies" xml:space="preserve">
+    <value>Bằng việc kích hoạt chức năng bạn đồng ý các điều kiện sau:</value>
+  </data>
+  <data name="AcceptPoliciesError" xml:space="preserve">
+    <value>Chính sách sử dụng và quyền riêng tư chưa biết</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Điều khoản sử dụng</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Chính sách quyền riêng tư</value>
+  </data>
+  <data name="AccessibilityDrawOverPermissionAlert" xml:space="preserve">
+    <value>Bitwarden cần kích hoạt: Vẽ lên ứng dụng( Draw-Over) trong phần cài đặt của Bitwarden</value>
+  </data>
+  <data name="AutofillServices" xml:space="preserve">
+    <value>Tự động điền mật khẩu</value>
+  </data>
+  <data name="InlineAutofill" xml:space="preserve">
+    <value>Sử dụng ứng dụng tự động điền biểu mẫu</value>
+  </data>
+  <data name="InlineAutofillDescription" xml:space="preserve">
+    <value>Sử dụng tính năng tự động điền nếu bộ gõ hỗ trợ. Nếu không, sẽ chuyển qua chế độ tự động điền mặc định</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Sử dụng trợ năng</value>
+  </data>
+  <data name="AccessibilityDescription" xml:space="preserve">
+    <value>Sử dụng chế độ tự động điền của Bitwarden để tự động điền thông tin đăng nhập trong ứng dụng và website. Khi chế độ này được kích hoạt, sẽ hiển thị cửa sổ popup ở ổ đăng nhập</value>
+  </data>
+  <data name="AccessibilityDescription2" xml:space="preserve">
+    <value>Sử dụng chức năng tự động điền của Bitwarden để tự động điền mật khẩu trong app và website( Yêu cầu kích hoạt chức năng vẽ lên ứng dụng (Draw-Over))..</value>
+  </data>
+  <data name="AccessibilityDescription3" xml:space="preserve">
+    <value>Sử dụng chế độ tự động điền của Bitwarden để sử dụng chức năng tự động điền nhanh, và/hoặc hiển thị cửa sổ popup bằng vẽ lên ứng dụng (Draw over).</value>
+  </data>
+  <data name="AccessibilityDescription4" xml:space="preserve">
+    <value>Yêu cầu sử dụng tự động điền nhanh tiêu đề bằng cách sử dụng vẽ lên ứng dụng (Draw-over).</value>
+  </data>
+  <data name="DrawOver" xml:space="preserve">
+    <value>Dùng phương thức vẽ lên ứng dụng (Draw-Over)</value>
+  </data>
+  <data name="DrawOverDescription" xml:space="preserve">
+    <value>Khi kích hoạt, bạn sẽ đồng ý cho Bitwarden hiển thị cửa sổ popup khi đăng nhập</value>
+  </data>
+  <data name="DrawOverDescription2" xml:space="preserve">
+    <value>Nếu được kích hoạt, chế độ tự động điền sẽ hiển thị cửa sổ popup trong phần đăng nhập để tự động điền mật khẩu</value>
+  </data>
+  <data name="DrawOverDescription3" xml:space="preserve">
+    <value>Nếu được kích hoạt, </value>
+  </data>
+  <data name="PersonalOwnershipSubmitError" xml:space="preserve">
+    <value>Do chính sách về quyền riêng tư của tổ chức, bạn không được lưu trữ trong .</value>
+  </data>
+  <data name="PersonalOwnershipPolicyInEffect" xml:space="preserve">
+    <value>An organization policy is affecting your ownership options.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Chia sẻ</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AllSends" xml:space="preserve">
+    <value>Toàn bộ Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Sends" xml:space="preserve">
+    <value>Chia sẻ</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>Một tên gợi nhớ để mô tả về Send này.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="TypeTextInfo" xml:space="preserve">
+    <value>Văn bản bạn muốn gửi.</value>
+  </data>
+  <data name="HideTextByDefault" xml:space="preserve">
+    <value>When accessing the Send, hide the text by default</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeFile" xml:space="preserve">
+    <value>Tập tin</value>
+  </data>
+  <data name="TypeFileInfo" xml:space="preserve">
+    <value>Tập tin bạn muốn gửi.</value>
+  </data>
+  <data name="DeletionDate" xml:space="preserve">
+    <value>Deletion Date</value>
+  </data>
+  <data name="DeletionTime" xml:space="preserve">
+    <value>Thời gian xóa</value>
+  </data>
+  <data name="DeletionDateInfo" xml:space="preserve">
+    <value>Send sẽ được xóa vĩnh viễn vào ngày và giờ được chỉ định.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PendingDelete" xml:space="preserve">
+    <value>Đang chờ xóa</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Expiration Date</value>
+  </data>
+  <data name="ExpirationTime" xml:space="preserve">
+    <value>Expiration Time</value>
+  </data>
+  <data name="ExpirationDateInfo" xml:space="preserve">
+    <value>Nếu được thiết lập, truy cập vào Send này sẽ hết hạn vào ngày và giờ được chỉ định.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Đã hết hạn</value>
+  </data>
+  <data name="MaximumAccessCount" xml:space="preserve">
+    <value>Số lượng truy cập tối đa</value>
+  </data>
+  <data name="MaximumAccessCountInfo" xml:space="preserve">
+    <value>Nếu được thiết lập, khi đã đạt tới số lượng truy cập tối đa, người dùng sẽ không thể truy cập Send này nữa.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="MaximumAccessCountReached" xml:space="preserve">
+    <value>Đã đạt đến số lượng truy cập tối đa</value>
+  </data>
+  <data name="CurrentAccessCount" xml:space="preserve">
+    <value>Số lượng truy cập hiện tại</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="PasswordInfo" xml:space="preserve">
+    <value>Optionally require a password for users to access this Send.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="RemovePassword" xml:space="preserve">
+    <value>Xóa mật khẩu</value>
+  </data>
+  <data name="AreYouSureRemoveSendPassword" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa mật khẩu này?</value>
+  </data>
+  <data name="RemovingSendPassword" xml:space="preserve">
+    <value>Đang xóa mật khẩu</value>
+  </data>
+  <data name="SendPasswordRemoved" xml:space="preserve">
+    <value>Mật khẩu đã được xóa.</value>
+  </data>
+  <data name="NotesInfo" xml:space="preserve">
+    <value>Private notes about this Send.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="DisableSend" xml:space="preserve">
+    <value>Disable this Send so that no one can access it.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NoSends" xml:space="preserve">
+    <value>There are no Sends in your account.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddASend" xml:space="preserve">
+    <value>Add a Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="CopyLink" xml:space="preserve">
+    <value>Sao chép liên kết</value>
+  </data>
+  <data name="ShareLink" xml:space="preserve">
+    <value>Chia sẻ liên kết</value>
+  </data>
+  <data name="SendLink" xml:space="preserve">
+    <value>Gửi liên kết</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SearchSends" xml:space="preserve">
+    <value>Tìm kiếm Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="EditSend" xml:space="preserve">
+    <value>Chỉnh sửa Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddSend" xml:space="preserve">
+    <value>Thêm Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AreYouSureDeleteSend" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa Send này?</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDeleted" xml:space="preserve">
+    <value>Send has been deleted.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendUpdated" xml:space="preserve">
+    <value>Đã cập nhật Send.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NewSendCreated" xml:space="preserve">
+    <value>New send created.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1 ngày</value>
+  </data>
+  <data name="TwoDays" xml:space="preserve">
+    <value>2 ngày</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3 ngày</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7 ngày</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30 ngày</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="ShareOnSave" xml:space="preserve">
+    <value>Share this Send upon save.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDisabledWarning" xml:space="preserve">
+    <value>Do chính sách doanh nghiệp, bạn chỉ có thể xóa những Send hiện có.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AboutSend" xml:space="preserve">
+    <value>About Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="HideEmail" xml:space="preserve">
+    <value>Hide my email address from recipients.</value>
+  </data>
+  <data name="SendOptionsPolicyInEffect" xml:space="preserve">
+    <value>One or more organization policies are affecting your Send options.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFilePremiumRequired" xml:space="preserve">
+    <value>Free accounts are restricted to sharing text only. A premium membership is required to use files with Send.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFileEmailVerificationRequired" xml:space="preserve">
+    <value>You must verify your email to use files with Send. You can verify your email in the web vault.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Master password re-prompt</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Master password confirmation</value>
+  </data>
+  <data name="PasswordConfirmationDesc" xml:space="preserve">
+    <value>This action is protected, to continue please re-enter your master password to verify your identity.</value>
+  </data>
+  <data name="CaptchaRequired" xml:space="preserve">
+    <value>Captcha Required</value>
+  </data>
+  <data name="CaptchaFailed" xml:space="preserve">
+    <value>Captcha Failed. Please try again.</value>
+  </data>
+  <data name="UpdatedMasterPassword" xml:space="preserve">
+    <value>Updated Master Password</value>
+  </data>
+  <data name="UpdateMasterPassword" xml:space="preserve">
+    <value>Update Master Password</value>
+  </data>
+  <data name="UpdateMasterPasswordWarning" xml:space="preserve">
+    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+  </data>
+  <data name="UpdatingPassword" xml:space="preserve">
+    <value>Updating Password</value>
+  </data>
+  <data name="UpdatePasswordError" xml:space="preserve">
+    <value>Currently unable to update password</value>
+  </data>
+  <data name="Fido2Title" xml:space="preserve">
+    <value>FIDO2 WebAuthn</value>
+  </data>
+  <data name="Fido2Instruction" xml:space="preserve">
+    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+  </data>
+  <data name="Fido2Desc" xml:space="preserve">
+    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+  </data>
+  <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
+    <value>Authenticate WebAuthn</value>
+  </data>
+  <data name="Fido2ReturnToApp" xml:space="preserve">
+    <value>Return to App</value>
+  </data>
+  <data name="Fido2CheckBrowser" xml:space="preserve">
+    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+  </data>
+  <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
+    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+  </data>
+  <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
+    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+  </data>
+  <data name="VaultTimeoutToLarge" xml:space="preserve">
+    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+  </data>
+  <data name="DisablePersonalVaultExportPolicyInEffect">
+    <value>One or more organization policies prevents your from exporting your personal vault.</value>
   </data>
 </root>

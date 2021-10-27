@@ -17,24 +17,29 @@ namespace Bit.App.Pages
         public string ItemCount { get; set; }
         public List<CipherView> Items { get; set; }
         public bool FuzzyAutofill { get; set; }
+        public bool IsTrash { get; set; }
 
         public string Name
         {
             get
             {
-                if(_name != null)
+                if (_name != null)
                 {
                     return _name;
                 }
-                if(Folder != null)
+                if (IsTrash)
+                {
+                    _name = AppResources.Trash;
+                }
+                else if (Folder != null)
                 {
                     _name = Folder.Name;
                 }
-                else if(Collection != null)
+                else if (Collection != null)
                 {
                     _name = Collection.Name;
                 }
-                else if(Type != null)
+                else if (Type != null)
                 {
                     return GetNameFromType(Type);
                 }
@@ -63,36 +68,40 @@ namespace Bit.App.Pages
         {
             get
             {
-                if(_icon != null)
+                if (_icon != null)
                 {
                     return _icon;
                 }
-                if(Folder != null)
+                if (IsTrash)
                 {
-                    _icon = Folder.Id == null ? "" : "";
+                    _icon = "\uf014"; // fa-trash-o
                 }
-                else if(Collection != null)
+                else if (Folder != null)
                 {
-                    _icon = "";
+                    _icon = Folder.Id == null ? "\uf115" : "\uf07c"; // fa-folder-open-o : fa-folder-open
                 }
-                else if(Type != null)
+                else if (Collection != null)
                 {
-                    switch(Type.Value)
+                    _icon = "\uf1b2"; // fa-cube
+                }
+                else if (Type != null)
+                {
+                    switch (Type.Value)
                     {
                         case CipherType.Login:
-                            _icon = "";
+                            _icon = "\uf0ac"; // fa-globe
                             break;
                         case CipherType.SecureNote:
-                            _icon = "";
+                            _icon = "\uf24a"; // fa-sticky-note-o
                             break;
                         case CipherType.Card:
-                            _icon = "";
+                            _icon = "\uf09d"; // fa-credit-card
                             break;
                         case CipherType.Identity:
-                            _icon = "";
+                            _icon = "\uf2c3"; // fa-id-card-o
                             break;
                         default:
-                            _icon = "";
+                            _icon = "\uf0ac"; // fa-globe
                             break;
                     }
                 }

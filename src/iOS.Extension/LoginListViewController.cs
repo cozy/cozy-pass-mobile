@@ -18,7 +18,9 @@ namespace Bit.iOS.Extension
     {
         public LoginListViewController(IntPtr handle)
             : base(handle)
-        { }
+        {
+            DismissModalAction = Cancel;
+        }
 
         public Context Context { get; set; }
         public LoadingViewController LoadingController { get; set; }
@@ -29,7 +31,7 @@ namespace Bit.iOS.Extension
             AddBarButton.TintColor = ThemeHelpers.NavBarTextColor;
             CancelBarButton.TintColor = ThemeHelpers.NavBarTextColor;
             NavItem.Title = AppResources.Items;
-            if(!CanAutoFill())
+            if (!CanAutoFill())
             {
                 CancelBarButton.Title = AppResources.Close;
             }
@@ -45,9 +47,10 @@ namespace Bit.iOS.Extension
 
         public bool CanAutoFill()
         {
-            if(Context.ProviderType != Constants.UTTypeAppExtensionFillBrowserAction
+            if (Context.ProviderType != Constants.UTTypeAppExtensionFillBrowserAction
                 && Context.ProviderType != Constants.UTTypeAppExtensionFillWebViewAction
-                && Context.ProviderType != UTType.PropertyList)
+                && Context.ProviderType != UTType.PropertyList
+                && Context.ProviderType != Constants.UTTypeAppExtensionUrl)
             {
                 return true;
             }
@@ -56,6 +59,11 @@ namespace Bit.iOS.Extension
         }
 
         partial void CancelBarButton_Activated(UIBarButtonItem sender)
+        {
+            Cancel();
+        }
+        
+        private void Cancel()
         {
             LoadingController.CompleteRequest(null, null);
         }
@@ -67,12 +75,14 @@ namespace Bit.iOS.Extension
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
         {
-            if(segue.DestinationViewController is UINavigationController navController)
+            if (segue.DestinationViewController is UINavigationController navController)
             {
-                if(navController.TopViewController is LoginAddViewController addLoginController)
+                if (navController.TopViewController is LoginAddViewController addLoginController)
                 {
                     addLoginController.Context = Context;
                     addLoginController.LoginListController = this;
+                    segue.DestinationViewController.PresentationController.Delegate =
+                        new CustomPresentationControllerDelegate(addLoginController.DismissModalAction);
                 }
             }
         }
@@ -101,37 +111,37 @@ namespace Bit.iOS.Extension
                 tableView.DeselectRow(indexPath, true);
                 tableView.EndEditing(true);
 
-                if(Items == null || Items.Count() == 0)
+                if (Items == null || Items.Count() == 0)
                 {
                     _controller.PerformSegue("loginAddSegue", this);
                     return;
                 }
 
                 var item = Items.ElementAt(indexPath.Row);
-                if(item == null)
+                if (item == null)
                 {
                     _controller.LoadingController.CompleteRequest(null, null);
                     return;
                 }
 
-                if(_controller.CanAutoFill() && !string.IsNullOrWhiteSpace(item.Password))
+                if (_controller.CanAutoFill() && !string.IsNullOrWhiteSpace(item.Password))
                 {
                     string totp = null;
                     var storageService = ServiceContainer.Resolve<IStorageService>("storageService");
                     var disableTotpCopy = storageService.GetAsync<bool?>(
                         Bit.Core.Constants.DisableAutoTotpCopyKey).GetAwaiter().GetResult();
-                    if(!disableTotpCopy.GetValueOrDefault(false))
+                    if (!disableTotpCopy.GetValueOrDefault(false))
                     {
                         totp = GetTotpAsync(item).GetAwaiter().GetResult();
                     }
                     _controller.LoadingController.CompleteUsernamePasswordRequest(
                         item.Id, item.Username, item.Password, item.Fields, totp);
                 }
-                else if(!string.IsNullOrWhiteSpace(item.Username) || !string.IsNullOrWhiteSpace(item.Password) ||
+                else if (!string.IsNullOrWhiteSpace(item.Username) || !string.IsNullOrWhiteSpace(item.Password) ||
                     !string.IsNullOrWhiteSpace(item.Totp))
                 {
                     var sheet = Dialogs.CreateActionSheet(item.Name, _controller);
-                    if(!string.IsNullOrWhiteSpace(item.Username))
+                    if (!string.IsNullOrWhiteSpace(item.Username))
                     {
                         sheet.AddAction(UIAlertAction.Create(AppResources.CopyUsername, UIAlertActionStyle.Default, a =>
                         {
@@ -144,7 +154,7 @@ namespace Bit.iOS.Extension
                             });
                         }));
                     }
-                    if(!string.IsNullOrWhiteSpace(item.Password))
+                    if (!string.IsNullOrWhiteSpace(item.Password))
                     {
                         sheet.AddAction(UIAlertAction.Create(AppResources.CopyPassword, UIAlertActionStyle.Default, a =>
                         {
@@ -158,13 +168,13 @@ namespace Bit.iOS.Extension
                             });
                         }));
                     }
-                    if(!string.IsNullOrWhiteSpace(item.Totp))
+                    if (!string.IsNullOrWhiteSpace(item.Totp))
                     {
                         sheet.AddAction(UIAlertAction.Create(AppResources.CopyTotp, UIAlertActionStyle.Default,
                             async a =>
                             {
                                 var totp = await GetTotpAsync(item);
-                                if(string.IsNullOrWhiteSpace(totp))
+                                if (string.IsNullOrWhiteSpace(totp))
                                 {
                                     return;
                                 }

@@ -40,12 +40,12 @@ namespace Bit.App.Services
         {
             _broadcasterService.Subscribe(nameof(MobilePlatformUtilsService), (message) =>
             {
-                if(message.Command == "showDialogResolve")
+                if (message.Command == "showDialogResolve")
                 {
                     var details = message.Data as Tuple<int, bool>;
                     var dialogId = details.Item1;
                     var confirmed = details.Item2;
-                    if(_showDialogResolves.ContainsKey(dialogId))
+                    if (_showDialogResolves.ContainsKey(dialogId))
                     {
                         var resolveObj = _showDialogResolves[dialogId].Item1;
                         resolveObj.TrySetResult(confirmed);
@@ -53,15 +53,15 @@ namespace Bit.App.Services
 
                     // Clean up old tasks
                     var deleteIds = new HashSet<int>();
-                    foreach(var item in _showDialogResolves)
+                    foreach (var item in _showDialogResolves)
                     {
                         var age = DateTime.UtcNow - item.Value.Item2;
-                        if(age.TotalMilliseconds > DialogPromiseExpiration)
+                        if (age.TotalMilliseconds > DialogPromiseExpiration)
                         {
                             deleteIds.Add(item.Key);
                         }
                     }
-                    foreach(var id in deleteIds)
+                    foreach (var id in deleteIds)
                     {
                         _showDialogResolves.Remove(id);
                     }
@@ -84,30 +84,25 @@ namespace Bit.App.Services
             return false;
         }
 
-        public int? LockTimeout()
-        {
-            return null;
-        }
-
         public void LaunchUri(string uri, Dictionary<string, object> options = null)
         {
-            if((uri.StartsWith("http://") || uri.StartsWith("https://")) &&
+            if ((uri.StartsWith("http://") || uri.StartsWith("https://")) &&
                 Uri.TryCreate(uri, UriKind.Absolute, out var parsedUri))
             {
                 try
                 {
                     Browser.OpenAsync(uri, BrowserLaunchMode.External);
                 }
-                catch(FeatureNotSupportedException) { }
+                catch (FeatureNotSupportedException) { }
             }
             else
             {
                 var launched = false;
-                if(GetDevice() == Core.Enums.DeviceType.Android && uri.StartsWith("androidapp://"))
+                if (GetDevice() == Core.Enums.DeviceType.Android && uri.StartsWith("androidapp://"))
                 {
                     launched = _deviceActionService.LaunchApp(uri);
                 }
-                if(!launched && (options?.ContainsKey("page") ?? false))
+                if (!launched && (options?.ContainsKey("page") ?? false))
                 {
                     (options["page"] as Page).DisplayAlert(null, "", ""); // TODO
                 }
@@ -129,9 +124,9 @@ namespace Bit.App.Services
             return true;
         }
 
-        public bool SupportsU2f()
+        public bool SupportsFido2()
         {
-            return false;
+            return _deviceActionService.SupportsFido2();
         }
 
         public void ShowToast(string type, string title, string text, Dictionary<string, object> options = null)
@@ -141,7 +136,7 @@ namespace Bit.App.Services
 
         public void ShowToast(string type, string title, string[] text, Dictionary<string, object> options = null)
         {
-            if(text.Length > 0)
+            if (text.Length > 0)
             {
                 var longDuration = options != null && options.ContainsKey("longDuration") ?
                     (bool)options["longDuration"] : false;
@@ -153,7 +148,7 @@ namespace Bit.App.Services
             string cancelText = null, string type = null)
         {
             var dialogId = 0;
-            lock(_random)
+            lock (_random)
             {
                 dialogId = _random.Next(0, int.MaxValue);
             }
@@ -171,6 +166,26 @@ namespace Bit.App.Services
             return tcs.Task;
         }
 
+        public async Task<bool> ShowPasswordDialogAsync(string title, string body, Func<string, Task<bool>> validator)
+        {
+            var password = await _deviceActionService.DisplayPromptAync(AppResources.PasswordConfirmation,
+                AppResources.PasswordConfirmationDesc, null, AppResources.Submit, AppResources.Cancel, password: true);
+
+            if (password == null)
+            {
+                return false;
+            }
+
+            var valid = await validator(password);
+
+            if (!valid)
+            {
+                await ShowDialogAsync(AppResources.InvalidMasterPassword, null, AppResources.Ok);
+            }
+
+            return valid;
+        }
+
         public bool IsDev()
         {
             return Core.Utilities.CoreHelpers.InDebugMode();
@@ -186,7 +201,7 @@ namespace Bit.App.Services
             var clearMs = options != null && options.ContainsKey("clearMs") ? (int?)options["clearMs"] : null;
             var clearing = options != null && options.ContainsKey("clearing") ? (bool)options["clearing"] : false;
             await Clipboard.SetTextAsync(text);
-            if(!clearing)
+            if (!clearing)
             {
                 _messagingService.Send("copiedToClipboard", new Tuple<string, int?, bool>(text, clearMs, clearing));
             }
@@ -199,43 +214,52 @@ namespace Bit.App.Services
 
         public async Task<bool> SupportsBiometricAsync()
         {
-            return await _deviceActionService.BiometricAvailableAsync();
+            try
+            {
+                return await CrossFingerprint.Current.IsAvailableAsync();
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public async Task<bool> AuthenticateBiometricAsync(string text = null, string fallbackText = null,
             Action fallback = null)
         {
-            if(_deviceActionService.UseNativeBiometric())
+            try
             {
-                return await _deviceActionService.AuthenticateBiometricAsync(text);
-            }
-            else
-            {
-                try
+                if (text == null)
                 {
-                    if(text == null)
+                    text = AppResources.BiometricsDirection;
+                    if (Device.RuntimePlatform == Device.iOS)
                     {
                         var supportsFace = await _deviceActionService.SupportsFaceBiometricAsync();
                         text = supportsFace ? AppResources.FaceIDDirection : AppResources.FingerprintDirection;
                     }
-                    var fingerprintRequest = new AuthenticationRequestConfiguration(text)
-                    {
-                        CancelTitle = AppResources.Cancel,
-                        FallbackTitle = fallbackText
-                    };
-                    var result = await CrossFingerprint.Current.AuthenticateAsync(fingerprintRequest);
-                    if(result.Authenticated)
-                    {
-                        return true;
-                    }
-                    else if(result.Status == FingerprintAuthenticationResultStatus.FallbackRequested)
-                    {
-                        fallback?.Invoke();
-                    }
                 }
-                catch { }
-                return false;
+                var biometricRequest = new AuthenticationRequestConfiguration(AppResources.Bitwarden, text)
+                {
+                    CancelTitle = AppResources.Cancel,
+                    FallbackTitle = fallbackText
+                };
+                var result = await CrossFingerprint.Current.AuthenticateAsync(biometricRequest);
+                if (result.Authenticated)
+                {
+                    return true;
+                }
+                if (result.Status == FingerprintAuthenticationResultStatus.FallbackRequested)
+                {
+                    fallback?.Invoke();
+                }
             }
+            catch { }
+            return false;
+        }
+
+        public long GetActiveTime()
+        {
+            return _deviceActionService.GetActiveTime();
         }
     }
 }
