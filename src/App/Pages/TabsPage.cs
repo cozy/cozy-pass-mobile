@@ -31,7 +31,10 @@ namespace Bit.App.Pages
                 Title = AppResources.Send,
                 IconImageSource = "paper_plane.png",
             };
+            // Cozy customization, disable "Send" functionality until implemented on Stack side
+            /* 
             Children.Add(_sendGroupingsPage);
+            //*/
 
             _generatorPage = new NavigationPage(new GeneratorPage(true, null, this))
             {
