@@ -28,7 +28,6 @@ namespace Bit.App
         private readonly IStorageService _storageService;
         private readonly IStorageService _secureStorageService;
         private readonly IDeviceActionService _deviceActionService;
-        private readonly ICozyClientService _cozyClientService;
 
         private static bool _isResumed;
 
@@ -51,7 +50,6 @@ namespace Bit.App
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _secureStorageService = ServiceContainer.Resolve<IStorageService>("secureStorageService");
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
-            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             Bootstrap();
             _broadcasterService.Subscribe(nameof(App), async (message) =>

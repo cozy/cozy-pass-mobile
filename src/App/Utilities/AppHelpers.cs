@@ -479,6 +479,7 @@ namespace Bit.App.Utilities
             var stateService = ServiceContainer.Resolve<IStateService>("stateService");
             var deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             var searchService = ServiceContainer.Resolve<ISearchService>("searchService");
+            var cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             var userId = await userService.GetUserIdAsync();
             await Task.WhenAll(
@@ -493,7 +494,8 @@ namespace Bit.App.Utilities
                 passwordGenerationService.ClearAsync(),
                 vaultTimeoutService.ClearAsync(),
                 stateService.PurgeAsync(),
-                deviceActionService.ClearCacheAsync());
+                deviceActionService.ClearCacheAsync(),
+                cozyClientService.LogoutAsync());
             vaultTimeoutService.BiometricLocked = true;
             searchService.ClearIndex();
         }
