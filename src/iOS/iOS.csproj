@@ -171,8 +171,8 @@
     <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.imageset\logo_white%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <BundleResource Include="Resources\shared-with-cozy-icon.png" />
-    <BundleResource Include="Resources\shared-with-cozy-icon%402x.png" />
+    <BundleResource Include="Resources\shared_with_cozy_icon.png" />
+    <BundleResource Include="Resources\shared_with_cozy_icon%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

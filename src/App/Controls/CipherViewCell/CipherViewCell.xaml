@@ -83,7 +83,7 @@
             Margin="4, 4, 0, 0"
             HorizontalOptions="Start"
             IsVisible="{Binding CozyShared, Mode=OneWay}"
-            Source="shared-with-cozy-icon.png" />
+            Source="shared_with_cozy_icon.png" />
         <controls:FaLabel
             Grid.Column="2"
             Grid.Row="0"
