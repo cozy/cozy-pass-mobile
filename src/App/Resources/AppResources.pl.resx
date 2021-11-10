@@ -422,7 +422,6 @@
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Użyj Cozy Pass do autouzupełniania danych logowania w przeglądarce Safari i innych aplikacjach.</value>
-    <value>Użyj Cozy Pass w Safari i innych aplikacjach do automatycznego wypełniania danych logowania./value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Usługa autouzupełniania Cozy Pass</value>
