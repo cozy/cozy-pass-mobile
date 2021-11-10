@@ -152,8 +152,6 @@
     <Compile Include="Utilities\ThemeHelpers.cs" />
     <Compile Include="WebAuthCallbackActivity.cs" />
     <Compile Include="Renderers\SelectableLabelRenderer.cs" />
-    <Compile Include="Utilities\CustomFingerprintDialogFragment.cs" />
-    <Compile Include="Utilities\StaticStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\FontAwesome.ttf" />
