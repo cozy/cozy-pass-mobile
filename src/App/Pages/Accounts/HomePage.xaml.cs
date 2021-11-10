@@ -22,7 +22,6 @@ namespace Bit.App.Pages
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly II18nService _i18nService;
         private readonly ICozyClientService _cozyClientService;
-        private readonly IBroadcasterService _broadcasterService;
 
         public HomePage(AppOptions appOptions = null)
         {
@@ -150,11 +149,13 @@ namespace Bit.App.Pages
         {
             if (DoOnce())
             {
-#region cozy
+                // Cozy customization:
+                // - Registration is not made in app but from cozy website
+                //*
                 OpenRegistrationPage();
-                // Navigation.PushModalAsync(new NavigationPage(new RegisterPage(this)));
-#endregion
+                /*/
                 _vm.StartRegisterAction();
+                //*/
             }
         }
         
@@ -191,5 +192,26 @@ namespace Bit.App.Pages
             var page = new EnvironmentPage();
             await Navigation.PushModalAsync(new NavigationPage(page));
         }
+        private void HasOnboarded()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                // A delay is needed here since otherwise we can show the Dialog
+                // while a splashscreen is showing, and this prevents the splashscreen
+                // to be removed.
+                await Task.Delay(500);
+                await DisplayOnboardedDialogAsync();
+                await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+            });
+
+        }
+
+        #region cozy
+        private async Task DisplayOnboardedDialogAsync()
+        {
+            await _platformUtilsService.ShowDialogAsync(AppResources.RegistrationSuccess, AppResources.CozyPass,
+                            AppResources.Close);
+        }
+        #endregion
     }
 }
