@@ -39,8 +39,9 @@
                    StyleClass="text-lg"
                    HorizontalTextAlignment="Center"></Label>
             <StackLayout Spacing="8">
-                <Button TextColor="{StaticResource Key=NavigationBarTextColor}" BackgroundColor="{StaticResource Key=PrimaryColor}" Text="{u:I18n LogIn}" 
-                    Clicked="LogIn_Clicked"></Button>
+                <Button Text="{u:I18n LogIn}"
+                        StyleClass="btn-primary"
+                    	Clicked="LogIn_Clicked"></Button>
                 <Button Text="{u:I18n CreateAccount}"
                         Clicked="Register_Clicked" />
                 <Button Text="{u:I18n LogInSso}"
