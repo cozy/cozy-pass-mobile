@@ -16,9 +16,11 @@
     <Color x:Key="InputPlaceholderColor">#95999D</Color>
 
     <Color x:Key="BackgroundColor">#ffffff</Color>
-    <Color x:Key="SplashBackgroundColor">#F5F6F7</Color>
+    <Color x:Key="SplashBackgroundColor">#EFEFF4</Color>
     <Color x:Key="BorderColor">#D6D8Da</Color>
     <Color x:Key="DisabledIconColor">#D6D8Da</Color>
+    <Color x:Key="SeparatorColor">#282828</Color>
+    <Color x:Key="TouchColor">#52bdfb</Color>
 
     <Color x:Key="BoxBorderColor">#D6D8Da</Color>
     <Color x:Key="BoxHeaderTextColor">#297EF2</Color>
@@ -37,14 +39,29 @@
     <Color x:Key="SliderThumbBorderColor">#b5b5b5</Color>
     <Color x:Key="SliderTrackMinColor">#297EF2</Color>
     <Color x:Key="SliderTrackMaxColor">#D6D8Da</Color>
-    
-    <Color x:Key="SwitchOnColor">#297EF2</Color>
 
+    <Color x:Key="SwitchOnColor">#297EF2</Color>
+    <Color x:Key="SwitchThumbColor">#B9B9B9</Color>
+
+    <Color x:Key="StepperBackgroundColor">#5A595B</Color>
+    <Color x:Key="StepperForegroundColor">#ffffff</Color>
+
+    <Color x:Key="ButtonPrimaryBackgroundColor">#297EF2</Color>
+    <Color x:Key="ButtonPrimaryBackgroundColorPressed">#0F5CC7</Color>
+    <Color x:Key="ButtonPrimaryBackgroundColorDisabled">#1F1D212A</Color>
+    <Color x:Key="ButtonPrimaryTextColor">#ffffff</Color>
+    <Color x:Key="ButtonPrimaryTextColorDisabled">#521D212A</Color>
+
+    <Color x:Key="ButtonBackgroundColor">#FFFFFF</Color>
+    <Color x:Key="ButtonBackgroundColorPressed">#D6D8DA</Color>
+    <Color x:Key="ButtonBackgroundColorDisabled">#FFFFFF</Color>
+    <Color x:Key="ButtonBorderColor">#D6D8DA</Color>
+    <Color x:Key="ButtonBorderColorDisabled">#141D212A</Color>
     <Color x:Key="ButtonTextColor">#000000</Color>
-    <Color x:Key="ButtonBackgroundColor">#D6D8Da</Color>
+    <Color x:Key="ButtonTextColorDisabled">#521D212A</Color>
 
     <Color x:Key="FabColor">#297EF2</Color>
-    <Color x:Key="FabPressedColor">#0B61D6</Color>
+    <Color x:Key="FabPressedColor">#0F5CC7</Color>
 
     <Color x:Key="TabBarBackgroundColor">#ffffff</Color>
     <Color x:Key="TabBarItemColor">#757575</Color>
@@ -52,4 +69,6 @@
 
     <Color x:Key="NavigationBarBackgroundColor">#297EF2</Color>
     <Color x:Key="NavigationBarTextColor">#ffffff</Color>
+
+    <Color x:Key="HyperlinkColor">#52bdfb</Color>
 </ResourceDictionary>

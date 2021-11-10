@@ -94,7 +94,7 @@
         <Setter Property="FontSize"
                 Value="18" />
         <Setter Property="CornerRadius"
-                Value="5" />
+                Value="3" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -105,8 +105,8 @@
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor"
                                     Value="{DynamicResource ButtonBackgroundColorDisabled}" />
-                            <Setter Property="BorderWidth"
-                                    Value="0" />
+                            <Setter Property="BorderColor"
+                                    Value="{DynamicResource ButtonBorderColorDisabled}" />
                             <Setter Property="TextColor"
                                     Value="{DynamicResource ButtonTextColorDisabled}" />
                         </VisualState.Setters>
@@ -122,7 +122,7 @@
         <Setter Property="BorderColor"
                 Value="{DynamicResource PrimaryColor}" />
         <Setter Property="BorderWidth" 
-                Value="1" />
+                Value="0" />
         <Setter Property="TextColor"
                 Value="{DynamicResource ButtonPrimaryTextColor}" />
         <Setter Property="FontSize"
@@ -130,7 +130,7 @@
         <Setter Property="FontAttributes"
                 Value="Bold" />
         <Setter Property="CornerRadius"
-                Value="5" />
+                Value="3" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">

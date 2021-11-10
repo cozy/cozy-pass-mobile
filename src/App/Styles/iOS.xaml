@@ -122,8 +122,8 @@
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor"
                                     Value="{DynamicResource ButtonBackgroundColorDisabled}" />
-                            <Setter Property="BorderWidth"
-                                    Value="0" />
+                            <Setter Property="BorderColor"
+                                    Value="{DynamicResource ButtonBorderColorDisabled}" />
                             <Setter Property="TextColor"
                                     Value="{DynamicResource ButtonTextColorDisabled}" />
                         </VisualState.Setters>
@@ -139,7 +139,7 @@
         <Setter Property="BorderColor"
                 Value="{DynamicResource PrimaryColor}" />
         <Setter Property="BorderWidth" 
-                Value="1" />
+                Value="0" />
         <Setter Property="TextColor"
                 Value="{DynamicResource ButtonPrimaryTextColor}" />
         <Setter Property="FontSize"
