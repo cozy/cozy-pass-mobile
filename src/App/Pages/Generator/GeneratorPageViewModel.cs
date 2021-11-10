@@ -29,6 +29,7 @@ namespace Bit.App.Pages
         private int _length = 5;
         private int _numWords = 3;
         private bool _optionsToggled = false;
+        private int _optionsOpacity = 0;
         private string _wordSeparator;
         private bool _capitalize;
         private bool _includeNumber;
@@ -320,10 +321,19 @@ namespace Bit.App.Pages
                 SetProperty(ref _optionsToggled, value);
             }
         }
+        public int OptionsOpacity
+        {
+            get => _optionsOpacity;
+            set
+            {
+                SetProperty(ref _optionsOpacity, value);
+            }
+        }
 
         public async Task ToggleOptionsAsync()
         {
             OptionsToggled = !OptionsToggled;
+            OptionsOpacity = OptionsToggled ? 1 : 0;
         }
 
         private void LoadFromOptions()

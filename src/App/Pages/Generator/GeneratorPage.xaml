@@ -79,6 +79,9 @@
                         HorizontalOptions="FillAndExpand"
                         Clicked="Regenerate_Clicked"></Button>
             </StackLayout>
+            <!-- Cozy customization -->
+            <!-- options pane should be hidden by default -->
+            <!-- "options" button can be used to toggle options pane visibility -->
             <StackLayout StyleClass="box">
                 <Grid StyleClass="box-row" ColumnSpacing="0">
                     <Grid.RowDefinitions>
@@ -102,10 +105,16 @@
                         Clicked="ToggleOptions_Clicked"
                         HorizontalOptions="Start"
                         BackgroundColor="Transparent"
+                        BorderWidth="0"
                         StyleClass="box-header, box-header-platform" />
                 </Grid>
             </StackLayout>
-            <StackLayout StyleClass="box" IsVisible="{ Binding OptionsToggled }">
+            <StackLayout StyleClass="box" Opacity="{ Binding OptionsOpacity }">
+            <!-- End Cozy customization -->
+                <StackLayout StyleClass="box-row-header">
+                    <Label Text="{u:I18n Options, Header=True}"
+                           StyleClass="box-header, box-header-platform" />
+                </StackLayout>
                 <StackLayout StyleClass="box-row, box-row-input">
                     <Label
                         Text="{u:I18n Type}"
