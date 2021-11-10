@@ -41,7 +41,7 @@
     <Color x:Key="SliderTrackMaxColor">#D6D8Da</Color>
 
     <Color x:Key="SwitchOnColor">#297EF2</Color>
-    <Color x:Key="SwitchThumbColor">#B9B9B9</Color>
+    <Color x:Key="SwitchThumbColor">#ECECEC</Color>
 
     <Color x:Key="StepperBackgroundColor">#5A595B</Color>
     <Color x:Key="StepperForegroundColor">#ffffff</Color>
