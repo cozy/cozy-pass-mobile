@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -44,8 +44,10 @@
                     	Clicked="LogIn_Clicked"></Button>
                 <Button Text="{u:I18n CreateAccount}"
                         Clicked="Register_Clicked" />
+                <!-- Cozy customization: SSO is disabled
                 <Button Text="{u:I18n LogInSso}"
                         Clicked="LogInSso_Clicked" />
+                -->
             </StackLayout>
         </StackLayout>
     </StackLayout>
