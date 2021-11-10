@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace Bit.Droid.Autofill
 {
-    [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Bitwarden")]
+    [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Cozy Pass")]
     [IntentFilter(new string[] { "android.service.autofill.AutofillService" })]
     [MetaData("android.autofill", Resource = "@xml/autofillservice")]
     [Register("io.cozy.pass.Autofill.AutofillService")]
