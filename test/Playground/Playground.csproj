@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AssemblyName>BitwardenPlayground</AssemblyName>
     <RootNamespace>Bit.Playground</RootNamespace>
-    <Configurations>Debug;Release;FDroid</Configurations>
+    <Configurations>Debug;Release;FDroid;CozyReleaseIOS;CozyReleaseAndroid;CozyDebugIOS;CozyDebugAndroid</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

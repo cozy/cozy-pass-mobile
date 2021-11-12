@@ -4,10 +4,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Bit.App</RootNamespace>
     <AssemblyName>BitwardenApp</AssemblyName>
-    <Configurations>Debug;Release;FDroid</Configurations>
+    <Configurations>Debug;Release;FDroid;CozyReleaseIOS;CozyReleaseAndroid;CozyDebugIOS;CozyDebugAndroid</Configurations>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)' == 'CozyDebugIOS' OR '$(Configuration)' == 'CozyReleaseIOS' OR '$(Configuration)' == 'AppStore' ">
+    <DefineConstants>__IOS__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU' OR '$(Configuration)|$(Platform)'=='CozyDebugAndroid|AnyCPU' OR '$(Configuration)|$(Platform)'=='CozyDebugIOS|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
@@ -414,8 +418,11 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Xamarin.iOS">
+  <ItemGroup Condition=" $([System.Text.RegularExpressions.Regex]::IsMatch($(DefineConstants), '^(.*;)*__IOS__(;.*)*$')) ">
+    <Reference Include="Xamarin.iOS" Condition=" '$(OS)' == 'Unix' ">
+      <HintPath>\Library\Frameworks\Xamarin.iOS.framework\Versions\Current\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS" Condition=" '$(OS)' == 'Windows_NT' AND '$(VisualStudioVersion)' == '16.0' ">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>

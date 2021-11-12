@@ -11,7 +11,7 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AppDesignerFolder>Properties</AppDesignerFolder>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' OR '$(Configuration)|$(Platform)' == 'CozyDebugIOS|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -30,7 +30,7 @@
     <MtouchSdkVersion>12.0</MtouchSdkVersion>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' OR '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhoneSimulator' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
@@ -46,7 +46,7 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignProvision>Dist: Autofill</CodesignProvision>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' OR '$(Configuration)|$(Platform)' == 'CozyDebugIOS|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -66,7 +66,7 @@
     <MtouchSdkVersion>
     </MtouchSdkVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' OR '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhone' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Release</OutputPath>

@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Bit.App.Resources;
 
+#if __IOS__
 using SafariServices;
 using Foundation;
 using UIKit;
+#endif
 
 namespace Bit.App.Pages
 {
@@ -110,10 +112,12 @@ namespace Bit.App.Pages
 
         
         private void OpenRegistrationPageIOS(string url) {
+#if __IOS__
             var window = UIApplication.SharedApplication.KeyWindow;
             var vc = window.RootViewController;
             var sfvc = new SFSafariViewController(new NSUrl(url), true);
             vc.PresentViewController(sfvc, true, null);
+#endif
 
             // After subscribing, the user is redirected to a URL custom scheme
             // that is picked up in AppDelegate. The SafariViewController is

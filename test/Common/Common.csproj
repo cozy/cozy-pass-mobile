@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
     <RootNamespace>Bit.Test.Common</RootNamespace>
+    <Configurations>Debug;Release;CozyReleaseIOS;CozyReleaseAndroid;CozyDebugIOS;CozyDebugAndroid</Configurations>
   </PropertyGroup>
 
     <ItemGroup>

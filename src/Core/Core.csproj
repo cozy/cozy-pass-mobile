@@ -4,10 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Bit.Core</RootNamespace>
     <AssemblyName>BitwardenCore</AssemblyName>
-    <Configurations>Debug;Release;FDroid</Configurations>
+    <Configurations>Debug;Release;FDroid;CozyReleaseIOS;CozyReleaseAndroid;CozyDebugIOS;CozyDebugAndroid</Configurations>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU' OR '$(Configuration)|$(Platform)'=='CozyDebugAndroid|AnyCPU' OR '$(Configuration)|$(Platform)'=='CozyDebugIOS|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
