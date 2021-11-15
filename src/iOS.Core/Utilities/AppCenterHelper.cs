@@ -1,4 +1,7 @@
-﻿using Bit.Core.Abstractions;
+﻿// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
+using Bit.Core.Abstractions;
 using System.Threading.Tasks;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Crashes;
@@ -54,3 +57,4 @@ namespace Bit.iOS.Core.Utilities
         }
     }
 }
+//*/

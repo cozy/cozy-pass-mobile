@@ -1,4 +1,7 @@
-﻿#if !FDROID
+﻿// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
+#if !FDROID
 using Bit.Core.Abstractions;
 using System.Threading.Tasks;
 using Microsoft.AppCenter;
@@ -56,3 +59,4 @@ namespace Bit.Droid.Utilities
     }
 }
 #endif
+//*/

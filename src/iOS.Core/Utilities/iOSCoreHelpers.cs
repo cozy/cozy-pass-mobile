@@ -26,10 +26,14 @@ namespace Bit.iOS.Core.Utilities
 
         public static void RegisterAppCenter()
         {
+            // Cozy customization, disable "AppCenter" functionality
+            // We do not use it at Cozy
+            /*
             var appCenterHelper = new AppCenterHelper(
                 ServiceContainer.Resolve<IAppIdService>("appIdService"),
                 ServiceContainer.Resolve<IUserService>("userService"));
             var appCenterTask = appCenterHelper.InitAsync();
+            //*/
         }
 
         public static void RegisterLocalServices()

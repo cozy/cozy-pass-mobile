@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using Bit.App.Utilities;
+// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
 using Microsoft.AppCenter.Crashes;
+//*/
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -39,7 +43,11 @@ namespace Bit.iOS.Core.Utilities
             }
             catch (Exception e)
             {
+                // Cozy customization, disable "AppCenter" functionality
+                // We do not use it at Cozy
+                /*
                 Crashes.TrackError(e);
+                //*/
             }
             finally
             {

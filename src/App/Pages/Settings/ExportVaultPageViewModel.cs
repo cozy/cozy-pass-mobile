@@ -9,9 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Bit.Core;
 using Bit.Core.Enums;
+// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
 #if !FDROID
 using Microsoft.AppCenter.Crashes;
 #endif
+//*/
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -156,9 +160,13 @@ namespace Bit.App.Pages
                 ClearResult();
                 await _platformUtilsService.ShowDialogAsync(_i18nService.T("ExportVaultFailure"));
                 System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", ex.GetType(), ex.StackTrace);
+// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
 #if !FDROID
                 Crashes.TrackError(ex);
 #endif
+//*/
             }
         }
 

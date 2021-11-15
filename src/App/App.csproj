@@ -17,7 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!--
+    Cozy customisation: disable "AppCenter" functionality
+    We do not use it at Cozy
+    -->
+    <!--
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
+    -->
     <PackageReference Include="Plugin.Fingerprint" Version="2.1.4" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
