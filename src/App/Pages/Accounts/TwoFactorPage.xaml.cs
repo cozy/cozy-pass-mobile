@@ -48,6 +48,9 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Remove(_cancelItem);
             }
+            // Cozy customization, disable "Use another two-step login method" functionality
+            // Cozy stack only supports email 2FA
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -55,6 +58,7 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_useAnotherTwoStepMethod);
             }
+            //*/
         }
 
         public HybridWebView DuoWebView { get; set; }
