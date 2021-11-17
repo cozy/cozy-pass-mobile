@@ -62,17 +62,17 @@ namespace Bit.Droid.Services
             {
                 cipher.Init(CipherMode.EncryptMode, key);
             }
-            catch (KeyPermanentlyInvalidatedException e)
+            catch (KeyPermanentlyInvalidatedException)
             {
                 // Biometric has changed
                 return Task.FromResult(false);
             }
-            catch (UnrecoverableKeyException e)
+            catch (UnrecoverableKeyException)
             {
                 // Biometric was disabled and re-enabled
                 return Task.FromResult(false);
             }
-            catch (InvalidKeyException e)
+            catch (InvalidKeyException)
             {
                 // Fallback for old bitwarden users without a key
                 CreateKey();

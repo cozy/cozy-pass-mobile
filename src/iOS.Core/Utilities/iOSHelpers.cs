@@ -41,7 +41,7 @@ namespace Bit.iOS.Core.Utilities
                     uptime = (now - timeVal.sec) * 1000;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // Cozy customization, disable "AppCenter" functionality
                 // We do not use it at Cozy

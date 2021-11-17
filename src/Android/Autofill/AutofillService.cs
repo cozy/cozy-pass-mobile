@@ -24,7 +24,6 @@ namespace Bit.Droid.Autofill
         private IVaultTimeoutService _vaultTimeoutService;
         private IStorageService _storageService;
         private IPolicyService _policyService;
-        private IUserService _userService;
 
         public async override void OnFillRequest(FillRequest request, CancellationSignal cancellationSignal,
             FillCallback callback)
