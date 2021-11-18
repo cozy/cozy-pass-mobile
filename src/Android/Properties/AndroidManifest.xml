@@ -2,8 +2,8 @@
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  android:versionCode="2004100"
-  android:versionName="2.4.1"
+  android:versionCode="3000000"
+  android:versionName="3.0.0"
   android:installLocation="internalOnly"
   package="io.cozy.pass">
 
