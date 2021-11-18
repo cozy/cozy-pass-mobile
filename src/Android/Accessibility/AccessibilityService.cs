@@ -77,10 +77,14 @@ namespace Bit.Droid.Accessibility
                 {
                     return;
                 }
+                // Cozy customization, this is not needed anymore as minSdkVersion is 21
+                // This removes deprecation warning https://developer.android.com/reference/android/os/PowerManager#isScreenOn()
+                /*
                 else if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop && !powerManager.IsScreenOn)
                 {
                     return;
                 }
+                //*/
 
                 if (SkipPackage(e?.PackageName))
                 {
