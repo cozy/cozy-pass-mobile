@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android", "src\Android\Android.csproj", "{304400AF-F0ED-40FA-B102-EA3C3EC43E4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "src\App\App.csproj", "{EE44C6A1-2A85-45FE-8D9B-BF1D5F88809C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "src\App\App.csproj", "{EE44C6A1-2A85-45FE-8D9B-BF1D5F88809C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Core\Core.csproj", "{4B8A8C41-9820-4341-974C-41E65B7F4366}"
 EndProject
@@ -388,8 +388,8 @@ Global
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|Any CPU.ActiveCfg = CozyReleaseIOS|Any CPU
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|Any CPU.Build.0 = CozyReleaseIOS|Any CPU
-		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|iPhone.ActiveCfg = CozyReleaseIOS|iPhone
-		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|iPhone.Build.0 = CozyReleaseIOS|iPhone
+		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|iPhone.ActiveCfg = CozyReleaseIOS|Any CPU
+		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|iPhone.Build.0 = CozyReleaseIOS|Any CPU
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|iPhoneSimulator.ActiveCfg = CozyReleaseIOS|iPhoneSimulator
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.CozyReleaseIOS|iPhoneSimulator.Build.0 = CozyReleaseIOS|iPhoneSimulator
 		{E71F3053-056C-4381-9638-048ED73BDFF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
