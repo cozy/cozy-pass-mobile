@@ -34,7 +34,11 @@ namespace Bit.App.Pages
             else
             {
                 _mainLayout.Padding = new Thickness(0, 0, 0, 75);
+                // Cozy customization, disable attachment
+                // Disable attachment as they are not implemented in Cozy Stack
+                /*
                 ToolbarItems.Add(_attachmentsItem);
+                //*/
                 ToolbarItems.Add(_deleteItem);
             }
         }

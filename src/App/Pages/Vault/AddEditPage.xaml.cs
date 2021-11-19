@@ -59,7 +59,11 @@ namespace Bit.App.Pages
             SetActivityIndicator();
             if (_vm.EditMode && !_vm.CloneMode && Device.RuntimePlatform == Device.Android)
             {
+                // Cozy customization, disable attachment
+                // Disable attachment as they are not implemented in Cozy Stack
+                /*
                 ToolbarItems.Add(_attachmentsItem);
+                //*/
                 ToolbarItems.Add(_deleteItem);
             }
             if (Device.RuntimePlatform == Device.iOS)
