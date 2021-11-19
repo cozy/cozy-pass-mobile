@@ -86,7 +86,14 @@ namespace Bit.App.Pages
 
         public async Task<bool> SubmitAsync()
         {
+            // Cozy customization, select ALL collections
+            // At Cozy we force 1-1 relationship between Orgnanizations and Collections
+            // so when an Organization is select we know that the corresponding Collection should be also selected
+            /*
             var selectedCollectionIds = Collections?.Where(c => c.Checked).Select(c => c.Collection.Id);
+            /*/
+            var selectedCollectionIds = Collections?.Select(c => c.Collection.Id);
+            //*/
             if (!selectedCollectionIds?.Any() ?? true)
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred, AppResources.SelectOneCollection,
