@@ -1,4 +1,4 @@
-using Bit.App.Abstractions;
+﻿using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
@@ -83,9 +83,11 @@ namespace Bit.App.Pages
 
             // Cozy customization, use HasOrganizations instead of OrganizationOptions.Any()
             // this is needed because we added "None" option
+            // also try to synchronize with cipher current organization
             /*
             if (OrganizationId == null && OrganizationOptions.Any())
             /*/
+            OrganizationId = _cipher.OrganizationId;
             if (OrganizationId == null && HasOrganizations)
             //*/
             {
