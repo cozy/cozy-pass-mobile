@@ -1401,7 +1401,7 @@
     <value>Who owns this item?</value>
   </data>
   <data name="NoCollectionsToList" xml:space="preserve">
-    <value>There are no collections to list.</value>
+    <value>There are no folder to list.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
     <value>{0} moved to {1}.</value>
@@ -1411,7 +1411,7 @@
     <value>Item has been shared.</value>
   </data>
   <data name="SelectOneCollection" xml:space="preserve">
-    <value>You must select at least one collection.</value>
+    <value>You must select at least one folder.</value>
   </data>
   <data name="Share" xml:space="preserve">
     <value>Share</value>
@@ -1420,13 +1420,13 @@
     <value>Share Item</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>Move to folder</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
-    <value>No organizations to list.</value>
+    <value>No folder to list.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>Choose a folder that you wish to share this item with. Sharing transfers ownership of the item to the folder. You will no longer be the direct owner of this item once it has been shared.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Number of Words</value>
