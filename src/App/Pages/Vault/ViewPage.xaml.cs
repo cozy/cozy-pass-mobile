@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -228,7 +228,14 @@ namespace Bit.App.Pages
             }
             else
             {
+                // Cozy customization, replace collection action by move action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 options.Add(AppResources.Collections);
+                /*/
+                options.Add(AppResources.MoveToOrganization);
+                //*/
             }
 
             var selection = await DisplayActionSheet(AppResources.Options, AppResources.Cancel,
@@ -292,12 +299,18 @@ namespace Bit.App.Pages
             {
                 return;
             }
+
             if (_vm.Cipher.OrganizationId == null)
             {
+                // Cozy customization, remove collection action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 if (ToolbarItems.Contains(_collectionsItem))
                 {
                     ToolbarItems.Remove(_collectionsItem);
                 }
+                //*/
                 if (!ToolbarItems.Contains(_cloneItem))
                 {
                     ToolbarItems.Insert(1, _cloneItem);
@@ -313,6 +326,10 @@ namespace Bit.App.Pages
                 {
                     ToolbarItems.Remove(_cloneItem);
                 }
+                // Cozy customization, remove collection action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 if (ToolbarItems.Contains(_shareItem))
                 {
                     ToolbarItems.Remove(_shareItem);
@@ -321,6 +338,12 @@ namespace Bit.App.Pages
                 {
                     ToolbarItems.Insert(1, _collectionsItem);
                 }
+                /*/
+                if (!ToolbarItems.Contains(_shareItem))
+                {
+                    ToolbarItems.Insert(1, _shareItem);
+                }
+                //*/
             }
             if (_vm.Cipher.IsDeleted && !ToolbarItems.Contains(_editItem))
             {
