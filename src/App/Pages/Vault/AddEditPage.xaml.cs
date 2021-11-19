@@ -1,4 +1,4 @@
-﻿using Bit.App.Abstractions;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.App.Utilities;
@@ -83,7 +83,12 @@ namespace Bit.App.Pages
             _cardBrandPicker.ItemDisplayBinding = new Binding("Key");
             _cardExpMonthPicker.ItemDisplayBinding = new Binding("Key");
             _identityTitlePicker.ItemDisplayBinding = new Binding("Key");
+
+            // Cozy customization, disable folders
+            // Disable Folder (bitwarden concept) selection from here, we only handle Sharing to folder from toolbar menu
+            /*
             _folderPicker.ItemDisplayBinding = new Binding("Key");
+            //*/
             _ownershipPicker.ItemDisplayBinding = new Binding("Key");
 
             _loginPasswordEntry.Keyboard = Keyboard.Create(KeyboardFlags.None);
