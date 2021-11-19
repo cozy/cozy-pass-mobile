@@ -562,6 +562,14 @@ namespace Bit.Core.Services
             await UpsertAsync(data);
         }
 
+        public async Task UnshareWithServerAsync(CipherView cipher)
+        {
+            cipher.OrganizationId = null;
+            cipher.CollectionIds = null;
+            var encCipher = await EncryptAsync(cipher);
+            await SaveWithServerAsync(encCipher);
+        }
+
         public async Task<Cipher> SaveAttachmentRawWithServerAsync(Cipher cipher, string filename, byte[] data)
         {
             var orgKey = await _cryptoService.GetOrgKeyAsync(cipher.OrganizationId);
