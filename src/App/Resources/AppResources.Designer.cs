@@ -3239,7 +3239,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Move to Organization.
+        ///   Recherche une chaîne localisée semblable à Move to folder.
         /// </summary>
         public static string MoveToOrganization {
             get {
@@ -3248,7 +3248,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved..
+        ///   Recherche une chaîne localisée semblable à Choose a folder that you wish to share this item with. Sharing transfers ownership of the item to the folder. You will no longer be the direct owner of this item once it has been shared..
         /// </summary>
         public static string MoveToOrgDesc {
             get {
@@ -3410,7 +3410,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à There are no collections to list..
+        ///   Recherche une chaîne localisée semblable à There are no folder to list..
         /// </summary>
         public static string NoCollectionsToList {
             get {
@@ -3509,7 +3509,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à No organizations to list..
+        ///   Recherche une chaîne localisée semblable à No folder to list..
         /// </summary>
         public static string NoOrgsToList {
             get {
@@ -4310,7 +4310,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à You must select at least one collection..
+        ///   Recherche une chaîne localisée semblable à You must select at least one folder..
         /// </summary>
         public static string SelectOneCollection {
             get {

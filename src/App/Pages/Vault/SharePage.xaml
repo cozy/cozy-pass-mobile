@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -30,14 +30,18 @@
             <StackLayout StyleClass="box"
                          IsVisible="{Binding HasOrganizations, Converter={StaticResource inverseBool}}">
                 <StackLayout StyleClass="box-row" Padding="10, 20">
-                    <Label Text="{u:I18n NoOrgsToList}" HorizontalTextAlignment="Center" />
+                    <!-- Cozy customization -->
+                    <!-- Rename Organization to Folder -->
+                    <Label Text="{u:I18n NoFoldersToList}" HorizontalTextAlignment="Center" />
                 </StackLayout>
             </StackLayout>
             <StackLayout StyleClass="box"
                          IsVisible="{Binding HasOrganizations}">
                 <StackLayout StyleClass="box-row, box-row-input, box-row-input-options-platform">
+                    <!-- Cozy customization -->
+                    <!-- Rename Organization to Folder -->
                     <Label
-                        Text="{u:I18n Organization}"
+                        Text="{u:I18n Folder}"
                         StyleClass="box-label" />
                     <Picker
                         x:Name="_organizationPicker"
