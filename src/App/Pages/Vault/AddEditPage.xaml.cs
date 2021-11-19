@@ -293,7 +293,14 @@ namespace Bit.App.Pages
             var options = new List<string> { AppResources.Attachments };
             if (_vm.EditMode)
             {
+                // Cozy customization, replace collection action by move action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 options.Add(_vm.Cipher.OrganizationId == null ? AppResources.MoveToOrganization : AppResources.Collections);
+                /*/
+                options.Add(AppResources.MoveToOrganization);
+                //*/
             }
             var selection = await DisplayActionSheet(AppResources.Options, AppResources.Cancel,
                 (_vm.EditMode && !_vm.CloneMode) ? AppResources.Delete : null, options.ToArray());
@@ -373,6 +380,10 @@ namespace Bit.App.Pages
                 {
                     return;
                 }
+                // Cozy customization, replace collection action by move action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 if (_vm.Cipher.OrganizationId == null)
                 {
                     if (ToolbarItems.Contains(_collectionsItem))
@@ -395,6 +406,12 @@ namespace Bit.App.Pages
                         ToolbarItems.Insert(2, _collectionsItem);
                     }
                 }
+                /*/
+                if (!ToolbarItems.Contains(_shareItem) && !_vm.CloneMode)
+                {
+                    ToolbarItems.Insert(2, _shareItem);
+                }
+                //*/
             }
         }
 
