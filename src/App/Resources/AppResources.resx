@@ -1410,6 +1410,9 @@
   <data name="ItemShared" xml:space="preserve">
     <value>Item has been shared.</value>
   </data>
+  <data name="ItemUnshared" xml:space="preserve">
+    <value>Item removed from folder.</value>
+  </data>
   <data name="SelectOneCollection" xml:space="preserve">
     <value>You must select at least one folder.</value>
   </data>
@@ -1418,6 +1421,9 @@
   </data>
   <data name="ShareItem" xml:space="preserve">
     <value>Share Item</value>
+  </data>
+  <data name="ShareNone" xml:space="preserve">
+    <value>None</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
     <value>Move to folder</value>
