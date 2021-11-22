@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -186,6 +186,10 @@
   <data name="HasMispelledCozyException" xml:space="preserve">
     <value>Woops, the address is not correct. Try with "cozy" with a "z"!</value>
     <comment>Exception message when user mispels Cozy with Cosy</comment>
+  </data>
+  <data name="CozyInvalidLoginException" xml:space="preserve">
+    <value>The Url and password you entered seems to not match</value>
+    <comment>Exception message when user enter wrong login or password</comment>
   </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>

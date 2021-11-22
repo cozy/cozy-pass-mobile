@@ -1,4 +1,4 @@
-using Bit.App.Abstractions;
+﻿using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.Core;
 using Bit.Core.Abstractions;
@@ -8,6 +8,7 @@ using System;
 using System.Threading.Tasks;
 using Bit.App.Utilities;
 using Xamarin.Forms;
+using System.Net;
 
 namespace Bit.App.Pages
 {
@@ -202,8 +203,24 @@ namespace Bit.App.Pages
                 await _deviceActionService.HideLoadingAsync();
                 if (e?.Error != null)
                 {
+                    // Cozy customization, set custom message for 401 response
+                    // As the stack does not translate error messages and 401 is the most common error
+                    // then we intercept this specific error to translate it on client side
+                    /*
                     await _platformUtilsService.ShowDialogAsync(e.Error.GetSingleMessage(),
                         AppResources.AnErrorHasOccurred, AppResources.Ok);
+                    /*/
+                    if (e.Error.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        var translatedErrorMessage = AppResources.ResourceManager.GetString("CozyInvalidLoginException", AppResources.Culture);
+                        await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                    }
+                    else
+                    {
+                        await _platformUtilsService.ShowDialogAsync(e.Error.GetSingleMessage(),
+                            AppResources.AnErrorHasOccurred, AppResources.Ok);
+                    }
+                    //*/
                 }
             }
         }
