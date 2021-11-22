@@ -10,6 +10,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Bit.Core.Utilities;
 
 namespace Bit.Core.Services
 {
@@ -206,19 +208,29 @@ namespace Bit.Core.Services
             await _environmentService.SetUrlsAsync(environmentData);
         }
 
-        public string GetURLForApp(string appName, string fragment = null)
+        public async Task<string> GetURLForApp(string appName, string fragment = null)
         {
-            var url = GetCozyURL();
-            var builder = new UriBuilder(url);
-            var host = builder.Host;
-            var parts = host.Split('.');
-            parts[0] = $"{parts[0]}-{appName}";
-            builder.Host = string.Join(".", parts);
-            if (fragment != null)
-            {
-                builder.Fragment = fragment;
-            }
-            return builder.ToString();
+            var capabilities = await FetchJSONAsync<object, Capabilities>(
+                method: HttpMethod.Get,
+                path: "settings/capabilities",
+                body: null,
+                hasResponse: true
+            );
+
+            var cozyURL = GetCozyURL();
+            var subdomainKey = "flat_subdomains";
+            var subdomain = capabilities.Data.Attributes.ContainsKey(subdomainKey) && capabilities.Data.Attributes[subdomainKey] ? "flat" : "nested";
+
+            var link = UrlHelper.GenerateWebLink(
+                cozyUrl: cozyURL,
+                searchParams: null,
+                pathname: "",
+                hash: "/vault?action=import",
+                slug: "passwords",
+                subDomainType: subdomain
+            );
+
+            return link;
         }
 
         private string GenerateRandomValue() {
@@ -289,4 +301,26 @@ namespace Bit.Core.Services
             return $"https://manager.cozycloud.cc/cozy/create?domain={domain}&lang={lang}&onboarding={escaped}";
         }
     }
+}
+
+public class Capabilities
+{
+
+    [JsonProperty("data")]
+    public CapabilitiesData Data { get; set; }
+}
+
+public class CapabilitiesData
+{
+    [JsonProperty("type")]
+    public string Type { get; set; }
+
+    [JsonProperty("id")]
+    public string Id { get; set; }
+
+    [JsonProperty("attributes")]
+    public Dictionary<string, bool> Attributes { get; set; }
+
+    [JsonProperty("links")]
+    public Dictionary<string, string> Links { get; set; }
 }

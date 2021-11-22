@@ -167,9 +167,9 @@ namespace Bit.App.Pages
             _deviceActionService.RateApp();
         }
 
-        public void Import()
+        public async void Import()
         {
-            var passwordsURL = _cozyClientService.GetURLForApp("passwords", fragment: "/installation/import");
+            var passwordsURL = await _cozyClientService.GetURLForApp("passwords", fragment: "/vault?action=import");
             _platformUtilsService.LaunchUri(passwordsURL);
         }
 
@@ -199,7 +199,7 @@ namespace Bit.App.Pages
                 AppResources.TwoStepLogin, AppResources.Yes, AppResources.Cancel);
             if (confirmed)
             {
-                var twoFAURL = _cozyClientService.GetURLForApp("settings", fragment: "/profile");
+                var twoFAURL = await _cozyClientService.GetURLForApp("settings", fragment: "/profile");
                 _platformUtilsService.LaunchUri(twoFAURL);
             }
         }
