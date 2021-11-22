@@ -1,4 +1,4 @@
-﻿using Bit.App.Abstractions;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.Core;
 using Bit.Core.Abstractions;
@@ -140,7 +140,7 @@ namespace Bit.App.Pages
                 #region cozy
                 // Email field is used as CozyURL, it is not renamed not to change the original code
                 // too much.
-                var cozyURL = Email;
+                var cozyURL = UrlHelper.SanitizeUrl(Email);
                 await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
                 var email = _cozyClientService.GetEmailFromCozyURL(cozyURL);
                 var response = await _authService.LogInAsync(email, MasterPassword, _captchaToken);
@@ -186,6 +186,15 @@ namespace Bit.App.Pages
                     LogInSuccessAction?.Invoke();
                 }
             }
+            // Cozy customization, intercept SanitizeUrl exceptions
+            //*
+            catch (CozyException e)
+            {
+                await _deviceActionService.HideLoadingAsync();
+                var translatedErrorMessage = AppResources.ResourceManager.GetString(e.GetType().Name, AppResources.Culture);
+                await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+            }
+            //*/
             catch (ApiException e)
             {
                 _captchaToken = null;
