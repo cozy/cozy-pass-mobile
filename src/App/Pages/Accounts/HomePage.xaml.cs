@@ -54,6 +54,7 @@ namespace Bit.App.Pages
 
         protected override void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             _messagingService.Send("showStatusBar", false);
             CheckOnboarded();
