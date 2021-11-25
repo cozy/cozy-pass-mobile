@@ -1,4 +1,4 @@
-﻿using Bit.App.Models;
+using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -59,6 +59,7 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             if (_appeared)
             {

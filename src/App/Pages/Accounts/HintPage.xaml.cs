@@ -1,4 +1,5 @@
 ﻿using System;
+using Bit.App.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -20,6 +21,7 @@ namespace Bit.App.Pages
 
         protected override void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             RequestFocus(_email);
         }

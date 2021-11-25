@@ -1,4 +1,4 @@
-﻿using Bit.App.Models;
+using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -60,6 +60,7 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             await _vm.InitAsync();
             if (!_inputFocused)
@@ -67,6 +68,11 @@ namespace Bit.App.Pages
                 RequestFocus(string.IsNullOrWhiteSpace(_vm.Email) ? _email : _masterPassword);
                 _inputFocused = true;
             }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
         }
 
         private async void LogIn_Clicked(object sender, EventArgs e)
