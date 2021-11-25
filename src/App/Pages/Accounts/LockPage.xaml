@@ -1,4 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cozy customization -->
+<!-- Many edits have been made in this file to fit Cozy's design
+     Notable edits:
+     - Page title removed from NavigationBar
+     - Page title is now in the login form, with user's avatar displayed and Cozy address
+     - NavigationBar's actions have been removed (logout)
+     - Logout button has been added in the form
+-->
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,8 +14,7 @@
     xmlns:pages="clr-namespace:Bit.App.Pages"
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
-    x:DataType="pages:LockPageViewModel"
-    Title="{Binding PageTitle}">
+    x:DataType="pages:LockPageViewModel">
 
     <ContentPage.BindingContext>
         <pages:LockPageViewModel />
@@ -34,6 +41,32 @@
     <ScrollView>
         <StackLayout Spacing="20">
             <StackLayout StyleClass="box">
+                <Frame HasShadow="False"
+                       Padding="0"
+                       Margin="0,0,0,20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       BackgroundColor="{DynamicResource PrimaryColor}"
+                       CornerRadius="41"
+                       BorderColor="White"
+                       WidthRequest="84"
+                       HeightRequest="84">
+                    <Frame HasShadow="False"
+                           Padding="0"
+                           Margin="2"
+                           CornerRadius="40"
+                           BackgroundColor="LightGray"
+                           WidthRequest="80"
+                           HeightRequest="80">
+                        <Image Source="{Binding AvatarUrl}"
+                               Margin="-1,-1,-1,-1"
+                               WidthRequest="80"
+                               HeightRequest="80"></Image>
+                    </Frame>
+                </Frame>
+                <Label Text="{Binding PageTitle}" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="Title"/>
+                <Label Text="{Binding LoggedInAsText}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Small" Opacity="0.64"/>
+
                 <Grid StyleClass="box-row" IsVisible="{Binding PinLock}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -105,6 +138,9 @@
                         AutomationProperties.IsInAccessibleTree="True"
                         AutomationProperties.Name="{u:I18n ToggleVisibility}" />
                 </Grid>
+                <!-- Cozy customization -->
+                <!-- remove instance info -->
+                <!--
                 <Label
                     Text="{Binding LockedVerifyText}"
                     StyleClass="box-footer-label" />
@@ -112,17 +148,25 @@
                     Text="{Binding LoggedInAsText}"
                     StyleClass="box-footer-label"
                     Margin="0, 10, 0, 0" />
+                -->
             </StackLayout>
             <StackLayout Padding="10, 0">
                 <Label
                     Text="{u:I18n BiometricInvalidated}"
                     StyleClass="box-footer-label,text-danger,text-bold"
                     IsVisible="{Binding BiometricIntegrityValid, Converter={StaticResource inverseBool}}" />
+                <!-- Cozy customization -->
+                <!-- biometric button -->
+                <!--
                 <Button Text="{Binding BiometricButtonText}" Clicked="Biometric_Clicked"
                         IsVisible="{Binding BiometricButtonVisible}"></Button>
+                -->
                 <Button Text="{u:I18n Unlock}"
                         StyleClass="btn-primary"
                         Clicked="Unlock_Clicked" />
+                <Button Text="{u:I18n LogOut}"
+                        StyleClass="btn-error"
+                        Clicked="LogOut_Clicked" />
             </StackLayout>
         </StackLayout>
     </ScrollView>
