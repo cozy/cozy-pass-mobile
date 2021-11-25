@@ -40,6 +40,10 @@ namespace Bit.App.Pages
         private byte[] _attachmentData;
         private string _attachmentFilename;
         private bool _passwordReprompted;
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        private string _organizationName;
+        //*/
 
         public ViewPageViewModel()
         {
@@ -232,6 +236,21 @@ namespace Bit.App.Pages
         public bool IsDeleted => Cipher.IsDeleted;
         public bool CanEdit => !Cipher.IsDeleted;
 
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        public string OrganizationName
+        {
+            get => _organizationName;
+            set => SetProperty(ref _organizationName, value,
+                additionalPropertyNames: new string[]
+                {
+                    nameof(HasOrganization)
+                });
+        }
+
+        public bool HasOrganization => !string.IsNullOrEmpty(_organizationName);
+        //*/
+
         public async Task<bool> LoadAsync(Action finishedLoadingAction = null)
         {
             CleanUp();
@@ -262,6 +281,12 @@ namespace Bit.App.Pages
                     return true;
                 });
             }
+
+            // Cozy customization, display folder (Cozy concept)
+            //*
+            await UpdateOrganizationName();
+            //*/
+
             if (_previousCipherId != CipherId)
             {
                 var task = _eventService.CollectAsync(Core.Enums.EventType.Cipher_ClientViewed, CipherId);
@@ -270,6 +295,23 @@ namespace Bit.App.Pages
             finishedLoadingAction?.Invoke();
             return true;
         }
+
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        public async Task UpdateOrganizationName()
+        {
+            if (!string.IsNullOrEmpty(Cipher.OrganizationId))
+            {
+                var organization = await _userService.GetOrganizationAsync(Cipher.OrganizationId);
+
+                OrganizationName = organization.Name;
+            }
+            else
+            {
+                OrganizationName = AppResources.ShareNone;
+            }
+        }
+        //*/
 
         public void CleanUp()
         {

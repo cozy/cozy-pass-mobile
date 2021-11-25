@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
@@ -7,6 +8,8 @@ namespace Bit.App.Pages
     public partial class SharePage : BaseContentPage
     {
         private SharePageViewModel _vm;
+
+        public event EventHandler<OnSharedEventArgs> OnShared;
 
         public SharePage(string cipherId)
         {
@@ -24,6 +27,14 @@ namespace Bit.App.Pages
                 _organizationPicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
             }
             _organizationPicker.ItemDisplayBinding = new Binding("Key");
+
+            _vm.OnShared += (object sender, OnSharedEventArgs args) =>
+            {
+                if (OnShared != null)
+                {
+                    OnShared.Invoke(sender, args);
+                }
+            };
         }
 
         protected override async void OnAppearing()

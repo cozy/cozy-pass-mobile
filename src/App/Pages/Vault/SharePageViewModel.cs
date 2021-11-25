@@ -5,6 +5,7 @@ using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace Bit.App.Pages
         private bool _hasCollections;
         private bool _hasOrganizations;
         private List<Core.Models.View.CollectionView> _writeableCollections;
+
+        // Cozy customization, handle OnShared
+        //*
+        public event EventHandler<OnSharedEventArgs> OnShared;
+        //*/
 
         public SharePageViewModel()
         {
@@ -153,6 +159,12 @@ namespace Bit.App.Pages
                 var movedItemToOrgText = string.Format(AppResources.MovedItemToOrg, cipherView.Name,
                    (await _userService.GetOrganizationAsync(OrganizationId)).Name);
                 _platformUtilsService.ShowToast("success", null, movedItemToOrgText);
+
+                // Cozy customization, trigger OnShare
+                //*
+                HandleOnShared(OrganizationId, checkedCollectionIds);
+                //*/
+
                 await Page.Navigation.PopModalAsync();
                 return true;
             }
@@ -205,6 +217,7 @@ namespace Bit.App.Pages
             try
             {
                 await _cipherService.UnshareWithServerAsync(cipherView);
+                HandleOnShared(null, null);
                 _platformUtilsService.ShowToast("success", null, AppResources.ItemUnshared);
                 await Page.Navigation.PopModalAsync();
                 return true;
@@ -214,5 +227,29 @@ namespace Bit.App.Pages
                 return false;
             }
         }
+
+        // Cozy customization, handle OnShared
+        //*
+        private void HandleOnShared(string organizationId, HashSet<string> collectionIds)
+        {
+            if (OnShared != null)
+            {
+                OnShared.Invoke(this, new OnSharedEventArgs()
+                {
+                    OrganizationId = organizationId,
+                    CollectionIds = collectionIds
+                });
+            }
+        }
+        //*/
     }
+
+    // Cozy customization, handle OnShared
+    //*
+    public class OnSharedEventArgs : EventArgs
+    {
+        public string OrganizationId { get; set; }
+        public HashSet<string> CollectionIds { get; set; }
+    }
+    //*/
 }
