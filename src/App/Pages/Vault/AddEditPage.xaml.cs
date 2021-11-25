@@ -238,6 +238,17 @@ namespace Bit.App.Pages
             if (DoOnce())
             {
                 var page = new SharePage(_vm.CipherId);
+
+                // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+                //*
+                page.OnShared += async (object sender2, OnSharedEventArgs args) =>
+                {
+                    _vm.Cipher.OrganizationId = args.OrganizationId;
+                    _vm.Cipher.CollectionIds = args.CollectionIds;
+                    await _vm.UpdateOrganizationName();
+                };
+                //*/
+
                 await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
             }
         }
@@ -418,6 +429,16 @@ namespace Bit.App.Pages
         private void PasswordPrompt_Toggled(object sender, ToggledEventArgs e)
         {
             _vm.Cipher.Reprompt = e.Value ? CipherRepromptType.Password : CipherRepromptType.None;
+        }
+
+        public string GetSavedOrganizationId()
+        {
+            return _vm.Cipher.OrganizationId;
+        }
+
+        public HashSet<string> GetSavedCollectionId()
+        {
+            return _vm.Cipher.CollectionIds;
         }
     }
 }

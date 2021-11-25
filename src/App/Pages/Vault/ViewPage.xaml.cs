@@ -136,7 +136,19 @@ namespace Bit.App.Pages
                     {
                         return;
                     }
+                    // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+                    /*
                     await Navigation.PushModalAsync(new NavigationPage(new AddEditPage(_vm.CipherId)));
+                    /*/
+                    var page = new AddEditPage(_vm.CipherId);
+                    page.Disappearing += async (object sender2, EventArgs e2) =>
+                    {
+                        _vm.Cipher.OrganizationId = page.GetSavedOrganizationId();
+                        _vm.Cipher.CollectionIds = page.GetSavedCollectionId();
+                        await _vm.UpdateOrganizationName();
+                    };
+                    await Navigation.PushModalAsync(new NavigationPage(page));
+                    //*/
                 }
             }
         }
@@ -168,6 +180,17 @@ namespace Bit.App.Pages
                     return;
                 }
                 var page = new SharePage(_vm.CipherId);
+
+                // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+                //*
+                page.OnShared += async (object sender2, OnSharedEventArgs args) =>
+                {
+                    _vm.Cipher.OrganizationId = args.OrganizationId;
+                    _vm.Cipher.CollectionIds = args.CollectionIds;
+                    await _vm.UpdateOrganizationName();
+                };
+                //*/
+
                 await Navigation.PushModalAsync(new NavigationPage(page));
             }
         }
