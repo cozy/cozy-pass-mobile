@@ -1,4 +1,4 @@
-using Bit.App.Models;
+﻿using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -31,6 +31,9 @@ namespace Bit.App.Pages
             MasterPasswordEntry = _masterPassword;
             PinEntry = _pin;
 
+            // Cozy customization, disable menu
+            // logout will be not requested from the login form
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -39,6 +42,7 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_logOut);
             }
+            //*/
         }
 
         public Entry MasterPasswordEntry { get; set; }
