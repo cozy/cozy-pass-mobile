@@ -530,6 +530,26 @@
                 <Button Text="{u:I18n NewUri}" StyleClass="box-button-row"
                         Clicked="NewUri_Clicked"></Button>
             </StackLayout>
+            <!-- Cozy customization -->
+            <!-- Add Folder (Cozy concept) display and selection -->
+            <!---->
+            <StackLayout StyleClass="box" IsVisible="{Binding HasOrganization}">
+                <StackLayout StyleClass="box-row-header">
+                    <Label Text="{u:I18n Folder, Header=True}"
+                                   StyleClass="box-header, box-header-platform" />
+                </StackLayout>
+                <StackLayout StyleClass="box-row">
+                    <Label
+                                Text="{Binding OrganizationName, Mode=OneWay}"
+                                StyleClass="box-value">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Share_Clicked" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <BoxView StyleClass="box-row-separator" />
+            </StackLayout>
+            <!---->
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n Miscellaneous, Header=True}"
