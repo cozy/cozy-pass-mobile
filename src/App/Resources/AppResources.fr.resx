@@ -401,7 +401,7 @@
     <value>S'authentifier avec l'empreinte</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>S'authentifier avec le mot de passe</value>
+    <value>Déverrouiller mon Cozy</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>S'authentifier avec un code PIN</value>

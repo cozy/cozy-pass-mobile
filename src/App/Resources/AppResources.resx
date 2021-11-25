@@ -401,7 +401,7 @@
     <value>Verify Fingerprint</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Verify Password</value>
+    <value>Unlock my Cozy</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>Verify PIN</value>
