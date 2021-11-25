@@ -153,7 +153,7 @@ namespace Bit.App.Pages
 
             // Cozy customization, handle avatar url
             //*/
-            AvatarUrl = webVault + "/public/avatar";
+            ComputeAvatarUrl(webVault);
             //*/
             if (PinLock)
             {
@@ -192,6 +192,21 @@ namespace Bit.App.Pages
                 }
             }
         }
+
+        // Cozy customization, handle avatar url
+        //*/
+        private void ComputeAvatarUrl(string webVault)
+        {
+            string baseUrl = webVault;
+
+            if (baseUrl.EndsWith("/bitwarden"))
+            {
+                baseUrl = baseUrl.Replace("/bitwarden", "");
+            }
+
+            AvatarUrl = baseUrl + "/public/avatar";
+        }
+        //*/
 
         public async Task SubmitAsync()
         {

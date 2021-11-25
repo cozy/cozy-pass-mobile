@@ -438,4 +438,13 @@
   <ItemGroup>
     <Folder Include="Resources\Assets.xcassets\LaunchScreen.imageset\" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cozy_fingerprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cozy_fingerprint%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cozy_fingerprint%403x.png" />
+  </ItemGroup>
 </Project>

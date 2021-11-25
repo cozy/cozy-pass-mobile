@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Cozy customization -->
 <!-- Many edits have been made in this file to fit Cozy's design
      Notable edits:
      - Page title removed from NavigationBar
      - Page title is now in the login form, with user's avatar displayed and Cozy address
+     - Biometric login button is now placed on the NavigationBar
      - NavigationBar's actions have been removed (logout)
      - Logout button has been added in the form
 -->
@@ -34,6 +35,27 @@
                 Order="Secondary"/>
         </ResourceDictionary>
     </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="20, 0" IsVisible="{Binding BiometricButtonVisible}">
+            <Image Source="cozy_fingerprint.png"
+                   VerticalOptions="Start"
+                   Margin="0,3,0,0"
+                   WidthRequest="16"
+                   HeightRequest="16">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Biometric_Clicked" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label FontSize="Medium"
+                   TextTransform="Uppercase"
+                   Text="{u:I18n Fingerprint}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Biometric_Clicked" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.ToolbarItems>
     </ContentPage.ToolbarItems>
