@@ -1735,7 +1735,7 @@
     <comment>Confirmation alert message when soft-deleting a cipher.</comment>
   </data>
   <data name="BiometricInvalidated" xml:space="preserve">
-    <value>Le déverrouillage biométrique est désactivé en attendant la vérification du mot de passe maître.</value>
+    <value>Veuillez entrer votre mot de passe Cozy.</value>
   </data>
   <data name="BiometricInvalidatedExtension" xml:space="preserve">
     <value>Le déverrouillage biométrique pour le remplissage automatique est désactivé en attendant la vérification du mot de passe maître.</value>
