@@ -39,11 +39,19 @@ namespace Bit.App.Utilities
                 resources.MergedDictionaries.Add(new Nord());
                 UsingLightTheme = false;
             }
+            // Cozy customization, handle Cozy's themes
+            //*
             else if (name == "cozy")
             {
                 resources.MergedDictionaries.Add(new Cozy());
                 UsingLightTheme = true;
             }
+            else if (name == "cozy_inverted")
+            {
+                resources.MergedDictionaries.Add(new CozyInverted());
+                UsingLightTheme = false;
+            }
+            //*/
             else if(name == "light")
             {
                 resources.MergedDictionaries.Add(new Light());
@@ -76,6 +84,18 @@ namespace Bit.App.Utilities
                 resources.MergedDictionaries.Add(new iOS());
             }
         }
+
+        // Cozy customization, handle Inverted theme
+        //*
+        public static void SetInvertedTheme()
+        {
+            SetThemeStyle("cozy_inverted", Application.Current.Resources);
+        }
+        public static void UnsetInvertedTheme()
+        {
+            SetTheme(Device.RuntimePlatform == Device.Android, Application.Current.Resources);
+        }
+        //*/
 
         public static void SetTheme(bool android, ResourceDictionary resources)
         {
