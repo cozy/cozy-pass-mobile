@@ -15,6 +15,7 @@ namespace Bit.Core.Abstractions
         Task ConfigureEnvironmentFromCozyURLAsync(string cozyURL);
         Task<string> GetURLForApp(string appname, string fragment);
         string GetRegistrationURL(string lang);
+        string GetRemindCozyAddressUrl(string lang);
         bool CheckStateAndSecretInOnboardingCallbackURL();
         Task UpdateSynchronizedAtAsync();
     }

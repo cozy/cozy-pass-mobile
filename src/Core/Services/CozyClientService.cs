@@ -300,6 +300,11 @@ namespace Bit.Core.Services
 	        #endif
             return $"https://manager.cozycloud.cc/cozy/create?domain={domain}&lang={lang}&onboarding={escaped}";
         }
+
+        public string GetRemindCozyAddressUrl(string lang)
+        {
+            return $"https://manager.cozycloud.cc/v2/cozy/remind?lang={lang}";
+        }
     }
 }
 

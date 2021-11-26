@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Bit.App.Utilities;
 using Xamarin.Forms;
 using System.Net;
+using System.Windows.Input;
 
 namespace Bit.App.Pages
 {
@@ -232,5 +233,17 @@ namespace Bit.App.Pages
             entry.Focus();
             entry.CursorPosition = String.IsNullOrEmpty(MasterPassword) ? 0 : MasterPassword.Length;
         }
+
+        // Cozy customization, get cozy address if user forgot it
+        //*
+        public ICommand GetCozyAddressCommand => new Command<string>((url) =>
+        {
+            var lang = _i18nService.Culture.TwoLetterISOLanguageName;
+
+            var remindUrl = _cozyClientService.GetRemindCozyAddressUrl(lang: lang);
+
+            _platformUtilsService.LaunchUri(remindUrl);
+        });
+        //*/
     }
 }
