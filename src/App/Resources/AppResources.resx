@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -178,6 +178,12 @@
   <data name="CozyLoginTitle" xml:space="preserve">
     <value>Login</value>
     <comment>Login screen title</comment>
+  </data>
+  <data name="CozyHomeTitle" xml:space="preserve">
+    <value>Welcome to Cozy Pass</value>
+  </data>
+  <data name="CozyHomeHaveAccount" xml:space="preserve">
+    <value>I already have my Cozy</value>
   </data>
   <data name="CozyUrlRequiredException" xml:space="preserve">
     <value>Cozy URL is required</value>
@@ -484,7 +490,7 @@
     <value>Continue</value>
   </data>
   <data name="CreateAccount" xml:space="preserve">
-    <value>Create Account</value>
+    <value>Create my Cozy</value>
   </data>
   <data name="CreatingAccount" xml:space="preserve">
     <value>Creating account...</value>
@@ -595,7 +601,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Log in or create a new account to access your secure vault.</value>
+    <value>Create or log in your Cozy to access Cozy Pass services.</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Manage</value>
