@@ -7,7 +7,11 @@ namespace Bit.iOS.Autofill
     {
         public LockPasswordViewController(IntPtr handle)
             : base(handle)
-        { }
+        {
+            BiometricIntegrityKey = Bit.Core.Constants.iOSAutoFillBiometricIntegrityKey;
+            DismissModalAction = Cancel;
+            autofillExtension = true;
+        }
 
         public CredentialProviderViewController CPViewController { get; set; }
         public override UINavigationItem BaseNavItem => NavItem;

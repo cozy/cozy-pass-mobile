@@ -14,21 +14,23 @@ using System.Linq;
 
 namespace Bit.Droid.Autofill
 {
-    [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Bitwarden")]
+    [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Cozy Pass")]
     [IntentFilter(new string[] { "android.service.autofill.AutofillService" })]
     [MetaData("android.autofill", Resource = "@xml/autofillservice")]
     [Register("io.cozy.pass.Autofill.AutofillService")]
     public class AutofillService : Android.Service.Autofill.AutofillService
     {
         private ICipherService _cipherService;
-        private ILockService _lockService;
+        private IVaultTimeoutService _vaultTimeoutService;
         private IStorageService _storageService;
+        private IPolicyService _policyService;
+        private IUserService _userService;
 
         public async override void OnFillRequest(FillRequest request, CancellationSignal cancellationSignal,
             FillCallback callback)
         {
             var structure = request.FillContexts?.LastOrDefault()?.Structure;
-            if(structure == null)
+            if (structure == null)
             {
                 return;
             }
@@ -36,27 +38,30 @@ namespace Bit.Droid.Autofill
             var parser = new Parser(structure, ApplicationContext);
             parser.Parse();
 
-            if(_storageService == null)
+            if (_storageService == null)
             {
                 _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             }
 
             var shouldAutofill = await parser.ShouldAutofillAsync(_storageService);
-            if(!shouldAutofill)
+            if (!shouldAutofill)
             {
                 return;
             }
+            
+            var inlineAutofillEnabled = await _storageService.GetAsync<bool?>(Constants.InlineAutofillEnabledKey) ?? true;
 
-            if(_lockService == null)
+            if (_vaultTimeoutService == null)
             {
-                _lockService = ServiceContainer.Resolve<ILockService>("lockService");
+                _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
             }
 
             List<FilledItem> items = null;
-            var locked = await _lockService.IsLockedAsync();
-            if(!locked)
+            await _vaultTimeoutService.CheckVaultTimeoutAsync();
+            var locked = await _vaultTimeoutService.IsLockedAsync();
+            if (!locked)
             {
-                if(_cipherService == null)
+                if (_cipherService == null)
                 {
                     _cipherService = ServiceContainer.Resolve<ICipherService>("cipherService");
                 }
@@ -64,25 +69,33 @@ namespace Bit.Droid.Autofill
             }
 
             // build response
-            var response = AutofillHelpers.BuildFillResponse(parser, items, locked);
+            var response = AutofillHelpers.BuildFillResponse(parser, items, locked, inlineAutofillEnabled, request);
             callback.OnSuccess(response);
         }
 
         public async override void OnSaveRequest(SaveRequest request, SaveCallback callback)
         {
             var structure = request.FillContexts?.LastOrDefault()?.Structure;
-            if(structure == null)
+            if (structure == null)
             {
                 return;
             }
 
-            if(_storageService == null)
+            if (_storageService == null)
             {
                 _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             }
 
             var disableSavePrompt = await _storageService.GetAsync<bool?>(Constants.AutofillDisableSavePromptKey);
-            if(disableSavePrompt.GetValueOrDefault())
+            if (disableSavePrompt.GetValueOrDefault())
+            {
+                return;
+            }
+
+            _policyService ??= ServiceContainer.Resolve<IPolicyService>("policyService");
+
+            var personalOwnershipPolicyApplies = await _policyService.PolicyAppliesToUser(PolicyType.PersonalOwnership);
+            if (personalOwnershipPolicyApplies)
             {
                 return;
             }
@@ -91,7 +104,7 @@ namespace Bit.Droid.Autofill
             parser.Parse();
 
             var savedItem = parser.FieldCollection.GetSavedItem();
-            if(savedItem == null)
+            if (savedItem == null)
             {
                 Toast.MakeText(this, "Unable to save this form.", ToastLength.Short).Show();
                 return;
@@ -102,7 +115,7 @@ namespace Bit.Droid.Autofill
             intent.PutExtra("autofillFramework", true);
             intent.PutExtra("autofillFrameworkSave", true);
             intent.PutExtra("autofillFrameworkType", (int)savedItem.Type);
-            switch(savedItem.Type)
+            switch (savedItem.Type)
             {
                 case CipherType.Login:
                     intent.PutExtra("autofillFrameworkName", parser.Uri

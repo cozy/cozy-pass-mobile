@@ -4,8 +4,18 @@ using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using Bit.Core;
+using Bit.Core.Enums;
+// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
+#if !FDROID
+using Microsoft.AppCenter.Crashes;
+#endif
+//*/
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -17,12 +27,15 @@ namespace Bit.App.Pages
         private readonly II18nService _i18nService;
         private readonly ICryptoService _cryptoService;
         private readonly IExportService _exportService;
+        private readonly IPolicyService _policyService;
 
         private int _fileFormatSelectedIndex;
+        private string _exportWarningMessage;
         private bool _showPassword;
         private string _masterPassword;
         private byte[] _exportResult;
         private string _defaultFilename;
+        private bool _initialized = false;
 
         public ExportVaultPageViewModel()
         {
@@ -31,6 +44,7 @@ namespace Bit.App.Pages
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
             _cryptoService = ServiceContainer.Resolve<ICryptoService>("cryptoService");
             _exportService = ServiceContainer.Resolve<IExportService>("exportService");
+            _policyService = ServiceContainer.Resolve<IPolicyService>("policyService");
 
             PageTitle = AppResources.ExportVault;
             TogglePasswordCommand = new Command(TogglePassword);
@@ -39,21 +53,42 @@ namespace Bit.App.Pages
             FileFormatOptions = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("json", ".json"),
-                new KeyValuePair<string, string>("csv", ".csv")
+                new KeyValuePair<string, string>("csv", ".csv"),
+                new KeyValuePair<string, string>("encrypted_json", ".json (Encrypted)")
             };
         }
 
         public async Task InitAsync()
         {
+            _initialized = true;
             FileFormatSelectedIndex = FileFormatOptions.FindIndex(k => k.Key == "json");
+            DisablePrivateVaultPolicyEnabled = await _policyService.PolicyAppliesToUser(PolicyType.DisablePersonalVaultExport);
+
+            UpdateWarning();
         }
 
         public List<KeyValuePair<string, string>> FileFormatOptions { get; set; }
+        private bool _disabledPrivateVaultPolicyEnabled = false;
+
+        public bool DisablePrivateVaultPolicyEnabled
+        {
+            get => _disabledPrivateVaultPolicyEnabled;
+            set
+            {
+                SetProperty(ref _disabledPrivateVaultPolicyEnabled, value);
+            }
+        }
 
         public int FileFormatSelectedIndex
         {
             get => _fileFormatSelectedIndex;
             set { SetProperty(ref _fileFormatSelectedIndex, value); }
+        }
+
+        public string ExportWarningMessage
+        {
+            get => _exportWarningMessage;
+            set { SetProperty(ref _exportWarningMessage, value); }
         }
 
         public bool ShowPassword
@@ -83,46 +118,61 @@ namespace Bit.App.Pages
 
         public async Task ExportVaultAsync()
         {
-            if(string.IsNullOrEmpty(_masterPassword))
+            if (string.IsNullOrEmpty(_masterPassword))
             {
                 await _platformUtilsService.ShowDialogAsync(_i18nService.T("InvalidMasterPassword"));
                 return;
             }
 
-            var keyHash = await _cryptoService.HashPasswordAsync(_masterPassword, null);
+            var passwordValid = await _cryptoService.CompareAndUpdateKeyHashAsync(_masterPassword, null);
             MasterPassword = string.Empty;
-            
-            var storedKeyHash = await _cryptoService.GetKeyHashAsync();
-            if(storedKeyHash != null && keyHash != null && storedKeyHash == keyHash)
-            {
-                try
-                {
-                    var data = _exportService.GetExport(FileFormatOptions[FileFormatSelectedIndex].Key);
-                    var fileFormat = FileFormatOptions[FileFormatSelectedIndex].Key;
-                    _defaultFilename = _exportService.GetFileName(null, fileFormat);
-                    _exportResult = Encoding.ASCII.GetBytes(data.Result);
-
-                    if(!_deviceActionService.SaveFile(_exportResult, null, _defaultFilename, null))
-                    {
-                        ClearResult();
-                        await _platformUtilsService.ShowDialogAsync(_i18nService.T("ExportVaultFailure"));
-                    }
-                }
-                catch(Exception ex)
-                {
-                    ClearResult();
-                    System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", ex.GetType(), ex.StackTrace);
-                }
-            }
-            else
+            if (!passwordValid)
             {
                 await _platformUtilsService.ShowDialogAsync(_i18nService.T("InvalidMasterPassword"));
+                return;
+            }
+
+            bool userConfirmedExport = await _platformUtilsService.ShowDialogAsync(ExportWarningMessage,
+                _i18nService.T("ExportVaultConfirmationTitle"), _i18nService.T("ExportVault"), _i18nService.T("Cancel"));
+
+            if (!userConfirmedExport)
+            {
+                return;
+            }
+
+            try
+            {
+                var data = await _exportService.GetExport(FileFormatOptions[FileFormatSelectedIndex].Key);
+                var fileFormat = FileFormatOptions[FileFormatSelectedIndex].Key;
+                fileFormat = fileFormat == "encrypted_json" ? "json" : fileFormat;
+
+                _defaultFilename = _exportService.GetFileName(null, fileFormat);
+                _exportResult = Encoding.UTF8.GetBytes(data);
+
+                if (!_deviceActionService.SaveFile(_exportResult, null, _defaultFilename, null))
+                {
+                    ClearResult();
+                    await _platformUtilsService.ShowDialogAsync(_i18nService.T("ExportVaultFailure"));
+                }
+            }
+            catch (Exception ex)
+            {
+                ClearResult();
+                await _platformUtilsService.ShowDialogAsync(_i18nService.T("ExportVaultFailure"));
+                System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", ex.GetType(), ex.StackTrace);
+// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
+#if !FDROID
+                Crashes.TrackError(ex);
+#endif
+//*/
             }
         }
 
         public async void SaveFileSelected(string contentUri, string filename)
         {
-            if(_deviceActionService.SaveFile(_exportResult, null, filename ?? _defaultFilename, contentUri))
+            if (_deviceActionService.SaveFile(_exportResult, null, filename ?? _defaultFilename, contentUri))
             {
                 ClearResult();
                 _platformUtilsService.ShowToast("success", null, _i18nService.T("ExportVaultSuccess"));
@@ -131,6 +181,26 @@ namespace Bit.App.Pages
 
             ClearResult();
             await _platformUtilsService.ShowDialogAsync(_i18nService.T("ExportVaultFailure"));
+        }
+
+        public void UpdateWarning()
+        {
+            if (!_initialized)
+            {
+                return;
+            }
+
+            switch (FileFormatOptions[FileFormatSelectedIndex].Key)
+            {
+                case "encrypted_json":
+                    ExportWarningMessage = _i18nService.T("EncExportKeyWarning") +
+                        "\n\n" +
+                        _i18nService.T("EncExportAccountWarning");
+                    break;
+                default:
+                    ExportWarningMessage = _i18nService.T("ExportVaultWarning");
+                    break;
+            }
         }
 
         private void ClearResult()

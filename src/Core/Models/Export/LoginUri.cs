@@ -13,12 +13,18 @@ namespace Bit.Core.Models.Export
             Uri = obj.Uri;
         }
 
+        public LoginUri(Domain.LoginUri obj)
+        {
+            Match = obj.Match;
+            Uri = obj.Uri?.EncryptedString;
+        }
+
         public UriMatchType? Match { get; set; }
         public string Uri { get; set; }
 
         public static LoginUriView ToView(LoginUri req, LoginUriView view = null)
         {
-            if(view == null)
+            if (view == null)
             {
                 view = new LoginUriView();
             }

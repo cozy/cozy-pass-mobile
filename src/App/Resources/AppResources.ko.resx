@@ -313,6 +313,9 @@
     <value>저장</value>
     <comment>Button text for a save operation (verb).</comment>
   </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
   <data name="Saving" xml:space="preserve">
     <value>저장 중...</value>
     <comment>Message shown when interacting with the server</comment>
@@ -521,23 +524,29 @@
   <data name="Lock" xml:space="preserve">
     <value>잠금</value>
   </data>
-  <data name="LockOption15Minutes" xml:space="preserve">
+  <data name="FifteenMinutes" xml:space="preserve">
     <value>15분</value>
   </data>
-  <data name="LockOption1Hour" xml:space="preserve">
+  <data name="OneHour" xml:space="preserve">
     <value>1시간</value>
   </data>
-  <data name="LockOption1Minute" xml:space="preserve">
+  <data name="OneMinute" xml:space="preserve">
     <value>1분</value>
   </data>
-  <data name="LockOption4Hours" xml:space="preserve">
+  <data name="FourHours" xml:space="preserve">
     <value>4시간</value>
   </data>
-  <data name="LockOptionImmediately" xml:space="preserve">
+  <data name="Immediately" xml:space="preserve">
     <value>즉시</value>
   </data>
-  <data name="LockOptions" xml:space="preserve">
-    <value>잠금 옵션</value>
+  <data name="VaultTimeout" xml:space="preserve">
+    <value>보관함 시간 제한</value>
+  </data>
+  <data name="VaultTimeoutAction" xml:space="preserve">
+    <value>보관함 시간 제한 초과시 동작</value>
+  </data>
+  <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
+    <value>로그아웃하면 보관함에 대한 모든 접근이 제거되며 시간 제한을 초과하면 온라인 인증을 요구합니다. 정말로 이 설정을 사용하시겠습니까?</value>
   </data>
   <data name="LoggingIn" xml:space="preserve">
     <value>로그인 중...</value>
@@ -692,7 +701,7 @@
     <value>{0}을 사용하여 잠금 해제</value>
   </data>
   <data name="UnlockWithPIN" xml:space="preserve">
-    <value>PIN 코드로 잠금 해제</value>
+    <value>PIN 코드를 사용하여 잠금 해제</value>
   </data>
   <data name="Validating" xml:space="preserve">
     <value>유효성 검증 중</value>
@@ -731,8 +740,8 @@
     <value>보관함에 {0}에 대한 항목이 없습니다.</value>
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
-  <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Cozy Pass 자동 완성 알림을 확인한 경우, 알림을 눌러 자동 완성 서비스를 열 수 있습니다.</value>
+  <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
+    <value>입력 필드를 선택할 때 Cozy Pass 자동 입력 오버레이가 보인다면 탭해서 자동 입력 서비스를 실행할 수 있습니다.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>보관함에 있는 항목으로 자동 완성을 사용하려면 이 알림을 누르세요.</value>
@@ -756,7 +765,7 @@
     <value>상태</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Cozy Pass Auto-fill Service by navigating to the "Settings" screen.</value>
+    <value>보관함에 새 로그인을 추가하는 가장 쉬운 방법은 Cozy Pass 자동 완성 서비스를 사용하는 것입니다. "설정" 화면으로 이동하여 Cozy Pass 자동 완성 서비스에 대해 더 자세히 알아보세요.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>자동 완성</value>
@@ -779,26 +788,8 @@
   <data name="BitwardenAutofillServiceSearch" xml:space="preserve">
     <value>"{0}"에 대한 자동 완성 항목을 보고 계십니다.</value>
   </data>
-  <data name="ShareVault" xml:space="preserve">
-    <value>내 보관함 공유</value>
-  </data>
-  <data name="AutofillPasswordField" xml:space="preserve">
-    <value>비밀번호 필드 선택 시 스캔</value>
-  </data>
-  <data name="AutofillPasswordFieldDescription" xml:space="preserve">
-    <value>사용자가 비밀번호 필드를 선택했을 때만 화면상의 필드를 스캔하고 자동 완성 알림을 띄웁니다. 이 설정을 사용하면 배터리 소모를 줄일 수 있습니다.</value>
-  </data>
-  <data name="AutofillPersistNotification" xml:space="preserve">
-    <value>지속 알림</value>
-  </data>
-  <data name="AutofillPersistNotificationDescription" xml:space="preserve">
-    <value>항상 자동 완성 알림을 띄웁니다. 그리고 자동 완성을 시도할 때만 필드를 스캔합니다. 이 설정을 사용하면 배터리 소모를 줄일 수 있습니다.</value>
-  </data>
-  <data name="AutofillAlways" xml:space="preserve">
-    <value>항상 스캔</value>
-  </data>
-  <data name="AutofillAlwaysDescription" xml:space="preserve">
-    <value>항상 화면상의 필드를 스캔합니다. 그리고 비밀번호 필드를 찾았을 때만 자동 완성 알림을 띄웁니다. 이 설정은 기본값입니다.</value>
+  <data name="LearnOrg" xml:space="preserve">
+    <value>Learn About Organizations</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>"{0}" 앱을 열 수 없습니다.</value>
@@ -1152,6 +1143,9 @@
   <data name="NoItemsFolder" xml:space="preserve">
     <value>이 폴더에 항목이 없습니다.</value>
   </data>
+  <data name="NoItemsTrash" xml:space="preserve">
+    <value>휴지통에 아무 항목도 없습니다.</value>
+  </data>
   <data name="AutofillAccessibilityService" xml:space="preserve">
     <value>자동 완성 접근성 서비스</value>
   </data>
@@ -1296,7 +1290,7 @@
     <value>3. "암호 자동 완성" 탭하기</value>
   </data>
   <data name="AutofillTurnOn4" xml:space="preserve">
-    <value>4. 자동 완성을 켜세요.</value>
+    <value>4. 자동 완성을 켜기</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
     <value>5. "Cozy Pass"을 선택하세요.</value>
@@ -1305,7 +1299,7 @@
     <value>비밀번호 자동 완성</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
+    <value>보관함에 새 로그인을 추가하는 가장 쉬운 방법은 Cozy Pass 비밀번호 자동 완성 확장 프로그램을 사용하는 것입니다. "설정" 화면으로 이동하여 Cozy Pass 비밀번호 자동 완성 확장 프로그램에 대해 더 자세히 알아보세요.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>잘못된 이메일 주소입니다.</value>
@@ -1330,7 +1324,7 @@
     <comment>Plural form of a URI</comment>
   </data>
   <data name="CheckingPassword" xml:space="preserve">
-    <value>암호 확인중...</value>
+    <value>비밀번호 확인 중...</value>
     <comment>A loading message when doing an exposed password check.</comment>
   </data>
   <data name="CheckPassword" xml:space="preserve">
@@ -1367,7 +1361,7 @@
     <value>폴더 검색</value>
   </data>
   <data name="SearchType" xml:space="preserve">
-    <value>검색 유형</value>
+    <value>유형 검색</value>
   </data>
   <data name="Type" xml:space="preserve">
     <value>유형</value>
@@ -1390,11 +1384,15 @@
   <data name="NoCollectionsToList" xml:space="preserve">
     <value>컬렉션이 없습니다.</value>
   </data>
+  <data name="MovedItemToOrg" xml:space="preserve">
+    <value>{0} moved to {1}.</value>
+    <comment>ex: Item moved to Organization.</comment>
+  </data>
   <data name="ItemShared" xml:space="preserve">
     <value>항목이 공유되었습니다.</value>
   </data>
   <data name="SelectOneCollection" xml:space="preserve">
-    <value>You must select at least one collection.</value>
+    <value>반드시 하나 이상의 컬렉션을 선택해야 합니다.</value>
   </data>
   <data name="Share" xml:space="preserve">
     <value>공유</value>
@@ -1402,11 +1400,14 @@
   <data name="ShareItem" xml:space="preserve">
     <value>항목 공유</value>
   </data>
+  <data name="MoveToOrganization" xml:space="preserve">
+    <value>Move to Organization</value>
+  </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>조직이 없습니다.</value>
   </data>
-  <data name="ShareDesc" xml:space="preserve">
-    <value>이 항목을 공유할 조직을 선택하세요. 항목을 공유하면 소유권이 조직으로 이전됩니다. 일단 항목을 공유하면, 항목의 직접적인 소유자가 아니게 됩니다.</value>
+  <data name="MoveToOrgDesc" xml:space="preserve">
+    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>단어 수</value>
@@ -1429,15 +1430,15 @@
     <value>폴더가 없습니다.</value>
   </data>
   <data name="FingerprintPhrase" xml:space="preserve">
-    <value>Fingerprint Phrase</value>
+    <value>지문 구절</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="YourAccountsFingerprint" xml:space="preserve">
-    <value>Your account's fingerprint phrase</value>
+    <value>계정 지문 구절</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
-  <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+  <data name="LearnOrgConfirmation" xml:space="preserve">
+    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>보관함 내보내기</value>
@@ -1451,24 +1452,21 @@
   <data name="Unlock" xml:space="preserve">
     <value>잠금 해제</value>
   </data>
-  <data name="LockOption30Minutes" xml:space="preserve">
+  <data name="ThirtyMinutes" xml:space="preserve">
     <value>30분</value>
   </data>
-  <data name="LockOption5Minutes" xml:space="preserve">
-    <value>5분</value>
-  </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
+    <value>Cozy Pass 잠금해제에 사용될 PIN 코드를 설정합니다. 이 애플리케이션에서 완전히 로그아웃할 경우 PIN 설정이 초기화됩니다.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
-    <value>Logged in as {0} on {1}.</value>
+    <value>{1}에 {0}으로 로그인되었습니다.</value>
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your password to continue.</value>
+    <value>보관함이 잠겨 있습니다. 마스터 비밀번호를 입력하여 계속하세요.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
-    <value>Your vault is locked. Verify your PIN code to continue.</value>
+    <value>보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>어두운 테마</value>
@@ -1480,9 +1478,6 @@
   </data>
   <data name="FiveMinutes" xml:space="preserve">
     <value>5분</value>
-  </data>
-  <data name="OneMinute" xml:space="preserve">
-    <value>1분</value>
   </data>
   <data name="TenSeconds" xml:space="preserve">
     <value>10초</value>
@@ -1509,7 +1504,7 @@
     <comment>Default URI match detection for auto-fill.</comment>
   </data>
   <data name="DefaultUriMatchDetectionDescription" xml:space="preserve">
-    <value>Choose the default way that URI match detection is handled for logins when performing actions such as auto-fill.</value>
+    <value>자동 완성 등의 작업에서 각 로그인 항목의 URI 일치 감지를 처리할 기본 방법을 선택하세요.</value>
   </data>
   <data name="Theme" xml:space="preserve">
     <value>테마</value>
@@ -1518,12 +1513,8 @@
   <data name="ThemeDescription" xml:space="preserve">
     <value>애플리케이션의 색상 테마를 변경합니다.</value>
   </data>
-  <data name="RestartIsRequired" xml:space="preserve">
-    <value>Restart is required.</value>
-    <comment>Referring to restarting the application.</comment>
-  </data>
-  <data name="Restarting" xml:space="preserve">
-    <value>Restarting...</value>
+  <data name="ThemeDefault" xml:space="preserve">
+    <value>Default (System)</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>메모 복사</value>
@@ -1532,62 +1523,540 @@
     <value>끝내기</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Are you sure you want to exit Cozy Pass?</value>
+    <value>정말 Cozy Pass을 종료하시겠습니까?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your password when the application is restarted?</value>
+    <value>애플리케이션을 다시 시작했을 때 마스터 비밀번호로 잠금 해제가 필요하도록 하시겠습니까?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>검은 테마</value>
     <comment>The color black</comment>
   </data>
   <data name="BlacklistedUris" xml:space="preserve">
-    <value>Blacklisted URIs</value>
+    <value>URI 블랙리스트</value>
   </data>
   <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>URIs that are blacklisted will not offer auto-fill. The list of apps should be comma separated. Ex: "https://twitter.com, androidapp://com.twitter.android".</value>
+    <value>블랙리스트에 있는 URI는 자동 완성에 나타나지 않습니다. 각 항목은 쉼표로 구분합니다. 예) "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
   <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Disable Save Prompt</value>
+    <value>저장 대화 상자 사용 안 함</value>
   </data>
   <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>The "Save Prompt" automatically prompts you to save new items to your vault whenever you enter them for the first time.</value>
+    <value>저장 대화 상자를 사용하면 항목을 처음 입력할 때마다 보관함에 그 항목을 추가할 것인지 물어봅니다.</value>
   </data>
-  <data name="LockOptionOnRestart" xml:space="preserve">
-    <value>On App Restart</value>
+  <data name="OnRestart" xml:space="preserve">
+    <value>앱 재시작 시</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Cozy Pass from the "Settings" screen.</value>
+    <value>자동 입력은 다른 웹사이트나 앱에서 Cozy Pass 보관함에 안전하게 액세스하기 쉽게 만들어줍니다. Cozy Pass의 자동 입력 서비스를 활성화하지 않은 것으로 보입니다. "설정" 화면에서 Cozy Pass의 자동 입력을 활성화해주세요.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
-    <value>Your theme changes will apply when the app is restarted.</value>
+    <value>앱을 다시 시작하면 변경한 테마가 적용됩니다.</value>
   </data>
   <data name="Capitalize" xml:space="preserve">
-    <value>Capitalize</value>
+    <value>첫 글자를 대문자로</value>
     <comment>ex. Uppercase the first character of a word.</comment>
   </data>
   <data name="IncludeNumber" xml:space="preserve">
-    <value>Include Number</value>
+    <value>숫자 포함</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Download</value>
+    <value>다운로드</value>
   </data>
   <data name="Shared" xml:space="preserve">
-    <value>Shared</value>
+    <value>공유됨</value>
   </data>
   <data name="ToggleVisibility" xml:space="preserve">
-    <value>Toggle Visiblity</value>
+    <value>표시 전환</value>
   </data>
   <data name="LoginExpired" xml:space="preserve">
-    <value>Your login session has expired.</value>
+    <value>로그인 세션이 만료되었습니다.</value>
   </data>
   <data name="BiometricsDirection" xml:space="preserve">
-    <value>Use biometrics to verify.</value>
+    <value>인증하기 위해 생체 인식을 사용하세요.</value>
   </data>
   <data name="Biometrics" xml:space="preserve">
-    <value>Biometrics</value>
+    <value>생체 인식</value>
   </data>
   <data name="UseBiometricsToUnlock" xml:space="preserve">
-    <value>Use Biometrics To Unlock</value>
+    <value>잠금 해제에 생체 인식 사용</value>
+  </data>
+  <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
+    <value>Bitwarden에 권한이 필요합니다 - Bitwarden 설정의 "자동 입력 접근성 서비스"를 확인해 주세요.</value>
+  </data>
+  <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
+    <value>Bitwarden의 Android 앱 설정 화면에 있는 (고급 아래에 위치) "다른 앱 위에 표시"에 들어간 뒤 토글을 눌러 오버레이 지원을 활성화해 주세요.</value>
+  </data>
+  <data name="OverlayPermission" xml:space="preserve">
+    <value>권한</value>
+  </data>
+  <data name="BitwardenAutofillServiceOpenOverlayPermissionSettings" xml:space="preserve">
+    <value>다른 앱 위에 그리기 권한 설정 열기</value>
+  </data>
+  <data name="BitwardenAutofillServiceStep3" xml:space="preserve">
+    <value>Bitwarden의 Android 앱 설정 화면에 있는 (고급 아래에 위치) "다른 앱 위에 표시"에 들어간 뒤 토글을 눌러 오버레이를 허용해 주세요.</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>거부됨</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>허용됨</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>파일 형식</value>
+  </data>
+  <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
+    <value>보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요.</value>
+  </data>
+  <data name="ExportVaultWarning" xml:space="preserve">
+    <value>내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오.</value>
+  </data>
+  <data name="EncExportKeyWarning" xml:space="preserve">
+    <value>이 내보내기는 계정의 암호화 키를 사용하여 데이터를 암호화합니다. 추후 계정의 암호화 키를 교체할 경우 다시 내보내기를 진행해야 합니다. 그러지 않을 경우 이 내보내기 파일을 해독할 수 없게 됩니다.</value>
+  </data>
+  <data name="EncExportAccountWarning" xml:space="preserve">
+    <value>모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다.</value>
+  </data>
+  <data name="ExportVaultConfirmationTitle" xml:space="preserve">
+    <value>보관함 내보내기 확인</value>
+    <comment>Title for the alert to confirm vault exports.</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="ExportVaultFailure" xml:space="preserve">
+    <value>보관함을 내보내던 도중 문제가 생겼습니다. 계속 문제가 생긴다면 웹 보관함에서 내보내셔야 합니다.</value>
+  </data>
+  <data name="ExportVaultSuccess" xml:space="preserve">
+    <value>보관함을 성공적으로 내보냈습니다.</value>
+  </data>
+  <data name="Clone" xml:space="preserve">
+    <value>복제</value>
+    <comment>Clone an entity (verb).</comment>
+  </data>
+  <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
+    <value>하나 이상의 단체 정책이 생성기 규칙에 영항을 미치고 있습니다.</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>열기</value>
+    <comment>Button text for an open operation (verb).</comment>
+  </data>
+  <data name="UnableToSaveAttachment" xml:space="preserve">
+    <value>첨부 파일을 저장하던 도중 문제가 있었습니다. 문제가  계속 발생한다면 웹 보관함에서 저장할 수 있습니다.</value>
+  </data>
+  <data name="SaveAttachmentSuccess" xml:space="preserve">
+    <value>첨부 파일을 성공적으로 저장했습니다.</value>
+  </data>
+  <data name="AutofillTileAccessibilityRequired" xml:space="preserve">
+    <value>자동 채우기 타일을 사용하려면 Bitwarden 설정에서 "자동 채우기 접근성 서비스"를 활성화해주세요.</value>
+  </data>
+  <data name="AutofillTileUriNotFound" xml:space="preserve">
+    <value>비밀번호 필드가 탐지되지 않음</value>
+  </data>
+  <data name="SoftDeleting" xml:space="preserve">
+    <value>휴지통으로 보내는 중...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemSoftDeleted" xml:space="preserve">
+    <value>항목이 휴지통으로 이동되었습니다.</value>
+    <comment>Confirmation message after successfully soft-deleting a login</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>복원</value>
+    <comment>Restores an entity (verb).</comment>
+  </data>
+  <data name="Restoring" xml:space="preserve">
+    <value>복원 중...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemRestored" xml:space="preserve">
+    <value>항목이 복원되었습니다.</value>
+    <comment>Confirmation message after successfully restoring a soft-deleted item</comment>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>휴지통</value>
+    <comment>(noun) Location of deleted items which have not yet been permanently deleted</comment>
+  </data>
+  <data name="SearchTrash" xml:space="preserve">
+    <value>휴지통 검색</value>
+    <comment>(action prompt) Label for the search text field when viewing the trash folder</comment>
+  </data>
+  <data name="DoYouReallyWantToPermanentlyDeleteCipher" xml:space="preserve">
+    <value>정말로 영구적으로 삭제하시겠습니까? 되돌릴 수 없습니다.</value>
+    <comment>Confirmation alert message when permanently deleteing a cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToRestoreCipher" xml:space="preserve">
+    <value>정말 이 항목을 복원하시겠습니까?</value>
+    <comment>Confirmation alert message when restoring a soft-deleted cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToSoftDeleteCipher" xml:space="preserve">
+    <value>정말로 휴지통으로 이동시킬까요?</value>
+    <comment>Confirmation alert message when soft-deleting a cipher.</comment>
+  </data>
+  <data name="BiometricInvalidated" xml:space="preserve">
+    <value>생체인증 변경이 확인되었습니다. 마스터 비밀번호로 로그인해서 다시 활성화 해주세요.</value>
+  </data>
+  <data name="BiometricInvalidatedExtension" xml:space="preserve">
+    <value>마스터 비밀번호 인증을 하기 전에는 생체 인식을 사용한 자동 채우기가 비활성화됩니다.</value>
+  </data>
+  <data name="EnableSyncOnRefresh" xml:space="preserve">
+    <value>새로고침할 때 동기화 사용</value>
+  </data>
+  <data name="EnableSyncOnRefreshDescription" xml:space="preserve">
+    <value>아래로 끌어내리면 보관함을 동기화합니다.</value>
+  </data>
+  <data name="LogInSso" xml:space="preserve">
+    <value>엔터프라이즈 통합 인증 (SSO)</value>
+  </data>
+  <data name="LogInSsoSummary" xml:space="preserve">
+    <value>조직의 통합 인증(SSO) 포탈을 통해서 빠르게 로그인하세요. 시작하려면 조직 식별자를 입력해주세요.</value>
+  </data>
+  <data name="OrgIdentifier" xml:space="preserve">
+    <value>조직 식별자</value>
+  </data>
+  <data name="LoginSsoError" xml:space="preserve">
+    <value>현재 SSO로 로그인할 수 없습니다</value>
+  </data>
+  <data name="SetMasterPassword" xml:space="preserve">
+    <value>마스터 비밀번호 설정</value>
+  </data>
+  <data name="SetMasterPasswordSummary" xml:space="preserve">
+    <value>SSO 로그인을 하기 위해서 보관함에 접근하고 보호할 수 있도록 마스터 비밀번호를 설정해주세요.</value>
+  </data>
+  <data name="MasterPasswordPolicyInEffect" xml:space="preserve">
+    <value>하나 이상의 단체 정책이 마스터 비밀번호가 다음 사항을 따르도록 요구합니다:</value>
+  </data>
+  <data name="PolicyInEffectMinComplexity" xml:space="preserve">
+    <value>최소 복잡도 점수 {0}</value>
+  </data>
+  <data name="PolicyInEffectMinLength" xml:space="preserve">
+    <value>최소 길이 {0}</value>
+  </data>
+  <data name="PolicyInEffectUppercase" xml:space="preserve">
+    <value>하나 이상의 대문자 포함</value>
+  </data>
+  <data name="PolicyInEffectLowercase" xml:space="preserve">
+    <value>하나 이상의 소문자 포함</value>
+  </data>
+  <data name="PolicyInEffectNumbers" xml:space="preserve">
+    <value>하나 이상의 숫자 포함</value>
+  </data>
+  <data name="PolicyInEffectSpecial" xml:space="preserve">
+    <value>하나 이상의 다음 특수문자 포함: {0}</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationTitle" xml:space="preserve">
+    <value>유효하지 않은 비밀번호</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationMessage" xml:space="preserve">
+    <value>비밀번호가 조직 요구 사항을 충족하지 않습니다. 정책 정보를 확인해보고 다시 시도해보세요.</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>불러오는 중</value>
+  </data>
+  <data name="AcceptPolicies" xml:space="preserve">
+    <value>이 스위치를 활성화하면 다음에 동의하는 것으로 간주됩니다:</value>
+  </data>
+  <data name="AcceptPoliciesError" xml:space="preserve">
+    <value>서비스 약관 및 개인 정보 보호 정책을 확인하지 않았습니다.</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>서비스 약관</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>개인 정보 보호 정책</value>
+  </data>
+  <data name="AccessibilityDrawOverPermissionAlert" xml:space="preserve">
+    <value>Bitwarden에 권한이 필요합니다 - Bitwarden 설정에서 "자동 입력 접근성 서비스"를 활성화해 주세요.</value>
+  </data>
+  <data name="AutofillServices" xml:space="preserve">
+    <value>자동 완성 서비스</value>
+  </data>
+  <data name="InlineAutofill" xml:space="preserve">
+    <value>인라인 자동 완성 사용하기</value>
+  </data>
+  <data name="InlineAutofillDescription" xml:space="preserve">
+    <value>사용하고 있는 IME (키보드)가 인라인 자동 완성을 지원하고 있다면 사용해보세요. 지원되지 않는 설정 (또는 비활성화되어 있는 경우) 기본 자동 완성 오버레이가 사용됩니다.</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>접근성 서비스 사용</value>
+  </data>
+  <data name="AccessibilityDescription" xml:space="preserve">
+    <value>앱과 웹에 로그인하기 위해 Bitwarden Accessibility Service를 사용해주세요. 활성화되면 로그인 필드 선택 시에 팝업을 표시합니다.</value>
+  </data>
+  <data name="AccessibilityDescription2" xml:space="preserve">
+    <value>앱과 웹에 로그인하기 위해 Bitwarden Accessibility Service를 사용해주세요. (다른 앱 위에 표시 활성화 필요)</value>
+  </data>
+  <data name="AccessibilityDescription3" xml:space="preserve">
+    <value>Autofill Quick-Action Tile 및 (활성화 시) 다른 앱 위에 표시를 사용한 팝업을 위해 Bitwarden Accessibility Service를 사용해주세요.</value>
+  </data>
+  <data name="AccessibilityDescription4" xml:space="preserve">
+    <value>Autofill Quick-Action Tile을 사용하기 위해 필요합니다. 또는 (활성화 시) 다른 앱 위에 표시를 사용해서 자동 채우기 서비스를 구현합니다.</value>
+  </data>
+  <data name="DrawOver" xml:space="preserve">
+    <value>다른 앱 위에 그리기 사용</value>
+  </data>
+  <data name="DrawOverDescription" xml:space="preserve">
+    <value>활성화되면 Bitwarden Accessibility Service가 로그인 부분에 팝업을 표시합니다.</value>
+  </data>
+  <data name="DrawOverDescription2" xml:space="preserve">
+    <value>활성화되면 Bitwarden Accessibility Service가 로그인을 자동으로 채우기 위해 로그인 부분에 팝업을 표시합니다.</value>
+  </data>
+  <data name="DrawOverDescription3" xml:space="preserve">
+    <value>활성화되면 접근성이 Android Autofill Framework를 지원하지 않는 구형 앱들을 위해 자동 채움 서비스 팝업을 표시합니다.</value>
+  </data>
+  <data name="PersonalOwnershipSubmitError" xml:space="preserve">
+    <value>엔터프라이즈 정책으로 인해 개인 보관함에 항목을 저장할 수 없습니다. 조직에서 소유권 설정을 변경한 다음, 사용 가능한 컬렉션 중에서 선택해주세요.</value>
+  </data>
+  <data name="PersonalOwnershipPolicyInEffect" xml:space="preserve">
+    <value>조직의 정책이 소유권 설정에 영향을 미치고 있습니다.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AllSends" xml:space="preserve">
+    <value>모든 Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Sends" xml:space="preserve">
+    <value>Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>이 Send의 이름</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>텍스트</value>
+  </data>
+  <data name="TypeTextInfo" xml:space="preserve">
+    <value>전송하려는 텍스트</value>
+  </data>
+  <data name="HideTextByDefault" xml:space="preserve">
+    <value>Send에 접근할 때 기본적으로 텍스트를 숨김</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeFile" xml:space="preserve">
+    <value>파일</value>
+  </data>
+  <data name="TypeFileInfo" xml:space="preserve">
+    <value>전송하려는 파일</value>
+  </data>
+  <data name="DeletionDate" xml:space="preserve">
+    <value>삭제 날짜</value>
+  </data>
+  <data name="DeletionTime" xml:space="preserve">
+    <value>삭제 시간</value>
+  </data>
+  <data name="DeletionDateInfo" xml:space="preserve">
+    <value>이 Send가 정해진 일시에 영구적으로 삭제됩니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PendingDelete" xml:space="preserve">
+    <value>삭제 대기 중</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>만료 날짜</value>
+  </data>
+  <data name="ExpirationTime" xml:space="preserve">
+    <value>만료 시간</value>
+  </data>
+  <data name="ExpirationDateInfo" xml:space="preserve">
+    <value>설정할 경우, 이 Send에 대한 접근 권한이 정해진 일시에 만료됩니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>만료됨</value>
+  </data>
+  <data name="MaximumAccessCount" xml:space="preserve">
+    <value>최대 접근 횟수</value>
+  </data>
+  <data name="MaximumAccessCountInfo" xml:space="preserve">
+    <value>설정할 경우, 최대 접근 횟수에 도달할 때 이 Send에 접근할 수 없게 됩니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="MaximumAccessCountReached" xml:space="preserve">
+    <value>최대 접근 횟수 도달</value>
+  </data>
+  <data name="CurrentAccessCount" xml:space="preserve">
+    <value>현재 접근 횟수</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>새 비밀번호</value>
+  </data>
+  <data name="PasswordInfo" xml:space="preserve">
+    <value>이 Send에 접근하기 위해 암호를 입력하도록 선택적으로 요구합니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="RemovePassword" xml:space="preserve">
+    <value>비밀번호 제거</value>
+  </data>
+  <data name="AreYouSureRemoveSendPassword" xml:space="preserve">
+    <value>비밀번호를 제거하시겠습니까?</value>
+  </data>
+  <data name="RemovingSendPassword" xml:space="preserve">
+    <value>비밀번호 제거 중</value>
+  </data>
+  <data name="SendPasswordRemoved" xml:space="preserve">
+    <value>비밀번호가 제거되었습니다.</value>
+  </data>
+  <data name="NotesInfo" xml:space="preserve">
+    <value>이 Send에 대한 비공개 메모</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="DisableSend" xml:space="preserve">
+    <value>이 Send를 비활성화하여 아무도 접근할 수 없게 합니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NoSends" xml:space="preserve">
+    <value>계정에 Send가 없습니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddASend" xml:space="preserve">
+    <value>Send 추가</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="CopyLink" xml:space="preserve">
+    <value>링크 복사</value>
+  </data>
+  <data name="ShareLink" xml:space="preserve">
+    <value>링크 공유</value>
+  </data>
+  <data name="SendLink" xml:space="preserve">
+    <value>Send 링크</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SearchSends" xml:space="preserve">
+    <value>Send 검색</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="EditSend" xml:space="preserve">
+    <value>Send 편집</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddSend" xml:space="preserve">
+    <value>Send 추가</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AreYouSureDeleteSend" xml:space="preserve">
+    <value>정말 이 Send를 삭제하시겠습니까?</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDeleted" xml:space="preserve">
+    <value>Send가 삭제되었습니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendUpdated" xml:space="preserve">
+    <value>Send 업데이트됨.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NewSendCreated" xml:space="preserve">
+    <value>새 Send 생성됨.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1일</value>
+  </data>
+  <data name="TwoDays" xml:space="preserve">
+    <value>2일</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3일</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7일</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30일</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>사용자 지정</value>
+  </data>
+  <data name="ShareOnSave" xml:space="preserve">
+    <value>저장할 때 이 Send를 공유합니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDisabledWarning" xml:space="preserve">
+    <value>엔터프라이즈 정책으로 인해 이미 생성된 Send를 삭제하는 것만 허용됩니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AboutSend" xml:space="preserve">
+    <value>Send 정보</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="HideEmail" xml:space="preserve">
+    <value>받는 사람으로부터 나의 이메일 주소 숨기기</value>
+  </data>
+  <data name="SendOptionsPolicyInEffect" xml:space="preserve">
+    <value>하나 이상의 단체 정책이 Send 설정에 영향을 미치고 있습니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFilePremiumRequired" xml:space="preserve">
+    <value>무료 계정은 텍스트만 공유할 수 있습니다. Premium 멤버십이 있어야 Send에서 파일을 사용할 수 있습니다</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFileEmailVerificationRequired" xml:space="preserve">
+    <value>이메일을 인증해야 Send에서 파일을 사용할 수 있습니다.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>마스터 비밀번호 재확인</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>마스터 비밀번호 확인</value>
+  </data>
+  <data name="PasswordConfirmationDesc" xml:space="preserve">
+    <value>이 작업은 보호되어 있습니다. 계속하려면 마스터 비밀번호를 입력하여 신원을 인증하세요.</value>
+  </data>
+  <data name="CaptchaRequired" xml:space="preserve">
+    <value>Captcha Required</value>
+  </data>
+  <data name="CaptchaFailed" xml:space="preserve">
+    <value>Captcha Failed. Please try again.</value>
+  </data>
+  <data name="UpdatedMasterPassword" xml:space="preserve">
+    <value>Updated Master Password</value>
+  </data>
+  <data name="UpdateMasterPassword" xml:space="preserve">
+    <value>Update Master Password</value>
+  </data>
+  <data name="UpdateMasterPasswordWarning" xml:space="preserve">
+    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+  </data>
+  <data name="UpdatingPassword" xml:space="preserve">
+    <value>Updating Password</value>
+  </data>
+  <data name="UpdatePasswordError" xml:space="preserve">
+    <value>Currently unable to update password</value>
+  </data>
+  <data name="Fido2Title" xml:space="preserve">
+    <value>FIDO2 WebAuthn</value>
+  </data>
+  <data name="Fido2Instruction" xml:space="preserve">
+    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+  </data>
+  <data name="Fido2Desc" xml:space="preserve">
+    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+  </data>
+  <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
+    <value>Authenticate WebAuthn</value>
+  </data>
+  <data name="Fido2ReturnToApp" xml:space="preserve">
+    <value>Return to App</value>
+  </data>
+  <data name="Fido2CheckBrowser" xml:space="preserve">
+    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+  </data>
+  <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
+    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+  </data>
+  <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
+    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+  </data>
+  <data name="VaultTimeoutToLarge" xml:space="preserve">
+    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+  </data>
+  <data name="DisablePersonalVaultExportPolicyInEffect">
+    <value>One or more organization policies prevents your from exporting your personal vault.</value>
   </data>
 </root>

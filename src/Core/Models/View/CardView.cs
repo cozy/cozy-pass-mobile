@@ -18,6 +18,7 @@ namespace Bit.Core.Models.View
         public string ExpYear { get; set; }
         public string Code { get; set; }
         public string MaskedCode => Code != null ? new string('•', Code.Length) : null;
+        public string MaskedNumber => Number != null ? new string('•', Number.Length) : null;
 
         public string Brand
         {
@@ -43,12 +44,12 @@ namespace Bit.Core.Models.View
         {
             get
             {
-                if(_subTitle == null)
+                if (_subTitle == null)
                 {
                     _subTitle = Brand;
-                    if(Number != null && Number.Length >= 4)
+                    if (Number != null && Number.Length >= 4)
                     {
-                        if(!string.IsNullOrWhiteSpace(_subTitle))
+                        if (!string.IsNullOrWhiteSpace(_subTitle))
                         {
                             _subTitle += ", ";
                         }
@@ -71,7 +72,7 @@ namespace Bit.Core.Models.View
             {
                 var expMonthNull = string.IsNullOrWhiteSpace(ExpMonth);
                 var expYearNull = string.IsNullOrWhiteSpace(ExpYear);
-                if(expMonthNull && expYearNull)
+                if (expMonthNull && expYearNull)
                 {
                     return null;
                 }

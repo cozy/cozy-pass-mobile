@@ -24,10 +24,10 @@ namespace Bit.Core.Models.Domain
         }
 
         public List<LoginUri> Uris { get; set; }
-        public CipherString Username { get; set; }
-        public CipherString Password { get; set; }
+        public EncString Username { get; set; }
+        public EncString Password { get; set; }
         public DateTime? PasswordRevisionDate { get; set; }
-        public CipherString Totp { get; set; }
+        public EncString Totp { get; set; }
 
         public async Task<LoginView> DecryptAsync(string orgId)
         {
@@ -37,10 +37,10 @@ namespace Bit.Core.Models.Domain
                 "Password",
                 "Totp"
             }, orgId);
-            if(Uris != null)
+            if (Uris != null)
             {
                 view.Uris = new List<LoginUriView>();
-                foreach(var uri in Uris)
+                foreach (var uri in Uris)
                 {
                     view.Uris.Add(await uri.DecryptAsync(orgId));
                 }
@@ -58,7 +58,7 @@ namespace Bit.Core.Models.Domain
                 "Password",
                 "Totp"
             });
-            if(Uris?.Any() ?? false)
+            if (Uris?.Any() ?? false)
             {
                 l.Uris = Uris.Select(u => u.ToLoginUriData()).ToList();
             }

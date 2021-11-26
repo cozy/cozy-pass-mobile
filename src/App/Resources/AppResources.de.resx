@@ -313,6 +313,9 @@
     <value>Speichern</value>
     <comment>Button text for a save operation (verb).</comment>
   </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
   <data name="Saving" xml:space="preserve">
     <value>Wird gespeichert...</value>
     <comment>Message shown when interacting with the server</comment>
@@ -415,7 +418,7 @@
     <value>Cozy Pass App Erweiterung</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Die einfachste Möglichkeit, neue Anmeldedaten zu Ihrem Tresor hinzuzufügen, ist die Bitwarden App Erweiterung. Erfahren Sie mehr über die Cozy Pass App Erweiterung, indem Sie zu dem "Einstellungen"-Bildschirm navigieren.</value>
+    <value>Die einfachste Möglichkeit, neue Anmeldedaten zu deinemTresor hinzuzufügen, ist die Cozy Pass App Erweiterung. Erfahre mehr über die Cozy Pass App Erweiterung, indem du zu den "Einstellungen" wechselst.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Nutze Cozy Pass in Safari und anderen Apps, um Zugangsdaten automatisch einzufügen.</value>
@@ -521,23 +524,29 @@
   <data name="Lock" xml:space="preserve">
     <value>Sperren</value>
   </data>
-  <data name="LockOption15Minutes" xml:space="preserve">
+  <data name="FifteenMinutes" xml:space="preserve">
     <value>15 Minuten</value>
   </data>
-  <data name="LockOption1Hour" xml:space="preserve">
+  <data name="OneHour" xml:space="preserve">
     <value>1 Stunde</value>
   </data>
-  <data name="LockOption1Minute" xml:space="preserve">
+  <data name="OneMinute" xml:space="preserve">
     <value>1 Minute</value>
   </data>
-  <data name="LockOption4Hours" xml:space="preserve">
+  <data name="FourHours" xml:space="preserve">
     <value>4 Stunden</value>
   </data>
-  <data name="LockOptionImmediately" xml:space="preserve">
+  <data name="Immediately" xml:space="preserve">
     <value>Sofort</value>
   </data>
-  <data name="LockOptions" xml:space="preserve">
-    <value>Sperroptionen</value>
+  <data name="VaultTimeout" xml:space="preserve">
+    <value>Tresor-Timeout</value>
+  </data>
+  <data name="VaultTimeoutAction" xml:space="preserve">
+    <value>Aktion bei Tresor-Timeout</value>
+  </data>
+  <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
+    <value>Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchten?</value>
   </data>
   <data name="LoggingIn" xml:space="preserve">
     <value>Anmeldung läuft...</value>
@@ -585,7 +594,7 @@
     <value>Eintrag erstellt.</value>
   </data>
   <data name="NoFavorites" xml:space="preserve">
-    <value>Es befinden sich keine Favoriten in Ihrem Tresor.</value>
+    <value>Es befinden sich keine Favoriten in deinem Tresor.</value>
   </data>
   <data name="NoItems" xml:space="preserve">
     <value>Keine Einträge in deinem Tresor.</value>
@@ -731,8 +740,8 @@
     <value>Es befinden sich keine Zugangsdaten für {0} in deinem Tresor.</value>
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
-  <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Du kannst die Cozy Pass Auto-Ausfüllen Benachrichtigung antippen, um deine Zugangsdaten automatisch einfügen zu lassen.</value>
+  <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
+    <value>Wenn Sie ein Eingabefeld auswählen und ein Auto-Fill-Overlay von Cozy Pass sehen, können Sie darauf tippen, um den Dienst zum automatischen Ausfüllen zu starten.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Tippe auf diese Benachrichtigung, um automatisch Zugangsdaten aus deinem Tresor einzufügen.</value>
@@ -756,16 +765,16 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Die einfachste Möglichkeit, neue Anmeldedaten zu Ihrem Tresor hinzuzufügen, ist der automatische Fülldienst von Bitwarden. Erfahren Sie mehr über den automatischen Fülldienst von Cozy Pass, indem Sie zu dem "Einstellungen"-Bildschirm navigieren.</value>
+    <value>Die einfachste Möglichkeit, neue Zugangsdaten zu deinem Tresor hinzuzufügen, ist der Cozy Pass Auto-Ausfüllen Dienst. Erfahre mehr über den Cozy Pass Auto-Ausfüllen Dienst, indem du zu "Einstellungen" wechselst.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
-    <value>Auto-Ausfüllen</value>
+    <value>Automatisch Einfügen</value>
   </data>
   <data name="AutofillOrView" xml:space="preserve">
     <value>Möchtest du diese Zugangsdaten automatisch einfügen oder ansehen?</value>
   </data>
   <data name="BitwardenAutofillServiceMatchConfirm" xml:space="preserve">
-    <value>Bist du sicher, dass du die Zugangsdaten einfügen möchten? Sie stimmen nicht komplett mit "{0}" überein.</value>
+    <value>Bist du sicher, dass du diesen Eintrag automatisch einfügen möchtest? Er stimmt nicht komplett mit "{0}" überein.</value>
   </data>
   <data name="MatchingItems" xml:space="preserve">
     <value>Passende Einträge</value>
@@ -777,28 +786,10 @@
     <value>Durchsuchen</value>
   </data>
   <data name="BitwardenAutofillServiceSearch" xml:space="preserve">
-    <value>Du suchst nach einem Auto-Fill Objekt für "{0}".</value>
+    <value>Du suchst nach einem Eintrag zum automatischen Einfügen für "{0}".</value>
   </data>
-  <data name="ShareVault" xml:space="preserve">
-    <value>Ihren Tresor teilen</value>
-  </data>
-  <data name="AutofillPasswordField" xml:space="preserve">
-    <value>Scan bei ausgewähltem Passwortfeld durchführen</value>
-  </data>
-  <data name="AutofillPasswordFieldDescription" xml:space="preserve">
-    <value>Den Bildschirminhalt nur auf Loginfelder untersuchen und Auto-Ausfüllen Benachrichtigung zeigen, wenn ein Passwortfeld ausgewählt ist. Diese Option kann die Akkulaufzeit verlängern.</value>
-  </data>
-  <data name="AutofillPersistNotification" xml:space="preserve">
-    <value>Dauerhafte Benachrichtigung</value>
-  </data>
-  <data name="AutofillPersistNotificationDescription" xml:space="preserve">
-    <value>Die Auto-Ausfüllen Benachrichtigung immer zeigen, aber den Bildschirminhalt erst durchsuchen wenn die Benachrichtigung ausgewählt wurde. Diese Option kann die Akkulaufzeit verlängern.</value>
-  </data>
-  <data name="AutofillAlways" xml:space="preserve">
-    <value>Bildschirminhalt immer durchsuchen</value>
-  </data>
-  <data name="AutofillAlwaysDescription" xml:space="preserve">
-    <value>Den Bildschirminhalt immer auf Loginfelder untersuchen und eine Auto-Ausfüllen Benachrichtigung anbieten, wenn ein Loginfeld gefunden wurde. Das ist die Standardeinstellung.</value>
+  <data name="LearnOrg" xml:space="preserve">
+    <value>Learn About Organizations</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Die App "{0}" kann nicht geöffnet werden.</value>
@@ -1152,6 +1143,9 @@
   <data name="NoItemsFolder" xml:space="preserve">
     <value>Es sind keine Objekte in diesem Ordner.</value>
   </data>
+  <data name="NoItemsTrash" xml:space="preserve">
+    <value>Es sind keine Einträge im Papierkorb.</value>
+  </data>
   <data name="AutofillAccessibilityService" xml:space="preserve">
     <value>Auto-Fill Bedienungshilfe</value>
   </data>
@@ -1252,7 +1246,7 @@
     <value>Halte deinen Yubikey an den oberen Bereich deines Geräts.</value>
   </data>
   <data name="TryAgain" xml:space="preserve">
-    <value>Erneut versuchen</value>
+    <value>Versuche es erneut</value>
   </data>
   <data name="YubiKeyInstructionIos" xml:space="preserve">
     <value>Um fortzufahren, halte deinen YubiKey NEO gegen die Rückseite des Gerätes.</value>
@@ -1293,10 +1287,10 @@
     <value>2. Drücke "Passwörter &amp; Accounts"</value>
   </data>
   <data name="AutofillTurnOn3" xml:space="preserve">
-    <value>3. Drücke "AutoFill Passwörter"</value>
+    <value>3. Tippe auf "Automatisch ausfüllen"</value>
   </data>
   <data name="AutofillTurnOn4" xml:space="preserve">
-    <value>4. Schalte AutoFill ein</value>
+    <value>4. Schalte Automatisch ausfüllen ein</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
     <value>5. Wähle "Cozy Pass"</value>
@@ -1305,7 +1299,7 @@
     <value>Passwort AutoFill</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Die einfachste Möglichkeit, neue Anmeldedaten zu Ihrem Tresor hinzuzufügen, ist der automatische Fülldienst von Bitwarden. Erfahren Sie mehr über den automatischen Fülldienst von Cozy Pass, indem Sie zu dem "Einstellungen"-Bildschirm navigieren.</value>
+    <value>Die einfachste Möglichkeit, neue Zugangsdaten zu deinemTresor hinzuzufügen, ist die Cozy Pass Passwort Auto-Ausfüllen Erweiterung. Erfahre mehr über die Cozy Pass Passwort Auto-Ausfüllen Funktion, indem du zur "Einstellungen" wechselst.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Ungültige E-Mail-Adresse.</value>
@@ -1334,13 +1328,13 @@
     <comment>A loading message when doing an exposed password check.</comment>
   </data>
   <data name="CheckPassword" xml:space="preserve">
-    <value>Überprüfen Sie, ob das Passwort entblößt wurde.</value>
+    <value>Überprüfe ob dein Kennwort kompromittiert ist.</value>
   </data>
   <data name="PasswordExposed" xml:space="preserve">
-    <value>Dieses Passwort wurde {0}-mal in Datenlecks entblößt. Sie sollten es ändern.</value>
+    <value>Dieses Passwort wurde {0}-mal in Passwortdiebstahl Datenbanken gefunden. Sie sollten es ändern.</value>
   </data>
   <data name="PasswordSafe" xml:space="preserve">
-    <value>Dieses Passwort wurde in keinem bekannten Datenleck gefunden. Seine Verwendung sollte sicher sein.</value>
+    <value>Dieses Passwort wurde in keiner bekannten Passwortdiebstahl Datenbank gefunden. Es sollte sicher zu verwenden sein.</value>
   </data>
   <data name="IdentityName" xml:space="preserve">
     <value>Identitätsname</value>
@@ -1385,16 +1379,20 @@
     <value>Besitz</value>
   </data>
   <data name="WhoOwnsThisItem" xml:space="preserve">
-    <value>Wer besitzt diesen Eintrag?</value>
+    <value>Wem gehört dieser Eintrag?</value>
   </data>
   <data name="NoCollectionsToList" xml:space="preserve">
     <value>Keine Sammlungen vorhanden.</value>
+  </data>
+  <data name="MovedItemToOrg" xml:space="preserve">
+    <value>{0} moved to {1}.</value>
+    <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
     <value>Eintrag wurde geteilt.</value>
   </data>
   <data name="SelectOneCollection" xml:space="preserve">
-    <value>Sie müssen mindestens eine Sammlung auswählen.</value>
+    <value>Es muss mindestens eine Sammlung ausgewählt sein.</value>
   </data>
   <data name="Share" xml:space="preserve">
     <value>Teilen</value>
@@ -1402,11 +1400,14 @@
   <data name="ShareItem" xml:space="preserve">
     <value>Eintrag teilen</value>
   </data>
+  <data name="MoveToOrganization" xml:space="preserve">
+    <value>Move to Organization</value>
+  </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Keine Organisationen vorhanden.</value>
   </data>
-  <data name="ShareDesc" xml:space="preserve">
-    <value>Wählen Sie eine Organisation, mit der Sie dieses Eintrag teilen möchten. Teilen überträgt den Besitz des Eintrages an die Organisation. Sie werden nicht mehr der direkte Bestitzer dieses Eintrages sein, sobald es geteilt wurde.</value>
+  <data name="MoveToOrgDesc" xml:space="preserve">
+    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Anzahl der Wörter</value>
@@ -1415,7 +1416,7 @@
     <value>Passphrase</value>
   </data>
   <data name="WordSeparator" xml:space="preserve">
-    <value>Worttrennzeichen</value>
+    <value>Trennzeichen</value>
   </data>
   <data name="Clear" xml:space="preserve">
     <value>Leeren</value>
@@ -1429,14 +1430,14 @@
     <value>Keine Ordner zum Auflisten vorhanden.</value>
   </data>
   <data name="FingerprintPhrase" xml:space="preserve">
-    <value>Fingerabdruck-Phrase</value>
+    <value>Prüfschlüssel</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="YourAccountsFingerprint" xml:space="preserve">
-    <value>Fingerabdruck-Phrase ihres Kontos</value>
+    <value>Prüfschlüssel für deinen Account</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
-  <data name="ShareVaultConfirmation" xml:space="preserve">
+  <data name="LearnOrgConfirmation" xml:space="preserve">
     <value>Cozy Pass erlaubt es Ihnen, Ihren Tresor mit anderen zu teilen, indem Sie ein Organisationskonto verwenden. Möchten Sie die bitwarden.com Website besuchen, um mehr zu erfahren?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
@@ -1451,24 +1452,21 @@
   <data name="Unlock" xml:space="preserve">
     <value>Entsperren</value>
   </data>
-  <data name="LockOption30Minutes" xml:space="preserve">
+  <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 Minuten</value>
   </data>
-  <data name="LockOption5Minutes" xml:space="preserve">
-    <value>5 Minuten</value>
-  </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Legen Sie Ihre PIN für das Entsperren von Cozy Pass fest. Ihre PIN-Einstellungen werden zurückgesetzt, wenn Sie sich jemals vollständig aus der Anwendung abmelden.</value>
+    <value>Gebe deinen PIN-Code für das Entsperren von Cozy Pass ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmeldest.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
-    <value>Als {0} angemeldet am {1}.</value>
+    <value>Als {0} angemeldet auf {1}.</value>
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Ihr Tresor ist gesperrt. Verifizieren Sie ihr Master-Passwort um fortzufahren.</value>
+    <value>Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort um fortzufahren.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
-    <value>Ihr Tresor ist gesperrt. Verifizieren Sie ihre PIN um fortzufahren.</value>
+    <value>Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Dunkel</value>
@@ -1480,9 +1478,6 @@
   </data>
   <data name="FiveMinutes" xml:space="preserve">
     <value>5 Minuten</value>
-  </data>
-  <data name="OneMinute" xml:space="preserve">
-    <value>1 Minute</value>
   </data>
   <data name="TenSeconds" xml:space="preserve">
     <value>10 Sekunden</value>
@@ -1501,29 +1496,25 @@
     <comment>Clipboard is the operating system thing where you copy/paste data to on your device.</comment>
   </data>
   <data name="ClearClipboardDescription" xml:space="preserve">
-    <value>Kopierte Werte automatisch aus der Zwischenablage löschen.</value>
+    <value>Kopierte Einträge automatisch aus der Zwischenablage löschen.</value>
     <comment>Clipboard is the operating system thing where you copy/paste data to on your device.</comment>
   </data>
   <data name="DefaultUriMatchDetection" xml:space="preserve">
-    <value>Standard URI Übereinstimmungserkennung</value>
+    <value>Standard-URI-Match-Erkennung</value>
     <comment>Default URI match detection for auto-fill.</comment>
   </data>
   <data name="DefaultUriMatchDetectionDescription" xml:space="preserve">
-    <value>Wählen Sie die Standardmethode, wie Standard URI Übereinstimmungserkennung bei Aktionen wie z.B. Automatisches Füllen für Logins verwendet wird.</value>
+    <value>Wähle die Standardmethode, mit der die URI-Match-Erkennung für Anmeldungen bei Aktionen wie dem automatischen Ausfüllen behandelt wird.</value>
   </data>
   <data name="Theme" xml:space="preserve">
-    <value>Schema</value>
+    <value>Design</value>
     <comment>Color theme</comment>
   </data>
   <data name="ThemeDescription" xml:space="preserve">
-    <value>Ändern Sie das Farbschema der Anwendung.</value>
+    <value>Ändere das Farbschema der Anwendung.</value>
   </data>
-  <data name="RestartIsRequired" xml:space="preserve">
-    <value>Neustart ist erforderlich.</value>
-    <comment>Referring to restarting the application.</comment>
-  </data>
-  <data name="Restarting" xml:space="preserve">
-    <value>Neustarten...</value>
+  <data name="ThemeDefault" xml:space="preserve">
+    <value>Default (System)</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Notizen kopieren</value>
@@ -1532,10 +1523,10 @@
     <value>Beenden</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Sind Sie sicher, dass Sie Cozy Pass verlassen möchten?</value>
+    <value>Bist du sicher, dass du Cozy Pass verlassen möchtest?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>You you want to require unlocking with your password when the application is restarted?</value>
+    <value>Möchtest du mit deinem Passwort entsperren, wenn die Anwendung neu gestartet wird?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Schwarz</value>
@@ -1545,22 +1536,23 @@
     <value>Gesperrte URIs</value>
   </data>
   <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>URIs that are blacklisted will not offer auto-fill. The list of apps should be comma separated. Ex: "https://twitter.com, androidapp://com.twitter.android".</value>
+    <value>URIs auf der Sperrliste, werden nicht automatisch ausgefüllt. Die Listeneinträge sollten durch Komma getrennt sein. Z.B.: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
   <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Speichern-Prompt deaktivieren</value>
+    <value>Speicherdialog deaktivieren</value>
   </data>
   <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>Der "Speichern-Prompt" fordert Sie automatisch dazu auf, neue Einträge in den Tresor zu speichern, wenn Sie sie zum ersten Mal eingeben.</value>
+    <value>Der "Speicherdialog" fordert dich automatisch dazu auf, neue Einträge in deinem Tresor zu speichern, wenn du diese zum ersten Mal eingibst.</value>
   </data>
-  <data name="LockOptionOnRestart" xml:space="preserve">
+  <data name="OnRestart" xml:space="preserve">
     <value>Bei App Neustart</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
+    <value>Automatisches Ausfüllen vereinfacht es, sicher auf deinen Cozy Pass Tresor über andere Webseiten und Apps zuzugreifen. Es sieht aus, als ob du den automatischen Ausfülldienst für Cozy Pass nicht aktiviert hast. Aktiviere automatisches Ausfüllen in der "Einstellungen" Ansicht.</value>
     <value>Durch automatisches Füllen ist es leicht, auf Ihren Bitwarden Tresor von anderen Webseiten und Apps sicher zuzugreifen. Es sieht aus, als ob Sie den Automatisches Fülldienst für Cozy Pass nicht aktiviert haben. Aktivieren Sie automatisches Füllen im "Einstellungen"-Bildschirm.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
-    <value>Ihre Änderungen am Aussehen der App werden beim nächsten Neustart der App angewendet.</value>
+    <value>Deine Änderungen am Aussehen der App werden beim nächsten Neustart der App angewendet.</value>
   </data>
   <data name="Capitalize" xml:space="preserve">
     <value>Großschreiben</value>
@@ -1579,15 +1571,493 @@
     <value>Sichtbarkeit umschalten</value>
   </data>
   <data name="LoginExpired" xml:space="preserve">
-    <value>Ihre Sitzung ist abgelaufen.</value>
+    <value>Deine Sitzung ist abgelaufen.</value>
   </data>
   <data name="BiometricsDirection" xml:space="preserve">
-    <value>Biometrische Daten zur Verifizierung nutzen.</value>
+    <value>Biometrische Verifizierung</value>
   </data>
   <data name="Biometrics" xml:space="preserve">
-    <value>Biometrisch</value>
+    <value>Biometrie</value>
   </data>
   <data name="UseBiometricsToUnlock" xml:space="preserve">
-    <value>Biometrische Daten zum entsperren verwenden</value>
+    <value>Biometrische Daten zum Entsperren verwenden</value>
+  </data>
+  <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
+    <value>Bitwarden braucht Aufmerksamkeit - Siehe "Auto-Ausfüllen-Bedienungshilfe" in den Bitwarden-Einstellungen</value>
+  </data>
+  <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
+    <value>3. Gehe unter Android in den App-Einstellungen für Bitwarden zur Option "Über anderen Apps einblenden" (unter Erweitert) und tippe auf den Schalter, um die Overlay-Unterstützung zu aktivieren.</value>
+  </data>
+  <data name="OverlayPermission" xml:space="preserve">
+    <value>Berechtigung</value>
+  </data>
+  <data name="BitwardenAutofillServiceOpenOverlayPermissionSettings" xml:space="preserve">
+    <value>Overlay-Berechtigungseinstellungen öffnen</value>
+  </data>
+  <data name="BitwardenAutofillServiceStep3" xml:space="preserve">
+    <value>3. Wähle unter Android in den App-Einstellungen für Bitwarden "Über anderen Apps einblenden" (unter "Erweitert") und aktiviere den Schalter, um das Overlay zu erlauben.</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Abgelehnt</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>Gewährt</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>Dateiformat</value>
+  </data>
+  <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
+    <value>Gib das Masterpasswort ein, um deine Tresordaten zu exportieren.</value>
+  </data>
+  <data name="ExportVaultWarning" xml:space="preserve">
+    <value>Dieser Export enthält deine Tresordaten in einem unverschlüsseltem Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung.</value>
+  </data>
+  <data name="EncExportKeyWarning" xml:space="preserve">
+    <value>Dieser Export verschlüsselt deine Daten mit dem Verschlüsselungscode deines Kontos. Falls du deinen Verschlüsselungscode erneuerst, solltest du den Export erneut durchführen, da du die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln kannst.</value>
+  </data>
+  <data name="EncExportAccountWarning" xml:space="preserve">
+    <value>Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden Benutzerkonto einzigartig, deshalb kannst du keinen verschlüsselten Export in ein anderes Konto importieren.</value>
+  </data>
+  <data name="ExportVaultConfirmationTitle" xml:space="preserve">
+    <value>Tresor-Export bestätigen</value>
+    <comment>Title for the alert to confirm vault exports.</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="ExportVaultFailure" xml:space="preserve">
+    <value>Beim Exportieren deines Tresors ist ein Problem aufgetreten. Wenn das Problem weiterhin besteht, musst du ihn aus dem Web-Tresor exportieren.</value>
+  </data>
+  <data name="ExportVaultSuccess" xml:space="preserve">
+    <value>Tresor erfolgreich exportiert</value>
+  </data>
+  <data name="Clone" xml:space="preserve">
+    <value>Duplizieren</value>
+    <comment>Clone an entity (verb).</comment>
+  </data>
+  <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
+    <value>Eine oder mehrere Organisationsrichtlinien beeinflussen dein Generator-Einstellungen.</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Öffnen</value>
+    <comment>Button text for an open operation (verb).</comment>
+  </data>
+  <data name="UnableToSaveAttachment" xml:space="preserve">
+    <value>Beim Speichern dieses Anhangs ist ein Problem aufgetreten. Wenn das Problem weiterhin besteht, kannst du ihn aus dem Web-Tresor speichern.</value>
+  </data>
+  <data name="SaveAttachmentSuccess" xml:space="preserve">
+    <value>Anhang erfolgreich gespeichert</value>
+  </data>
+  <data name="AutofillTileAccessibilityRequired" xml:space="preserve">
+    <value>Bitte aktiviere "Auto-Ausfüllen-Bedienungshilfe" in den Bitwarden-Einstellungen, um die Auto-Ausfüllen-Kachel zu verwenden.</value>
+  </data>
+  <data name="AutofillTileUriNotFound" xml:space="preserve">
+    <value>Keine Passwortfelder erkannt</value>
+  </data>
+  <data name="SoftDeleting" xml:space="preserve">
+    <value>Wird in den Papierkorb verschoben…</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemSoftDeleted" xml:space="preserve">
+    <value>Eintrag wurde in den Papierkorb gelegt.</value>
+    <comment>Confirmation message after successfully soft-deleting a login</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Wiederherstellen</value>
+    <comment>Restores an entity (verb).</comment>
+  </data>
+  <data name="Restoring" xml:space="preserve">
+    <value>Wiederherstellen ...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemRestored" xml:space="preserve">
+    <value>Eintrag wurde wiederhergestellt.</value>
+    <comment>Confirmation message after successfully restoring a soft-deleted item</comment>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Papierkorb</value>
+    <comment>(noun) Location of deleted items which have not yet been permanently deleted</comment>
+  </data>
+  <data name="SearchTrash" xml:space="preserve">
+    <value>Papierkorb durchsuchen</value>
+    <comment>(action prompt) Label for the search text field when viewing the trash folder</comment>
+  </data>
+  <data name="DoYouReallyWantToPermanentlyDeleteCipher" xml:space="preserve">
+    <value>Möchtest du wirklich dauerhaft löschen? Dies kann nicht rückgängig gemacht werden.</value>
+    <comment>Confirmation alert message when permanently deleteing a cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToRestoreCipher" xml:space="preserve">
+    <value>Soll dieser Eintrag wirklich wiederhergestellt werden?</value>
+    <comment>Confirmation alert message when restoring a soft-deleted cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToSoftDeleteCipher" xml:space="preserve">
+    <value>Soll dieser Eintrag wirklich in den Papierkorb verschoben werden?</value>
+    <comment>Confirmation alert message when soft-deleting a cipher.</comment>
+  </data>
+  <data name="BiometricInvalidated" xml:space="preserve">
+    <value>Biometrisches Entsperren ist deaktiviert, bis das Master-Passwort eingegeben wurde.</value>
+  </data>
+  <data name="BiometricInvalidatedExtension" xml:space="preserve">
+    <value>Biometrisches Entsperren für automatisches Ausfüllen ist deaktiviert, bis das Master-Passwort eingegeben wurde.</value>
+  </data>
+  <data name="EnableSyncOnRefresh" xml:space="preserve">
+    <value>Synchronisation beim Aktualisieren aktivieren</value>
+  </data>
+  <data name="EnableSyncOnRefreshDescription" xml:space="preserve">
+    <value>Tresor durch Runterziehen Geste synchronisieren.</value>
+  </data>
+  <data name="LogInSso" xml:space="preserve">
+    <value>Enterprise Single Sign-On</value>
+  </data>
+  <data name="LogInSsoSummary" xml:space="preserve">
+    <value>Schnell über den Single Sign-on deiner Organisation anmelden. Bitte gib deine Organisationskennung an, um zu beginnen.</value>
+  </data>
+  <data name="OrgIdentifier" xml:space="preserve">
+    <value>Organisationskennung</value>
+  </data>
+  <data name="LoginSsoError" xml:space="preserve">
+    <value>Anmeldung mit SSO derzeit nicht möglich</value>
+  </data>
+  <data name="SetMasterPassword" xml:space="preserve">
+    <value>Masterpasswort festlegen</value>
+  </data>
+  <data name="SetMasterPasswordSummary" xml:space="preserve">
+    <value>Bitte lege ein Masterpasswort für den Schutz deines Tresors fest, um die Anmeldung über SSO abzuschließen.</value>
+  </data>
+  <data name="MasterPasswordPolicyInEffect" xml:space="preserve">
+    <value>Eine oder mehrere Organisationsrichtlinien erfordern, dass dein Masterpasswort die folgenden Anforderungen erfüllt:</value>
+  </data>
+  <data name="PolicyInEffectMinComplexity" xml:space="preserve">
+    <value>Kleinste Komplexitätsstufe von {0}</value>
+  </data>
+  <data name="PolicyInEffectMinLength" xml:space="preserve">
+    <value>Mindestlänge von {0}</value>
+  </data>
+  <data name="PolicyInEffectUppercase" xml:space="preserve">
+    <value>Enthält einen oder mehrere Großbuchstaben</value>
+  </data>
+  <data name="PolicyInEffectLowercase" xml:space="preserve">
+    <value>Enthält einen oder mehrere Kleinbuchstaben</value>
+  </data>
+  <data name="PolicyInEffectNumbers" xml:space="preserve">
+    <value>Enthält eine oder mehrere Zahlen</value>
+  </data>
+  <data name="PolicyInEffectSpecial" xml:space="preserve">
+    <value>Enthält eines oder mehrere der folgenden Sonderzeichen: {0}</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationTitle" xml:space="preserve">
+    <value>Ungültiges Passwort</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationMessage" xml:space="preserve">
+    <value>Passwort entspricht nicht den Anforderungen der Organisation. Bitte überprüfe die Richtlinien-Informationen und versuche es erneut.</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Wird geladen</value>
+  </data>
+  <data name="AcceptPolicies" xml:space="preserve">
+    <value>Durch Anwählen dieses Kästchens erklärst du dich mit folgendem einverstanden:</value>
+  </data>
+  <data name="AcceptPoliciesError" xml:space="preserve">
+    <value>Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert.</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Nutzungsbedingungen</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Datenschutzbestimmungen</value>
+  </data>
+  <data name="AccessibilityDrawOverPermissionAlert" xml:space="preserve">
+    <value>Bitwarden braucht Aufmerksamkeit - Aktiviere "Überschreiben" in dem "Auto-Ausfüllen-Dienst" in den Bitwarden-Einstellungen</value>
+  </data>
+  <data name="AutofillServices" xml:space="preserve">
+    <value>Auto-Ausfüllen Dienst</value>
+  </data>
+  <data name="InlineAutofill" xml:space="preserve">
+    <value>Inline Auto-Ausfüllen verwenden</value>
+  </data>
+  <data name="InlineAutofillDescription" xml:space="preserve">
+    <value>Verwende Inline Auto-Ausfüllen, wenn deine gewählte Eingabemethode (Tastatur) dies unterstützt. Wenn deine Konfiguration nicht unterstützt wird (oder diese Option deaktiviert ist), wird das Standard-Auto-Ausfüllen-Overlay verwendet.</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Bedienungshilfen verwenden</value>
+  </data>
+  <data name="AccessibilityDescription" xml:space="preserve">
+    <value>Verwende die Bitwarden Bedienungshilfe, um deine Zugangsdaten innerhalb von Apps und dem Web automatisch auszufüllen. Wenn aktiviert, werden wir ein Popup anzeigen, falls Login-Felder ausgewählt sind.</value>
+  </data>
+  <data name="AccessibilityDescription2" xml:space="preserve">
+    <value>Verwende die Bitwarden Bedienungshilfe, um deine Zugangsdaten in Apps und im Web automatisch auszufüllen. (Benötigt das Überschreiben ebenfalls aktiviertes ist)</value>
+  </data>
+  <data name="AccessibilityDescription3" xml:space="preserve">
+    <value>Verwende die Bitwarden Bedienungshilfe, um die Auto-Ausfüllen Schnellaktionskachel zu verwenden und/oder ein Popup mit Überschreiben anzuzeigen (wenn aktiviert).</value>
+  </data>
+  <data name="AccessibilityDescription4" xml:space="preserve">
+    <value>Benötigt um die Auto-Ausfüllen Schnellaktionskachel zu verwenden oder um den Auto-Ausfüllen Service durch Überschreiben(falls aktiviert) zu ermöglichen.</value>
+  </data>
+  <data name="DrawOver" xml:space="preserve">
+    <value>Überschreiben verwenden</value>
+  </data>
+  <data name="DrawOverDescription" xml:space="preserve">
+    <value>Falls aktiviert, erlaubt es der Bitwarden Bedienungshilfe ein Popup anzuzeigen, wenn Anmeldefelder ausgewählt sind.</value>
+  </data>
+  <data name="DrawOverDescription2" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Bitwarden Bedienungshilfe, falls Anmeldefelder ausgewählt sind, ein Popup anzeigen, um bei der automatischen Ausfüllung deiner Zugangsdaten zu helfen.</value>
+  </data>
+  <data name="DrawOverDescription3" xml:space="preserve">
+    <value>Wenn aktiviert, wird die Bedienungshilfe ein Popup anzeigen, um das automatische Ausfüllen in älteren Anwendungen zu ermöglichen, die das Android Auto-Ausfüllen Framework nicht unterstützen. </value>
+  </data>
+  <data name="PersonalOwnershipSubmitError" xml:space="preserve">
+    <value>Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen.</value>
+  </data>
+  <data name="PersonalOwnershipPolicyInEffect" xml:space="preserve">
+    <value>Eine Organisationsrichtlinie beeinflusst deine Eigentümer-Optionen.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AllSends" xml:space="preserve">
+    <value>Alle Sends</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Sends" xml:space="preserve">
+    <value>Sends</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>Ein eigener Name, um dieses Send zu beschreiben.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="TypeTextInfo" xml:space="preserve">
+    <value>Der Text, den du senden möchtest.</value>
+  </data>
+  <data name="HideTextByDefault" xml:space="preserve">
+    <value>Beim Zugriff auf diesen Send den Text standardmäßig ausblenden</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeFile" xml:space="preserve">
+    <value>Datei</value>
+  </data>
+  <data name="TypeFileInfo" xml:space="preserve">
+    <value>Die Datei, die du senden möchtest.</value>
+  </data>
+  <data name="DeletionDate" xml:space="preserve">
+    <value>Löschdatum</value>
+  </data>
+  <data name="DeletionTime" xml:space="preserve">
+    <value>Löschzeitpunkt</value>
+  </data>
+  <data name="DeletionDateInfo" xml:space="preserve">
+    <value>Das Send wird am angegebenen Datum zur angegebenen Uhrzeit dauerhaft gelöscht.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PendingDelete" xml:space="preserve">
+    <value>Ausstehende Löschung</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Ablaufdatum</value>
+  </data>
+  <data name="ExpirationTime" xml:space="preserve">
+    <value>Ablaufzeit</value>
+  </data>
+  <data name="ExpirationDateInfo" xml:space="preserve">
+    <value>Falls aktiviert, verfällt der Zugriff auf diesen Send zur angegebenen Datum und Uhrzeit.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Abgelaufen</value>
+  </data>
+  <data name="MaximumAccessCount" xml:space="preserve">
+    <value>Maximale Zugriffsanzahl</value>
+  </data>
+  <data name="MaximumAccessCountInfo" xml:space="preserve">
+    <value>Falls aktiviert, können Benutzer nicht mehr auf diesesn Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="MaximumAccessCountReached" xml:space="preserve">
+    <value>Maximale Zugriffsanzahl erreicht</value>
+  </data>
+  <data name="CurrentAccessCount" xml:space="preserve">
+    <value>Aktuelle Zugriffsanzahl</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Neues Passwort</value>
+  </data>
+  <data name="PasswordInfo" xml:space="preserve">
+    <value>Optional ein Passwort verlangen, damit Benutzer auf dieses Send zugreifen können.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="RemovePassword" xml:space="preserve">
+    <value>Passwort entfernen</value>
+  </data>
+  <data name="AreYouSureRemoveSendPassword" xml:space="preserve">
+    <value>Bist du sicher, dass du dieses Passwort entfernen möchtest?</value>
+  </data>
+  <data name="RemovingSendPassword" xml:space="preserve">
+    <value>Passwort wird entfernt</value>
+  </data>
+  <data name="SendPasswordRemoved" xml:space="preserve">
+    <value>Passwort wurde entfernt.</value>
+  </data>
+  <data name="NotesInfo" xml:space="preserve">
+    <value>Private Notizen zu diesem Send.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="DisableSend" xml:space="preserve">
+    <value>Dieses Send deaktivieren, damit niemand darauf zugreifen kann.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NoSends" xml:space="preserve">
+    <value>Es gibt keine Sends in deinem Konto.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddASend" xml:space="preserve">
+    <value>Send hinzufügen</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="CopyLink" xml:space="preserve">
+    <value>Link kopieren</value>
+  </data>
+  <data name="ShareLink" xml:space="preserve">
+    <value>Link teilen</value>
+  </data>
+  <data name="SendLink" xml:space="preserve">
+    <value>Send-Link</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SearchSends" xml:space="preserve">
+    <value>Sends suchen</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="EditSend" xml:space="preserve">
+    <value>Send bearbeiten</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddSend" xml:space="preserve">
+    <value>Send hinzufügen</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AreYouSureDeleteSend" xml:space="preserve">
+    <value>Bist du sicher, dass du dieses Send löschen möchtest?</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDeleted" xml:space="preserve">
+    <value>Send wurde gelöscht.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendUpdated" xml:space="preserve">
+    <value>Send aktualisiert.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NewSendCreated" xml:space="preserve">
+    <value>Neues Send erstellt.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1 Tag</value>
+  </data>
+  <data name="TwoDays" xml:space="preserve">
+    <value>2 Tage</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3 Tage</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7 Tage</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30 Tage</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+  </data>
+  <data name="ShareOnSave" xml:space="preserve">
+    <value>Dieses Send beim Speichern teilen.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDisabledWarning" xml:space="preserve">
+    <value>Aufgrund einer Unternehmensrichtlinie kannst du nur ein bestehendes Send löschen.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AboutSend" xml:space="preserve">
+    <value>Über Send</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="HideEmail" xml:space="preserve">
+    <value>Meine E-Mail-Adresse vor den Empfängern ausblenden.</value>
+  </data>
+  <data name="SendOptionsPolicyInEffect" xml:space="preserve">
+    <value>Eine oder mehrere Organisationsrichtlinien beeinflussen deine Send Einstellungen.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFilePremiumRequired" xml:space="preserve">
+    <value>Kostenlose Konten sind auf das Teilen von Texten beschränkt. Eine Premium-Mitgliedschaft ist erforderlich, um Dateien mit Send zu verwenden.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFileEmailVerificationRequired" xml:space="preserve">
+    <value>Du musst deine E-Mail verifizieren, um diese Funktion nutzen zu können.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Master-Passwort erneut abfragen</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Master-Passwort bestätigen</value>
+  </data>
+  <data name="PasswordConfirmationDesc" xml:space="preserve">
+    <value>Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu bestätigen.</value>
+  </data>
+  <data name="CaptchaRequired" xml:space="preserve">
+    <value>Captcha Required</value>
+  </data>
+  <data name="CaptchaFailed" xml:space="preserve">
+    <value>Captcha Failed. Please try again.</value>
+  </data>
+  <data name="UpdatedMasterPassword" xml:space="preserve">
+    <value>Updated Master Password</value>
+  </data>
+  <data name="UpdateMasterPassword" xml:space="preserve">
+    <value>Update Master Password</value>
+  </data>
+  <data name="UpdateMasterPasswordWarning" xml:space="preserve">
+    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+  </data>
+  <data name="UpdatingPassword" xml:space="preserve">
+    <value>Updating Password</value>
+  </data>
+  <data name="UpdatePasswordError" xml:space="preserve">
+    <value>Currently unable to update password</value>
+  </data>
+  <data name="Fido2Title" xml:space="preserve">
+    <value>FIDO2 WebAuthn</value>
+  </data>
+  <data name="Fido2Instruction" xml:space="preserve">
+    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+  </data>
+  <data name="Fido2Desc" xml:space="preserve">
+    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+  </data>
+  <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
+    <value>Authenticate WebAuthn</value>
+  </data>
+  <data name="Fido2ReturnToApp" xml:space="preserve">
+    <value>Return to App</value>
+  </data>
+  <data name="Fido2CheckBrowser" xml:space="preserve">
+    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+  </data>
+  <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
+    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+  </data>
+  <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
+    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+  </data>
+  <data name="VaultTimeoutToLarge" xml:space="preserve">
+    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+  </data>
+  <data name="DisablePersonalVaultExportPolicyInEffect">
+    <value>One or more organization policies prevents your from exporting your personal vault.</value>
   </data>
 </root>

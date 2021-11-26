@@ -1,6 +1,7 @@
-﻿using Android.Content;
+﻿using System.ComponentModel;
+using Android.Content;
 using Android.Graphics.Drawables;
-using Android.Support.V4.Content.Res;
+using AndroidX.Core.Content.Resources;
 using Bit.App.Controls;
 using Bit.Droid.Renderers;
 using Xamarin.Forms;
@@ -18,12 +19,27 @@ namespace Bit.Droid.Renderers
         protected override void OnElementChanged(ElementChangedEventArgs<Slider> e)
         {
             base.OnElementChanged(e);
-            if(Control != null && Element is ExtendedSlider view)
+            UpdateColor();
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            if (e.PropertyName == ExtendedSlider.ThumbBorderColorProperty.PropertyName)
+            {
+                UpdateColor();
+            }
+        }
+        
+        private void UpdateColor()
+        {
+            if (Control != null && Element is ExtendedSlider view)
             {
                 var t = ResourcesCompat.GetDrawable(Resources, Resource.Drawable.slider_thumb, null);
-                if(t is GradientDrawable thumb)
+                if (t is GradientDrawable thumb)
                 {
-                    if(view.ThumbColor == Color.Default)
+                    if (view.ThumbColor == Color.Default)
                     {
                         thumb.SetColor(Color.White.ToAndroid());
                     }

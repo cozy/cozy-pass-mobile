@@ -1,39 +1,56 @@
 ﻿using Bit.App.Effects;
 using Bit.App.Models;
 using Bit.App.Resources;
+using Bit.Core.Abstractions;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
 {
     public class TabsPage : TabbedPage
     {
+        private readonly IMessagingService _messagingService;
+        
         private NavigationPage _groupingsPage;
+        private NavigationPage _sendGroupingsPage;
         private NavigationPage _generatorPage;
 
         public TabsPage(AppOptions appOptions = null, PreviousPageInfo previousPage = null)
         {
+            _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
+
             _groupingsPage = new NavigationPage(new GroupingsPage(true, previousPage: previousPage))
             {
                 Title = AppResources.MyVault,
-                Icon = "lock.png"
+                IconImageSource = "lock.png"
             };
             Children.Add(_groupingsPage);
+
+            _sendGroupingsPage = new NavigationPage(new SendGroupingsPage(true, null, null, appOptions))
+            {
+                Title = AppResources.Send,
+                IconImageSource = "paper_plane.png",
+            };
+            // Cozy customization, disable "Send" functionality until implemented on Stack side
+            /* 
+            Children.Add(_sendGroupingsPage);
+            //*/
 
             _generatorPage = new NavigationPage(new GeneratorPage(true, null, this))
             {
                 Title = AppResources.Generator,
-                Icon = "refresh.png"
+                IconImageSource = "refresh.png"
             };
             Children.Add(_generatorPage);
 
             var settingsPage = new NavigationPage(new SettingsPage(this))
             {
                 Title = AppResources.Settings,
-                Icon = "cog.png"
+                IconImageSource = "cog.png"
             };
             Children.Add(settingsPage);
 
-            if(Device.RuntimePlatform == Device.Android)
+            if (Device.RuntimePlatform == Device.Android)
             {
                 Effects.Add(new TabBarEffect());
 
@@ -41,20 +58,20 @@ namespace Bit.App.Pages
                     Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom);
                 Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSwipePagingEnabled(this, false);
                 Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetIsSmoothScrollEnabled(this, false);
-                Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarSelectedItemColor(this,
-                    (Color)Application.Current.Resources["TabBarSelectedItemColor"]);
-                Xamarin.Forms.PlatformConfiguration.AndroidSpecific.TabbedPage.SetBarItemColor(this,
-                    (Color)Application.Current.Resources["TabBarItemColor"]);
             }
 
-            if(appOptions?.GeneratorTile ?? false)
+            if (appOptions?.GeneratorTile ?? false)
             {
                 appOptions.GeneratorTile = false;
                 ResetToGeneratorPage();
             }
-            else if(appOptions?.MyVaultTile ?? false)
+            else if (appOptions?.MyVaultTile ?? false)
             {
                 appOptions.MyVaultTile = false;
+            }
+            else if (appOptions?.CreateSend != null)
+            {
+                ResetToSendPage();
             }
         }
 
@@ -67,20 +84,26 @@ namespace Bit.App.Pages
         {
             CurrentPage = _generatorPage;
         }
+        
+        public void ResetToSendPage()
+        {
+            CurrentPage = _sendGroupingsPage;
+        }
 
         protected async override void OnCurrentPageChanged()
         {
-            if(CurrentPage is NavigationPage navPage)
+            if (CurrentPage is NavigationPage navPage)
             {
-                if(navPage.RootPage is GroupingsPage groupingsPage)
+                _messagingService.Send("updatedTheme");
+                if (navPage.RootPage is GroupingsPage groupingsPage)
                 {
                     // Load something?
                 }
-                else if(navPage.RootPage is GeneratorPage genPage)
+                else if (navPage.RootPage is GeneratorPage genPage)
                 {
                     await genPage.InitAsync();
                 }
-                else if(navPage.RootPage is SettingsPage settingsPage)
+                else if (navPage.RootPage is SettingsPage settingsPage)
                 {
                     await settingsPage.InitAsync();
                 }

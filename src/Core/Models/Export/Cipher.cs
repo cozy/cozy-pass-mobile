@@ -21,7 +21,35 @@ namespace Bit.Core.Models.Export
 
             Fields = obj.Fields?.Select(f => new Field(f)).ToList();
 
-            switch(obj.Type)
+            switch (obj.Type)
+            {
+                case CipherType.Login:
+                    Login = new Login(obj.Login);
+                    break;
+                case CipherType.SecureNote:
+                    SecureNote = new SecureNote(obj.SecureNote);
+                    break;
+                case CipherType.Card:
+                    Card = new Card(obj.Card);
+                    break;
+                case CipherType.Identity:
+                    Identity = new Identity(obj.Identity);
+                    break;
+            }
+        }
+
+        public Cipher(Domain.Cipher obj)
+        {
+            OrganizationId = obj.OrganizationId;
+            FolderId = obj.FolderId;
+            Type = obj.Type;
+            Name = obj.Name?.EncryptedString;
+            Notes = obj.Notes?.EncryptedString;
+            Favorite = obj.Favorite;
+
+            Fields = obj.Fields?.Select(f => new Field(f)).ToList();
+
+            switch (obj.Type)
             {
                 case CipherType.Login:
                     Login = new Login(obj.Login);
@@ -57,14 +85,14 @@ namespace Bit.Core.Models.Export
 
         public CipherView ToView(Cipher req, CipherView view = null)
         {
-            if(view == null)
+            if (view == null)
             {
                 view = new CipherView();
             }
 
             view.Type = req.Type;
             view.FolderId = req.FolderId;
-            if(view.OrganizationId == null)
+            if (view.OrganizationId == null)
             {
                 view.OrganizationId = req.OrganizationId;
             }
@@ -75,7 +103,7 @@ namespace Bit.Core.Models.Export
 
             view.Fields = req.Fields?.Select(f => Field.ToView(f)).ToList();
 
-            switch(req.Type)
+            switch (req.Type)
             {
                 case CipherType.Login:
                     view.Login = Login.ToView(req.Login);

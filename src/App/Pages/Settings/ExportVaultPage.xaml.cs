@@ -24,14 +24,14 @@ namespace Bit.App.Pages
         {
             base.OnAppearing();
             await _vm.InitAsync();
-            _broadcasterService.Subscribe(nameof(AttachmentsPage), (message) =>
+            _broadcasterService.Subscribe(nameof(ExportVaultPage), (message) =>
             {
-                if(message.Command == "selectSaveFileResult")
+                if (message.Command == "selectSaveFileResult")
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         var data = message.Data as Tuple<string, string>;
-                        if(data == null)
+                        if (data == null)
                         {
                             return;
                         }
@@ -45,13 +45,14 @@ namespace Bit.App.Pages
         protected async override void OnDisappearing()
         {
             base.OnDisappearing();
+            _broadcasterService.Unsubscribe(nameof(ExportVaultPage));
         }
 
         public Entry MasterPasswordEntry { get; set; }
 
         private async void Close_Clicked(object sender, System.EventArgs e)
         {
-            if(DoOnce())
+            if (DoOnce())
             {
                 await Navigation.PopModalAsync();
             }
@@ -59,10 +60,15 @@ namespace Bit.App.Pages
 
         private async void ExportVault_Clicked(object sender, EventArgs e)
         {
-            if(DoOnce())
+            if (DoOnce())
             {
                 await _vm.ExportVaultAsync();
             }
+        }
+
+        void FileFormat_Changed(object sender, EventArgs e)
+        {
+            _vm?.UpdateWarning();
         }
     }
 }

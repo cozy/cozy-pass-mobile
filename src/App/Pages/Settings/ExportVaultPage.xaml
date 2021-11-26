@@ -21,12 +21,24 @@
     </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{u:I18n Close}" Clicked="Close_Clicked" />
+        <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
         <StackLayout Spacing="20">
             <StackLayout StyleClass="box">
+                <Frame
+                    IsVisible="{Binding DisablePrivateVaultPolicyEnabled}"
+                    Padding="10"
+                    Margin="0, 12, 0, 0"
+                    HasShadow="False"
+                    BackgroundColor="Transparent"
+                    BorderColor="Accent">
+                    <Label
+                        Text="{u:I18n DisablePersonalVaultExportPolicyInEffect}"
+                        StyleClass="text-muted, text-sm, text-bold"
+                        HorizontalTextAlignment="Center" />
+                </Frame>
                 <StackLayout StyleClass="box-row, box-row-input, box-row-input-options-platform">
                     <Label
                         Text="{u:I18n FileFormat}"
@@ -35,7 +47,9 @@
                         x:Name="_fileFormatPicker"
                         ItemsSource="{Binding FileFormatOptions, Mode=OneTime}"
                         SelectedIndex="{Binding FileFormatSelectedIndex}"
-                        StyleClass="box-value" />
+                        SelectedIndexChanged="FileFormat_Changed"
+                        StyleClass="box-value"
+                        IsEnabled="{Binding DisablePrivateVaultPolicyEnabled, Converter={StaticResource inverseBool}}" />
                 </StackLayout>
                 <Grid StyleClass="box-row">
                     <Grid.RowDefinitions>
@@ -58,6 +72,7 @@
                         IsSpellCheckEnabled="False"
                         IsTextPredictionEnabled="False"
                         IsPassword="{Binding ShowPassword, Converter={StaticResource inverseBool}}"
+                        IsEnabled="{Binding DisablePrivateVaultPolicyEnabled, Converter={StaticResource inverseBool}}"
                         Grid.Row="1"
                         Grid.Column="0"
                         ReturnType="Go"
@@ -75,24 +90,12 @@
                 <Label
                     Text="{u:I18n ExportVaultMasterPasswordDescription}"
                     StyleClass="box-footer-label, box-footer-label-switch" />
-                <Label
-                    StyleClass="box-footer-label, box-footer-label-switch"
-                    Margin="0, 20">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span
-                                Text="{Binding Converter={StaticResource toUpper}, ConverterParameter={u:I18n Warning}}"
-                                FontAttributes="Bold" />
-                            <Span Text=": " FontAttributes="Bold" />
-                            <Span Text="{u:I18n ExportVaultWarning}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
                 <StackLayout Spacing="20">
                     <Button Text="{u:I18n ExportVault}"
                             Clicked="ExportVault_Clicked"
                             HorizontalOptions="Fill"
-                            VerticalOptions="End" />
+                            VerticalOptions="End"
+                            IsEnabled="{Binding DisablePrivateVaultPolicyEnabled, Converter={StaticResource inverseBool}}"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

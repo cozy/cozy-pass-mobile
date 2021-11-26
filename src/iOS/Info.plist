@@ -11,7 +11,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.4.1</string>
+	<string>3.0.0</string>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>CFBundleURLTypes</key>
@@ -22,6 +22,8 @@
 				<string>cozypass</string>
 				<string>org-appextension-feature-password-management</string>
 			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>io.cozy.pass.url</string>
 		</dict>
@@ -56,6 +58,13 @@
 		<string>pl</string>
 		<string>ko</string>
 		<string>fa</string>
+		<string>ru</string>
+		<string>be</string>
+		<string>bg</string>
+		<string>ca</string>
+		<string>cs</string>
+		<string>el</string>
+		<string>th</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -102,6 +111,8 @@
 		<key>arm64</key>
 		<true/>
 	</dict>
+    <key>CADisableMinimumFrameDurationOnPhone</key>
+    <true/>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Assets.xcassets/AppIcons.appiconset</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -126,6 +137,6 @@
 		</dict>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>2004102</string>
+	<string>3000000</string>
 </dict>
 </plist>

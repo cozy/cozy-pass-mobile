@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using Xamarin.Forms;
 
 namespace Bit.App.Utilities
@@ -23,31 +24,38 @@ namespace Bit.App.Utilities
 
         public static string FormatPassword(string password)
         {
-            if(password == null)
+            if (password == null)
             {
                 return string.Empty;
             }
 
             // First two digits of returned hex code contains the alpha,
             // which is not supported in HTML color, so we need to cut those out.
-            var normalColor = $"<span style=\"color:#{((Color)Application.Current.Resources["TextColor"]).ToHex().Substring(3)}\">";
-            var numberColor = $"<span style=\"color:#{((Color)Application.Current.Resources["PasswordNumberColor"]).ToHex().Substring(3)}\">";
-            var specialColor = $"<span style=\"color:#{((Color)Application.Current.Resources["PasswordSpecialColor"]).ToHex().Substring(3)}\">";
+            var normalColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("TextColor").ToHex().Substring(3)}\">";
+            var numberColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("PasswordNumberColor").ToHex().Substring(3)}\">";
+            var specialColor = $"<span style=\"color:#{ThemeManager.GetResourceColor("PasswordSpecialColor").ToHex().Substring(3)}\">";
             var result = string.Empty;
 
+            // iOS won't hide the zero-width space char without these div attrs, but Android won't respect
+            // display:inline-block and adds a newline after the password.  Hence, only iOS gets the div.
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                result += "<div style=\"display:inline-block; align-items:center; justify-content:center; text-align:center; word-break:break-all; white-space:pre-wrap; min-width:0\">";
+            }
+            
             // Start with an otherwise uncovered case so we will definitely enter the "something changed"
             // state.
             var currentType = CharType.None;
 
-            foreach(var c in password)
+            foreach (var c in password)
             {
                 // First, identify what the current char is.
                 CharType charType;
-                if(char.IsLetter(c))
+                if (char.IsLetter(c))
                 {
                     charType = CharType.Normal;
                 }
-                else if(char.IsDigit(c))
+                else if (char.IsDigit(c))
                 {
                     charType = CharType.Number;
                 }
@@ -57,7 +65,7 @@ namespace Bit.App.Utilities
                 }
 
                 // If the char type changed, build a new span to append the text to.
-                if(charType != currentType)
+                if (charType != currentType)
                 {
                     // Close off previous span.
                     if (currentType != CharType.None)
@@ -69,7 +77,7 @@ namespace Bit.App.Utilities
 
                     // Switch the color if it is not a normal text. Otherwise leave the
                     // default value.
-                    switch(currentType)
+                    switch (currentType)
                     {
                         // Apply color style to span.
                         case CharType.Normal:
@@ -83,7 +91,18 @@ namespace Bit.App.Utilities
                             break;
                     }
                 }
-                result += c;
+
+                if (currentType == CharType.Special)
+                {
+                    result += HttpUtility.HtmlEncode(c);
+                }
+                else
+                {
+                    result += c;
+                }
+
+                // Add zero-width space after every char so per-char wrapping works consistently 
+                result += "&#8203;";
             }
 
             // Close off last span.
@@ -91,6 +110,13 @@ namespace Bit.App.Utilities
             {
                 result += "</span>";
             }
+            
+            // Close off iOS div
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                result += "</div>";
+            }
+            
             Console.WriteLine($"{result}: result");
 
             return result;

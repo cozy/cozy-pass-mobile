@@ -1,4 +1,5 @@
-﻿using Bit.Core.Enums;
+﻿using System.Data.Common;
+using Bit.Core.Enums;
 using Bit.Core.Models.Response;
 
 namespace Bit.Core.Models.Data
@@ -20,11 +21,14 @@ namespace Bit.Core.Models.Data
             UseTotp = response.UseTotp;
             Use2fa = response.Use2fa;
             UseApi = response.UseApi;
+            UsePolicies = response.UsePolicies;
             SelfHost = response.SelfHost;
             UsersGetPremium = response.UsersGetPremium;
             Seats = response.Seats;
             MaxCollections = response.MaxCollections;
             MaxStorageGb = response.MaxStorageGb;
+            Permissions = response.Permissions ?? new Permissions();
+            Identifier = response.Identifier;
         }
 
         public string Id { get; set; }
@@ -38,10 +42,13 @@ namespace Bit.Core.Models.Data
         public bool UseTotp { get; set; }
         public bool Use2fa { get; set; }
         public bool UseApi { get; set; }
+        public bool UsePolicies { get; set; }
         public bool SelfHost { get; set; }
         public bool UsersGetPremium { get; set; }
-        public int Seats { get; set; }
-        public int MaxCollections { get; set; }
+        public int? Seats { get; set; }
+        public short? MaxCollections { get; set; }
         public short? MaxStorageGb { get; set; }
+        public Permissions Permissions { get; set; } = new Permissions();
+        public string Identifier { get; set; }
     }
 }

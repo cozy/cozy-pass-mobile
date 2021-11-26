@@ -15,6 +15,8 @@ namespace Bit.Core.Services
         private string _stamp;
         private KdfType? _kdf;
         private int? _kdfIterations;
+        private bool? _emailVerified;
+        private bool? _forcePasswordReset;
 
         private const string Keys_UserId = "userId";
         private const string Keys_UserEmail = "userEmail";
@@ -22,6 +24,8 @@ namespace Bit.Core.Services
         private const string Keys_Kdf = "kdf";
         private const string Keys_KdfIterations = "kdfIterations";
         private const string Keys_OrganizationsFormat = "organizations_{0}";
+        private const string Keys_EmailVerified = "emailVerified";
+        private const string Keys_ForcePasswordReset = "forcePasswordReset";
 
         private readonly IStorageService _storageService;
         private readonly ITokenService _tokenService;
@@ -32,7 +36,7 @@ namespace Bit.Core.Services
             _tokenService = tokenService;
         }
 
-        public async Task SetInformationAsync(string userId, string email, KdfType kdf, int kdfIterations)
+        public async Task SetInformationAsync(string userId, string email, KdfType kdf, int? kdfIterations)
         {
             _email = email;
             _userId = userId;
@@ -51,9 +55,21 @@ namespace Bit.Core.Services
             await _storageService.SaveAsync(Keys_Stamp, stamp);
         }
 
+        public async Task SetEmailVerifiedAsync(bool emailVerified)
+        {
+            _emailVerified = emailVerified;
+            await _storageService.SaveAsync(Keys_EmailVerified, emailVerified);
+        }
+
+        public async Task SetForcePasswordReset(bool forcePasswordReset)
+        {
+            _forcePasswordReset = forcePasswordReset;
+            await _storageService.SaveAsync(Keys_ForcePasswordReset, forcePasswordReset);
+        }
+
         public async Task<string> GetUserIdAsync()
         {
-            if(_userId == null)
+            if (_userId == null)
             {
                 _userId = await _storageService.GetAsync<string>(Keys_UserId);
             }
@@ -62,7 +78,7 @@ namespace Bit.Core.Services
 
         public async Task<string> GetEmailAsync()
         {
-            if(_email == null)
+            if (_email == null)
             {
                 _email = await _storageService.GetAsync<string>(Keys_UserEmail);
             }
@@ -71,16 +87,25 @@ namespace Bit.Core.Services
 
         public async Task<string> GetSecurityStampAsync()
         {
-            if(_stamp == null)
+            if (_stamp == null)
             {
                 _stamp = await _storageService.GetAsync<string>(Keys_Stamp);
             }
             return _stamp;
         }
 
+        public async Task<bool> GetEmailVerifiedAsync()
+        {
+            if (_emailVerified == null)
+            {
+                _emailVerified = await _storageService.GetAsync<bool>(Keys_EmailVerified);
+            }
+            return _emailVerified.GetValueOrDefault();
+        }
+
         public async Task<KdfType?> GetKdfAsync()
         {
-            if(_kdf == null)
+            if (_kdf == null)
             {
                 _kdf = (KdfType?)(await _storageService.GetAsync<int?>(Keys_Kdf));
             }
@@ -89,11 +114,20 @@ namespace Bit.Core.Services
 
         public async Task<int?> GetKdfIterationsAsync()
         {
-            if(_kdfIterations == null)
+            if (_kdfIterations == null)
             {
                 _kdfIterations = await _storageService.GetAsync<int?>(Keys_KdfIterations);
             }
             return _kdfIterations;
+        }
+
+        public async Task<bool> GetForcePasswordReset()
+        {
+            if (_forcePasswordReset == null)
+            {
+                _forcePasswordReset = await _storageService.GetAsync<bool>(Keys_ForcePasswordReset);
+            }
+            return _forcePasswordReset.GetValueOrDefault();
         }
 
         public async Task ClearAsync()
@@ -105,6 +139,7 @@ namespace Bit.Core.Services
                 _storageService.RemoveAsync(Keys_Stamp),
                 _storageService.RemoveAsync(Keys_Kdf),
                 _storageService.RemoveAsync(Keys_KdfIterations),
+                _storageService.RemoveAsync(Keys_ForcePasswordReset),
                 ClearOrganizationsAsync(userId));
             _userId = _email = _stamp = null;
             _kdf = null;
@@ -114,7 +149,7 @@ namespace Bit.Core.Services
         public async Task<bool> IsAuthenticatedAsync()
         {
             var token = await _tokenService.GetTokenAsync();
-            if(token == null)
+            if (token == null)
             {
                 return false;
             }
@@ -124,8 +159,14 @@ namespace Bit.Core.Services
 
         public async Task<bool> CanAccessPremiumAsync()
         {
+            var authed = await IsAuthenticatedAsync();
+            if (!authed)
+            {
+                return false;
+            }
+
             var tokenPremium = _tokenService.GetPremium();
-            if(tokenPremium)
+            if (tokenPremium)
             {
                 return true;
             }
@@ -138,11 +179,24 @@ namespace Bit.Core.Services
             var userId = await GetUserIdAsync();
             var organizations = await _storageService.GetAsync<Dictionary<string, OrganizationData>>(
                 string.Format(Keys_OrganizationsFormat, userId));
-            if(organizations == null || !organizations.ContainsKey(id))
+            if (organizations == null || !organizations.ContainsKey(id))
             {
                 return null;
             }
             return new Organization(organizations[id]);
+        }
+        
+        public async Task<Organization> GetOrganizationByIdentifierAsync(string identifier)
+        {
+            var userId = await GetUserIdAsync();
+            var organizations = await GetAllOrganizationAsync();
+
+            if (organizations == null || organizations.Count == 0)
+            {
+                return null;
+            }
+
+            return organizations.FirstOrDefault(o => o.Identifier == identifier);
         }
 
         public async Task<List<Organization>> GetAllOrganizationAsync()

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,36 +118,54 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Name" xml:space="preserve">
-    <value>Bitwarden - Manager de parole gratuit</value>
+    <value>Manager de parole Bitwarden</value>
     <comment>Max 30 characters</comment>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden este cea mai ușoară și cea mai sigură metodă de a stoca toate autentificările și parolele, în timp ce le păstrați sincronizate între toate dispozitivele dvs.
+    <value>Bitwarden, Inc. este compania mamă a 8bit Solutions LLC.
 
-Furtul de parole este o problemă serioasă. Site-urile web și aplicațiile pe care le utilizați sunt atacate în fiecare zi. Se înregistrează încălcări ale securității și parolele dvs. sunt furate. Când reutilizați aceleași parole între aplicații și site-uri web, hackerii pot accesa cu ușurință e-mailurile, conturile bancare și alte conturi importante.
+NUMIT CEL MAI BUN MANAGER DE PAROLE DE CĂTRE THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET, ȘI MULȚI ALȚII.
 
-Experții în securitate vă recomandă să utilizați o parolă diferită, generată aleatoriu pentru fiecare cont pe care îl creați. Dar cum gestionați toate aceste parole? Bitwarden vă ușurează crearea, stocarea și accesarea parolelor.
+Gestionează, stochează, securizează și partajează parole nelimitate, pe dispozitive nelimitate, de oriunde. Bitwarden oferă soluții de gestionare a parolelor open source pentru toată lumea, fie acasă, la serviciu sau în deplasare.
 
-Bitwarden stochează toate autentificările dvs. într-un seif criptat care se sincronizează pe toate dispozitivele dvs. Deoarece este complet criptat numai dvs. aveţi acces la date. Nici măcar echipa Bitwarden nu poate citi datele dvs., chiar dacă vrem. Datele dvs. sunt sigilate cu criptare bit AES-256, salted hashing și PBKDF2 SHA-256.</value>
-    <comment>Max 4000 characters</comment>
+Generează parole puternice, unice și aleatorii pe baza cerințelor de securitate a fiecărui site web pe care îl frecventați.
+
+Bitwarden Send transmite rapid informații criptate --- fișiere și text simplu -- direct către oricine.
+
+Bitwarden oferă planurile Echipe și Organizație pentru companii, astfel încât să puteți partaja în siguranță parolele cu colegii.
+
+De ce să alegeți Bitwarden:
+
+Criptare de clasă mondială
+Parolele sunt protejate cu criptare avansată completă (AES-256 bit, hashtag experimentat și PBKDF2 SHA-256), astfel încât datele dvs. să rămână sigure și private.
+
+Generator de parole încorporat
+Generează parole puternice, unice și aleatorii pe baza cerințelor de securitate a fiecărui site web pe care îl frecventați.
+
+Traducere în mai multe limbi
+Bitwarden este deja tradus în 40 de limbi și numărul lor crește, datorită comunității noastre mondiale.
+
+Aplicații multi-platformă
+Asigură și partajează date sensibile din seiful Bitwarden de pe orice browser, dispozitiv mobil sau sistem de operare desktop și multe altele.</value>
+  <comment>Max 4000 characters</comment>
   </data>
   <data name="Keywords" xml:space="preserve">
-    <value>bitwarden,bit warden,8bit,password,login,free password manager,password manager,login manager</value>
+    <value>bit warden,8bit,parola,manager de parole gratuit,manager de parole,manager de conectare</value>
     <comment>Max 100 characters</comment>
   </data>
   <data name="Screenshot1" xml:space="preserve">
-    <value>Gestionați toate datele de conectare și parolele dintr-un seif securizat</value>
+    <value>Gestionează toate datele de conectare și parolele dintr-un seif securizat</value>
   </data>
   <data name="Screenshot2" xml:space="preserve">
-    <value>Generați automat parole puternice, aleatoare și securizate</value>
+    <value>Generează automat parole puternice, aleatorii și securizate</value>
   </data>
   <data name="Screenshot3" xml:space="preserve">
-    <value>Protejați seiful cu Touch ID, cod PIN sau parolă principală</value>
+    <value>Protejează seiful dvs. cu Touch ID, cod PIN sau parolă principală</value>
   </data>
   <data name="Screenshot4" xml:space="preserve">
-    <value>Completați automat autentificările din Safari, Chrome și din alte aplicații</value>
+    <value>Auto-completează autentificările din Safari, Chrome și din alte aplicații</value>
   </data>
   <data name="Screenshot5" xml:space="preserve">
-    <value>Sincronizaţi și accesaţi seiful dvs. de pe multiple dispozitive</value>
+    <value>Sincronizează și accesează seiful dvs. de pe multiple dispozitive</value>
   </data>
 </root>

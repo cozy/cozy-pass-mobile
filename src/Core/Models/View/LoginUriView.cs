@@ -25,7 +25,7 @@ namespace Bit.Core.Models.View
 
         private string _uri;
         private string _domain;
-        private string _hostname;
+        private string _host;
         private bool? _canLaunch;
 
         public LoginUriView() { }
@@ -51,10 +51,10 @@ namespace Bit.Core.Models.View
         {
             get
             {
-                if(_domain == null && Uri != null)
+                if (_domain == null && Uri != null)
                 {
                     _domain = CoreHelpers.GetDomain(Uri);
-                    if(_domain == string.Empty)
+                    if (_domain == string.Empty)
                     {
                         _domain = null;
                     }
@@ -63,23 +63,27 @@ namespace Bit.Core.Models.View
             }
         }
 
-        public string Hostname
+        public string Host
         {
             get
             {
-                if(_hostname == null && Uri != null)
+                if (Match == UriMatchType.RegularExpression)
                 {
-                    _hostname = CoreHelpers.GetHostname(Uri);
-                    if(_hostname == string.Empty)
+                    return null;
+                }
+                if (_host == null && Uri != null)
+                {
+                    _host = CoreHelpers.GetHost(Uri);
+                    if (_host == string.Empty)
                     {
-                        _hostname = null;
+                        _host = null;
                     }
                 }
-                return _hostname;
+                return _host;
             }
         }
 
-        public string HostnameOrUri => Hostname ?? Uri;
+        public string HostOrUri => Host ?? Uri;
 
         public bool IsWebsite => Uri != null && (Uri.StartsWith("http://") || Uri.StartsWith("https://") ||
             (Uri.Contains("://") && Regex.IsMatch(Uri, CoreHelpers.TldEndingRegex)));
@@ -88,11 +92,11 @@ namespace Bit.Core.Models.View
         {
             get
             {
-                if(_canLaunch != null)
+                if (_canLaunch != null)
                 {
                     return _canLaunch.Value;
                 }
-                if(Uri != null && Match != UriMatchType.RegularExpression)
+                if (Uri != null && Match != UriMatchType.RegularExpression)
                 {
                     var uri = LaunchUri;
                     _canLaunch = _canLaunchWhitelist.Any(prefix => uri.StartsWith(prefix));

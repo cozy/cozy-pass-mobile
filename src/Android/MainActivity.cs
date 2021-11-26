@@ -15,9 +15,10 @@ using Bit.Droid.Receivers;
 using Bit.App.Models;
 using Bit.Core.Enums;
 using Android.Nfc;
-using Bit.App.Utilities;
 using System.Threading.Tasks;
-using Android.Support.V4.Content;
+using AndroidX.Core.Content;
+using Bit.App.Utilities;
+using ZXing.Net.Mobile.Android;
 
 namespace Bit.Droid
 {
@@ -30,7 +31,20 @@ namespace Bit.Droid
         Icon = "@mipmap/ic_launcher",
         Theme = "@style/CozyTheme.Splash",
         MainLauncher = true,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+        LaunchMode = LaunchMode.SingleTask,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation |
+                               ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden |
+                               ConfigChanges.Navigation | ConfigChanges.UiMode)]
+    [IntentFilter(
+        new[] { Intent.ActionSend },
+        Categories = new[] { Intent.CategoryDefault },
+        DataMimeTypes = new[]
+        {
+            @"application/*",
+            @"image/*",
+            @"video/*",
+            @"text/*"
+        })]
     [Register("io.cozy.pass.MainActivity")]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -42,8 +56,6 @@ namespace Bit.Droid
         private IStorageService _storageService;
         private IEventService _eventService;
         private ICozyClientService _cozyClientService;
-
-        private PendingIntent _lockAlarmPendingIntent;
         private PendingIntent _clearClipboardPendingIntent;
         private PendingIntent _eventUploadPendingIntent;
         private AppOptions _appOptions;
@@ -55,9 +67,6 @@ namespace Bit.Droid
         {
             var eventUploadIntent = new Intent(this, typeof(EventUploadReceiver));
             _eventUploadPendingIntent = PendingIntent.GetBroadcast(this, 0, eventUploadIntent,
-                PendingIntentFlags.UpdateCurrent);
-            var alarmIntent = new Intent(this, typeof(LockAlarmReceiver));
-            _lockAlarmPendingIntent = PendingIntent.GetBroadcast(this, 0, alarmIntent,
                 PendingIntentFlags.UpdateCurrent);
             var clearClipboardIntent = new Intent(this, typeof(ClearClipboardAlarmReceiver));
             _clearClipboardPendingIntent = PendingIntent.GetBroadcast(this, 0, clearClipboardIntent,
@@ -78,13 +87,11 @@ namespace Bit.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            UpdateTheme(ThemeManager.GetTheme(true));
             base.OnCreate(savedInstanceState);
-            if(!CoreHelpers.InDebugMode())
+            if (!CoreHelpers.InDebugMode())
             {
                 Window.AddFlags(Android.Views.WindowManagerFlags.Secure);
             }
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             _appOptions = GetOptions();
@@ -92,44 +99,31 @@ namespace Bit.Droid
 
             _broadcasterService.Subscribe(_activityKey, (message) =>
             {
-                if(message.Command == "scheduleLockTimer")
-                {
-                    var alarmManager = GetSystemService(AlarmService) as AlarmManager;
-                    var lockOptionMinutes = (int)message.Data;
-                    var lockOptionMs = lockOptionMinutes * 60000;
-                    var triggerMs = Java.Lang.JavaSystem.CurrentTimeMillis() + lockOptionMs + 10;
-                    alarmManager.Set(AlarmType.RtcWakeup, triggerMs, _lockAlarmPendingIntent);
-                }
-                else if(message.Command == "cancelLockTimer")
-                {
-                    var alarmManager = GetSystemService(AlarmService) as AlarmManager;
-                    alarmManager.Cancel(_lockAlarmPendingIntent);
-                }
-                else if(message.Command == "startEventTimer")
+                if (message.Command == "startEventTimer")
                 {
                     StartEventAlarm();
                 }
-                else if(message.Command == "stopEventTimer")
+                else if (message.Command == "stopEventTimer")
                 {
                     var task = StopEventAlarmAsync();
                 }
-                else if(message.Command == "finishMainActivity")
+                else if (message.Command == "finishMainActivity")
                 {
                     Xamarin.Forms.Device.BeginInvokeOnMainThread(() => Finish());
                 }
-                else if(message.Command == "listenYubiKeyOTP")
+                else if (message.Command == "listenYubiKeyOTP")
                 {
                     ListenYubiKey((bool)message.Data);
                 }
-                else if(message.Command == "updatedTheme")
+                else if (message.Command == "updatedTheme")
                 {
-                    RestartApp();
+                    Xamarin.Forms.Device.BeginInvokeOnMainThread(() => AppearanceAdjustments());
                 }
-                else if(message.Command == "exit")
+                else if (message.Command == "exit")
                 {
                     ExitApp();
                 }
-                else if(message.Command == "copiedToClipboard")
+                else if (message.Command == "copiedToClipboard")
                 {
                     var task = ClearClipboardAlarmAsync(message.Data as Tuple<string, int?, bool>);
                 }
@@ -145,6 +139,8 @@ namespace Bit.Droid
         protected override void OnResume()
         {
             base.OnResume();
+            Xamarin.Essentials.Platform.OnResume();
+            AppearanceAdjustments();
 
             if (Intent.Data?.Scheme == "cozypass")
             {
@@ -159,7 +155,9 @@ namespace Bit.Droid
                 }
                 catch { }
             }
-            var setRestrictions = AndroidHelpers.SetPreconfiguredRestrictionSettingsAsync(this);
+            AndroidHelpers.SetPreconfiguredRestrictionSettingsAsync(this)
+                .GetAwaiter()
+                .GetResult();
         }
 
         public void OnOpenURL(string urlStr)
@@ -174,34 +172,49 @@ namespace Bit.Droid
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
-            if(intent.GetBooleanExtra("generatorTile", false))
+            try
             {
-                _messagingService.Send("popAllAndGoToTabGenerator");
-                if(_appOptions != null)
+                if (intent.GetBooleanExtra("generatorTile", false))
                 {
-                    _appOptions.GeneratorTile = true;
+                    _messagingService.Send("popAllAndGoToTabGenerator");
+                    if (_appOptions != null)
+                    {
+                        _appOptions.GeneratorTile = true;
+                    }
+                }
+                else if (intent.GetBooleanExtra("myVaultTile", false))
+                {
+                    _messagingService.Send("popAllAndGoToTabMyVault");
+                    if (_appOptions != null)
+                    {
+                        _appOptions.MyVaultTile = true;
+                    }
+                }
+                else if (intent.Action == Intent.ActionSend && intent.Type != null)
+                {
+                    if (_appOptions != null)
+                    {
+                        _appOptions.CreateSend = GetCreateSendRequest(intent);
+                    }
+                    _messagingService.Send("popAllAndGoToTabSend");
+                }
+                else
+                {
+                    ParseYubiKey(intent.DataString);
                 }
             }
-            if(intent.GetBooleanExtra("myVaultTile", false))
+            catch (Exception e)
             {
-                _messagingService.Send("popAllAndGoToTabMyVault");
-                if(_appOptions != null)
-                {
-                    _appOptions.MyVaultTile = true;
-                }
-            }
-            else
-            {
-                ParseYubiKey(intent.DataString);
+                System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", e.GetType(), e.StackTrace);
             }
         }
 
         public async override void OnRequestPermissionsResult(int requestCode, string[] permissions,
             [GeneratedEnum] Permission[] grantResults)
         {
-            if(requestCode == Constants.SelectFilePermissionRequestCode)
+            if (requestCode == Constants.SelectFilePermissionRequestCode)
             {
-                if(grantResults.Any(r => r != Permission.Granted))
+                if (grantResults.Any(r => r != Permission.Granted))
                 {
                     _messagingService.Send("selectFileCameraPermissionDenied");
                 }
@@ -210,20 +223,19 @@ namespace Bit.Droid
             else
             {
                 Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-                ZXing.Net.Mobile.Forms.Android.PermissionsHandler.OnRequestPermissionsResult(
-                    requestCode, permissions, grantResults);
+                PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-            if(resultCode == Result.Ok &&
+            if (resultCode == Result.Ok &&
                (requestCode == Constants.SelectFileRequestCode || requestCode == Constants.SaveFileRequestCode))
             {
                 Android.Net.Uri uri = null;
                 string fileName = null;
-                if(data != null && data.Data != null)
+                if (data != null && data.Data != null)
                 {
                     uri = data.Data;
                     fileName = AndroidHelpers.GetFileName(ApplicationContext, uri);
@@ -236,12 +248,12 @@ namespace Bit.Droid
                     fileName = $"photo_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}.jpg";
                 }
 
-                if(uri == null)
+                if (uri == null)
                 {
                     return;
                 }
 
-                if(requestCode == Constants.SaveFileRequestCode)
+                if (requestCode == Constants.SaveFileRequestCode)
                 {
                     _messagingService.Send("selectSaveFileResult",
                         new Tuple<string, string>(uri.ToString(), fileName));
@@ -250,15 +262,15 @@ namespace Bit.Droid
                 
                 try
                 {
-                    using(var stream = ContentResolver.OpenInputStream(uri))
-                    using(var memoryStream = new MemoryStream())
+                    using (var stream = ContentResolver.OpenInputStream(uri))
+                    using (var memoryStream = new MemoryStream())
                     {
                         stream.CopyTo(memoryStream);
                         _messagingService.Send("selectFileResult",
                             new Tuple<byte[], string>(memoryStream.ToArray(), fileName ?? "unknown_file_name"));
                     }
                 }
-                catch(Java.IO.FileNotFoundException)
+                catch (Java.IO.FileNotFoundException)
                 {
                     return;
                 }
@@ -273,12 +285,12 @@ namespace Bit.Droid
 
         private void ListenYubiKey(bool listen)
         {
-            if(!_deviceActionService.SupportsNfc())
+            if (!_deviceActionService.SupportsNfc())
             {
                 return;
             }
             var adapter = NfcAdapter.GetDefaultAdapter(this);
-            if(listen)
+            if (listen)
             {
                 var intent = new Intent(this, Class);
                 intent.AddFlags(ActivityFlags.SingleTop);
@@ -312,14 +324,15 @@ namespace Bit.Droid
                 Uri = Intent.GetStringExtra("uri") ?? Intent.GetStringExtra("autofillFrameworkUri"),
                 MyVaultTile = Intent.GetBooleanExtra("myVaultTile", false),
                 GeneratorTile = Intent.GetBooleanExtra("generatorTile", false),
-                FromAutofillFramework = Intent.GetBooleanExtra("autofillFramework", false)
+                FromAutofillFramework = Intent.GetBooleanExtra("autofillFramework", false),
+                CreateSend = GetCreateSendRequest(Intent)
             };
             var fillType = Intent.GetIntExtra("autofillFrameworkFillType", 0);
-            if(fillType > 0)
+            if (fillType > 0)
             {
                 options.FillType = (CipherType)fillType;
             }
-            if(Intent.GetBooleanExtra("autofillFrameworkSave", false))
+            if (Intent.GetBooleanExtra("autofillFrameworkSave", false))
             {
                 options.SaveType = (CipherType)Intent.GetIntExtra("autofillFrameworkType", 0);
                 options.SaveName = Intent.GetStringExtra("autofillFrameworkName");
@@ -334,48 +347,61 @@ namespace Bit.Droid
             return options;
         }
 
+        private Tuple<SendType, string, byte[], string> GetCreateSendRequest(Intent intent)
+        {
+            if (intent.Action == Intent.ActionSend && intent.Type != null)
+            {
+                if ((intent.Flags & ActivityFlags.LaunchedFromHistory) == ActivityFlags.LaunchedFromHistory)
+                {
+                    // don't re-deliver intent if resuming from app switcher
+                    return null;
+                }
+                var type = intent.Type;
+                if (type.Contains("text/"))
+                {
+                    var subject = intent.GetStringExtra(Intent.ExtraSubject);
+                    var text = intent.GetStringExtra(Intent.ExtraText);
+                    return new Tuple<SendType, string, byte[], string>(SendType.Text, subject, null, text);
+                }
+                else
+                {
+                    var data = intent.ClipData?.GetItemAt(0);
+                    var uri = data?.Uri;
+                    var filename = AndroidHelpers.GetFileName(ApplicationContext, uri);
+                    try
+                    {
+                        using (var stream = ContentResolver.OpenInputStream(uri))
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            stream.CopyTo(memoryStream);
+                            return new Tuple<SendType, string, byte[], string>(SendType.File, filename, memoryStream.ToArray(), null);
+                        }
+                    }
+                    catch (Java.IO.FileNotFoundException) { }
+                }
+            }
+            return null;
+        }
+
         private void ParseYubiKey(string data)
         {
-            if(data == null)
+            if (data == null)
             {
                 return;
             }
             var otpMatch = _otpPattern.Matcher(data);
-            if(otpMatch.Matches())
+            if (otpMatch.Matches())
             {
                 var otp = otpMatch.Group(1);
                 _messagingService.Send("gotYubiKeyOTP", otp);
             }
         }
 
-        private void UpdateTheme(string theme)
+        private void AppearanceAdjustments()
         {
-            if(theme == "dark")
-            {
-                SetTheme(Resource.Style.DarkTheme);
-            }
-            else if(theme == "black")
-            {
-                SetTheme(Resource.Style.BlackTheme);
-            }
-            else if(theme == "nord")
-            {
-                SetTheme(Resource.Style.NordTheme);
-            }
-            else
-            {
-                SetTheme(Resource.Style.LightTheme);
-            }
-        }
-
-        private void RestartApp()
-        {
-            var intent = new Intent(this, typeof(MainActivity));
-            var pendingIntent = PendingIntent.GetActivity(this, 5923650, intent, PendingIntentFlags.CancelCurrent);
-            var alarmManager = GetSystemService(AlarmService) as AlarmManager;
-            var triggerMs = Java.Lang.JavaSystem.CurrentTimeMillis() + 500;
-            alarmManager.Set(AlarmType.Rtc, triggerMs, pendingIntent);
-            Java.Lang.JavaSystem.Exit(0);
+            Window?.SetStatusBarColor(ThemeHelpers.NavBarBackgroundColor);
+            Window?.DecorView.SetBackgroundColor(ThemeHelpers.BackgroundColor);
+            ThemeHelpers.SetAppearance(ThemeManager.GetTheme(true), ThemeManager.OsDarkModeEnabled());
         }
 
         private void ExitApp()
@@ -386,24 +412,23 @@ namespace Bit.Droid
 
         private async Task ClearClipboardAlarmAsync(Tuple<string, int?, bool> data)
         {
-            if(data.Item3)
+            if (data.Item3)
             {
                 return;
             }
             var clearMs = data.Item2;
-            if(clearMs == null)
+            if (clearMs == null)
             {
                 var clearSeconds = await _storageService.GetAsync<int?>(Constants.ClearClipboardKey);
-                if(clearSeconds != null)
+                if (clearSeconds != null)
                 {
                     clearMs = clearSeconds.Value * 1000;
                 }
             }
-            if(clearMs == null)
+            if (clearMs == null)
             {
                 return;
             }
-            StaticStore.LastClipboardValue = data.Item1;
             var triggerMs = Java.Lang.JavaSystem.CurrentTimeMillis() + clearMs.Value;
             var alarmManager = GetSystemService(AlarmService) as AlarmManager;
             alarmManager.Set(AlarmType.Rtc, triggerMs, _clearClipboardPendingIntent);

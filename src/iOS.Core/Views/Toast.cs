@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using Bit.App.Utilities;
+using Foundation;
 using System;
 using UIKit;
 using Xamarin.Forms;
@@ -19,14 +20,14 @@ namespace Bit.iOS.Core.Views
         {
             TranslatesAutoresizingMaskIntoConstraints = false;
             var bgColor = UIColor.DarkGray;
-            var nordTheme = Application.Current?.Resources != null &&
-                ((Color)Application.Current.Resources["BackgroundColor"]) == Color.FromHex("#3b4252");
-            if(nordTheme)
+            var nordTheme = ThemeManager.Resources() != null &&
+                ThemeManager.GetResourceColor("BackgroundColor") == Color.FromHex("#3b4252");
+            if (nordTheme)
             {
                 bgColor = Color.FromHex("#4c566a").ToUIColor();
             }
             BackgroundColor = bgColor.ColorWithAlpha(0.9f);
-            Layer.CornerRadius = 15;
+            Layer.CornerRadius = 18;
             Layer.MasksToBounds = true;
 
             MessageLabel = new UILabel
@@ -70,7 +71,7 @@ namespace Bit.iOS.Core.Views
 
         public void Show()
         {
-            if(Superview != null)
+            if (Superview != null)
             {
                 return;
             }
@@ -79,7 +80,7 @@ namespace Bit.iOS.Core.Views
             LayoutIfNeeded();
 
             var localSuperView = UIApplication.SharedApplication.KeyWindow;
-            if(localSuperView != null)
+            if (localSuperView != null)
             {
                 localSuperView.AddSubview(this);
 
@@ -115,7 +116,7 @@ namespace Bit.iOS.Core.Views
 
         public void Dismiss(bool animated = true)
         {
-            if(Dismissed)
+            if (Dismissed)
             {
                 return;
             }
@@ -124,7 +125,7 @@ namespace Bit.iOS.Core.Views
             _dismissTimer?.Invalidate();
             _dismissTimer = null;
 
-            if(!animated)
+            if (!animated)
             {
                 RemoveFromSuperview();
                 DismissCallback?.Invoke();

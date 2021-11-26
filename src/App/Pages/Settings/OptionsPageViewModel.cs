@@ -52,14 +52,14 @@ namespace Bit.App.Pages
                 new KeyValuePair<int?, string>(30, AppResources.ThirtySeconds),
                 new KeyValuePair<int?, string>(60, AppResources.OneMinute)
             };
-            if(!iosIos)
+            if (!iosIos)
             {
                 ClearClipboardOptions.Add(new KeyValuePair<int?, string>(120, AppResources.TwoMinutes));
                 ClearClipboardOptions.Add(new KeyValuePair<int?, string>(300, AppResources.FiveMinutes));
             }
             ThemeOptions = new List<KeyValuePair<string, string>>
             {
-                new KeyValuePair<string, string>(null, AppResources.Default),
+                new KeyValuePair<string, string>(null, AppResources.ThemeDefault),
                 new KeyValuePair<string, string>("light", AppResources.Light),
                 new KeyValuePair<string, string>("dark", AppResources.Dark),
                 new KeyValuePair<string, string>("black", AppResources.Black),
@@ -86,7 +86,7 @@ namespace Bit.App.Pages
             get => _clearClipboardSelectedIndex;
             set
             {
-                if(SetProperty(ref _clearClipboardSelectedIndex, value))
+                if (SetProperty(ref _clearClipboardSelectedIndex, value))
                 {
                     var task = SaveClipboardChangedAsync();
                 }
@@ -98,7 +98,7 @@ namespace Bit.App.Pages
             get => _themeSelectedIndex;
             set
             {
-                if(SetProperty(ref _themeSelectedIndex, value))
+                if (SetProperty(ref _themeSelectedIndex, value))
                 {
                     var task = SaveThemeAsync();
                 }
@@ -110,7 +110,7 @@ namespace Bit.App.Pages
             get => _uriMatchSelectedIndex;
             set
             {
-                if(SetProperty(ref _uriMatchSelectedIndex, value))
+                if (SetProperty(ref _uriMatchSelectedIndex, value))
                 {
                     var task = SaveDefaultUriAsync();
                 }
@@ -122,7 +122,7 @@ namespace Bit.App.Pages
             get => _disableFavicon;
             set
             {
-                if(SetProperty(ref _disableFavicon, value))
+                if (SetProperty(ref _disableFavicon, value))
                 {
                     var task = UpdateDisableFaviconAsync();
                 }
@@ -134,7 +134,7 @@ namespace Bit.App.Pages
             get => _disableAutoTotpCopy;
             set
             {
-                if(SetProperty(ref _disableAutoTotpCopy, value))
+                if (SetProperty(ref _disableAutoTotpCopy, value))
                 {
                     var task = UpdateAutoTotpCopyAsync();
                 }
@@ -146,7 +146,7 @@ namespace Bit.App.Pages
             get => _autofillDisableSavePrompt;
             set
             {
-                if(SetProperty(ref _autofillDisableSavePrompt, value))
+                if (SetProperty(ref _autofillDisableSavePrompt, value))
                 {
                     var task = UpdateAutofillDisableSavePromptAsync();
                 }
@@ -186,7 +186,7 @@ namespace Bit.App.Pages
 
         private async Task UpdateAutoTotpCopyAsync()
         {
-            if(_inited)
+            if (_inited)
             {
                 await _storageService.SaveAsync(Constants.DisableAutoTotpCopyKey, DisableAutoTotpCopy);
             }
@@ -194,7 +194,7 @@ namespace Bit.App.Pages
 
         private async Task UpdateDisableFaviconAsync()
         {
-            if(_inited)
+            if (_inited)
             {
                 await _storageService.SaveAsync(Constants.DisableFaviconKey, DisableFavicon);
                 await _stateService.SaveAsync(Constants.DisableFaviconKey, DisableFavicon);
@@ -203,7 +203,7 @@ namespace Bit.App.Pages
 
         private async Task SaveClipboardChangedAsync()
         {
-            if(_inited && ClearClipboardSelectedIndex > -1)
+            if (_inited && ClearClipboardSelectedIndex > -1)
             {
                 await _storageService.SaveAsync(Constants.ClearClipboardKey,
                     ClearClipboardOptions[ClearClipboardSelectedIndex].Key);
@@ -212,27 +212,18 @@ namespace Bit.App.Pages
 
         private async Task SaveThemeAsync()
         {
-            if(_inited && ThemeSelectedIndex > -1)
+            if (_inited && ThemeSelectedIndex > -1)
             {
                 var theme = ThemeOptions[ThemeSelectedIndex].Key;
                 await _storageService.SaveAsync(Constants.ThemeKey, theme);
-                if(Device.RuntimePlatform == Device.Android)
-                {
-                    await _deviceActionService.ShowLoadingAsync(AppResources.Restarting);
-                    await Task.Delay(1000);
-                }
-                _messagingService.Send("updatedTheme", theme);
-                if(Device.RuntimePlatform == Device.iOS)
-                {
-                    await Task.Delay(500);
-                    await _platformUtilsService.ShowDialogAsync(AppResources.ThemeAppliedOnRestart);
-                }
+                ThemeManager.SetTheme(Device.RuntimePlatform == Device.Android, Application.Current.Resources);
+                _messagingService.Send("updatedTheme");
             }
         }
 
         private async Task SaveDefaultUriAsync()
         {
-            if(_inited && UriMatchSelectedIndex > -1)
+            if (_inited && UriMatchSelectedIndex > -1)
             {
                 await _storageService.SaveAsync(Constants.DefaultUriMatch,
                     (int?)UriMatchOptions[UriMatchSelectedIndex].Key);
@@ -241,7 +232,7 @@ namespace Bit.App.Pages
 
         private async Task UpdateAutofillDisableSavePromptAsync()
         {
-            if(_inited)
+            if (_inited)
             {
                 await _storageService.SaveAsync(Constants.AutofillDisableSavePromptKey, AutofillDisableSavePrompt);
             }
@@ -249,9 +240,9 @@ namespace Bit.App.Pages
 
         public async Task UpdateAutofillBlacklistedUris()
         {
-            if(_inited)
+            if (_inited)
             {
-                if(string.IsNullOrWhiteSpace(AutofillBlacklistedUris))
+                if (string.IsNullOrWhiteSpace(AutofillBlacklistedUris))
                 {
                     await _storageService.RemoveAsync(Constants.AutofillBlacklistedUrisKey);
                     AutofillBlacklistedUris = null;
@@ -261,14 +252,14 @@ namespace Bit.App.Pages
                 {
                     var csv = AutofillBlacklistedUris;
                     var urisList = new List<string>();
-                    foreach(var uri in csv.Split(','))
+                    foreach (var uri in csv.Split(','))
                     {
-                        if(string.IsNullOrWhiteSpace(uri))
+                        if (string.IsNullOrWhiteSpace(uri))
                         {
                             continue;
                         }
                         var cleanedUri = uri.Replace(System.Environment.NewLine, string.Empty).Trim();
-                        if(!cleanedUri.StartsWith("http://") && !cleanedUri.StartsWith("https://") &&
+                        if (!cleanedUri.StartsWith("http://") && !cleanedUri.StartsWith("https://") &&
                             !cleanedUri.StartsWith(Constants.AndroidAppProtocol))
                         {
                             continue;

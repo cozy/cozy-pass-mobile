@@ -1,4 +1,5 @@
-﻿using Bit.Core.Models.Data;
+﻿using Bit.Core.Enums;
+using Bit.Core.Models.Data;
 using Bit.Core.Models.View;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,13 @@ namespace Bit.Core.Models.Domain
             Favorite = obj.Favorite;
             OrganizationUseTotp = obj.OrganizationUseTotp;
             Edit = obj.Edit;
+            ViewPassword = obj.ViewPassword;
             RevisionDate = obj.RevisionDate;
             CollectionIds = obj.CollectionIds != null ? new HashSet<string>(obj.CollectionIds) : null;
             LocalData = localData;
+            Reprompt = obj.Reprompt;
 
-            switch(Type)
+            switch (Type)
             {
                 case Enums.CipherType.Login:
                     Login = new Login(obj.Login, alreadyEncrypted);
@@ -51,17 +54,19 @@ namespace Bit.Core.Models.Domain
             Attachments = obj.Attachments?.Select(a => new Attachment(a, alreadyEncrypted)).ToList();
             Fields = obj.Fields?.Select(f => new Field(f, alreadyEncrypted)).ToList();
             PasswordHistory = obj.PasswordHistory?.Select(ph => new PasswordHistory(ph, alreadyEncrypted)).ToList();
+            DeletedDate = obj.DeletedDate;
         }
 
         public string Id { get; set; }
         public string OrganizationId { get; set; }
         public string FolderId { get; set; }
-        public CipherString Name { get; set; }
-        public CipherString Notes { get; set; }
+        public EncString Name { get; set; }
+        public EncString Notes { get; set; }
         public Enums.CipherType Type { get; set; }
         public bool Favorite { get; set; }
         public bool OrganizationUseTotp { get; set; }
         public bool Edit { get; set; }
+        public bool ViewPassword { get; set; }
         public DateTime RevisionDate { get; set; }
         public Dictionary<string, object> LocalData { get; set; }
         public Login Login { get; set; }
@@ -72,6 +77,8 @@ namespace Bit.Core.Models.Domain
         public List<Field> Fields { get; set; }
         public List<PasswordHistory> PasswordHistory { get; set; }
         public HashSet<string> CollectionIds { get; set; }
+        public DateTime? DeletedDate { get; set; }
+        public CipherRepromptType Reprompt { get; set; }
 
         public async Task<CipherView> DecryptAsync()
         {
@@ -82,7 +89,7 @@ namespace Bit.Core.Models.Domain
                 "Notes"
             }, OrganizationId);
 
-            switch(Type)
+            switch (Type)
             {
                 case Enums.CipherType.Login:
                     model.Login = await Login.DecryptAsync(OrganizationId);
@@ -100,7 +107,7 @@ namespace Bit.Core.Models.Domain
                     break;
             }
 
-            if(Attachments?.Any() ?? false)
+            if (Attachments?.Any() ?? false)
             {
                 model.Attachments = new List<AttachmentView>();
                 var tasks = new List<Task>();
@@ -109,13 +116,13 @@ namespace Bit.Core.Models.Domain
                     var decAttachment = await attachment.DecryptAsync(OrganizationId);
                     model.Attachments.Add(decAttachment);
                 }
-                foreach(var attachment in Attachments)
+                foreach (var attachment in Attachments)
                 {
                     tasks.Add(decryptAndAddAttachmentAsync(attachment));
                 }
                 await Task.WhenAll(tasks);
             }
-            if(Fields?.Any() ?? false)
+            if (Fields?.Any() ?? false)
             {
                 model.Fields = new List<FieldView>();
                 var tasks = new List<Task>();
@@ -124,13 +131,13 @@ namespace Bit.Core.Models.Domain
                     var decField = await field.DecryptAsync(OrganizationId);
                     model.Fields.Add(decField);
                 }
-                foreach(var field in Fields)
+                foreach (var field in Fields)
                 {
                     tasks.Add(decryptAndAddFieldAsync(field));
                 }
                 await Task.WhenAll(tasks);
             }
-            if(PasswordHistory?.Any() ?? false)
+            if (PasswordHistory?.Any() ?? false)
             {
                 model.PasswordHistory = new List<PasswordHistoryView>();
                 var tasks = new List<Task>();
@@ -139,7 +146,7 @@ namespace Bit.Core.Models.Domain
                     var decPh = await ph.DecryptAsync(OrganizationId);
                     model.PasswordHistory.Add(decPh);
                 }
-                foreach(var ph in PasswordHistory)
+                foreach (var ph in PasswordHistory)
                 {
                     tasks.Add(decryptAndAddHistoryAsync(ph));
                 }
@@ -161,14 +168,16 @@ namespace Bit.Core.Models.Domain
                 Favorite = Favorite,
                 RevisionDate = RevisionDate,
                 Type = Type,
-                CollectionIds = CollectionIds.ToList()
+                CollectionIds = CollectionIds.ToList(),
+                DeletedDate = DeletedDate,
+                Reprompt = Reprompt,
             };
             BuildDataModel(this, c, new HashSet<string>
             {
                 "Name",
                 "Notes"
             });
-            switch(c.Type)
+            switch (c.Type)
             {
                 case Enums.CipherType.Login:
                     c.Login = Login.ToLoginData();

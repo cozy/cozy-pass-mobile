@@ -35,12 +35,19 @@ namespace Bit.Core.Services
         {
             _token = token;
             _decodedToken = null;
+
+            if (await SkipTokenStorage())
+            {
+                // If we have a vault timeout and the action is log out, don't store token
+                return;
+            }
+            
             await _storageService.SaveAsync(Keys_AccessToken, token);
         }
 
         public async Task<string> GetTokenAsync()
         {
-            if(_token != null)
+            if (_token != null)
             {
                 return _token;
             }
@@ -51,17 +58,40 @@ namespace Bit.Core.Services
         public async Task SetRefreshTokenAsync(string refreshToken)
         {
             _refreshToken = refreshToken;
+
+            if (await SkipTokenStorage())
+            {
+                // If we have a vault timeout and the action is log out, don't store token
+                return;
+            }
+            
             await _storageService.SaveAsync(Keys_RefreshToken, refreshToken);
         }
 
         public async Task<string> GetRefreshTokenAsync()
         {
-            if(_refreshToken != null)
+            if (_refreshToken != null)
             {
                 return _refreshToken;
             }
             _refreshToken = await _storageService.GetAsync<string>(Keys_RefreshToken);
             return _refreshToken;
+        }
+
+        public async Task ToggleTokensAsync()
+        {
+            var token = await GetTokenAsync();
+            var refreshToken = await GetRefreshTokenAsync();
+            if (await SkipTokenStorage())
+            {
+                await ClearTokenAsync();
+                _token = token;
+                _refreshToken = refreshToken;
+                return;
+            }
+
+            await SetTokenAsync(token);
+            await SetRefreshTokenAsync(refreshToken);
         }
 
         public async Task SetTwoFactorTokenAsync(string token, string email)
@@ -91,21 +121,21 @@ namespace Bit.Core.Services
 
         public JObject DecodeToken()
         {
-            if(_decodedToken != null)
+            if (_decodedToken != null)
             {
                 return _decodedToken;
             }
-            if(_token == null)
+            if (_token == null)
             {
                 throw new InvalidOperationException("Token not found.");
             }
             var parts = _token.Split('.');
-            if(parts.Length != 3)
+            if (parts.Length != 3)
             {
                 throw new InvalidOperationException("JWT must have 3 parts.");
             }
-            var decodedBytes = Base64UrlDecode(parts[1]);
-            if(decodedBytes == null || decodedBytes.Length < 1)
+            var decodedBytes = CoreHelpers.Base64UrlDecode(parts[1]);
+            if (decodedBytes == null || decodedBytes.Length < 1)
             {
                 throw new InvalidOperationException("Cannot decode the token.");
             }
@@ -116,7 +146,7 @@ namespace Bit.Core.Services
         public DateTime? GetTokenExpirationDate()
         {
             var decoded = DecodeToken();
-            if(decoded?["exp"] == null)
+            if (decoded?["exp"] == null)
             {
                 return null;
             }
@@ -126,7 +156,7 @@ namespace Bit.Core.Services
         public int TokenSecondsRemaining()
         {
             var d = GetTokenExpirationDate();
-            if(d == null)
+            if (d == null)
             {
                 return 0;
             }
@@ -143,7 +173,7 @@ namespace Bit.Core.Services
         public string GetUserId()
         {
             var decoded = DecodeToken();
-            if(decoded?["sub"] == null)
+            if (decoded?["sub"] == null)
             {
                 throw new Exception("No user id found.");
             }
@@ -153,7 +183,7 @@ namespace Bit.Core.Services
         public string GetEmail()
         {
             var decoded = DecodeToken();
-            if(decoded?["email"] == null)
+            if (decoded?["email"] == null)
             {
                 throw new Exception("No email found.");
             }
@@ -163,7 +193,7 @@ namespace Bit.Core.Services
         public bool GetEmailVerified()
         {
             var decoded = DecodeToken();
-            if(decoded?["email_verified"] == null)
+            if (decoded?["email_verified"] == null)
             {
                 throw new Exception("No email verification found.");
             }
@@ -173,7 +203,7 @@ namespace Bit.Core.Services
         public string GetName()
         {
             var decoded = DecodeToken();
-            if(decoded?["name"] == null)
+            if (decoded?["name"] == null)
             {
                 return null;
             }
@@ -183,7 +213,7 @@ namespace Bit.Core.Services
         public bool GetPremium()
         {
             var decoded = DecodeToken();
-            if(decoded?["premium"] == null)
+            if (decoded?["premium"] == null)
             {
                 return false;
             }
@@ -193,37 +223,18 @@ namespace Bit.Core.Services
         public string GetIssuer()
         {
             var decoded = DecodeToken();
-            if(decoded?["iss"] == null)
+            if (decoded?["iss"] == null)
             {
                 throw new Exception("No issuer found.");
             }
             return decoded["iss"].Value<string>();
         }
 
-        private byte[] Base64UrlDecode(string input)
+        private async Task<bool> SkipTokenStorage()
         {
-            var output = input;
-            // 62nd char of encoding
-            output = output.Replace('-', '+');
-            // 63rd char of encoding
-            output = output.Replace('_', '/');
-            // Pad with trailing '='s
-            switch(output.Length % 4)
-            {
-                case 0:
-                    // No pad chars in this case
-                    break;
-                case 2:
-                    // Two pad chars
-                    output += "=="; break;
-                case 3:
-                    // One pad char
-                    output += "="; break;
-                default:
-                    throw new InvalidOperationException("Illegal base64url string!");
-            }
-            // Standard base64 decoder
-            return Convert.FromBase64String(output);
+            var timeout = await _storageService.GetAsync<int?>(Constants.VaultTimeoutKey);
+            var action = await _storageService.GetAsync<string>(Constants.VaultTimeoutActionKey);
+            return timeout.HasValue && action == "logOut";
         }
 
         #region cozy

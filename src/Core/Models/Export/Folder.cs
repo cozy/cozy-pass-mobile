@@ -11,11 +11,16 @@ namespace Bit.Core.Models.Export
             Name = obj.Name;
         }
 
+        public Folder(Domain.Folder obj)
+        {
+            Name = obj.Name?.EncryptedString;
+        }
+
         public string Name { get; set; }
 
         public FolderView ToView(Folder req, FolderView view = null)
         {
-            if(view == null)
+            if (view == null)
             {
                 view = new FolderView();
             }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Bit.Core.Models.Data
 {
@@ -16,6 +17,7 @@ namespace Bit.Core.Models.Data
             FolderId = response.FolderId;
             UserId = userId;
             Edit = response.Edit;
+            ViewPassword = response.ViewPassword;
             OrganizationUseTotp = response.OrganizationUseTotp;
             Favorite = response.Favorite;
             RevisionDate = response.RevisionDate;
@@ -23,28 +25,43 @@ namespace Bit.Core.Models.Data
             Name = response.Name;
             Notes = response.Notes;
             CollectionIds = collectionIds?.ToList() ?? response.CollectionIds;
+            Reprompt = response.Reprompt;
 
-            switch(Type)
+            try // Added to address Issue (https://github.com/bitwarden/mobile/issues/1006)
             {
-                case Enums.CipherType.Login:
-                    Login = new LoginData(response.Login);
-                    break;
-                case Enums.CipherType.SecureNote:
-                    SecureNote = new SecureNoteData(response.SecureNote);
-                    break;
-                case Enums.CipherType.Card:
-                    Card = new CardData(response.Card);
-                    break;
-                case Enums.CipherType.Identity:
-                    Identity = new IdentityData(response.Identity);
-                    break;
-                default:
-                    break;
+                switch (Type)
+                {
+                    case Enums.CipherType.Login:
+                        Login = new LoginData(response.Login);
+                        break;
+                    case Enums.CipherType.SecureNote:
+                        SecureNote = new SecureNoteData(response.SecureNote);
+                        break;
+                    case Enums.CipherType.Card:
+                        Card = new CardData(response.Card);
+                        break;
+                    case Enums.CipherType.Identity:
+                        Identity = new IdentityData(response.Identity);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch
+            {
+                System.Diagnostics.Trace.WriteLine(new StringBuilder()
+                        .Append("BitWarden CipherData constructor failed to initialize CyperType '")
+                        .Append(Type)
+                        .Append("'; id = {")
+                        .Append(Id)
+                        .AppendLine("}")
+                    .ToString(), "BitWarden CipherData constructor");
             }
 
             Fields = response.Fields?.Select(f => new FieldData(f)).ToList();
             Attachments = response.Attachments?.Select(a => new AttachmentData(a)).ToList();
             PasswordHistory = response.PasswordHistory?.Select(ph => new PasswordHistoryData(ph)).ToList();
+            DeletedDate = response.DeletedDate;
         }
 
         public string Id { get; set; }
@@ -52,6 +69,7 @@ namespace Bit.Core.Models.Data
         public string FolderId { get; set; }
         public string UserId { get; set; }
         public bool Edit { get; set; }
+        public bool ViewPassword { get; set; } = true; // Fallback for old server versions
         public bool OrganizationUseTotp { get; set; }
         public bool Favorite { get; set; }
         public DateTime RevisionDate { get; set; }
@@ -66,5 +84,7 @@ namespace Bit.Core.Models.Data
         public List<AttachmentData> Attachments { get; set; }
         public List<PasswordHistoryData> PasswordHistory { get; set; }
         public List<string> CollectionIds { get; set; }
+        public DateTime? DeletedDate { get; set; }
+        public Enums.CipherRepromptType Reprompt { get; set; }
     }
 }

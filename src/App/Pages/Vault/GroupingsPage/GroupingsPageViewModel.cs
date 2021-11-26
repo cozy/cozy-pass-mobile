@@ -27,23 +27,27 @@ namespace Bit.App.Pages
         private bool _showNoData;
         private bool _showList;
         private bool _websiteIconsEnabled;
+        private bool _syncRefreshing;
         private string _noDataText;
         private List<CipherView> _allCiphers;
         private Dictionary<string, int> _folderCounts = new Dictionary<string, int>();
         private Dictionary<string, int> _collectionCounts = new Dictionary<string, int>();
         private Dictionary<CipherType, int> _typeCounts = new Dictionary<CipherType, int>();
         private readonly Dictionary<CipherType, List<CipherView>> _cipherPerType = new Dictionary<CipherType, List<CipherView>>();
+        private int _deletedCount = 0;
 
         private readonly ICipherService _cipherService;
         private readonly IFolderService _folderService;
         private readonly ICollectionService _collectionService;
         private readonly ISyncService _syncService;
         private readonly IUserService _userService;
-        private readonly ILockService _lockService;
+        private readonly IVaultTimeoutService _vaultTimeoutService;
         private readonly IDeviceActionService _deviceActionService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly IMessagingService _messagingService;
         private readonly IStateService _stateService;
+        private readonly IStorageService _storageService;
+        private readonly IPasswordRepromptService _passwordRepromptService;
 
         public GroupingsPageViewModel()
         {
@@ -52,11 +56,13 @@ namespace Bit.App.Pages
             _collectionService = ServiceContainer.Resolve<ICollectionService>("collectionService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
             _userService = ServiceContainer.Resolve<IUserService>("userService");
-            _lockService = ServiceContainer.Resolve<ILockService>("lockService");
+            _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
+            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
+            _passwordRepromptService = ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService");
 
             Loading = true;
             PageTitle = AppResources.MyVault;
@@ -74,6 +80,7 @@ namespace Bit.App.Pages
         public string FolderId { get; set; }
         public string CollectionId { get; set; }
         public Func<CipherView, bool> Filter { get; set; }
+        public bool Deleted { get; set; }
 
         public bool HasCiphers { get; set; }
         public bool HasFolders { get; set; }
@@ -90,6 +97,11 @@ namespace Bit.App.Pages
         {
             get => _refreshing;
             set => SetProperty(ref _refreshing, value);
+        }
+        public bool SyncRefreshing
+        {
+            get => _syncRefreshing;
+            set => SetProperty(ref _syncRefreshing, value);
         }
         public bool Loading
         {
@@ -133,25 +145,32 @@ namespace Bit.App.Pages
 
         public async Task LoadAsync()
         {
-            if(_doingLoad)
+            if (_doingLoad)
             {
                 return;
             }
             var authed = await _userService.IsAuthenticatedAsync();
-            if(!authed)
+            if (!authed)
             {
                 return;
             }
-            if(await _lockService.IsLockedAsync())
+            if (await _vaultTimeoutService.IsLockedAsync())
             {
                 return;
             }
+            if (await _storageService.GetAsync<bool>(Constants.SyncOnRefreshKey) && Refreshing && !SyncRefreshing)
+            {
+                SyncRefreshing = true;
+                await _syncService.FullSyncAsync(false);
+                return;
+            }
+
             _doingLoad = true;
             LoadedOnce = true;
             ShowNoData = false;
             Loading = true;
             ShowList = false;
-            ShowAddCipherButton = true;
+            ShowAddCipherButton = !Deleted;
             var groupedItems = new List<GroupingsPageListGroup>();
             var page = Page as GroupingsPage;
 
@@ -160,7 +179,7 @@ namespace Bit.App.Pages
             try
             {
                 await LoadDataAsync();
-                if(NestedFolders?.Any() ?? false)
+                if (NestedFolders?.Any() ?? false)
                 {
                     // Remove "No Folder" from folder listing
                     NestedFolders = NestedFolders.GetRange(0, NestedFolders.Count - 1);
@@ -168,14 +187,13 @@ namespace Bit.App.Pages
 
                 var uppercaseGroupNames = _deviceActionService.DeviceType == DeviceType.iOS;
                 var hasFavorites = FavoriteCiphers?.Any() ?? false;
-                if(hasFavorites)
+                if (hasFavorites)
                 {
                     var favListItems = FavoriteCiphers.Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
                     groupedItems.Add(new GroupingsPageListGroup(favListItems, AppResources.Favorites,
                         favListItems.Count, uppercaseGroupNames, true));
                 }
-
-                if(MainPage)
+                if (MainPage)
                 {
                     var order = new List<CipherType>
                     {
@@ -229,11 +247,34 @@ namespace Bit.App.Pages
                     groupedItems.Add(new GroupingsPageListGroup(collectionListItems, AppResources.Collections,
                         collectionListItems.Count, uppercaseGroupNames, !MainPage));
                 }
-                if(Ciphers?.Any() ?? false)
+                if (Ciphers?.Any() ?? false)
                 {
-                    var ciphersListItems = Ciphers.Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
+                    var ciphersListItems = Ciphers.Where(c => c.IsDeleted == Deleted)
+                        .Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
                     groupedItems.Add(new GroupingsPageListGroup(ciphersListItems, AppResources.Items,
                         ciphersListItems.Count, uppercaseGroupNames, !MainPage && !groupedItems.Any()));
+                }
+                // Cozy customization: we deactivate folders
+                /*/
+                if (ShowNoFolderCiphers)
+                {
+                    var noFolderCiphersListItems = NoFolderCiphers.Select(
+                        c => new GroupingsPageListItem { Cipher = c }).ToList();
+                    groupedItems.Add(new GroupingsPageListGroup(noFolderCiphersListItems, AppResources.FolderNone,
+                        noFolderCiphersListItems.Count, uppercaseGroupNames, false));
+                }
+                //*/
+                // Ensure this is last in the list (appears at the bottom)
+                if (MainPage && !Deleted)
+                {
+                    groupedItems.Add(new GroupingsPageListGroup(new List<GroupingsPageListItem>()
+                    {
+                        new GroupingsPageListItem()
+                        {
+                            IsTrash = true, 
+                            ItemCount = _deletedCount.ToString("N0")
+                        }
+                    }, AppResources.Trash, _deletedCount, uppercaseGroupNames, false));
                 }
                 GroupedItems.ResetWithRange(groupedItems);
             }
@@ -242,10 +283,16 @@ namespace Bit.App.Pages
                 _doingLoad = false;
                 Loaded = true;
                 Loading = false;
-                Refreshing = false;
                 ShowNoData = (MainPage && !HasCiphers) || !groupedItems.Any();
                 ShowList = !ShowNoData;
+                DisableRefreshing();
             }
+        }
+
+        public void DisableRefreshing()
+        {
+            Refreshing = false;
+            SyncRefreshing = false;
         }
 
         public async Task SelectCipherAsync(CipherView cipher)
@@ -257,7 +304,7 @@ namespace Bit.App.Pages
         public async Task SelectTypeAsync(CipherType type)
         {
             string title = null;
-            switch(type)
+            switch (type)
             {
                 case CipherType.Login:
                     title = AppResources.Logins;
@@ -290,11 +337,17 @@ namespace Bit.App.Pages
             await Page.Navigation.PushAsync(page);
         }
 
+        public async Task SelectTrashAsync()
+        {
+            var page = new GroupingsPage(false, null, null, null, AppResources.Trash, null, true);
+            await Page.Navigation.PushAsync(page);
+        }
+
         public async Task ExitAsync()
         {
             var confirmed = await _platformUtilsService.ShowDialogAsync(AppResources.ExitConfirmation,
                    AppResources.Exit, AppResources.Yes, AppResources.Cancel);
-            if(confirmed)
+            if (confirmed)
             {
                 _messagingService.Send("exit");
             }
@@ -302,7 +355,7 @@ namespace Bit.App.Pages
 
         public async Task SyncAsync()
         {
-            if(Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
+            if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle);
@@ -340,8 +393,9 @@ namespace Bit.App.Pages
             HasFolders = false;
             HasCollections = false;
             Filter = null;
+            _deletedCount = 0;
 
-            if(MainPage)
+            if (MainPage)
             {
                 Folders = await _folderService.GetAllDecryptedAsync();
                 NestedFolders = await _folderService.GetAllNestedAsync();
@@ -356,18 +410,23 @@ namespace Bit.App.Pages
             }
             else
             {
-                if(Type != null)
+                if (Deleted)
                 {
-                    Filter = c => c.Type == Type.Value;
+                    Filter = c => c.IsDeleted;
+                    NoDataText = AppResources.NoItemsTrash;
                 }
-                else if(FolderId != null)
+                else if (Type != null)
+                {
+                    Filter = c => c.Type == Type.Value && !c.IsDeleted;
+                }
+                else if (FolderId != null)
                 {
                     NoDataText = AppResources.NoItemsFolder;
                     var folderId = FolderId == "none" ? null : FolderId;
-                    if(folderId != null)
+                    if (folderId != null)
                     {
                         var folderNode = await _folderService.GetNestedAsync(folderId);
-                        if(folderNode?.Node != null)
+                        if (folderNode?.Node != null)
                         {
                             PageTitle = folderNode.Node.Name;
                             NestedFolders = (folderNode.Children?.Count ?? 0) > 0 ? folderNode.Children : null;
@@ -377,19 +436,19 @@ namespace Bit.App.Pages
                     {
                         PageTitle = AppResources.FolderNone;
                     }
-                    Filter = c => c.FolderId == folderId;
+                    Filter = c => c.FolderId == folderId && !c.IsDeleted;
                 }
-                else if(CollectionId != null)
+                else if (CollectionId != null)
                 {
                     ShowAddCipherButton = false;
                     NoDataText = AppResources.NoItemsCollection;
                     var collectionNode = await _collectionService.GetNestedAsync(CollectionId);
-                    if(collectionNode?.Node != null)
+                    if (collectionNode?.Node != null)
                     {
                         PageTitle = collectionNode.Node.Name;
                         NestedCollections = (collectionNode.Children?.Count ?? 0) > 0 ? collectionNode.Children : null;
                     }
-                    Filter = c => c.CollectionIds?.Contains(CollectionId) ?? false;
+                    Filter = c => c.CollectionIds?.Contains(CollectionId) ?? false && !c.IsDeleted;
                 }
                 else
                 {
@@ -398,28 +457,34 @@ namespace Bit.App.Pages
                 Ciphers = Filter != null ? _allCiphers.Where(Filter).ToList() : _allCiphers;
             }
 
-            foreach(var c in _allCiphers)
+            foreach (var c in _allCiphers)
             {
-                if(MainPage)
+                if (MainPage)
                 {
-                    if(c.Favorite)
+                    if (c.IsDeleted)
                     {
-                        if(FavoriteCiphers == null)
+                        _deletedCount++;
+                        continue;
+                    }
+
+                    if (c.Favorite)
+                    {
+                        if (FavoriteCiphers == null)
                         {
                             FavoriteCiphers = new List<CipherView>();
                         }
                         FavoriteCiphers.Add(c);
                     }
-                    if(c.FolderId == null)
+                    if (c.FolderId == null)
                     {
-                        if(NoFolderCiphers == null)
+                        if (NoFolderCiphers == null)
                         {
                             NoFolderCiphers = new List<CipherView>();
                         }
                         NoFolderCiphers.Add(c);
                     }
 
-                    if(_typeCounts.ContainsKey(c.Type))
+                    if (_typeCounts.ContainsKey(c.Type))
                     {
                         _typeCounts[c.Type] = _typeCounts[c.Type] + 1;
                     }
@@ -435,8 +500,13 @@ namespace Bit.App.Pages
                     _cipherPerType[c.Type].Add(c);
                 }
 
+                if (c.IsDeleted)
+                {
+                    continue;
+                }
+
                 var fId = c.FolderId ?? "none";
-                if(_folderCounts.ContainsKey(fId))
+                if (_folderCounts.ContainsKey(fId))
                 {
                     _folderCounts[fId] = _folderCounts[fId] + 1;
                 }
@@ -445,11 +515,11 @@ namespace Bit.App.Pages
                     _folderCounts.Add(fId, 1);
                 }
 
-                if(c.CollectionIds != null)
+                if (c.CollectionIds != null)
                 {
-                    foreach(var colId in c.CollectionIds)
+                    foreach (var colId in c.CollectionIds)
                     {
-                        if(_collectionCounts.ContainsKey(colId))
+                        if (_collectionCounts.ContainsKey(colId))
                         {
                             _collectionCounts[colId] = _collectionCounts[colId] + 1;
                         }
@@ -464,9 +534,9 @@ namespace Bit.App.Pages
 
         private async void CipherOptionsAsync(CipherView cipher)
         {
-            if((Page as BaseContentPage).DoOnce())
+            if ((Page as BaseContentPage).DoOnce())
             {
-                await AppHelpers.CipherListOptions(Page, cipher);
+                await AppHelpers.CipherListOptions(Page, cipher, _passwordRepromptService);
             }
         }
     }

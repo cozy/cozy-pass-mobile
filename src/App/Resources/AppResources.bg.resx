@@ -313,6 +313,9 @@
     <value>Запазване</value>
     <comment>Button text for a save operation (verb).</comment>
   </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
   <data name="Saving" xml:space="preserve">
     <value>Запазване…</value>
     <comment>Message shown when interacting with the server</comment>
@@ -521,23 +524,29 @@
   <data name="Lock" xml:space="preserve">
     <value>Заключване</value>
   </data>
-  <data name="LockOption15Minutes" xml:space="preserve">
+  <data name="FifteenMinutes" xml:space="preserve">
     <value>15 минути</value>
   </data>
-  <data name="LockOption1Hour" xml:space="preserve">
+  <data name="OneHour" xml:space="preserve">
     <value>1 час</value>
   </data>
-  <data name="LockOption1Minute" xml:space="preserve">
+  <data name="OneMinute" xml:space="preserve">
     <value>1 минута</value>
   </data>
-  <data name="LockOption4Hours" xml:space="preserve">
+  <data name="FourHours" xml:space="preserve">
     <value>4 часа</value>
   </data>
-  <data name="LockOptionImmediately" xml:space="preserve">
+  <data name="Immediately" xml:space="preserve">
     <value>Незабавно</value>
   </data>
-  <data name="LockOptions" xml:space="preserve">
-    <value>Настройки на заключването</value>
+  <data name="VaultTimeout" xml:space="preserve">
+    <value>Време за достъп</value>
+  </data>
+  <data name="VaultTimeoutAction" xml:space="preserve">
+    <value>Действие при изтичане на времето</value>
+  </data>
+  <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
+    <value>Излизането от трезора изцяло спира достъпа до него след изтичане на времето. Ще ви се наложи отново да се идентифицирате, за да го достъпите. Сигурни ли сте, че искате това действие?</value>
   </data>
   <data name="LoggingIn" xml:space="preserve">
     <value>Вписване…</value>
@@ -731,8 +740,8 @@
     <value>В трезора липсват елементи за {0}.</value>
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
-  <data name="BitwardenAutofillServiceNotification" xml:space="preserve">
-    <value>Натиснете известието за дописване от Битуорден при показването му, за да се възползвате от тази възможност.</value>
+  <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
+    <value>При избиране на поле за въвеждане на данни ще се появява изскачащо прозорче на Битуорден. Ако го натиснете, ще задействате услугата за автоматично дописване и имената и паролите ще бъдат попълнени.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Натиснете известието, за да попълните със запис от трезора.</value>
@@ -779,26 +788,8 @@
   <data name="BitwardenAutofillServiceSearch" xml:space="preserve">
     <value>Търсене на запис за автоматично дописване на „{0}“.</value>
   </data>
-  <data name="ShareVault" xml:space="preserve">
-    <value>Споделяне на трезора ви</value>
-  </data>
-  <data name="AutofillPasswordField" xml:space="preserve">
-    <value>Задействане само върху парола</value>
-  </data>
-  <data name="AutofillPasswordFieldDescription" xml:space="preserve">
-    <value>Търсене на полета за дописване на екрана, едва при фокусиране на поле за парола. Тази настройка може да спомогне за пестене на батерията.</value>
-  </data>
-  <data name="AutofillPersistNotification" xml:space="preserve">
-    <value>Постоянно подканяне</value>
-  </data>
-  <data name="AutofillPersistNotificationDescription" xml:space="preserve">
-    <value>Винаги да се предлага възможност за автоматично дописване, а наличието на запис в трезора да се проверява едва след опит за дописване. Тази настройка може да спомогне за пестене на батерията.</value>
-  </data>
-  <data name="AutofillAlways" xml:space="preserve">
-    <value>Постоянно задействане</value>
-  </data>
-  <data name="AutofillAlwaysDescription" xml:space="preserve">
-    <value>Винаги да се търсят полета за автоматично дописване на екрана при наличие на поле за парола. Това е стандартната настройка.</value>
+  <data name="LearnOrg" xml:space="preserve">
+    <value>Learn About Organizations</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Програмата „{0}“ не може да се отвори.</value>
@@ -1152,6 +1143,9 @@
   <data name="NoItemsFolder" xml:space="preserve">
     <value>Няма елементи в тази папка.</value>
   </data>
+  <data name="NoItemsTrash" xml:space="preserve">
+    <value>Няма записи в кошчето.</value>
+  </data>
   <data name="AutofillAccessibilityService" xml:space="preserve">
     <value>Услуга за автоматично дописване</value>
   </data>
@@ -1390,6 +1384,10 @@
   <data name="NoCollectionsToList" xml:space="preserve">
     <value>Няма колекции за показване.</value>
   </data>
+  <data name="MovedItemToOrg" xml:space="preserve">
+    <value>{0} moved to {1}.</value>
+    <comment>ex: Item moved to Organization.</comment>
+  </data>
   <data name="ItemShared" xml:space="preserve">
     <value>Записът е споделен.</value>
   </data>
@@ -1402,11 +1400,14 @@
   <data name="ShareItem" xml:space="preserve">
     <value>Споделяне на запис</value>
   </data>
+  <data name="MoveToOrganization" xml:space="preserve">
+    <value>Move to Organization</value>
+  </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Няма организации за показване.</value>
   </data>
-  <data name="ShareDesc" xml:space="preserve">
-    <value>Изберете организацията, с която искате да споделите записа. Споделянето ѝ прехвърля собствеността. След това няма вече директно да го притежавате.</value>
+  <data name="MoveToOrgDesc" xml:space="preserve">
+    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Брой думи</value>
@@ -1436,8 +1437,8 @@
     <value>Уникална фраза, идентифицираща абонамента ви</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
-  <data name="ShareVaultConfirmation" xml:space="preserve">
-    <value>Битуорден позволява да споделяте части от трезора си чрез регистрация на организация. Искате ли да научите повече от сайта bitwarden.com?</value>
+  <data name="LearnOrgConfirmation" xml:space="preserve">
+    <value>Bitwarden allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Изнасяне на трезора</value>
@@ -1451,11 +1452,8 @@
   <data name="Unlock" xml:space="preserve">
     <value>Отключване</value>
   </data>
-  <data name="LockOption30Minutes" xml:space="preserve">
+  <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 минути</value>
-  </data>
-  <data name="LockOption5Minutes" xml:space="preserve">
-    <value>5 минути</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
     <value>Задайте ПИН за отключване на Битуорден. Настройките за ПИН се изчистват при всяко пълно излизане от програмата.</value>
@@ -1480,9 +1478,6 @@
   </data>
   <data name="FiveMinutes" xml:space="preserve">
     <value>5 минути</value>
-  </data>
-  <data name="OneMinute" xml:space="preserve">
-    <value>1 минута</value>
   </data>
   <data name="TenSeconds" xml:space="preserve">
     <value>10 секунди</value>
@@ -1518,12 +1513,8 @@
   <data name="ThemeDescription" xml:space="preserve">
     <value>Промяна на цветовия облик на програмата.</value>
   </data>
-  <data name="RestartIsRequired" xml:space="preserve">
-    <value>Необходимо е повторно пускане.</value>
-    <comment>Referring to restarting the application.</comment>
-  </data>
-  <data name="Restarting" xml:space="preserve">
-    <value>Повторно пускане…</value>
+  <data name="ThemeDefault" xml:space="preserve">
+    <value>Default (System)</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Копиране на бележките</value>
@@ -1553,8 +1544,8 @@
   <data name="DisableSavePromptDescription" xml:space="preserve">
     <value>Дали да бъдете автоматично подканени да запазите в трезора данни за вписване, които въвеждате за първи път.</value>
   </data>
-  <data name="LockOptionOnRestart" xml:space="preserve">
-    <value>При повторно пускане</value>
+  <data name="OnRestart" xml:space="preserve">
+    <value>При рестартиране на приложението</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
     <value>Автоматичното дописване позволява сигурен достъп до трезора от сайтове и приложения. Изглежда не сте включили тази възможност в Битуорден, можете да го направите от екрана за настройките.</value>
@@ -1589,5 +1580,483 @@
   </data>
   <data name="UseBiometricsToUnlock" xml:space="preserve">
     <value>Отключване с биометрични данни</value>
+  </data>
+  <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
+    <value>Битуорден има нужда от внимание. Отворете „Услуга за автоматично дописване“ в настройките му.</value>
+  </data>
+  <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
+    <value>3. Отворете настройките за приложения на Android за Битуорден. В раздела „Advanced“ (Допълнителни/За напреднали) изберете „Display over other apps“ (Показване върху другите приложения) и превключете конфигурацията, за да позволите на Битуорден да се появява върху другите приложения.</value>
+  </data>
+  <data name="OverlayPermission" xml:space="preserve">
+    <value>Права</value>
+  </data>
+  <data name="BitwardenAutofillServiceOpenOverlayPermissionSettings" xml:space="preserve">
+    <value>Отворете настройките за припокриване на приложения</value>
+  </data>
+  <data name="BitwardenAutofillServiceStep3" xml:space="preserve">
+    <value>3. Отворете настройките за приложения на Android за Битуорден. В раздела „Advanced“ (Допълнителни/За напреднали) изберете „Display over other apps“ (Показване върху другите приложения) и превключете конфигурацията, за да позволите на Битуорден да се появява върху другите приложения.</value>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Отказано право</value>
+  </data>
+  <data name="Granted" xml:space="preserve">
+    <value>Дадено право</value>
+  </data>
+  <data name="FileFormat" xml:space="preserve">
+    <value>Формат на файла</value>
+  </data>
+  <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
+    <value>Въведете главната парола, за да изнесете данните.</value>
+  </data>
+  <data name="ExportVaultWarning" xml:space="preserve">
+    <value>Данните от трезора ви ще се изнесат в незащитен формат. Не го пращайте по незащитени канали като е-поща. Изтрийте файла незабавно след като свършите работата си с него.</value>
+  </data>
+  <data name="EncExportKeyWarning" xml:space="preserve">
+    <value>При изнасяне данните се шифрират с ключа ви. Ако го смените, ще трябва наново да ги изнесете, защото няма да може да дешифрирате настоящия файл.</value>
+  </data>
+  <data name="EncExportAccountWarning" xml:space="preserve">
+    <value>Ключовете за шифриране са уникални за всеки потребител, затова не може да внесете шифрирани данни от един потребител в регистрацията на друг.</value>
+  </data>
+  <data name="ExportVaultConfirmationTitle" xml:space="preserve">
+    <value>Потвърждаване на изнасянето на трезора</value>
+    <comment>Title for the alert to confirm vault exports.</comment>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>ВНИМАНИЕ</value>
+  </data>
+  <data name="ExportVaultFailure" xml:space="preserve">
+    <value>Проблем при изнасянето на трезора, пробвайте отново. Ако проблемът пак се прояви, пробвайте през трезора по уеб.</value>
+  </data>
+  <data name="ExportVaultSuccess" xml:space="preserve">
+    <value>Трезорът е изнесен успешно</value>
+  </data>
+  <data name="Clone" xml:space="preserve">
+    <value>Дублиране</value>
+    <comment>Clone an entity (verb).</comment>
+  </data>
+  <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
+    <value>Поне една политика на организация влияе на настройките на генерирането на паролите.</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Отваряне</value>
+    <comment>Button text for an open operation (verb).</comment>
+  </data>
+  <data name="UnableToSaveAttachment" xml:space="preserve">
+    <value>Проблем при прикачането на файл, пробвайте отново. Ако проблемът пак се прояви, пробвайте през трезора по уеб.</value>
+  </data>
+  <data name="SaveAttachmentSuccess" xml:space="preserve">
+    <value>Прикаченият файл беше записан успешно</value>
+  </data>
+  <data name="AutofillTileAccessibilityRequired" xml:space="preserve">
+    <value>Моля, включете услугата за автоматично попълване в настройките на Bitwarden, за да я използвате.</value>
+  </data>
+  <data name="AutofillTileUriNotFound" xml:space="preserve">
+    <value>Не са открити полета за пароли</value>
+  </data>
+  <data name="SoftDeleting" xml:space="preserve">
+    <value>Преместване в кошчето…</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemSoftDeleted" xml:space="preserve">
+    <value>Записът е преместен в кошчето.</value>
+    <comment>Confirmation message after successfully soft-deleting a login</comment>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Възстановяване</value>
+    <comment>Restores an entity (verb).</comment>
+  </data>
+  <data name="Restoring" xml:space="preserve">
+    <value>Възстановяване...</value>
+    <comment>Message shown when interacting with the server</comment>
+  </data>
+  <data name="ItemRestored" xml:space="preserve">
+    <value>Записът бе възстановен.</value>
+    <comment>Confirmation message after successfully restoring a soft-deleted item</comment>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Кошче</value>
+    <comment>(noun) Location of deleted items which have not yet been permanently deleted</comment>
+  </data>
+  <data name="SearchTrash" xml:space="preserve">
+    <value>Търсене в кошчето</value>
+    <comment>(action prompt) Label for the search text field when viewing the trash folder</comment>
+  </data>
+  <data name="DoYouReallyWantToPermanentlyDeleteCipher" xml:space="preserve">
+    <value>Наистина ли искате да го изтриете? Действието не може да бъде отменено.</value>
+    <comment>Confirmation alert message when permanently deleteing a cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToRestoreCipher" xml:space="preserve">
+    <value>Сигурни ли сте, че искате да възстановите записа?</value>
+    <comment>Confirmation alert message when restoring a soft-deleted cipher.</comment>
+  </data>
+  <data name="DoYouReallyWantToSoftDeleteCipher" xml:space="preserve">
+    <value>Сигурни ли сте, че искате да преместите записа в кошчето?</value>
+    <comment>Confirmation alert message when soft-deleting a cipher.</comment>
+  </data>
+  <data name="BiometricInvalidated" xml:space="preserve">
+    <value>Засечена е промяна в биометричните данни. Впишете се с главната парола, за да я включите отново биометричната идентификация.</value>
+  </data>
+  <data name="BiometricInvalidatedExtension" xml:space="preserve">
+    <value>Потвърждаването с биометрични данни е изключено. Въведете главната парола, за да го включите.</value>
+  </data>
+  <data name="EnableSyncOnRefresh" xml:space="preserve">
+    <value>Синхронизация при опресняване</value>
+  </data>
+  <data name="EnableSyncOnRefreshDescription" xml:space="preserve">
+    <value>Синхронизиране на трезора с жест — провлачване надолу.</value>
+  </data>
+  <data name="LogInSso" xml:space="preserve">
+    <value>Еднократна идентификация (SSO)</value>
+  </data>
+  <data name="LogInSsoSummary" xml:space="preserve">
+    <value>Вписване чрез портала на организацията ви за еднократна идентификация. За да продължите, въведете идентификатора на организацията.</value>
+  </data>
+  <data name="OrgIdentifier" xml:space="preserve">
+    <value>Идентификатор на организация</value>
+  </data>
+  <data name="LoginSsoError" xml:space="preserve">
+    <value>В момента не може да се впишете с еднократна идентификация</value>
+  </data>
+  <data name="SetMasterPassword" xml:space="preserve">
+    <value>Задаване на главна парола</value>
+  </data>
+  <data name="SetMasterPasswordSummary" xml:space="preserve">
+    <value>За да завършите настройките за еднократна идентификация, трябва да зададете главна парола за трезора.</value>
+  </data>
+  <data name="MasterPasswordPolicyInEffect" xml:space="preserve">
+    <value>Поне една политика на организация има следните изисквания към главната ви парола:</value>
+  </data>
+  <data name="PolicyInEffectMinComplexity" xml:space="preserve">
+    <value>Минимална сложност от {0}</value>
+  </data>
+  <data name="PolicyInEffectMinLength" xml:space="preserve">
+    <value>Минимална дължина от {0}</value>
+  </data>
+  <data name="PolicyInEffectUppercase" xml:space="preserve">
+    <value>Поне една главна буква</value>
+  </data>
+  <data name="PolicyInEffectLowercase" xml:space="preserve">
+    <value>Поне една малка буква</value>
+  </data>
+  <data name="PolicyInEffectNumbers" xml:space="preserve">
+    <value>Поне една цифра</value>
+  </data>
+  <data name="PolicyInEffectSpecial" xml:space="preserve">
+    <value>Поне един от следните специални знаци: {0}</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationTitle" xml:space="preserve">
+    <value>Грешна парола</value>
+  </data>
+  <data name="MasterPasswordPolicyValidationMessage" xml:space="preserve">
+    <value>Паролата не покрива изискванията на организацията. Проверете политиките и пробвайте отново.</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Зареждане</value>
+  </data>
+  <data name="AcceptPolicies" xml:space="preserve">
+    <value>Чрез тази отметка вие се съгласявате със следното:</value>
+  </data>
+  <data name="AcceptPoliciesError" xml:space="preserve">
+    <value>Условията за използване и политиката за поверителност не бяха приети.</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Общи условия</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Политика за поверителност</value>
+  </data>
+  <data name="AccessibilityDrawOverPermissionAlert" xml:space="preserve">
+    <value>Битуорден има нужда от внимание. Отворете „Изобразяване отгоре“ в „Услуга за автоматично дописване“ в настройките му.</value>
+  </data>
+  <data name="AutofillServices" xml:space="preserve">
+    <value>Услуга за автоматично дописване</value>
+  </data>
+  <data name="InlineAutofill" xml:space="preserve">
+    <value>Дописване вътре</value>
+  </data>
+  <data name="InlineAutofillDescription" xml:space="preserve">
+    <value>Използване на дописване вътре, ако избраният метод за вход (IME/клавиатурна подредба) го поддържа. Ако настройките не позволяват този вариант, ще се ползва стандартното дописване.</value>
+  </data>
+  <data name="Accessibility" xml:space="preserve">
+    <value>Услуги за достъпност</value>
+  </data>
+  <data name="AccessibilityDescription" xml:space="preserve">
+    <value>Използване на технологиите за достъпност на Битуорден за автоматичното дописване в уеб и приложенията. Когато е включено, ще се показва изскачащ прозорец при полетата.</value>
+  </data>
+  <data name="AccessibilityDescription2" xml:space="preserve">
+    <value>Използване на технологиите за достъпност на Битуорден за автоматичното дописване в уеб и приложенията. Изисква включването на изобразяване отгоре</value>
+  </data>
+  <data name="AccessibilityDescription3" xml:space="preserve">
+    <value>Използване на технологиите за достъпност на Битуорден за автоматичното дописване в уеб и приложенията с прозорче за бързо действие или изскачащ прозорец.</value>
+  </data>
+  <data name="AccessibilityDescription4" xml:space="preserve">
+    <value>Изисква се за прозорчето за бързо действие или изскачащия прозорец при ползване на услугите за дописване.</value>
+  </data>
+  <data name="DrawOver" xml:space="preserve">
+    <value>Изобразяване отгоре</value>
+  </data>
+  <data name="DrawOverDescription" xml:space="preserve">
+    <value>Когато е включено, услугата за достъпност на Битуорден ще показват изскачащо прозорче при избор на полета за вписване.</value>
+  </data>
+  <data name="DrawOverDescription2" xml:space="preserve">
+    <value>Когато е включено, услугите за достъпност на Битуорден ще показват изскачащо прозорче, когато са избрани полета за вписване.</value>
+  </data>
+  <data name="DrawOverDescription3" xml:space="preserve">
+    <value>Когато е включено, услугите за достъпност ще показват изскачащо прозорче, когато са избрани полета за вписване в по-стари приложения, които не поддържат системата за достъпност на Android.</value>
+  </data>
+  <data name="PersonalOwnershipSubmitError" xml:space="preserve">
+    <value>Заради някоя политика за голяма организация не може да запазвате елементи в собствения си трезор. Променете собствеността да е на организация и изберете от наличните колекции.</value>
+  </data>
+  <data name="PersonalOwnershipPolicyInEffect" xml:space="preserve">
+    <value>Политика от някоя организация влияе на вариантите за собственост.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Изпращане</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AllSends" xml:space="preserve">
+    <value>Всички изпращания</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Sends" xml:space="preserve">
+    <value>Изпращания</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NameInfo" xml:space="preserve">
+    <value>Описателно име за това изпращане.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="TypeTextInfo" xml:space="preserve">
+    <value>Текст за изпращане.</value>
+  </data>
+  <data name="HideTextByDefault" xml:space="preserve">
+    <value>При достъп до изпращането стандартно текстът да се скрива</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="TypeFile" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="TypeFileInfo" xml:space="preserve">
+    <value>Файл за изпращане.</value>
+  </data>
+  <data name="DeletionDate" xml:space="preserve">
+    <value>Дата на изтриване</value>
+  </data>
+  <data name="DeletionTime" xml:space="preserve">
+    <value>Време на изтриване</value>
+  </data>
+  <data name="DeletionDateInfo" xml:space="preserve">
+    <value>Изпращането ще бъде окончателно изтрито на зададената дата и време.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PendingDelete" xml:space="preserve">
+    <value>Предстои изтриване</value>
+  </data>
+  <data name="ExpirationDate" xml:space="preserve">
+    <value>Дата на валидност</value>
+  </data>
+  <data name="ExpirationTime" xml:space="preserve">
+    <value>Време на валидност</value>
+  </data>
+  <data name="ExpirationDateInfo" xml:space="preserve">
+    <value>При задаване — това изпращане ще се изключи на зададената дата и време.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="Expired" xml:space="preserve">
+    <value>Изтекъл</value>
+  </data>
+  <data name="MaximumAccessCount" xml:space="preserve">
+    <value>Максимален брой достъпвания.</value>
+  </data>
+  <data name="MaximumAccessCountInfo" xml:space="preserve">
+    <value>При задаване — това изпращане ще се изключи след определен брой достъпвания.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="MaximumAccessCountReached" xml:space="preserve">
+    <value>Достигнат е максималният брой достъпвания</value>
+  </data>
+  <data name="CurrentAccessCount" xml:space="preserve">
+    <value>Текущ брой на достъпванията</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Нова парола</value>
+  </data>
+  <data name="PasswordInfo" xml:space="preserve">
+    <value>Изискване на парола за достъп до това изпращане.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="RemovePassword" xml:space="preserve">
+    <value>Премахване на парола</value>
+  </data>
+  <data name="AreYouSureRemoveSendPassword" xml:space="preserve">
+    <value>Сигурни ли сте, че искате да премахнете паролата?</value>
+  </data>
+  <data name="RemovingSendPassword" xml:space="preserve">
+    <value>Премахване на парола</value>
+  </data>
+  <data name="SendPasswordRemoved" xml:space="preserve">
+    <value>Паролата е премахната.</value>
+  </data>
+  <data name="NotesInfo" xml:space="preserve">
+    <value>Скрити бележки за това изпращане.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="DisableSend" xml:space="preserve">
+    <value>Пълно спиране на това изпращане — никой няма да има достъп.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NoSends" xml:space="preserve">
+    <value>Няма изпращания.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddASend" xml:space="preserve">
+    <value>Добавяне на изпращане</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="CopyLink" xml:space="preserve">
+    <value>Копиране на връзката</value>
+  </data>
+  <data name="ShareLink" xml:space="preserve">
+    <value>Споделяне на връзката</value>
+  </data>
+  <data name="SendLink" xml:space="preserve">
+    <value>Изпращане на връзката</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SearchSends" xml:space="preserve">
+    <value>Търсене в изпратените</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="EditSend" xml:space="preserve">
+    <value>Редактиране на изпращане</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AddSend" xml:space="preserve">
+    <value>Добавяне на изпращане</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AreYouSureDeleteSend" xml:space="preserve">
+    <value>Сигурни ли сте, че искате да изтриете това изпращане?</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDeleted" xml:space="preserve">
+    <value>Изпратеното е изтрито.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendUpdated" xml:space="preserve">
+    <value>Изпратеното е редактирано.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="NewSendCreated" xml:space="preserve">
+    <value>Създадено е ново изпращане.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="OneDay" xml:space="preserve">
+    <value>1 ден</value>
+  </data>
+  <data name="TwoDays" xml:space="preserve">
+    <value>2 дни</value>
+  </data>
+  <data name="ThreeDays" xml:space="preserve">
+    <value>3 дни</value>
+  </data>
+  <data name="SevenDays" xml:space="preserve">
+    <value>7 дни</value>
+  </data>
+  <data name="ThirtyDays" xml:space="preserve">
+    <value>30 дни</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>По избор</value>
+  </data>
+  <data name="ShareOnSave" xml:space="preserve">
+    <value>Споделяне на изпратеното при запис.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendDisabledWarning" xml:space="preserve">
+    <value>Поради политика на организация, може само да изтривате съществуващи изпращания.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="AboutSend" xml:space="preserve">
+    <value>Относно изпращането</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="HideEmail" xml:space="preserve">
+    <value>Скриване на е-пощата ми от получателите.</value>
+  </data>
+  <data name="SendOptionsPolicyInEffect" xml:space="preserve">
+    <value>Поне една политика на организация влияе на настройките за изпращане.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFilePremiumRequired" xml:space="preserve">
+    <value>Безплатните регистрации могат да споделят само текст. Необходим е платен абонамент, за да можете да изпращате файлове.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="SendFileEmailVerificationRequired" xml:space="preserve">
+    <value>Трябва да потвърдите е-пощата си, за да можете да изпращате файлове.</value>
+    <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Повторно запитване за главната парола</value>
+  </data>
+  <data name="PasswordConfirmation" xml:space="preserve">
+    <value>Потвърждение на главната парола</value>
+  </data>
+  <data name="PasswordConfirmationDesc" xml:space="preserve">
+    <value>Това действие е защитено. За да продължите, въведете отново главната си парола, за да потвърдите самоличността си.</value>
+  </data>
+  <data name="CaptchaRequired" xml:space="preserve">
+    <value>Captcha Required</value>
+  </data>
+  <data name="CaptchaFailed" xml:space="preserve">
+    <value>Captcha Failed. Please try again.</value>
+  </data>
+  <data name="UpdatedMasterPassword" xml:space="preserve">
+    <value>Updated Master Password</value>
+  </data>
+  <data name="UpdateMasterPassword" xml:space="preserve">
+    <value>Update Master Password</value>
+  </data>
+  <data name="UpdateMasterPasswordWarning" xml:space="preserve">
+    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+  </data>
+  <data name="UpdatingPassword" xml:space="preserve">
+    <value>Updating Password</value>
+  </data>
+  <data name="UpdatePasswordError" xml:space="preserve">
+    <value>Currently unable to update password</value>
+  </data>
+  <data name="Fido2Title" xml:space="preserve">
+    <value>FIDO2 WebAuthn</value>
+  </data>
+  <data name="Fido2Instruction" xml:space="preserve">
+    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+  </data>
+  <data name="Fido2Desc" xml:space="preserve">
+    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+  </data>
+  <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
+    <value>Authenticate WebAuthn</value>
+  </data>
+  <data name="Fido2ReturnToApp" xml:space="preserve">
+    <value>Return to App</value>
+  </data>
+  <data name="Fido2CheckBrowser" xml:space="preserve">
+    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+  </data>
+  <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
+    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+  </data>
+  <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
+    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+  </data>
+  <data name="VaultTimeoutToLarge" xml:space="preserve">
+    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+  </data>
+  <data name="DisablePersonalVaultExportPolicyInEffect">
+    <value>One or more organization policies prevents your from exporting your personal vault.</value>
   </data>
 </root>

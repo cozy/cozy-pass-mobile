@@ -1,6 +1,8 @@
 ﻿using Bit.App.Resources;
 using System;
 using System.Threading.Tasks;
+using Bit.Core.Abstractions;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -9,6 +11,8 @@ namespace Bit.App.Pages
 {
     public partial class GeneratorPage : BaseContentPage
     {
+        private readonly IBroadcasterService _broadcasterService;
+        
         private GeneratorPageViewModel _vm;
         private readonly bool _fromTabPage;
         private readonly Action<string> _selectAction;
@@ -18,14 +22,15 @@ namespace Bit.App.Pages
         {
             _tabsPage = tabsPage;
             InitializeComponent();
+            _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
             _vm = BindingContext as GeneratorPageViewModel;
             _vm.Page = this;
             _fromTabPage = fromTabPage;
             _selectAction = selectAction;
             var isIos = Device.RuntimePlatform == Device.iOS;
-            if(selectAction != null)
+            if (selectAction != null)
             {
-                if(isIos)
+                if (isIos)
                 {
                     ToolbarItems.Add(_closeItem);
                 }
@@ -33,7 +38,7 @@ namespace Bit.App.Pages
             }
             else
             {
-                if(isIos)
+                if (isIos)
                 {
                     ToolbarItems.Add(_moreItem);
                 }
@@ -42,7 +47,7 @@ namespace Bit.App.Pages
                     ToolbarItems.Add(_historyItem);
                 }
             }
-            if(isIos)
+            if (isIos)
             {
                 _typePicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
             }
@@ -56,15 +61,31 @@ namespace Bit.App.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            if(!_fromTabPage)
+            if (!_fromTabPage)
             {
                 await InitAsync();
             }
+            _broadcasterService.Subscribe(nameof(GeneratorPage), async (message) =>
+            {
+                if (message.Command == "updatedTheme")
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        _vm.RedrawPassword();
+                    });
+                }
+            });
+        }
+        
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _broadcasterService.Unsubscribe(nameof(GeneratorPage));
         }
 
         protected override bool OnBackButtonPressed()
         {
-            if(Device.RuntimePlatform == Device.Android && _tabsPage != null)
+            if (Device.RuntimePlatform == Device.Android && _tabsPage != null)
             {
                 _tabsPage.ResetToVaultPage();
                 return true;
@@ -84,13 +105,13 @@ namespace Bit.App.Pages
 
         private async void More_Clicked(object sender, EventArgs e)
         {
-            if(!DoOnce())
+            if (!DoOnce())
             {
                 return;
             }
             var selection = await DisplayActionSheet(AppResources.Options, AppResources.Cancel,
                 null, AppResources.PasswordHistory);
-            if(selection == AppResources.PasswordHistory)
+            if (selection == AppResources.PasswordHistory)
             {
                 var page = new GeneratorHistoryPage();
                 await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
@@ -115,7 +136,7 @@ namespace Bit.App.Pages
 
         private async void Close_Clicked(object sender, EventArgs e)
         {
-            if(DoOnce())
+            if (DoOnce())
             {
                 await Navigation.PopModalAsync();
             }

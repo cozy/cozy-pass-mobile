@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -122,16 +122,16 @@
     <comment>Max 30 characters</comment>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Bitwarden bietet dir die einfachste und sicherste Möglichkeit, alle Ihre Benutzernamen und Passwörter zu speichern und zwischen deinen Geräten zu synchronisieren. Die Bitwarden App Erweiterung ermöglicht den Zugriff auf den Tresor in Safari und Chrome sowie hunderten weiteren Apps.
+    <value>Bitwarden bietet dir die einfachste und sicherste Möglichkeit, alle Ihre Benutzernamen und Passwörter zu speichern und zwischen deinen Geräten zu synchronisieren. Die Bitwarden App Erweiterung ermöglicht den schnellen Zugriff auf den Tresor in Safari und Chrome sowie hunderten weiteren Apps.
 
-Passwortdiebstahl ist ein echtes Problem. Die von dir verwendeten Webseiten und Apps werden jeden Tag angegriffen und oftmals werden Ihre Passwörter dabei gestohlen. Wenn du das gleiche Passwort bei mehreren Apps und Websites verwendest, können Hacker sich damit ganz einfach auch in deine E-Mails oder dein Online-Banking einloggen.
+Passwortdiebstahl ist ein echtes Problem. Die von dir verwendeten Webseiten und Apps werden jeden Tag angegriffen und oftmals werden deine Passwörter dabei gestohlen. Wenn du das gleiche Passwort bei mehreren Apps und Websites verwendest, können Hacker sich damit ganz einfach auch in deinen E-Mail, deinen Online-Banking oder andere wichtige Accounts einloggen.
 
 Sicherheitsexperten empfehlen daher, dass für jeden Account ein anderes, zufällig generiertes Passwort verwendet wird. Aber wie sollst du dir all diese Passwörter merken? Bitwarden hilft dir dabei, deine Passwörter zu erstellen, speichern und zu verwalten.
 
 Bitwarden speichert all deine Zugangsdaten in einem verschlüsselten Tresor, der mit allen Geräten synchronisiert wird. Da er komplett verschlüsselt ist, bevor er überhaupt dein Gerät verlässt, hast nur du Zugriff auf deine Daten. Nicht einmal Bitwarden kann deine Daten lesen, selbst, wenn wir es wollten. Deine Daten sind mit einer AES-256-Bit-Verschlüsselung, sowie Salted Hashing und PBKDF2 SHA-256 abgesichert.
 
-Bitwarden ist zu 100% Open Source. Der Source-Code ist auf GitHub verfügbar - jeder kann den Code einsehen, überprüfen und zum Projekt beitragen.</value>
-    <comment>Max 4000 characters</comment>
+Bitwarden ist auf Open-Source-Software ausgerichtet. Der Quellcode für Bitwarden wird auf GitHub gehostet und jeder kann die Bitwarden-Codebasis überprüfen, prüfen und dazu beitragen.</value>
+  <comment>Max 4000 characters</comment>
   </data>
   <data name="Keywords" xml:space="preserve">
     <value>bitwarden,bit warden,8bit,password,login,free password manager,password manager,login manager,passwort,passwörter,anmeldung,kostenlos</value>
