@@ -1,4 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cozy customization -->
+<!-- Many edits have been made in this file to fit Cozy's design
+     Notable edits:
+     - Page title removed from NavigationBar
+     - Page title is now in the login form
+     - Form labels are dimmed
+     - NavigationBar's actions have been removed (getHint)
+     - Links to retrieve cozy address and password's hint have been added in the form
+-->
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,9 +15,8 @@
     xmlns:pages="clr-namespace:Bit.App.Pages"
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
-    x:DataType="pages:LoginPageViewModel"
-    Title="{Binding PageTitle}">
-    
+    x:DataType="pages:LoginPageViewModel">
+
     <ContentPage.BindingContext>
         <pages:LoginPageViewModel />
     </ContentPage.BindingContext>
@@ -35,6 +43,7 @@
     <ScrollView>
         <StackLayout Spacing="20">
             <StackLayout StyleClass="box">
+                <Label Text="{u:I18n CozyLoginTitle}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Title"/>
                 <StackLayout StyleClass="box-row">
                     <Label
                         Text="{u:I18n CozyURL}"
@@ -46,6 +55,20 @@
                         Keyboard="Url"
                         StyleClass="box-value" />
                 </StackLayout>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{u:I18n GetCozyAddress}"
+                                    TextColor="{DynamicResource HyperlinkColor}"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GetCozyAddressCommand}"
+                                                          CommandParameter="" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
                 <Grid StyleClass="box-row">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
@@ -81,6 +104,19 @@
                         AutomationProperties.IsInAccessibleTree="True"
                         AutomationProperties.Name="{u:I18n ToggleVisibility}" />
                 </Grid>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{u:I18n GetPasswordHint}"
+                                    TextColor="{DynamicResource HyperlinkColor}"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Hint_Clicked" NumberOfTapsRequired="1" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </StackLayout>
             <StackLayout Padding="10, 0">
                 <Button Text="{u:I18n LogIn}" 

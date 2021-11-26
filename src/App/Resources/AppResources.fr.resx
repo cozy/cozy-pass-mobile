@@ -175,6 +175,10 @@
     <value>Mot de passe</value>
     <comment>Label for Cozy password</comment>
   </data>
+  <data name="CozyLoginTitle" xml:space="preserve">
+    <value>Se connecter</value>
+    <comment>Login screen title</comment>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Remerciements</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>
@@ -523,7 +527,10 @@
     <value>Générer un mot de passe</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Obtenir votre indice de mot de passe</value>
+    <value>J'ai oublié mon mot de passe</value>
+  </data>
+  <data name="GetCozyAddress" xml:space="preserve">
+    <value>J'ai oublié l'adresse de mon Cozy</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Importer des éléments</value>
