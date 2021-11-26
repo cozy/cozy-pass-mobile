@@ -180,7 +180,7 @@
     <comment>Title for page that we use to give credit to resources that we use.</comment>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Supprimer</value>
+    <value>Supprimer l'élément</value>
     <comment>Delete an entity (verb).</comment>
   </data>
   <data name="Deleting" xml:space="preserve">
@@ -288,7 +288,7 @@
     <comment>Title for login page. (noun)</comment>
   </data>
   <data name="LogOut" xml:space="preserve">
-    <value>Déconnexion</value>
+    <value>Déconnecter</value>
     <comment>The log out button text (verb).</comment>
   </data>
   <data name="LogoutConfirmation" xml:space="preserve">
@@ -559,10 +559,10 @@
     <value>Immédiatement</value>
   </data>
   <data name="VaultTimeout" xml:space="preserve">
-    <value>Délai d'expiration du coffre</value>
+    <value>Délai d'expiration du dévérouillage</value>
   </data>
   <data name="VaultTimeoutAction" xml:space="preserve">
-    <value>Action lors de l'expiration du délai du coffre</value>
+    <value>Action lors de l'expiration</value>
   </data>
   <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
     <value>La déconnexion supprimera tous les accès à votre coffre et nécessite une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre ?</value>
@@ -1650,7 +1650,7 @@
     <value>Le coffre a été exporté avec succès</value>
   </data>
   <data name="Clone" xml:space="preserve">
-    <value>Cloner</value>
+    <value>Cloner l'élément</value>
     <comment>Clone an entity (verb).</comment>
   </data>
   <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
