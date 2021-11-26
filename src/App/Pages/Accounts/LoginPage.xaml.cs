@@ -1,4 +1,4 @@
-using Bit.App.Models;
+﻿using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -46,6 +46,9 @@ namespace Bit.App.Pages
             _email.ReturnType = ReturnType.Next;
             _email.ReturnCommand = new Command(() => _masterPassword.Focus());
 
+            // Cozy customization, disable menu
+            // password hint will be not requested from the login form
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -54,6 +57,7 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_getPasswordHint);
             }
+            //*/
         }
 
         public Entry MasterPasswordEntry { get; set; }
