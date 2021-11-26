@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -575,6 +575,9 @@
                 </StackLayout>
                 <BoxView StyleClass="box-row-separator" />
             </StackLayout>
+            <!-- Cozy customization -->
+            <!-- Notes are disabled to avoid confusion with Cozy Notes -->
+            <!--
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n Notes, Header=True}"
@@ -589,6 +592,7 @@
                 </StackLayout>
                 <BoxView StyleClass="box-row-separator" IsVisible="{Binding ShowNotesSeparator}" />
             </StackLayout>
+            -->
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n CustomFields, Header=True}"
