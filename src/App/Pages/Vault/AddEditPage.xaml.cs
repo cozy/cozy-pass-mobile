@@ -1,4 +1,4 @@
-using Bit.App.Abstractions;
+﻿using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.App.Utilities;
@@ -301,7 +301,13 @@ namespace Bit.App.Pages
             {
                 return;
             }
+            // Cozy customization, disable attachment
+            // Disable attachment as they are not implemented in Cozy Stack
+            /*
             var options = new List<string> { AppResources.Attachments };
+            /*/
+            var options = new List<string> { };
+            //*/
             if (_vm.EditMode)
             {
                 // Cozy customization, replace collection action by move action
