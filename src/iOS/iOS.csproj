@@ -447,4 +447,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\cozy_fingerprint%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_logo%403x.png" />
+  </ItemGroup>
 </Project>
