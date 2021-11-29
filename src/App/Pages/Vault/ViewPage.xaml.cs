@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -243,7 +243,13 @@ namespace Bit.App.Pages
                 return;
             }
 
+            // Cozy customization, disable attachment
+            // Disable attachment as they are not implemented in Cozy Stack
+            /*
             var options = new List<string> {AppResources.Attachments};
+            /*/
+            var options = new List<string> { };
+            //*/
             if (_vm.Cipher.OrganizationId == null)
             {
                 options.Add(AppResources.Clone);
