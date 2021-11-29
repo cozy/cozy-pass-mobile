@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cozy customization -->
+<!-- Many edits have been made in this file to fit Cozy's design
+     Notable edits:
+     - Actions buttons are now in the screen's bottom
+     - SSO button is disabled
+-->
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -16,6 +22,11 @@
         <ToolbarItem Text="{u:I18n Close}" Clicked="Close_Clicked" Order="Primary" Priority="-1" />
     </ContentPage.ToolbarItems>
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
     <StackLayout Spacing="0" Padding="16, 5">
         <controls:FaButton Text="&#xf013;"
                            StyleClass="btn-muted, btn-icon, btn-icon-platform"
@@ -30,20 +41,27 @@
                 </OnPlatform>
             </controls:FaButton.Margin>
         </controls:FaButton>
-        <StackLayout VerticalOptions="CenterAndExpand" Spacing="32">
+        <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
             <Image
                 x:Name="_logo"
-                Source="logo.png"
+                Source="home_logo.png"
                 VerticalOptions="Center" />
-            <Label Text="{u:I18n LoginOrCreateNewAccount}"
-                   StyleClass="text-lg"
+                <Label Text="{u:I18n CozyHomeTitle}"
+                   FontSize="35"
                    HorizontalTextAlignment="Center"></Label>
-            <StackLayout Spacing="8">
-                <Button Text="{u:I18n LogIn}"
+                <Label Text="{u:I18n LoginOrCreateNewAccount}"
+                   FontSize="Medium"
+                   HorizontalTextAlignment="Center"></Label>
+        </StackLayout>
+    </StackLayout>
+    <StackLayout Spacing="0" Padding="16, 16" Grid.Row="1">
+            <StackLayout>
+                <StackLayout Spacing="8">
+                    <Button Text="{u:I18n CreateAccount}"
                         StyleClass="btn-primary"
-                    	Clicked="LogIn_Clicked"></Button>
-                <Button Text="{u:I18n CreateAccount}"
                         Clicked="Register_Clicked" />
+                    <Button Text="{u:I18n CozyHomeHaveAccount}"
+                    	Clicked="LogIn_Clicked"></Button>
                 <!-- Cozy customization: SSO is disabled
                 <Button Text="{u:I18n LogInSso}"
                         Clicked="LogInSso_Clicked" />
@@ -51,5 +69,6 @@
             </StackLayout>
         </StackLayout>
     </StackLayout>
+    </Grid>
 
 </pages:BaseContentPage>
