@@ -1,4 +1,4 @@
-﻿using Bit.App.Abstractions;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core;
@@ -39,6 +39,10 @@ namespace Bit.App.Pages
         private string _loggedInAsText;
         private string _lockedVerifyText;
         private Tuple<bool, bool> _pinSet;
+        // Cozy customization, handle avatar url
+        //*
+        private string _avatarUrl;
+        //*/
 
         public LockPageViewModel()
         {
@@ -112,6 +116,15 @@ namespace Bit.App.Pages
             set => SetProperty(ref _lockedVerifyText, value);
         }
 
+        // Cozy customization, handle avatar url
+        //*
+        public string AvatarUrl
+        {
+            get => _avatarUrl;
+            set => SetProperty(ref _avatarUrl, value);
+        }
+        //*/
+
         public Command SubmitCommand { get; }
         public Command TogglePasswordCommand { get; }
         public string ShowPasswordIcon => ShowPassword ? "" : "";
@@ -131,7 +144,17 @@ namespace Bit.App.Pages
                 webVault = "https://bitwarden.com";
             }
             var webVaultHostname = CoreHelpers.GetHostname(webVault);
+            // Cozy customization, set LoggedInAsText with only the cozy instance's url
+            /*
             LoggedInAsText = string.Format(AppResources.LoggedInAsOn, _email, webVaultHostname);
+            /*/
+            LoggedInAsText = webVaultHostname;
+            //*/
+
+            // Cozy customization, handle avatar url
+            //*/
+            ComputeAvatarUrl(webVault);
+            //*/
             if (PinLock)
             {
                 PageTitle = AppResources.VerifyPIN;
@@ -169,6 +192,21 @@ namespace Bit.App.Pages
                 }
             }
         }
+
+        // Cozy customization, handle avatar url
+        //*/
+        private void ComputeAvatarUrl(string webVault)
+        {
+            string baseUrl = webVault;
+
+            if (baseUrl.EndsWith("/bitwarden"))
+            {
+                baseUrl = baseUrl.Replace("/bitwarden", "");
+            }
+
+            AvatarUrl = baseUrl + "/public/avatar";
+        }
+        //*/
 
         public async Task SubmitAsync()
         {

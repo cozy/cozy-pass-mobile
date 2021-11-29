@@ -46,6 +46,9 @@ namespace Bit.App.Pages
             _email.ReturnType = ReturnType.Next;
             _email.ReturnCommand = new Command(() => _masterPassword.Focus());
 
+            // Cozy customization, disable menu
+            // password hint will be not requested from the login form
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -54,12 +57,14 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_getPasswordHint);
             }
+            //*/
         }
 
         public Entry MasterPasswordEntry { get; set; }
 
         protected override async void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             await _vm.InitAsync();
             if (!_inputFocused)
@@ -67,6 +72,11 @@ namespace Bit.App.Pages
                 RequestFocus(string.IsNullOrWhiteSpace(_vm.Email) ? _email : _masterPassword);
                 _inputFocused = true;
             }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
         }
 
         private async void LogIn_Clicked(object sender, EventArgs e)

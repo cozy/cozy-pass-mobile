@@ -43,7 +43,11 @@ namespace Bit.App.Pages
             _vm.StartRegisterAction = () => Device.BeginInvokeOnMainThread(async () => await StartRegisterAsync());
             _vm.StartSsoLoginAction = () => Device.BeginInvokeOnMainThread(async () => await StartSsoLoginAsync());
             _vm.StartEnvironmentAction = () => Device.BeginInvokeOnMainThread(async () => await StartEnvironmentAsync());
+            // Cozy customization, disable UpdateLogo()
+            // Since we force Inverted theme for HomePage, there is no need to compute Logo based on theme
+            /*
             UpdateLogo();
+            //*/
         }
 
         public async Task DismissRegisterPageAndLogInAsync(string email)
@@ -54,6 +58,7 @@ namespace Bit.App.Pages
 
         protected override void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             _messagingService.Send("showStatusBar", false);
             CheckOnboarded();
@@ -68,7 +73,11 @@ namespace Bit.App.Pages
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
+                        // Cozy customization, disable UpdateLogo()
+                        // Since we force Inverted theme for HomePage, there is no need to compute Logo based on theme
+                        /*
                         UpdateLogo();
+                        //*/
                     });
                 }
             });

@@ -175,6 +175,16 @@
     <value>Password</value>
     <comment>Label for Cozy password</comment>
   </data>
+  <data name="CozyLoginTitle" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login screen title</comment>
+  </data>
+  <data name="CozyHomeTitle" xml:space="preserve">
+    <value>Welcome to Cozy Pass</value>
+  </data>
+  <data name="CozyHomeHaveAccount" xml:space="preserve">
+    <value>I already have my Cozy</value>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>
@@ -385,7 +395,7 @@
     <value>Verify Fingerprint</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Verify Password</value>
+    <value>Unlock my Cozy</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>Verify PIN</value>
@@ -464,7 +474,7 @@
     <value>Continue</value>
   </data>
   <data name="CreateAccount" xml:space="preserve">
-    <value>Create Account</value>
+    <value>Create my Cozy</value>
   </data>
   <data name="CreatingAccount" xml:space="preserve">
     <value>Creating account...</value>
@@ -523,7 +533,10 @@
     <value>Generate Password</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Get your password hint</value>
+    <value>I forgot my password</value>
+  </data>
+  <data name="GetCozyAddress" xml:space="preserve">
+    <value>I forgot my Cozy address</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Import Items</value>
@@ -572,7 +585,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Log in or create a new account to access your secure vault.</value>
+    <value>Create or log in your Cozy to access Cozy Pass services.</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Manage</value>
@@ -1719,7 +1732,7 @@
     <comment>Confirmation alert message when soft-deleting a cipher.</comment>
   </data>
   <data name="BiometricInvalidated" xml:space="preserve">
-    <value>Biometric unlock disabled pending verification of master password.</value>
+    <value>Please enter your Cozy password.</value>
   </data>
   <data name="BiometricInvalidatedExtension" xml:space="preserve">
     <value>Biometric unlock for autofill disabled pending verification of master password.</value>

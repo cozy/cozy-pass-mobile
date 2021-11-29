@@ -31,6 +31,9 @@ namespace Bit.App.Pages
             MasterPasswordEntry = _masterPassword;
             PinEntry = _pin;
 
+            // Cozy customization, disable menu
+            // logout will be not requested from the login form
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -39,6 +42,7 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_logOut);
             }
+            //*/
         }
 
         public Entry MasterPasswordEntry { get; set; }
@@ -59,6 +63,7 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             if (_appeared)
             {

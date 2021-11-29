@@ -175,6 +175,16 @@
     <value>Mot de passe</value>
     <comment>Label for Cozy password</comment>
   </data>
+  <data name="CozyLoginTitle" xml:space="preserve">
+    <value>Se connecter</value>
+    <comment>Login screen title</comment>
+  </data>
+  <data name="CozyHomeTitle" xml:space="preserve">
+    <value>Bienvenue sur&#10;Cozy Pass</value>
+  </data>
+  <data name="CozyHomeHaveAccount" xml:space="preserve">
+    <value>J'ai déjà mon Cozy</value>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Remerciements</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>
@@ -385,7 +395,7 @@
     <value>S'authentifier avec l'empreinte</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>S'authentifier avec le mot de passe</value>
+    <value>Déverrouiller mon Cozy</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>S'authentifier avec un code PIN</value>
@@ -464,7 +474,7 @@
     <value>Continuer</value>
   </data>
   <data name="CreateAccount" xml:space="preserve">
-    <value>Créer un compte</value>
+    <value>Créer mon Cozy</value>
   </data>
   <data name="CreatingAccount" xml:space="preserve">
     <value>Création du compte...</value>
@@ -523,7 +533,10 @@
     <value>Générer un mot de passe</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Obtenir votre indice de mot de passe</value>
+    <value>J'ai oublié mon mot de passe</value>
+  </data>
+  <data name="GetCozyAddress" xml:space="preserve">
+    <value>J'ai oublié l'adresse de mon Cozy</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Importer des éléments</value>
@@ -572,7 +585,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Identifiez-vous ou créez un nouveau compte pour accéder à votre coffre sécurisé.</value>
+    <value>Créez ou connectez votre Cozy pour accéder aux services de Cozy Pass.</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gérer</value>
@@ -1719,7 +1732,7 @@
     <comment>Confirmation alert message when soft-deleting a cipher.</comment>
   </data>
   <data name="BiometricInvalidated" xml:space="preserve">
-    <value>Le déverrouillage biométrique est désactivé en attendant la vérification du mot de passe maître.</value>
+    <value>Veuillez entrer votre mot de passe Cozy.</value>
   </data>
   <data name="BiometricInvalidatedExtension" xml:space="preserve">
     <value>Le déverrouillage biométrique pour le remplissage automatique est désactivé en attendant la vérification du mot de passe maître.</value>
