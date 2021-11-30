@@ -42,18 +42,13 @@
                    VerticalOptions="Start"
                    Margin="0,3,0,0"
                    WidthRequest="16"
-                   HeightRequest="16">
+                   HeightRequest="16"
+                   AutomationProperties.IsInAccessibleTree="true"
+                   AutomationProperties.Name="{u:I18n Fingerprint}" >
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Biometric_Clicked" NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-            <Label FontSize="Medium"
-                   TextTransform="Uppercase"
-                   Text="{u:I18n Fingerprint}">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="Biometric_Clicked" NumberOfTapsRequired="1" />
-                </Label.GestureRecognizers>
-            </Label>
         </StackLayout>
     </NavigationPage.TitleView>
 
