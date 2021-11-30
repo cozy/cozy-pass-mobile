@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -184,6 +184,18 @@
   </data>
   <data name="CozyHomeHaveAccount" xml:space="preserve">
     <value>I already have my Cozy</value>
+  </data>
+  <data name="CozyUrlRequiredException" xml:space="preserve">
+    <value>Cozy address is required</value>
+    <comment>Exception message when no CozyUrl is set</comment>
+  </data>
+  <data name="NoEmailAsCozyUrlException" xml:space="preserve">
+    <value>The Cozy address is not your email</value>
+    <comment>Exception message when no user set an email in login field</comment>
+  </data>
+  <data name="HasMispelledCozyException" xml:space="preserve">
+    <value>Woops, the address is not correct. Try with "cozy" with a "z"!</value>
+    <comment>Exception message when user mispels Cozy with Cosy</comment>
   </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
