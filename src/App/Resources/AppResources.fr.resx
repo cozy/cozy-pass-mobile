@@ -185,6 +185,18 @@
   <data name="CozyHomeHaveAccount" xml:space="preserve">
     <value>J'ai déjà mon Cozy</value>
   </data>
+  <data name="CozyUrlRequiredException" xml:space="preserve">
+    <value>L'adresse du Cozy est requise</value>
+    <comment>Exception message when no CozyUrl is set</comment>
+  </data>
+  <data name="NoEmailAsCozyUrlException" xml:space="preserve">
+    <value>L'adresse de votre Cozy n'est pas votre email</value>
+    <comment>Exception message when no user set an email in login field</comment>
+  </data>
+  <data name="HasMispelledCozyException" xml:space="preserve">
+    <value>Oups, ce n'est pas la bonne adresse. Essayez d'écrire "cozy" avec un "z" !</value>
+    <comment>Exception message when user mispels Cozy with Cosy</comment>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Remerciements</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>
