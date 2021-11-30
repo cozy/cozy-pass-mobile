@@ -197,6 +197,10 @@
     <value>Oups, ce n'est pas la bonne adresse. Essayez d'écrire "cozy" avec un "z" !</value>
     <comment>Exception message when user mispels Cozy with Cosy</comment>
   </data>
+  <data name="CozyInvalidLoginException" xml:space="preserve">
+    <value>L'adresse et le mot de passe que vous avez saisi ne semblent pas correspondre</value>
+    <comment>Exception message when user enter wrong login or password</comment>
+  </data>
   <data name="Credits" xml:space="preserve">
     <value>Remerciements</value>
     <comment>Title for page that we use to give credit to resources that we use.</comment>
