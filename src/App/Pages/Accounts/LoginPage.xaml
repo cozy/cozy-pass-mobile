@@ -44,6 +44,7 @@
         <StackLayout Spacing="20">
             <StackLayout StyleClass="box">
                 <Label Text="{u:I18n CozyLoginTitle}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Title"/>
+                <Label Text="{Binding ErrorMsg}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Medium" StyleClass="text-danger" />
                 <StackLayout StyleClass="box-row">
                     <Label
                         Text="{u:I18n CozyURL}"

@@ -32,6 +32,11 @@ namespace Bit.App.Pages
         private string _email;
         private string _masterPassword;
 
+        // Cozy customization, display error message on form
+        //*
+        private string _errorMsg;
+        //*/
+
         public LoginPageViewModel()
         {
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
@@ -71,6 +76,15 @@ namespace Bit.App.Pages
             set => SetProperty(ref _masterPassword, value);
         }
 
+        // Cozy customization, display error message on form
+        //*
+        public string ErrorMsg
+        {
+            get => _errorMsg;
+            set => SetProperty(ref _errorMsg, value);
+        }
+        //*/
+
         public Command LogInCommand { get; }
         public Command TogglePasswordCommand { get; }
         public string ShowPasswordIcon => ShowPassword ? "" : "";
@@ -97,17 +111,32 @@ namespace Bit.App.Pages
 
         public async Task LogInAsync(bool showLoading = true)
         {
+            // Cozy customization, display error message on form
+            //*
+            ErrorMsg = "";
+            //*/
+
             if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
             {
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle, AppResources.Ok);
+                /*/
+                ErrorMsg = AppResources.InternetConnectionRequiredMessage;
+                //*/
                 return;
             }
             if (string.IsNullOrWhiteSpace(Email))
             {
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(
                     string.Format(AppResources.ValidationFieldRequired, AppResources.EmailAddress),
                     AppResources.AnErrorHasOccurred, AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.EmailAddress);
+                //*/
                 return;
             }
 
@@ -125,9 +154,14 @@ namespace Bit.App.Pages
 
             if (string.IsNullOrWhiteSpace(MasterPassword))
             {
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(
                     string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword),
                     AppResources.AnErrorHasOccurred, AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword);
+                //*/
                 return;
             }
 
@@ -194,7 +228,8 @@ namespace Bit.App.Pages
             {
                 await _deviceActionService.HideLoadingAsync();
                 var translatedErrorMessage = AppResources.ResourceManager.GetString(e.GetType().Name, AppResources.Culture);
-                await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                // await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                ErrorMsg = translatedErrorMessage;
             }
             //*/
             catch (ApiException e)
@@ -214,7 +249,8 @@ namespace Bit.App.Pages
                     if (e.Error.StatusCode == HttpStatusCode.Unauthorized)
                     {
                         var translatedErrorMessage = AppResources.ResourceManager.GetString("CozyInvalidLoginException", AppResources.Culture);
-                        await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                        // await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                        ErrorMsg = translatedErrorMessage;
                     }
                     else
                     {
