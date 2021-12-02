@@ -89,6 +89,8 @@
                 <Label Text="{Binding PageTitle}" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="Title"/>
                 <Label Text="{Binding LoggedInAsText}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Small" Opacity="0.64"/>
 
+                <Label Text="{Binding ErrorMsg}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Medium" StyleClass="text-danger" />
+
                 <Grid StyleClass="box-row" IsVisible="{Binding PinLock}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

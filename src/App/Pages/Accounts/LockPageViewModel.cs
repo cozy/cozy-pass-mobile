@@ -44,6 +44,11 @@ namespace Bit.App.Pages
         private string _avatarUrl;
         //*/
 
+        // Cozy customization, display error message on form
+        //*
+        private string _errorMsg;
+        //*/
+
         public LockPageViewModel()
         {
             _apiService = ServiceContainer.Resolve<IApiService>("apiService");
@@ -122,6 +127,15 @@ namespace Bit.App.Pages
         {
             get => _avatarUrl;
             set => SetProperty(ref _avatarUrl, value);
+        }
+        //*/
+
+        // Cozy customization, display error message on form
+        //*
+        public string ErrorMsg
+        {
+            get => _errorMsg;
+            set => SetProperty(ref _errorMsg, value);
         }
         //*/
 
@@ -210,18 +224,33 @@ namespace Bit.App.Pages
 
         public async Task SubmitAsync()
         {
+            // Cozy customization, display error message on form
+            //*
+            ErrorMsg = "";
+            //*/
+
             if (PinLock && string.IsNullOrWhiteSpace(Pin))
             {
+                // Cozy customization, display error message on form
+                /*
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred,
                     string.Format(AppResources.ValidationFieldRequired, AppResources.PIN),
                     AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.PIN);
+                //*/
                 return;
             }
             if (!PinLock && string.IsNullOrWhiteSpace(MasterPassword))
             {
+                // Cozy customization, display error message on form
+                /*
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred,
                     string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword),
                     AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword);
+                //*/
                 return;
             }
 
@@ -272,8 +301,13 @@ namespace Bit.App.Pages
                         _messagingService.Send("logout");
                         return;
                     }
+                    // Cozy customization, display error message on form
+                    /*
                     await _platformUtilsService.ShowDialogAsync(AppResources.InvalidPIN,
                         AppResources.AnErrorHasOccurred);
+                    /*/
+                    ErrorMsg = AppResources.InvalidPIN;
+                    //*/
                 }
             }
             else
@@ -334,8 +368,13 @@ namespace Bit.App.Pages
                         _messagingService.Send("logout");
                         return;
                     }
+                    // Cozy customization, display error message on form
+                    /*
                     await _platformUtilsService.ShowDialogAsync(AppResources.InvalidMasterPassword,
                         AppResources.AnErrorHasOccurred);
+                    /*/
+                    ErrorMsg = AppResources.InvalidMasterPassword;
+                    //*/
                 }
             }
         }
