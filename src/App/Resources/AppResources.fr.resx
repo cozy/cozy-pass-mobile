@@ -1461,7 +1461,7 @@
     <value>Aucun dossier à afficher.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choisissez un dossier avec lequel vous voulez partager cet élément. Le partage transfère la propriété de l'élément au dossier. Vous ne serez plus le propriétaire direct de cet élément après le partage.</value>
+    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisé à d'autres utilisateurs qui possèdent un Cozy.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Nombre de mots</value>
