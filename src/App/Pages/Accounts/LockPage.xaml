@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Cozy customization -->
 <!-- Many edits have been made in this file to fit Cozy's design
      Notable edits:
@@ -38,7 +38,7 @@
 
     <NavigationPage.TitleView>
         <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="20, 0" IsVisible="{Binding BiometricButtonVisible}">
-            <Image Source="cozy_fingerprint.png"
+            <Image Source="{Binding BiometricLockImageSrc}"
                    VerticalOptions="Start"
                    Margin="0,3,0,0"
                    WidthRequest="16"

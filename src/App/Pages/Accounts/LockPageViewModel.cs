@@ -49,6 +49,11 @@ namespace Bit.App.Pages
         private string _errorMsg;
         //*/
 
+        // Cozy customization, handle FaceId vs Fingerprint
+        //*
+        private string _biometricLockImageSrc = "cozy_fingerprint.png";
+        //*/
+
         public LockPageViewModel()
         {
             _apiService = ServiceContainer.Resolve<IApiService>("apiService");
@@ -128,6 +133,15 @@ namespace Bit.App.Pages
             get => _avatarUrl;
             set => SetProperty(ref _avatarUrl, value);
         }
+
+        //*/
+        // Cozy customization, handle FaceId vs Fingerprint
+        //*
+        public string BiometricLockImageSrc
+        {
+            get => _biometricLockImageSrc;
+            set => SetProperty(ref _biometricLockImageSrc, value);
+        }
         //*/
 
         // Cozy customization, display error message on form
@@ -195,6 +209,11 @@ namespace Bit.App.Pages
                     var supportsFace = await _deviceActionService.SupportsFaceBiometricAsync();
                     BiometricButtonText = supportsFace ? AppResources.UseFaceIDToUnlock :
                         AppResources.UseFingerprintToUnlock;
+
+                    // Cozy customization, handle FaceId vs Fingerprint
+                    //*
+                    BiometricLockImageSrc = supportsFace ? "cozy_faceid.png" : "cozy_fingerprint.png";
+                    //*/
                 }
                 if (autoPromptBiometric)
                 {
