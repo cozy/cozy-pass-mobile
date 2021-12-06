@@ -1461,7 +1461,7 @@
     <value>No folder to list.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose a folder that you wish to share this item with. Sharing transfers ownership of the item to the folder. You will no longer be the direct owner of this item once it has been shared.</value>
+    <value>Choose a folder to store this item.&#10;&#10;Tips: after selecting a shared folder, you will be able to securely share this element with other Cozy users.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Number of Words</value>
