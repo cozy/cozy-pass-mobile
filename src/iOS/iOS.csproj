@@ -173,6 +173,9 @@
     </ImageAsset>
     <BundleResource Include="Resources\shared_with_cozy_icon.png" />
     <BundleResource Include="Resources\shared_with_cozy_icon%402x.png" />
+    <BundleResource Include="Resources\cozy_faceid.png" />
+    <BundleResource Include="Resources\cozy_faceid%402x.png" />
+    <BundleResource Include="Resources\cozy_faceid%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
