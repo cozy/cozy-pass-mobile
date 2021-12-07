@@ -103,6 +103,17 @@ namespace Bit.iOS.Core.Controllers
 
             base.ViewDidLoad();
 
+            // Cozy customization, change unlock form style to match inverted theme
+            //*
+            MasterPasswordCell.TextField.BackgroundColor = ThemeHelpers.PrimaryColor;
+            MasterPasswordCell.TextField.TextColor = ThemeHelpers.BackgroundColor;
+            MasterPasswordCell.TextField.TintColor = ThemeHelpers.BackgroundColor;
+            MasterPasswordCell.Label.TextColor = ThemeHelpers.BackgroundColor;
+            MasterPasswordCell.BackgroundColor = ThemeHelpers.PrimaryColor;
+            TableView.BackgroundColor = ThemeHelpers.PrimaryColor;
+            TableView.SeparatorColor = ThemeHelpers.BackgroundColor;
+            //*/
+
             if (_biometricLock)
             {
                 if (!_biometricIntegrityValid)
