@@ -77,6 +77,14 @@ namespace Bit.App.Controls
                 return _cipher.OrganizationId == cozyOrganizationId;
             }
         }
+
+        public string CozySharedImage
+        {
+            get
+            {
+                return _cipher.IsKonnector ? "shared_with_cozy_icon.png" : "login.png";
+            }
+        }
         #endregion
     }
 }

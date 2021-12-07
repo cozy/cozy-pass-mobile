@@ -34,6 +34,7 @@ namespace Bit.Core.Services
         private readonly IStorageService _storageService;
         private readonly II18nService _i18nService;
         private readonly Func<ISearchService> _searchService;
+        private readonly ICozyClientService _cozyClientService;
         private readonly string _clearCipherCacheKey;
         private readonly string[] _allClearCipherCacheKeys;
         private Dictionary<string, HashSet<string>> _domainMatchBlacklist = new Dictionary<string, HashSet<string>>
@@ -53,7 +54,8 @@ namespace Bit.Core.Services
             II18nService i18nService,
             Func<ISearchService> searchService,
             string clearCipherCacheKey, 
-            string[] allClearCipherCacheKeys)
+            string[] allClearCipherCacheKeys,
+            ICozyClientService cozyClientService)
         {
             _cryptoService = cryptoService;
             _userService = userService;
@@ -65,6 +67,7 @@ namespace Bit.Core.Services
             _searchService = searchService;
             _clearCipherCacheKey = clearCipherCacheKey;
             _allClearCipherCacheKeys = allClearCipherCacheKeys;
+            _cozyClientService = cozyClientService;
         }
 
         private List<CipherView> DecryptedCipherCache
@@ -285,6 +288,9 @@ namespace Bit.Core.Services
                     }
                     await Task.WhenAll(tasks);
                     decCiphers = decCiphers.OrderBy(c => c, new CipherLocaleComparer(_i18nService)).ToList();
+
+                    await SetIsKonnector(decCiphers);
+
                     DecryptedCipherCache = decCiphers;
                     return DecryptedCipherCache;
                 }
@@ -292,6 +298,15 @@ namespace Bit.Core.Services
             }
             _getAllDecryptedTask = doTask();
             return await _getAllDecryptedTask;
+        }
+
+        protected async Task SetIsKonnector(List<CipherView> ciphers = null)
+        {
+            var konnectorsOrganization = await _cozyClientService.GetKonnectorsOrganization();
+            foreach (var cipher in ciphers)
+            {
+                cipher.IsKonnector = cipher.OrganizationId == konnectorsOrganization.OrganizationId;
+            }
         }
 
         public async Task<List<CipherView>> GetAllDecryptedForGroupingAsync(string groupingId, bool folder = true)
