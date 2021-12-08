@@ -533,7 +533,7 @@
             <!-- Cozy customization -->
             <!-- Add Folder (Cozy concept) display and selection -->
             <!---->
-            <StackLayout StyleClass="box" IsVisible="{Binding HasOrganization}">
+            <StackLayout StyleClass="box" IsVisible="{Binding ShowOrganizations}">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n Folder, Header=True}"
                                    StyleClass="box-header, box-header-platform" />

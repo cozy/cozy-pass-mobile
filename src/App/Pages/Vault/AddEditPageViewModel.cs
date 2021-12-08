@@ -313,11 +313,13 @@ namespace Bit.App.Pages
             set => SetProperty(ref _organizationName, value,
                 additionalPropertyNames: new string[]
                 {
-                    nameof(HasOrganization)
+                    nameof(HasOrganization),
+                    nameof(ShowOrganizations)
                 });
         }
 
         public bool HasOrganization => !string.IsNullOrEmpty(_organizationName);
+        public bool ShowOrganizations => HasOrganization && EditMode;
         //*/
 
         public void Init()
