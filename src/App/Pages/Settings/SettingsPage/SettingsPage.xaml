@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bit.App.Pages.SettingsPage"
@@ -44,7 +44,9 @@
                            HorizontalTextAlignment="End"
                            VerticalOptions="CenterAndExpand"
                            TextColor="{Binding SubLabelColor}"
-                           StyleClass="list-sub" />
+                           StyleClass="list-sub"
+                           MinimumWidthRequest="100"
+                           LineBreakMode="WordWrap" />
                     <TimePicker IsVisible="{Binding ShowTimeInput}"
                                 Time="{Binding Time}" Format="HH:mm"
                                 PropertyChanged="OnTimePickerPropertyChanged"
