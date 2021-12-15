@@ -225,8 +225,8 @@ namespace Bit.Core.Services
                 cozyUrl: cozyURL,
                 searchParams: null,
                 pathname: "",
-                hash: "/vault?action=import",
-                slug: "passwords",
+                hash: fragment,
+                slug: appName,
                 subDomainType: subdomain
             );
 
