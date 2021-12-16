@@ -340,7 +340,7 @@
     <value>No</value>
   </data>
   <data name="Notes" xml:space="preserve">
-    <value>Notes</value>
+    <value>Description</value>
     <comment>Label for notes.</comment>
   </data>
   <data name="Ok" xml:space="preserve">
