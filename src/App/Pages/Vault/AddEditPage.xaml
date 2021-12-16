@@ -599,9 +599,6 @@
                 </StackLayout>
                 <BoxView StyleClass="box-row-separator" />
             </StackLayout>
-            <!-- Cozy customization -->
-            <!-- Notes are disabled to avoid confusion with Cozy Notes -->
-            <!--
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n Notes, Header=True}"
@@ -616,7 +613,6 @@
                 </StackLayout>
                 <BoxView StyleClass="box-row-separator" IsVisible="{Binding ShowNotesSeparator}" />
             </StackLayout>
-            -->
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n CustomFields, Header=True}"
