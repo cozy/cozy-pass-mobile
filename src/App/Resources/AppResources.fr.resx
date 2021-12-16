@@ -1461,7 +1461,7 @@
     <value>Aucun dossier à afficher.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisé à d'autres utilisateurs qui possèdent un Cozy.</value>
+    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisé à d'autres utilisateurs qui possèdent un Cozy. Pour créer un dossier partagé, vous devez vous rendre sur l'interface web de Cozy Pass.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Nombre de mots</value>
