@@ -582,7 +582,11 @@
                 <StackLayout StyleClass="box-row, box-row-switch">
                     <Label
                         Text="{u:I18n PasswordPrompt}"
-                        StyleClass="box-label-regular" />
+                        StyleClass="box-label-regular"
+                        HorizontalOptions="StartAndExpand" />
+                    <!-- Cozy customization -->
+                    <!-- Disable the Help button as we don't have any help page at Cozy that describes this feature -->
+                    <!--
                     <controls:FaButton 
                         StyleClass="box-row-button, box-row-button-platform"
                         Text="&#xf29c;"
@@ -591,6 +595,7 @@
                         AutomationProperties.IsInAccessibleTree="True"
                         AutomationProperties.Name="{u:I18n ToggleVisibility}"
                         HorizontalOptions="StartAndExpand" />
+                    -->
                     <Switch
                         IsToggled="{Binding PasswordPrompt}"
                         Toggled="PasswordPrompt_Toggled"
