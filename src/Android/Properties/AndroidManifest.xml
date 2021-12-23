@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  android:versionCode="3000000"
+  android:versionCode="3000010"
   android:versionName="3.0.0"
   android:installLocation="internalOnly"
   package="io.cozy.pass">
