@@ -74,7 +74,8 @@
                            CornerRadius="40"
                            BackgroundColor="LightGray"
                            WidthRequest="80"
-                           HeightRequest="80">
+                           HeightRequest="80"
+                           IsClippedToBounds="True">
                         <Image Source="{Binding AvatarUrl}"
                                Margin="-1,-1,-1,-1"
                                WidthRequest="80"
