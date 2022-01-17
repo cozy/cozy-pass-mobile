@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UIKit;
 using Foundation;
 using Bit.iOS.Core.Views;
@@ -49,6 +49,7 @@ namespace Bit.iOS.Core.Controllers
 
         public override async void ViewDidLoad()
         {
+            ThemeManager.SetInvertedTheme();
             _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
             _cryptoService = ServiceContainer.Resolve<ICryptoService>("cryptoService");
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
@@ -105,13 +106,13 @@ namespace Bit.iOS.Core.Controllers
 
             // Cozy customization, change unlock form style to match inverted theme
             //*
-            MasterPasswordCell.TextField.BackgroundColor = ThemeHelpers.PrimaryColor;
-            MasterPasswordCell.TextField.TextColor = ThemeHelpers.BackgroundColor;
-            MasterPasswordCell.TextField.TintColor = ThemeHelpers.BackgroundColor;
-            MasterPasswordCell.Label.TextColor = ThemeHelpers.BackgroundColor;
-            MasterPasswordCell.BackgroundColor = ThemeHelpers.PrimaryColor;
-            TableView.BackgroundColor = ThemeHelpers.PrimaryColor;
-            TableView.SeparatorColor = ThemeHelpers.BackgroundColor;
+            MasterPasswordCell.TextField.BackgroundColor = ThemeHelpers.BackgroundColor;
+            MasterPasswordCell.TextField.TextColor = ThemeHelpers.PrimaryColor;
+            MasterPasswordCell.TextField.TintColor = ThemeHelpers.PrimaryColor;
+            MasterPasswordCell.Label.TextColor = ThemeHelpers.PrimaryColor;
+            MasterPasswordCell.BackgroundColor = ThemeHelpers.BackgroundColor;
+            TableView.BackgroundColor = ThemeHelpers.BackgroundColor;
+            TableView.SeparatorColor = ThemeHelpers.PrimaryColor;
             //*/
 
             if (_biometricLock)
