@@ -1,3 +1,24 @@
+# 3.0.2
+
+## ✨ Features
+
+## 🐛 Bug Fixes
+
+* Prevent app crash when opened from URL scheme in iOS 15+ ([PR #75](https://github.com/cozy/cozy-pass-mobile/pull/75))
+
+## 🔧 Tech
+
+# 3.0.1
+
+## ✨ Features
+
+## 🐛 Bug Fixes
+
+* Force image crop on iOS on `unlock` screen ([PR #71](https://github.com/cozy/cozy-pass-mobile/pull/71))
+* Fix iOS `autofill` theme ([PR #73](https://github.com/cozy/cozy-pass-mobile/pull/73))
+
+## 🔧 Tech
+
 # 3.0.0
 
 ## ✨ Features
