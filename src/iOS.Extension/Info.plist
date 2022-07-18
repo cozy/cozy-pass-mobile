@@ -11,7 +11,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile.find-login-action-extension</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.0</string>
+	<string>3.0.2</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
@@ -70,8 +70,8 @@
 		<string>FontAwesome.ttf</string>
 		<string>MaterialIcons_Regular.ttf</string>
 	</array>
-    <key>CADisableMinimumFrameDurationOnPhone</key>
-    <true/>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<dict>
 		<key>arm64</key>
@@ -113,6 +113,6 @@
 		<string>com.apple.ui-services</string>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>3000010</string>
+	<string>3000200</string>
 </dict>
 </plist>
