@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Xamarin.Forms;
+using Xamarin.CommunityToolkit.ObjectModel;
 
 namespace Bit.App.Pages
 {
@@ -77,11 +78,11 @@ namespace Bit.App.Pages
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
 
-            GroupedItems = new ExtendedObservableCollection<SettingsPageListGroup>();
+            GroupedItems = new ObservableRangeCollection<SettingsPageListGroup>();
             PageTitle = AppResources.Settings;
         }
 
-        public ExtendedObservableCollection<SettingsPageListGroup> GroupedItems { get; set; }
+        public ObservableRangeCollection<SettingsPageListGroup> GroupedItems { get; set; }
 
         public async Task InitAsync()
         {
@@ -394,6 +395,8 @@ namespace Bit.App.Pages
 
         public void BuildList()
         {
+            GroupedItems.Clear();
+
             var doUpper = Device.RuntimePlatform != Device.Android;
             var autofillItems = new List<SettingsPageListItem>();
             if (Device.RuntimePlatform == Device.Android)
@@ -497,7 +500,7 @@ namespace Bit.App.Pages
                 new SettingsPageListItem { Name = AppResources.Help },
                 new SettingsPageListItem { Name = AppResources.RateTheApp }
             };
-            GroupedItems.ResetWithRange(new List<SettingsPageListGroup>
+            GroupedItems.AddRange(new List<SettingsPageListGroup>
             {
                 new SettingsPageListGroup(autofillItems, AppResources.Autofill, doUpper, true),
                 new SettingsPageListGroup(manageItems, AppResources.Manage, doUpper),
