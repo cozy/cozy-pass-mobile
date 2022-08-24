@@ -30,6 +30,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
     <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.3.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -434,5 +435,8 @@
     <Reference Include="Xamarin.iOS" Condition=" '$(OS)' == 'Windows_NT' AND '$(VisualStudioVersion)' == '16.0' ">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Xamarin.CommunityToolkit" />
   </ItemGroup>
 </Project>
