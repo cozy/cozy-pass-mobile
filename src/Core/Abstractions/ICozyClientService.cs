@@ -18,5 +18,6 @@ namespace Bit.Core.Abstractions
         string GetRemindCozyAddressUrl(string lang);
         bool CheckStateAndSecretInOnboardingCallbackURL();
         Task UpdateSynchronizedAtAsync();
+        Task<CozyKonnectorsData> GetKonnectorsOrganization();
     }
 }

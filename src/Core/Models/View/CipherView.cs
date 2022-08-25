@@ -50,6 +50,11 @@ namespace Bit.Core.Models.View
         public DateTime? DeletedDate { get; set; }
         public CipherRepromptType Reprompt { get; set; }
 
+        // Cozy customization, differentiate shared Ciphers from ciphers in "Cozy Connectors" organization
+        //*
+        public bool IsKonnector { get; set; }
+        //*/
+
         public string SubTitle
         {
             get

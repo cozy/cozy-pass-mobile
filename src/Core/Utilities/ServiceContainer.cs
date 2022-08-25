@@ -36,19 +36,36 @@ namespace Bit.Core.Utilities
                 messagingService.Send("logout", expired);
                 return Task.FromResult(0);
             }, customUserAgent);
+            // Cozy customization, declare CozyClientService
+            //*
+            var environmentService = new EnvironmentService(apiService, storageService);
+            var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
+            //*/
+
             var appIdService = new AppIdService(storageService);
             var userService = new UserService(storageService, tokenService);
             var settingsService = new SettingsService(userService, storageService);
             var fileUploadService = new FileUploadService(apiService);
+            // Cozy customization, add CozyClientService in CipherService's constructor
+            /*
             var cipherService = new CipherService(cryptoService, userService, settingsService, apiService, fileUploadService,
                 storageService, i18nService, () => searchService, clearCipherCacheKey, allClearCipherCacheKeys);
+            /*/
+            var cipherService = new CipherService(cryptoService, userService, settingsService, apiService, fileUploadService,
+                storageService, i18nService, () => searchService, clearCipherCacheKey, allClearCipherCacheKeys, cozyClientService);
+            //*/
             var folderService = new FolderService(cryptoService, userService, apiService, storageService,
                 i18nService, cipherService);
             var collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
             var sendService = new SendService(cryptoService, userService, apiService, fileUploadService, storageService,
                 i18nService, cryptoFunctionService);
+            // Cozy customization, add CozyClientService in SearchService's constructor
+            /*
             searchService = new SearchService(cipherService, sendService);
-            var policyService = new PolicyService(storageService, userService);
+            /*/
+            searchService = new SearchService(cipherService, sendService, cozyClientService);
+            //*/
+            var policyService = new PolicyService(storageService, userService); 
             var vaultTimeoutService = new VaultTimeoutService(cryptoService, userService, platformUtilsService,
                 storageService, folderService, cipherService, collectionService, searchService, messagingService, tokenService,
                 policyService, null, (expired) =>
@@ -56,8 +73,10 @@ namespace Bit.Core.Utilities
                     messagingService.Send("logout", expired);
                     return Task.FromResult(0);
                 });
+            // Cozy customization, declare environmentService earlier so it can be used in CozyClientService constructor
+            /*
             var environmentService = new EnvironmentService(apiService, storageService);
-            var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
+            //*/
             var syncService = new SyncService(userService, apiService, settingsService, folderService,
                 cipherService, cryptoService, collectionService, storageService, messagingService, policyService, sendService, cozyClientService,
                 (bool expired) =>

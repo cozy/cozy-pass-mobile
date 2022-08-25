@@ -12,13 +12,16 @@ namespace Bit.Core.Services
     {
         private readonly ICipherService _cipherService;
         private readonly ISendService _sendService;
+        private readonly ICozyClientService _cozyClientService;
 
         public SearchService(
             ICipherService cipherService,
-            ISendService sendService)
+            ISendService sendService,
+            ICozyClientService cozyClientService)
         {
             _cipherService = cipherService;
             _sendService = sendService;
+            _cozyClientService = cozyClientService;
         }
 
         public void ClearIndex()
@@ -63,11 +66,31 @@ namespace Bit.Core.Services
             ct.ThrowIfCancellationRequested();
             if (!IsSearchable(query))
             {
+                // Cozy customization, differentiate shared Ciphers from ciphers in "Cozy Connectors" organization
+                //*
+                await SetIsKonnector(ciphers);
+                //*/
                 return ciphers;
             }
 
+            // Cozy customization, differentiate shared Ciphers from ciphers in "Cozy Connectors" organization
+            /*
             return SearchCiphersBasic(ciphers, query);
+            /*/
+            var basicSearchCiphers = SearchCiphersBasic(ciphers, query);
+            await SetIsKonnector(basicSearchCiphers);
+            return basicSearchCiphers;
+            //*/
             // TODO: advanced searching with index
+        }
+
+        protected async Task SetIsKonnector(List<CipherView> ciphers = null)
+        {
+            var konnectorsOrganization = await _cozyClientService.GetKonnectorsOrganization();
+            foreach (var cipher in ciphers)
+            {
+                cipher.IsKonnector = cipher.OrganizationId == konnectorsOrganization.OrganizationId;
+            }
         }
 
         public List<CipherView> SearchCiphersBasic(List<CipherView> ciphers, string query,

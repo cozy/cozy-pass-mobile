@@ -32,6 +32,8 @@ namespace Bit.Core.Services
         private string ApiBaseUrl { get; set; }
         public Uri OnboardedURL { get; set; }
 
+        public CozyKonnectorsData _cozyKonnectorsData = null;
+
         public CozyClientService(
             ITokenService tokenService,
             IApiService apiService,
@@ -135,6 +137,7 @@ namespace Bit.Core.Services
         }
 
         public async Task<LogoutResponse> LogoutAsync() {
+            _cozyKonnectorsData = null;
             var clientId = _tokenService.ClientId;
             var registrationAccessToken = _tokenService.RegistrationAccessToken;
             try
@@ -305,6 +308,38 @@ namespace Bit.Core.Services
         {
             return $"https://manager.cozycloud.cc/v2/cozy/remind?lang={lang}";
         }
+
+        public async Task<CozyKonnectorsData> GetKonnectorsOrganization()
+        {
+            try
+            {
+                if (_cozyKonnectorsData != null)
+                {
+                    return _cozyKonnectorsData;
+                }
+
+                var settings = await FetchJSONAsync<object, BitwardenSettings>(
+                    method: HttpMethod.Get,
+                    path: "data/io.cozy.settings/io.cozy.settings.bitwarden",
+                    body: null,
+                    hasResponse: true
+                );
+
+                _cozyKonnectorsData = new CozyKonnectorsData()
+                {
+                    OrganizationId = settings.OrganizationId,
+                    CollectionId = settings.CollectionId
+                };
+
+                return _cozyKonnectorsData;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+                return new CozyKonnectorsData();
+            }
+        }
     }
 }
 
@@ -328,4 +363,19 @@ public class CapabilitiesData
 
     [JsonProperty("links")]
     public Dictionary<string, string> Links { get; set; }
+}
+
+public class BitwardenSettings
+{
+    [JsonProperty("organization_id")]
+    public string OrganizationId { get; set; }
+
+    [JsonProperty("collection_id")]
+    public string CollectionId { get; set; }
+}
+
+public class CozyKonnectorsData
+{
+    public string OrganizationId { get; set; }
+    public string CollectionId { get; set; }
 }
