@@ -92,6 +92,32 @@
         <Setter Property="StepperForegroundColor"
                 Value="{DynamicResource StepperForegroundColor}" />
     </Style>
+    <Style TargetType="Frame" 
+           Class="btn-icon-row">
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource ButtonBackgroundColor}" />
+        <Setter Property="BorderColor"
+                Value="{DynamicResource ButtonBorderColor}" />
+        <Setter Property="CornerRadius"
+                Value="5" />
+        <Setter Property="Margin"
+                Value="0, 10, 0, 0" />
+        <Setter Property="HasShadow"
+                Value="False" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                                    Value="{DynamicResource ButtonBackgroundColorDisabled}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
 
     <!-- Buttons -->
 
@@ -105,7 +131,7 @@
         <Setter Property="TextColor"
                 Value="{DynamicResource ButtonTextColor}" />
         <Setter Property="FontSize"
-                Value="18" />
+                Value="Medium" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -143,7 +169,7 @@
         <Setter Property="TextColor"
                 Value="{DynamicResource ButtonPrimaryTextColor}" />
         <Setter Property="FontSize"
-                Value="18" />
+                Value="Medium" />
         <Setter Property="FontAttributes"
                 Value="Bold" />
         <Setter Property="Margin"
@@ -209,6 +235,82 @@
         </Setter>
     </Style>
     <!-- End Cozy customization -->
+    <Style TargetType="Button"
+           Class="btn-secondary">
+        <Setter Property="BackgroundColor"
+                Value="Transparent" />
+        <Setter Property="BorderColor"
+                Value="{DynamicResource ButtonBorderColor}" />
+        <Setter Property="BorderWidth" 
+                Value="1" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource ButtonTextColorOpacity}" />
+        <Setter Property="FontSize"
+                Value="Medium" />
+        <Setter Property="CornerRadius"
+                Value="5" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" 
+                                    Value="{DynamicResource ButtonBackgroundColorPressed}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor"
+                                    Value="{DynamicResource ButtonTextColorDisabled}" />
+                            <Setter Property="BackgroundColor"
+                                    Value="{DynamicResource ButtonBackgroundColorDisabled}" />
+                            <Setter Property="BorderColor"
+                                    Value="{DynamicResource ButtonBackgroundColorDisabled}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    <Style TargetType="Button"
+           Class="btn-danger">
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource DangerColor}" />
+        <Setter Property="BorderColor"
+                Value="{DynamicResource DangerColor}" />
+        <Setter Property="BorderWidth" 
+                Value="1" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource ButtonPrimaryTextColor}" />
+        <Setter Property="FontSize"
+                Value="Medium" />
+        <Setter Property="CornerRadius"
+                Value="5" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" 
+                                    Value="{DynamicResource DangerPressedColor}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor"
+                                    Value="{DynamicResource ButtonTextColorDisabled}" />
+                            <Setter Property="BackgroundColor"
+                                    Value="{DynamicResource ButtonBackgroundColorDisabled}" />
+                            <Setter Property="BorderColor"
+                                    Value="{DynamicResource ButtonBackgroundColorDisabled}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
     <Style TargetType="Button"
            ApplyToDerivedTypes="True"
            Class="btn-icon-platform">
@@ -281,6 +383,16 @@
         <Setter Property="FontSize"
                 Value="25" />
     </Style>
+    <Style TargetType="Label"
+           Class="accountlist-title-platform"
+           ApplyToDerivedTypes="True">
+    </Style>
+    <Style TargetType="Label"
+           Class="accountlist-sub-platform"
+           ApplyToDerivedTypes="True">
+        <Setter Property="FontSize"
+                Value="Small" />
+    </Style>
 
     <!-- Box -->
 
@@ -305,5 +417,14 @@
            Class="box-row-input-options-platform">
         <Setter Property="Padding"
                 Value="0, 10, 0, 5" />
+    </Style>
+
+    <Style TargetType="Label"
+           ApplyToDerivedTypes="True"
+           Class="title-danger">
+        <Setter Property="TextColor"
+                Value="{DynamicResource DangerColor}" />
+        <Setter Property="FontSize"
+                Value="Medium" />
     </Style>
 </ResourceDictionary>

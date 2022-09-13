@@ -1,24 +1,24 @@
-﻿using Bit.App.Resources;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Bit.App.Resources;
+using Bit.App.Styles;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace Bit.App.Pages
 {
-    public partial class GeneratorPage : BaseContentPage
+    public partial class GeneratorPage : BaseContentPage, IThemeDirtablePage
     {
         private readonly IBroadcasterService _broadcasterService;
-        
+
         private GeneratorPageViewModel _vm;
         private readonly bool _fromTabPage;
         private readonly Action<string> _selectAction;
         private readonly TabsPage _tabsPage;
 
-        public GeneratorPage(bool fromTabPage, Action<string> selectAction = null, TabsPage tabsPage = null)
+        public GeneratorPage(bool fromTabPage, Action<string> selectAction = null, TabsPage tabsPage = null, bool isUsernameGenerator = false, string emailWebsite = null, bool editMode = false)
         {
             _tabsPage = tabsPage;
             InitializeComponent();
@@ -27,6 +27,10 @@ namespace Bit.App.Pages
             _vm.Page = this;
             _fromTabPage = fromTabPage;
             _selectAction = selectAction;
+            _vm.ShowTypePicker = fromTabPage;
+            _vm.IsUsername = isUsernameGenerator;
+            _vm.EmailWebsite = emailWebsite;
+            _vm.EditMode = editMode;
             var isIos = Device.RuntimePlatform == Device.iOS;
             if (selectAction != null)
             {
@@ -47,10 +51,12 @@ namespace Bit.App.Pages
                     ToolbarItems.Add(_historyItem);
                 }
             }
-            if (isIos)
-            {
-                _typePicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
-            }
+            _typePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _passwordTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _usernameTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _serviceTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _plusAddressedEmailTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+            _catchallEmailTypePicker.On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUpdateMode(UpdateMode.WhenFinished);
         }
 
         public async Task InitAsync()
@@ -61,25 +67,29 @@ namespace Bit.App.Pages
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+
+            lblPassword.IsVisible = true;
+
             if (!_fromTabPage)
             {
                 await InitAsync();
             }
-            _broadcasterService.Subscribe(nameof(GeneratorPage), async (message) =>
+
+            _broadcasterService.Subscribe(nameof(GeneratorPage), (message) =>
             {
                 if (message.Command == "updatedTheme")
                 {
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        _vm.RedrawPassword();
-                    });
+                    Device.BeginInvokeOnMainThread(() => _vm.RedrawPassword());
                 }
             });
         }
-        
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
+            lblPassword.IsVisible = false;
+
             _broadcasterService.Unsubscribe(nameof(GeneratorPage));
         }
 
@@ -91,16 +101,6 @@ namespace Bit.App.Pages
                 return true;
             }
             return base.OnBackButtonPressed();
-        }
-
-        private async void Regenerate_Clicked(object sender, EventArgs e)
-        {
-            await _vm.RegenerateAsync();
-        }
-
-        private async void Copy_Clicked(object sender, EventArgs e)
-        {
-            await _vm.CopyAsync();
         }
 
         private async void More_Clicked(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace Bit.App.Pages
 
         private void Select_Clicked(object sender, EventArgs e)
         {
-            _selectAction?.Invoke(_vm.Password);
+            _selectAction?.Invoke(_vm.IsUsername ? _vm.Username : _vm.Password);
         }
 
         private async void History_Clicked(object sender, EventArgs e)
@@ -140,6 +140,26 @@ namespace Bit.App.Pages
             {
                 await Navigation.PopModalAsync();
             }
+        }
+
+        public override async Task UpdateOnThemeChanged()
+        {
+            await base.UpdateOnThemeChanged();
+
+            await Device.InvokeOnMainThreadAsync(() =>
+            {
+                if (_vm != null)
+                {
+                    if (_vm.IsUsername)
+                    {
+                        _vm.RedrawUsername();
+                    }
+                    else
+                    {
+                        _vm.RedrawPassword();
+                    }
+                }
+            });
         }
 
         private async void ToggleOptions_Clicked(System.Object sender, System.EventArgs e)

@@ -1,10 +1,9 @@
-﻿using Bit.App.Abstractions;
+﻿using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Resources;
-using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using System.Threading.Tasks;
 
 namespace Bit.App.Pages
 {
@@ -12,8 +11,9 @@ namespace Bit.App.Pages
     {
         private readonly IDeviceActionService _deviceActionService;
         private readonly IPlatformUtilsService _platformUtilsService;
-        private readonly IStorageService _storageService;
+        private readonly IStateService _stateService;
         private readonly ISyncService _syncService;
+        private readonly ILocalizeService _localizeService;
 
         private string _lastSync = "--";
         private bool _inited;
@@ -23,8 +23,9 @@ namespace Bit.App.Pages
         {
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
+            _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
+            _localizeService = ServiceContainer.Resolve<ILocalizeService>("localizeService");
 
             PageTitle = AppResources.Sync;
         }
@@ -50,7 +51,7 @@ namespace Bit.App.Pages
         public async Task InitAsync()
         {
             await SetLastSyncAsync();
-            EnableSyncOnRefresh = await _storageService.GetAsync<bool>(Constants.SyncOnRefreshKey);
+            EnableSyncOnRefresh = await _stateService.GetSyncOnRefreshAsync();
             _inited = true;
         }
 
@@ -58,7 +59,7 @@ namespace Bit.App.Pages
         {
             if (_inited)
             {
-                await _storageService.SaveAsync(Constants.SyncOnRefreshKey, _syncOnRefresh);
+                await _stateService.SetSyncOnRefreshAsync(_syncOnRefresh);
             }
         }
 
@@ -68,7 +69,9 @@ namespace Bit.App.Pages
             if (last != null)
             {
                 var localDate = last.Value.ToLocalTime();
-                LastSync = string.Format("{0} {1}", localDate.ToShortDateString(), localDate.ToShortTimeString());
+                LastSync = string.Format("{0} {1}",
+                    _localizeService.GetLocaleShortDate(localDate),
+                    _localizeService.GetLocaleShortTime(localDate));
             }
             else
             {

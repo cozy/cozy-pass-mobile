@@ -278,6 +278,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>Bist du sicher, dass du dich abmelden möchtest?</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>Konto entfernen</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>Möchtest du dieses Konto wirklich entfernen?</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>Konto bereits hinzugefügt</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value>Möchtest du jetzt darauf umschalten?</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>Masterpasswort</value>
     <comment>Label for a master password.</comment>
@@ -289,6 +301,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>Mein Tresor</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>Authenticator</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -314,7 +330,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>Verschieben</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>Wird gespeichert...</value>
@@ -761,6 +777,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>Aktiviert</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Ein</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -789,7 +811,7 @@
     <value>Du suchst nach einem Eintrag zum automatischen Einfügen für "{0}".</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>Mehr über Organisationen erfahren</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Die App "{0}" kann nicht geöffnet werden.</value>
@@ -880,11 +902,9 @@
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>Authentifizierungsschlüssel kann nicht gelesen werden.</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>Der Scan wird automatisch durchgeführt.</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>Richte deine Kamera auf den QR Code.</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>Richte deine Kamera auf den QR Code.
+Das Scannen erfolgt automatisch.</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>QR Code scannen</value>
@@ -898,11 +918,11 @@
   <data name="CopyTotp" xml:space="preserve">
     <value>TOTP kopieren</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>Ist ein Authentifizierungsschlüssel mit deinen Zugangsdaten verknüpft, wird der TOTP Bestätigungscode automatisch in die Zwischenablage kopiert, wenn du die Zugangsdaten einfügen lässt.</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>Falls Zugangsdaten einen Authentifizierungsschlüssel haben, den TOTP-Verifizierungsscode nach dem automatischen Ausfüllen in die Zwischenablage kopieren.</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>Automatisches Kopieren des TOTP deaktivieren</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>TOTP automatisch kopieren</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>Für diese Funktion benötigst du eine Premiummitgliedschaft.</value>
@@ -1062,6 +1082,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Nachname</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Vollständiger Name</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>Führerscheinnummer</value>
   </data>
@@ -1116,11 +1139,11 @@
   <data name="Expiration" xml:space="preserve">
     <value>Gültig bis</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>Icons der Website deaktivieren</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>Zeige Webseiten-Icons</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>Website-Symbole zeigen ein erkennbares Bild neben jedem Login in deinem Tresor.</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen.</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>Icons Server URL</value>
@@ -1185,6 +1208,9 @@
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>Versteckt</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>Verknüpft</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>Text</value>
@@ -1284,7 +1310,7 @@
     <value>1. Gehe in die iOS Einstellungen</value>
   </data>
   <data name="AutofillTurnOn2" xml:space="preserve">
-    <value>2. Drücke "Passwörter &amp; Accounts"</value>
+    <value>2. Tippe auf "Passwörter"</value>
   </data>
   <data name="AutofillTurnOn3" xml:space="preserve">
     <value>3. Tippe auf "Automatisch ausfüllen"</value>
@@ -1357,11 +1383,15 @@
   <data name="SearchCollection" xml:space="preserve">
     <value>Sammlung durchsuchen</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>Ordner durchsuchen</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>Versendete Dateien suchen</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>Suchmodus</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>Versendete Texte suchen</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>Suche {0}</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Typ</value>
@@ -1385,7 +1415,7 @@
     <value>Keine Sammlungen vorhanden.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} verschoben nach {1}.</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1401,13 +1431,13 @@
     <value>Eintrag teilen</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>In Organisation verschieben</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Keine Organisationen vorhanden.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>Wähle eine Organisation aus, in die du diesen Eintrag verschieben möchtest. Das Verschieben in eine Organisation überträgt das Eigentum an diese Organisation. Du bist nicht mehr der direkte Besitzer dieses Eintrags, sobald er verschoben wurde.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Anzahl der Wörter</value>
@@ -1430,7 +1460,7 @@
     <value>Keine Ordner zum Auflisten vorhanden.</value>
   </data>
   <data name="FingerprintPhrase" xml:space="preserve">
-    <value>Prüfschlüssel</value>
+    <value>Fingerabdruck-Phrase</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="YourAccountsFingerprint" xml:space="preserve">
@@ -1438,7 +1468,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass erlaubt es Ihnen, Ihren Tresor mit anderen zu teilen, indem Sie ein Organisationskonto verwenden. Möchten Sie die bitwarden.com Website besuchen, um mehr zu erfahren?</value>
+    <value>Cozy Pass ermöglicht es, deinen Tresor mit anderen zu teilen, indem du ein Organisationskonto benutzt. Möchtest du cozy.io besuchen, um mehr zu erfahren?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Tresor exportieren</value>
@@ -1451,6 +1481,9 @@
   </data>
   <data name="Unlock" xml:space="preserve">
     <value>Entsperren</value>
+  </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>Tresor entsperren</value>
   </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 Minuten</value>
@@ -1467,6 +1500,9 @@
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren.</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>Dein Tresor ist gesperrt. Überprüfe deine Identität, um fortzufahren.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Dunkel</value>
@@ -1514,7 +1550,13 @@
     <value>Ändere das Farbschema der Anwendung.</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>Standard (System)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>Dunkles Standard Design</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>Wähle das zu verwendende dunkle Design aus, das bei der Auswahl vom Standard (System) Design verwendet werden soll, während der Dunkelmodus deines Geräts aktiviert ist</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Notizen kopieren</value>
@@ -1532,20 +1574,24 @@
     <value>Schwarz</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>Gesperrte URIs</value>
+  <data name="Nord" xml:space="preserve">
+    <value>Nord</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>URIs auf der Sperrliste, werden nicht automatisch ausgefüllt. Die Listeneinträge sollten durch Komma getrennt sein. Z.B.: "https://twitter.com, androidapp://com.twitter.android".</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>Blockierte URIs automatisch ausfüllen</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Speicherdialog deaktivieren</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>Auto-Ausfüllen wird für blockierte URIs nicht angeboten. Trenne mehrere URIs mit einem Komma. Beispiel: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>Der "Speicherdialog" fordert dich automatisch dazu auf, neue Einträge in deinem Tresor zu speichern, wenn du diese zum ersten Mal eingibst.</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>Danach fragen Zugangsdaten hinzuzufügen</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>Wenn ein Eintrag nicht in deinem Tresor gefunden wurde, danach fragen.</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
-    <value>Bei App Neustart</value>
+    <value>Beim Neustart der App</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
     <value>Automatisches Ausfüllen vereinfacht es, sicher auf deinen Cozy Pass Tresor über andere Webseiten und Apps zuzugreifen. Es sieht aus, als ob du den automatischen Ausfülldienst für Cozy Pass nicht aktiviert hast. Aktiviere automatisches Ausfüllen in der "Einstellungen" Ansicht.</value>
@@ -1555,7 +1601,7 @@
     <value>Deine Änderungen am Aussehen der App werden beim nächsten Neustart der App angewendet.</value>
   </data>
   <data name="Capitalize" xml:space="preserve">
-    <value>Großschreiben</value>
+    <value>Wortanfänge großschreiben</value>
     <comment>ex. Uppercase the first character of a word.</comment>
   </data>
   <data name="IncludeNumber" xml:space="preserve">
@@ -1609,6 +1655,15 @@
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>Gib das Masterpasswort ein, um deine Tresordaten zu exportieren.</value>
   </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>Einen Bestätigungscode an deine E-Mail senden</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>Code gesendet!</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>Bestätige deine Identität, um fortzufahren.</value>
+  </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>Dieser Export enthält deine Tresordaten in einem unverschlüsseltem Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung.</value>
   </data>
@@ -1636,7 +1691,7 @@
     <comment>Clone an entity (verb).</comment>
   </data>
   <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
-    <value>Eine oder mehrere Organisationsrichtlinien beeinflussen dein Generator-Einstellungen.</value>
+    <value>Eine oder mehrere Organisationsrichtlinien beeinflussen deine Generator-Einstellungen</value>
   </data>
   <data name="Open" xml:space="preserve">
     <value>Öffnen</value>
@@ -1827,6 +1882,9 @@
     <value>Ein eigener Name, um dieses Send zu beschreiben.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
   <data name="TypeText" xml:space="preserve">
     <value>Text</value>
   </data>
@@ -1842,6 +1900,18 @@
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
     <value>Die Datei, die du senden möchtest.</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>Dateityp ist ausgewählt.</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>Dateityp ist nicht ausgewählt, tippen zum Auswählen.</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>Texttyp ist ausgewählt.</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>Texttyp ist nicht ausgewählt, tippen zum Auswählen.</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
     <value>Löschdatum</value>
@@ -1873,7 +1943,7 @@
     <value>Maximale Zugriffsanzahl</value>
   </data>
   <data name="MaximumAccessCountInfo" xml:space="preserve">
-    <value>Falls aktiviert, können Benutzer nicht mehr auf diesesn Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.</value>
+    <value>Falls aktiviert, können Benutzer nicht mehr auf dieses Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="MaximumAccessCountReached" xml:space="preserve">
@@ -1986,7 +2056,7 @@
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="HideEmail" xml:space="preserve">
-    <value>Meine E-Mail-Adresse vor den Empfängern ausblenden.</value>
+    <value>Meine E-Mail-Adresse vor den Empfängern verstecken.</value>
   </data>
   <data name="SendOptionsPolicyInEffect" xml:space="preserve">
     <value>Eine oder mehrere Organisationsrichtlinien beeinflussen deine Send Einstellungen.</value>
@@ -1997,7 +2067,7 @@
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SendFileEmailVerificationRequired" xml:space="preserve">
-    <value>Du musst deine E-Mail verifizieren, um diese Funktion nutzen zu können.</value>
+    <value>Du musst deine E-Mail verifizieren, um Dateien mit Send zu verwenden. Du kannst deine E-Mail im Web-Tresor verifizieren.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="PasswordPrompt" xml:space="preserve">
@@ -2010,54 +2080,240 @@
     <value>Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu bestätigen.</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>Captcha erforderlich</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>Captcha fehlgeschlagen. Bitte versuche es erneut.</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>Master-Passwort aktualisiert</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>Master-Passwort aktualisieren</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du dein Master-Passwort jetzt aktualisieren. Wenn Du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben.</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>Passwort wird aktualisiert</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>Das Passwort kann derzeit nicht aktualisiert werden</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>Master-Passwort entfernen</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} verwendet SSO mit von Kunden verwalteter Verschlüsselung. Durch Fortfahren wird dein Master-Passwort von deinem Konto entfernt und SSO zum Anmelden benötigt.</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>Wenn du dein Master-Passwort nicht entfernen möchtest, kannst du diese Organisation verlassen.</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>Organisation verlassen</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>{0} verlassen?</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
     <value>FIDO2 WebAuthn</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>Um fortzufahren, halte deinen FIDO2 WebAuthn kompatiblen Sicherheitsschlüssel bereit und folge dann den Anweisungen, nachdem du auf der nächsten Seite auf 'Authentifiziere WebAuthn' geklickt hast.</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>Authentifizierung mit FIDO2 WebAuthn, du kannst dich mit einem externen Sicherheitsschlüssel authentifizieren.</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>Authentifiziere WebAuthn</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>Zurück zur App</value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>Bitte stelle sicher, dass dein Standardbrowser WebAuthn unterstützt und versuche es erneut.</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch für die Passwort Zurücksetzung registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern.</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>Deine Organisationsrichtlinien haben Auswirkungen auf dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout beträgt {0} Stunde(n) und {1} Minute(n)</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
-    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+    <value>Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegten Beschränkungen.</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
-    <value>One or more organization policies prevents your from exporting your personal vault.</value>
+    <value>Eine oder mehrere Unternehmensrichtlinien verhindern es, dass du deinen persönlichen Tresor exportieren kannst.</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>Konto hinzufügen</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>Entsperrt</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>Gesperrt</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>Ausgeloggt</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>Zum nächsten verfügbaren Konto gewechselt</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>Konto gesperrt</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>Konto erfolgreich abgemeldet</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>Konto erfolgreich entfernt</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>Konto löschen</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>Das Löschen deines Kontos ist unwiderruflich</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>Dein Konto und alle damit verbundenen Daten werden gelöscht und sind nicht wiederherstellbar. Bist du sicher, dass du fortfahren möchtest?</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>Löschen deines Kontos</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>Dein Konto wurde unwiderruflich gelöscht.</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>Ungültiger Bestätigungscode.</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>Einmalpasswort anfordern</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>Send Code</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>Sende</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>Send Link beim Speichern kopieren</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>Sende code</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>Überprüfen</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>Code erneut senden</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>Ein Bestätigungscode wurde an deine E-Mail-Adresse gesendet.</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>Beim Senden des Bestätigungscodes an deine E-Mail-Adresse ist ein Fehler aufgetreten. Bitte versuche es erneut</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>Gib den Bestätigungscode ein, der an deine E-Mail-Adresse gesendet wurde</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>Absturzprotokolle senden</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>Hilf Bitwarden die Stabilität der App zu verbessern, indem du Absturzberichte sendest.</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>Optionen sind ausgeklappt, tippen zum einklappen.</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>Optionen sind eingeklappt, tippe zum ausklappen.</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>Großbuchstaben (A bis Z)</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>Kleinbuchstaben (A bis Z)</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>Zahlen (0 bis 9)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>Sonderzeichen (!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>Tippen, um zurück zu gehen</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>Passwort ist sichtbar, tippen um es auszublenden.</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>Passwort ist nicht sichtbar, tippen um es einzublenden.</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>Objekte nach Tresor filtern</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>Alle Tresore</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>Tresore</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>Tresor: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>Verifizierungscodes</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>Premium-Abonnement erforderlich</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>Authentifizierungsschlüssel lässt sich nicht hinzufügen? </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>QR Code scannen</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>QR Code kann nicht gescannt werden? </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>Authentifizierungsschlüssel</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>Schlüssel manuell eingeben</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>TOTP hinzufügen</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>TOTP einrichten</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>Sobald der Schlüssel erfolgreich eingegeben wurde, wähle TOTP hinzufügen, um den Schlüssel sicher abzuspeichern</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>Wenn du deine Sperroptionen auf „Nie“ einstellst, bleibt dein Tresor für jeden zugänglich, der Zugriff auf dein Gerät hat. Wenn du diese Option verwendest, solltest du sicherstellen, dass du dein Gerät angemessen schützt.</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>Eine oder mehrere der eingegebenen URLs sind ungültig. Bitte überprüfe sie und versuche erneut zu speichern.</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>Wir konnten deine Anfrage nicht bearbeiten. Bitte versuche es erneut oder kontaktiere uns.</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>Bildschirmaufnahme erlauben</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>Bist du sicher, dass du die Bildschirmaufnahme aktivieren möchtest?</value>
   </data>
 </root>

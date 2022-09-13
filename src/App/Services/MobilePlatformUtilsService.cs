@@ -1,12 +1,13 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.Core.Abstractions;
+using Bit.Core.Enums;
 using Plugin.Fingerprint;
 using Plugin.Fingerprint.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -19,22 +20,24 @@ namespace Bit.App.Services
         private const int DialogPromiseExpiration = 600000; // 10 minutes
 
         private readonly IDeviceActionService _deviceActionService;
+        private readonly IClipboardService _clipboardService;
         private readonly IMessagingService _messagingService;
         private readonly IBroadcasterService _broadcasterService;
+
         private readonly Dictionary<int, Tuple<TaskCompletionSource<bool>, DateTime>> _showDialogResolves =
             new Dictionary<int, Tuple<TaskCompletionSource<bool>, DateTime>>();
 
         public MobilePlatformUtilsService(
             IDeviceActionService deviceActionService,
+            IClipboardService clipboardService,
             IMessagingService messagingService,
             IBroadcasterService broadcasterService)
         {
             _deviceActionService = deviceActionService;
+            _clipboardService = clipboardService;
             _messagingService = messagingService;
             _broadcasterService = broadcasterService;
         }
-
-        public string IdentityClientId => "mobile";
 
         public void Init()
         {
@@ -77,6 +80,11 @@ namespace Bit.App.Services
         public string GetDeviceString()
         {
             return DeviceInfo.Model;
+        }
+
+        public ClientType GetClientType()
+        {
+            return ClientType.Mobile;
         }
 
         public bool IsViewOpen()
@@ -124,6 +132,15 @@ namespace Bit.App.Services
             return true;
         }
 
+        public void ShowToastForCopiedValue(string valueNameCopied)
+        {
+            if (!_clipboardService.IsCopyNotificationHandledByPlatform())
+            {
+                ShowToast("info", null,
+                    string.Format(AppResources.ValueHasBeenCopied, valueNameCopied));
+            }
+        }
+
         public bool SupportsFido2()
         {
             return _deviceActionService.SupportsFido2();
@@ -168,12 +185,17 @@ namespace Bit.App.Services
 
         public async Task<bool> ShowPasswordDialogAsync(string title, string body, Func<string, Task<bool>> validator)
         {
+            return (await ShowPasswordDialogAndGetItAsync(title, body, validator)).valid;
+        }
+
+        public async Task<(string password, bool valid)> ShowPasswordDialogAndGetItAsync(string title, string body, Func<string, Task<bool>> validator)
+        {
             var password = await _deviceActionService.DisplayPromptAync(AppResources.PasswordConfirmation,
                 AppResources.PasswordConfirmationDesc, null, AppResources.Submit, AppResources.Cancel, password: true);
 
             if (password == null)
             {
-                return false;
+                return (password, false);
             }
 
             var valid = await validator(password);
@@ -183,7 +205,7 @@ namespace Bit.App.Services
                 await ShowDialogAsync(AppResources.InvalidMasterPassword, null, AppResources.Ok);
             }
 
-            return valid;
+            return (password, valid);
         }
 
         public bool IsDev()
@@ -194,17 +216,6 @@ namespace Bit.App.Services
         public bool IsSelfHost()
         {
             return false;
-        }
-
-        public async Task CopyToClipboardAsync(string text, Dictionary<string, object> options = null)
-        {
-            var clearMs = options != null && options.ContainsKey("clearMs") ? (int?)options["clearMs"] : null;
-            var clearing = options != null && options.ContainsKey("clearing") ? (bool)options["clearing"] : false;
-            await Clipboard.SetTextAsync(text);
-            if (!clearing)
-            {
-                _messagingService.Send("copiedToClipboard", new Tuple<string, int?, bool>(text, clearMs, clearing));
-            }
         }
 
         public async Task<string> ReadFromClipboardAsync(Dictionary<string, object> options = null)

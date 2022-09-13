@@ -1,17 +1,15 @@
-﻿using Bit.App.Models;
+﻿using System;
+using System.Threading.Tasks;
+using Bit.App.Models;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using System;
-using System.Threading.Tasks;
-using Bit.App.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
 {
     public partial class LoginSsoPage : BaseContentPage
     {
-        private readonly IStorageService _storageService;
-        private readonly IMessagingService _messagingService;
         private readonly IVaultTimeoutService _vaultTimeoutService;
         private readonly LoginSsoPageViewModel _vm;
         private readonly AppOptions _appOptions;
@@ -20,10 +18,7 @@ namespace Bit.App.Pages
 
         public LoginSsoPage(AppOptions appOptions = null)
         {
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
-            _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
-            _messagingService.Send("showStatusBar", true);
             _appOptions = appOptions;
             InitializeComponent();
             _vm = BindingContext as LoginSsoPageViewModel;
@@ -36,7 +31,6 @@ namespace Bit.App.Pages
                 () => Device.BeginInvokeOnMainThread(async () => await UpdateTempPasswordAsync());
             _vm.CloseAction = async () =>
             {
-                _messagingService.Send("showStatusBar", false);
                 await Navigation.PopModalAsync();
             };
             if (Device.RuntimePlatform == Device.Android)
@@ -76,12 +70,12 @@ namespace Bit.App.Pages
             }
         }
 
-        private async void LogIn_Clicked(object sender, EventArgs e)
+        private void LogIn_Clicked(object sender, EventArgs e)
         {
             if (DoOnce())
             {
                 CopyAppOptions();
-                await _vm.LogInAsync();
+                _vm.LogInCommand.Execute(null);
             }
         }
 
@@ -106,7 +100,7 @@ namespace Bit.App.Pages
             var page = new SetPasswordPage(_appOptions, _vm.OrgIdentifier);
             await Navigation.PushModalAsync(new NavigationPage(page));
         }
-        
+
         private async Task UpdateTempPasswordAsync()
         {
             var page = new UpdateTempPasswordPage();
@@ -117,7 +111,14 @@ namespace Bit.App.Pages
         {
             RestoreAppOptionsFromCopy();
             await AppHelpers.ClearPreviousPage();
-            Application.Current.MainPage = new NavigationPage(new LockPage(_appOptions));
+            if (await _vaultTimeoutService.IsLockedAsync())
+            {
+                Application.Current.MainPage = new NavigationPage(new LockPage(_appOptions));
+            }
+            else
+            {
+                Application.Current.MainPage = new TabsPage(_appOptions, null);
+            }
         }
     }
 }

@@ -1,21 +1,24 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Bit.App.Abstractions;
+using Bit.App.Controls;
 using Bit.App.Resources;
 using Bit.App.Utilities;
-using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
 {
-    public class GroupingsPageViewModel : BaseViewModel
+    public class GroupingsPageViewModel : VaultFilterViewModel
     {
         private const int NoFolderListSize = 100;
 
@@ -28,6 +31,8 @@ namespace Bit.App.Pages
         private bool _showList;
         private bool _websiteIconsEnabled;
         private bool _syncRefreshing;
+        private bool _showTotpFilter;
+        private bool _totpFilterEnable;
         private string _noDataText;
         private List<CipherView> _allCiphers;
         private Dictionary<string, int> _folderCounts = new Dictionary<string, int>();
@@ -35,19 +40,21 @@ namespace Bit.App.Pages
         private Dictionary<CipherType, int> _typeCounts = new Dictionary<CipherType, int>();
         private readonly Dictionary<CipherType, List<CipherView>> _cipherPerType = new Dictionary<CipherType, List<CipherView>>();
         private int _deletedCount = 0;
-
+        private CancellationTokenSource _totpTickCts;
+        private Task _totpTickTask;
         private readonly ICipherService _cipherService;
         private readonly IFolderService _folderService;
         private readonly ICollectionService _collectionService;
         private readonly ISyncService _syncService;
-        private readonly IUserService _userService;
         private readonly IVaultTimeoutService _vaultTimeoutService;
         private readonly IDeviceActionService _deviceActionService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly IMessagingService _messagingService;
         private readonly IStateService _stateService;
-        private readonly IStorageService _storageService;
         private readonly IPasswordRepromptService _passwordRepromptService;
+        private readonly IOrganizationService _organizationService;
+        private readonly IPolicyService _policyService;
+        private readonly ILogger _logger;
 
         public GroupingsPageViewModel()
         {
@@ -55,24 +62,32 @@ namespace Bit.App.Pages
             _folderService = ServiceContainer.Resolve<IFolderService>("folderService");
             _collectionService = ServiceContainer.Resolve<ICollectionService>("collectionService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
-            _userService = ServiceContainer.Resolve<IUserService>("userService");
             _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _passwordRepromptService = ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService");
+            _organizationService = ServiceContainer.Resolve<IOrganizationService>("organizationService");
+            _policyService = ServiceContainer.Resolve<IPolicyService>("policyService");
+            _logger = ServiceContainer.Resolve<ILogger>("logger");
 
             Loading = true;
-            PageTitle = AppResources.MyVault;
-            GroupedItems = new ExtendedObservableCollection<GroupingsPageListGroup>();
+            GroupedItems = new ObservableRangeCollection<IGroupingsPageListItem>();
             RefreshCommand = new Command(async () =>
             {
                 Refreshing = true;
                 await LoadAsync();
             });
             CipherOptionsCommand = new Command<CipherView>(CipherOptionsAsync);
+            VaultFilterCommand = new AsyncCommand(VaultFilterOptionsAsync,
+                onException: ex => _logger.Exception(ex),
+                allowsMultipleExecutions: false);
+
+            AccountSwitchingOverlayViewModel = new AccountSwitchingOverlayViewModel(_stateService, _messagingService, _logger)
+            {
+                AllowAddAccountRow = true
+            };
         }
 
         public bool MainPage { get; set; }
@@ -81,17 +96,22 @@ namespace Bit.App.Pages
         public string CollectionId { get; set; }
         public Func<CipherView, bool> Filter { get; set; }
         public bool Deleted { get; set; }
-
         public bool HasCiphers { get; set; }
         public bool HasFolders { get; set; }
         public bool HasCollections { get; set; }
         public List<CipherView> Ciphers { get; set; }
+        public List<CipherView> TOTPCiphers { get; set; }
         public List<CipherView> FavoriteCiphers { get; set; }
         public List<CipherView> NoFolderCiphers { get; set; }
         public List<FolderView> Folders { get; set; }
         public List<TreeNode<FolderView>> NestedFolders { get; set; }
         public List<Core.Models.View.CollectionView> Collections { get; set; }
         public List<TreeNode<Core.Models.View.CollectionView>> NestedCollections { get; set; }
+
+        protected override ICipherService cipherService => _cipherService;
+        protected override IPolicyService policyService => _policyService;
+        protected override IOrganizationService organizationService => _organizationService;
+        protected override ILogger logger => _logger;
 
         public bool Refreshing
         {
@@ -138,7 +158,13 @@ namespace Bit.App.Pages
             get => _websiteIconsEnabled;
             set => SetProperty(ref _websiteIconsEnabled, value);
         }
-        public ExtendedObservableCollection<GroupingsPageListGroup> GroupedItems { get; set; }
+        public bool ShowTotp
+        {
+            get => _showTotpFilter;
+            set => SetProperty(ref _showTotpFilter, value);
+        }
+        public AccountSwitchingOverlayViewModel AccountSwitchingOverlayViewModel { get; }
+        public ObservableRangeCollection<IGroupingsPageListItem> GroupedItems { get; set; }
         public Command RefreshCommand { get; set; }
         public Command<CipherView> CipherOptionsCommand { get; set; }
         public bool LoadedOnce { get; set; }
@@ -149,7 +175,7 @@ namespace Bit.App.Pages
             {
                 return;
             }
-            var authed = await _userService.IsAuthenticatedAsync();
+            var authed = await _stateService.IsAuthenticatedAsync();
             if (!authed)
             {
                 return;
@@ -158,30 +184,38 @@ namespace Bit.App.Pages
             {
                 return;
             }
-            if (await _storageService.GetAsync<bool>(Constants.SyncOnRefreshKey) && Refreshing && !SyncRefreshing)
+            if (await _stateService.GetSyncOnRefreshAsync() && Refreshing && !SyncRefreshing)
             {
                 SyncRefreshing = true;
                 await _syncService.FullSyncAsync(false);
                 return;
             }
 
+            _deviceActionService.SetScreenCaptureAllowedAsync().FireAndForget();
+
+            await InitVaultFilterAsync(MainPage);
+            if (MainPage)
+            {
+                PageTitle = ShowVaultFilter ? AppResources.Vaults : AppResources.MyVault;
+            }
+            var canAccessPremium = await _stateService.CanAccessPremiumAsync();
             _doingLoad = true;
             LoadedOnce = true;
             ShowNoData = false;
             Loading = true;
             ShowList = false;
             ShowAddCipherButton = !Deleted;
+
             var groupedItems = new List<GroupingsPageListGroup>();
             var page = Page as GroupingsPage;
 
-            WebsiteIconsEnabled = !(await _stateService.GetAsync<bool?>(Constants.DisableFaviconKey))
-                .GetValueOrDefault();
+            WebsiteIconsEnabled = !(await _stateService.GetDisableFaviconAsync()).GetValueOrDefault();
             try
             {
                 await LoadDataAsync();
                 if (NestedFolders?.Any() ?? false)
                 {
-                    // Remove "No Folder" from folder listing
+                    // Remove "No Folder" folder from folders group
                     NestedFolders = NestedFolders.GetRange(0, NestedFolders.Count - 1);
                 }
 
@@ -249,14 +283,16 @@ namespace Bit.App.Pages
                 }
                 if (Ciphers?.Any() ?? false)
                 {
-                    var ciphersListItems = Ciphers.Where(c => c.IsDeleted == Deleted)
-                        .Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
-                    groupedItems.Add(new GroupingsPageListGroup(ciphersListItems, AppResources.Items,
-                        ciphersListItems.Count, uppercaseGroupNames, !MainPage && !groupedItems.Any()));
+                    CreateCipherGroupedItems(groupedItems);
+                }
+                if (ShowTotp && (!TOTPCiphers?.Any() ?? false))
+                {
+                    Page.Navigation.PopAsync();
+                    return;
                 }
                 // Cozy customization: we deactivate folders
                 /*/
-                if (ShowNoFolderCiphers)
+                if (ShowNoFolderCipherGroup)
                 {
                     var noFolderCiphersListItems = NoFolderCiphers.Select(
                         c => new GroupingsPageListItem { Cipher = c }).ToList();
@@ -271,12 +307,66 @@ namespace Bit.App.Pages
                     {
                         new GroupingsPageListItem()
                         {
-                            IsTrash = true, 
+                            IsTrash = true,
                             ItemCount = _deletedCount.ToString("N0")
                         }
                     }, AppResources.Trash, _deletedCount, uppercaseGroupNames, false));
                 }
-                GroupedItems.ResetWithRange(groupedItems);
+
+                // TODO: refactor this
+                if (Device.RuntimePlatform == Device.Android
+                    ||
+                    GroupedItems.Any())
+                {
+                    var items = new List<IGroupingsPageListItem>();
+                    foreach (var itemGroup in groupedItems)
+                    {
+                        items.Add(new GroupingsPageHeaderListItem(itemGroup.Name, itemGroup.ItemCount));
+                        items.AddRange(itemGroup);
+                    }
+
+                    if (Device.RuntimePlatform == Device.iOS)
+                    {
+                        // HACK: [PS-536] Fix to avoid blank list after back navigation on unlocking with previous page info
+                        // because of update to XF v5.0.0.2401
+                        GroupedItems.Clear();
+                    }
+                    GroupedItems.ReplaceRange(items);
+                }
+                else
+                {
+                    // HACK: we need this on iOS, so that it doesn't crash when adding coming from an empty list
+                    var first = true;
+                    var items = new List<IGroupingsPageListItem>();
+                    foreach (var itemGroup in groupedItems)
+                    {
+                        if (!first)
+                        {
+                            items.Add(new GroupingsPageHeaderListItem(itemGroup.Name, itemGroup.ItemCount));
+                        }
+                        else
+                        {
+                            first = false;
+                        }
+                        items.AddRange(itemGroup);
+                    }
+
+                    if (groupedItems.Any())
+                    {
+                        if (Device.RuntimePlatform == Device.iOS)
+                        {
+                            // HACK: [PS-536] Fix to avoid blank list after back navigation on unlocking with previous page info
+                            // because of update to XF v5.0.0.2401
+                            GroupedItems.Clear();
+                        }
+                        GroupedItems.ReplaceRange(new List<IGroupingsPageListItem> { new GroupingsPageHeaderListItem(groupedItems[0].Name, groupedItems[0].ItemCount) });
+                        GroupedItems.AddRange(items);
+                    }
+                    else
+                    {
+                        GroupedItems.Clear();
+                    }
+                }
             }
             finally
             {
@@ -289,15 +379,74 @@ namespace Bit.App.Pages
             }
         }
 
+        private void AddTotpGroupItem(bool canAccessPremium, List<GroupingsPageListGroup> groupedItems, bool uppercaseGroupNames)
+        {
+            if (canAccessPremium && TOTPCiphers?.Any() == true)
+            {
+                groupedItems.Insert(0, new GroupingsPageListGroup(
+                    AppResources.Totp, 1, uppercaseGroupNames, false)
+                        {
+                            new GroupingsPageListItem
+                            {
+                                IsTotpCode = true,
+                                Type = CipherType.Login,
+                                ItemCount = TOTPCiphers.Count().ToString("N0")
+                            }
+                        });
+            }
+        }
+
+        private void CreateCipherGroupedItems(List<GroupingsPageListGroup> groupedItems)
+        {
+            var uppercaseGroupNames = _deviceActionService.DeviceType == DeviceType.iOS;
+            _totpTickCts?.Cancel();
+            if (ShowTotp)
+            {
+                var ciphersListItems = TOTPCiphers.Select(c => new GroupingsPageTOTPListItem(c, true)).ToList();
+                groupedItems.Add(new GroupingsPageListGroup(ciphersListItems, AppResources.Items,
+                    ciphersListItems.Count, uppercaseGroupNames, !MainPage && !groupedItems.Any()));
+
+                StartCiphersTotpTick(ciphersListItems);
+            }
+            else
+            {
+                var ciphersListItems = Ciphers.Where(c => c.IsDeleted == Deleted)
+                    .Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
+                groupedItems.Add(new GroupingsPageListGroup(ciphersListItems, AppResources.Items,
+                    ciphersListItems.Count, uppercaseGroupNames, !MainPage && !groupedItems.Any()));
+            }
+        }
+
+        private void StartCiphersTotpTick(List<GroupingsPageTOTPListItem> ciphersListItems)
+        {
+            _totpTickCts?.Cancel();
+            _totpTickCts = new CancellationTokenSource();
+            _totpTickTask = new TimerTask(logger, () => ciphersListItems.ForEach(i => i.TotpTickAsync()), _totpTickCts).RunPeriodic();
+        }
+
+        public async Task StopCiphersTotpTick()
+        {
+            _totpTickCts?.Cancel();
+            if (_totpTickTask != null)
+            {
+                await _totpTickTask;
+            }
+        }
+
         public void DisableRefreshing()
         {
             Refreshing = false;
             SyncRefreshing = false;
         }
 
+        protected override async Task OnVaultFilterSelectedAsync()
+        {
+            await LoadAsync();
+        }
+
         public async Task SelectCipherAsync(CipherView cipher)
         {
-            var page = new ViewPage(cipher.Id);
+            var page = new CipherDetailsPage(cipher.Id);
             await Page.Navigation.PushModalAsync(new NavigationPage(page));
         }
 
@@ -321,25 +470,33 @@ namespace Bit.App.Pages
                 default:
                     break;
             }
-            var page = new GroupingsPage(false, type, null, null, title);
+            var page = new GroupingsPage(false, type, null, null, title, _vaultFilterSelection);
             await Page.Navigation.PushAsync(page);
         }
 
         public async Task SelectFolderAsync(FolderView folder)
         {
-            var page = new GroupingsPage(false, null, folder.Id ?? "none", null, folder.Name);
+            var page = new GroupingsPage(false, null, folder.Id ?? "none", null, folder.Name, _vaultFilterSelection);
             await Page.Navigation.PushAsync(page);
         }
 
         public async Task SelectCollectionAsync(Core.Models.View.CollectionView collection)
         {
-            var page = new GroupingsPage(false, null, null, collection.Id, collection.Name);
+            var page = new GroupingsPage(false, null, null, collection.Id, collection.Name, _vaultFilterSelection);
             await Page.Navigation.PushAsync(page);
         }
 
         public async Task SelectTrashAsync()
         {
-            var page = new GroupingsPage(false, null, null, null, AppResources.Trash, null, true);
+            var page = new GroupingsPage(false, null, null, null, AppResources.Trash, _vaultFilterSelection, null,
+                true);
+            await Page.Navigation.PushAsync(page);
+        }
+
+        public async Task SelectTotpCodesAsync()
+        {
+            var page = new GroupingsPage(false, CipherType.Login, null, null, AppResources.VerificationCodes, _vaultFilterSelection, null,
+                false, true);
             await Page.Navigation.PushAsync(page);
         }
 
@@ -378,8 +535,9 @@ namespace Bit.App.Pages
         private async Task LoadDataAsync()
         {
             NoDataText = AppResources.NoItems;
-            _allCiphers = await _cipherService.GetAllDecryptedAsync();
+            _allCiphers = await GetAllCiphersAsync();
             HasCiphers = _allCiphers.Any();
+            TOTPCiphers = _allCiphers.Where(c => c.IsDeleted == Deleted && c.Type == CipherType.Login && !string.IsNullOrEmpty(c.Login?.Totp)).ToList();
             FavoriteCiphers?.Clear();
             NoFolderCiphers?.Clear();
             _folderCounts.Clear();
@@ -397,12 +555,11 @@ namespace Bit.App.Pages
 
             if (MainPage)
             {
-                Folders = await _folderService.GetAllDecryptedAsync();
-                NestedFolders = await _folderService.GetAllNestedAsync();
+                await FillFoldersAndCollectionsAsync();
+                NestedFolders = await _folderService.GetAllNestedAsync(Folders);
                 HasFolders = NestedFolders.Any(f => f.Node?.Id != null);
-                Collections = await _collectionService.GetAllDecryptedAsync();
-                NestedCollections = await _collectionService.GetAllNestedAsync(Collections);
-                HasCollections = NestedCollections.Any();
+                NestedCollections = Collections != null ? await _collectionService.GetAllNestedAsync(Collections) : null;
+                HasCollections = NestedCollections?.Any() ?? false;
 
                 #region cozy
                 await _userService.CacheCozyOrganizationId();
@@ -414,6 +571,10 @@ namespace Bit.App.Pages
                 {
                     Filter = c => c.IsDeleted;
                     NoDataText = AppResources.NoItemsTrash;
+                }
+                else if (ShowTotp)
+                {
+                    Filter = c => c.Type == CipherType.Login && !c.IsDeleted && !string.IsNullOrEmpty(c.Login?.Totp);
                 }
                 else if (Type != null)
                 {
@@ -530,6 +691,34 @@ namespace Bit.App.Pages
                     }
                 }
             }
+        }
+
+        private async Task FillFoldersAndCollectionsAsync()
+        {
+            var orgId = GetVaultFilterOrgId();
+            var decFolders = await _folderService.GetAllDecryptedAsync();
+            var decCollections = await _collectionService.GetAllDecryptedAsync();
+            if (IsVaultFilterMyVault)
+            {
+                Folders = BuildFolders(decFolders);
+                Collections = null;
+            }
+            else if (IsVaultFilterOrgVault && !string.IsNullOrWhiteSpace(orgId))
+            {
+                Folders = BuildFolders(decFolders);
+                Collections = decCollections?.Where(c => c.OrganizationId == orgId).ToList();
+            }
+            else
+            {
+                Folders = decFolders;
+                Collections = decCollections;
+            }
+        }
+
+        private List<FolderView> BuildFolders(List<FolderView> decFolders)
+        {
+            var folders = decFolders.Where(f => _allCiphers.Any(c => c.FolderId == f.Id)).ToList();
+            return folders.Any() ? folders : null;
         }
 
         private async void CipherOptionsAsync(CipherView cipher)

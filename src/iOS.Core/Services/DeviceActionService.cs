@@ -22,17 +22,17 @@ namespace Bit.iOS.Core.Services
 {
     public class DeviceActionService : IDeviceActionService
     {
-        private readonly IStorageService _storageService;
+        private readonly IStateService _stateService;
         private readonly IMessagingService _messagingService;
         private Toast _toast;
         private UIAlertController _progressAlert;
         private string _userAgent;
 
         public DeviceActionService(
-            IStorageService storageService,
+            IStateService stateService,
             IMessagingService messagingService)
         {
-            _storageService = storageService;
+            _stateService = stateService;
             _messagingService = messagingService;
         }
 
@@ -83,6 +83,11 @@ namespace Bit.iOS.Core.Services
             {
                 HideLoadingAsync().GetAwaiter().GetResult();
             }
+            var vc = GetPresentedViewController();
+            if (vc is null)
+            {
+                return Task.CompletedTask;
+            }
 
             var result = new TaskCompletionSource<int>();
 
@@ -96,8 +101,7 @@ namespace Bit.iOS.Core.Services
             _progressAlert.View.TintColor = UIColor.Black;
             _progressAlert.View.Add(loadingIndicator);
 
-            var vc = GetPresentedViewController();
-            vc?.PresentViewController(_progressAlert, false, () => result.TrySetResult(0));
+            vc.PresentViewController(_progressAlert, false, () => result.TrySetResult(0));
             return result.Task;
         }
 
@@ -152,7 +156,7 @@ namespace Bit.iOS.Core.Services
                     NSFileManager.DefaultManager.Remove(item, out NSError itemError);
                 }
             }
-            await _storageService.SaveAsync(Bit.Core.Constants.LastFileCacheClearKey, DateTime.UtcNow);
+            await _stateService.SetLastFileCacheClearAsync(DateTime.UtcNow);
         }
 
         public Task SelectFileAsync()
@@ -205,6 +209,12 @@ namespace Bit.iOS.Core.Services
             string text = null, string okButtonText = null, string cancelButtonText = null,
             bool numericKeyboard = false, bool autofocus = true, bool password = false)
         {
+            var vc = GetPresentedViewController();
+            if (vc is null)
+            {
+                return null;
+            }
+
             var result = new TaskCompletionSource<string>();
             var alert = UIAlertController.Create(title ?? string.Empty, description, UIAlertControllerStyle.Alert);
             UITextField input = null;
@@ -234,8 +244,7 @@ namespace Bit.iOS.Core.Services
                     input.KeyboardAppearance = UIKeyboardAppearance.Dark;
                 }
             });
-            var vc = GetPresentedViewController();
-            vc?.PresentViewController(alert, true, null);
+            vc.PresentViewController(alert, true, null);
             return result.Task;
         }
 
@@ -313,6 +322,12 @@ namespace Bit.iOS.Core.Services
 
         public Task<string> DisplayAlertAsync(string title, string message, string cancel, params string[] buttons)
         {
+            var vc = GetPresentedViewController();
+            if (vc is null)
+            {
+                return null;
+            }
+
             var result = new TaskCompletionSource<string>();
             var alert = UIAlertController.Create(title ?? string.Empty, message, UIAlertControllerStyle.Alert);
             if (!string.IsNullOrWhiteSpace(cancel))
@@ -329,8 +344,7 @@ namespace Bit.iOS.Core.Services
                     result.TrySetResult(button);
                 }));
             }
-            var vc = GetPresentedViewController();
-            vc?.PresentViewController(alert, true, null);
+            vc.PresentViewController(alert, true, null);
             return result.Task;
         }
 
@@ -341,8 +355,13 @@ namespace Bit.iOS.Core.Services
             {
                 return app.MainPage.DisplayActionSheet(title, cancel, destruction, buttons);
             }
-            var result = new TaskCompletionSource<string>();
             var vc = GetPresentedViewController();
+            if (vc is null)
+            {
+                return null;
+            }
+
+            var result = new TaskCompletionSource<string>();
             var sheet = UIAlertController.Create(title, null, UIAlertControllerStyle.ActionSheet);
             if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
             {
@@ -391,6 +410,11 @@ namespace Bit.iOS.Core.Services
         public bool AutofillAccessibilityServiceRunning()
         {
             throw new NotImplementedException();
+        }
+
+        public bool HasAutofillService()
+        {
+            return false;
         }
 
         public bool AutofillServiceEnabled()
@@ -586,6 +610,24 @@ namespace Bit.iOS.Core.Services
         public void OpenAccessibilityOverlayPermissionSettings()
         {
             throw new NotImplementedException();
+        }
+
+        public float GetSystemFontSizeScale()
+        {
+            var tempHeight = 20f;
+            var scaledHeight = (float)new UIFontMetrics(UIFontTextStyle.Body.GetConstant()).GetScaledValue(tempHeight);
+            return scaledHeight / tempHeight;
+        }
+
+        public async Task OnAccountSwitchCompleteAsync()
+        {
+            await ASHelpers.ReplaceAllIdentities();
+        }
+
+        public Task SetScreenCaptureAllowedAsync()
+        {
+            // only used by Android. Not possible in iOS
+            return Task.CompletedTask;
         }
 
         public class PickerDelegate : UIDocumentPickerDelegate

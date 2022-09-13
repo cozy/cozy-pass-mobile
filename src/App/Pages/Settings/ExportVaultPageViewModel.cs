@@ -1,21 +1,14 @@
 ﻿using System;
-using Bit.App.Abstractions;
-using Bit.App.Resources;
-using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using Bit.App.Abstractions;
+using Bit.App.Resources;
 using Bit.Core;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
-// Cozy customization, disable "AppCenter" functionality
-// We do not use it at Cozy
-/*
-#if !FDROID
-using Microsoft.AppCenter.Crashes;
-#endif
-//*/
+using Bit.Core.Exceptions;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -25,26 +18,35 @@ namespace Bit.App.Pages
         private readonly IDeviceActionService _deviceActionService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly II18nService _i18nService;
-        private readonly ICryptoService _cryptoService;
         private readonly IExportService _exportService;
         private readonly IPolicyService _policyService;
+        private readonly IKeyConnectorService _keyConnectorService;
+        private readonly IUserVerificationService _userVerificationService;
+        private readonly IApiService _apiService;
+        private readonly ILogger _logger;
 
         private int _fileFormatSelectedIndex;
         private string _exportWarningMessage;
         private bool _showPassword;
-        private string _masterPassword;
+        private string _secret;
         private byte[] _exportResult;
         private string _defaultFilename;
         private bool _initialized = false;
+        private bool _useOTPVerification = false;
+        private string _secretName;
+        private string _instructionText;
 
         public ExportVaultPageViewModel()
         {
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
-            _cryptoService = ServiceContainer.Resolve<ICryptoService>("cryptoService");
             _exportService = ServiceContainer.Resolve<IExportService>("exportService");
             _policyService = ServiceContainer.Resolve<IPolicyService>("policyService");
+            _keyConnectorService = ServiceContainer.Resolve<IKeyConnectorService>("keyConnectorService");
+            _userVerificationService = ServiceContainer.Resolve<IUserVerificationService>("userVerificationService");
+            _apiService = ServiceContainer.Resolve<IApiService>("apiService");
+            _logger = ServiceContainer.Resolve<ILogger>("logger");
 
             PageTitle = AppResources.ExportVault;
             TogglePasswordCommand = new Command(TogglePassword);
@@ -63,6 +65,18 @@ namespace Bit.App.Pages
             _initialized = true;
             FileFormatSelectedIndex = FileFormatOptions.FindIndex(k => k.Key == "json");
             DisablePrivateVaultPolicyEnabled = await _policyService.PolicyAppliesToUser(PolicyType.DisablePersonalVaultExport);
+            UseOTPVerification = await _keyConnectorService.GetUsesKeyConnector();
+
+            if (UseOTPVerification)
+            {
+                InstructionText = _i18nService.T("ExportVaultOTPDescription");
+                SecretName = _i18nService.T("VerificationCode");
+            }
+            else
+            {
+                InstructionText = _i18nService.T("ExportVaultMasterPasswordDescription");
+                SecretName = _i18nService.T("MasterPassword");
+            }
 
             UpdateWarning();
         }
@@ -95,43 +109,52 @@ namespace Bit.App.Pages
         {
             get => _showPassword;
             set => SetProperty(ref _showPassword, value,
-                additionalPropertyNames: new string[] {nameof(ShowPasswordIcon)});
+                additionalPropertyNames: new string[]
+                {
+                    nameof(ShowPasswordIcon),
+                    nameof(PasswordVisibilityAccessibilityText),
+                });
         }
 
-        public string MasterPassword
+        public bool UseOTPVerification
         {
-            get => _masterPassword;
-            set => SetProperty(ref _masterPassword, value);
+            get => _useOTPVerification;
+            set => SetProperty(ref _useOTPVerification, value);
+        }
+
+        public string Secret
+        {
+            get => _secret;
+            set => SetProperty(ref _secret, value);
+        }
+
+        public string SecretName
+        {
+            get => _secretName;
+            set => SetProperty(ref _secretName, value);
+        }
+
+        public string InstructionText
+        {
+            get => _instructionText;
+            set => SetProperty(ref _instructionText, value);
         }
 
         public Command TogglePasswordCommand { get; }
 
-        public string ShowPasswordIcon => ShowPassword ? "" : "";
+        public string ShowPasswordIcon => ShowPassword ? BitwardenIcons.EyeSlash : BitwardenIcons.Eye;
+        public string PasswordVisibilityAccessibilityText => ShowPassword ? AppResources.PasswordIsVisibleTapToHide : AppResources.PasswordIsNotVisibleTapToShow;
 
         public void TogglePassword()
         {
             ShowPassword = !ShowPassword;
-            (Page as ExportVaultPage).MasterPasswordEntry.Focus();
+            (Page as ExportVaultPage).SecretEntry.Focus();
         }
 
         public Command ExportVaultCommand { get; }
 
         public async Task ExportVaultAsync()
         {
-            if (string.IsNullOrEmpty(_masterPassword))
-            {
-                await _platformUtilsService.ShowDialogAsync(_i18nService.T("InvalidMasterPassword"));
-                return;
-            }
-
-            var passwordValid = await _cryptoService.CompareAndUpdateKeyHashAsync(_masterPassword, null);
-            MasterPassword = string.Empty;
-            if (!passwordValid)
-            {
-                await _platformUtilsService.ShowDialogAsync(_i18nService.T("InvalidMasterPassword"));
-                return;
-            }
-
             bool userConfirmedExport = await _platformUtilsService.ShowDialogAsync(ExportWarningMessage,
                 _i18nService.T("ExportVaultConfirmationTitle"), _i18nService.T("ExportVault"), _i18nService.T("Cancel"));
 
@@ -139,6 +162,16 @@ namespace Bit.App.Pages
             {
                 return;
             }
+
+            var verificationType = await _keyConnectorService.GetUsesKeyConnector()
+                ? VerificationType.OTP
+                : VerificationType.MasterPassword;
+            if (!await _userVerificationService.VerifyUser(Secret, verificationType))
+            {
+                return;
+            }
+
+            Secret = string.Empty;
 
             try
             {
@@ -160,14 +193,29 @@ namespace Bit.App.Pages
                 ClearResult();
                 await _platformUtilsService.ShowDialogAsync(_i18nService.T("ExportVaultFailure"));
                 System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", ex.GetType(), ex.StackTrace);
-// Cozy customization, disable "AppCenter" functionality
-// We do not use it at Cozy
-/*
-#if !FDROID
-                Crashes.TrackError(ex);
-#endif
-//*/
+                _logger.Exception(ex);
             }
+        }
+
+        public async Task RequestOTP()
+        {
+            try
+            {
+                await _deviceActionService.ShowLoadingAsync(AppResources.Sending);
+                await _apiService.PostAccountRequestOTP();
+                await _deviceActionService.HideLoadingAsync();
+                _platformUtilsService.ShowToast("success", null, AppResources.CodeSent);
+            }
+            catch (ApiException e)
+            {
+                await _deviceActionService.HideLoadingAsync();
+                if (e?.Error != null)
+                {
+                    await _platformUtilsService.ShowDialogAsync(e.Error.GetSingleMessage(),
+                        AppResources.AnErrorHasOccurred);
+                }
+            }
+
         }
 
         public async void SaveFileSelected(string contentUri, string filename)

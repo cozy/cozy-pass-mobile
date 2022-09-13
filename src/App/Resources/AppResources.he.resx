@@ -278,6 +278,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>האם אתה בטוח שברצונך להתנתק?</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>הסר חשבון</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>האם את בטוח שברצונך להסיר חשבון זה?</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>החשבון כבר קיים</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value>האם תרצה לעבור לחשבון כעת?</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>סיסמה ראשית</value>
     <comment>Label for a master password.</comment>
@@ -289,6 +301,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>הכספת שלי</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>Authenticator</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>שם</value>
@@ -314,7 +330,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>העבר</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>שומר...</value>
@@ -409,7 +425,7 @@
     <value>השתמש בשירות הנגישות של Cozy Pass עבור השלמה אוטמטית של פרטי כניסה לאפליקציות ולאתרים באינטרנט.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
-    <value>שירות השלמה אוטומטית</value>
+    <value>שירות מילוי-אוטומטי</value>
   </data>
   <data name="AvoidAmbiguousCharacters" xml:space="preserve">
     <value>המנע מאותיות ותוים דומים</value>
@@ -761,6 +777,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>מופעל</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>On</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>סטטוס</value>
   </data>
@@ -790,7 +812,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>אתה מחפש פריט להשלמה אוטומטית עבור "{0}".</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>למד אודות ארגונים</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>לא ניתן לפתוח את האפליקציה "{0}".</value>
@@ -881,11 +903,9 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>קריאת מפתח האימות נכשלה.</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>הסריקה מתבצעת אוטומטית.</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>כוון את המצלמה לכיוון קוד הQR.</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>Point your camera at the QR Code.
+Scanning will happen automatically.</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>סרוק קוד QR</value>
@@ -899,11 +919,11 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="CopyTotp" xml:space="preserve">
     <value>העתק TOTP</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>אם פרטי הכניסה שלך מקושרים לאפליקציית אימות, קוד האימות TOTP מועתק אוטומטית לזיכרון שלך ברגע שמתבצעת ההשלמה האוטומטית לטופס הכניסה.</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login.</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>בטל העתקה אוטומטית של קוד TOTP</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>Copy TOTP automatically</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>בכדי להשתמש ביכולת זו יש צורך במנוי פרמיום.</value>
@@ -1063,6 +1083,9 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="LastName" xml:space="preserve">
     <value>שם משפחה</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>שם מלא</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>מספר רשיון</value>
   </data>
@@ -1117,11 +1140,11 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="Expiration" xml:space="preserve">
     <value>תוקף</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>בטל אייקונים של האתר</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>Show website icons</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>האייקונים של האתר מציג תמונה או אייקון מוכר ליד פרטי הכניסה שבכספת שלך.</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>Show a recognizable image next to each login.</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>כתובת השרת עבור האייקון</value>
@@ -1186,6 +1209,9 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>מוסתר</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>מקושר</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>טקסט</value>
@@ -1285,7 +1311,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>1. עבור לאפליקציית "הגדרות" של iOS</value>
   </data>
   <data name="AutofillTurnOn2" xml:space="preserve">
-    <value>2. לחץ על "סיסמאות וחשבונות"</value>
+    <value>2. לחץ על "סיסמאות"</value>
   </data>
   <data name="AutofillTurnOn3" xml:space="preserve">
     <value>3. לחץ על "השלם סיסמאות באופן אוטומטי"</value>
@@ -1297,7 +1323,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>5. בחר את "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
-    <value>השלמת סיסמאות אוטומטית</value>
+    <value>מילוי סיסמה אוטומטי</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
     <value>הדרך הקלה ביותר להוספת פרטי כניסה לכספת שלך היא בעזרת התוסף של Bitwarden להשלמת סיסמאות. למד עוד אודות השימוש בתוסף של Cozy Pass להשלמת סיסמאות בעזרת פתיחת חלון "הגדרות".</value>
@@ -1358,11 +1384,15 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="SearchCollection" xml:space="preserve">
     <value>חפש אוסף</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>חפש תיקייה</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>Search File Sends</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>חפש סוג</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>Search Text Sends</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>Search {0}</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>סוג</value>
@@ -1386,7 +1416,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>אין אוספים להציג ברשימה.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} הועבר ל{1}.</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1402,13 +1432,13 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>שתף פריט</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>העבר לארגון</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>אין ארגונים להצגה ברשימה.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>בחר ארגון שאליו ברצונך להעביר פריט זה. ההעברה לארגון מעבירה את הבעלות על הפריט לאותו ארגון. לאחר העברת פריט זה לא תהיה יותר הבעלים הישיר.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>מספר מילים</value>
@@ -1453,6 +1483,9 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="Unlock" xml:space="preserve">
     <value>בטל נעילה</value>
   </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>פתח נעילת כספת</value>
+  </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 דקות</value>
   </data>
@@ -1468,6 +1501,9 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך.</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>הכספת שלך נעולה. אמת את זהותך כדי להמשיך.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>כהה</value>
@@ -1515,10 +1551,16 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>שנה את ערכת הצבע של האפליקציה.</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>ברירת מחדל (מערכת)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>Default dark theme</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>Choose the dark theme to use when using Default (System) theme while your device's dark mode is enabled.</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
-    <value>העתק פתקים</value>
+    <value>העתק פתק</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>יציאה</value>
@@ -1533,17 +1575,21 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>שחור</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>כתובות ברשימה שחורה</value>
+  <data name="Nord" xml:space="preserve">
+    <value>Nord</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>כתובות או אפליקציות המופיעות ברשימה לא יוצעו בתהליך ההשלמה האוטומטית. הרשימה צריכה להיות מופרדת בפסיקים. לדוגמא: "https://twitter.com, androidapp://com.twitter.android".</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>Auto-fill blocked URIs</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>בטל את הבקשה לשמירה</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>Auto-fill will not be offered for blocked URIs. Separate multiple URIs with a comma. For example: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>החלון "שמור" מופיע כשאתה מזין פרטי כניסה בפעם הראשונה.</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>Ask to add login</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>Ask to add an item if one isn't found in your vault.</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
     <value>באתחול האפליקציה</value>
@@ -1609,14 +1655,23 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>הזן את הסיסמה הראשית שלך עבור יצוא המידע מהכספת.</value>
   </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>שלח קוד אימות לאימייל שלך</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>קוד נשלח!</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>אשר את זהותך כדי להמשיך.</value>
+  </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>הקובץ מכיל את פרטי הכספת שלך בפורמט לא מוצפן. מומלץ להעביר את הקובץ רק בדרכים מוצפנות, ומאוד לא מומלץ לשמור או לשלוח את הקובץ הזה בדרכים לא מוצפנות (כדוגמת סתם אימייל). מחק את הקובץ מיד לאחר שסיימת את השימוש בו.</value>
   </data>
   <data name="EncExportKeyWarning" xml:space="preserve">
-    <value>This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file.</value>
+    <value>יצוא זה מצפין את המידע שלך בעזרת מפתח ההצפנה הנוכחי שלך. אם תחליף (rotate) את מפתחות ההצפנה של החשבון שלך, עליך לבצע ייצוא חדש משום שלא תוכל לפענח את הקובץ הקיים.</value>
   </data>
   <data name="EncExportAccountWarning" xml:space="preserve">
-    <value>Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account.</value>
+    <value>מפתחות הצפנת חשבון ייחודיים לכל חשבון משתמש של Bitwarden, כך שלא ניתן לייבא ייצוא מוצפן לחשבון אחר.</value>
   </data>
   <data name="ExportVaultConfirmationTitle" xml:space="preserve">
     <value>אישור ייצוא כספת</value>
@@ -1791,19 +1846,19 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>השתמש בשירות הנגישות של Bitwarden עבור הצגת מסגרת ההשלמה האוטומטית, ו\או עבור הצגת חלון צף בעזרת Draw-Over (אם אפשרות זו פועלת)</value>
   </data>
   <data name="AccessibilityDescription4" xml:space="preserve">
-    <value>Required to use the Autofill Quick-Action Tile, or to augment the Autofill Service by using Draw-Over (if enabled).</value>
+    <value>יש להשתמש בחלון פעולה-מהירה למילוי אוטומטי, או להציג את חלון שירות המילוי האוטומטי באמצעות 'ציור מעל אפליקציות אחרות' (אם מאופשר).</value>
   </data>
   <data name="DrawOver" xml:space="preserve">
-    <value>Use Draw-Over</value>
+    <value>השתמש ב"ציור מעל אפליקציות"</value>
   </data>
   <data name="DrawOverDescription" xml:space="preserve">
-    <value>When enabled, allows the Bitwarden Accessibility Service to display a popup when login fields are selected.</value>
+    <value>כאשר מופעל, שירות הנגישות של Bitwarden יוכל להציג חלון קופץ בלחיצה על שדות שם משתמש וסיסמה.</value>
   </data>
   <data name="DrawOverDescription2" xml:space="preserve">
-    <value>If enabled, the Bitwarden Accessibility Service will display a popup when login fields are selected to assist with auto-filling your logins.</value>
+    <value>אם מאופשר, שירות הנגישות של Bitwarden יציג חלון קופץ כשבוחרים שדות שם משתמש וסיסמה כדי לסייע במילוי-אוטומטי של פרטי החיבור שלך.</value>
   </data>
   <data name="DrawOverDescription3" xml:space="preserve">
-    <value>If enabled, accessibility will show a popup to augment the Autofill Service for older apps that don't support the Android Autofill Framework.</value>
+    <value>אם מאופשר, שירות הנגישות יציג חלון קופץ כדי להגדיל את שירות המילוי האוטומטי עבור אפליקציות ישנות יותר שאינן תומכות באפשרות מילוי-אוטומטי של אנדרואיד.</value>
   </data>
   <data name="PersonalOwnershipSubmitError" xml:space="preserve">
     <value>מדיניות הארגון מונעת ממך לשמור פריטים בכספת האישית. שנה את אפשרות הבעלות לארגוניות ובחר מתוך האוספים הזמינים.</value>
@@ -1816,248 +1871,451 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="AllSends" xml:space="preserve">
-    <value>All Sends</value>
+    <value>כל הSendים</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="Sends" xml:space="preserve">
-    <value>Sends</value>
+    <value>Sendים</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="NameInfo" xml:space="preserve">
-    <value>A friendly name to describe this Send.</value>
+    <value>שם ידידותי לתיאור Send זה.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
-  <data name="TypeText" xml:space="preserve">
+  <data name="Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
   <data name="TypeTextInfo" xml:space="preserve">
-    <value>The text you want to send.</value>
+    <value>הטקסט שברצונך לשים בSend.</value>
   </data>
   <data name="HideTextByDefault" xml:space="preserve">
-    <value>When accessing the Send, hide the text by default</value>
+    <value>בעת גישה לSend, הסתר את הטקסט כברירת מחדל</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="TypeFile" xml:space="preserve">
-    <value>File</value>
+    <value>קובץ</value>
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
-    <value>The file you want to send.</value>
+    <value>הקובץ שברצונך לשים בSend.</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>File type is selected.</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>File type is not selected, tap to select.</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>Text type is selected.</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>Text type is not selected, tap to select.</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
-    <value>Deletion Date</value>
+    <value>תאריך מחיקה</value>
   </data>
   <data name="DeletionTime" xml:space="preserve">
-    <value>Deletion Time</value>
+    <value>זמן המחיקה</value>
   </data>
   <data name="DeletionDateInfo" xml:space="preserve">
-    <value>The Send will be permanently deleted on the specified date and time.</value>
+    <value>הSend ימחק לצמיתות בתאריך ובשעה שצוינו.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="PendingDelete" xml:space="preserve">
-    <value>Pending deletion</value>
+    <value>ממתין להסרה</value>
   </data>
   <data name="ExpirationDate" xml:space="preserve">
-    <value>Expiration Date</value>
+    <value>תאריך תפוגה</value>
   </data>
   <data name="ExpirationTime" xml:space="preserve">
-    <value>Expiration Time</value>
+    <value>זמן תפוגה</value>
   </data>
   <data name="ExpirationDateInfo" xml:space="preserve">
-    <value>If set, access to this Send will expire on the specified date and time.</value>
+    <value>במידה ויוגדר, הגישה ל Send זה תפקע בתאריך ובשעה שהוגדרו.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="Expired" xml:space="preserve">
-    <value>Expired</value>
+    <value>פג תוקף</value>
   </data>
   <data name="MaximumAccessCount" xml:space="preserve">
-    <value>Maximum Access Count</value>
+    <value>כמות גישות מקסימלית</value>
   </data>
   <data name="MaximumAccessCountInfo" xml:space="preserve">
-    <value>If set, users will no longer be able to access this Send once the maximum access count is reached.</value>
+    <value>במידה ויוגדר, משתמשים לא יוכלו יותר לגשת לSend זה לאחר שמספר הגישות המרבי יושג.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="MaximumAccessCountReached" xml:space="preserve">
-    <value>Max access count reached</value>
+    <value>מספר הגישות המרבי הושג</value>
   </data>
   <data name="CurrentAccessCount" xml:space="preserve">
-    <value>Current Access Count</value>
+    <value>כמות גישות נוכחית</value>
   </data>
   <data name="NewPassword" xml:space="preserve">
-    <value>New Password</value>
+    <value>סיסמה חדשה</value>
   </data>
   <data name="PasswordInfo" xml:space="preserve">
-    <value>Optionally require a password for users to access this Send.</value>
+    <value>דרוש סיסמה אופציונאלית כדי לגשת לSend זה.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="RemovePassword" xml:space="preserve">
-    <value>Remove Password</value>
+    <value>הסר סיסמה</value>
   </data>
   <data name="AreYouSureRemoveSendPassword" xml:space="preserve">
-    <value>Are you sure you want to remove the password?</value>
+    <value>האם אתה בטוח שברצונך להסיר את הסיסמה?</value>
   </data>
   <data name="RemovingSendPassword" xml:space="preserve">
-    <value>Removing password</value>
+    <value>מסיר סיסמה</value>
   </data>
   <data name="SendPasswordRemoved" xml:space="preserve">
-    <value>Password has been removed.</value>
+    <value>הסיסמה הוסרה.</value>
   </data>
   <data name="NotesInfo" xml:space="preserve">
-    <value>Private notes about this Send.</value>
+    <value>הערות פרטיות לגבי Send זה.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="DisableSend" xml:space="preserve">
-    <value>Disable this Send so that no one can access it.</value>
+    <value>בטל את הSend הזה כך שאף אחד לא יוכל לגשת אליו</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="NoSends" xml:space="preserve">
-    <value>There are no Sends in your account.</value>
+    <value>אין Sendים בחשבון שלך.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="AddASend" xml:space="preserve">
-    <value>Add a Send</value>
+    <value>הוסף Send</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="CopyLink" xml:space="preserve">
-    <value>Copy Link</value>
+    <value>העתק קישור</value>
   </data>
   <data name="ShareLink" xml:space="preserve">
-    <value>Share Link</value>
+    <value>שתף קישור</value>
   </data>
   <data name="SendLink" xml:space="preserve">
-    <value>Send link</value>
+    <value>לינק לSend</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SearchSends" xml:space="preserve">
-    <value>Search Sends</value>
+    <value>חיפוש Sendים</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="EditSend" xml:space="preserve">
-    <value>Edit Send</value>
+    <value>ערוך Send</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="AddSend" xml:space="preserve">
-    <value>Add Send</value>
+    <value>הוסף Send</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="AreYouSureDeleteSend" xml:space="preserve">
-    <value>Are you sure you want to delete this Send?</value>
+    <value>האם אתה בטוח שברצונך למחוק Send זה?</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SendDeleted" xml:space="preserve">
-    <value>Send has been deleted.</value>
+    <value>הSend נמחק בהצלחה.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SendUpdated" xml:space="preserve">
-    <value>Send updated.</value>
+    <value>הSend עודכן.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="NewSendCreated" xml:space="preserve">
-    <value>New send created.</value>
+    <value>Send חדש נוצר.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="OneDay" xml:space="preserve">
-    <value>1 day</value>
+    <value>יום אחד</value>
   </data>
   <data name="TwoDays" xml:space="preserve">
-    <value>2 days</value>
+    <value>יומיים</value>
   </data>
   <data name="ThreeDays" xml:space="preserve">
-    <value>3 days</value>
+    <value>3 ימים</value>
   </data>
   <data name="SevenDays" xml:space="preserve">
-    <value>7 days</value>
+    <value>7 ימים</value>
   </data>
   <data name="ThirtyDays" xml:space="preserve">
-    <value>30 days</value>
+    <value>30 ימים</value>
   </data>
   <data name="Custom" xml:space="preserve">
-    <value>Custom</value>
+    <value>מותאם אישית</value>
   </data>
   <data name="ShareOnSave" xml:space="preserve">
-    <value>Share this Send upon save.</value>
+    <value>שתף Send זה בזמן השמירה</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SendDisabledWarning" xml:space="preserve">
-    <value>Due to an enterprise policy, you are only able to delete an existing Send.</value>
+    <value>עקב מדיניות ארגונית, אתה יכול למחוק רק Sendים קיימים.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="AboutSend" xml:space="preserve">
-    <value>About Send</value>
+    <value>אודות Send</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="HideEmail" xml:space="preserve">
-    <value>Hide my email address from recipients.</value>
+    <value>הסתר את כתובת האימייל שלי מהנמענים</value>
   </data>
   <data name="SendOptionsPolicyInEffect" xml:space="preserve">
-    <value>One or more organization policies are affecting your Send options.</value>
+    <value>מדיניות ארגון אחת או יותר משפיעה על אפשרויות הSend שלך.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SendFilePremiumRequired" xml:space="preserve">
-    <value>Free accounts are restricted to sharing text only. A premium membership is required to use files with Send.</value>
+    <value>חשבונות חינמיים מוגבלים לשיתוף טקסט בלבד. יש צורך בחשבון פרימיום כדי להשתמש בSend עם קבצים.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="SendFileEmailVerificationRequired" xml:space="preserve">
-    <value>You must verify your email to use files with Send. You can verify your email in the web vault.</value>
+    <value>עליך לאמת את האימייל שלך כדי להשתמש בSend עם קבצים. ניתן לאמת את האימייל באתר הכספת.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
   <data name="PasswordPrompt" xml:space="preserve">
-    <value>Master password re-prompt</value>
+    <value>הזנה חוזרת של הסיסמה הראשית</value>
   </data>
   <data name="PasswordConfirmation" xml:space="preserve">
-    <value>Master password confirmation</value>
+    <value>אימות סיסמה ראשית</value>
   </data>
   <data name="PasswordConfirmationDesc" xml:space="preserve">
-    <value>This action is protected, to continue please re-enter your master password to verify your identity.</value>
+    <value>פעולה זו מוגנת. כדי להמשיך, כתוב שוב את הסיסמה הראשית שלך לאימות זהותך.</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>קוד Captcha נדרש</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>קוד Captcha שגוי, אנא נסה שוב.</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>סיסמה ראשית עודכנה</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>עדכן סיסמה ראשית</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>הסיסמה הראשית שלך שונתה לאחרונה על ידי מנהל בארגון שלך. כדי לגשת לכספת, עליך לעדכן את הסיסמה הראשית כעת. לאחר מכן תנותק מהסשן הנוכחי ותידרש להיכנס שוב. כל החיבורים הפעילים במכשירים אחרים ישארו פעילים בערך שעה אחת.</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>מעדכן סיסמה</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>כרגע לא ניתן לעדכן את הסיסמה</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>הסר סיסמה ראשית</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} משתמש/ת ב־SSO עם הצפנה בניהול לקוחות. המשך התהליך יסיר את סיסמת האב שלך מחשבונך וידרוש SSO כדי להתחבר.</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>אם אינך רוצה להסיר את הסיסמה הראשית שלך, באפשרותך לעזוב את הארגון במקום זאת.</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>עזוב ארגון</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>לעזוב את {0}?</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
     <value>FIDO2 WebAuthn</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>כדי להמשיך, הכן את מפתח האבטחה התומך באימות אינטרנט באמצעות FIDO2.
+ולאחר מכן עקוב אחר ההוראות לאחר לחיצה על 'אימות באמצעות האינטרנט' במסך הבא.</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>אימות אינטרנט באמצעות FIDO2, אתה יכול לאמת באמצעות מפתח אבטחה חיצוני.</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>אימות אינטרנט</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>חזור ליישום</value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>אנא ודא שהדפדפן שלך תומך באימות באינטרנט ונסה שוב.</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>לארגון זה יש מדיניות ארגונית שרושמת אותך אוטומטית לאיפוס סיסמה. הרישום יאפשר למנהלי הארגון לשנות את הסיסמה הראשית שלך.</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>מדיניות הארגון שלך משפיעה על הזמן הקצוב לכספת שלך. הזמן הקצוב המרבי המותר לכספת הוא {0} שעות ו-{1} דקות</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
-    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+    <value>הזמן הקצוב לכספת שלך חורג מהמגבלות שנקבעו על ידי הארגון שלך.</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
-    <value>One or more organization policies prevents your from exporting your personal vault.</value>
+    <value>מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך.</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>הוספת חשבון</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>פתוח</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>נעול</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>בוצעה יציאה</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>הוחלף לחשבון הזמין הבא</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>החשבון נעול</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>נותק בהצלחה מהחשבון</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>חשבון נמחק בהצלחה</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>מחק חשבון</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>מחיקת חשבון היא לצמיתות</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>החשבון שלך וכל נתוני הכספת יימחקו ולא ניתן יהיה לשחזרם. האם אתה בטוח שברצונך להמשיך?</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>מוחק את החשבון שלך</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>חשבונך נמחק לצמיתות</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>קוד אימות שגוי.</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>בקש סיסמה חד־פעמית</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>קוד Send</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>שולח</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>העתק קישור לSend בזמן השמירה</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>שולח קוד</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>מאמת</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>שלח קוד שוב</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>קוד האימות נשלח לאימייל שלך</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>אירעה שגיאה בעת שליחת קוד אימות לאימייל שלך. אנא נסה שוב</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>הזן את קוד האימות שנשלח לאימייל שלך</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>Submit crash logs</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>Help Bitwarden improve app stability by submitting crash reports.</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>Options are expanded, tap to collapse.</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>Options are collapsed, tap to expand.</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>Uppercase (A to Z)</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>Lowercase (A to Z)</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>Numbers (0 to 9)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>Special Characters (!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>Tap to go back</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>Password is visible, tap to hide.</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>Password is not visible, tap to show.</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>Filter items by vault</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>All Vaults</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>Vaults</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>Vault: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>Verification Codes</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>Premium subscription required</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>Cannot add authenticator key? </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Scan QR Code</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>Cannot scan QR Code? </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>Authenticator Key</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>Enter Key Manually</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>Add TOTP</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>Set up TOTP</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>Once the key is successfully entered,
+select Add TOTP to store the key safely</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>Setting your lock options to “Never” keeps your vault available to anyone with access to your device. If you use this option, you should ensure that you keep your device properly protected.</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>One or more of the URLs entered are invalid. Please revise it and try to save again.</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>We were unable to process your request. Please try again or contact us.</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>Allow screen capture</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>Are you sure you want to enable Screen Capture?</value>
   </data>
 </root>

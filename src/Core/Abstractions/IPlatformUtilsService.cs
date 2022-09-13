@@ -7,12 +7,10 @@ namespace Bit.Core.Abstractions
 {
     public interface IPlatformUtilsService
     {
-        string IdentityClientId { get; }
-
-        Task CopyToClipboardAsync(string text, Dictionary<string, object> options = null);
         string GetApplicationVersion();
         DeviceType GetDevice();
         string GetDeviceString();
+        ClientType GetClientType();
         bool IsDev();
         bool IsSelfHost();
         bool IsViewOpen();
@@ -22,8 +20,10 @@ namespace Bit.Core.Abstractions
         Task<bool> ShowDialogAsync(string text, string title = null, string confirmText = null,
             string cancelText = null, string type = null);
         Task<bool> ShowPasswordDialogAsync(string title, string body, Func<string, Task<bool>> validator);
+        Task<(string password, bool valid)> ShowPasswordDialogAndGetItAsync(string title, string body, Func<string, Task<bool>> validator);
         void ShowToast(string type, string title, string text, Dictionary<string, object> options = null);
         void ShowToast(string type, string title, string[] text, Dictionary<string, object> options = null);
+        void ShowToastForCopiedValue(string valueNameCopied);
         bool SupportsFido2();
         bool SupportsDuo();
         Task<bool> SupportsBiometricAsync();

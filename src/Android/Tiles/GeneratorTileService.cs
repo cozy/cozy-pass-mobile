@@ -15,7 +15,7 @@ using Java.Lang;
 namespace Bit.Droid.Tile
 {
     [Service(Permission = Android.Manifest.Permission.BindQuickSettingsTile, Label = "@string/PasswordGenerator",
-        Icon = "@drawable/refresh")]
+        Icon = "@drawable/generate")]
     [IntentFilter(new string[] { ActionQsTile })]
     [Register("io.cozy.pass.GeneratorTileService")]
     public class GeneratorTileService : TileService

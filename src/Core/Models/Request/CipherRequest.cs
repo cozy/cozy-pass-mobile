@@ -1,9 +1,9 @@
-﻿using Bit.Core.Enums;
-using Bit.Core.Models.Api;
-using Bit.Core.Models.Domain;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
+using Bit.Core.Enums;
+using Bit.Core.Models.Api;
+using Bit.Core.Models.Domain;
 
 namespace Bit.Core.Models.Request
 {
@@ -81,7 +81,8 @@ namespace Bit.Core.Models.Request
             {
                 Type = f.Type,
                 Name = f.Name?.EncryptedString,
-                Value = f.Value?.EncryptedString
+                Value = f.Value?.EncryptedString,
+                LinkedId = f.LinkedId,
             }).ToList();
 
             PasswordHistory = cipher.PasswordHistory?.Select(ph => new PasswordHistoryRequest

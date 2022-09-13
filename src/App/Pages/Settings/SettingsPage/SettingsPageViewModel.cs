@@ -1,14 +1,15 @@
-﻿using Bit.App.Abstractions;
-using Bit.App.Resources;
-using Bit.Core;
-using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bit.App.Abstractions;
+using Bit.App.Pages.Accounts;
+using Bit.App.Resources;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Models.Domain;
+using Bit.Core.Utilities;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.CommunityToolkit.ObjectModel;
 
@@ -18,15 +19,18 @@ namespace Bit.App.Pages
     {
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly ICryptoService _cryptoService;
-        private readonly IUserService _userService;
+        private readonly IStateService _stateService;
         private readonly IDeviceActionService _deviceActionService;
         private readonly IEnvironmentService _environmentService;
         private readonly IMessagingService _messagingService;
         private readonly IVaultTimeoutService _vaultTimeoutService;
-        private readonly IStorageService _storageService;
         private readonly ISyncService _syncService;
         private readonly IBiometricService _biometricService;
         private readonly IPolicyService _policyService;
+        private readonly ILocalizeService _localizeService;
+        private readonly IKeyConnectorService _keyConnectorService;
+        private readonly IClipboardService _clipboardService;
+        private readonly ILogger _loggerService;
         private readonly ICozyClientService _cozyClientService;
         private readonly II18nService _i18nService;
 
@@ -35,9 +39,13 @@ namespace Bit.App.Pages
         private bool _supportsBiometric;
         private bool _pin;
         private bool _biometric;
+        private bool _screenCaptureAllowed;
         private string _lastSyncDate;
         private string _vaultTimeoutDisplayValue;
         private string _vaultTimeoutActionDisplayValue;
+        private bool _showChangeMasterPassword;
+        private bool _reportLoggingEnabled;
+
         private List<KeyValuePair<string, int?>> _vaultTimeouts =
             new List<KeyValuePair<string, int?>>
             {
@@ -52,37 +60,44 @@ namespace Bit.App.Pages
                 new KeyValuePair<string, int?>(AppResources.Never, null),
                 new KeyValuePair<string, int?>(AppResources.Custom, CustomVaultTimeoutValue),
             };
-        private List<KeyValuePair<string, string>> _vaultTimeoutActions =
-            new List<KeyValuePair<string, string>>
+        private List<KeyValuePair<string, VaultTimeoutAction>> _vaultTimeoutActions =
+            new List<KeyValuePair<string, VaultTimeoutAction>>
             {
-                new KeyValuePair<string, string>(AppResources.Lock, "lock"),
-                new KeyValuePair<string, string>(AppResources.LogOut, "logOut"),
+                new KeyValuePair<string, VaultTimeoutAction>(AppResources.Lock, VaultTimeoutAction.Lock),
+                new KeyValuePair<string, VaultTimeoutAction>(AppResources.LogOut, VaultTimeoutAction.Logout),
             };
 
         private Policy _vaultTimeoutPolicy;
-        private int _vaultTimeout;
+        private int? _vaultTimeout;
 
         public SettingsPageViewModel()
         {
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _cryptoService = ServiceContainer.Resolve<ICryptoService>("cryptoService");
-            _userService = ServiceContainer.Resolve<IUserService>("userService");
+            _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _environmentService = ServiceContainer.Resolve<IEnvironmentService>("environmentService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
             _biometricService = ServiceContainer.Resolve<IBiometricService>("biometricService");
             _policyService = ServiceContainer.Resolve<IPolicyService>("policyService");
+            _localizeService = ServiceContainer.Resolve<ILocalizeService>("localizeService");
+            _keyConnectorService = ServiceContainer.Resolve<IKeyConnectorService>("keyConnectorService");
+            _clipboardService = ServiceContainer.Resolve<IClipboardService>("clipboardService");
+            _loggerService = ServiceContainer.Resolve<ILogger>("logger");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
 
-            GroupedItems = new ObservableRangeCollection<SettingsPageListGroup>();
+            GroupedItems = new ObservableRangeCollection<ISettingsPageListItem>();
             PageTitle = AppResources.Settings;
+
+            ExecuteSettingItemCommand = new AsyncCommand<SettingsPageListItem>(item => item.ExecuteAsync(), onException: _loggerService.Exception, allowsMultipleExecutions: false);
         }
 
-        public ObservableRangeCollection<SettingsPageListGroup> GroupedItems { get; set; }
+        public ObservableRangeCollection<ISettingsPageListItem> GroupedItems { get; set; }
+
+        public IAsyncCommand<SettingsPageListItem> ExecuteSettingItemCommand { get; }
 
         public async Task InitAsync()
         {
@@ -91,8 +106,9 @@ namespace Bit.App.Pages
             if (lastSync != null)
             {
                 lastSync = lastSync.Value.ToLocalTime();
-                _lastSyncDate = string.Format("{0} {1}", lastSync.Value.ToShortDateString(),
-                    lastSync.Value.ToShortTimeString());
+                _lastSyncDate = string.Format("{0} {1}",
+                    _localizeService.GetLocaleShortDate(lastSync.Value),
+                    _localizeService.GetLocaleShortTime(lastSync.Value));
             }
 
             if (await _policyService.PolicyAppliesToUser(PolicyType.MaximumVaultTimeout))
@@ -107,17 +123,21 @@ namespace Bit.App.Pages
 
             _vaultTimeout = await _vaultTimeoutService.GetVaultTimeout();
             _vaultTimeoutDisplayValue = _vaultTimeouts.FirstOrDefault(o => o.Value == _vaultTimeout).Key;
-            var action = await _storageService.GetAsync<string>(Constants.VaultTimeoutActionKey) ?? "lock";
+            var action = await _stateService.GetVaultTimeoutActionAsync() ?? VaultTimeoutAction.Lock;
             _vaultTimeoutActionDisplayValue = _vaultTimeoutActions.FirstOrDefault(o => o.Value == action).Key;
             var pinSet = await _vaultTimeoutService.IsPinLockSetAsync();
             _pin = pinSet.Item1 || pinSet.Item2;
             _biometric = await _vaultTimeoutService.IsBiometricLockSetAsync();
+            _screenCaptureAllowed = await _stateService.GetScreenCaptureAllowedAsync();
 
             if (_vaultTimeoutDisplayValue == null)
             {
                 _vaultTimeoutDisplayValue = AppResources.Custom;
             }
 
+            _showChangeMasterPassword = IncludeLinksWithSubscriptionInfo() &&
+                !await _keyConnectorService.GetUsesKeyConnector();
+            _reportLoggingEnabled = await _loggerService.IsEnabled();
             BuildList();
         }
 
@@ -125,21 +145,39 @@ namespace Bit.App.Pages
         {
             var debugText = string.Format("{0}: {1} ({2})", AppResources.Version,
                 _platformUtilsService.GetApplicationVersion(), _deviceActionService.GetBuildNumber());
-            var text = string.Format("Based on Bitwarden Mobile © 8bit Solutions LLC 2015-{0}\n\n{1}", DateTime.Now.Year, debugText);
+
+#if DEBUG
+            var pushNotificationsRegistered = ServiceContainer.Resolve<IPushNotificationService>("pushNotificationService").IsRegisteredForPush;
+            var pnServerRegDate = await _stateService.GetPushLastRegistrationDateAsync();
+            var pnServerError = await _stateService.GetPushInstallationRegistrationErrorAsync();
+
+            var pnServerRegDateMessage = default(DateTime) == pnServerRegDate ? "-" : $"{pnServerRegDate.GetValueOrDefault().ToShortDateString()}-{pnServerRegDate.GetValueOrDefault().ToShortTimeString()} UTC";
+            var errorMessage = string.IsNullOrEmpty(pnServerError) ? string.Empty : $"Push Notifications Server Registration error: {pnServerError}";
+
+            var text = string.Format("Based on Bitwarden Mobile © Bitwarden Inc. 2015-{0}\n\n{1}\nPush Notifications registered:{2}\nPush Notifications Server Last Date :{3}\n{4}", DateTime.Now.Year, debugText, pushNotificationsRegistered, pnServerRegDateMessage, errorMessage);
+#else
+            var text = string.Format("Based on Bitwarden Mobile © Bitwarden Inc. 2015-{0}\n\n{1}", DateTime.Now.Year, debugText);
+#endif
+
             var copy = await _platformUtilsService.ShowDialogAsync(text, AppResources.CozyPass, AppResources.Copy,
                 AppResources.Close);
             if (copy)
             {
-                await _platformUtilsService.CopyToClipboardAsync(debugText);
+                await _clipboardService.CopyTextAsync(debugText);
             }
         }
 
         public void Help()
-        {  
-	    var frSupportURL = "https://support.cozy.io/category/378-gestionnaire-de-mots-de-passe";
-	    var enSupportURL = "https://help.cozy.io/category/395-password-manager";
-	    var lang = _i18nService.Culture.TwoLetterISOLanguageName; 
+        {
+            // Cozy customization, set Custom Cozy url based on language
+            /*
+            _platformUtilsService.LaunchUri("https://bitwarden.com/help/");
+            /*/
+	        var frSupportURL = "https://support.cozy.io/category/378-gestionnaire-de-mots-de-passe";
+	        var enSupportURL = "https://help.cozy.io/category/395-password-manager";
+            var lang = _i18nService.Culture.TwoLetterISOLanguageName; 
             _platformUtilsService.LaunchUri(lang == "fr" ? frSupportURL : enSupportURL);
+            //*/
         }
 
         public async Task FingerprintAsync()
@@ -147,7 +185,7 @@ namespace Bit.App.Pages
             List<string> fingerprint;
             try
             {
-                fingerprint = await _cryptoService.GetFingerprintAsync(await _userService.GetUserIdAsync());
+                fingerprint = await _cryptoService.GetFingerprintAsync(await _stateService.GetActiveUserIdAsync());
             }
             catch (Exception e) when (e.Message == "No public key available.")
             {
@@ -159,7 +197,7 @@ namespace Bit.App.Pages
                 AppResources.LearnMore, AppResources.Close);
             if (learnMore)
             {
-                _platformUtilsService.LaunchUri("https://help.bitwarden.com/article/fingerprint-phrase/");
+                _platformUtilsService.LaunchUri("https://bitwarden.com/help/fingerprint-phrase/");
             }
         }
 
@@ -170,18 +208,18 @@ namespace Bit.App.Pages
 
         public async void Import()
         {
+            // Cozy customization, set Custom Cozy url
+            /*
+            _platformUtilsService.LaunchUri("https://bitwarden.com/help/import-data/");
+            /*/
             var passwordsURL = await _cozyClientService.GetURLForApp("passwords", fragment: "/vault?action=import");
             _platformUtilsService.LaunchUri(passwordsURL);
+            //*/
         }
 
         public void WebVault()
         {
-            var url = _environmentService.GetWebVaultUrl();
-            if (url == null)
-            {
-                url = "https://vault.bitwarden.com";
-            }
-            _platformUtilsService.LaunchUri(url);
+            _platformUtilsService.LaunchUri(_environmentService.GetWebVaultUrl());
         }
 
         public async Task ShareAsync()
@@ -190,7 +228,7 @@ namespace Bit.App.Pages
                AppResources.LearnOrg, AppResources.Yes, AppResources.Cancel);
             if (confirmed)
             {
-                _platformUtilsService.LaunchUri("https://help.bitwarden.com/article/what-is-an-organization/");
+                _platformUtilsService.LaunchUri("https://bitwarden.com/help/about-organizations/");
             }
         }
 
@@ -200,8 +238,13 @@ namespace Bit.App.Pages
                 AppResources.TwoStepLogin, AppResources.Yes, AppResources.Cancel);
             if (confirmed)
             {
+                // Cozy customization, set Custom Cozy url
+                /*
+                _platformUtilsService.LaunchUri($"{_environmentService.GetWebVaultUrl()}/#/settings");
+                /*/
                 var twoFAURL = await _cozyClientService.GetURLForApp("settings", fragment: "/profile");
                 _platformUtilsService.LaunchUri(twoFAURL);
+                //*/
             }
         }
 
@@ -211,7 +254,7 @@ namespace Bit.App.Pages
                 AppResources.ChangeMasterPassword, AppResources.Yes, AppResources.Cancel);
             if (confirmed)
             {
-                _platformUtilsService.LaunchUri("https://help.bitwarden.com/article/change-your-master-password/");
+                _platformUtilsService.LaunchUri($"{_environmentService.GetWebVaultUrl()}/#/settings");
             }
         }
 
@@ -237,7 +280,7 @@ namespace Bit.App.Pages
             await _vaultTimeoutService.LockAsync(true, true);
         }
 
-        public async Task VaultTimeoutAsync(bool promptOptions = true, int newTimeout = 0)
+        public async Task VaultTimeoutAsync(bool promptOptions = true, int? newTimeout = 0)
         {
             var oldTimeout = _vaultTimeout;
 
@@ -253,8 +296,19 @@ namespace Bit.App.Pages
                 }
                 var cleanSelection = selection.Replace("✓ ", string.Empty);
                 var selectionOption = _vaultTimeouts.FirstOrDefault(o => o.Key == cleanSelection);
+
+                // Check if the selected Timeout action is "Never" and if it's different from the previous selected value
+                if (selectionOption.Value == null && selectionOption.Value != oldTimeout)
+                {
+                    var confirmed = await _platformUtilsService.ShowDialogAsync(AppResources.NeverLockWarning,
+                        AppResources.Warning, AppResources.Yes, AppResources.Cancel);
+                    if (!confirmed)
+                    {
+                        return;
+                    }
+                }
                 _vaultTimeoutDisplayValue = selectionOption.Key;
-                newTimeout = selectionOption.Value.GetValueOrDefault();
+                newTimeout = selectionOption.Value;
             }
 
             if (_vaultTimeoutPolicy != null)
@@ -282,6 +336,26 @@ namespace Bit.App.Pages
             {
                 await Device.InvokeOnMainThreadAsync(BuildList);
             }
+        }
+
+        public async Task LoggerReportingAsync()
+        {
+            var options = new[]
+            {
+                    CreateSelectableOption(AppResources.Yes, _reportLoggingEnabled),
+                    CreateSelectableOption(AppResources.No, !_reportLoggingEnabled),
+            };
+
+            var selection = await Page.DisplayActionSheet(AppResources.SubmitCrashLogsDescription, AppResources.Cancel, null, options);
+
+            if (selection == null || selection == AppResources.Cancel)
+            {
+                return;
+            }
+
+            await _loggerService.SetEnabled(CompareSelection(selection, AppResources.Yes));
+            _reportLoggingEnabled = await _loggerService.IsEnabled();
+            BuildList();
         }
 
         public async Task VaultTimeoutActionAsync()
@@ -326,13 +400,17 @@ namespace Bit.App.Pages
                     AppResources.SetPINDescription, null, AppResources.Submit, AppResources.Cancel, true);
                 if (!string.IsNullOrWhiteSpace(pin))
                 {
-                    var masterPassOnRestart = await _platformUtilsService.ShowDialogAsync(
-                       AppResources.PINRequireMasterPasswordRestart, AppResources.UnlockWithPIN,
-                       AppResources.Yes, AppResources.No);
+                    var masterPassOnRestart = false;
+                    if (!await _keyConnectorService.GetUsesKeyConnector())
+                    {
+                        masterPassOnRestart = await _platformUtilsService.ShowDialogAsync(
+                            AppResources.PINRequireMasterPasswordRestart, AppResources.UnlockWithPIN,
+                            AppResources.Yes, AppResources.No);
+                    }
 
-                    var kdf = await _userService.GetKdfAsync();
-                    var kdfIterations = await _userService.GetKdfIterationsAsync();
-                    var email = await _userService.GetEmailAsync();
+                    var kdf = await _stateService.GetKdfTypeAsync();
+                    var kdfIterations = await _stateService.GetKdfIterationsAsync();
+                    var email = await _stateService.GetEmailAsync();
                     var pinKey = await _cryptoService.MakePinKeyAysnc(pin, email,
                         kdf.GetValueOrDefault(Core.Enums.KdfType.PBKDF2_SHA256),
                         kdfIterations.GetValueOrDefault(5000));
@@ -342,12 +420,12 @@ namespace Bit.App.Pages
                     if (masterPassOnRestart)
                     {
                         var encPin = await _cryptoService.EncryptAsync(pin);
-                        await _storageService.SaveAsync(Constants.ProtectedPin, encPin.EncryptedString);
-                        _vaultTimeoutService.PinProtectedKey = pinProtectedKey;
+                        await _stateService.SetProtectedPinAsync(encPin.EncryptedString);
+                        await _stateService.SetPinProtectedKeyAsync(pinProtectedKey);
                     }
                     else
                     {
-                        await _storageService.SaveAsync(Constants.PinProtectedKey, pinProtectedKey.EncryptedString);
+                        await _stateService.SetPinProtectedAsync(pinProtectedKey.EncryptedString);
                     }
                 }
                 else
@@ -382,13 +460,13 @@ namespace Bit.App.Pages
             if (_biometric)
             {
                 await _biometricService.SetupBiometricAsync();
-                await _storageService.SaveAsync(Constants.BiometricUnlockKey, true);
+                await _stateService.SetBiometricUnlockAsync(true);
             }
             else
             {
-                await _storageService.RemoveAsync(Constants.BiometricUnlockKey);
+                await _stateService.SetBiometricUnlockAsync(null);
             }
-            _vaultTimeoutService.BiometricLocked = false;
+            await _stateService.SetBiometricLockedAsync(false);
             await _cryptoService.ToggleKeyAsync();
             BuildList();
         }
@@ -397,6 +475,8 @@ namespace Bit.App.Pages
         {
             GroupedItems.Clear();
 
+            //TODO: Refactor this once navigation is abstracted so that it doesn't depend on Page, e.g. Page.Navigation.PushModalAsync...
+
             var doUpper = Device.RuntimePlatform != Device.Android;
             var autofillItems = new List<SettingsPageListItem>();
             if (Device.RuntimePlatform == Device.Android)
@@ -404,39 +484,72 @@ namespace Bit.App.Pages
                 autofillItems.Add(new SettingsPageListItem
                 {
                     Name = AppResources.AutofillServices,
-                    SubLabel = _deviceActionService.AutofillServicesEnabled() ?
-                        AppResources.Enabled : AppResources.Disabled
+                    SubLabel = _deviceActionService.AutofillServicesEnabled() ? AppResources.On : AppResources.Off,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new AutofillServicesPage(Page as SettingsPage)))
                 });
             }
             else
             {
                 if (_deviceActionService.SystemMajorVersion() >= 12)
                 {
-                    autofillItems.Add(new SettingsPageListItem { Name = AppResources.PasswordAutofill });
+                    autofillItems.Add(new SettingsPageListItem
+                    {
+                        Name = AppResources.PasswordAutofill,
+                        ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new AutofillPage()))
+                    });
                 }
-                autofillItems.Add(new SettingsPageListItem { Name = AppResources.AppExtension });
+                autofillItems.Add(new SettingsPageListItem
+                {
+                    Name = AppResources.AppExtension,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new ExtensionPage()))
+                });
             }
             var manageItems = new List<SettingsPageListItem>
             {
                 // Cozy customization: we deactivate folder management
-                // new SettingsPageListItem { Name = AppResources.Folders },
-                new SettingsPageListItem { Name = AppResources.Sync, SubLabel = _lastSyncDate }
+                /*
+                new SettingsPageListItem
+                {
+                    Name = AppResources.Folders,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new FoldersPage()))
+                },
+                //*/
+                new SettingsPageListItem
+                {
+                    Name = AppResources.Sync,
+                    SubLabel = _lastSyncDate,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new SyncPage()))
+                }
             };
             var securityItems = new List<SettingsPageListItem>
             {
-                new SettingsPageListItem { Name = AppResources.VaultTimeout, SubLabel = _vaultTimeoutDisplayValue },
-                new SettingsPageListItem 
+                new SettingsPageListItem
+                {
+                    Name = AppResources.VaultTimeout,
+                    SubLabel = _vaultTimeoutDisplayValue,
+                    ExecuteAsync = () => VaultTimeoutAsync() },
+                new SettingsPageListItem
                 {
                     Name = AppResources.VaultTimeoutAction,
-                    SubLabel = _vaultTimeoutActionDisplayValue
+                    SubLabel = _vaultTimeoutActionDisplayValue,
+                    ExecuteAsync = () => VaultTimeoutActionAsync()
                 },
                 new SettingsPageListItem
                 {
                     Name = AppResources.UnlockWithPIN,
-                    SubLabel = _pin ? AppResources.Enabled : AppResources.Disabled
+                    SubLabel = _pin ? AppResources.On : AppResources.Off,
+                    ExecuteAsync = () => UpdatePinAsync()
                 },
-                new SettingsPageListItem { Name = AppResources.LockNow },
-                new SettingsPageListItem { Name = AppResources.TwoStepLogin }
+                new SettingsPageListItem
+                {
+                    Name = AppResources.LockNow,
+                    ExecuteAsync = () => LockAsync()
+                },
+                new SettingsPageListItem
+                {
+                    Name = AppResources.TwoStepLogin,
+                    ExecuteAsync = () => TwoStepAsync()
+                }
             };
             if (_supportsBiometric || _biometric)
             {
@@ -449,7 +562,8 @@ namespace Bit.App.Pages
                 var item = new SettingsPageListItem
                 {
                     Name = string.Format(AppResources.UnlockWith, biometricName),
-                    SubLabel = _biometric ? AppResources.Enabled : AppResources.Disabled
+                    SubLabel = _biometric ? AppResources.On : AppResources.Off,
+                    ExecuteAsync = () => UpdateBiometricAsync()
                 };
                 securityItems.Insert(2, item);
             }
@@ -458,7 +572,7 @@ namespace Bit.App.Pages
                 securityItems.Insert(1, new SettingsPageListItem
                 {
                     Name = AppResources.Custom,
-                    Time = TimeSpan.FromMinutes(Math.Abs((double)_vaultTimeout)),
+                    Time = TimeSpan.FromMinutes(Math.Abs((double)_vaultTimeout.GetValueOrDefault())),
                 });
             }
             if (_vaultTimeoutPolicy != null)
@@ -472,35 +586,106 @@ namespace Bit.App.Pages
                     UseFrame = true,
                 });
             }
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                securityItems.Add(new SettingsPageListItem
+                {
+                    Name = AppResources.AllowScreenCapture,
+                    SubLabel = _screenCaptureAllowed ? AppResources.On : AppResources.Off,
+                    ExecuteAsync = () => SetScreenCaptureAllowedAsync()
+                });
+            }
             var accountItems = new List<SettingsPageListItem>
             {
                 // Cozy customization: we deactivate
                 // - fingerprint phrase functionality
-                //new SettingsPageListItem { Name = AppResources.FingerprintPhrase },
-                new SettingsPageListItem { Name = AppResources.LogOut }
+                /*
+                new SettingsPageListItem
+                {
+                    Name = AppResources.FingerprintPhrase,
+                    ExecuteAsync = () => FingerprintAsync()
+                },
+                //*/
+                new SettingsPageListItem
+                {
+                    Name = AppResources.LogOut,
+                    ExecuteAsync = () => LogOutAsync()
+                }
             };
-            if (IncludeLinksWithSubscriptionInfo())
+            if (_showChangeMasterPassword)
             {
-                accountItems.Insert(0, new SettingsPageListItem { Name = AppResources.ChangeMasterPassword });
+                accountItems.Insert(0, new SettingsPageListItem
+                {
+                    Name = AppResources.ChangeMasterPassword,
+                    ExecuteAsync = () => ChangePasswordAsync()
+                });
             }
             var toolsItems = new List<SettingsPageListItem>
             {
-                new SettingsPageListItem { Name = AppResources.ImportItems },
-                new SettingsPageListItem { Name = AppResources.ExportVault }
+                new SettingsPageListItem
+                {
+                    Name = AppResources.ImportItems,
+                    ExecuteAsync = () => Device.InvokeOnMainThreadAsync(() => Import())
+                },
+                new SettingsPageListItem
+                {
+                    Name = AppResources.ExportVault,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new ExportVaultPage()))
+                }
             };
             if (IncludeLinksWithSubscriptionInfo())
             {
-                toolsItems.Add(new SettingsPageListItem { Name = AppResources.LearnOrg });
-                toolsItems.Add(new SettingsPageListItem { Name = AppResources.WebVault });
+                toolsItems.Add(new SettingsPageListItem
+                {
+                    Name = AppResources.LearnOrg,
+                    ExecuteAsync = () => ShareAsync()
+                });
+                toolsItems.Add(new SettingsPageListItem
+                {
+                    Name = AppResources.WebVault,
+                    ExecuteAsync = () => Device.InvokeOnMainThreadAsync(() => WebVault())
+                });
             }
+
             var otherItems = new List<SettingsPageListItem>
             {
-                new SettingsPageListItem { Name = AppResources.Options },
-                new SettingsPageListItem { Name = AppResources.About },
-                new SettingsPageListItem { Name = AppResources.Help },
-                new SettingsPageListItem { Name = AppResources.RateTheApp }
+                new SettingsPageListItem
+                {
+                    Name = AppResources.Options,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new OptionsPage()))
+                },
+                new SettingsPageListItem
+                {
+                    Name = AppResources.About,
+                    ExecuteAsync = () => AboutAsync()
+                },
+                new SettingsPageListItem
+                {
+                    Name = AppResources.HelpAndFeedback,
+                    ExecuteAsync = () => Device.InvokeOnMainThreadAsync(() => Help())
+                },
+#if !FDROID 
+                new SettingsPageListItem
+                {
+                    Name = AppResources.SubmitCrashLogs,
+                    SubLabel = _reportLoggingEnabled ? AppResources.On : AppResources.Off,
+                    ExecuteAsync = () => LoggerReportingAsync()
+                },
+#endif
+                new SettingsPageListItem
+                {
+                    Name = AppResources.RateTheApp,
+                    ExecuteAsync = () => Device.InvokeOnMainThreadAsync(() => Rate())
+                },
+                new SettingsPageListItem
+                {
+                    Name = AppResources.DeleteAccount,
+                    ExecuteAsync = () => Page.Navigation.PushModalAsync(new NavigationPage(new DeleteAccountPage()))
+                }
             };
-            GroupedItems.AddRange(new List<SettingsPageListGroup>
+
+            // TODO: improve this. Leaving this as is to reduce error possibility on the hotfix.
+            var settingsListGroupItems = new List<SettingsPageListGroup>()
             {
                 new SettingsPageListGroup(autofillItems, AppResources.Autofill, doUpper, true),
                 new SettingsPageListGroup(manageItems, AppResources.Manage, doUpper),
@@ -508,7 +693,50 @@ namespace Bit.App.Pages
                 new SettingsPageListGroup(accountItems, AppResources.Account, doUpper),
                 new SettingsPageListGroup(toolsItems, AppResources.Tools, doUpper),
                 new SettingsPageListGroup(otherItems, AppResources.Other, doUpper)
-            });
+            };
+
+            // TODO: refactor this
+            if (Device.RuntimePlatform == Device.Android
+                ||
+                GroupedItems.Any())
+            {
+                var items = new List<ISettingsPageListItem>();
+                foreach (var itemGroup in settingsListGroupItems)
+                {
+                    items.Add(new SettingsPageHeaderListItem(itemGroup.Name));
+                    items.AddRange(itemGroup);
+                }
+
+                GroupedItems.ReplaceRange(items);
+            }
+            else
+            {
+                // HACK: we need this on iOS, so that it doesn't crash when adding coming from an empty list
+                var first = true;
+                var items = new List<ISettingsPageListItem>();
+                foreach (var itemGroup in settingsListGroupItems)
+                {
+                    if (!first)
+                    {
+                        items.Add(new SettingsPageHeaderListItem(itemGroup.Name));
+                    }
+                    else
+                    {
+                        first = false;
+                    }
+                    items.AddRange(itemGroup);
+                }
+
+                if (settingsListGroupItems.Any())
+                {
+                    GroupedItems.ReplaceRange(new List<ISettingsPageListItem> { new SettingsPageHeaderListItem(settingsListGroupItems[0].Name) });
+                    GroupedItems.AddRange(items);
+                }
+                else
+                {
+                    GroupedItems.Clear();
+                }
+            }
         }
 
         private bool IncludeLinksWithSubscriptionInfo()
@@ -520,7 +748,7 @@ namespace Bit.App.Pages
             return true;
         }
 
-        private string GetVaultTimeoutActionFromKey(string key)
+        private VaultTimeoutAction GetVaultTimeoutActionFromKey(string key)
         {
             return _vaultTimeoutActions.FirstOrDefault(o => o.Key == key).Value;
         }
@@ -528,6 +756,38 @@ namespace Bit.App.Pages
         private int? GetVaultTimeoutFromKey(string key)
         {
             return _vaultTimeouts.FirstOrDefault(o => o.Key == key).Value;
+        }
+
+        private string CreateSelectableOption(string option, bool selected) => selected ? $"✓ {option}" : option;
+
+        private bool CompareSelection(string selection, string compareTo) => selection == compareTo || selection == $"✓ {compareTo}";
+
+        public async Task SetScreenCaptureAllowedAsync()
+        {
+            if (CoreHelpers.ForceScreenCaptureEnabled())
+            {
+                return;
+            }
+
+            try
+            {
+                if (!_screenCaptureAllowed
+                    &&
+                    !await Page.DisplayAlert(AppResources.AllowScreenCapture, AppResources.AreYouSureYouWantToEnableScreenCapture, AppResources.Yes, AppResources.No))
+                {
+                    return;
+                }
+
+                await _stateService.SetScreenCaptureAllowedAsync(!_screenCaptureAllowed);
+                _screenCaptureAllowed = !_screenCaptureAllowed;
+                await _deviceActionService.SetScreenCaptureAllowedAsync();
+                BuildList();
+            }
+            catch (Exception ex)
+            {
+                _loggerService.Exception(ex);
+                await Page.DisplayAlert(AppResources.AnErrorHasOccurred, AppResources.GenericErrorMessage, AppResources.Ok);
+            }
         }
     }
 }
