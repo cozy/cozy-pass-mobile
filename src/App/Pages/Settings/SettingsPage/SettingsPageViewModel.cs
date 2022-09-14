@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -258,12 +258,18 @@ namespace Bit.App.Pages
             }
         }
 
-        public void PurchasePremiumMembership()
+        // Cozy customization: Add Setting entry for purchasing premium membership
+        //*
+        public async Task PurchasePremiumMembershipAsync()
         {
-            var lang = _i18nService.Culture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
-            var uri = $"https://cozy.io/{lang}/pricing/";
-            _platformUtilsService.LaunchUri(uri);
+            await Task.Run(() =>
+            {
+                var lang = _i18nService.Culture.TwoLetterISOLanguageName == "fr" ? "fr" : "en";
+                var uri = $"https://cozy.io/{lang}/pricing/";
+                _platformUtilsService.LaunchUri(uri);
+            });
         }
+        //*/
 
         public async Task LogOutAsync()
         {
@@ -549,7 +555,15 @@ namespace Bit.App.Pages
                 {
                     Name = AppResources.TwoStepLogin,
                     ExecuteAsync = () => TwoStepAsync()
+                },
+                // Cozy customization: Add Setting entry for purchasing premium membership
+                //*
+                new SettingsPageListItem
+                {
+                    Name = AppResources.PurchasePremiumMembership,
+                    ExecuteAsync = () => PurchasePremiumMembershipAsync()
                 }
+                //*/
             };
             if (_supportsBiometric || _biometric)
             {
@@ -661,7 +675,12 @@ namespace Bit.App.Pages
                 },
                 new SettingsPageListItem
                 {
+                    // Cozy customization: We don't want to mention Feedback here as they are handle by another scenario at Cozy 
+                    /*
                     Name = AppResources.HelpAndFeedback,
+                    /*/
+                    Name = AppResources.Help,
+                    //*/
                     ExecuteAsync = () => Device.InvokeOnMainThreadAsync(() => Help())
                 },
 #if !FDROID 
