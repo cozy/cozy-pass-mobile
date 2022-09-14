@@ -29,6 +29,10 @@ namespace Bit.App.Pages
         private readonly IPasswordRepromptService _passwordRepromptService;
         private readonly ILocalizeService _localizeService;
         private readonly IClipboardService _clipboardService;
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        private readonly IOrganizationService _organizationService;
+        //*/
 
         private List<CipherDetailsPageFieldViewModel> _fields;
         private bool _canAccessPremium;
@@ -47,6 +51,10 @@ namespace Bit.App.Pages
         private TotpHelper _totpTickHelper;
         private CancellationTokenSource _totpTickCancellationToken;
         private Task _totpTickTask;
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        private string _organizationName;
+        //*/
 
         public CipherDetailsPageViewModel()
         {
@@ -59,6 +67,10 @@ namespace Bit.App.Pages
             _passwordRepromptService = ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService");
             _localizeService = ServiceContainer.Resolve<ILocalizeService>("localizeService");
             _clipboardService = ServiceContainer.Resolve<IClipboardService>("clipboardService");
+            // Cozy customization, display folder (Cozy concept)
+            //*
+            _organizationService = ServiceContainer.Resolve<IOrganizationService>("organizationService");
+            //*/
 
             CopyCommand = new AsyncCommand<string>((id) => CopyAsync(id, null), onException: ex => _logger.Exception(ex), allowsMultipleExecutions: false);
             CopyUriCommand = new AsyncCommand<LoginUriView>(uriView => CopyAsync("LoginUri", uriView.Uri), onException: ex => _logger.Exception(ex), allowsMultipleExecutions: false);
@@ -242,6 +254,21 @@ namespace Bit.App.Pages
         public bool IsDeleted => Cipher.IsDeleted;
         public bool CanEdit => !Cipher.IsDeleted;
 
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        public string OrganizationName
+        {
+            get => _organizationName;
+            set => SetProperty(ref _organizationName, value,
+                additionalPropertyNames: new string[]
+                {
+                    nameof(HasOrganization)
+                });
+        }
+
+        public bool HasOrganization => !string.IsNullOrEmpty(_organizationName);
+        //*/
+
         public async Task<bool> LoadAsync(Action finishedLoadingAction = null)
         {
             var cipher = await _cipherService.GetAsync(CipherId);
@@ -262,6 +289,12 @@ namespace Bit.App.Pages
                 _totpTickCancellationToken = new CancellationTokenSource();
                 _totpTickTask = new TimerTask(_logger, StartCiphersTotpTick, _totpTickCancellationToken).RunPeriodic();
             }
+
+            // Cozy customization, display folder (Cozy concept)
+            //*
+            await UpdateOrganizationName();
+            //*/
+
             if (_previousCipherId != CipherId)
             {
                 var task = _eventService.CollectAsync(Core.Enums.EventType.Cipher_ClientViewed, CipherId);
@@ -270,6 +303,23 @@ namespace Bit.App.Pages
             finishedLoadingAction?.Invoke();
             return true;
         }
+
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        public async Task UpdateOrganizationName()
+        {
+            if (!string.IsNullOrEmpty(Cipher.OrganizationId))
+            {
+                var organization = await _organizationService.GetAsync(Cipher.OrganizationId);
+
+                OrganizationName = organization.Name;
+            }
+            else
+            {
+                OrganizationName = AppResources.ShareNone;
+            }
+        }
+        //*/
 
         private async void StartCiphersTotpTick()
         {

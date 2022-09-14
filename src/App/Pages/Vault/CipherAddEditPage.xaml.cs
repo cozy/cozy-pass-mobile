@@ -441,6 +441,8 @@ namespace Bit.App.Pages
             _vm.Cipher.Reprompt = e.Value ? CipherRepromptType.Password : CipherRepromptType.None;
         }
 
+        // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+        //*
         public string GetSavedOrganizationId()
         {
             return _vm.Cipher.OrganizationId;
@@ -450,5 +452,6 @@ namespace Bit.App.Pages
         {
             return _vm.Cipher.CollectionIds;
         }
+        //*/
     }
 }
