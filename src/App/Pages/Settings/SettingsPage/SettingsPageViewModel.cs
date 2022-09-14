@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -479,8 +479,6 @@ namespace Bit.App.Pages
 
         public void BuildList()
         {
-            GroupedItems.Clear();
-
             //TODO: Refactor this once navigation is abstracted so that it doesn't depend on Page, e.g. Page.Navigation.PushModalAsync...
 
             var doUpper = Device.RuntimePlatform != Device.Android;
