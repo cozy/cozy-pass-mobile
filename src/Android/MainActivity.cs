@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -43,7 +43,10 @@ namespace Bit.Droid
         private IStateService _stateService;
         private IAppIdService _appIdService;
         private IEventService _eventService;
+        // Cozy customization, Support onboarded callback in Android
+        //*
         private ICozyClientService _cozyClientService;
+        //*/
         private ILogger _logger;
         private PendingIntent _eventUploadPendingIntent;
         private AppOptions _appOptions;
@@ -67,7 +70,10 @@ namespace Bit.Droid
             _appIdService = ServiceContainer.Resolve<IAppIdService>("appIdService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
             _logger = ServiceContainer.Resolve<ILogger>("logger");
+            // Cozy customization, Support onboarded callback in Android
+            //*
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            //*/
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -139,10 +145,13 @@ namespace Bit.Droid
 
             ThemeManager.UpdateThemeOnPagesAsync();
 
+            // Cozy customization, Support onboarded callback in Android
+            //*
             if (Intent.Data?.Scheme == "cozypass")
             {
                 OnOpenURL(Intent.DataString);
             }
+            //*/
 
             if (_deviceActionService.SupportsNfc())
             {
@@ -157,6 +166,8 @@ namespace Bit.Droid
                 .GetResult();
         }
 
+        // Cozy customization, Support onboarded callback in Android
+        //*
         public void OnOpenURL(string urlStr)
         {
             if (urlStr.Contains("onboarded"))
@@ -165,6 +176,7 @@ namespace Bit.Droid
                 _messagingService.Send("onboarded");
             }
         }
+        //*/
 
         protected override void OnNewIntent(Intent intent)
         {
@@ -249,7 +261,12 @@ namespace Bit.Droid
                 {
                     // camera
                     var file = new Java.IO.File(FilesDir, "temp_camera_photo.jpg");
+                    // Cozy customization, Change ids from bitwarden to cozy
+                    /*
+                    uri = FileProvider.GetUriForFile(this, "com.x8bit.bitwarden.fileprovider", file);
+                    /*/
                     uri = FileProvider.GetUriForFile(this, "io.cozy.pass.fileprovider", file);
+                    //*/
                     fileName = $"photo_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}.jpg";
                 }
 
