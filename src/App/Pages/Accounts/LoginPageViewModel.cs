@@ -214,16 +214,17 @@ namespace Bit.App.Pages
                     await _deviceActionService.ShowLoadingAsync(AppResources.LoggingIn);
                 }
 
-                #region cozy
-                // Email field is used as CozyURL, it is not renamed not to change the original code
+                // Cozy customization, Email field is used as CozyURL, it is not renamed not to change the original code
                 // too much.
+                /*
+                var response = await _authService.LogInAsync(Email, MasterPassword, _captchaToken);
+                /*/
                 var cozyURL = UrlHelper.SanitizeUrl(Email);
                 await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
                 var email = _cozyClientService.GetEmailFromCozyURL(cozyURL);
                 var response = await _authService.LogInAsync(email, MasterPassword, _captchaToken);
-                #endregion
+                //*/
 
-                var response = await _authService.LogInAsync(Email, MasterPassword, _captchaToken);
                 await _stateService.SetRememberedEmailAsync(Email);
                 await AppHelpers.ResetInvalidUnlockAttemptsAsync();
 
