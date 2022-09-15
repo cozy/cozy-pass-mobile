@@ -70,7 +70,7 @@ namespace Bit.Droid.Services
                 // Biometric was disabled and re-enabled
                 return Task.FromResult(false);
             }
-            catch (InvalidKeyException)
+            catch (InvalidKeyException e)
             {
                 // Fallback for old bitwarden users without a key
                 LoggerHelper.LogEvenIfCantBeResolved(e);
