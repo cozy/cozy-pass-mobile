@@ -13,8 +13,7 @@
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:HomeViewModel"
-    x:Name="_page"
-    Title="{Binding PageTitle}">
+    x:Name="_page">
     <ContentPage.BindingContext>
         <pages:HomeViewModel />
     </ContentPage.BindingContext>
@@ -38,31 +37,43 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <StackLayout x:Name="_mainLayout" x:Key="mainLayout" Spacing="0" Padding="10, 5">
+            <Grid x:Name="_mainLayout" x:Key="mainLayout" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            <StackLayout Spacing="0" Padding="16, 5">
                 <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
                     <Image
                         x:Name="_logo"
-                        Source="logo.png"
+                        Source="home_logo.png"
                         VerticalOptions="Center" />
-                    <Label Text="{u:I18n LoginOrCreateNewAccount}"
-                           StyleClass="text-lg"
+                    <Label Text="{u:I18n CozyHomeTitle}"
+                           FontSize="35"
                            HorizontalTextAlignment="Center">
                     </Label>
-                    <StackLayout Spacing="5">
-                        <Button Text="{u:I18n LogIn}"
-                                StyleClass="btn-primary"
-                                Clicked="LogIn_Clicked" />
-                        <Button Text="{u:I18n CreateAccount}"
-                                Clicked="Register_Clicked" />
-                        <Button Text="{u:I18n LogInSso}"
-                                Clicked="LogInSso_Clicked" />
-                        <Button Text="{u:I18n Cancel}"
-                                IsVisible="{Binding ShowCancelButton}"
-                                Margin="0,10,0,0"
-                                Clicked="Cancel_Clicked" />
-                    </StackLayout>
+                    <Label Text="{u:I18n LoginOrCreateNewAccount}"
+                           FontSize="Medium"
+                           HorizontalTextAlignment="Center">
+                    </Label>
                 </StackLayout>
             </StackLayout>
+            <StackLayout Spacing="0" Padding="16, 16" Grid.Row="1">
+                <Button Text="{u:I18n CreateAccount}"
+                        StyleClass="btn-primary"
+                        Clicked="Register_Clicked" />
+                <Button Text="{u:I18n CozyHomeHaveAccount}"
+                        Clicked="LogIn_Clicked" />
+                <!-- Cozy customization: SSO is disabled
+                <Button Text="{u:I18n LogInSso}"
+                        Clicked="LogInSso_Clicked" />
+                 -->
+                <Button Text="{u:I18n Cancel}"
+                        IsVisible="{Binding ShowCancelButton}"
+                        Margin="0,10,0,0"
+                        Clicked="Cancel_Clicked" />
+            </StackLayout>
+            </Grid>
         </ResourceDictionary>
     </ContentPage.Resources>
 
