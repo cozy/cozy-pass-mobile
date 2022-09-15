@@ -573,7 +573,8 @@ namespace Bit.App.Utilities
 
             await Task.WhenAll(
                 cipherService.ClearCacheAsync(),
-                deviceActionService.ClearCacheAsync());
+                deviceActionService.ClearCacheAsync(),
+                cozyClientService.LogoutAsync());
             tokenService.ClearCache();
             cryptoService.ClearCache();
             settingsService.ClearCache();
@@ -584,7 +585,6 @@ namespace Bit.App.Utilities
             policyService.ClearCache();
             searchService.ClearIndex();
             usernameGenerationService.ClearCache();
-                cozyClientService.LogoutAsync());
         }
     }
 }
