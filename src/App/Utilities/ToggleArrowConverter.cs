@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Bit.Core;
 using Xamarin.Forms;
 
 namespace Bit.App.Utilities
@@ -10,9 +11,9 @@ namespace Bit.App.Utilities
             bool? isToggled = System.Convert.ToBoolean(value);
             if (isToggled.HasValue && isToggled.Value == true)
             {
-                return "\uf105";
+                return BitwardenIcons.AngleRight;
             }
-            return "\uf107";
+            return BitwardenIcons.AngleDown;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
