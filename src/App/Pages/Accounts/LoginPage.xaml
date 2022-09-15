@@ -16,8 +16,7 @@
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:LoginPageViewModel"
-    x:Name="_page"
-    Title="{Binding PageTitle}">
+    x:Name="_page">
     
     <ContentPage.BindingContext>
         <pages:LoginPageViewModel />
@@ -57,15 +56,18 @@
             <ScrollView x:Name="_mainLayout" x:Key="mainLayout">
                 <StackLayout Spacing="20">
                     <StackLayout StyleClass="box">
+                        <Label Text="{u:I18n CozyLoginTitle}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Title"/>
+                        <Label Text="{Binding ErrorMsg}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Medium" StyleClass="text-danger" />
                         <StackLayout StyleClass="box-row">
                             <Label
-                                Text="{u:I18n EmailAddress}"
+                                Text="{u:I18n CozyURL}"
                                 StyleClass="box-label" />
                             <Entry
                                 x:Name="_email"
                                 Text="{Binding Email}"
                                 IsEnabled="{Binding IsEmailEnabled}"
-                                Keyboard="Email"
+                                Placeholder="{u:I18n CozyURLPlaceholder}"
+                                Keyboard="Url"
                                 StyleClass="box-value">
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
@@ -78,6 +80,20 @@
                                 </VisualStateManager.VisualStateGroups>
                                 </Entry>
                         </StackLayout>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{u:I18n GetCozyAddress}"
+                                    TextColor="{DynamicResource HyperlinkColor}"
+                                    TextDecorations="Underline">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding GetCozyAddressCommand}"
+                                                          CommandParameter="" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                         <Grid StyleClass="box-row">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -88,7 +104,7 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <Label
-                                Text="{u:I18n MasterPassword}"
+                                Text="{u:I18n CozyPassword}"
                                 StyleClass="box-label"
                                 Grid.Row="0"
                                 Grid.Column="0" />
@@ -114,6 +130,19 @@
                                 AutomationProperties.Name="{u:I18n ToggleVisibility}"
                                 AutomationProperties.HelpText="{Binding PasswordVisibilityAccessibilityText}"/>
                         </Grid>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{u:I18n GetPasswordHint}"
+                                    TextColor="{DynamicResource HyperlinkColor}"
+                                    TextDecorations="Underline">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="Hint_Clicked" NumberOfTapsRequired="1" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
                     <StackLayout Padding="10, 0">
                         <Button Text="{u:I18n LogIn}" 

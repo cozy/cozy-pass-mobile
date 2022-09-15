@@ -78,7 +78,10 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            // Cozy customization, force inverted theme on login form
+            //*
             ThemeManager.SetInvertedTheme();
+            //*/
             base.OnAppearing();
             _mainContent.Content = _mainLayout;
             _accountAvatar?.OnAppearing();
