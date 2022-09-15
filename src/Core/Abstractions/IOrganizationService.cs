@@ -12,5 +12,10 @@ namespace Bit.Core.Abstractions
         Task<List<Organization>> GetAllAsync(string userId = null);
         Task ReplaceAsync(Dictionary<string, OrganizationData> organizations);
         Task ClearAllAsync(string userId);
+
+        #region cozy
+        string CozyOrganizationId { get; }
+        Task CacheCozyOrganizationId();
+        #endregion
     }
 }

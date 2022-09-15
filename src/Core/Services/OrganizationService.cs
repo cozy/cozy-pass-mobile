@@ -44,11 +44,37 @@ namespace Bit.Core.Services
 
         public async Task ReplaceAsync(Dictionary<string, OrganizationData> organizations)
         {
+            #region cozy
+            await CacheCozyOrganizationId();
+            #endregion
+
             await _stateService.SetOrganizationsAsync(organizations);
         }
 
+        #region cozy
+        public async Task CacheCozyOrganizationId()
+        {
+            var organizations = await GetAllAsync();
+            for (int count = 0; count < organizations.Count; count++)
+            {
+                var organization = organizations.ElementAt(count);
+                var id = organization.Id;
+                if (organization.Name == "Cozy")
+                {
+                    CozyOrganizationId = id;
+                }
+            }
+        }
+
+        public string CozyOrganizationId { get; private set; }
+        #endregion cozy
+
         public async Task ClearAllAsync(string userId)
         {
+            #region cozy
+            CozyOrganizationId = null;
+            #endregion
+
             await _stateService.SetOrganizationsAsync(null, userId);
         }
     }
