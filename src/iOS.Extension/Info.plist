@@ -103,7 +103,7 @@
 			||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.change-password-action"
 			||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.fill-webview-action"
 			||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.fill-browser-action"
-            ||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.8bit.bitwarden.extension-setup"
+            ||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "io.cozy.pass.mobile.extension-setup"
 		).@count == $extensionItem.attachments.@count
 	).@count == 1</string>
 		</dict>

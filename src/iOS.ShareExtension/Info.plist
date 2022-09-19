@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>Bitwarden Share Extension</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.8bit.bitwarden.share-extension</string>
+	<string>io.cozy.pass.mobile.share-extension</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleInfoDictionaryVersion</key>
