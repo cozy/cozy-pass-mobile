@@ -37,9 +37,15 @@ namespace Bit.iOS.Core.Utilities
                     uptime = (now - timeVal.sec) * 1000;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                // Cozy customization, we disabled "AppCenter" functionality
+                // So we now need to use LogEvenIfCantBeResolved as Logger.Instance does not exist anymore
+                /*
                 Logger.Instance.Exception(e);
+                /*/
+                LoggerHelper.LogEvenIfCantBeResolved(e);
+                //*/
             }
             finally
             {

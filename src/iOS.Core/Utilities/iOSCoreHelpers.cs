@@ -79,11 +79,22 @@ namespace Bit.iOS.Core.Utilities
             ILogger logger = null;
             if (ServiceContainer.Resolve<ILogger>("logger", true) == null)
             {
-#if DEBUG
-                logger = DebugLogger.Instance;
-#else
-                logger = Logger.Instance;
-#endif
+
+                // Cozy customization, disable "AppCenter" functionality
+                // We do not use it at Cozy
+                /*
+    #if DEBUG
+                    logger = DebugLogger.Instance;
+    #else
+                    logger = Logger.Instance;
+    #endif
+                /*/
+    #if DEBUG
+                    logger = DebugLogger.Instance;
+    #else
+                    logger = new StubLogger();
+    #endif
+                //*/
                 ServiceContainer.Register("logger", logger);
             }
 

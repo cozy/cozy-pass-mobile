@@ -167,9 +167,15 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
+    <!--
+    Cozy customisation: disable "AppCenter" functionality
+    We do not use it at Cozy
+    -->
+    <!--
     <PackageReference Include="Microsoft.AppCenter.Crashes">
       <Version>4.4.0</Version>
     </PackageReference>
+    -->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

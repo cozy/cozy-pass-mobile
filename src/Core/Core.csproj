@@ -15,7 +15,13 @@
   <ItemGroup>
     <None Remove="Resources\eff_long_word_list.txt" />
     <None Remove="Resources\public_suffix_list.dat" />
+    <!--
+    Cozy customisation: disable "AppCenter" functionality
+    We do not use it at Cozy
+    -->
+    <!--
     <None Remove="Microsoft.AppCenter.Crashes" />
+    -->
     <None Remove="Services\Logging\" />
     <None Remove="Attributes\" />
   </ItemGroup>
@@ -32,7 +38,13 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="PCLCrypto" Version="2.0.147" />
     <PackageReference Include="zxcvbn-core" Version="7.0.92" />
+    <!--
+    Cozy customisation: disable "AppCenter" functionality
+    We do not use it at Cozy
+    -->
+    <!--
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.4.0" />
+    -->
   </ItemGroup>
 
   <ItemGroup>

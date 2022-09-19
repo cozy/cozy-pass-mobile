@@ -45,7 +45,13 @@ namespace Bit.iOS.Services
             }
             catch (Exception ex)
             {
+                // Cozy customization, we disabled "AppCenter" functionality
+                // So we now need to use LogEvenIfCantBeResolved as Logger.Instance does not exist anymore
+                /*
                 Logger.Instance.Exception(ex);
+                /*/
+                LoggerHelper.LogEvenIfCantBeResolved(ex);
+                //*/
             }
         }
 
