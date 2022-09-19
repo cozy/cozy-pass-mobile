@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android", "src\Android\Android.csproj", "{304400AF-F0ED-40FA-B102-EA3C3EC43E4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "src\App\App.csproj", "{EE44C6A1-2A85-45FE-8D9B-BF1D5F88809C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "src\App\App.csproj", "{EE44C6A1-2A85-45FE-8D9B-BF1D5F88809C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "src\Core\Core.csproj", "{4B8A8C41-9820-4341-974C-41E65B7F4366}"
 EndProject
@@ -499,22 +499,6 @@ Global
 		{324BE76C-38FA-4F11-8BB1-95C7B3B1B545}.Release|iPhone.Build.0 = Release|iPhone
 		{324BE76C-38FA-4F11-8BB1-95C7B3B1B545}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{324BE76C-38FA-4F11-8BB1-95C7B3B1B545}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugAndroid|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugAndroid|iPhone.ActiveCfg = Debug|iPhone
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|Any CPU.ActiveCfg = CozyDebugIOS|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhone.ActiveCfg = CozyDebugIOS|iPhone
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhone.Build.0 = CozyDebugIOS|iPhone
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhoneSimulator.ActiveCfg = CozyDebugIOS|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhoneSimulator.Build.0 = CozyDebugIOS|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseAndroid|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseAndroid|iPhone.ActiveCfg = Debug|iPhone
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|Any CPU.ActiveCfg = CozyReleaseIOS|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhone.ActiveCfg = CozyReleaseIOS|iPhone
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhone.Build.0 = CozyReleaseIOS|iPhone
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhoneSimulator.ActiveCfg = CozyReleaseIOS|iPhoneSimulator
-		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhoneSimulator.Build.0 = CozyReleaseIOS|iPhoneSimulator
 		{4085B0A5-12A9-4993-B8B8-4ACE72E62E39}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
 		{4085B0A5-12A9-4993-B8B8-4ACE72E62E39}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
 		{4085B0A5-12A9-4993-B8B8-4ACE72E62E39}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
@@ -627,6 +611,30 @@ Global
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.AppStore|iPhone.Build.0 = Release|iPhone
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.AppStore|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.AppStore|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|Any CPU.ActiveCfg = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|Any CPU.Build.0 = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhone.ActiveCfg = Debug|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhone.Build.0 = Debug|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|Any CPU.ActiveCfg = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|Any CPU.Build.0 = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhone.ActiveCfg = Debug|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhone.Build.0 = Debug|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|Any CPU.ActiveCfg = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|Any CPU.Build.0 = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|iPhone.ActiveCfg = Release|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|iPhone.Build.0 = Release|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseIOS|Any CPU.ActiveCfg = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseIOS|Any CPU.Build.0 = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseIOS|iPhone.ActiveCfg = Release|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseIOS|iPhone.Build.0 = Release|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseIOS|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseIOS|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.Debug|iPhone.ActiveCfg = Debug|iPhone
@@ -657,6 +665,22 @@ Global
 		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.AppStore|iPhone.Build.0 = AppStore|iPhone
 		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
 		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugAndroid|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugAndroid|iPhone.ActiveCfg = Debug|iPhone
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|Any CPU.ActiveCfg = CozyDebugIOS|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhone.ActiveCfg = CozyDebugIOS|iPhone
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhone.Build.0 = CozyDebugIOS|iPhone
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhoneSimulator.ActiveCfg = CozyDebugIOS|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyDebugIOS|iPhoneSimulator.Build.0 = CozyDebugIOS|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseAndroid|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseAndroid|iPhone.ActiveCfg = Debug|iPhone
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|Any CPU.ActiveCfg = CozyReleaseIOS|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhone.ActiveCfg = CozyReleaseIOS|iPhone
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhone.Build.0 = CozyReleaseIOS|iPhone
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhoneSimulator.ActiveCfg = CozyReleaseIOS|iPhoneSimulator
+		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.CozyReleaseIOS|iPhoneSimulator.Build.0 = CozyReleaseIOS|iPhoneSimulator
 		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{8A3ECD75-3EC8-4CB3-B3A2-A73A724C279A}.Debug|iPhone.Build.0 = Debug|iPhone
