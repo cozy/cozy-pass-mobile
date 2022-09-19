@@ -137,6 +137,48 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string CozyLoginTitle {
+            get {
+                return ResourceManager.GetString("CozyLoginTitle", resourceCulture);
+            }
+        }
+        
+        internal static string CozyHomeTitle {
+            get {
+                return ResourceManager.GetString("CozyHomeTitle", resourceCulture);
+            }
+        }
+        
+        internal static string CozyHomeHaveAccount {
+            get {
+                return ResourceManager.GetString("CozyHomeHaveAccount", resourceCulture);
+            }
+        }
+        
+        internal static string CozyUrlRequiredException {
+            get {
+                return ResourceManager.GetString("CozyUrlRequiredException", resourceCulture);
+            }
+        }
+        
+        internal static string NoEmailAsCozyUrlException {
+            get {
+                return ResourceManager.GetString("NoEmailAsCozyUrlException", resourceCulture);
+            }
+        }
+        
+        internal static string HasMispelledCozyException {
+            get {
+                return ResourceManager.GetString("HasMispelledCozyException", resourceCulture);
+            }
+        }
+        
+        internal static string CozyInvalidLoginException {
+            get {
+                return ResourceManager.GetString("CozyInvalidLoginException", resourceCulture);
+            }
+        }
+        
         internal static string Credits {
             get {
                 return ResourceManager.GetString("Credits", resourceCulture);
@@ -341,6 +383,30 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string RemoveAccount {
+            get {
+                return ResourceManager.GetString("RemoveAccount", resourceCulture);
+            }
+        }
+        
+        internal static string RemoveAccountConfirmation {
+            get {
+                return ResourceManager.GetString("RemoveAccountConfirmation", resourceCulture);
+            }
+        }
+        
+        internal static string AccountAlreadyAdded {
+            get {
+                return ResourceManager.GetString("AccountAlreadyAdded", resourceCulture);
+            }
+        }
+        
+        internal static string SwitchToAlreadyAddedAccountConfirmation {
+            get {
+                return ResourceManager.GetString("SwitchToAlreadyAddedAccountConfirmation", resourceCulture);
+            }
+        }
+        
         internal static string MasterPassword {
             get {
                 return ResourceManager.GetString("MasterPassword", resourceCulture);
@@ -356,6 +422,12 @@ namespace Bit.App.Resources {
         internal static string MyVault {
             get {
                 return ResourceManager.GetString("MyVault", resourceCulture);
+            }
+        }
+        
+        internal static string Authenticator {
+            get {
+                return ResourceManager.GetString("Authenticator", resourceCulture);
             }
         }
         
@@ -392,6 +464,12 @@ namespace Bit.App.Resources {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        internal static string Move {
+            get {
+                return ResourceManager.GetString("Move", resourceCulture);
             }
         }
         
@@ -749,6 +827,12 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string GetCozyAddress {
+            get {
+                return ResourceManager.GetString("GetCozyAddress", resourceCulture);
+            }
+        }
+        
         internal static string ImportItems {
             get {
                 return ResourceManager.GetString("ImportItems", resourceCulture);
@@ -785,39 +869,51 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string LockOption15Minutes {
+        internal static string FifteenMinutes {
             get {
-                return ResourceManager.GetString("LockOption15Minutes", resourceCulture);
+                return ResourceManager.GetString("FifteenMinutes", resourceCulture);
             }
         }
         
-        internal static string LockOption1Hour {
+        internal static string OneHour {
             get {
-                return ResourceManager.GetString("LockOption1Hour", resourceCulture);
+                return ResourceManager.GetString("OneHour", resourceCulture);
             }
         }
         
-        internal static string LockOption1Minute {
+        internal static string OneMinute {
             get {
-                return ResourceManager.GetString("LockOption1Minute", resourceCulture);
+                return ResourceManager.GetString("OneMinute", resourceCulture);
             }
         }
         
-        internal static string LockOption4Hours {
+        internal static string FourHours {
             get {
-                return ResourceManager.GetString("LockOption4Hours", resourceCulture);
+                return ResourceManager.GetString("FourHours", resourceCulture);
             }
         }
         
-        internal static string LockOptionImmediately {
+        internal static string Immediately {
             get {
-                return ResourceManager.GetString("LockOptionImmediately", resourceCulture);
+                return ResourceManager.GetString("Immediately", resourceCulture);
             }
         }
         
-        internal static string LockOptions {
+        internal static string VaultTimeout {
             get {
-                return ResourceManager.GetString("LockOptions", resourceCulture);
+                return ResourceManager.GetString("VaultTimeout", resourceCulture);
+            }
+        }
+        
+        internal static string VaultTimeoutAction {
+            get {
+                return ResourceManager.GetString("VaultTimeoutAction", resourceCulture);
+            }
+        }
+        
+        internal static string VaultTimeoutLogOutConfirmation {
+            get {
+                return ResourceManager.GetString("VaultTimeoutLogOutConfirmation", resourceCulture);
             }
         }
         
@@ -1181,9 +1277,9 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string BitwardenAutofillServiceNotification {
+        internal static string BitwardenAutofillServiceOverlay {
             get {
-                return ResourceManager.GetString("BitwardenAutofillServiceNotification", resourceCulture);
+                return ResourceManager.GetString("BitwardenAutofillServiceOverlay", resourceCulture);
             }
         }
         
@@ -1220,6 +1316,18 @@ namespace Bit.App.Resources {
         internal static string Enabled {
             get {
                 return ResourceManager.GetString("Enabled", resourceCulture);
+            }
+        }
+        
+        internal static string Off {
+            get {
+                return ResourceManager.GetString("Off", resourceCulture);
+            }
+        }
+        
+        internal static string On {
+            get {
+                return ResourceManager.GetString("On", resourceCulture);
             }
         }
         
@@ -1277,45 +1385,9 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string ShareVault {
+        internal static string LearnOrg {
             get {
-                return ResourceManager.GetString("ShareVault", resourceCulture);
-            }
-        }
-        
-        internal static string AutofillPasswordField {
-            get {
-                return ResourceManager.GetString("AutofillPasswordField", resourceCulture);
-            }
-        }
-        
-        internal static string AutofillPasswordFieldDescription {
-            get {
-                return ResourceManager.GetString("AutofillPasswordFieldDescription", resourceCulture);
-            }
-        }
-        
-        internal static string AutofillPersistNotification {
-            get {
-                return ResourceManager.GetString("AutofillPersistNotification", resourceCulture);
-            }
-        }
-        
-        internal static string AutofillPersistNotificationDescription {
-            get {
-                return ResourceManager.GetString("AutofillPersistNotificationDescription", resourceCulture);
-            }
-        }
-        
-        internal static string AutofillAlways {
-            get {
-                return ResourceManager.GetString("AutofillAlways", resourceCulture);
-            }
-        }
-        
-        internal static string AutofillAlwaysDescription {
-            get {
-                return ResourceManager.GetString("AutofillAlwaysDescription", resourceCulture);
+                return ResourceManager.GetString("LearnOrg", resourceCulture);
             }
         }
         
@@ -1469,15 +1541,9 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string CameraInstructionBottom {
+        internal static string PointYourCameraAtTheQRCode {
             get {
-                return ResourceManager.GetString("CameraInstructionBottom", resourceCulture);
-            }
-        }
-        
-        internal static string CameraInstructionTop {
-            get {
-                return ResourceManager.GetString("CameraInstructionTop", resourceCulture);
+                return ResourceManager.GetString("PointYourCameraAtTheQRCode", resourceCulture);
             }
         }
         
@@ -1505,15 +1571,15 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string DisableAutoTotpCopyDescription {
+        internal static string CopyTotpAutomaticallyDescription {
             get {
-                return ResourceManager.GetString("DisableAutoTotpCopyDescription", resourceCulture);
+                return ResourceManager.GetString("CopyTotpAutomaticallyDescription", resourceCulture);
             }
         }
         
-        internal static string DisableAutoTotpCopy {
+        internal static string CopyTotpAutomatically {
             get {
-                return ResourceManager.GetString("DisableAutoTotpCopy", resourceCulture);
+                return ResourceManager.GetString("CopyTotpAutomatically", resourceCulture);
             }
         }
         
@@ -1829,6 +1895,12 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string FullName {
+            get {
+                return ResourceManager.GetString("FullName", resourceCulture);
+            }
+        }
+        
         internal static string LicenseNumber {
             get {
                 return ResourceManager.GetString("LicenseNumber", resourceCulture);
@@ -1937,15 +2009,15 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string DisableWebsiteIcons {
+        internal static string ShowWebsiteIcons {
             get {
-                return ResourceManager.GetString("DisableWebsiteIcons", resourceCulture);
+                return ResourceManager.GetString("ShowWebsiteIcons", resourceCulture);
             }
         }
         
-        internal static string DisableWebsiteIconsDescription {
+        internal static string ShowWebsiteIconsDescription {
             get {
-                return ResourceManager.GetString("DisableWebsiteIconsDescription", resourceCulture);
+                return ResourceManager.GetString("ShowWebsiteIconsDescription", resourceCulture);
             }
         }
         
@@ -1988,6 +2060,12 @@ namespace Bit.App.Resources {
         internal static string NoItemsFolder {
             get {
                 return ResourceManager.GetString("NoItemsFolder", resourceCulture);
+            }
+        }
+        
+        internal static string NoItemsTrash {
+            get {
+                return ResourceManager.GetString("NoItemsTrash", resourceCulture);
             }
         }
         
@@ -2066,6 +2144,12 @@ namespace Bit.App.Resources {
         internal static string FieldTypeHidden {
             get {
                 return ResourceManager.GetString("FieldTypeHidden", resourceCulture);
+            }
+        }
+        
+        internal static string FieldTypeLinked {
+            get {
+                return ResourceManager.GetString("FieldTypeLinked", resourceCulture);
             }
         }
         
@@ -2393,15 +2477,21 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string SearchFolder {
+        internal static string SearchFileSends {
             get {
-                return ResourceManager.GetString("SearchFolder", resourceCulture);
+                return ResourceManager.GetString("SearchFileSends", resourceCulture);
             }
         }
         
-        internal static string SearchType {
+        internal static string SearchTextSends {
             get {
-                return ResourceManager.GetString("SearchType", resourceCulture);
+                return ResourceManager.GetString("SearchTextSends", resourceCulture);
+            }
+        }
+        
+        internal static string SearchGroup {
+            get {
+                return ResourceManager.GetString("SearchGroup", resourceCulture);
             }
         }
         
@@ -2447,9 +2537,21 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string MovedItemToOrg {
+            get {
+                return ResourceManager.GetString("MovedItemToOrg", resourceCulture);
+            }
+        }
+        
         internal static string ItemShared {
             get {
                 return ResourceManager.GetString("ItemShared", resourceCulture);
+            }
+        }
+        
+        internal static string ItemUnshared {
+            get {
+                return ResourceManager.GetString("ItemUnshared", resourceCulture);
             }
         }
         
@@ -2471,15 +2573,27 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string ShareNone {
+            get {
+                return ResourceManager.GetString("ShareNone", resourceCulture);
+            }
+        }
+        
+        internal static string MoveToOrganization {
+            get {
+                return ResourceManager.GetString("MoveToOrganization", resourceCulture);
+            }
+        }
+        
         internal static string NoOrgsToList {
             get {
                 return ResourceManager.GetString("NoOrgsToList", resourceCulture);
             }
         }
         
-        internal static string ShareDesc {
+        internal static string MoveToOrgDesc {
             get {
-                return ResourceManager.GetString("ShareDesc", resourceCulture);
+                return ResourceManager.GetString("MoveToOrgDesc", resourceCulture);
             }
         }
         
@@ -2531,9 +2645,9 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string ShareVaultConfirmation {
+        internal static string LearnOrgConfirmation {
             get {
-                return ResourceManager.GetString("ShareVaultConfirmation", resourceCulture);
+                return ResourceManager.GetString("LearnOrgConfirmation", resourceCulture);
             }
         }
         
@@ -2561,15 +2675,15 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string LockOption30Minutes {
+        internal static string UnlockVault {
             get {
-                return ResourceManager.GetString("LockOption30Minutes", resourceCulture);
+                return ResourceManager.GetString("UnlockVault", resourceCulture);
             }
         }
         
-        internal static string LockOption5Minutes {
+        internal static string ThirtyMinutes {
             get {
-                return ResourceManager.GetString("LockOption5Minutes", resourceCulture);
+                return ResourceManager.GetString("ThirtyMinutes", resourceCulture);
             }
         }
         
@@ -2597,6 +2711,12 @@ namespace Bit.App.Resources {
             }
         }
         
+        internal static string VaultLockedIdentity {
+            get {
+                return ResourceManager.GetString("VaultLockedIdentity", resourceCulture);
+            }
+        }
+        
         internal static string Dark {
             get {
                 return ResourceManager.GetString("Dark", resourceCulture);
@@ -2612,12 +2732,6 @@ namespace Bit.App.Resources {
         internal static string FiveMinutes {
             get {
                 return ResourceManager.GetString("FiveMinutes", resourceCulture);
-            }
-        }
-        
-        internal static string OneMinute {
-            get {
-                return ResourceManager.GetString("OneMinute", resourceCulture);
             }
         }
         
@@ -2681,15 +2795,21 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string RestartIsRequired {
+        internal static string ThemeDefault {
             get {
-                return ResourceManager.GetString("RestartIsRequired", resourceCulture);
+                return ResourceManager.GetString("ThemeDefault", resourceCulture);
             }
         }
         
-        internal static string Restarting {
+        internal static string DefaultDarkTheme {
             get {
-                return ResourceManager.GetString("Restarting", resourceCulture);
+                return ResourceManager.GetString("DefaultDarkTheme", resourceCulture);
+            }
+        }
+        
+        internal static string DefaultDarkThemeDescription {
+            get {
+                return ResourceManager.GetString("DefaultDarkThemeDescription", resourceCulture);
             }
         }
         
@@ -2723,33 +2843,39 @@ namespace Bit.App.Resources {
             }
         }
         
-        internal static string BlacklistedUris {
+        internal static string Nord {
             get {
-                return ResourceManager.GetString("BlacklistedUris", resourceCulture);
+                return ResourceManager.GetString("Nord", resourceCulture);
             }
         }
         
-        internal static string BlacklistedUrisDescription {
+        internal static string AutofillBlockedUris {
             get {
-                return ResourceManager.GetString("BlacklistedUrisDescription", resourceCulture);
+                return ResourceManager.GetString("AutofillBlockedUris", resourceCulture);
             }
         }
         
-        internal static string DisableSavePrompt {
+        internal static string AutofillBlockedUrisDescription {
             get {
-                return ResourceManager.GetString("DisableSavePrompt", resourceCulture);
+                return ResourceManager.GetString("AutofillBlockedUrisDescription", resourceCulture);
             }
         }
         
-        internal static string DisableSavePromptDescription {
+        internal static string AskToAddLogin {
             get {
-                return ResourceManager.GetString("DisableSavePromptDescription", resourceCulture);
+                return ResourceManager.GetString("AskToAddLogin", resourceCulture);
             }
         }
         
-        internal static string LockOptionOnRestart {
+        internal static string AskToAddLoginDescription {
             get {
-                return ResourceManager.GetString("LockOptionOnRestart", resourceCulture);
+                return ResourceManager.GetString("AskToAddLoginDescription", resourceCulture);
+            }
+        }
+        
+        internal static string OnRestart {
+            get {
+                return ResourceManager.GetString("OnRestart", resourceCulture);
             }
         }
         
@@ -2816,6 +2942,1302 @@ namespace Bit.App.Resources {
         internal static string UseBiometricsToUnlock {
             get {
                 return ResourceManager.GetString("UseBiometricsToUnlock", resourceCulture);
+            }
+        }
+        
+        internal static string AccessibilityOverlayPermissionAlert {
+            get {
+                return ResourceManager.GetString("AccessibilityOverlayPermissionAlert", resourceCulture);
+            }
+        }
+        
+        internal static string BitwardenAutofillServiceOverlayPermission {
+            get {
+                return ResourceManager.GetString("BitwardenAutofillServiceOverlayPermission", resourceCulture);
+            }
+        }
+        
+        internal static string OverlayPermission {
+            get {
+                return ResourceManager.GetString("OverlayPermission", resourceCulture);
+            }
+        }
+        
+        internal static string BitwardenAutofillServiceOpenOverlayPermissionSettings {
+            get {
+                return ResourceManager.GetString("BitwardenAutofillServiceOpenOverlayPermissionSettings", resourceCulture);
+            }
+        }
+        
+        internal static string BitwardenAutofillServiceStep3 {
+            get {
+                return ResourceManager.GetString("BitwardenAutofillServiceStep3", resourceCulture);
+            }
+        }
+        
+        internal static string Denied {
+            get {
+                return ResourceManager.GetString("Denied", resourceCulture);
+            }
+        }
+        
+        internal static string Granted {
+            get {
+                return ResourceManager.GetString("Granted", resourceCulture);
+            }
+        }
+        
+        internal static string FileFormat {
+            get {
+                return ResourceManager.GetString("FileFormat", resourceCulture);
+            }
+        }
+        
+        internal static string ExportVaultMasterPasswordDescription {
+            get {
+                return ResourceManager.GetString("ExportVaultMasterPasswordDescription", resourceCulture);
+            }
+        }
+        
+        internal static string SendVerificationCodeToEmail {
+            get {
+                return ResourceManager.GetString("SendVerificationCodeToEmail", resourceCulture);
+            }
+        }
+        
+        internal static string CodeSent {
+            get {
+                return ResourceManager.GetString("CodeSent", resourceCulture);
+            }
+        }
+        
+        internal static string ConfirmYourIdentity {
+            get {
+                return ResourceManager.GetString("ConfirmYourIdentity", resourceCulture);
+            }
+        }
+        
+        internal static string ExportVaultWarning {
+            get {
+                return ResourceManager.GetString("ExportVaultWarning", resourceCulture);
+            }
+        }
+        
+        internal static string EncExportKeyWarning {
+            get {
+                return ResourceManager.GetString("EncExportKeyWarning", resourceCulture);
+            }
+        }
+        
+        internal static string EncExportAccountWarning {
+            get {
+                return ResourceManager.GetString("EncExportAccountWarning", resourceCulture);
+            }
+        }
+        
+        internal static string ExportVaultConfirmationTitle {
+            get {
+                return ResourceManager.GetString("ExportVaultConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        internal static string Warning {
+            get {
+                return ResourceManager.GetString("Warning", resourceCulture);
+            }
+        }
+        
+        internal static string ExportVaultFailure {
+            get {
+                return ResourceManager.GetString("ExportVaultFailure", resourceCulture);
+            }
+        }
+        
+        internal static string ExportVaultSuccess {
+            get {
+                return ResourceManager.GetString("ExportVaultSuccess", resourceCulture);
+            }
+        }
+        
+        internal static string Clone {
+            get {
+                return ResourceManager.GetString("Clone", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordGeneratorPolicyInEffect {
+            get {
+                return ResourceManager.GetString("PasswordGeneratorPolicyInEffect", resourceCulture);
+            }
+        }
+        
+        internal static string Open {
+            get {
+                return ResourceManager.GetString("Open", resourceCulture);
+            }
+        }
+        
+        internal static string UnableToSaveAttachment {
+            get {
+                return ResourceManager.GetString("UnableToSaveAttachment", resourceCulture);
+            }
+        }
+        
+        internal static string SaveAttachmentSuccess {
+            get {
+                return ResourceManager.GetString("SaveAttachmentSuccess", resourceCulture);
+            }
+        }
+        
+        internal static string AutofillTileAccessibilityRequired {
+            get {
+                return ResourceManager.GetString("AutofillTileAccessibilityRequired", resourceCulture);
+            }
+        }
+        
+        internal static string AutofillTileUriNotFound {
+            get {
+                return ResourceManager.GetString("AutofillTileUriNotFound", resourceCulture);
+            }
+        }
+        
+        internal static string SoftDeleting {
+            get {
+                return ResourceManager.GetString("SoftDeleting", resourceCulture);
+            }
+        }
+        
+        internal static string ItemSoftDeleted {
+            get {
+                return ResourceManager.GetString("ItemSoftDeleted", resourceCulture);
+            }
+        }
+        
+        internal static string Restore {
+            get {
+                return ResourceManager.GetString("Restore", resourceCulture);
+            }
+        }
+        
+        internal static string Restoring {
+            get {
+                return ResourceManager.GetString("Restoring", resourceCulture);
+            }
+        }
+        
+        internal static string ItemRestored {
+            get {
+                return ResourceManager.GetString("ItemRestored", resourceCulture);
+            }
+        }
+        
+        internal static string Trash {
+            get {
+                return ResourceManager.GetString("Trash", resourceCulture);
+            }
+        }
+        
+        internal static string SearchTrash {
+            get {
+                return ResourceManager.GetString("SearchTrash", resourceCulture);
+            }
+        }
+        
+        internal static string DoYouReallyWantToPermanentlyDeleteCipher {
+            get {
+                return ResourceManager.GetString("DoYouReallyWantToPermanentlyDeleteCipher", resourceCulture);
+            }
+        }
+        
+        internal static string DoYouReallyWantToRestoreCipher {
+            get {
+                return ResourceManager.GetString("DoYouReallyWantToRestoreCipher", resourceCulture);
+            }
+        }
+        
+        internal static string DoYouReallyWantToSoftDeleteCipher {
+            get {
+                return ResourceManager.GetString("DoYouReallyWantToSoftDeleteCipher", resourceCulture);
+            }
+        }
+        
+        internal static string BiometricInvalidated {
+            get {
+                return ResourceManager.GetString("BiometricInvalidated", resourceCulture);
+            }
+        }
+        
+        internal static string BiometricInvalidatedExtension {
+            get {
+                return ResourceManager.GetString("BiometricInvalidatedExtension", resourceCulture);
+            }
+        }
+        
+        internal static string EnableSyncOnRefresh {
+            get {
+                return ResourceManager.GetString("EnableSyncOnRefresh", resourceCulture);
+            }
+        }
+        
+        internal static string EnableSyncOnRefreshDescription {
+            get {
+                return ResourceManager.GetString("EnableSyncOnRefreshDescription", resourceCulture);
+            }
+        }
+        
+        internal static string LogInSso {
+            get {
+                return ResourceManager.GetString("LogInSso", resourceCulture);
+            }
+        }
+        
+        internal static string LogInSsoSummary {
+            get {
+                return ResourceManager.GetString("LogInSsoSummary", resourceCulture);
+            }
+        }
+        
+        internal static string OrgIdentifier {
+            get {
+                return ResourceManager.GetString("OrgIdentifier", resourceCulture);
+            }
+        }
+        
+        internal static string LoginSsoError {
+            get {
+                return ResourceManager.GetString("LoginSsoError", resourceCulture);
+            }
+        }
+        
+        internal static string SetMasterPassword {
+            get {
+                return ResourceManager.GetString("SetMasterPassword", resourceCulture);
+            }
+        }
+        
+        internal static string SetMasterPasswordSummary {
+            get {
+                return ResourceManager.GetString("SetMasterPasswordSummary", resourceCulture);
+            }
+        }
+        
+        internal static string MasterPasswordPolicyInEffect {
+            get {
+                return ResourceManager.GetString("MasterPasswordPolicyInEffect", resourceCulture);
+            }
+        }
+        
+        internal static string PolicyInEffectMinComplexity {
+            get {
+                return ResourceManager.GetString("PolicyInEffectMinComplexity", resourceCulture);
+            }
+        }
+        
+        internal static string PolicyInEffectMinLength {
+            get {
+                return ResourceManager.GetString("PolicyInEffectMinLength", resourceCulture);
+            }
+        }
+        
+        internal static string PolicyInEffectUppercase {
+            get {
+                return ResourceManager.GetString("PolicyInEffectUppercase", resourceCulture);
+            }
+        }
+        
+        internal static string PolicyInEffectLowercase {
+            get {
+                return ResourceManager.GetString("PolicyInEffectLowercase", resourceCulture);
+            }
+        }
+        
+        internal static string PolicyInEffectNumbers {
+            get {
+                return ResourceManager.GetString("PolicyInEffectNumbers", resourceCulture);
+            }
+        }
+        
+        internal static string PolicyInEffectSpecial {
+            get {
+                return ResourceManager.GetString("PolicyInEffectSpecial", resourceCulture);
+            }
+        }
+        
+        internal static string MasterPasswordPolicyValidationTitle {
+            get {
+                return ResourceManager.GetString("MasterPasswordPolicyValidationTitle", resourceCulture);
+            }
+        }
+        
+        internal static string MasterPasswordPolicyValidationMessage {
+            get {
+                return ResourceManager.GetString("MasterPasswordPolicyValidationMessage", resourceCulture);
+            }
+        }
+        
+        internal static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        internal static string AcceptPolicies {
+            get {
+                return ResourceManager.GetString("AcceptPolicies", resourceCulture);
+            }
+        }
+        
+        internal static string AcceptPoliciesError {
+            get {
+                return ResourceManager.GetString("AcceptPoliciesError", resourceCulture);
+            }
+        }
+        
+        internal static string TermsOfService {
+            get {
+                return ResourceManager.GetString("TermsOfService", resourceCulture);
+            }
+        }
+        
+        internal static string PrivacyPolicy {
+            get {
+                return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
+            }
+        }
+        
+        internal static string AccessibilityDrawOverPermissionAlert {
+            get {
+                return ResourceManager.GetString("AccessibilityDrawOverPermissionAlert", resourceCulture);
+            }
+        }
+        
+        internal static string AutofillServices {
+            get {
+                return ResourceManager.GetString("AutofillServices", resourceCulture);
+            }
+        }
+        
+        internal static string InlineAutofill {
+            get {
+                return ResourceManager.GetString("InlineAutofill", resourceCulture);
+            }
+        }
+        
+        internal static string InlineAutofillDescription {
+            get {
+                return ResourceManager.GetString("InlineAutofillDescription", resourceCulture);
+            }
+        }
+        
+        internal static string Accessibility {
+            get {
+                return ResourceManager.GetString("Accessibility", resourceCulture);
+            }
+        }
+        
+        internal static string AccessibilityDescription {
+            get {
+                return ResourceManager.GetString("AccessibilityDescription", resourceCulture);
+            }
+        }
+        
+        internal static string AccessibilityDescription2 {
+            get {
+                return ResourceManager.GetString("AccessibilityDescription2", resourceCulture);
+            }
+        }
+        
+        internal static string AccessibilityDescription3 {
+            get {
+                return ResourceManager.GetString("AccessibilityDescription3", resourceCulture);
+            }
+        }
+        
+        internal static string AccessibilityDescription4 {
+            get {
+                return ResourceManager.GetString("AccessibilityDescription4", resourceCulture);
+            }
+        }
+        
+        internal static string DrawOver {
+            get {
+                return ResourceManager.GetString("DrawOver", resourceCulture);
+            }
+        }
+        
+        internal static string DrawOverDescription {
+            get {
+                return ResourceManager.GetString("DrawOverDescription", resourceCulture);
+            }
+        }
+        
+        internal static string DrawOverDescription2 {
+            get {
+                return ResourceManager.GetString("DrawOverDescription2", resourceCulture);
+            }
+        }
+        
+        internal static string DrawOverDescription3 {
+            get {
+                return ResourceManager.GetString("DrawOverDescription3", resourceCulture);
+            }
+        }
+        
+        internal static string PersonalOwnershipSubmitError {
+            get {
+                return ResourceManager.GetString("PersonalOwnershipSubmitError", resourceCulture);
+            }
+        }
+        
+        internal static string PersonalOwnershipPolicyInEffect {
+            get {
+                return ResourceManager.GetString("PersonalOwnershipPolicyInEffect", resourceCulture);
+            }
+        }
+        
+        internal static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        internal static string AllSends {
+            get {
+                return ResourceManager.GetString("AllSends", resourceCulture);
+            }
+        }
+        
+        internal static string Sends {
+            get {
+                return ResourceManager.GetString("Sends", resourceCulture);
+            }
+        }
+        
+        internal static string NameInfo {
+            get {
+                return ResourceManager.GetString("NameInfo", resourceCulture);
+            }
+        }
+        
+        internal static string Text {
+            get {
+                return ResourceManager.GetString("Text", resourceCulture);
+            }
+        }
+        
+        internal static string TypeText {
+            get {
+                return ResourceManager.GetString("TypeText", resourceCulture);
+            }
+        }
+        
+        internal static string TypeTextInfo {
+            get {
+                return ResourceManager.GetString("TypeTextInfo", resourceCulture);
+            }
+        }
+        
+        internal static string HideTextByDefault {
+            get {
+                return ResourceManager.GetString("HideTextByDefault", resourceCulture);
+            }
+        }
+        
+        internal static string TypeFile {
+            get {
+                return ResourceManager.GetString("TypeFile", resourceCulture);
+            }
+        }
+        
+        internal static string TypeFileInfo {
+            get {
+                return ResourceManager.GetString("TypeFileInfo", resourceCulture);
+            }
+        }
+        
+        internal static string FileTypeIsSelected {
+            get {
+                return ResourceManager.GetString("FileTypeIsSelected", resourceCulture);
+            }
+        }
+        
+        internal static string FileTypeIsNotSelected {
+            get {
+                return ResourceManager.GetString("FileTypeIsNotSelected", resourceCulture);
+            }
+        }
+        
+        internal static string TextTypeIsSelected {
+            get {
+                return ResourceManager.GetString("TextTypeIsSelected", resourceCulture);
+            }
+        }
+        
+        internal static string TextTypeIsNotSelected {
+            get {
+                return ResourceManager.GetString("TextTypeIsNotSelected", resourceCulture);
+            }
+        }
+        
+        internal static string DeletionDate {
+            get {
+                return ResourceManager.GetString("DeletionDate", resourceCulture);
+            }
+        }
+        
+        internal static string DeletionTime {
+            get {
+                return ResourceManager.GetString("DeletionTime", resourceCulture);
+            }
+        }
+        
+        internal static string DeletionDateInfo {
+            get {
+                return ResourceManager.GetString("DeletionDateInfo", resourceCulture);
+            }
+        }
+        
+        internal static string PendingDelete {
+            get {
+                return ResourceManager.GetString("PendingDelete", resourceCulture);
+            }
+        }
+        
+        internal static string ExpirationDate {
+            get {
+                return ResourceManager.GetString("ExpirationDate", resourceCulture);
+            }
+        }
+        
+        internal static string ExpirationTime {
+            get {
+                return ResourceManager.GetString("ExpirationTime", resourceCulture);
+            }
+        }
+        
+        internal static string ExpirationDateInfo {
+            get {
+                return ResourceManager.GetString("ExpirationDateInfo", resourceCulture);
+            }
+        }
+        
+        internal static string Expired {
+            get {
+                return ResourceManager.GetString("Expired", resourceCulture);
+            }
+        }
+        
+        internal static string MaximumAccessCount {
+            get {
+                return ResourceManager.GetString("MaximumAccessCount", resourceCulture);
+            }
+        }
+        
+        internal static string MaximumAccessCountInfo {
+            get {
+                return ResourceManager.GetString("MaximumAccessCountInfo", resourceCulture);
+            }
+        }
+        
+        internal static string MaximumAccessCountReached {
+            get {
+                return ResourceManager.GetString("MaximumAccessCountReached", resourceCulture);
+            }
+        }
+        
+        internal static string CurrentAccessCount {
+            get {
+                return ResourceManager.GetString("CurrentAccessCount", resourceCulture);
+            }
+        }
+        
+        internal static string NewPassword {
+            get {
+                return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordInfo {
+            get {
+                return ResourceManager.GetString("PasswordInfo", resourceCulture);
+            }
+        }
+        
+        internal static string RemovePassword {
+            get {
+                return ResourceManager.GetString("RemovePassword", resourceCulture);
+            }
+        }
+        
+        internal static string AreYouSureRemoveSendPassword {
+            get {
+                return ResourceManager.GetString("AreYouSureRemoveSendPassword", resourceCulture);
+            }
+        }
+        
+        internal static string RemovingSendPassword {
+            get {
+                return ResourceManager.GetString("RemovingSendPassword", resourceCulture);
+            }
+        }
+        
+        internal static string SendPasswordRemoved {
+            get {
+                return ResourceManager.GetString("SendPasswordRemoved", resourceCulture);
+            }
+        }
+        
+        internal static string NotesInfo {
+            get {
+                return ResourceManager.GetString("NotesInfo", resourceCulture);
+            }
+        }
+        
+        internal static string DisableSend {
+            get {
+                return ResourceManager.GetString("DisableSend", resourceCulture);
+            }
+        }
+        
+        internal static string NoSends {
+            get {
+                return ResourceManager.GetString("NoSends", resourceCulture);
+            }
+        }
+        
+        internal static string AddASend {
+            get {
+                return ResourceManager.GetString("AddASend", resourceCulture);
+            }
+        }
+        
+        internal static string CopyLink {
+            get {
+                return ResourceManager.GetString("CopyLink", resourceCulture);
+            }
+        }
+        
+        internal static string ShareLink {
+            get {
+                return ResourceManager.GetString("ShareLink", resourceCulture);
+            }
+        }
+        
+        internal static string SendLink {
+            get {
+                return ResourceManager.GetString("SendLink", resourceCulture);
+            }
+        }
+        
+        internal static string SearchSends {
+            get {
+                return ResourceManager.GetString("SearchSends", resourceCulture);
+            }
+        }
+        
+        internal static string EditSend {
+            get {
+                return ResourceManager.GetString("EditSend", resourceCulture);
+            }
+        }
+        
+        internal static string AddSend {
+            get {
+                return ResourceManager.GetString("AddSend", resourceCulture);
+            }
+        }
+        
+        internal static string AreYouSureDeleteSend {
+            get {
+                return ResourceManager.GetString("AreYouSureDeleteSend", resourceCulture);
+            }
+        }
+        
+        internal static string SendDeleted {
+            get {
+                return ResourceManager.GetString("SendDeleted", resourceCulture);
+            }
+        }
+        
+        internal static string SendUpdated {
+            get {
+                return ResourceManager.GetString("SendUpdated", resourceCulture);
+            }
+        }
+        
+        internal static string NewSendCreated {
+            get {
+                return ResourceManager.GetString("NewSendCreated", resourceCulture);
+            }
+        }
+        
+        internal static string OneDay {
+            get {
+                return ResourceManager.GetString("OneDay", resourceCulture);
+            }
+        }
+        
+        internal static string TwoDays {
+            get {
+                return ResourceManager.GetString("TwoDays", resourceCulture);
+            }
+        }
+        
+        internal static string ThreeDays {
+            get {
+                return ResourceManager.GetString("ThreeDays", resourceCulture);
+            }
+        }
+        
+        internal static string SevenDays {
+            get {
+                return ResourceManager.GetString("SevenDays", resourceCulture);
+            }
+        }
+        
+        internal static string ThirtyDays {
+            get {
+                return ResourceManager.GetString("ThirtyDays", resourceCulture);
+            }
+        }
+        
+        internal static string Custom {
+            get {
+                return ResourceManager.GetString("Custom", resourceCulture);
+            }
+        }
+        
+        internal static string ShareOnSave {
+            get {
+                return ResourceManager.GetString("ShareOnSave", resourceCulture);
+            }
+        }
+        
+        internal static string SendDisabledWarning {
+            get {
+                return ResourceManager.GetString("SendDisabledWarning", resourceCulture);
+            }
+        }
+        
+        internal static string AboutSend {
+            get {
+                return ResourceManager.GetString("AboutSend", resourceCulture);
+            }
+        }
+        
+        internal static string HideEmail {
+            get {
+                return ResourceManager.GetString("HideEmail", resourceCulture);
+            }
+        }
+        
+        internal static string SendOptionsPolicyInEffect {
+            get {
+                return ResourceManager.GetString("SendOptionsPolicyInEffect", resourceCulture);
+            }
+        }
+        
+        internal static string SendFilePremiumRequired {
+            get {
+                return ResourceManager.GetString("SendFilePremiumRequired", resourceCulture);
+            }
+        }
+        
+        internal static string SendFileEmailVerificationRequired {
+            get {
+                return ResourceManager.GetString("SendFileEmailVerificationRequired", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordPrompt {
+            get {
+                return ResourceManager.GetString("PasswordPrompt", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordConfirmation {
+            get {
+                return ResourceManager.GetString("PasswordConfirmation", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordConfirmationDesc {
+            get {
+                return ResourceManager.GetString("PasswordConfirmationDesc", resourceCulture);
+            }
+        }
+        
+        internal static string CaptchaRequired {
+            get {
+                return ResourceManager.GetString("CaptchaRequired", resourceCulture);
+            }
+        }
+        
+        internal static string CaptchaFailed {
+            get {
+                return ResourceManager.GetString("CaptchaFailed", resourceCulture);
+            }
+        }
+        
+        internal static string UpdatedMasterPassword {
+            get {
+                return ResourceManager.GetString("UpdatedMasterPassword", resourceCulture);
+            }
+        }
+        
+        internal static string UpdateMasterPassword {
+            get {
+                return ResourceManager.GetString("UpdateMasterPassword", resourceCulture);
+            }
+        }
+        
+        internal static string UpdateMasterPasswordWarning {
+            get {
+                return ResourceManager.GetString("UpdateMasterPasswordWarning", resourceCulture);
+            }
+        }
+        
+        internal static string UpdatingPassword {
+            get {
+                return ResourceManager.GetString("UpdatingPassword", resourceCulture);
+            }
+        }
+        
+        internal static string UpdatePasswordError {
+            get {
+                return ResourceManager.GetString("UpdatePasswordError", resourceCulture);
+            }
+        }
+        
+        internal static string RemoveMasterPassword {
+            get {
+                return ResourceManager.GetString("RemoveMasterPassword", resourceCulture);
+            }
+        }
+        
+        internal static string RemoveMasterPasswordWarning {
+            get {
+                return ResourceManager.GetString("RemoveMasterPasswordWarning", resourceCulture);
+            }
+        }
+        
+        internal static string RemoveMasterPasswordWarning2 {
+            get {
+                return ResourceManager.GetString("RemoveMasterPasswordWarning2", resourceCulture);
+            }
+        }
+        
+        internal static string LeaveOrganization {
+            get {
+                return ResourceManager.GetString("LeaveOrganization", resourceCulture);
+            }
+        }
+        
+        internal static string LeaveOrganizationName {
+            get {
+                return ResourceManager.GetString("LeaveOrganizationName", resourceCulture);
+            }
+        }
+        
+        internal static string Fido2Title {
+            get {
+                return ResourceManager.GetString("Fido2Title", resourceCulture);
+            }
+        }
+        
+        internal static string Fido2Instruction {
+            get {
+                return ResourceManager.GetString("Fido2Instruction", resourceCulture);
+            }
+        }
+        
+        internal static string Fido2Desc {
+            get {
+                return ResourceManager.GetString("Fido2Desc", resourceCulture);
+            }
+        }
+        
+        internal static string Fido2AuthenticateWebAuthn {
+            get {
+                return ResourceManager.GetString("Fido2AuthenticateWebAuthn", resourceCulture);
+            }
+        }
+        
+        internal static string Fido2ReturnToApp {
+            get {
+                return ResourceManager.GetString("Fido2ReturnToApp", resourceCulture);
+            }
+        }
+        
+        internal static string Fido2CheckBrowser {
+            get {
+                return ResourceManager.GetString("Fido2CheckBrowser", resourceCulture);
+            }
+        }
+        
+        internal static string ResetPasswordAutoEnrollInviteWarning {
+            get {
+                return ResourceManager.GetString("ResetPasswordAutoEnrollInviteWarning", resourceCulture);
+            }
+        }
+        
+        internal static string VaultTimeoutPolicyInEffect {
+            get {
+                return ResourceManager.GetString("VaultTimeoutPolicyInEffect", resourceCulture);
+            }
+        }
+        
+        internal static string VaultTimeoutToLarge {
+            get {
+                return ResourceManager.GetString("VaultTimeoutToLarge", resourceCulture);
+            }
+        }
+        
+        internal static string DisablePersonalVaultExportPolicyInEffect {
+            get {
+                return ResourceManager.GetString("DisablePersonalVaultExportPolicyInEffect", resourceCulture);
+            }
+        }
+        
+        internal static string AddAccount {
+            get {
+                return ResourceManager.GetString("AddAccount", resourceCulture);
+            }
+        }
+        
+        internal static string AccountUnlocked {
+            get {
+                return ResourceManager.GetString("AccountUnlocked", resourceCulture);
+            }
+        }
+        
+        internal static string AccountLocked {
+            get {
+                return ResourceManager.GetString("AccountLocked", resourceCulture);
+            }
+        }
+        
+        internal static string AccountLoggedOut {
+            get {
+                return ResourceManager.GetString("AccountLoggedOut", resourceCulture);
+            }
+        }
+        
+        internal static string AccountSwitchedAutomatically {
+            get {
+                return ResourceManager.GetString("AccountSwitchedAutomatically", resourceCulture);
+            }
+        }
+        
+        internal static string AccountLockedSuccessfully {
+            get {
+                return ResourceManager.GetString("AccountLockedSuccessfully", resourceCulture);
+            }
+        }
+        
+        internal static string AccountLoggedOutSuccessfully {
+            get {
+                return ResourceManager.GetString("AccountLoggedOutSuccessfully", resourceCulture);
+            }
+        }
+        
+        internal static string AccountRemovedSuccessfully {
+            get {
+                return ResourceManager.GetString("AccountRemovedSuccessfully", resourceCulture);
+            }
+        }
+        
+        internal static string DeleteAccount {
+            get {
+                return ResourceManager.GetString("DeleteAccount", resourceCulture);
+            }
+        }
+        
+        internal static string DeletingYourAccountIsPermanent {
+            get {
+                return ResourceManager.GetString("DeletingYourAccountIsPermanent", resourceCulture);
+            }
+        }
+        
+        internal static string DeleteAccountExplanation {
+            get {
+                return ResourceManager.GetString("DeleteAccountExplanation", resourceCulture);
+            }
+        }
+        
+        internal static string DeletingYourAccount {
+            get {
+                return ResourceManager.GetString("DeletingYourAccount", resourceCulture);
+            }
+        }
+        
+        internal static string YourAccountHasBeenPermanentlyDeleted {
+            get {
+                return ResourceManager.GetString("YourAccountHasBeenPermanentlyDeleted", resourceCulture);
+            }
+        }
+        
+        internal static string InvalidVerificationCode {
+            get {
+                return ResourceManager.GetString("InvalidVerificationCode", resourceCulture);
+            }
+        }
+        
+        internal static string RequestOTP {
+            get {
+                return ResourceManager.GetString("RequestOTP", resourceCulture);
+            }
+        }
+        
+        internal static string SendCode {
+            get {
+                return ResourceManager.GetString("SendCode", resourceCulture);
+            }
+        }
+        
+        internal static string Sending {
+            get {
+                return ResourceManager.GetString("Sending", resourceCulture);
+            }
+        }
+        
+        internal static string CopySendLinkOnSave {
+            get {
+                return ResourceManager.GetString("CopySendLinkOnSave", resourceCulture);
+            }
+        }
+        
+        internal static string SendingCode {
+            get {
+                return ResourceManager.GetString("SendingCode", resourceCulture);
+            }
+        }
+        
+        internal static string Verifying {
+            get {
+                return ResourceManager.GetString("Verifying", resourceCulture);
+            }
+        }
+        
+        internal static string ResendCode {
+            get {
+                return ResourceManager.GetString("ResendCode", resourceCulture);
+            }
+        }
+        
+        internal static string AVerificationCodeWasSentToYourEmail {
+            get {
+                return ResourceManager.GetString("AVerificationCodeWasSentToYourEmail", resourceCulture);
+            }
+        }
+        
+        internal static string AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain {
+            get {
+                return ResourceManager.GetString("AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain", resourceCulture);
+            }
+        }
+        
+        internal static string EnterTheVerificationCodeThatWasSentToYourEmail {
+            get {
+                return ResourceManager.GetString("EnterTheVerificationCodeThatWasSentToYourEmail", resourceCulture);
+            }
+        }
+        
+        internal static string SubmitCrashLogs {
+            get {
+                return ResourceManager.GetString("SubmitCrashLogs", resourceCulture);
+            }
+        }
+        
+        internal static string SubmitCrashLogsDescription {
+            get {
+                return ResourceManager.GetString("SubmitCrashLogsDescription", resourceCulture);
+            }
+        }
+        
+        internal static string OptionsExpanded {
+            get {
+                return ResourceManager.GetString("OptionsExpanded", resourceCulture);
+            }
+        }
+        
+        internal static string OptionsCollapsed {
+            get {
+                return ResourceManager.GetString("OptionsCollapsed", resourceCulture);
+            }
+        }
+        
+        internal static string UppercaseAtoZ {
+            get {
+                return ResourceManager.GetString("UppercaseAtoZ", resourceCulture);
+            }
+        }
+        
+        internal static string LowercaseAtoZ {
+            get {
+                return ResourceManager.GetString("LowercaseAtoZ", resourceCulture);
+            }
+        }
+        
+        internal static string NumbersZeroToNine {
+            get {
+                return ResourceManager.GetString("NumbersZeroToNine", resourceCulture);
+            }
+        }
+        
+        internal static string SpecialCharacters {
+            get {
+                return ResourceManager.GetString("SpecialCharacters", resourceCulture);
+            }
+        }
+        
+        internal static string TapToGoBack {
+            get {
+                return ResourceManager.GetString("TapToGoBack", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordIsVisibleTapToHide {
+            get {
+                return ResourceManager.GetString("PasswordIsVisibleTapToHide", resourceCulture);
+            }
+        }
+        
+        internal static string PasswordIsNotVisibleTapToShow {
+            get {
+                return ResourceManager.GetString("PasswordIsNotVisibleTapToShow", resourceCulture);
+            }
+        }
+        
+        internal static string FilterByVault {
+            get {
+                return ResourceManager.GetString("FilterByVault", resourceCulture);
+            }
+        }
+        
+        internal static string AllVaults {
+            get {
+                return ResourceManager.GetString("AllVaults", resourceCulture);
+            }
+        }
+        
+        internal static string Vaults {
+            get {
+                return ResourceManager.GetString("Vaults", resourceCulture);
+            }
+        }
+        
+        internal static string VaultFilterDescription {
+            get {
+                return ResourceManager.GetString("VaultFilterDescription", resourceCulture);
+            }
+        }
+        
+        internal static string All {
+            get {
+                return ResourceManager.GetString("All", resourceCulture);
+            }
+        }
+        
+        internal static string Totp {
+            get {
+                return ResourceManager.GetString("Totp", resourceCulture);
+            }
+        }
+        
+        internal static string VerificationCodes {
+            get {
+                return ResourceManager.GetString("VerificationCodes", resourceCulture);
+            }
+        }
+        
+        internal static string PremiumSubscriptionRequired {
+            get {
+                return ResourceManager.GetString("PremiumSubscriptionRequired", resourceCulture);
+            }
+        }
+        
+        internal static string CannotAddAuthenticatorKey {
+            get {
+                return ResourceManager.GetString("CannotAddAuthenticatorKey", resourceCulture);
+            }
+        }
+        
+        internal static string ScanQRCode {
+            get {
+                return ResourceManager.GetString("ScanQRCode", resourceCulture);
+            }
+        }
+        
+        internal static string CannotScanQRCode {
+            get {
+                return ResourceManager.GetString("CannotScanQRCode", resourceCulture);
+            }
+        }
+        
+        internal static string AuthenticatorKeyScanner {
+            get {
+                return ResourceManager.GetString("AuthenticatorKeyScanner", resourceCulture);
+            }
+        }
+        
+        internal static string EnterKeyManually {
+            get {
+                return ResourceManager.GetString("EnterKeyManually", resourceCulture);
+            }
+        }
+        
+        internal static string AddTotp {
+            get {
+                return ResourceManager.GetString("AddTotp", resourceCulture);
+            }
+        }
+        
+        internal static string SetupTotp {
+            get {
+                return ResourceManager.GetString("SetupTotp", resourceCulture);
+            }
+        }
+        
+        internal static string OnceTheKeyIsSuccessfullyEntered {
+            get {
+                return ResourceManager.GetString("OnceTheKeyIsSuccessfullyEntered", resourceCulture);
+            }
+        }
+        
+        internal static string SelectAddTotpToStoreTheKeySafely {
+            get {
+                return ResourceManager.GetString("SelectAddTotpToStoreTheKeySafely", resourceCulture);
+            }
+        }
+        
+        internal static string NeverLockWarning {
+            get {
+                return ResourceManager.GetString("NeverLockWarning", resourceCulture);
+            }
+        }
+        
+        internal static string EnvironmentPageUrlsError {
+            get {
+                return ResourceManager.GetString("EnvironmentPageUrlsError", resourceCulture);
+            }
+        }
+        
+        internal static string GenericErrorMessage {
+            get {
+                return ResourceManager.GetString("GenericErrorMessage", resourceCulture);
+            }
+        }
+        
+        internal static string AllowScreenCapture {
+            get {
+                return ResourceManager.GetString("AllowScreenCapture", resourceCulture);
+            }
+        }
+        
+        internal static string AreYouSureYouWantToEnableScreenCapture {
+            get {
+                return ResourceManager.GetString("AreYouSureYouWantToEnableScreenCapture", resourceCulture);
             }
         }
         
