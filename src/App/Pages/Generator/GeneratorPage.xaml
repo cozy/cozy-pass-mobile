@@ -19,6 +19,11 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <u:InverseBoolConverter x:Key="inverseBool" />
+            <!-- Cozy customization -->
+            <!-- Generation options are collapsible -->
+            <!---->
+            <u:ToggleArrowConverter x:Key="toggleArrow" />
+            <!---->
             <u:LocalizableEnumConverter x:Key="localizableEnum" />
             <xct:EnumToBoolConverter x:Key="enumToBool"/>
             <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" Order="Primary" Priority="-1"
@@ -122,6 +127,38 @@
                         AutomationProperties.IsInAccessibleTree="True"
                         AutomationProperties.Name="{u:I18n GenerateUsername}" />
                 </Grid>
+                <!-- Cozy customization -->
+                <!-- options pane should be hidden by default -->
+                <!-- "options" button can be used to toggle options pane visibility -->
+                <StackLayout StyleClass="box">
+                    <Grid StyleClass="box-row" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="24" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <controls:IconLabel
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="{ Binding OptionsToggled, Converter={StaticResource toggleArrow }}"
+                            StyleClass="box-label" />
+                        <Button Text="{u:I18n Options}"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Clicked="ToggleOptions_Clicked"
+                            HorizontalOptions="Start"
+                            BackgroundColor="Transparent"
+                            BorderWidth="0"
+                            StyleClass="box-header, box-header-platform" />
+                    </Grid>
+                </StackLayout>
+                <StackLayout StyleClass="box" Opacity="{ Binding OptionsOpacity }">
+                <!-- End Cozy customization -->
                 <BoxView StyleClass="box-row-separator"/>
                 <StackLayout StyleClass="box"
                              IsVisible="{Binding ShowTypePicker}"
@@ -552,6 +589,10 @@
                         <BoxView StyleClass="box-row-separator" />
                     </StackLayout>
                 </StackLayout>
+                <!-- Cozy customization -->
+                <!-- options pane should be hidden by default -->
+                </StackLayout>
+                <!-- End Cozy customization -->
             </StackLayout>
         </ScrollView>
     </ContentView>
