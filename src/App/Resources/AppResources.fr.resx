@@ -2304,16 +2304,16 @@ La numérisation se fera automatiquement.</value>
     <value>Le mot de passe n'est pas visible, appuyez pour le voir.</value>
   </data>
   <data name="FilterByVault" xml:space="preserve">
-    <value>Filtrer les éléments par coffre</value>
+    <value>Filtrer les éléments par dossier</value>
   </data>
   <data name="AllVaults" xml:space="preserve">
-    <value>Tous les Coffres</value>
+    <value>Tous les Dossiers</value>
   </data>
   <data name="Vaults" xml:space="preserve">
-    <value>Coffres</value>
+    <value>Dossiers</value>
   </data>
   <data name="VaultFilterDescription" xml:space="preserve">
-    <value>Coffre : {0}</value>
+    <value>Dossier : {0}</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>Tous</value>

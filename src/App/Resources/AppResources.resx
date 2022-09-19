@@ -2307,16 +2307,16 @@ Tips: after selecting a shared folder, you will be able to securely share this e
     <value>Password is not visible, tap to show.</value>
   </data>
   <data name="FilterByVault" xml:space="preserve">
-    <value>Filter items by vault</value>
+    <value>Filter items by folder</value>
   </data>
   <data name="AllVaults" xml:space="preserve">
-    <value>All Vaults</value>
+    <value>All Folders</value>
   </data>
   <data name="Vaults" xml:space="preserve">
-    <value>Vaults</value>
+    <value>Folders</value>
   </data>
   <data name="VaultFilterDescription" xml:space="preserve">
-    <value>Vault: {0}</value>
+    <value>Folder: {0}</value>
   </data>
   <data name="All" xml:space="preserve">
     <value>All</value>
