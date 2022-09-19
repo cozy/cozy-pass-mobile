@@ -22,6 +22,11 @@ namespace Bit.App.Utilities
         public const string Dark = "dark";
         public const string Black = "black";
         public const string Nord = "nord";
+        // Cozy customization, set Cozy's theme as default
+        //*
+        public const string Cozy = "cozy";
+        public const string CozyInverted = "cozy_inverted";
+        //*/
 
         public static void SetThemeStyle(string name, string autoDarkName, ResourceDictionary resources)
         {
@@ -40,7 +45,12 @@ namespace Bit.App.Utilities
                 {
                     resources.MergedDictionaries.Remove(currentTheme);
                     resources.MergedDictionaries.Add(newTheme);
+                    // Cozy customization, set Cozy's theme as default
+                    /*
                     UsingLightTheme = newTheme is Light;
+                    /*/
+                    UsingLightTheme = newTheme is Light || newTheme is Cozy;
+                    //*/
                     IsThemeDirty = true;
                     return;
                 }
@@ -101,6 +111,13 @@ namespace Bit.App.Utilities
                     return CheckAndGetThemeForMergedDictionaries(typeof(Black), resources);
                 case Nord:
                     return CheckAndGetThemeForMergedDictionaries(typeof(Nord), resources);
+                // Cozy customization, handle Cozy's themes
+                //*
+                case Cozy:
+                    return CheckAndGetThemeForMergedDictionaries(typeof(Cozy), resources);
+                case CozyInverted:
+                    return CheckAndGetThemeForMergedDictionaries(typeof(CozyInverted), resources);
+                //*/
                 case Light:
                     return CheckAndGetThemeForMergedDictionaries(typeof(Light), resources);
                 default:
@@ -116,13 +133,45 @@ namespace Bit.App.Utilities
                                 return CheckAndGetThemeForMergedDictionaries(typeof(Dark), resources);
                         }
                     }
+
+                    // Cozy customization, set Cozy's theme as default
+                    /*
                     return CheckAndGetThemeForMergedDictionaries(typeof(Light), resources);
+                    /*/
+                    return CheckAndGetThemeForMergedDictionaries(typeof(Cozy), resources);
+                    //*/
             }
         }
 
+        // Cozy customization, handle Inverted theme
+        //*
+        public static void SetInvertedTheme()
+        {
+            IsInvertedTheme = true;
+            SetTheme(Application.Current.Resources);
+        }
+        public static void UnsetInvertedTheme()
+        {
+            IsInvertedTheme = false;
+            SetTheme(Application.Current.Resources);
+        }
+        //*/
+
         public static void SetTheme(ResourceDictionary resources)
         {
+            // Cozy customization, handle Inverted theme
+            /*
             SetThemeStyle(GetTheme(), GetAutoDarkTheme(), resources);
+            //*/
+            if (IsInvertedTheme)
+            {
+                SetThemeStyle("cozy_inverted", GetAutoDarkTheme(), Application.Current.Resources);
+            }
+            else
+            {
+                SetThemeStyle(GetTheme(), GetAutoDarkTheme(), resources);
+            }
+            //*/
         }
 
         public static string GetTheme()
