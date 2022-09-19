@@ -617,12 +617,12 @@ Global
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhone.Build.0 = Debug|iPhone
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugAndroid|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|Any CPU.ActiveCfg = AppStore|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|Any CPU.ActiveCfg = CozyDebugIOS|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|Any CPU.Build.0 = AppStore|iPhoneSimulator
-		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhone.ActiveCfg = Debug|iPhone
-		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhone.Build.0 = Debug|iPhone
-		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhone.ActiveCfg = CozyDebugIOS|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhone.Build.0 = CozyDebugIOS|iPhone
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhoneSimulator.ActiveCfg = CozyDebugIOS|iPhoneSimulator
+		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyDebugIOS|iPhoneSimulator.Build.0 = CozyDebugIOS|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|Any CPU.ActiveCfg = AppStore|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|Any CPU.Build.0 = AppStore|iPhoneSimulator
 		{F8C3F648-EA5A-4719-8005-85D1690B1655}.CozyReleaseAndroid|iPhone.ActiveCfg = Release|iPhone
