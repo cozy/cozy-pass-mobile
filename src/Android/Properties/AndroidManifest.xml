@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:versionCode="3000200" android:versionName="3.0.2" android:installLocation="internalOnly" package="io.cozy.pass">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
 	<uses-permission android:name="android.permission.INTERNET" />
