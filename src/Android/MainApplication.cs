@@ -12,10 +12,15 @@ using Bit.Core.Abstractions;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Bit.Droid.Services;
-using Bit.Droid.Utilities;
 using Plugin.CurrentActivity;
 using Plugin.Fingerprint;
 using Xamarin.Android.Net;
+using System.Net.Http;
+using System.Net;
+using Bit.App.Utilities;
+using Bit.App.Pages;
+using Bit.App.Utilities.AccountManagement;
+using Bit.App.Controls;
 #if !FDROID
 using Android.Gms.Security;
 #endif
@@ -43,6 +48,31 @@ namespace Bit.Droid
                 var deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
                 ServiceContainer.Init(deviceActionService.DeviceUserAgent, Constants.ClearCiphersCacheKey,
                     Constants.AndroidAllClearCipherCacheKeys);
+
+                // TODO: Update when https://github.com/bitwarden/mobile/pull/1662 gets merged
+                var deleteAccountActionFlowExecutioner = new DeleteAccountActionFlowExecutioner(
+                    ServiceContainer.Resolve<IApiService>("apiService"),
+                    ServiceContainer.Resolve<IMessagingService>("messagingService"),
+                    ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService"),
+                    ServiceContainer.Resolve<IDeviceActionService>("deviceActionService"),
+                    ServiceContainer.Resolve<ILogger>("logger"));
+                ServiceContainer.Register<IDeleteAccountActionFlowExecutioner>("deleteAccountActionFlowExecutioner", deleteAccountActionFlowExecutioner);
+
+                var verificationActionsFlowHelper = new VerificationActionsFlowHelper(
+                    ServiceContainer.Resolve<IKeyConnectorService>("keyConnectorService"),
+                    ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService"),
+                    ServiceContainer.Resolve<ICryptoService>("cryptoService"));
+                ServiceContainer.Register<IVerificationActionsFlowHelper>("verificationActionsFlowHelper", verificationActionsFlowHelper);
+
+                var accountsManager = new AccountsManager(
+                    ServiceContainer.Resolve<IBroadcasterService>("broadcasterService"),
+                    ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService"),
+                    ServiceContainer.Resolve<IStorageService>("secureStorageService"),
+                    ServiceContainer.Resolve<IStateService>("stateService"),
+                    ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService"),
+                    ServiceContainer.Resolve<IAuthService>("authService"),
+                    ServiceContainer.Resolve<ILogger>("logger"));
+                ServiceContainer.Register<IAccountsManager>("accountsManager", accountsManager);
             }
 #if !FDROID
             if (Build.VERSION.SdkInt <= BuildVersionCodes.Kitkat)
@@ -69,7 +99,26 @@ namespace Bit.Droid
 
         private void RegisterLocalServices()
         {
-            ServiceContainer.Register<ILogService>("logService", new AndroidLogService());
+            ServiceContainer.Register<INativeLogService>("nativeLogService", new AndroidLogService());
+
+            // Cozy customization, disable "AppCenter" functionality
+            // We do not use it at Cozy
+            /*
+#if FDROID
+            var logger = new StubLogger();
+#elif DEBUG
+            var logger = DebugLogger.Instance;
+#else
+            var logger = Logger.Instance;
+#endif
+            /*/
+#if DEBUG
+            var logger = DebugLogger.Instance;
+#else
+            var logger = new StubLogger();
+#endif
+            //*/
+            ServiceContainer.Register("logger", logger);
 
             // Note: This might cause a race condition. Investigate more.
             Task.Run(() =>
@@ -78,7 +127,8 @@ namespace Bit.Droid
                 FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration
                 {
                     FadeAnimationEnabled = false,
-                    FadeAnimationForCachedImages = false
+                    FadeAnimationForCachedImages = false,
+                    HttpClient = new HttpClient(new AndroidClientHandler() { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate })
                 });
                 ZXing.Net.Mobile.Forms.Android.Platform.Init();
             });
@@ -88,19 +138,23 @@ namespace Bit.Droid
             var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var liteDbStorage = new LiteDbStorageService(Path.Combine(documentsPath, "bitwarden.db"));
             var localizeService = new LocalizeService();
-            var broadcasterService = new BroadcasterService();
+            var broadcasterService = new BroadcasterService(logger);
             var messagingService = new MobileBroadcasterMessagingService(broadcasterService);
             var i18nService = new MobileI18nService(localizeService.GetCurrentCultureInfo());
             var secureStorageService = new SecureStorageService();
             var cryptoPrimitiveService = new CryptoPrimitiveService();
             var mobileStorageService = new MobileStorageService(preferencesStorage, liteDbStorage);
-            var deviceActionService = new DeviceActionService(mobileStorageService, messagingService,
+            var stateService = new StateService(mobileStorageService, secureStorageService, messagingService);
+            var stateMigrationService =
+                new StateMigrationService(liteDbStorage, preferencesStorage, secureStorageService);
+            var clipboardService = new ClipboardService(stateService);
+            var deviceActionService = new DeviceActionService(clipboardService, stateService, messagingService,
                 broadcasterService, () => ServiceContainer.Resolve<IEventService>("eventService"));
-            var platformUtilsService = new MobilePlatformUtilsService(deviceActionService, messagingService,
-                broadcasterService);
+            var platformUtilsService = new MobilePlatformUtilsService(deviceActionService, clipboardService,
+                messagingService, broadcasterService);
             var biometricService = new BiometricService();
             var cryptoFunctionService = new PclCryptoFunctionService(cryptoPrimitiveService);
-            var cryptoService = new CryptoService(mobileStorageService, secureStorageService, cryptoFunctionService);
+            var cryptoService = new CryptoService(stateService, cryptoFunctionService);
             var passwordRepromptService = new MobilePasswordRepromptService(platformUtilsService, cryptoService);
 
             ServiceContainer.Register<IBroadcasterService>("broadcasterService", broadcasterService);
@@ -110,12 +164,16 @@ namespace Bit.Droid
             ServiceContainer.Register<ICryptoPrimitiveService>("cryptoPrimitiveService", cryptoPrimitiveService);
             ServiceContainer.Register<IStorageService>("storageService", mobileStorageService);
             ServiceContainer.Register<IStorageService>("secureStorageService", secureStorageService);
+            ServiceContainer.Register<IStateService>("stateService", stateService);
+            ServiceContainer.Register<IStateMigrationService>("stateMigrationService", stateMigrationService);
+            ServiceContainer.Register<IClipboardService>("clipboardService", clipboardService);
             ServiceContainer.Register<IDeviceActionService>("deviceActionService", deviceActionService);
             ServiceContainer.Register<IPlatformUtilsService>("platformUtilsService", platformUtilsService);
             ServiceContainer.Register<IBiometricService>("biometricService", biometricService);
             ServiceContainer.Register<ICryptoFunctionService>("cryptoFunctionService", cryptoFunctionService);
             ServiceContainer.Register<ICryptoService>("cryptoService", cryptoService);
             ServiceContainer.Register<IPasswordRepromptService>("passwordRepromptService", passwordRepromptService);
+            ServiceContainer.Register<IAvatarImageSourcePool>("avatarImageSourcePool", new AvatarImageSourcePool());
 
             // Push
 #if FDROID
@@ -128,7 +186,7 @@ namespace Bit.Droid
             ServiceContainer.Register<IPushNotificationListenerService>(
                 "pushNotificationListenerService", notificationListenerService);
             var androidPushNotificationService = new AndroidPushNotificationService(
-                mobileStorageService, notificationListenerService);
+                stateService, notificationListenerService);
             ServiceContainer.Register<IPushNotificationService>(
                 "pushNotificationService", androidPushNotificationService);
 #endif
@@ -144,10 +202,6 @@ namespace Bit.Droid
 
         private async Task BootstrapAsync()
         {
-            var disableFavicon = await ServiceContainer.Resolve<IStorageService>("storageService")
-                .GetAsync<bool?>(Constants.DisableFaviconKey);
-            await ServiceContainer.Resolve<IStateService>("stateService").SaveAsync(
-                Constants.DisableFaviconKey, disableFavicon);
             await ServiceContainer.Resolve<IEnvironmentService>("environmentService").SetUrlsFromStorageAsync();
         }
     }

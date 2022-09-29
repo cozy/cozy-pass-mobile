@@ -278,6 +278,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>آیا مطمئنید که می‌خواهید خارج شوید؟</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>حذف حساب</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>آیا از حذف این حساب اطمینان دارید؟</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>حساب قبلا اضافه شده</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value> آیا می خواهید همین الان تعویض کنید؟</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>کلمه عبور اصلی</value>
     <comment>Label for a master password.</comment>
@@ -289,6 +301,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>گاوصندوق من</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>Authenticator</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>نام</value>
@@ -314,7 +330,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>انتقال</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>درحال ذخیره...</value>
@@ -761,6 +777,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>فعال شد</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>روشن</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>وضعیت</value>
   </data>
@@ -789,7 +811,7 @@
     <value>شما به دنبال یافتن یک پر کردن خودکار برای "{0}" هستید.</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>درباره سازمانها اطلاعات کسب کنید</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>نمیتوان برنامه را باز کرد "{0}".</value>
@@ -804,7 +826,7 @@
     <comment>For 2FA</comment>
   </data>
   <data name="EnterVerificationCodeEmail" xml:space="preserve">
-    <value>کد ۶ رقمی تایید را که به {0} رایانامه شده را وارد کنید.</value>
+    <value>کد ۶ رقمی تأیید را که به {0} رایانامه شده را وارد کنید.</value>
     <comment>For 2FA</comment>
   </data>
   <data name="LoginUnavailable" xml:space="preserve">
@@ -880,11 +902,9 @@
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>کلید تأیید کننده را نمیتوان خواند.</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>اسکن خودکار رخ می دهد.</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>دوربین خود را بر روی کد QR قرار دهید.</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>Point your camera at the QR Code.
+Scanning will happen automatically.</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>اسکن کد QR</value>
@@ -898,11 +918,11 @@
   <data name="CopyTotp" xml:space="preserve">
     <value>رونوشت TOTP</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>اگر ورود شما دارای یک کلید تأیید کننده می‌باشد که به آن متصل شده است، هر زمان که وارد سایت شوید کد تأیید TOTP بصورت خودکار به کلیپ بورد شما کپی می شود.</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>اگر یک ورود دارای یک کلید احراز هویت باشد، هنگام تکمیل خودکار ورود، کد تأیید TOTP را در کلیپ برد خود کپی کن.</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>غیرفعال کردن کپی خودکار TOTP</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>TOTP را به صورت خودکار کپی کن</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>برای استفاده از این ویژگی عضویت پرمیوم لازم است.</value>
@@ -1062,6 +1082,9 @@
   <data name="LastName" xml:space="preserve">
     <value>نام خانوادگی</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>نام کامل</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>شماره مجوز</value>
   </data>
@@ -1116,11 +1139,11 @@
   <data name="Expiration" xml:space="preserve">
     <value>انقضاء</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>غیرفعال سازی آیکون های وب سایت</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>نمایش نمادهای وب سایت</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>آیکون های وب سایت یک تصویر مشخص در کنار هر داده ورودی ارائه میدهد.</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>یک تصویر قابل تشخیص در کنار هر ورود نشان دهید.</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>آدرس سرور آیکون ها</value>
@@ -1185,6 +1208,9 @@
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>مخفی</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>لینک شده</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>متن</value>
@@ -1357,11 +1383,15 @@
   <data name="SearchCollection" xml:space="preserve">
     <value>جستجوی مجموعه</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>جستجوی پوشه</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>ارسال های فایل را جستجو کن</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>جستجوی نوع</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>ارسال های متن را جستجو کن</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>جستوجو {0}</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>نوع</value>
@@ -1385,7 +1415,7 @@
     <value>هیچ مجموعه ای برای لیست کردن وجود ندارد.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} منتقل شد به {1}.</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1401,13 +1431,13 @@
     <value>اشتراک گذاری مورد</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>انتقال به سازمان</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>هیچ سازمانی برای نمایش وجود ندارد.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>سازمانی را انتخاب کنید که می خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>تعداد کلمات</value>
@@ -1438,7 +1468,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass به شما اجازه می دهد با استفاده از سازماندهی حساب، گاوصندوقهای خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت bitwarden.com برای کسب اطلاعات بیشتر هستید؟</value>
+    <value>Cozy Pass به شما اجازه می دهد با استفاده از سازماندهی حساب، موارد گاوصندوق خود را با دیگران به اشتراک بگذارید. آیا مایل به بازدید از وب سایت cozy.io برای کسب اطلاعات بیشتر هستید؟</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>خروجی گرفتن از گاوصندوق</value>
@@ -1451,6 +1481,9 @@
   </data>
   <data name="Unlock" xml:space="preserve">
     <value>باز کردن قفل</value>
+  </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>بازگشایی گاوصندوق</value>
   </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>۳۰ دقیقه</value>
@@ -1467,6 +1500,9 @@
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تأیید کنید.</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>گاوصندوق شما قفل شده است. برای ادامه هویت خود را تأیید کنید.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>تیره</value>
@@ -1514,7 +1550,13 @@
     <value>تغییر رنگ پوسته برنامه.</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>پیش فرض (سیستم)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>تم تیره پیش‌فرض</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>هنگام استفاده از طرح زمینه پیش‌فرض (سیستم) در حالی که حالت تاریک دستگاه شما فعال است، تم تیره را انتخاب کنید</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>رونوشت یادداشتها</value>
@@ -1532,17 +1574,21 @@
     <value>سیاه</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>فهرست سیاه آدرس های اینترنتی</value>
+  <data name="Nord" xml:space="preserve">
+    <value>نُرد</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>URIs that are blacklisted will not offer auto-fill. The list of apps should be comma separated. Ex: "https://twitter.com, androidapp://com.twitter.android".</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>پر کردن خودکار URI های مسدود شده</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>غیر فعال کردن ذخیره سریع</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>تکمیل خودکار برای URI های مسدود شده ارائه نمی شود. چندین URI را با کاما جدا کنید. به عنوان مثال: "https://twitter.com، androidapp://com.twitter.android".</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>"ذخیره سریع" به صورت خودکار باعث افزایش سرعت شما برای ذخیره موارد جدید در گاوصندوقتان می شود زمانی که شما آنها را برای اولین بار وارد میکند.</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>درخواست اضافه کردن ورود به سیستم</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>در صورتی که موردی در گاوصندوق شما یافت نشد، درخواست افزودن کنید.</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
     <value>راه اندازی مجدد در برنامه</value>
@@ -1607,6 +1653,15 @@
   </data>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>کلمه عبور اصلی خود را برای خروجی گرفتن از گاوصندوقتان وارد کنید.</value>
+  </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>ارسال یک کد تأیید به ایمیل شما</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>کد ارسال شد!</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>برای ادامه هویت خود را تأیید کنید.</value>
   </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>این خروجی شامل داده‌های گاوصندوق در یک قالب رمزنگاری نشده است. شما نباید آن را از طریق یک راه ارتباطی ناامن (مثل ایمیل) ذخیره یا ارسال کنید. به محض اینکه استفاده‌تان از آن تمام شد، آن را حذف کنید.</value>
@@ -1826,6 +1881,9 @@
     <value>یک نام دوستانه برای توصیف این ارسال.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
+  <data name="Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
   <data name="TypeText" xml:space="preserve">
     <value>متن</value>
   </data>
@@ -1841,6 +1899,18 @@
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
     <value>فایلی که می خواهید ارسال کنید.</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>نوع فایل انتخاب شده است.</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>نوع فایل انتخاب نشده است، برای انتخاب ضربه بزنید.</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>نوع متن انتخاب شده است.</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>نوع متن انتخاب نشده است، برای انتخاب ضربه بزنید.</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
     <value>تاریخ حذف</value>
@@ -2009,54 +2079,242 @@
     <value>این عمل محافظت می شود. برای ادامه، لطفاً کلمه ورود اصلی خود را دوباره وارد کنید تا هویتان را تأیید کنید.</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>نیازمند کپچا</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>کپچا اشتباه بود. لطفا دوباره سعی کنید.</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>کلمه عبور اصلی بروز شد</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>بروزرسانی کلمه عبور اصلی</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>کلمه عبور اصلی شما اخیراً توسط سرپرست سازمانتان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند.</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>در حال به روز رسانی رمز عبور...</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>در حال حاضر نمی توان کلمه عبور را به روز کرد</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>پاک کردن کلمه عبور اصلی</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} از SSO با رمزگذاری مدیریت شده توسط مشتری استفاده می کند. ادامه، کلمه عبور اصلی شما را از حساب شما حذف می کند و نیاز به ورود SSO دارد.</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>اگر نمی‌خواهید کلمه عبور اصلی خود را حذف کنید، می‌توانید این سازمان را ترک کنید.</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>ترک سازمان</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>{0} را ترک می‌کنید؟</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
-    <value>FIDO2 WebAuthn</value>
+    <value>FIDO2 WebAuthn
+</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>برای ادامه، کلید امنیتی FIDO2 WebAuthn خود را فعال کنید و دستورالعمل ها را پس از کلیک روی "احراز هویت WebAuthn" در صفحه بعدی دنبال کنید.</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>احراز هویت با استفاده از FIDO2 WebAuthn، می توانید با استفاده از یک کلید امنیتی خارجی احراز هویت کنید.</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>تأیید اعتبار در WebAuthn</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>بازگشت به برنامه</value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>لطفاً مطمئن شوید که مرورگر پیش فرض شما از WebAuthn پشتیبانی می کند و دوباره امتحان کنید.</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>این سازمان دارای خط مشی سازمانی ای است که به طور خودکار شما را در بازنشانی کلمه عبور ثبت نام می کند. این ثبت نام به مدیران سازمان اجازه می دهد تا کلمه عبور اصلی شما را تغییر دهند.</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>خط مشی های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می گذارد. حداکثر زمان مجاز گاوصندوق {0} ساعت و {1} دقیقه است</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
-    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+    <value>مهلت زمانی شما بیش از محدودیت های تعیین شده توسط سازمانتان است.</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
-    <value>One or more organization policies prevents your from exporting your personal vault.</value>
+    <value>یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند.</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>افزودن حساب کاربری</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>باز شده</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>قفل شده</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>خارج شده</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>به حساب بعدی موجود تغییر کرد</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>حساب قفل شده است</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>حساب کاربری با موفقیت خارج شد</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>حساب کاربری با موفقیت حذف شد</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>حذف حساب</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>حذف حساب شما دائمی است</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>حساب شما و تمام داده های مرتبط پاک می شود و قابل بازیابی نیست. آیا مطمئن هستید که میخواهید ادامه دهید؟</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>در حال حذف حساب شما</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>حساب شما برای همیشه حذف شده است</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>کد تأیید نامعتبر است.</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>درخواست رمز یکبار مصرف</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>ارسال کد</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>درحال ارسال</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>لینک ارسال را در ذخیره کپی کن</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>درحال ارسال کد</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>درحال بررسی</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>ارسال مجدد کد</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>یک کد تأیید به ایمیل شما ارسال گردید</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>هنگام ارسال کد تأیید به ایمیل شما خطایی رخ داد. لطفا دوباره تلاش کنید</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>کد تأییدی که به ایمیل شما ارسال شده است را وارد کنید</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>گزارش‌های خرابی را ارسال کنید</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>با ارسال گزارش‌های خرابی، به Bitwarden در بهبود پایداری برنامه کمک کنید.</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>گزینه‌ها بزرگ شده اند، برای جمع کردن ضربه بزنید.</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>گزینه‌ها جمع شده‌اند، برای بزرگ کردن ضربه بزنید.</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>حروف بزرگ (A تا Z)</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>حروف کوچک (A تا Z)</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>اعداد (‪0 to 9‬)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>نویسه‌های ویژه (!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>برای بازگشت ضربه بزنید</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>کلمه عبور قابل مشاهده است، برای نمایش ضربه بزنید.</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>کلمه عبور قابل مشاهده نیست، برای نمایش ضربه بزنید.</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>فیلتر موارد بر اساس گاو‌صندوق</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>تمام گاو‌صندوق‌ها</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>گاوصندوق ها</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>گاوصندوق: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>Verification Codes</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>Premium subscription required</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>Cannot add authenticator key? </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Scan QR Code</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>Cannot scan QR Code? </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>Authenticator Key</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>Enter Key Manually</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>Add TOTP</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>Set up TOTP</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>Once the key is successfully entered,
+select Add TOTP to store the key safely</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>با تنظیم گزینه‌های قفل روی «هرگز»، گاوصندوق شما برای هر کسی که به دستگاه شما دسترسی دارد در دسترس نگه داشته می‌شود. اگر از این گزینه استفاده می کنید، باید مطمئن شوید که دستگاه خود را به درستی محافظت می‌کنید.</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>یک یا چند URL وارد شده نامعتبر است. لطفاً آن را اصلاح کنید و دوباره سعی کنید ذخیره کنید.</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>ما نتوانستیم درخواست شما را پردازش کنیم. لطفاً دوباره امتحان کنید یا با ما تماس بگیرید.</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>اجازه ضبط صفحه</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>آیا مطمئن هستید که می خواهید ضبط صفحه را فعال کنید؟</value>
   </data>
 </root>

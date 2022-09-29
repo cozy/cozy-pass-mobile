@@ -1,12 +1,15 @@
-﻿using Bit.App.Abstractions;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Bit.App.Abstractions;
+using Bit.App.Controls;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Utilities;
-using System;
-using System.Threading.Tasks;
-using Bit.App.Utilities;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 using System.Windows.Input;
 using System.Net;
@@ -15,22 +18,22 @@ namespace Bit.App.Pages
 {
     public class LoginPageViewModel : CaptchaProtectedViewModel
     {
-        private const string Keys_RememberedEmail = "rememberedEmail";
-        private const string Keys_RememberEmail = "rememberEmail";
-
         private readonly IDeviceActionService _deviceActionService;
         private readonly IAuthService _authService;
         private readonly ISyncService _syncService;
-        private readonly IStorageService _storageService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly IStateService _stateService;
         private readonly IEnvironmentService _environmentService;
         private readonly II18nService _i18nService;
+        private readonly IMessagingService _messagingService;
+        private readonly ILogger _logger;
         private readonly ICozyClientService _cozyClientService;
 
         private bool _showPassword;
+        private bool _showCancelButton;
         private string _email;
         private string _masterPassword;
+        private bool _isEmailEnabled;
 
         // Cozy customization, display error message on form
         //*
@@ -42,16 +45,24 @@ namespace Bit.App.Pages
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _authService = ServiceContainer.Resolve<IAuthService>("authService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _environmentService = ServiceContainer.Resolve<IEnvironmentService>("environmentService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
+            _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
+            _logger = ServiceContainer.Resolve<ILogger>("logger");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             PageTitle = AppResources.CozyPass;
             TogglePasswordCommand = new Command(TogglePassword);
             LogInCommand = new Command(async () => await LogInAsync());
+            MoreCommand = new AsyncCommand(MoreAsync, onException: _logger.Exception, allowsMultipleExecutions: false);
+
+            AccountSwitchingOverlayViewModel = new AccountSwitchingOverlayViewModel(_stateService, _messagingService, _logger)
+            {
+                AllowAddAccountRow = true,
+                AllowActiveAccountSelection = true
+            };
         }
 
         public bool ShowPassword
@@ -60,8 +71,15 @@ namespace Bit.App.Pages
             set => SetProperty(ref _showPassword, value,
                 additionalPropertyNames: new string[]
                 {
-                    nameof(ShowPasswordIcon)
+                    nameof(ShowPasswordIcon),
+                    nameof(PasswordVisibilityAccessibilityText)
                 });
+        }
+
+        public bool ShowCancelButton
+        {
+            get => _showCancelButton;
+            set => SetProperty(ref _showCancelButton, value);
         }
 
         public string Email
@@ -76,6 +94,16 @@ namespace Bit.App.Pages
             set => SetProperty(ref _masterPassword, value);
         }
 
+        public bool IsEmailEnabled
+        {
+            get => _isEmailEnabled;
+            set => SetProperty(ref _isEmailEnabled, value);
+        }
+
+        public bool IsIosExtension { get; set; }
+
+        public AccountSwitchingOverlayViewModel AccountSwitchingOverlayViewModel { get; }
+
         // Cozy customization, display error message on form
         //*
         public string ErrorMsg
@@ -87,8 +115,9 @@ namespace Bit.App.Pages
 
         public Command LogInCommand { get; }
         public Command TogglePasswordCommand { get; }
-        public string ShowPasswordIcon => ShowPassword ? "" : "";
-        public bool RememberEmail { get; set; }
+        public ICommand MoreCommand { get; internal set; }
+        public string ShowPasswordIcon => ShowPassword ? BitwardenIcons.EyeSlash : BitwardenIcons.Eye;
+        public string PasswordVisibilityAccessibilityText => ShowPassword ? AppResources.PasswordIsVisibleTapToHide : AppResources.PasswordIsNotVisibleTapToShow;
         public Action StartTwoFactorAction { get; set; }
         public Action LogInSuccessAction { get; set; }
         public Action UpdateTempPasswordAction { get; set; }
@@ -103,13 +132,11 @@ namespace Bit.App.Pages
         {
             if (string.IsNullOrWhiteSpace(Email))
             {
-                Email = await _storageService.GetAsync<string>(Keys_RememberedEmail);
+                Email = await _stateService.GetRememberedEmailAsync();
             }
-            var rememberEmail = await _storageService.GetAsync<bool?>(Keys_RememberEmail);
-            RememberEmail = rememberEmail.GetValueOrDefault(true);
         }
 
-        public async Task LogInAsync(bool showLoading = true)
+        public async Task LogInAsync(bool showLoading = true, bool checkForExistingAccount = false)
         {
             // Cozy customization, display error message on form
             //*
@@ -168,28 +195,37 @@ namespace Bit.App.Pages
             ShowPassword = false;
             try
             {
+                if (checkForExistingAccount)
+                {
+                    var userId = await _stateService.GetUserIdAsync(Email);
+                    if (!string.IsNullOrWhiteSpace(userId))
+                    {
+                        var userEnvUrls = await _stateService.GetEnvironmentUrlsAsync(userId);
+                        if (userEnvUrls?.Base == _environmentService.BaseUrl)
+                        {
+                            await PromptToSwitchToExistingAccountAsync(userId);
+                            return;
+                        }
+                    }
+                }
+
                 if (showLoading)
                 {
                     await _deviceActionService.ShowLoadingAsync(AppResources.LoggingIn);
                 }
 
-                #region cozy
-                // Email field is used as CozyURL, it is not renamed not to change the original code
+                // Cozy customization, Email field is used as CozyURL, it is not renamed not to change the original code
                 // too much.
+                /*
+                var response = await _authService.LogInAsync(Email, MasterPassword, _captchaToken);
+                /*/
                 var cozyURL = UrlHelper.SanitizeUrl(Email);
                 await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
                 var email = _cozyClientService.GetEmailFromCozyURL(cozyURL);
                 var response = await _authService.LogInAsync(email, MasterPassword, _captchaToken);
-                #endregion
+                //*/
 
-                if (RememberEmail)
-                {
-                    await _storageService.SaveAsync(Keys_RememberedEmail, Email);
-                }
-                else
-                {
-                    await _storageService.RemoveAsync(Keys_RememberedEmail);
-                }
+                await _stateService.SetRememberedEmailAsync(Email);
                 await AppHelpers.ResetInvalidUnlockAttemptsAsync();
 
                 if (response.CaptchaNeeded)
@@ -216,8 +252,6 @@ namespace Bit.App.Pages
                 }
                 else
                 {
-                    var disableFavicon = await _storageService.GetAsync<bool?>(Constants.DisableFaviconKey);
-                    await _stateService.SaveAsync(Constants.DisableFaviconKey, disableFavicon.GetValueOrDefault());
                     var task = Task.Run(async () => await _syncService.FullSyncAsync(true));
                     LogInSuccessAction?.Invoke();
                 }
@@ -262,12 +296,63 @@ namespace Bit.App.Pages
             }
         }
 
+        private async Task MoreAsync()
+        {
+            var buttons = IsEmailEnabled
+                ? new[] { AppResources.GetPasswordHint }
+                : new[] { AppResources.GetPasswordHint, AppResources.RemoveAccount };
+            var selection = await _deviceActionService.DisplayActionSheetAsync(AppResources.Options, AppResources.Cancel, null, buttons);
+
+            if (selection == AppResources.GetPasswordHint)
+            {
+                var hintNavigationPage = new NavigationPage(new HintPage());
+                if (IsIosExtension)
+                {
+                    ThemeManager.ApplyResourcesTo(hintNavigationPage);
+                }
+                await Page.Navigation.PushModalAsync(hintNavigationPage);
+            }
+            else if (selection == AppResources.RemoveAccount)
+            {
+                await RemoveAccountAsync();
+            }
+        }
+
         public void TogglePassword()
         {
             ShowPassword = !ShowPassword;
             var entry = (Page as LoginPage).MasterPasswordEntry;
             entry.Focus();
             entry.CursorPosition = String.IsNullOrEmpty(MasterPassword) ? 0 : MasterPassword.Length;
+        }
+
+        public async Task RemoveAccountAsync()
+        {
+            try
+            {
+                var confirmed = await _platformUtilsService.ShowDialogAsync(AppResources.RemoveAccountConfirmation,
+                    AppResources.RemoveAccount, AppResources.Yes, AppResources.Cancel);
+                if (confirmed)
+                {
+                    _messagingService.Send("logout");
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.Exception(e);
+            }
+        }
+
+        private async Task PromptToSwitchToExistingAccountAsync(string userId)
+        {
+            var switchToAccount = await _platformUtilsService.ShowDialogAsync(
+                AppResources.SwitchToAlreadyAddedAccountConfirmation,
+                AppResources.AccountAlreadyAdded, AppResources.Yes, AppResources.Cancel);
+            if (switchToAccount)
+            {
+                await _stateService.SetActiveUserAsync(userId);
+                _messagingService.Send("switchedAccount");
+            }
         }
 
         // Cozy customization, get cozy address if user forgot it

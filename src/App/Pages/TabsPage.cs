@@ -1,8 +1,11 @@
-﻿using Bit.App.Effects;
+﻿using System;
+using System.Threading.Tasks;
+using Bit.App.Effects;
 using Bit.App.Models;
 using Bit.App.Resources;
 using Bit.App.Utilities;
 using Bit.Core.Abstractions;
+using Bit.Core.Models.Data;
 using Bit.Core.Utilities;
 using Xamarin.Forms;
 
@@ -10,15 +13,20 @@ namespace Bit.App.Pages
 {
     public class TabsPage : TabbedPage
     {
+        private readonly IBroadcasterService _broadcasterService;
         private readonly IMessagingService _messagingService;
-        
+        private readonly IKeyConnectorService _keyConnectorService;
+        private readonly LazyResolve<ILogger> _logger = new LazyResolve<ILogger>("logger");
+
         private NavigationPage _groupingsPage;
         private NavigationPage _sendGroupingsPage;
         private NavigationPage _generatorPage;
 
         public TabsPage(AppOptions appOptions = null, PreviousPageInfo previousPage = null)
         {
+            _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
+            _keyConnectorService = ServiceContainer.Resolve<IKeyConnectorService>("keyConnectorService");
 
             _groupingsPage = new NavigationPage(new GroupingsPage(true, previousPage: previousPage))
             {
@@ -30,7 +38,7 @@ namespace Bit.App.Pages
             _sendGroupingsPage = new NavigationPage(new SendGroupingsPage(true, null, null, appOptions))
             {
                 Title = AppResources.Send,
-                IconImageSource = "paper_plane.png",
+                IconImageSource = "send.png",
             };
             // Cozy customization, disable "Send" functionality until implemented on Stack side
             /* 
@@ -40,14 +48,14 @@ namespace Bit.App.Pages
             _generatorPage = new NavigationPage(new GeneratorPage(true, null, this))
             {
                 Title = AppResources.Generator,
-                IconImageSource = "refresh.png"
+                IconImageSource = "generate.png"
             };
             Children.Add(_generatorPage);
 
             var settingsPage = new NavigationPage(new SettingsPage(this))
             {
                 Title = AppResources.Settings,
-                IconImageSource = "cog.png"
+                IconImageSource = "cog_settings.png"
             };
             Children.Add(settingsPage);
 
@@ -77,6 +85,29 @@ namespace Bit.App.Pages
             ThemeManager.UnsetInvertedTheme();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            _broadcasterService.Subscribe(nameof(TabsPage), async (message) =>
+            {
+                if (message.Command == "syncCompleted")
+                {
+                    Device.BeginInvokeOnMainThread(async () => await UpdateVaultButtonTitleAsync());
+                }
+            });
+            await UpdateVaultButtonTitleAsync();
+            if (await _keyConnectorService.UserNeedsMigration())
+            {
+                _messagingService.Send("convertAccountToKeyConnector");
+            }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _broadcasterService.Unsubscribe(nameof(TabsPage));
+        }
+
         public void ResetToVaultPage()
         {
             CurrentPage = _groupingsPage;
@@ -86,7 +117,7 @@ namespace Bit.App.Pages
         {
             CurrentPage = _generatorPage;
         }
-        
+
         public void ResetToSendPage()
         {
             CurrentPage = _sendGroupingsPage;
@@ -96,8 +127,13 @@ namespace Bit.App.Pages
         {
             if (CurrentPage is NavigationPage navPage)
             {
+                if (_groupingsPage?.RootPage is GroupingsPage groupingsPage)
+                {
+                    await groupingsPage.HideAccountSwitchingOverlayAsync();
+                }
+
                 _messagingService.Send("updatedTheme");
-                if (navPage.RootPage is GroupingsPage groupingsPage)
+                if (navPage.RootPage is GroupingsPage)
                 {
                     // Load something?
                 }
@@ -109,6 +145,28 @@ namespace Bit.App.Pages
                 {
                     await settingsPage.InitAsync();
                 }
+            }
+        }
+
+        public void OnPageReselected()
+        {
+            if (_groupingsPage?.RootPage is GroupingsPage groupingsPage)
+            {
+                groupingsPage.HideAccountSwitchingOverlayAsync().FireAndForget();
+            }
+        }
+
+        private async Task UpdateVaultButtonTitleAsync()
+        {
+            try
+            {
+                var policyService = ServiceContainer.Resolve<IPolicyService>("policyService");
+                var isShowingVaultFilter = await policyService.ShouldShowVaultFilterAsync();
+                _groupingsPage.Title = isShowingVaultFilter ? AppResources.Vaults : AppResources.MyVault;
+            }
+            catch (Exception ex)
+            {
+                _logger.Value.Exception(ex);
             }
         }
     }

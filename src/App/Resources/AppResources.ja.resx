@@ -278,6 +278,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>ログアウトしてもよろしいですか？</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>アカウントを削除</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>このアカウントを削除してもよろしいですか？</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>アカウントは追加済みです</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value>今すぐ切り替えますか？</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>マスターパスワード</value>
     <comment>Label for a master password.</comment>
@@ -289,6 +301,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>保管庫</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>認証システム</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>名前</value>
@@ -314,7 +330,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>移動</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>保存中...</value>
@@ -761,6 +777,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>有効</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>オン</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>状態</value>
   </data>
@@ -789,7 +811,7 @@
     <value>「{0}」への自動入力アイテムを検索中です。</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>組織について学ぶ</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>{0} を開けません。</value>
@@ -880,11 +902,9 @@
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>認証キーを読み取れません。</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>自動的に読み取ります。</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>カメラで QR コードを写してください。</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>QR コードにカメラを向けてください。
+スキャンは自動的に行われます。</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>QR コードを読み取る</value>
@@ -898,11 +918,11 @@
   <data name="CopyTotp" xml:space="preserve">
     <value>TOTP のコピー</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>ログイン情報に認証キーが添付されている場合、自動入力した時に認証コードが自動的にクリップボードへコピーされます。</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>ログイン情報に認証キーがある場合は、自動入力時にクリップボードに TOTP 認証コードをコピーします。</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>認証コードの自動コピーを無効化</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>TOTP を自動的にコピー</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>この機能を使うにはプレミアム会員になってください。</value>
@@ -1062,6 +1082,9 @@
   <data name="LastName" xml:space="preserve">
     <value>姓</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>フルネーム</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>免許証番号</value>
   </data>
@@ -1116,11 +1139,11 @@
   <data name="Expiration" xml:space="preserve">
     <value>有効期限</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>ウェブサイトアイコンの無効化</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>ウェブサイトのアイコンを表示</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>保管庫のアイテム毎にウェブサイトのアイコンを表示します。</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>ログイン情報の隣にアイコン画像を表示します</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>アイコンのサーバー URL</value>
@@ -1185,6 +1208,9 @@
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>非表示</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>リンク済</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>テキスト</value>
@@ -1314,7 +1340,7 @@
     <value>ログイン</value>
   </data>
   <data name="SecureNotes" xml:space="preserve">
-    <value>秘密のメモ</value>
+    <value>セキュアメモ</value>
   </data>
   <data name="AllItems" xml:space="preserve">
     <value>すべてのアイテム</value>
@@ -1357,11 +1383,15 @@
   <data name="SearchCollection" xml:space="preserve">
     <value>コレクションの検索</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>フォルダーの検索</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>Send ファイルを検索</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>タイプの検索</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>Send テキストを検索</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>{0} を検索</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>タイプ</value>
@@ -1385,7 +1415,7 @@
     <value>表示するコレクションがありません</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} を {1} に移動しました。</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1401,13 +1431,13 @@
     <value>アイテムを共有する</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>組織に移動</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>表示する組織がありません。</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>このアイテムを移動する組織を選択してください。組織に移動すると、アイテムの所有権がその組織に移行します。 このアイテムが移動された後、あなたはこのアイテムの直接の所有者にはなりません。</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>単語数</value>
@@ -1430,7 +1460,7 @@
     <value>表示するフォルダーがありません。</value>
   </data>
   <data name="FingerprintPhrase" xml:space="preserve">
-    <value>パスフレーズ</value>
+    <value>指紋句</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="YourAccountsFingerprint" xml:space="preserve">
@@ -1452,6 +1482,9 @@
   <data name="Unlock" xml:space="preserve">
     <value>ロック解除</value>
   </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>保管庫のロックを解除</value>
+  </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>30分</value>
   </data>
@@ -1467,6 +1500,9 @@
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>保管庫がロックされています。PIN コードで認証してください。</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>保管庫がロックされています。続行するには本人確認を行ってください。</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>ダーク</value>
@@ -1514,7 +1550,13 @@
     <value>アプリのテーマカラーを変更します。</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>デフォルト (システム)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>デフォルトのダークテーマ</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>デバイスでダークモードが有効になっている間、デフォルト（システム）テーマを使用するときに使用するダークテーマを選択してください</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>メモをコピー</value>
@@ -1532,17 +1574,21 @@
     <value>ブラック</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>URI ブラックリスト</value>
+  <data name="Nord" xml:space="preserve">
+    <value>Nord</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>ブラックリストに入れたURIでは自動入力を行いません。リストはコンマで区切ってください。（例）"https://twitter.com, androidapp://com.twitter.android"</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>自動入力をブロックする URI</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>保存プロンプトを無効化</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>自動入力をさせない URI を指定してください。複数の URI をコンマで区切ってください。例: "https://twitter.com, androidapp://com.twitter.android"</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>新しいアイテムを入力したとき、保管庫に保存するかどうか尋ねるためのプロンプトを自動的に表示します。</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>ログイン情報の追加を尋ねる</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>保管庫にアイテムが見つからない場合に、追加するか尋ねます。</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
     <value>アプリ再起動時</value>
@@ -1607,6 +1653,15 @@
   </data>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>保管庫のデータをエクスポートするには、マスターパスワードを入力してください。</value>
+  </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>確認コードをメールに送信</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>確認コードを送信しました。</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>続行するには本人確認を行ってください。</value>
   </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。</value>
@@ -1826,6 +1881,9 @@
     <value>この Send を説明するわかりやすい名前</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
+  <data name="Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
   <data name="TypeText" xml:space="preserve">
     <value>テキスト</value>
   </data>
@@ -1841,6 +1899,18 @@
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
     <value>送信するファイル</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>ファイルの種類を選択しました。</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>ファイルの種類が選択されていません。タップして選択してください。</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>テキストの種類を選択しました。</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>テキストの種類が選択されていません。タップして選択してください。</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
     <value>削除日</value>
@@ -2009,54 +2079,241 @@
     <value>この操作は保護されています。続行するには、確認のためにマスターパスワードを再入力してください。</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>キャプチャが要求されました</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>キャプチャに失敗しました。もう一度やり直してください。</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>マスターパスワードを更新しました</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>マスターパスワードを更新しました</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>マスターパスワードは最近組織の管理者によって変更されました。保管庫にアクセスするには、今すぐ更新する必要があります。 続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続けることがあります。</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>パスワードの更新</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>現在パスワードを更新できません。</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>マスターパスワードを削除する</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} は、顧客側で管理する暗号化で SSO を使用しています。続行すると、アカウントからマスターパスワードが削除され、ログインするには SSO が必要になります。</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>マスターパスワードを削除したくない場合は、組織から脱退してください。</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>組織から脱退する</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>{0} から脱退しますか?</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
     <value>FIDO2 WebAuthn</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>続けるには FIDO2 WebAuthn セキュリティキーを有効にしてから、次の画面で「WebAuthn の認証」をクリックして指示に従ってください。</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>FIDO2 WebAuthn 外部セキュリティキーを使用して認証できます。</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>WebAuthn の認証</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>アプリに戻る</value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>デフォルトのブラウザが WebAuthn をサポートしていることを確認して、もう一度やり直してください。</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>この組織には自動的にパスワードリセットに登録するポリシーがあります。登録すると、組織の管理者はマスターパスワードを変更できます。</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>組織のポリシーが保管庫のタイムアウトに影響を与えています。保管庫のタイムアウトは {0} 時間 {1} 分です。</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
-    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+    <value>保管庫のタイムアウトが組織によって設定された制限を超えています。</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
-    <value>One or more organization policies prevents your from exporting your personal vault.</value>
+    <value>1 つまたは複数の組織ポリシーにより、個人の保管庫をエクスポートできません。</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>アカウントを追加</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>ロック解除済み</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>ロック済み</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>ログアウト済み</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>次の利用可能なアカウントに切り替えました</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>アカウントをロックしました</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>ログアウトしました</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>アカウントを削除しました</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>アカウントの削除</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>アカウントを完全に削除します</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>アカウントと関連するすべてのデータが消去され、回復不能になります。続行しますか？</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>アカウントを削除中</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>アカウントを完全に削除しました</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>認証コードが無効です。</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>ワンタイムパスワードを要求する</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>コードを送信</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>送信中</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>保存時に Send リンクをコピー</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>コードを送信中</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>検証中</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>コードを再送信</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>確認コードをあなたのメールアドレスに送信しました</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>確認コードの送信中にエラーが発生しました。もう一度やり直してください。</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>メールアドレスに送信された確認コードを入力してください</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>クラッシュログを送信</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>クラッシュレポートを送信すると、Bitwarden アプリの安定性を向上させるために役立ちます。</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>オプションを展開しました。タップして折りたたみます。</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>オプションが折りたたまれています。タップすると展開します。</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>大文字（A～Z）</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>小文字（a～z）</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>数値 (0～9)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>特殊文字（!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>タップして戻る</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>パスワードが表示されています。タップして非表示にします。</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>パスワードは非表示です。タップして表示します。</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>アイテムを保管庫でフィルター</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>すべての保管庫</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>保管庫</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>保管庫: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>認証コード</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>プレミアム版が必要です</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>認証キーを追加できませんか？ </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>QR コードを読み取る</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>QR コードをスキャンできませんか？ </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>認証キー</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>キーを手動で入力してください</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>TOTP を追加</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>TOTP の設定</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>キーを入力したら、安全に保存するため
+『TOTP を追加』を選択してください。</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>ロックオプションを「なし」に設定すると、あなたのデバイスを操作できる誰もが保管庫を見られます。 このオプションを使用する場合は、デバイスを適切に保護しておく必要があります。</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>入力されたURLのうち1つ以上が無効です。変更して再度保存してください。</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>リクエストを処理できませんでした。もう一度やり直すか、お問い合わせください。</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>スクリーンショットを許可</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>スクリーンショットを撮影できるようにしてもよろしいですか？</value>
   </data>
 </root>

@@ -39,11 +39,7 @@ namespace Bit.iOS.Autofill
                 SearchBar.SearchTextField.TextColor = ThemeHelpers.TextColor;
 #pragma warning restore XI0002 // Notifies you from using newer Apple APIs when targeting an older OS version
             }
-            
-            if (!ThemeHelpers.LightTheme)
-            {
-                SearchBar.KeyboardAppearance = UIKeyboardAppearance.Dark;
-            }
+            SearchBar.UpdateThemeIfNeeded();
 
             TableView.RowHeight = UITableView.AutomaticDimension;
             TableView.EstimatedRowHeight = 44;

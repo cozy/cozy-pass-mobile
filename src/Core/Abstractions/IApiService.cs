@@ -1,10 +1,11 @@
-﻿using Bit.Core.Models.Domain;
-using Bit.Core.Models.Request;
-using Bit.Core.Models.Response;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Bit.Core.Enums;
+using Bit.Core.Models.Domain;
+using Bit.Core.Models.Request;
+using Bit.Core.Models.Response;
 
 namespace Bit.Core.Abstractions
 {
@@ -27,6 +28,8 @@ namespace Bit.Core.Abstractions
         Task<SyncResponse> GetSyncAsync();
         Task PostAccountKeysAsync(KeysRequest request);
         Task PostAccountVerifyPasswordAsync(PasswordVerificationRequest request);
+        Task PostAccountRequestOTP();
+        Task PostAccountVerifyOTPAsync(VerifyOTPRequest request);
         Task<CipherResponse> PostCipherAsync(CipherRequest request);
         Task<CipherResponse> PostCipherCreateAsync(CipherCreateRequest request);
         Task<FolderResponse> PostFolderAsync(FolderRequest request);
@@ -42,9 +45,9 @@ namespace Bit.Core.Abstractions
         Task PutDeleteCipherAsync(string id);
         Task<CipherResponse> PutRestoreCipherAsync(string id);
         Task RefreshIdentityTokenAsync();
-        Task<object> PreValidateSso(string identifier);
+        Task<SsoPrevalidateResponse> PreValidateSso(string identifier);
         Task<TResponse> SendAsync<TRequest, TResponse>(HttpMethod method, string path,
-            TRequest body, bool authed, bool hasResponse);
+            TRequest body, bool authed, bool hasResponse, bool logoutOnUnauthorized = true);
         void SetUrls(EnvironmentUrls urls);
         [Obsolete("Mar 25 2021: This method has been deprecated in favor of direct uploads. This method still exists for backward compatibility with old server versions.")]
         Task<CipherResponse> PostCipherAttachmentLegacyAsync(string id, MultipartFormDataContent data);
@@ -59,10 +62,16 @@ namespace Bit.Core.Abstractions
         Task PutDeviceTokenAsync(string identifier, DeviceTokenRequest request);
         Task PostEventsCollectAsync(IEnumerable<EventRequest> request);
         Task PutUpdateTempPasswordAsync(UpdateTempPasswordRequest request);
+        Task DeleteAccountAsync(DeleteAccountRequest request);
         Task<OrganizationKeysResponse> GetOrganizationKeysAsync(string id);
         Task<OrganizationAutoEnrollStatusResponse> GetOrganizationAutoEnrollStatusAsync(string identifier);
         Task PutOrganizationUserResetPasswordEnrollmentAsync(string orgId, string userId,
             OrganizationUserResetPasswordEnrollmentRequest request);
+        Task<KeyConnectorUserKeyResponse> GetUserKeyFromKeyConnector(string keyConnectorUrl);
+        Task PostUserKeyToKeyConnector(string keyConnectorUrl, KeyConnectorUserKeyRequest request);
+        Task PostSetKeyConnectorKey(SetKeyConnectorKeyRequest request);
+        Task PostConvertToKeyConnector();
+        Task PostLeaveOrganization(string id);
 
         Task<SendResponse> GetSendAsync(string id);
         Task<SendResponse> PostSendAsync(SendRequest request);
@@ -74,5 +83,6 @@ namespace Bit.Core.Abstractions
         Task<SendResponse> PutSendAsync(string id, SendRequest request);
         Task<SendResponse> PutSendRemovePasswordAsync(string id);
         Task DeleteSendAsync(string id);
+        Task<string> GetUsernameFromAsync(ForwardedEmailServiceType service, UsernameGeneratorConfig config);
     }
 }

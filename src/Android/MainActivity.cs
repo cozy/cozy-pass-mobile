@@ -1,62 +1,53 @@
-﻿using Android.App;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.OS;
-using Bit.Core;
-using System.Linq;
-using Bit.App.Abstractions;
-using Bit.Core.Utilities;
-using Bit.Core.Abstractions;
+﻿using System;
 using System.IO;
-using System;
-using Android.Content;
-using Bit.Droid.Utilities;
-using Bit.Droid.Receivers;
-using Bit.App.Models;
-using Bit.Core.Enums;
-using Android.Nfc;
+using System.Linq;
 using System.Threading.Tasks;
+using Android.App;
+using Android.Content;
+using Android.Content.PM;
+using Android.Content.Res;
+using Android.Nfc;
+using Android.OS;
+using Android.Runtime;
 using AndroidX.Core.Content;
+using Bit.App.Abstractions;
+using Bit.App.Models;
 using Bit.App.Utilities;
+using Bit.Core;
+using Bit.Core.Abstractions;
+using Bit.Core.Enums;
+using Bit.Core.Utilities;
+using Bit.Droid.Receivers;
+using Bit.Droid.Utilities;
+using Xamarin.Essentials;
 using ZXing.Net.Mobile.Android;
+using FileProvider = AndroidX.Core.Content.FileProvider;
 
 namespace Bit.Droid
 {
-    [IntentFilter(
-    new[] { Intent.ActionView },
-    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-    DataScheme = "cozypass")]
-    [Activity(
-        Label = "Cozy Pass",
-        Icon = "@mipmap/ic_launcher",
-        Theme = "@style/CozyTheme.Splash",
-        MainLauncher = true,
-        LaunchMode = LaunchMode.SingleTask,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation |
-                               ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden |
-                               ConfigChanges.Navigation | ConfigChanges.UiMode)]
-    [IntentFilter(
-        new[] { Intent.ActionSend },
-        Categories = new[] { Intent.CategoryDefault },
-        DataMimeTypes = new[]
-        {
-            @"application/*",
-            @"image/*",
-            @"video/*",
-            @"text/*"
-        })]
+    // Activity and IntentFilter declarations have been moved to Properties/AndroidManifest.xml
+    // They have been hardcoded so we can use the default LaunchMode on Android 11+
+    // LaunchMode defined in values/manifest.xml for Android 10- and values-v30/manifest.xml for Android 11+
+    // See https://github.com/bitwarden/mobile/pull/1673 for details
+    // Cozy customization, Change ids from bitwarden to cozy
+    /*
+    [Register("com.x8bit.bitwarden.MainActivity")]
+    /*/
     [Register("io.cozy.pass.MainActivity")]
+    //*/
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private IDeviceActionService _deviceActionService;
         private IMessagingService _messagingService;
         private IBroadcasterService _broadcasterService;
-        private IUserService _userService;
+        private IStateService _stateService;
         private IAppIdService _appIdService;
-        private IStorageService _storageService;
         private IEventService _eventService;
+        // Cozy customization, Support onboarded callback in Android
+        //*
         private ICozyClientService _cozyClientService;
-        private PendingIntent _clearClipboardPendingIntent;
+        //*/
+        private ILogger _logger;
         private PendingIntent _eventUploadPendingIntent;
         private AppOptions _appOptions;
         private string _activityKey = $"{nameof(MainActivity)}_{Java.Lang.JavaSystem.CurrentTimeMillis().ToString()}";
@@ -68,9 +59,6 @@ namespace Bit.Droid
             var eventUploadIntent = new Intent(this, typeof(EventUploadReceiver));
             _eventUploadPendingIntent = PendingIntent.GetBroadcast(this, 0, eventUploadIntent,
                 PendingIntentFlags.UpdateCurrent);
-            var clearClipboardIntent = new Intent(this, typeof(ClearClipboardAlarmReceiver));
-            _clearClipboardPendingIntent = PendingIntent.GetBroadcast(this, 0, clearClipboardIntent,
-                PendingIntentFlags.UpdateCurrent);
 
             var policy = new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
             StrictMode.SetThreadPolicy(policy);
@@ -78,24 +66,41 @@ namespace Bit.Droid
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
-            _userService = ServiceContainer.Resolve<IUserService>("userService");
+            _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _appIdService = ServiceContainer.Resolve<IAppIdService>("appIdService");
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
+            _logger = ServiceContainer.Resolve<ILogger>("logger");
+            // Cozy customization, Support onboarded callback in Android
+            //*
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            //*/
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            // this needs to be called here before base.OnCreate(...)
+            Intent?.Validate();
+
             base.OnCreate(savedInstanceState);
-            if (!CoreHelpers.InDebugMode())
+
+            _deviceActionService.SetScreenCaptureAllowedAsync().FireAndForget(_ =>
             {
                 Window.AddFlags(Android.Views.WindowManagerFlags.Secure);
+            });
+
+            _logger.InitAsync();
+
+            var toplayout = Window?.DecorView?.RootView;
+            if (toplayout != null)
+            {
+                toplayout.FilterTouchesWhenObscured = true;
             }
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             _appOptions = GetOptions();
             LoadApplication(new App.App(_appOptions));
+            DisableAndroidFontScale();
 
             _broadcasterService.Subscribe(_activityKey, (message) =>
             {
@@ -123,10 +128,6 @@ namespace Bit.Droid
                 {
                     ExitApp();
                 }
-                else if (message.Command == "copiedToClipboard")
-                {
-                    var task = ClearClipboardAlarmAsync(message.Data as Tuple<string, int?, bool>);
-                }
             });
         }
 
@@ -142,10 +143,15 @@ namespace Bit.Droid
             Xamarin.Essentials.Platform.OnResume();
             AppearanceAdjustments();
 
+            ThemeManager.UpdateThemeOnPagesAsync();
+
+            // Cozy customization, Support onboarded callback in Android
+            //*
             if (Intent.Data?.Scheme == "cozypass")
             {
                 OnOpenURL(Intent.DataString);
             }
+            //*/
 
             if (_deviceActionService.SupportsNfc())
             {
@@ -160,6 +166,8 @@ namespace Bit.Droid
                 .GetResult();
         }
 
+        // Cozy customization, Support onboarded callback in Android
+        //*
         public void OnOpenURL(string urlStr)
         {
             if (urlStr.Contains("onboarded"))
@@ -168,13 +176,22 @@ namespace Bit.Droid
                 _messagingService.Send("onboarded");
             }
         }
+        //*/
 
         protected override void OnNewIntent(Intent intent)
         {
             base.OnNewIntent(intent);
             try
             {
-                if (intent.GetBooleanExtra("generatorTile", false))
+                if (intent?.GetStringExtra("uri") is string uri)
+                {
+                    _messagingService.Send("popAllAndGoToAutofillCiphers");
+                    if (_appOptions != null)
+                    {
+                       _appOptions.Uri = uri;
+                    }
+                }
+                else if (intent.GetBooleanExtra("generatorTile", false))
                 {
                     _messagingService.Send("popAllAndGoToTabGenerator");
                     if (_appOptions != null)
@@ -244,7 +261,12 @@ namespace Bit.Droid
                 {
                     // camera
                     var file = new Java.IO.File(FilesDir, "temp_camera_photo.jpg");
+                    // Cozy customization, Change ids from bitwarden to cozy
+                    /*
+                    uri = FileProvider.GetUriForFile(this, "com.x8bit.bitwarden.fileprovider", file);
+                    /*/
                     uri = FileProvider.GetUriForFile(this, "io.cozy.pass.fileprovider", file);
+                    //*/
                     fileName = $"photo_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}.jpg";
                 }
 
@@ -401,37 +423,13 @@ namespace Bit.Droid
         {
             Window?.SetStatusBarColor(ThemeHelpers.NavBarBackgroundColor);
             Window?.DecorView.SetBackgroundColor(ThemeHelpers.BackgroundColor);
-            ThemeHelpers.SetAppearance(ThemeManager.GetTheme(true), ThemeManager.OsDarkModeEnabled());
+            ThemeHelpers.SetAppearance(ThemeManager.GetTheme(), ThemeManager.OsDarkModeEnabled());
         }
 
         private void ExitApp()
         {
             FinishAffinity();
             Java.Lang.JavaSystem.Exit(0);
-        }
-
-        private async Task ClearClipboardAlarmAsync(Tuple<string, int?, bool> data)
-        {
-            if (data.Item3)
-            {
-                return;
-            }
-            var clearMs = data.Item2;
-            if (clearMs == null)
-            {
-                var clearSeconds = await _storageService.GetAsync<int?>(Constants.ClearClipboardKey);
-                if (clearSeconds != null)
-                {
-                    clearMs = clearSeconds.Value * 1000;
-                }
-            }
-            if (clearMs == null)
-            {
-                return;
-            }
-            var triggerMs = Java.Lang.JavaSystem.CurrentTimeMillis() + clearMs.Value;
-            var alarmManager = GetSystemService(AlarmService) as AlarmManager;
-            alarmManager.Set(AlarmType.Rtc, triggerMs, _clearClipboardPendingIntent);
         }
 
         private void StartEventAlarm()
@@ -445,6 +443,20 @@ namespace Bit.Droid
             var alarmManager = GetSystemService(AlarmService) as AlarmManager;
             alarmManager.Cancel(_eventUploadPendingIntent);
             await _eventService.UploadEventsAsync();
+        }
+
+        private void DisableAndroidFontScale()
+        {
+            try
+            {
+                //As we are using NamedSizes the xamarin will change the font size. So we are disabling the Android scaling.
+                Resources.Configuration.FontScale = 1f;
+                BaseContext.Resources.DisplayMetrics.ScaledDensity = Resources.Configuration.FontScale * (float)DeviceDisplay.MainDisplayInfo.Density;
+            }
+            catch (Exception e)
+            {
+                _logger.Exception(e);
+            }
         }
     }
 }

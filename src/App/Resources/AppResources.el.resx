@@ -276,6 +276,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>Είστε σίγουροι ότι θέλετε να αποσυνδεθείτε;</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>Αφαίρεση λογαριασμού</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>Είστε βέβαιοι ότι θέλετε να καταργήσετε αυτόν τον λογαριασμό?</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>Ο Λογαριασμός Προστέθηκε Ήδη</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value>Θα θέλατε να το αλλάξετε τώρα?</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>Κύριος Κωδικός</value>
     <comment>Label for a master password.</comment>
@@ -287,6 +299,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>Το Vault μου</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>Authenticator</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Όνομα</value>
@@ -312,7 +328,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>Μετακίνηση</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>Αποθήκευση...</value>
@@ -759,6 +775,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>Ενεργοποιημένο</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>On</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Κατάσταση</value>
   </data>
@@ -787,7 +809,7 @@
     <value>Αναζήτηση στοιχείου αυτόματης συμπλήρωσης για "{0}".</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>Μάθετε για τους Οργανισμούς</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Δεν είναι δυνατή η πρόσβαση στην εφαρμογή "{0}".</value>
@@ -878,11 +900,9 @@
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>Αδυναμία ανάγνωσης κλειδιού επαλήθευσης.</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>Η σάρωση θα γίνει αυτόματα.</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>Στρέψτε την κάμερα στον κώδικα QR.</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>Point your camera at the QR Code.
+Scanning will happen automatically.</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>Σάρωση κώδικα QR</value>
@@ -896,11 +916,11 @@
   <data name="CopyTotp" xml:space="preserve">
     <value>Αντιγραφή TOTP</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>Εάν η σύνδεση σας έχει συνημμένο κλειδί επαλήθευσης, ο κωδικός επαλήθευσης TOTP αντιγράφεται αυτόματα στο πρόχειρο κάθε φορά που συμπληρώνετε τα στοιχεία σύνδεσης.</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login.</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>Απενεργοποίηση Aυτόματης Aντιγραφής TOTP</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>Copy TOTP automatically</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>Για να χρησιμοποιήσετε αυτό το χαρακτηριστικό, απαιτείται η έκδοση premium.</value>
@@ -1060,6 +1080,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Επίθετο</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Ονοματεπώνυμο</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>Αριθμός Άδειας</value>
   </data>
@@ -1114,11 +1137,11 @@
   <data name="Expiration" xml:space="preserve">
     <value>Λήξη</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>Απενεργοποίηση Εικονιδίων Ιστοσελίδας</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>Show website icons</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>Τα εικονίδια ιστοσελίδων παρέχουν μια αναγνωρίσιμη εικόνα δίπλα σε κάθε στοιχείο σύνδεσης στο vault σας.</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>Show a recognizable image next to each login.</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>Εικονίδια Διακομιστή URL</value>
@@ -1183,6 +1206,9 @@
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>Κρυφό</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>Συνδεδεμένο</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>Κείμενο</value>
@@ -1355,11 +1381,15 @@
   <data name="SearchCollection" xml:space="preserve">
     <value>Αναζήτηση στη συλλογή</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>Αναζήτηση σε φάκελο</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>Search File Sends</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>Τύπος αναζήτησης</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>Search Text Sends</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>Αναζήτηση {0}</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Τύπος</value>
@@ -1383,7 +1413,7 @@
     <value>Δεν υπάρχουν επιλογές στη λίστα.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} μετακινήθηκε στο {1}.</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1399,13 +1429,13 @@
     <value>Κοινή χρήση στοιχείου</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>Μετακίνηση στον Οργανισμό</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Δεν υπάρχουν οργανισμοί προς εμφάνιση.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>Επιλέξτε έναν οργανισμό στον οποίο θέλετε να μετακινήσετε αυτό το στοιχείο. Η μετακίνηση σε έναν οργανισμό μεταβιβάζει την ιδιοκτησία του στοιχείου σε αυτό τον οργανισμό. Δεν θα είστε πλέον ο άμεσος ιδιοκτήτης αυτού του στοιχείου μόλις το μετακινήσετε.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Αριθμός Λέξεων</value>
@@ -1436,7 +1466,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Bitwarden allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Το Bitwarden επιτρέπει να μοιράζεστε τα στοιχεία του vault σας με άλλους χρησιμοποιώντας ένα λογαριασμό οργανισμού. Θέλετε να επισκεφθείτε την ιστοσελίδα bitwarden.com για να μάθετε περισσότερα;</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Εξαγωγή Vault</value>
@@ -1449,6 +1479,9 @@
   </data>
   <data name="Unlock" xml:space="preserve">
     <value>Ξεκλείδωμα</value>
+  </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>Ξεκλείδωμα Vault</value>
   </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 λεπτά</value>
@@ -1465,6 +1498,9 @@
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κωδικό PIN για να συνεχίσετε.</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>Το vault σας είναι κλειδωμένο. Επαληθεύστε την ταυτότητα σας για να συνεχίσετε.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Σκοτεινό</value>
@@ -1512,7 +1548,13 @@
     <value>Αλλαγή χρώματος, θέματος εφαρμογής.</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>Προεπιλογή (σύστημα)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>Default dark theme</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>Choose the dark theme to use when using Default (System) theme while your device's dark mode is enabled.</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Αντιγραφή Σημειώσεων</value>
@@ -1530,17 +1572,21 @@
     <value>Μαύρο</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>Μαύρη λίστα URIs</value>
+  <data name="Nord" xml:space="preserve">
+    <value>Nord</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>Τα URI που βρίσκονται στη μαύρη λίστα δεν προσφέρουν αυτόματη συμπλήρωση. Ο κατάλογος πρέπει να διαχωριστεί με κόμμα. Παράδειγμα: "https://twitter.com, androidapp: //com.twitter.android".</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>Auto-fill blocked URIs</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Απενεργοποίηση Προτροπής Αποθήκευσης</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>Auto-fill will not be offered for blocked URIs. Separate multiple URIs with a comma. For example: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>Η "προτροπή αποθήκευσης" σας ζητάει αυτόματα να αποθηκεύετε νέα στοιχεία στο vault σας, κάθε φορά που τα εισάγετε για πρώτη φορά.</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>Ask to add login</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>Ask to add an item if one isn't found in your vault.</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
     <value>Κατά την Επανεκκίνηση Εφαρμογής</value>
@@ -1605,6 +1651,15 @@
   </data>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>Εισαγάγετε τον κύριο κωδικό για εξαγωγή των δεδομένων vault.</value>
+  </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>Στείλτε έναν κωδικό επαλήθευσης στο email σας</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>Ο Κωδικός Στάλθηκε</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>Επιβεβαιώστε την ταυτότητα σας για να συνεχίσετε.</value>
   </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>Αυτή η εξαγωγή περιέχει τα δεδομένα σε μη κρυπτογραφημένη μορφή. Δεν πρέπει να αποθηκεύετε ή να στείλετε το εξαγόμενο αρχείο μέσω μη ασφαλών τρόπων (όπως μέσω email). Διαγράψτε το αμέσως μόλις τελειώσετε με τη χρήση του.</value>
@@ -1824,6 +1879,9 @@
     <value>Ένα φιλικό όνομα για την περιγραφή αυτού του Send.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
+  <data name="Text" xml:space="preserve">
+    <value>Κείμενο</value>
+  </data>
   <data name="TypeText" xml:space="preserve">
     <value>Κείμενο</value>
   </data>
@@ -1839,6 +1897,18 @@
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
     <value>Το αρχείο που θέλετε να στείλετε.</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>File type is selected.</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>File type is not selected, tap to select.</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>Text type is selected.</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>Text type is not selected, tap to select.</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
     <value>Ημερομηνία διαγραφής</value>
@@ -2004,57 +2074,244 @@
     <value>Επιβεβαίωση κύριου κωδικού πρόσβασης</value>
   </data>
   <data name="PasswordConfirmationDesc" xml:space="preserve">
-    <value>Αυτή η ενέργεια προστατεύεται, για να συνεχίσετε, πληκτρολογήστε ξανά τον κύριο κωδικό πρόσβασης για να επαληθεύσετε την ταυτότητά σας.</value>
+    <value>Αυτή η ενέργεια προστατεύεται, για να συνεχίσετε, πληκτρολογήστε ξανά τον κύριο κωδικό πρόσβασης για να επαληθεύσετε την ταυτότητα σας.</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>Απαιτείται Captcha</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>Το Captcha απέτυχε. Παρακαλώ προσπάθησε ξανα.</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>Ενημερώθηκε ο κύριος κωδικός πρόσβασης</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>Ενημερώστε τον κύριο κωδικό πρόσβασης</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>Ο Κύριος Κωδικός Πρόσβασής σας άλλαξε πρόσφατα από διαχειριστή στον οργανισμό σας. Για να αποκτήσετε πρόσβαση στο vault, πρέπει να ενημερώσετε το κύριο κωδικό τώρα. Η διαδικασία θα σας αποσυνδέσει από την τρέχουσα συνεδρία σας, απαιτώντας από εσάς να συνδεθείτε ξανά. Οι ενεργές συνεδρίες σε άλλες συσκευές ενδέχεται να συνεχίσουν να είναι ενεργές για μία ώρα.</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>Ενημέρωση Κωδικού Πρόσβασης</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>Δεν είναι δυνατή η ενημέρωση του κωδικού πρόσβασης</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>Αφαίρεση Κύριου Κωδικού Πρόσβασης</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} χρησιμοποιεί SSO με κρυπτογράφηση διαχείρισης πελατών. Συνεχίζοντας θα καταργήσετε τον Κύριο Κωδικό από το λογαριασμό σας και θα απαιτήσετε SSO για να συνδεθείτε.</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>Αν δεν θέλετε να αφαιρέσετε τον Κύριο Κωδικό Πρόσβασης, μπορείτε να φύγετε από αυτόν τον οργανισμό.</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>Αποχώρηση από τον οργανισμό</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>Αποχώρηση {0}?</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
     <value>FIDO2 WebAuthn</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>Για να συνεχίσετε, να έχετε το FIDO2 WebAuthn ενεργοποιημένο κλειδί ασφαλείας και στη συνέχεια ακολουθήστε τις οδηγίες αφού κάνετε κλικ στο 'Authn Authn' στην επόμενη οθόνη.</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>Ταυτοποίηση με χρήση του FIDO2 WebAuthn, μπορείτε να κάνετε έλεγχο ταυτότητας χρησιμοποιώντας ένα εξωτερικό κλειδί ασφαλείας.</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>Ταυτοποίηση WebAutn</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>Επιστροφή στην εφαρμογή</value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>Βεβαιωθείτε ότι ο προεπιλεγμένος περιηγητής σας υποστηρίζει WebAuthn και προσπαθήστε ξανά.</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>Αυτός ο οργανισμός έχει μια επιχειρηματική πολιτική που θα σας εγγράψει αυτόματα στην επαναφορά κωδικού. Η εγγραφή θα επιτρέψει στους διαχειριστές του οργανισμού να αλλάξουν τον κύριο κωδικό πρόσβασης σας.</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>Οι πολιτικές του οργανισμού σας επηρεάζουν το χρονικό όριο vault σας. Το μέγιστο επιτρεπόμενο Χρονικό όριο Vault είναι {0} ώρα(ες) και {1} λεπτό(ά)</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
-    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+    <value>Το χρονικό όριο του vault σας υπερβαίνει τους περιορισμούς που έχει ορίσει ο οργανισμός σας.</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
-    <value>One or more organization policies prevents your from exporting your personal vault.</value>
+    <value>Μία ή περισσότερες οργανωτικές πολιτικές αποτρέπουν την εξαγωγή του προσωπικού vault.</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>Προσθήκη Λογαριασμού</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>Ξεκλειδώθηκε</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>Κλειδωμένο</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>Αποσυνδεθήκατε</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>Μετάβαση στον επόμενο διαθέσιμο λογαριασμό</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>Κλειδωμένος Λογαριασμός</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>Ο λογαριασμός αποσυνδέθηκε επιτυχώς</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>Ο λογαριασμός αφαιρέθηκε επιτυχώς</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>Διαγραφή Λογαριασμού</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>Η διαγραφή του λογαριασμού σας είναι μόνιμη</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>Ο λογαριασμός σας και όλα τα σχετικά δεδομένα θα διαγραφούν και δεν θα ανακτηθούν. Είστε σίγουροι ότι θέλετε να συνεχίσετε?</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>Διαγραφή του λογαριασμού σας</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>Ο λογαριασμός σας έχει διαγραφεί οριστικά</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>Μη Έγκυρος Κωδικός Επαλήθευσης.</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>Αιτηθείτε τον κωδικό πρόσβασης μιας χρήσης</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>Αποστολή Κωδικού</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>Αποστολή....</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>Αντιγράψτε το σύνδεσμο αποστολής κατά την αποθήκευση</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>Αποστολή κωδικού</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>Επαλήθευση</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>Επαναποστολή κωδικού</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>Ένας κωδικός επαλήθευσης έχει σταλεί στο email σας.</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>Παρουσιάστηκε σφάλμα κατά την αποστολή κωδικού επαλήθευσης στο email σας. Παρακαλούμε προσπαθήστε ξανά</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>Εισάγετε τον κωδικό επαλήθευσης που έχει σταλεί στο email σας</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>Submit crash logs</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>Help Bitwarden improve app stability by submitting crash reports.</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>Options are expanded, tap to collapse.</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>Options are collapsed, tap to expand.</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>Uppercase (A to Z)</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>Lowercase (A to Z)</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>Numbers (0 to 9)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>Special Characters (!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>Tap to go back</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>Password is visible, tap to hide.</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>Password is not visible, tap to show.</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>Filter items by vault</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>Όλα τα Vaults</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>Vaults</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>Vault: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Όλα</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>Verification Codes</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>Premium subscription required</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>Cannot add authenticator key? </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Scan QR Code</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>Cannot scan QR Code? </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>Authenticator Key</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>Enter Key Manually</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>Add TOTP</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>Set up TOTP</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>Once the key is successfully entered,
+select Add TOTP to store the key safely</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>Setting your lock options to “Never” keeps your vault available to anyone with access to your device. If you use this option, you should ensure that you keep your device properly protected.</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>One or more of the URLs entered are invalid. Please revise it and try to save again.</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>We were unable to process your request. Please try again or contact us.</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>Allow screen capture</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>Are you sure you want to enable Screen Capture?</value>
   </data>
 </root>

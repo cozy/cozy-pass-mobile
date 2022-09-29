@@ -1,11 +1,10 @@
-﻿using Bit.App.Controls;
+﻿using System;
+using System.Threading.Tasks;
+using Bit.App.Controls;
 using Bit.App.Models;
-using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
-using System;
-using System.Threading.Tasks;
-using Bit.App.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
@@ -14,8 +13,6 @@ namespace Bit.App.Pages
     {
         private readonly IBroadcasterService _broadcasterService;
         private readonly IMessagingService _messagingService;
-        private readonly IStorageService _storageService;
-        private readonly IVaultTimeoutService _vaultTimeoutService;
         private readonly AppOptions _appOptions;
 
         private TwoFactorPageViewModel _vm;
@@ -30,10 +27,8 @@ namespace Bit.App.Pages
             _authingWithSso = authingWithSso ?? false;
             _appOptions = appOptions;
             _orgIdentifier = orgIdentifier;
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
-            _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
             _vm = BindingContext as TwoFactorPageViewModel;
             _vm.Page = this;
             _vm.StartSetPasswordAction = () =>
@@ -54,7 +49,8 @@ namespace Bit.App.Pages
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
-            } else
+            }
+            else
             {
                 ToolbarItems.Add(_useAnotherTwoStepMethod);
             }
@@ -101,7 +97,8 @@ namespace Bit.App.Pages
                 if (_vm.TotpMethod)
                 {
                     RequestFocus(_totpEntry);
-                } else if (_vm.YubikeyMethod)
+                }
+                else if (_vm.YubikeyMethod)
                 {
                     RequestFocus(_yubikeyTokenEntry);
                 }
@@ -144,21 +141,6 @@ namespace Bit.App.Pages
             }
         }
 
-        private async void More_Clicked(object sender, EventArgs e)
-        {
-            if (!DoOnce())
-            {
-                return;
-            }
-
-            var selection = await DisplayActionSheet(AppResources.Options, AppResources.Cancel, null, AppResources.UseAnotherTwoStepMethod);
-
-            if (selection == AppResources.UseAnotherTwoStepMethod)
-            {
-                await _vm.AnotherMethodAsync();
-            }
-        }
-
         private async void ResendEmail_Clicked(object sender, EventArgs e)
         {
             if (DoOnce())
@@ -196,7 +178,7 @@ namespace Bit.App.Pages
             var page = new SetPasswordPage(_appOptions, _orgIdentifier);
             await Navigation.PushModalAsync(new NavigationPage(page));
         }
-        
+
         private async Task UpdateTempPasswordAsync()
         {
             var page = new UpdateTempPasswordPage();

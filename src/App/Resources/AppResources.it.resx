@@ -196,7 +196,7 @@
     <value>Inviaci un'email per ottenere aiuto o fare una segnalazione.</value>
   </data>
   <data name="EnterPIN" xml:space="preserve">
-    <value>Inserisci il tuo PIN.</value>
+    <value>Digita il tuo PIN.</value>
   </data>
   <data name="Favorites" xml:space="preserve">
     <value>Preferiti</value>
@@ -250,7 +250,7 @@
     <comment>Description message for the alert when internet connection is required to continue.</comment>
   </data>
   <data name="InternetConnectionRequiredTitle" xml:space="preserve">
-    <value>Connessione ad Internet richiesta</value>
+    <value>Connessione a Internet richiesta</value>
     <comment>Title for the alert when internet connection is required to continue.</comment>
   </data>
   <data name="InvalidMasterPassword" xml:space="preserve">
@@ -278,6 +278,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>Sei sicuro di volerti disconnettere?</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>Rimuovi account</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>Sei sicuro di voler rimuovere questo account?</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>Account già aggiunto</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value>Vuoi passarci adesso?</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>Password principale</value>
     <comment>Label for a master password.</comment>
@@ -289,6 +301,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>Cassaforte</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>Autenticatore</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nome</value>
@@ -314,7 +330,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>Sposta</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>Salvataggio in corso...</value>
@@ -369,7 +385,7 @@
     <value>Verifica impronta</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Verifica Password Principale</value>
+    <value>Verifica password principale</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>Verifica PIN</value>
@@ -439,7 +455,7 @@
     <value>Cambia password principale</value>
   </data>
   <data name="ChangePasswordConfirmation" xml:space="preserve">
-    <value>Puoi cambiare la tua password principale solo sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?</value>
+    <value>Puoi cambiare la tua password principale solo sulla cassaforte in linea di bitwarden.com. Vuoi visitare ora il sito?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Chiudi</value>
@@ -458,7 +474,7 @@
     <value>Modifica elemento</value>
   </data>
   <data name="EnableAutomaticSyncing" xml:space="preserve">
-    <value>Abilita la sincronizzazione automatica</value>
+    <value>Abilita sincronizzazione automatica</value>
   </data>
   <data name="EnterEmailForHint" xml:space="preserve">
     <value>Inserisci l'indirizzo email del tuo account per ricevere il suggerimento della password principale.</value>
@@ -470,7 +486,7 @@
     <value>Quasi fatto!</value>
   </data>
   <data name="ExtensionEnable" xml:space="preserve">
-    <value>Abilita l'Estensione App</value>
+    <value>Abilita l'estensione dell'applicazione</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
     <value>Su Safari, trova Cozy Pass utilizzando l'icona di condivisione (suggerimento: scorri a destra sulla riga inferiore del menu).</value>
@@ -480,7 +496,7 @@
     <value>Ottieni accesso immediato alle tue password!</value>
   </data>
   <data name="ExtensionReady" xml:space="preserve">
-    <value>Sei pronto a fare il login!</value>
+    <value>Sei pronto ad accedere!</value>
   </data>
   <data name="ExtensionSetup" xml:space="preserve">
     <value>I tuoi login sono ora facilmente accessibili da Safari, Chrome e altre applicazioni supportate.</value>
@@ -501,10 +517,10 @@
     <value>Impronta</value>
   </data>
   <data name="GeneratePassword" xml:space="preserve">
-    <value>Genera Password</value>
+    <value>Genera password</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Ottenere il suggerimento per la password principale</value>
+    <value>Ottieni il suggerimento per la password principale</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Importa elementi</value>
@@ -546,14 +562,14 @@
     <value>Azione timeout cassaforte</value>
   </data>
   <data name="VaultTimeoutLogOutConfirmation" xml:space="preserve">
-    <value>La disconnessione rimuove tutti gli accessi alla tua cassaforte e richiede l'autenticazione online dopo il periodo di scadenza. Sei sicuro di voler utilizzare questa impostazione?</value>
+    <value>La disconnessione rimuove tutti gli accessi alla tua cassaforte e richiede l'autenticazione in linea dopo il periodo di scadenza. Sei sicuro di voler utilizzare questa impostazione?</value>
   </data>
   <data name="LoggingIn" xml:space="preserve">
     <value>Connessione in corso...</value>
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Fai il log in o crea un nuovo account per accedere alla tua cassaforte di sicurezza.</value>
+    <value>Accedi o crea un nuovo account per accedere alla tua cassaforte di sicurezza.</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gestisci</value>
@@ -565,10 +581,10 @@
     <value>La password principale è la password che utilizzi per accedere alla tua cassaforte. È molto importante che tu non la dimentichi. Non c'è modo di recuperare questa password nel caso che tu la dimenticassi.</value>
   </data>
   <data name="MasterPasswordHint" xml:space="preserve">
-    <value>Indizio per la Password Principale (opzionale)</value>
+    <value>Suggerimento per la password principale (facoltativo)</value>
   </data>
   <data name="MasterPasswordHintDescription" xml:space="preserve">
-    <value>Un indizio per la password principale può aiutarti a ricordarla nel caso te la dimenticassi.</value>
+    <value>Un suggerimento per la password principale può aiutarti a ricordarla nel caso la dimenticassi.</value>
   </data>
   <data name="MasterPasswordLengthValMessage" xml:space="preserve">
     <value>La password principale deve essere lunga almeno 8 caratteri.</value>
@@ -622,7 +638,7 @@
     <value>Password generata.</value>
   </data>
   <data name="PasswordGenerator" xml:space="preserve">
-    <value>Generatore di Password</value>
+    <value>Generatore di password</value>
   </data>
   <data name="PasswordHint" xml:space="preserve">
     <value>Suggerimento password</value>
@@ -647,7 +663,7 @@
     <value>Rigenera password</value>
   </data>
   <data name="RetypeMasterPassword" xml:space="preserve">
-    <value>Ri-digita la tua password principale</value>
+    <value>Ri-digita la password principale</value>
   </data>
   <data name="SearchVault" xml:space="preserve">
     <value>Cerca nella cassaforte</value>
@@ -662,7 +678,7 @@
     <value>Imposta PIN</value>
   </data>
   <data name="SetPINDirection" xml:space="preserve">
-    <value>Immetti un codice PIN a 4 cifre per sbloccare l'applicazione.</value>
+    <value>Digita un codice PIN a 4 cifre per sbloccare l'applicazione.</value>
   </data>
   <data name="ItemInformation" xml:space="preserve">
     <value>Informazioni elemento</value>
@@ -685,7 +701,7 @@
     <value>Sincronizzazione non riuscita.</value>
   </data>
   <data name="SyncVaultNow" xml:space="preserve">
-    <value>Sincronizza ora la cassaforte</value>
+    <value>Sincronizza la cassaforte</value>
   </data>
   <data name="TouchID" xml:space="preserve">
     <value>Touch ID</value>
@@ -695,7 +711,7 @@
     <value>Verifica in due passaggi</value>
   </data>
   <data name="TwoStepLoginConfirmation" xml:space="preserve">
-    <value>L'autenticazione in due passaggi rende il tuo account più sicuro, richiedendo di verificare l'accesso con un altro dispositivo come una chiave di sicurezza, app di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?</value>
+    <value>L'autenticazione in due passaggi rende il tuo account più sicuro, richiedendo di verificare l'accesso con un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?</value>
   </data>
   <data name="UnlockWith" xml:space="preserve">
     <value>Sblocca con {0}</value>
@@ -762,6 +778,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>Attivo</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>Disattivo</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Attivo</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Stato</value>
   </data>
@@ -790,7 +812,7 @@
     <value>Stai cercando un login di completamento automatico per "{0}".</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>Scopri le organizzazioni</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Impossibile aprire l'applicazione "{0}".</value>
@@ -881,11 +903,8 @@
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>Impossibile leggere chiave di autenticazione.</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>La scansione è automatica.</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>Punta la fotocamera sul codice QR.</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>Punta il QR code con la fotocamera. La scansione avverrà automaticamente.</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>Scansione codice QR</value>
@@ -899,11 +918,11 @@
   <data name="CopyTotp" xml:space="preserve">
     <value>Copia TOTP</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>Se il tuo login ha un autenticatore collegato, il codice ti verifica TOTP è automaticamente copiato negli appunti ogni volta che auto-completi il login.</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>Se un login è dotato di una chiave di autenticazione, copia il codice di verifica TOTP negli appunti all'autocompletamento del login.</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>Disattiva copia TOTP automatica</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>Copia TOTP automaticamente</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>Un abbonamento premium è richiesto per utilizzare questa funzionalità.</value>
@@ -965,7 +984,7 @@
     <value>Ambiente self-hosted</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Specifica l'URL principale della tua installazione locale di Bitwarden.</value>
+    <value>Specifica l'URL principale della tua installazione self-hosted di Bitwarden.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL del server</value>
@@ -1063,6 +1082,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Cognome</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nome completo</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>Numero patente</value>
   </data>
@@ -1117,11 +1139,11 @@
   <data name="Expiration" xml:space="preserve">
     <value>Scadenza</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>Disabilita icone siti web</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>Mostra icone del sito</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>Le icone del sito web fornisce un'immagine riconoscibile accanto a ogni elemento di accesso nella tua cassaforte.</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>Mostra un'immagine riconoscibile accanto a ogni login.</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>URL del server di icone</value>
@@ -1186,6 +1208,9 @@
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>Nascosto</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>Collegato</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>Testo</value>
@@ -1321,7 +1346,7 @@
     <value>Tutti gli elementi</value>
   </data>
   <data name="URIs" xml:space="preserve">
-    <value>URl</value>
+    <value>URI</value>
     <comment>Plural form of a URI</comment>
   </data>
   <data name="CheckingPassword" xml:space="preserve">
@@ -1358,11 +1383,15 @@
   <data name="SearchCollection" xml:space="preserve">
     <value>Cerca nella raccolta</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>Cerca nella cartella</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>Cerca Send di File</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>Cerca tipo</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>Cerca Send Testuali</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>Cerca {0}</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Tipo</value>
@@ -1386,7 +1415,7 @@
     <value>Nessuna raccolta da elencare.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} spostato in {1}.</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1402,13 +1431,13 @@
     <value>Condividi elemento</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>Sposta in organizzazione</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Nessuna organizzazione da elencare.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>Scegli un'organizzazione in cui desideri spostare questo elemento. Lo spostamento in un'organizzazione trasferisce la proprietà dell'elemento all'organizzazione. Non sarai più il proprietario diretto di questo elemento una volta spostato.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Numero di parole</value>
@@ -1453,6 +1482,9 @@
   <data name="Unlock" xml:space="preserve">
     <value>Sblocca</value>
   </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>Sblocca cassaforte</value>
+  </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 minuti</value>
   </data>
@@ -1468,6 +1500,9 @@
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare.</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>La tua cassaforte è bloccata. Verifica la tua identità per continuare.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Scuro</value>
@@ -1515,7 +1550,13 @@
     <value>Cambia il tema dell'applicazione.</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>Predefinito (Sistema)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>Tema Scuro Predefinito</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>Scegli il tema scuro da usare quando si utilizza il tema predefinito di sistema, mentre la modalità scura del dispositivo è abilitata</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Copia note</value>
@@ -1533,17 +1574,21 @@
     <value>Nero</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>URI nella lista nera</value>
+  <data name="Nord" xml:space="preserve">
+    <value>Nord</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>L'auto-completamento non sarà offerto per gli URI nella lista nera. Ogni voce deve essere separata da virgola. Es: "https://twitter.com, androidapp://com.twitter.android".</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>URI per cui l'autocompletamento non è permesso</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Disabilita richiesta di salvataggio</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>L'autocompletamento non sarà proposto per gli URI bloccati. Separa più URI con una virgola. Ad esempio: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>La "richiesta di salvataggio" richiede automaticamente di salvare i nuovi login nella tua cassaforte ogni volta che accedi per la prima volta.</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>Chiedi di aggiungere il login</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>Chiedi di aggiungere un oggetto se questo non è presente nella tua cassaforte.</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
     <value>Al riavvio dell'applicazione</value>
@@ -1577,13 +1622,13 @@
     <value>Verifica biometrica</value>
   </data>
   <data name="Biometrics" xml:space="preserve">
-    <value>Dati biometrici</value>
+    <value>dati biometrici</value>
   </data>
   <data name="UseBiometricsToUnlock" xml:space="preserve">
     <value>Sblocca con dati biometrici</value>
   </data>
   <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
-    <value>Bitwarden richiede la tua attenzione - Vedi "Servizio di accessibilità per l'autocompletamento" dalle Impostazioni di Bitwarden</value>
+    <value>Bitwarden richiede la tua attenzione - Vedi "Servizio di accessibilità per l'auto-completamento" dalle Impostazioni di Bitwarden</value>
   </data>
   <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
     <value>3. Sulla schermata di Impostazioni dell'App Android per Bitwarden, vai alle opzioni "Mostra sulle altre app" (sotto Avanzate) e tocca l'interruttore per abilitare il supporto overlay.</value>
@@ -1608,6 +1653,15 @@
   </data>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>Inserisci la tua password principale per esportare i dati della tua cassaforte.</value>
+  </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>Invia un codice di verifica alla tua email</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>Codice inviato!</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>Conferma la tua identità per continuare.</value>
   </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>Questa esportazione contiene i dati della tua cassaforte in formato non cifrato. Non dovresti archiviare o inviare i file esportati attraverso canali non sicuri (come l'email). Eliminali immediatamente dopo che hai finito di usarli.</value>
@@ -1636,7 +1690,7 @@
     <comment>Clone an entity (verb).</comment>
   </data>
   <data name="PasswordGeneratorPolicyInEffect" xml:space="preserve">
-    <value>Una o più policy dell'organizzazione controllano le impostazioni del tuo generatore</value>
+    <value>Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore</value>
   </data>
   <data name="Open" xml:space="preserve">
     <value>Apri</value>
@@ -1771,25 +1825,25 @@
     <value>Bitwarden richiede la tua attenzione - Abilita "Mostra sopra altre app" nelle opzioni di Bitwarden</value>
   </data>
   <data name="AutofillServices" xml:space="preserve">
-    <value>Servizi di autocompletamento</value>
+    <value>Servizi di auto-completamento</value>
   </data>
   <data name="InlineAutofill" xml:space="preserve">
     <value>Usa il completamento automatico</value>
   </data>
   <data name="InlineAutofillDescription" xml:space="preserve">
-    <value>Usa il completamento automatico se l'IME (Tastiera) selezionato lo supporta. Se la tua configurazione non è supportata (o l'opzione è disabilitata), verrà utilizzato l'autocompletamento di default.</value>
+    <value>Usa il completamento automatico se l'IME (tastiera) selezionato lo supporta. Se la tua configurazione non è supportata (o l'opzione è disabilitata), verrà utilizzato l'auto-completamento predefinito.</value>
   </data>
   <data name="Accessibility" xml:space="preserve">
     <value>Usa accessibilità</value>
   </data>
   <data name="AccessibilityDescription" xml:space="preserve">
-    <value>Utilizza il servizio di accessibilità di Bitwarden per l'autocompletamento. Se abilitato, verrà mostrato un popup quando i campi relativi al login sono selezionati.</value>
+    <value>Utilizza il servizio di accessibilità di Bitwarden per l'auto-completamento. Se abilitato, verrà mostrato una finestra a comparsa quando i campi relativi al login sono selezionati.</value>
   </data>
   <data name="AccessibilityDescription2" xml:space="preserve">
     <value>Utilizza il servizio di accessibilità di Bitwarden per accedere automaticamente sul web e sulle applicazioni tramite autocompletamento (È necessario abilitare "Mostra sopra altre app")</value>
   </data>
   <data name="AccessibilityDescription3" xml:space="preserve">
-    <value>Abilita il servizio di accessibilità di Bitwarden per usare il riquadro di autocompletamento rapido, e/o mostra un popup quando "Mostra sopra altre app" viene utilizzato (se abilitato).</value>
+    <value>Abilita il servizio di accessibilità di Bitwarden per usare il riquadro di auto-completamento rapido, e/o mostra una finestra a comparsa quando "Mostra sopra altre app" viene utilizzato (se abilitato).</value>
   </data>
   <data name="AccessibilityDescription4" xml:space="preserve">
     <value>Necessario per l'utilizzo del riquadro per l'autocompletamento rapido o per aumentare il servizio di completamento automatico utilizzando "Mostra sopra altre app" (se abilitato).</value>
@@ -1801,10 +1855,10 @@
     <value>Se abilitato, permette al servizio di accessibilità di Bitwarden di mostrare un popup quando i campi relativi al login vengono selezionati.</value>
   </data>
   <data name="DrawOverDescription2" xml:space="preserve">
-    <value>Se abilitato, il servizio di accessibilità di Bitwarden mostrerà un popup quando i campi login vengono selezionati per aiutarti con l'autocompletamento.</value>
+    <value>Se abilitato, il servizio di accessibilità di Bitwarden mostrerà una finestra a comparsa quando i campi login vengono selezionati per aiutarti con l'auto-completamento.</value>
   </data>
   <data name="DrawOverDescription3" xml:space="preserve">
-    <value>Se abilitato, l'accessibilità mostrerà un popup per aumentare il servizio di autocompletamento per le vecchie applicazioni che non supportano il framework di autocompletamento di Android.</value>
+    <value>Se abilitato, l'accessibilità mostrerà una finestra a comparsa per aumentare il servizio di auto-completamento per le vecchie applicazioni che non supportano il framework di auto-completamento di Android.</value>
   </data>
   <data name="PersonalOwnershipSubmitError" xml:space="preserve">
     <value>A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili.</value>
@@ -1828,6 +1882,9 @@
     <value>Un nome intuitivo per descrivere questo Send.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
+  <data name="Text" xml:space="preserve">
+    <value>Testo</value>
+  </data>
   <data name="TypeText" xml:space="preserve">
     <value>Testo</value>
   </data>
@@ -1843,6 +1900,18 @@
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
     <value>Il file che desideri inviare.</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>Il tipo di file è selezionato.</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>Il tipo di file non è selezionato, tocca per selezionare.</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>Il tipo di testo è selezionato.</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>Il tipo di testo non è selezionato, tocca per selezionare.</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
     <value>Data di eliminazione</value>
@@ -1897,7 +1966,7 @@
     <value>Sei sicuro di voler rimuovere la password?</value>
   </data>
   <data name="RemovingSendPassword" xml:space="preserve">
-    <value>Rimuovo la password</value>
+    <value>Rimozione password</value>
   </data>
   <data name="SendPasswordRemoved" xml:space="preserve">
     <value>La password è stata rimossa.</value>
@@ -2011,54 +2080,241 @@
     <value>Questa azione è protetta. Per continuare, digita nuovamente la tua password principale per verificare la tua identità.</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>Captcha richiesto</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>Verifica Captcha fallita. Si prega di riprovare.</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>Password principale aggiornata</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>Aggiorna password principale</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>La tua password principale è stata recentemente modificata da un amministratore nella tua organizzazione. Per accedere alla cassaforte, aggiorna ora la password principale. Procedendo sarai disconnesso dalla sessione attuale e ti sarà richiesto di effettuare nuovamente l'accesso. Le sessioni attive su altri dispositivi potrebbero continuare a rimanere attive per un massimo di un'ora.</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>Aggiornamento password</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>Attualmente non è possibile aggiornare la password</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>Rimuovi la password principale</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} sta usando SSO con cifratura gestita dal cliente. Continuando la tua password principale sarà rimossa dal tuo profilo e richiederà SSO per accedere.</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>Se non desideri rimuovere la tua password principale, potresti lasciare questa organizzazione.</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>Lascia l'organizzazione</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>Vuoi lasciare {0}?</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
     <value>FIDO2 WebAuthn</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>Per continuare, fai in modo che la chiave di sicurezza di FIDO2 WebAuthn sia pronta, quindi segui le istruzioni dopo aver fatto clic su 'Autenticazione WebAuthn' nella schermata successiva.</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>Autenticazione tramite FIDO2 WebAuthn, puoi autenticarti utilizzando una chiave di sicurezza esterna.</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>Autenticazione WebAuthn</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>Ritorna all'applicazione</value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>Assicurati che il browser predefinito supporti WebAuthn e riprova.</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>Questa organizzazione ha una politica aziendale che ti iscriverà automaticamente al ripristino della password. Ciò permetterà agli amministratori dell'organizzazione di cambiare la tua password principale.</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>Le policy dell'organizzazione controllano il timeout della tua cassaforte. Il tempo massimo consentito è di $HOURS$ ore e $MINUTES$ minuti</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
-    <value>Your vault timeout exceeds the restrictions set by your organization.</value>
+    <value>Il timeout della tua cassaforte supera i limiti impostati dalla tua organizzazione.</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
-    <value>One or more organization policies prevents your from exporting your personal vault.</value>
+    <value>Una o più policy dell'organizzazione ti impediscono di esportare la tua cassaforte personale.</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>Aggiungi account</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>Sbloccato</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>Bloccato</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>Disconnesso</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>Passato all'account successivo disponibile</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>Account bloccato</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>Account disconnesso correttamente</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>Account rimosso correttamente</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>Elimina account</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>L'eliminazione del tuo account è definitiva</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>Il tuo account e tutti i dati associati saranno cancellati e non recuperabili. Sei sicuro di voler continuare?</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>Eliminazione del tuo account</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>Il tuo account è stato eliminato definitivamente</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>Codice di verifica non valido.</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>Richiedi OTP</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>Invia codice</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>Invio in corso</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>Copia collegamento Send al salvataggio</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>Invio codice</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>Verifica</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>Invia di nuovo il codice</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>Il codice di verifica è stato inviato al tuo indirizzo email</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>Si è verificato un errore durante l'invio del codice di verifica alla tua email. Riprova.</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>Inserisci il codice di verifica che è stato inviato alla tua email</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>Invia log del crash</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>Aiuta Bitwarden a migliorare la stabilità dell'app inviando report di crash.</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>Le opzioni sono estese, tocca per comprimere.</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>Le opzioni sono compresse, tocca per estenderle.</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>Maiuscole (A-Z)</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>Minuscole (a-z)</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>Numeri (0-9)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>Caratteri speciali (!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>Tocca per tornare indietro</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>La password è visibile, tocca per nascondere.</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>La password non è visibile, tocca per mostrare.</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>Filtra gli oggetti per cassaforte</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>Tutte le casseforti</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>Casseforti</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>Cassaforte: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Tutte</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>Codici di verifica</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>È richiesto un abbonamento Premium</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>Non riesci ad aggiungere la chiave di autenticazione? </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Scansiona codice QR</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>Non riesci a scansionare il codice QR? </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>Chiave di autenticazione</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>Inserisci la chiave manualmente</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>Aggiungi TOTP</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>Imposta TOTP</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>Una volta inserita la chiave,
+seleziona Aggiungi TOTP per salvare la chiave in modo sicuro</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>Impostare le opzioni di blocco su “Mai” fa sì che la tua cassaforte sia a disposizione di chiunque abbia accesso al tuo dispositivo. Se si utilizza questa opzione, è necessario assicurarsi di mantenere il dispositivo adeguatamente protetto.</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>One or more of the URLs entered are invalid. Please revise it and try to save again.</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>We were unable to process your request. Please try again or contact us.</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>Permetti cattura dello schermo</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>Sei sicuro di voler attivare la cattura dello schermo?</value>
   </data>
 </root>

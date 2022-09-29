@@ -278,6 +278,18 @@
   <data name="LogoutConfirmation" xml:space="preserve">
     <value>Anda yakin ingin keluar?</value>
   </data>
+  <data name="RemoveAccount" xml:space="preserve">
+    <value>Hapus Akun</value>
+  </data>
+  <data name="RemoveAccountConfirmation" xml:space="preserve">
+    <value>Apakah anda yakin ingin menghapus akun ini?</value>
+  </data>
+  <data name="AccountAlreadyAdded" xml:space="preserve">
+    <value>Akun telah ditambahkan</value>
+  </data>
+  <data name="SwitchToAlreadyAddedAccountConfirmation" xml:space="preserve">
+    <value>Would you like to switch to it now?</value>
+  </data>
   <data name="MasterPassword" xml:space="preserve">
     <value>Kata Sandi Utama</value>
     <comment>Label for a master password.</comment>
@@ -289,6 +301,10 @@
   <data name="MyVault" xml:space="preserve">
     <value>Brankas Saya</value>
     <comment>The title for the vault page.</comment>
+  </data>
+  <data name="Authenticator" xml:space="preserve">
+    <value>Authenticator</value>
+    <comment>Authenticator TOTP feature</comment>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nama</value>
@@ -314,7 +330,7 @@
     <comment>Button text for a save operation (verb).</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Move</value>
+    <value>Pindah</value>
   </data>
   <data name="Saving" xml:space="preserve">
     <value>Menyimpan...</value>
@@ -761,6 +777,12 @@
   <data name="Enabled" xml:space="preserve">
     <value>Diaktifkan</value>
   </data>
+  <data name="Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>On</value>
+  </data>
   <data name="Status" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -789,7 +811,7 @@
     <value>Anda mencari item pengisian otomatis untuk "{0}".</value>
   </data>
   <data name="LearnOrg" xml:space="preserve">
-    <value>Learn About Organizations</value>
+    <value>Pelajari tentang Organisasi</value>
   </data>
   <data name="CannotOpenApp" xml:space="preserve">
     <value>Tidak dapat membuka aplikasi {0}.</value>
@@ -880,11 +902,9 @@
   <data name="AuthenticatorKeyReadError" xml:space="preserve">
     <value>Tidak dapat membaca kunci autentikasi.</value>
   </data>
-  <data name="CameraInstructionBottom" xml:space="preserve">
-    <value>Pemindaian akan terjadi secara otomatis.</value>
-  </data>
-  <data name="CameraInstructionTop" xml:space="preserve">
-    <value>Arahkan kamera Anda ke kode QR.</value>
+  <data name="PointYourCameraAtTheQRCode" xml:space="preserve">
+    <value>Point your camera at the QR Code.
+Scanning will happen automatically.</value>
   </data>
   <data name="ScanQrTitle" xml:space="preserve">
     <value>Pindai Kode QR</value>
@@ -898,11 +918,11 @@
   <data name="CopyTotp" xml:space="preserve">
     <value>Salin TOTP</value>
   </data>
-  <data name="DisableAutoTotpCopyDescription" xml:space="preserve">
-    <value>Jika info masuk Anda memiliki kunci autentikasi yang menyertainya, kode verifikasi TOTP akan disalin secara otomatis ke clipboard Anda setiap kali Anda mengisi info masuk secara otomatis.</value>
+  <data name="CopyTotpAutomaticallyDescription" xml:space="preserve">
+    <value>If a login has an authenticator key, copy the TOTP verification code to your clip-board when you auto-fill the login.</value>
   </data>
-  <data name="DisableAutoTotpCopy" xml:space="preserve">
-    <value>Nonaktifkan salinan TOTP otomatis</value>
+  <data name="CopyTotpAutomatically" xml:space="preserve">
+    <value>Copy TOTP automatically</value>
   </data>
   <data name="PremiumRequired" xml:space="preserve">
     <value>Keanggotaan premium diperlukan untuk menggunakan fitur ini.</value>
@@ -1062,6 +1082,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Nama Belakang</value>
   </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nama Lengkap</value>
+  </data>
   <data name="LicenseNumber" xml:space="preserve">
     <value>Nomor Lisensi</value>
   </data>
@@ -1116,11 +1139,11 @@
   <data name="Expiration" xml:space="preserve">
     <value>Masa Berlaku</value>
   </data>
-  <data name="DisableWebsiteIcons" xml:space="preserve">
-    <value>Nonaktifkan Ikon Situs Web</value>
+  <data name="ShowWebsiteIcons" xml:space="preserve">
+    <value>Show website icons</value>
   </data>
-  <data name="DisableWebsiteIconsDescription" xml:space="preserve">
-    <value>Ikon Situs Web menyediakan gambar yang dikenali di sebelah item info masuk di brankas Anda.</value>
+  <data name="ShowWebsiteIconsDescription" xml:space="preserve">
+    <value>Show a recognizable image next to each login.</value>
   </data>
   <data name="IconsUrl" xml:space="preserve">
     <value>URL Server Ikon</value>
@@ -1185,6 +1208,9 @@
   </data>
   <data name="FieldTypeHidden" xml:space="preserve">
     <value>Tersembunyi</value>
+  </data>
+  <data name="FieldTypeLinked" xml:space="preserve">
+    <value>Terhubung</value>
   </data>
   <data name="FieldTypeText" xml:space="preserve">
     <value>Teks</value>
@@ -1357,11 +1383,15 @@
   <data name="SearchCollection" xml:space="preserve">
     <value>Cari koleksi</value>
   </data>
-  <data name="SearchFolder" xml:space="preserve">
-    <value>Cari folder</value>
+  <data name="SearchFileSends" xml:space="preserve">
+    <value>Search File Sends</value>
   </data>
-  <data name="SearchType" xml:space="preserve">
-    <value>Jenis pencarian</value>
+  <data name="SearchTextSends" xml:space="preserve">
+    <value>Search Text Sends</value>
+  </data>
+  <data name="SearchGroup" xml:space="preserve">
+    <value>Search {0}</value>
+    <comment>ex: Search Logins</comment>
   </data>
   <data name="Type" xml:space="preserve">
     <value>Jenis</value>
@@ -1385,7 +1415,7 @@
     <value>Tidak ada koleksi yang akan ditampilkan.</value>
   </data>
   <data name="MovedItemToOrg" xml:space="preserve">
-    <value>{0} moved to {1}.</value>
+    <value>{0} dipindahkan ke {1}.</value>
     <comment>ex: Item moved to Organization.</comment>
   </data>
   <data name="ItemShared" xml:space="preserve">
@@ -1401,13 +1431,13 @@
     <value>Berbagi Item</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>Pindah ke Organisasi</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
     <value>Tidak ada organisasi untuk dicantumkan.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>Pilih sebuah organisasi yang Anda inginkan untuk memindahkan item ini. Memindahkan berarti menyerahkan kepemilikan item kepada organisasi tersebut. Anda tidak akan lagi menjadi pemilik item ini.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Jumlah kata</value>
@@ -1452,6 +1482,9 @@
   <data name="Unlock" xml:space="preserve">
     <value>Membuka kunci</value>
   </data>
+  <data name="UnlockVault" xml:space="preserve">
+    <value>Buka Vault</value>
+  </data>
   <data name="ThirtyMinutes" xml:space="preserve">
     <value>30 menit</value>
   </data>
@@ -1467,6 +1500,9 @@
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan.</value>
+  </data>
+  <data name="VaultLockedIdentity" xml:space="preserve">
+    <value>Brankas terkunci. Verifikasi identitas Anda untuk melanjutkan.</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Gelap</value>
@@ -1514,7 +1550,13 @@
     <value>Ubah warna tema aplikasi.</value>
   </data>
   <data name="ThemeDefault" xml:space="preserve">
-    <value>Default (System)</value>
+    <value>Bawaan (Sistem)</value>
+  </data>
+  <data name="DefaultDarkTheme" xml:space="preserve">
+    <value>Default dark theme</value>
+  </data>
+  <data name="DefaultDarkThemeDescription" xml:space="preserve">
+    <value>Choose the dark theme to use when using Default (System) theme while your device's dark mode is enabled.</value>
   </data>
   <data name="CopyNotes" xml:space="preserve">
     <value>Catatan Salinan</value>
@@ -1532,17 +1574,21 @@
     <value>Hitam</value>
     <comment>The color black</comment>
   </data>
-  <data name="BlacklistedUris" xml:space="preserve">
-    <value>Daftar hitam URI</value>
+  <data name="Nord" xml:space="preserve">
+    <value>Nord</value>
+    <comment>'Nord' is the name of a specific color scheme. It should not be translated.</comment>
   </data>
-  <data name="BlacklistedUrisDescription" xml:space="preserve">
-    <value>URIs that are blacklisted will not offer auto-fill. The list of apps should be comma separated. Ex: "https://twitter.com, androidapp://com.twitter.android".</value>
+  <data name="AutofillBlockedUris" xml:space="preserve">
+    <value>Auto-fill blocked URIs</value>
   </data>
-  <data name="DisableSavePrompt" xml:space="preserve">
-    <value>Nonaktifkan Saran Simpan</value>
+  <data name="AutofillBlockedUrisDescription" xml:space="preserve">
+    <value>Auto-fill will not be offered for blocked URIs. Separate multiple URIs with a comma. For example: "https://twitter.com, androidapp://com.twitter.android".</value>
   </data>
-  <data name="DisableSavePromptDescription" xml:space="preserve">
-    <value>"Saran Simpan" secara otomatis meminta anda untuk menyimpan item baru ke brankas anda setiap kali anda memasukkannya untuk pertama kali.</value>
+  <data name="AskToAddLogin" xml:space="preserve">
+    <value>Ask to add login</value>
+  </data>
+  <data name="AskToAddLoginDescription" xml:space="preserve">
+    <value>Ask to add an item if one isn't found in your vault.</value>
   </data>
   <data name="OnRestart" xml:space="preserve">
     <value>Saat Aplikasi Memulai Ulang</value>
@@ -1607,6 +1653,15 @@
   </data>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
     <value>Masukkan kata sandi utama Anda untuk mengekspor data brankas Anda.</value>
+  </data>
+  <data name="SendVerificationCodeToEmail" xml:space="preserve">
+    <value>Kirim kode verifikasi ke email Anda</value>
+  </data>
+  <data name="CodeSent" xml:space="preserve">
+    <value>Kode Terkirim!</value>
+  </data>
+  <data name="ConfirmYourIdentity" xml:space="preserve">
+    <value>Konfirmasi identitas Anda untuk melanjutkan.</value>
   </data>
   <data name="ExportVaultWarning" xml:space="preserve">
     <value>Ekspor ini berisi data vault Anda dalam format yang tidak dienkripsi. Anda tidak boleh menyimpan atau mengirim file yang diekspor melalui saluran yang tidak aman (seperti emel). Hapus segera setelah Anda selesai menggunakannya.</value>
@@ -1826,6 +1881,9 @@
     <value>Nama yang bersahabat untuk menggambarkan Send ini.</value>
     <comment>'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.</comment>
   </data>
+  <data name="Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
   <data name="TypeText" xml:space="preserve">
     <value>Teks</value>
   </data>
@@ -1841,6 +1899,18 @@
   </data>
   <data name="TypeFileInfo" xml:space="preserve">
     <value>Berkas yang ingin Anda kirim.</value>
+  </data>
+  <data name="FileTypeIsSelected" xml:space="preserve">
+    <value>File type is selected.</value>
+  </data>
+  <data name="FileTypeIsNotSelected" xml:space="preserve">
+    <value>File type is not selected, tap to select.</value>
+  </data>
+  <data name="TextTypeIsSelected" xml:space="preserve">
+    <value>Text type is selected.</value>
+  </data>
+  <data name="TextTypeIsNotSelected" xml:space="preserve">
+    <value>Text type is not selected, tap to select.</value>
   </data>
   <data name="DeletionDate" xml:space="preserve">
     <value>Tanggal Penghapusan</value>
@@ -2009,54 +2079,241 @@
     <value>Tindakan ini dilindungi, untuk melanjutkan harap masukkan ulang sandi utama Anda untuk memverifikasi identitas Anda.</value>
   </data>
   <data name="CaptchaRequired" xml:space="preserve">
-    <value>Captcha Required</value>
+    <value>Captcha Diperlukan</value>
   </data>
   <data name="CaptchaFailed" xml:space="preserve">
-    <value>Captcha Failed. Please try again.</value>
+    <value>Captcha Gagal. Silahkan coba lagi.</value>
   </data>
   <data name="UpdatedMasterPassword" xml:space="preserve">
-    <value>Updated Master Password</value>
+    <value>Kata Sandi Telah Diperbarui</value>
   </data>
   <data name="UpdateMasterPassword" xml:space="preserve">
-    <value>Update Master Password</value>
+    <value>Perbarui Kata Sandi Utama</value>
   </data>
   <data name="UpdateMasterPasswordWarning" xml:space="preserve">
-    <value>Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update your Master Password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour.</value>
+    <value>Kata Sandi Utama Anda baru-baru ini diubah oleh administrator organisasi Anda. Untuk mengakses brankas tersebut, Anda diharuskan memperbarui Kata Sandi Utama Anda sekarang. Jika Anda melanjutkan, Anda akan keluar dari sesi saat ini, yang mana mengharuskan Anda untuk login kembali. Sesi yang aktif di perangkat lain akan tetap aktif selama satu jam kedepan.</value>
   </data>
   <data name="UpdatingPassword" xml:space="preserve">
-    <value>Updating Password</value>
+    <value>Memperbarui Kata Sandi</value>
   </data>
   <data name="UpdatePasswordError" xml:space="preserve">
-    <value>Currently unable to update password</value>
+    <value>Saat ini tidak dapat memperbarui kata sandi</value>
+  </data>
+  <data name="RemoveMasterPassword" xml:space="preserve">
+    <value>Hapus Kata Sandi Utama</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning" xml:space="preserve">
+    <value>{0} sedang menggunakan SSO dengan enkripsi yang dikelola oleh pelanggan. Melanjutkan akan menghapus Kata Sandi Utama Anda dari akun Anda dan membutuhkan SSO untuk login.</value>
+  </data>
+  <data name="RemoveMasterPasswordWarning2" xml:space="preserve">
+    <value>Jika Anda tidak ingin menghapus Kata Sandi Utama Anda, Anda dapat meninggalkan organisasi ini.</value>
+  </data>
+  <data name="LeaveOrganization" xml:space="preserve">
+    <value>Tinggalkan Organisasi</value>
+  </data>
+  <data name="LeaveOrganizationName" xml:space="preserve">
+    <value>Tinggalkan {0}?</value>
   </data>
   <data name="Fido2Title" xml:space="preserve">
     <value>FIDO2 WebAuthn</value>
   </data>
   <data name="Fido2Instruction" xml:space="preserve">
-    <value>To continue, have your FIDO2 WebAuthn enabled security key ready, then follow the instructions after clicking 'Authenticate WebAuthn' on the next screen.</value>
+    <value>Untuk melanjutkan, pastikan kunci keamanan FIDO2 WebAuthn dalam keadaan aktif, kemudian ikuti instruksi yang muncul setelah mengklik 'Authenticate WebAuthn' di layar berikutnya.</value>
   </data>
   <data name="Fido2Desc" xml:space="preserve">
-    <value>Authentication using FIDO2 WebAuthn, you can authenticate using an external security key.</value>
+    <value>Otentikasi menggunakan FIDO2 WebAuthn, Anda dapat mengautentikasi menggunakan kunci keamanan eksternal.</value>
   </data>
   <data name="Fido2AuthenticateWebAuthn" xml:space="preserve">
-    <value>Authenticate WebAuthn</value>
+    <value>Otentikasi WebAuthn</value>
   </data>
   <data name="Fido2ReturnToApp" xml:space="preserve">
-    <value>Return to App</value>
+    <value>Kembali ke Aplikasi </value>
   </data>
   <data name="Fido2CheckBrowser" xml:space="preserve">
-    <value>Please make sure your default browser supports WebAuthn and try again.</value>
+    <value>Pastikan peramban utama Anda mendukung WebAuthn, kemudian coba lagi.</value>
   </data>
   <data name="ResetPasswordAutoEnrollInviteWarning" xml:space="preserve">
-    <value>This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password.</value>
+    <value>Organisasi ini memiliki kebijakan perusahaan yang secara otomatis mendaftarkan Anda dalam pengaturan ulang kata sandi. Dengan mendaftar, akan memungkinkan administrator organisasi untuk mengubah kata sandi utama Anda.</value>
   </data>
   <data name="VaultTimeoutPolicyInEffect" xml:space="preserve">
-    <value>Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is {0} hour(s) and {1} minute(s)</value>
+    <value>Kebijakan organisasi Anda memengaruhi waktu tunggu brankas Anda. Batas maksimal Waktu Tunggu Brankas yang diizinkan adalah {0} jam dan {1} menit</value>
   </data>
   <data name="VaultTimeoutToLarge" xml:space="preserve">
     <value>Your vault timeout exceeds the restrictions set by your organization.</value>
   </data>
   <data name="DisablePersonalVaultExportPolicyInEffect">
     <value>One or more organization policies prevents your from exporting your personal vault.</value>
+  </data>
+  <data name="AddAccount" xml:space="preserve">
+    <value>Tambahkan Akun</value>
+  </data>
+  <data name="AccountUnlocked" xml:space="preserve">
+    <value>Tidak terkunci</value>
+  </data>
+  <data name="AccountLocked" xml:space="preserve">
+    <value>Terkunci</value>
+  </data>
+  <data name="AccountLoggedOut" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="AccountSwitchedAutomatically" xml:space="preserve">
+    <value>Switched to next available account</value>
+  </data>
+  <data name="AccountLockedSuccessfully" xml:space="preserve">
+    <value>Akun terkunci</value>
+  </data>
+  <data name="AccountLoggedOutSuccessfully" xml:space="preserve">
+    <value>Berhasil keluar</value>
+  </data>
+  <data name="AccountRemovedSuccessfully" xml:space="preserve">
+    <value>Account removed successfully</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>Hapus akun</value>
+  </data>
+  <data name="DeletingYourAccountIsPermanent" xml:space="preserve">
+    <value>Deleting your account is permanent</value>
+  </data>
+  <data name="DeleteAccountExplanation" xml:space="preserve">
+    <value>Your account and all vault data will be erased and unrecoverable. Are you sure you want to continue?</value>
+  </data>
+  <data name="DeletingYourAccount" xml:space="preserve">
+    <value>Hapus akun anda</value>
+  </data>
+  <data name="YourAccountHasBeenPermanentlyDeleted" xml:space="preserve">
+    <value>Akun Anda telah dihapus secara permanen.</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>Kode verifikasi tidak valid.</value>
+  </data>
+  <data name="RequestOTP" xml:space="preserve">
+    <value>Request one-time password</value>
+  </data>
+  <data name="SendCode" xml:space="preserve">
+    <value>Kirim Kode</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>Mengirim...</value>
+  </data>
+  <data name="CopySendLinkOnSave" xml:space="preserve">
+    <value>Copy Send link on save</value>
+  </data>
+  <data name="SendingCode" xml:space="preserve">
+    <value>Sending code</value>
+  </data>
+  <data name="Verifying" xml:space="preserve">
+    <value>Memverifikasi...</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>Kirim ulang kode</value>
+  </data>
+  <data name="AVerificationCodeWasSentToYourEmail" xml:space="preserve">
+    <value>Kode verifikasi telah dikirim ke email Anda.</value>
+  </data>
+  <data name="AnErrorOccurredWhileSendingAVerificationCodeToYourEmailPleaseTryAgain" xml:space="preserve">
+    <value>An error occurred while sending a verification code to your email. Please try again</value>
+  </data>
+  <data name="EnterTheVerificationCodeThatWasSentToYourEmail" xml:space="preserve">
+    <value>Masukkan kode verifikasi yang dikirim ke email anda</value>
+  </data>
+  <data name="SubmitCrashLogs" xml:space="preserve">
+    <value>Submit crash logs</value>
+  </data>
+  <data name="SubmitCrashLogsDescription" xml:space="preserve">
+    <value>Help Bitwarden improve app stability by submitting crash reports.</value>
+  </data>
+  <data name="OptionsExpanded" xml:space="preserve">
+    <value>Options are expanded, tap to collapse.</value>
+  </data>
+  <data name="OptionsCollapsed" xml:space="preserve">
+    <value>Options are collapsed, tap to expand.</value>
+  </data>
+  <data name="UppercaseAtoZ" xml:space="preserve">
+    <value>Uppercase (A to Z)</value>
+  </data>
+  <data name="LowercaseAtoZ" xml:space="preserve">
+    <value>Lowercase (A to Z)</value>
+  </data>
+  <data name="NumbersZeroToNine" xml:space="preserve">
+    <value>Numbers (0 to 9)</value>
+  </data>
+  <data name="SpecialCharacters" xml:space="preserve">
+    <value>Special Characters (!@#$%^&amp;*)</value>
+  </data>
+  <data name="TapToGoBack" xml:space="preserve">
+    <value>Tap to go back</value>
+  </data>
+  <data name="PasswordIsVisibleTapToHide" xml:space="preserve">
+    <value>Password is visible, tap to hide.</value>
+  </data>
+  <data name="PasswordIsNotVisibleTapToShow" xml:space="preserve">
+    <value>Password is not visible, tap to show.</value>
+  </data>
+  <data name="FilterByVault" xml:space="preserve">
+    <value>Filter items by vault</value>
+  </data>
+  <data name="AllVaults" xml:space="preserve">
+    <value>All Vaults</value>
+  </data>
+  <data name="Vaults" xml:space="preserve">
+    <value>Vaults</value>
+  </data>
+  <data name="VaultFilterDescription" xml:space="preserve">
+    <value>Vault: {0}</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Totp" xml:space="preserve">
+    <value>TOTP</value>
+  </data>
+  <data name="VerificationCodes" xml:space="preserve">
+    <value>Verification Codes</value>
+  </data>
+  <data name="PremiumSubscriptionRequired" xml:space="preserve">
+    <value>Premium subscription required</value>
+  </data>
+  <data name="CannotAddAuthenticatorKey" xml:space="preserve">
+    <value>Cannot add authenticator key? </value>
+  </data>
+  <data name="ScanQRCode" xml:space="preserve">
+    <value>Scan QR Code</value>
+  </data>
+  <data name="CannotScanQRCode" xml:space="preserve">
+    <value>Cannot scan QR Code? </value>
+  </data>
+  <data name="AuthenticatorKeyScanner" xml:space="preserve">
+    <value>Authenticator Key</value>
+  </data>
+  <data name="EnterKeyManually" xml:space="preserve">
+    <value>Enter Key Manually</value>
+  </data>
+  <data name="AddTotp" xml:space="preserve">
+    <value>Add TOTP</value>
+  </data>
+  <data name="SetupTotp" xml:space="preserve">
+    <value>Set up TOTP</value>
+  </data>
+  <data name="OnceTheKeyIsSuccessfullyEntered" xml:space="preserve">
+    <value>Once the key is successfully entered,
+select Add TOTP to store the key safely</value>
+  </data>
+  <data name="SelectAddTotpToStoreTheKeySafely" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NeverLockWarning" xml:space="preserve">
+    <value>Setting your lock options to “Never” keeps your vault available to anyone with access to your device. If you use this option, you should ensure that you keep your device properly protected.</value>
+  </data>
+  <data name="EnvironmentPageUrlsError" xml:space="preserve">
+    <value>One or more of the URLs entered are invalid. Please revise it and try to save again.</value>
+  </data>
+  <data name="GenericErrorMessage" xml:space="preserve">
+    <value>We were unable to process your request. Please try again or contact us.</value>
+  </data>
+  <data name="AllowScreenCapture" xml:space="preserve">
+    <value>Allow screen capture</value>
+  </data>
+  <data name="AreYouSureYouWantToEnableScreenCapture" xml:space="preserve">
+    <value>Are you sure you want to enable Screen Capture?</value>
   </data>
 </root>

@@ -1,17 +1,15 @@
-﻿using Bit.App.Models;
-using Bit.App.Resources;
-using Bit.Core.Abstractions;
-using Bit.Core.Utilities;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Bit.App.Models;
+using Bit.App.Resources;
 using Bit.App.Utilities;
+using Bit.Core.Utilities;
 using Xamarin.Forms;
 
 namespace Bit.App.Pages
 {
     public partial class LockPage : BaseContentPage
     {
-        private readonly IStorageService _storageService;
         private readonly AppOptions _appOptions;
         private readonly bool _autoPromptBiometric;
         private readonly LockPageViewModel _vm;
@@ -21,15 +19,12 @@ namespace Bit.App.Pages
 
         public LockPage(AppOptions appOptions = null, bool autoPromptBiometric = true)
         {
-            _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _appOptions = appOptions;
             _autoPromptBiometric = autoPromptBiometric;
             InitializeComponent();
             _vm = BindingContext as LockPageViewModel;
             _vm.Page = this;
             _vm.UnlockedAction = () => Device.BeginInvokeOnMainThread(async () => await UnlockedAsync());
-            MasterPasswordEntry = _masterPassword;
-            PinEntry = _pin;
 
             // Cozy customization, disable menu
             // logout will be not requested from the login form
@@ -45,8 +40,17 @@ namespace Bit.App.Pages
             //*/
         }
 
-        public Entry MasterPasswordEntry { get; set; }
-        public Entry PinEntry { get; set; }
+        public Entry SecretEntry
+        {
+            get
+            {
+                if (_vm?.PinLock ?? false)
+                {
+                    return _pin;
+                }
+                return _masterPassword;
+            }
+        }
 
         public async Task PromptBiometricAfterResumeAsync()
         {
@@ -69,19 +73,67 @@ namespace Bit.App.Pages
             {
                 return;
             }
+
             _appeared = true;
-            await _vm.InitAsync(_autoPromptBiometric);
+            _mainContent.Content = _mainLayout;
+
+            _accountAvatar?.OnAppearing();
+
+            _vm.AvatarImageSource = await GetAvatarImageSourceAsync();
+
+            await _vm.InitAsync();
+
+            _vm.FocusSecretEntry += PerformFocusSecretEntry;
+
             if (!_vm.BiometricLock)
             {
-                if (_vm.PinLock)
+                RequestFocus(SecretEntry);
+            }
+            else
+            {
+                if (_vm.UsingKeyConnector && !_vm.PinLock)
                 {
-                    RequestFocus(PinEntry);
+                    _passwordGrid.IsVisible = false;
+                    _unlockButton.IsVisible = false;
                 }
-                else
+                if (_autoPromptBiometric)
                 {
-                    RequestFocus(MasterPasswordEntry);
+                    var tasks = Task.Run(async () =>
+                    {
+                        await Task.Delay(500);
+                        Device.BeginInvokeOnMainThread(async () => await _vm.PromptBiometricAsync());
+                    });
                 }
             }
+        }
+
+        private void PerformFocusSecretEntry(int? cursorPosition)
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                SecretEntry.Focus();
+                if (cursorPosition.HasValue)
+                {
+                    SecretEntry.CursorPosition = cursorPosition.Value;
+                }
+            });
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            if (_accountListOverlay.IsVisible)
+            {
+                _accountListOverlay.HideAsync().FireAndForget();
+                return true;
+            }
+            return false;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+
+            _accountAvatar?.OnDisappearing();
         }
 
         private void Unlock_Clicked(object sender, EventArgs e)
@@ -98,6 +150,7 @@ namespace Bit.App.Pages
 
         private async void LogOut_Clicked(object sender, EventArgs e)
         {
+            await _accountListOverlay.HideAsync();
             if (DoOnce())
             {
                 await _vm.LogOutAsync();
@@ -114,6 +167,8 @@ namespace Bit.App.Pages
 
         private async void More_Clicked(object sender, System.EventArgs e)
         {
+            await _accountListOverlay.HideAsync();
+
             if (!DoOnce())
             {
                 return;
@@ -135,6 +190,7 @@ namespace Bit.App.Pages
                 return;
             }
             var previousPage = await AppHelpers.ClearPreviousPage();
+
             Application.Current.MainPage = new TabsPage(_appOptions, previousPage);
         }
     }

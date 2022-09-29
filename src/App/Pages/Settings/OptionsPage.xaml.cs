@@ -19,6 +19,7 @@ namespace Bit.App.Pages
             _vm = BindingContext as OptionsPageViewModel;
             _vm.Page = this;
             _themePicker.ItemDisplayBinding = new Binding("Value");
+            _autoDarkThemePicker.ItemDisplayBinding = new Binding("Value");
             _uriMatchPicker.ItemDisplayBinding = new Binding("Value");
             _clearClipboardPicker.ItemDisplayBinding = new Binding("Value");
             if (Device.RuntimePlatform == Device.Android)
@@ -29,6 +30,7 @@ namespace Bit.App.Pages
             else
             {
                 _themePicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
+                _autoDarkThemePicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
                 _uriMatchPicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
                 _clearClipboardPicker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
             }
@@ -43,12 +45,12 @@ namespace Bit.App.Pages
         protected async override void OnDisappearing()
         {
             base.OnDisappearing();
-            await _vm.UpdateAutofillBlacklistedUris();
+            await _vm.UpdateAutofillBlockedUris();
         }
 
-        private async void BlacklistedUrisEditor_Unfocused(object sender, FocusEventArgs e)
+        private async void AutofillBlockedUrisEditor_Unfocused(object sender, FocusEventArgs e)
         {
-            await _vm.UpdateAutofillBlacklistedUris();
+            await _vm.UpdateAutofillBlockedUris();
         }
 
         private async void Close_Clicked(object sender, System.EventArgs e)

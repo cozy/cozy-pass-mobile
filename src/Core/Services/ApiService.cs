@@ -1,4 +1,11 @@
-﻿using Bit.Core.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Bit.Core.Abstractions;
+using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.Request;
@@ -6,12 +13,6 @@ using Bit.Core.Models.Response;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bit.Core.Services
 {
@@ -24,12 +25,12 @@ namespace Bit.Core.Services
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly ITokenService _tokenService;
         private readonly IPlatformUtilsService _platformUtilsService;
-        private readonly Func<bool, Task> _logoutCallbackAsync;
+        private readonly Func<Tuple<string, bool, bool>, Task> _logoutCallbackAsync;
 
         public ApiService(
             ITokenService tokenService,
             IPlatformUtilsService platformUtilsService,
-            Func<bool, Task> logoutCallbackAsync,
+            Func<Tuple<string, bool, bool>, Task> logoutCallbackAsync,
             string customUserAgent = null)
         {
             _tokenService = tokenService;
@@ -37,6 +38,8 @@ namespace Bit.Core.Services
             _logoutCallbackAsync = logoutCallbackAsync;
             var device = (int)_platformUtilsService.GetDevice();
             _httpClient.DefaultRequestHeaders.Add("Device-Type", device.ToString());
+            _httpClient.DefaultRequestHeaders.Add("Bitwarden-Client-Name", _platformUtilsService.GetClientType().GetString());
+            _httpClient.DefaultRequestHeaders.Add("Bitwarden-Client-Version", _platformUtilsService.GetApplicationVersion());
             if (!string.IsNullOrWhiteSpace(customUserAgent))
             {
                 _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(customUserAgent);
@@ -87,7 +90,7 @@ namespace Bit.Core.Services
                 Version = new Version(1, 0),
                 RequestUri = new Uri(string.Concat(IdentityBaseUrl, "/connect/token")),
                 Method = HttpMethod.Post,
-                Content = new FormUrlEncodedContent(request.ToIdentityToken(_platformUtilsService.IdentityClientId))
+                Content = new FormUrlEncodedContent(request.ToIdentityToken(_platformUtilsService.GetClientType().GetString()))
             };
             requestMessage.Headers.Add("Accept", "application/json");
             request.AlterIdentityTokenHeaders(requestMessage.Headers);
@@ -178,12 +181,38 @@ namespace Bit.Core.Services
                 true, false);
         }
 
+        public Task PostAccountRequestOTP()
+        {
+            return SendAsync<object, object>(HttpMethod.Post, "/accounts/request-otp", null, true, false, false);
+        }
+
+        public Task PostAccountVerifyOTPAsync(VerifyOTPRequest request)
+        {
+            return SendAsync<VerifyOTPRequest, object>(HttpMethod.Post, "/accounts/verify-otp", request,
+                true, false, false);
+        }
+
         public Task PutUpdateTempPasswordAsync(UpdateTempPasswordRequest request)
         {
             return SendAsync<UpdateTempPasswordRequest, object>(HttpMethod.Put, "/accounts/update-temp-password",
                 request, true, false);
         }
-        
+
+        public Task DeleteAccountAsync(DeleteAccountRequest request)
+        {
+            return SendAsync<DeleteAccountRequest, object>(HttpMethod.Delete, "/accounts", request, true, false);
+        }
+
+        public Task PostConvertToKeyConnector()
+        {
+            return SendAsync<object, object>(HttpMethod.Post, "/accounts/convert-to-key-connector", null, true, false);
+        }
+
+        public Task PostSetKeyConnectorKey(SetKeyConnectorKeyRequest request)
+        {
+            return SendAsync<SetKeyConnectorKeyRequest>(HttpMethod.Post, "/accounts/set-key-connector-key", request, true);
+        }
+
         #endregion
 
         #region Folder APIs
@@ -409,9 +438,9 @@ namespace Bit.Core.Services
         }
 
         #endregion
-        
+
         #region Organizations APIs
-        
+
         public Task<OrganizationKeysResponse> GetOrganizationKeysAsync(string id)
         {
             return SendAsync<object, OrganizationKeysResponse>(HttpMethod.Get, $"/organizations/{id}/keys", null, true, true);
@@ -422,9 +451,14 @@ namespace Bit.Core.Services
             return SendAsync<object, OrganizationAutoEnrollStatusResponse>(HttpMethod.Get,
                 $"/organizations/{identifier}/auto-enroll-status", null, true, true);
         }
-        
+
+        public Task PostLeaveOrganization(string id)
+        {
+            return SendAsync<object, object>(HttpMethod.Post, $"/organizations/{id}/leave", null, true, false);
+        }
+
         #endregion
-        
+
         #region Organization User APIs
 
         public Task PutOrganizationUserResetPasswordEnrollmentAsync(string orgId, string userId,
@@ -433,7 +467,71 @@ namespace Bit.Core.Services
             return SendAsync<OrganizationUserResetPasswordEnrollmentRequest, object>(HttpMethod.Put,
                 $"/organizations/{orgId}/users/{userId}/reset-password-enrollment", request, true, false);
         }
-        
+
+        #endregion
+
+        #region Key Connector
+
+        public async Task<KeyConnectorUserKeyResponse> GetUserKeyFromKeyConnector(string keyConnectorUrl)
+        {
+            using (var requestMessage = new HttpRequestMessage())
+            {
+                var authHeader = await GetActiveBearerTokenAsync();
+
+                requestMessage.Version = new Version(1, 0);
+                requestMessage.Method = HttpMethod.Get;
+                requestMessage.RequestUri = new Uri(string.Concat(keyConnectorUrl, "/user-keys"));
+                requestMessage.Headers.Add("Authorization", string.Concat("Bearer ", authHeader));
+
+                HttpResponseMessage response;
+                try
+                {
+                    response = await _httpClient.SendAsync(requestMessage);
+                }
+                catch (Exception e)
+                {
+                    throw new ApiException(HandleWebError(e));
+                }
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = await HandleErrorAsync(response, false, true);
+                    throw new ApiException(error);
+                }
+                var responseJsonString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<KeyConnectorUserKeyResponse>(responseJsonString);
+            }
+        }
+
+        public async Task PostUserKeyToKeyConnector(string keyConnectorUrl, KeyConnectorUserKeyRequest request)
+        {
+            using (var requestMessage = new HttpRequestMessage())
+            {
+                var authHeader = await GetActiveBearerTokenAsync();
+
+                requestMessage.Version = new Version(1, 0);
+                requestMessage.Method = HttpMethod.Post;
+                requestMessage.RequestUri = new Uri(string.Concat(keyConnectorUrl, "/user-keys"));
+                requestMessage.Headers.Add("Authorization", string.Concat("Bearer ", authHeader));
+                requestMessage.Content = new StringContent(JsonConvert.SerializeObject(request, _jsonSettings),
+                    Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response;
+                try
+                {
+                    response = await _httpClient.SendAsync(requestMessage);
+                }
+                catch (Exception e)
+                {
+                    throw new ApiException(HandleWebError(e));
+                }
+                if (!response.IsSuccessStatusCode)
+                {
+                    var error = await HandleErrorAsync(response, false, true);
+                    throw new ApiException(error);
+                }
+            }
+        }
+
         #endregion
 
         #region Helpers
@@ -449,7 +547,7 @@ namespace Bit.Core.Services
             return accessToken;
         }
 
-        public async Task<object> PreValidateSso(string identifier)
+        public async Task<SsoPrevalidateResponse> PreValidateSso(string identifier)
         {
             var path = "/account/prevalidate?domainHint=" + WebUtility.UrlEncode(identifier);
             using (var requestMessage = new HttpRequestMessage())
@@ -458,7 +556,7 @@ namespace Bit.Core.Services
                 requestMessage.Method = HttpMethod.Get;
                 requestMessage.RequestUri = new Uri(string.Concat(IdentityBaseUrl, path));
                 requestMessage.Headers.Add("Accept", "application/json");
-                
+
                 HttpResponseMessage response;
                 try
                 {
@@ -473,7 +571,8 @@ namespace Bit.Core.Services
                     var error = await HandleErrorAsync(response, false, true);
                     throw new ApiException(error);
                 }
-                return null;
+                var responseJsonString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<SsoPrevalidateResponse>(responseJsonString);
             }
         }
 
@@ -484,13 +583,25 @@ namespace Bit.Core.Services
         public Task<TResponse> SendAsync<TResponse>(HttpMethod method, string path, bool authed) =>
             SendAsync<object, TResponse>(method, path, null, authed, true);
         public async Task<TResponse> SendAsync<TRequest, TResponse>(HttpMethod method, string path, TRequest body,
-            bool authed, bool hasResponse)
+            bool authed, bool hasResponse, bool logoutOnUnauthorized = true)
         {
             using (var requestMessage = new HttpRequestMessage())
             {
                 requestMessage.Version = new Version(1, 0);
                 requestMessage.Method = method;
+
+                if (!Uri.IsWellFormedUriString(ApiBaseUrl, UriKind.Absolute))
+                {
+                    throw new ApiException(new ErrorResponse
+                    {
+                        StatusCode = HttpStatusCode.BadGateway,
+                        //Note: This message is hardcoded until AppResources.resx gets moved into Core.csproj
+                        Message = "One or more URLs saved in the Settings are incorrect. Please revise it and try to log in again."
+                    });
+                }
+
                 requestMessage.RequestUri = new Uri(string.Concat(ApiBaseUrl, path));
+
                 if (body != null)
                 {
                     var bodyType = body.GetType();
@@ -536,7 +647,7 @@ namespace Bit.Core.Services
                 }
                 else if (!response.IsSuccessStatusCode)
                 {
-                    var error = await HandleErrorAsync(response, false, authed);
+                    var error = await HandleErrorAsync(response, false, authed, logoutOnUnauthorized);
                     throw new ApiException(error);
                 }
                 return (TResponse)(object)null;
@@ -594,6 +705,66 @@ namespace Bit.Core.Services
             }
         }
 
+        public async Task<string> GetUsernameFromAsync(ForwardedEmailServiceType service, UsernameGeneratorConfig config)
+        {
+            using (var requestMessage = new HttpRequestMessage())
+            {
+                requestMessage.Version = new Version(1, 0);
+                requestMessage.Method = HttpMethod.Post;
+                requestMessage.RequestUri = new Uri(config.Url);
+                requestMessage.Headers.Add("Accept", "application/json");
+
+                switch (service)
+                {
+                    case ForwardedEmailServiceType.AnonAddy:
+                        requestMessage.Headers.Add("Authorization", $"Bearer {config.ApiToken}");
+                        requestMessage.Content = new FormUrlEncodedContent(new Dictionary<string, string>
+                        {
+                            ["domain"] = config.Domain
+                        });
+                        break;
+                    case ForwardedEmailServiceType.FirefoxRelay:
+                        requestMessage.Headers.Add("Authorization", $"Token {config.ApiToken}");
+                        break;
+                    case ForwardedEmailServiceType.SimpleLogin:
+                        requestMessage.Headers.Add("Authentication", config.ApiToken);
+                        break;
+                }
+
+                HttpResponseMessage response;
+                try
+                {
+                    response = await _httpClient.SendAsync(requestMessage);
+                }
+                catch (Exception e)
+                {
+                    throw new ApiException(HandleWebError(e));
+                }
+                if (!response.IsSuccessStatusCode)
+                {
+                    throw new ApiException(new ErrorResponse
+                    {
+                        StatusCode = response.StatusCode,
+                        Message = $"{service} error: {(int)response.StatusCode} {response.ReasonPhrase}."
+                    });
+                }
+                var responseJsonString = await response.Content.ReadAsStringAsync();
+                var result = JObject.Parse(responseJsonString);
+
+                switch (service)
+                {
+                    case ForwardedEmailServiceType.AnonAddy:
+                        return result["data"]?["email"]?.ToString();
+                    case ForwardedEmailServiceType.FirefoxRelay:
+                        return result["full_address"]?.ToString();
+                    case ForwardedEmailServiceType.SimpleLogin:
+                        return result["alias"]?.ToString();
+                    default:
+                        return string.Empty;
+                }
+            }
+        }
+
         private ErrorResponse HandleWebError(Exception e)
         {
             return new ErrorResponse
@@ -603,12 +774,20 @@ namespace Bit.Core.Services
             };
         }
 
-        private async Task<ErrorResponse> HandleErrorAsync(HttpResponseMessage response, bool tokenError, bool authed)
+        private async Task<ErrorResponse> HandleErrorAsync(HttpResponseMessage response, bool tokenError,
+            bool authed, bool logoutOnUnauthorized = true)
         {
-            if (authed && ((tokenError && response.StatusCode == HttpStatusCode.BadRequest) ||
-                response.StatusCode == HttpStatusCode.Unauthorized || response.StatusCode == HttpStatusCode.Forbidden))
+            if (authed
+                &&
+                (
+                    (tokenError && response.StatusCode == HttpStatusCode.BadRequest)
+                    ||
+                    (logoutOnUnauthorized && response.StatusCode == HttpStatusCode.Unauthorized)
+                    ||
+                    response.StatusCode == HttpStatusCode.Forbidden
+                ))
             {
-                await _logoutCallbackAsync(true);
+                await _logoutCallbackAsync(new Tuple<string, bool, bool>(null, false, true));
                 return null;
             }
             try

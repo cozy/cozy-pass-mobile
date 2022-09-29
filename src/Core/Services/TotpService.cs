@@ -1,8 +1,8 @@
-﻿using Bit.Core.Abstractions;
+﻿using System;
+using System.Threading.Tasks;
+using Bit.Core.Abstractions;
 using Bit.Core.Enums;
 using Bit.Core.Utilities;
-using System;
-using System.Threading.Tasks;
 
 namespace Bit.Core.Services
 {
@@ -10,14 +10,11 @@ namespace Bit.Core.Services
     {
         private const string SteamChars = "23456789BCDFGHJKMNPQRTVWXY";
 
-        private readonly IStorageService _storageService;
         private readonly ICryptoFunctionService _cryptoFunctionService;
 
         public TotpService(
-            IStorageService storageService,
             ICryptoFunctionService cryptoFunctionService)
         {
-            _storageService = storageService;
             _cryptoFunctionService = cryptoFunctionService;
         }
 
@@ -131,12 +128,6 @@ namespace Bit.Core.Services
                 }
             }
             return period;
-        }
-
-        public async Task<bool> IsAutoCopyEnabledAsync()
-        {
-            var disabled = await _storageService.GetAsync<bool?>(Constants.DisableAutoTotpCopyKey);
-            return !disabled.GetValueOrDefault();
         }
     }
 }

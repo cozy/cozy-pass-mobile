@@ -4,7 +4,6 @@ using Android.Content;
 using Android.Runtime;
 using Android.Service.QuickSettings;
 using Bit.App.Resources;
-using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using Bit.Droid.Accessibility;
@@ -15,10 +14,15 @@ namespace Bit.Droid.Tile
     [Service(Permission = Manifest.Permission.BindQuickSettingsTile, Label = "@string/AutoFillTile",
         Icon = "@drawable/shield")]
     [IntentFilter(new string[] { ActionQsTile })]
+    // Cozy customization, Change ids from bitwarden to cozy
+    /*
     [Register("com.x8bit.bitwarden.AutofillTileService")]
+    /*/
+    [Register("io.cozy.pass.AutofillTileService")]
+    //*/
     public class AutofillTileService : TileService
     {
-        private IStorageService _storageService;
+        private IStateService _stateService;
         
         public override void OnTileAdded()
         {
@@ -59,11 +63,11 @@ namespace Bit.Droid.Tile
         private void SetTileAdded(bool isAdded)
         {
             AccessibilityHelpers.IsAutofillTileAdded = isAdded;
-            if (_storageService == null)
+            if (_stateService == null)
             {
-                _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
+                _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             }
-            _storageService.SaveAsync(Constants.AutofillTileAdded, isAdded);
+            _stateService.SetAutofillTileAddedAsync(isAdded);
         }
 
         private void ScanAndFill()

@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using Bit.App.Utilities;
-// Cozy customization, disable "AppCenter" functionality
-// We do not use it at Cozy
-/*
-using Microsoft.AppCenter.Crashes;
-//*/
+using Bit.Core.Services;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -41,12 +37,14 @@ namespace Bit.iOS.Core.Utilities
                     uptime = (now - timeVal.sec) * 1000;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                // Cozy customization, disable "AppCenter" functionality
-                // We do not use it at Cozy
+                // Cozy customization, we disabled "AppCenter" functionality
+                // So we now need to use LogEvenIfCantBeResolved as Logger.Instance does not exist anymore
                 /*
-                Crashes.TrackError(e);
+                Logger.Instance.Exception(e);
+                /*/
+                LoggerHelper.LogEvenIfCantBeResolved(e);
                 //*/
             }
             finally

@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Bit.App.Controls;
 using Bit.App.Models;
 using Bit.Core.Abstractions;
 using Bit.Core.Enums;
+using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Xamarin.Forms;
 
@@ -68,21 +69,28 @@ namespace Bit.App.Pages
 
             _broadcasterService.Subscribe(_pageName, async (message) =>
             {
-                if (message.Command == "syncStarted")
+                try
                 {
-                    Device.BeginInvokeOnMainThread(() => IsBusy = true);
-                }
-                else if (message.Command == "syncCompleted" || message.Command == "sendUpdated")
-                {
-                    await Task.Delay(500);
-                    Device.BeginInvokeOnMainThread(() =>
+                    if (message.Command == "syncStarted")
                     {
-                        IsBusy = false;
-                        if (_vm.LoadedOnce)
+                        Device.BeginInvokeOnMainThread(() => IsBusy = true);
+                    }
+                    else if (message.Command == "syncCompleted" || message.Command == "sendUpdated")
+                    {
+                        await Task.Delay(500);
+                        Device.BeginInvokeOnMainThread(() =>
                         {
-                            var task = _vm.LoadAsync();
-                        }
-                    });
+                            IsBusy = false;
+                            if (_vm.LoadedOnce)
+                            {
+                                var task = _vm.LoadAsync();
+                            }
+                        });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LoggerHelper.LogEvenIfCantBeResolved(ex);
                 }
             });
 
@@ -133,7 +141,7 @@ namespace Bit.App.Pages
                 }
             }
         }
-        
+
         private async void RowSelected(object sender, SelectionChangedEventArgs e)
         {
             ((ExtendedCollectionView)sender).SelectedItem = null;
@@ -160,7 +168,7 @@ namespace Bit.App.Pages
         {
             if (DoOnce())
             {
-                var page = new SendsPage(_vm.Filter, _vm.Type != null);
+                var page = new SendsPage(_vm.Filter, _vm.Type);
                 await Navigation.PushModalAsync(new NavigationPage(page));
             }
         }
@@ -174,7 +182,7 @@ namespace Bit.App.Pages
         {
             await _vaultTimeoutService.LockAsync(true, true);
         }
-        
+
         private void About_Clicked(object sender, EventArgs e)
         {
             _vm.ShowAbout();

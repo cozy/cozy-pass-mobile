@@ -15,6 +15,9 @@
     android:name="alook.browser"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
+    android:name="alook.browser.google"
+    android:maxLongVersionCode="10000000000"/>
+  <compatibility-package
     android:name="com.amazon.cloud9"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
@@ -72,10 +75,19 @@
     android:name="com.google.android.apps.chrome_dev"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
+    android:name="com.google.android.captiveportallogin"
+    android:maxLongVersionCode="10000000000"/>
+  <compatibility-package
+    android:name="com.iode.firefox"
+    android:maxLongVersionCode="10000000000"/>
+  <compatibility-package
     android:name="com.jamal2367.styx"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
     android:name="com.kiwibrowser.browser"
+    android:maxLongVersionCode="10000000000"/>
+  <compatibility-package
+    android:name="com.kiwibrowser.browser.dev"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
     android:name="com.microsoft.emmx"
@@ -108,6 +120,9 @@
     android:name="com.opera.browser.beta"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
+    android:name="com.opera.gx"
+    android:maxLongVersionCode="10000000000"/>
+  <compatibility-package
     android:name="com.opera.mini.native"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
@@ -115,6 +130,9 @@
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
     android:name="com.opera.touch"
+    android:maxLongVersionCode="10000000000"/>
+  <compatibility-package
+    android:name="com.qflair.browserq"
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
     android:name="com.qwant.liberty"
@@ -211,10 +229,10 @@
     android:maxLongVersionCode="10000000000"/>
   <compatibility-package
     android:name="org.mozilla.firefox"
-    android:maxLongVersionCode="10000000000"/>
+    android:maxLongVersionCode="2015836711"/>
   <compatibility-package
     android:name="org.mozilla.firefox_beta"
-    android:maxLongVersionCode="10000000000"/>
+    android:maxLongVersionCode="2015849447"/>
   <compatibility-package
     android:name="org.mozilla.reference.browser"
     android:maxLongVersionCode="10000000000"/>

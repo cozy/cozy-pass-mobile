@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,7 +42,7 @@
     <MtouchLink>Full</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper</MtouchExtraArgs>
+    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension </MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
@@ -77,7 +77,7 @@
     <CodesignKey>Apple Distribution: Cozy Cloud (3AKXFMV43J)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
-    <MtouchExtraArgs>--optimize=experimental-xforms-product-type --nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper</MtouchExtraArgs>
+    <MtouchExtraArgs>--optimize=experimental-xforms-product-type --nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <CodesignProvision>Cozy Pass Distribution Profile</CodesignProvision>
   </PropertyGroup>
@@ -93,7 +93,7 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper</MtouchExtraArgs>
+    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
   </PropertyGroup>
@@ -108,7 +108,7 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper</MtouchExtraArgs>
+    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchLink>Full</MtouchLink>
   </PropertyGroup>
@@ -133,9 +133,13 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhone' ">
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -145,8 +149,8 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\FontAwesome.ttf" />
     <BundleResource Include="Resources\MaterialIcons_Regular.ttf" />
+    <BundleResource Include="Resources\bwi-font.ttf" />
     <ImageAsset Include="Resources\Assets.xcassets\AppIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -171,6 +175,27 @@
     <ImageAsset Include="Resources\Assets.xcassets\LaunchScreen.imageset\logo_white%403x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_warning.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\ic_warning.imageset\ic_warning-1.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <BundleResource Include="Resources\cog_environment.png" />
+    <BundleResource Include="Resources\cog_environment%402x.png" />
+    <BundleResource Include="Resources\cog_environment%403x.png" />
+    <BundleResource Include="Resources\cog_settings.png" />
+    <BundleResource Include="Resources\cog_settings%402x.png" />
+    <BundleResource Include="Resources\cog_settings%403x.png" />
+    <BundleResource Include="Resources\send.png" />
+    <BundleResource Include="Resources\send%402x.png" />
+    <BundleResource Include="Resources\send%403x.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\search%402x.png" />
+    <BundleResource Include="Resources\search%403x.png" />
+    <BundleResource Include="Resources\generate.png" />
+    <BundleResource Include="Resources\generate%402x.png" />
+    <BundleResource Include="Resources\generate%403x.png" />
     <BundleResource Include="Resources\shared_with_cozy_icon.png" />
     <BundleResource Include="Resources\shared_with_cozy_icon%402x.png" />
     <BundleResource Include="Resources\cozy_faceid.png" />
@@ -188,7 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Essentials">
-      <Version>1.7.0</Version>
+      <Version>1.7.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -219,6 +244,11 @@
       <IsAppExtension>true</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
+    <ProjectReference Include="..\iOS.ShareExtension\iOS.ShareExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{F8C3F648-EA5A-4719-8005-85D1690B1655}</Project>
+      <Name>iOS.ShareExtension</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\autofill-kb.png" />
@@ -228,15 +258,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\autofill-kb%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\cog.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\cog%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\cog%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\ext-act.png" />
@@ -302,15 +323,6 @@
     <BundleResource Include="Resources\logo%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\paper_plane.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\paper_plane%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\paper_plane%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
@@ -318,24 +330,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\plus%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\refresh%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\refresh%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\search%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\search%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\yubikey.png" />
@@ -440,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Assets.xcassets\LaunchScreen.imageset\" />
+    <Folder Include="Resources\Assets.xcassets\ic_warning.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\cozy_fingerprint.png" />

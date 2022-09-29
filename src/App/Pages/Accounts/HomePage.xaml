@@ -13,62 +13,86 @@
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:HomeViewModel"
-    Title="{Binding PageTitle}">
+    x:Name="_page">
     <ContentPage.BindingContext>
         <pages:HomeViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{u:I18n Close}" Clicked="Close_Clicked" Order="Primary" Priority="-1" />
+        <controls:ExtendedToolbarItem
+            x:Name="_accountAvatar"
+            x:Key="accountAvatar"
+            IconImageSource="{Binding AvatarImageSource}"
+            Command="{Binding Source={x:Reference _accountListOverlay}, Path=ToggleVisibililtyCommand}"
+            Order="Primary"
+            Priority="-1"
+            UseOriginalImage="True"
+            AutomationProperties.IsInAccessibleTree="True"
+            AutomationProperties.Name="{u:I18n Account}" />
+        <ToolbarItem
+            Icon="cog_environment.png" Clicked="Environment_Clicked" Order="Primary"
+            AutomationProperties.IsInAccessibleTree="True"
+            AutomationProperties.Name="{u:I18n Options}" />
     </ContentPage.ToolbarItems>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-    <StackLayout Spacing="0" Padding="16, 5">
-        <controls:FaButton Text="&#xf013;"
-                           StyleClass="btn-muted, btn-icon, btn-icon-platform"
-                           HorizontalOptions="Start"
-                           Clicked="Environment_Clicked"
-                           AutomationProperties.IsInAccessibleTree="True"
-                           AutomationProperties.Name="{u:I18n Options}">
-            <controls:FaButton.Margin>
-                <OnPlatform x:TypeArguments="Thickness">
-                    <On Platform="iOS" Value="0, 10, 0, 0" />
-                    <On Platform="Android" Value="0" />
-                </OnPlatform>
-            </controls:FaButton.Margin>
-        </controls:FaButton>
-        <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
-            <Image
-                x:Name="_logo"
-                Source="home_logo.png"
-                VerticalOptions="Center" />
-                <Label Text="{u:I18n CozyHomeTitle}"
-                   FontSize="35"
-                   HorizontalTextAlignment="Center"></Label>
-                <Label Text="{u:I18n LoginOrCreateNewAccount}"
-                   FontSize="Medium"
-                   HorizontalTextAlignment="Center"></Label>
-        </StackLayout>
-    </StackLayout>
-    <StackLayout Spacing="0" Padding="16, 16" Grid.Row="1">
-            <StackLayout>
-                <StackLayout Spacing="8">
-                    <Button Text="{u:I18n CreateAccount}"
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Grid x:Name="_mainLayout" x:Key="mainLayout" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            <StackLayout Spacing="0" Padding="16, 5">
+                <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
+                    <Image
+                        x:Name="_logo"
+                        Source="home_logo.png"
+                        VerticalOptions="Center" />
+                    <Label Text="{u:I18n CozyHomeTitle}"
+                           FontSize="35"
+                           HorizontalTextAlignment="Center">
+                    </Label>
+                    <Label Text="{u:I18n LoginOrCreateNewAccount}"
+                           FontSize="Medium"
+                           HorizontalTextAlignment="Center">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Spacing="0" Padding="16, 16" Grid.Row="1">
+                <Button Text="{u:I18n CreateAccount}"
                         StyleClass="btn-primary"
                         Clicked="Register_Clicked" />
-                    <Button Text="{u:I18n CozyHomeHaveAccount}"
-                    	Clicked="LogIn_Clicked"></Button>
+                <Button Text="{u:I18n CozyHomeHaveAccount}"
+                        Clicked="LogIn_Clicked" />
                 <!-- Cozy customization: SSO is disabled
                 <Button Text="{u:I18n LogInSso}"
                         Clicked="LogInSso_Clicked" />
-                -->
+                 -->
+                <Button Text="{u:I18n Cancel}"
+                        IsVisible="{Binding ShowCancelButton}"
+                        Margin="0,10,0,0"
+                        Clicked="Cancel_Clicked" />
             </StackLayout>
-        </StackLayout>
-    </StackLayout>
-    </Grid>
+            </Grid>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout
+        x:Name="_absLayout"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <ContentView
+            x:Name="_mainContent"
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        </ContentView>
+
+        <controls:AccountSwitchingOverlayView
+            x:Name="_accountListOverlay"
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All"
+            MainPage="{Binding Source={x:Reference _page}}"
+            BindingContext="{Binding AccountSwitchingOverlayViewModel}"/>
+    </AbsoluteLayout>
 
 </pages:BaseContentPage>
