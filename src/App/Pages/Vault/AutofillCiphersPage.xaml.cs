@@ -33,6 +33,11 @@ namespace Bit.App.Pages
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
             _syncService = ServiceContainer.Resolve<ISyncService>("syncService");
             _vaultTimeoutService = ServiceContainer.Resolve<IVaultTimeoutService>("vaultTimeoutService");
+
+            // Cozy customization, Disable multi-account
+            //*
+            ToolbarItems.Remove(_accountAvatar);
+            //*/
         }
 
         protected async override void OnAppearing()

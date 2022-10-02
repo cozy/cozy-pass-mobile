@@ -22,7 +22,19 @@ namespace Bit.App.Models
         public bool IosExtension { get; set; }
         public Tuple<SendType, string, byte[], string> CreateSend { get; set; }
         public bool CopyInsteadOfShareAfterSaving { get; set; }
+
+        // Cozy customization, Disable multi-account
+        /*
         public bool HideAccountSwitcher { get; set; }
+        /*/
+        public bool HideAccountSwitcher {
+            get
+            {
+                return true;
+            }
+            set { }
+        }
+        //*/
 
         public void SetAllFrom(AppOptions o)
         {

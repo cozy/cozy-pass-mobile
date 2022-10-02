@@ -38,6 +38,11 @@ namespace Bit.App.Pages
                 ToolbarItems.Add(_logOut);
             }
             //*/
+
+            // Cozy customization, Disable multi-account
+            //*
+            ToolbarItems.Remove(_accountAvatar);
+            //*/
         }
 
         public Entry SecretEntry

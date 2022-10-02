@@ -77,10 +77,16 @@ namespace Bit.App.Pages
                 _absLayout.Children.Remove(_fab);
                 ToolbarItems.Remove(_addItem);
             }
+
+            // Cozy customization, Disable multi-account
+            /*
             if (!mainPage)
             {
                 ToolbarItems.Remove(_accountAvatar);
             }
+            /*/
+            ToolbarItems.Remove(_accountAvatar);
+            //*/
         }
 
         protected async override void OnAppearing()
