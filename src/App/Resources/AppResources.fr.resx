@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -254,7 +254,7 @@
     <value>Utilisez votre empreinte pour vous authentifier.</value>
   </data>
   <data name="Folder" xml:space="preserve">
-    <value>Dossier</value>
+    <value>Dossier et partage</value>
     <comment>Label for a folder.</comment>
   </data>
   <data name="FolderCreated" xml:space="preserve">
@@ -497,7 +497,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="EditItem" xml:space="preserve">
-    <value>Modifier l'élément</value>
+    <value>Modifier</value>
   </data>
   <data name="EnableAutomaticSyncing" xml:space="preserve">
     <value>Activer la synchronisation automatique</value>
@@ -759,7 +759,7 @@
     <value>Code de vérification</value>
   </data>
   <data name="ViewItem" xml:space="preserve">
-    <value>Afficher l'élément</value>
+    <value>Voir</value>
   </data>
   <data name="WebVault" xml:space="preserve">
     <value>Coffre web Cozy Pass</value>
@@ -1461,7 +1461,7 @@
     <value>Aucun dossier à afficher.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisé à d'autres utilisateurs qui possèdent un Cozy. Pour créer un dossier partagé, vous devez vous rendre sur l'interface web de Cozy Pass (si votre Cozy le permet).</value>
+    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisée à d'autres utilisateurs qui possèdent un Cozy. Pour pouvez créer un dossier partagé, à condition que l'offre de votre Cozy le permette, en accédant à Cozy Pass depuis un navigateur web d'ordinateur.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Nombre de mots</value>
