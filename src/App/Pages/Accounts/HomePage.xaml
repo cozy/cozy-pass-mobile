@@ -57,10 +57,13 @@
     <StackLayout Spacing="0" Padding="16, 16" Grid.Row="1">
             <StackLayout>
                 <StackLayout Spacing="8">
+                    <!-- Cozy customization: Disable account creation to pass iOS Store validation
                     <Button Text="{u:I18n CreateAccount}"
                         StyleClass="btn-primary"
                         Clicked="Register_Clicked" />
+                    -->
                     <Button Text="{u:I18n CozyHomeHaveAccount}"
+                        StyleClass="btn-primary"
                     	Clicked="LogIn_Clicked"></Button>
                 <!-- Cozy customization: SSO is disabled
                 <Button Text="{u:I18n LogInSso}"
