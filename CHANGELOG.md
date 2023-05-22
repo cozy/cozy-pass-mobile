@@ -1,3 +1,13 @@
+# 3.0.3
+
+## ✨ Features
+
+## 🐛 Bug Fixes
+
+* Prevent app crash when scrolling in cipers and settings pages in iOS 15+ ([PR #77](https://github.com/cozy/cozy-pass-mobile/pull/77))
+
+## 🔧 Tech
+
 # 3.0.2
 
 ## ✨ Features
