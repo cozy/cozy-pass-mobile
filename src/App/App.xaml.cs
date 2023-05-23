@@ -1,6 +1,7 @@
 ﻿using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Pages;
+using Bit.App.Pages.Accounts;
 using Bit.App.Resources;
 using Bit.App.Services;
 using Bit.App.Utilities;
@@ -191,6 +192,44 @@ namespace Bit.App
                 ResumedAsync();
             }
         }
+
+        // Cozy customization:
+        // - Handle deep links for Onboarding and Login
+        //*
+        public async Task HandleLoginLink(string fqdn)
+        {
+            var page = new LoginPage(fqdn, null);
+            await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page));
+        }
+
+        public async Task HandleOnboardingLink(string onboardingUrl)
+        {
+            var page = new CozyNoOnboardingPage();
+            await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page)
+            {
+                BarBackgroundColor = ThemeManager.GetResourceColor("BackgroundColor"),
+                BarTextColor = ThemeManager.GetResourceColor("PrimaryColor")
+            });
+        }
+
+        protected override async void OnAppLinkRequestReceived(Uri uri)
+        {
+            string queryString = uri.Query;
+            var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
+
+            var fqdn = queryDictionary.Get("fqdn");
+            var onboardingUrl = queryDictionary.Get("onboard_url");
+
+            if ((uri.LocalPath == "/login" || uri.LocalPath == "/onboarding") && !string.IsNullOrEmpty(fqdn))
+            {
+                await HandleLoginLink(fqdn);
+            }
+            else if (uri.LocalPath == "/onboarding" && !string.IsNullOrEmpty(onboardingUrl))
+            {
+                await HandleOnboardingLink(onboardingUrl);
+            }
+        }
+        //*/
 
         private async Task SleptAsync()
         {
