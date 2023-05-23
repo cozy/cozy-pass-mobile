@@ -12,7 +12,7 @@ using Java.Lang;
 
 namespace Bit.Droid.Tile
 {
-    [Service(Permission = Manifest.Permission.BindQuickSettingsTile, Label = "@string/AutoFillTile",
+    [Service(Permission = Manifest.Permission.BindQuickSettingsTile, Exported = true, Label = "@string/AutoFillTile",
         Icon = "@drawable/shield")]
     [IntentFilter(new string[] { ActionQsTile })]
     [Register("com.x8bit.bitwarden.AutofillTileService")]

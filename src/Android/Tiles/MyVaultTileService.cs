@@ -15,7 +15,8 @@ using Java.Lang;
 namespace Bit.Droid.Tile
 {
     [Service(Permission = Android.Manifest.Permission.BindQuickSettingsTile, Label = "@string/MyVault",
-        Icon = "@drawable/shield")]
+        Icon = "@drawable/shield",
+        Exported = true)]
     [IntentFilter(new string[] { ActionQsTile })]
     [Register("io.cozy.pass.MyVaultTileService")]
     public class MyVaultTileService : TileService
