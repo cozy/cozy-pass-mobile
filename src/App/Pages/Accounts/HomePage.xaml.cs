@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Bit.App.Resources;
+using Xamarin.Essentials;
 
 #if __IOS__
 using SafariServices;
@@ -152,11 +153,25 @@ namespace Bit.App.Pages
             }
         }
 
+        // Cozy customization:
+        // - Call ClouderyView from InAppBrowser
+        //*
         private async Task StartLoginAsync()
         {
-            var page = new LoginPage(null, _appOptions);
-            await Navigation.PushModalAsync(new NavigationPage(page));
+            var clouderyBaseUri = "https://manager.cozycloud.cc";
+            var clouderyLoginRelativeUri = "/v2/neutral/start";
+            var clouderyQueryString = "redirect_after_email=cozypass%3A%2F%2Fpass%2Fonboarding&redirect_after_login=cozypass%3A%2F%2Fpass%2Flogin";
+
+            var url = $"{clouderyBaseUri}{clouderyLoginRelativeUri}?{clouderyQueryString}";
+
+            await Browser.OpenAsync(url, new BrowserLaunchOptions
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show,
+                Flags = BrowserLaunchFlags.PresentAsPageSheet
+            });
         }
+        //*/
 
         private void Register_Clicked(object sender, EventArgs e)
         {

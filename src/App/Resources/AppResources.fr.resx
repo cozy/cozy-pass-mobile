@@ -189,6 +189,15 @@
     <value>L'adresse du Cozy est requise</value>
     <comment>Exception message when no CozyUrl is set</comment>
   </data>
+  <data name="CozyInstallFlagshipTitle" xml:space="preserve">
+    <value>Installer l’app Cozy</value>
+  </data>
+  <data name="CozyInstallFlagshipDescription" xml:space="preserve">
+    <value>Vous ne possédez pas encore de Cozy, installez l’app Cozy pour créer votre Cozy et profiter de l’app Cozy Pass</value>
+  </data>
+  <data name="CozyInstallFlagshipButton" xml:space="preserve">
+    <value>INSTALLER L’APP COZY</value>
+  </data>
   <data name="NoEmailAsCozyUrlException" xml:space="preserve">
     <value>L'adresse de votre Cozy n'est pas votre email</value>
     <comment>Exception message when no user set an email in login field</comment>
