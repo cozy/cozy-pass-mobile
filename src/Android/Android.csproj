@@ -106,6 +106,9 @@
     <PackageReference Include="Xamarin.GooglePlayServices.SafetyNet">
       <Version>117.0.1</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.AppLinks">
+      <Version>5.0.0.2578</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accessibility\AccessibilityActivity.cs" />

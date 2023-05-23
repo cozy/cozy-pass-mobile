@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
@@ -20,6 +20,7 @@ using AndroidX.Core.Content;
 using Bit.App.Utilities;
 using ZXing.Net.Mobile.Android;
 using Android.Views;
+using Xamarin.Forms.Platform.Android.AppLinks;
 
 namespace Bit.Droid
 {
@@ -66,6 +67,7 @@ namespace Bit.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            AndroidAppLinks.Init(this);
             var eventUploadIntent = new Intent(this, typeof(EventUploadReceiver));
             _eventUploadPendingIntent = PendingIntent.GetBroadcast(this, 0, eventUploadIntent,
                 AndroidHelpers.AddPendingIntentMutabilityFlag(PendingIntentFlags.UpdateCurrent, false));
