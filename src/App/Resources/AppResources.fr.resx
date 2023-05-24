@@ -180,10 +180,10 @@
     <comment>Login screen title</comment>
   </data>
   <data name="CozyHomeTitle" xml:space="preserve">
-    <value>Bienvenue sur&#10;Cozy Pass</value>
+    <value>Cozy Pass</value>
   </data>
   <data name="CozyHomeHaveAccount" xml:space="preserve">
-    <value>J'ai déjà mon Cozy</value>
+    <value>C'EST PARTI</value>
   </data>
   <data name="CozyUrlRequiredException" xml:space="preserve">
     <value>L'adresse du Cozy est requise</value>
@@ -610,7 +610,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Créez ou connectez votre Cozy pour accéder aux services de Cozy Pass.</value>
+    <value>Accédez dès maintenant à votre Cloud Personnel, le domicile numérique pour réunir toutes vos données</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gérer</value>
