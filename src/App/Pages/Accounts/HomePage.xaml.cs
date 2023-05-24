@@ -1,4 +1,4 @@
-﻿using Bit.App.Models;
+using Bit.App.Models;
 using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
@@ -59,7 +59,7 @@ namespace Bit.App.Pages
 
         protected override void OnAppearing()
         {
-            ThemeManager.SetInvertedTheme();
+            ThemeManager.UnsetInvertedTheme();
             base.OnAppearing();
             _messagingService.Send("showStatusBar", false);
             CheckOnboarded();

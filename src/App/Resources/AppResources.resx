@@ -180,10 +180,10 @@
     <comment>Login screen title</comment>
   </data>
   <data name="CozyHomeTitle" xml:space="preserve">
-    <value>Welcome to Cozy Pass</value>
+    <value>Cozy Pass</value>
   </data>
   <data name="CozyHomeHaveAccount" xml:space="preserve">
-    <value>I already have my Cozy</value>
+    <value>LET'S GO</value>
   </data>
   <data name="CozyUrlRequiredException" xml:space="preserve">
     <value>Cozy address is required</value>
@@ -610,7 +610,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Create or log in your Cozy to access Cozy Pass services.</value>
+    <value>Access your Personnal Cloud now, the digital home for all your data</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Manage</value>
