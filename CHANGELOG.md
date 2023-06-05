@@ -1,3 +1,18 @@
+# 3.0.4
+
+## ✨ Features
+
+* Rework of the login UI ([PR #86](https://github.com/cozy/cozy-pass-mobile/pull/86))
+
+## 🐛 Bug Fixes
+
+* Prevent app crash when scrolling in cipers and settings pages in iOS 15+ ([PR #77](https://github.com/cozy/cozy-pass-mobile/pull/77))
+* Disable the Register button on HomePage ([PR #84](https://github.com/cozy/cozy-pass-mobile/pull/84))
+
+## 🔧 Tech
+
+* Upgrade Android SDK to 12.1 ([PR #87](https://github.com/cozy/cozy-pass-mobile/pull/87))
+
 # 3.0.3
 
 ## ✨ Features
@@ -5,6 +20,7 @@
 ## 🐛 Bug Fixes
 
 * Prevent app crash when scrolling in cipers and settings pages in iOS 15+ ([PR #77](https://github.com/cozy/cozy-pass-mobile/pull/77))
+* Disable the Register button on HomePage ([PR #84](https://github.com/cozy/cozy-pass-mobile/pull/84))
 
 ## 🔧 Tech
 
