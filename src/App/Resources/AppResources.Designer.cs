@@ -79,6 +79,15 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Accept.
+        /// </summary>
+        public static string Accept {
+            get {
+                return ResourceManager.GetString("Accept", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à By activating this switch you agree to the following:
         ///.
         /// </summary>
@@ -143,11 +152,29 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cozy Pass uses the Accessibility Service to search for login fields in apps and websites, then establish the appropriate field IDs for entering a username &amp; password when a match for the app or site is found. We do not store any of the information presented to us by the service, nor do we make any attempt to control any on-screen elements beyond text entry of credentials..
+        /// </summary>
+        public static string AccessibilityDisclosureText {
+            get {
+                return ResourceManager.GetString("AccessibilityDisclosureText", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bitwarden needs attention - Enable &quot;Draw-Over&quot; in &quot;Auto-fill Services&quot; from Bitwarden Settings.
         /// </summary>
         public static string AccessibilityDrawOverPermissionAlert {
             get {
                 return ResourceManager.GetString("AccessibilityDrawOverPermissionAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Accessibility Service Disclosure.
+        /// </summary>
+        public static string AccessibilityServiceDisclosure {
+            get {
+                return ResourceManager.GetString("AccessibilityServiceDisclosure", resourceCulture);
             }
         }
         
@@ -1399,6 +1426,15 @@ namespace Bit.App.Resources {
         public static string December {
             get {
                 return ResourceManager.GetString("December", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Decline.
+        /// </summary>
+        public static string Decline {
+            get {
+                return ResourceManager.GetString("Decline", resourceCulture);
             }
         }
         

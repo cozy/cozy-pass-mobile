@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -2127,5 +2127,17 @@
   </data>
   <data name="PurchasePremiumMembership" xml:space="preserve">
     <value>Adhésion Premium</value>
+  </data>
+  <data name="AccessibilityServiceDisclosure" xml:space="preserve">
+    <value>Confidentialité du Service d'accessibilité</value>
+  </data>
+  <data name="AccessibilityDisclosureText" xml:space="preserve">
+    <value>Cozy Pass utilise le Service d'Accessibilité pour rechercher des champs de connexion dans les applis et les sites web, puis trouvent les IDs des champs liés pour saisir un nom d'utilisateur et un mot de passe lorsqu'une correspondance pour l'appli ou le site est trouvée. Nous ne stockons aucune information que nous recevons via le service, et nous n'essayons pas de contrôler des éléments qui se superposeraient aux entrées de saisie des identifiants.</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Accepter</value>
+  </data>
+  <data name="Decline" xml:space="preserve">
+    <value>Refuser</value>
   </data>
 </root>
