@@ -1,10 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Bit.App.Abstractions;
 using Bit.App.Resources;
 using Bit.App.Services;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
+using Xamarin.CommunityToolkit.ObjectModel;
 
 namespace Bit.App.Pages
 {
@@ -13,7 +16,8 @@ namespace Bit.App.Pages
         private readonly IDeviceActionService _deviceActionService;
         private readonly IStorageService _storageService;
         private readonly MobileI18nService _i18nService;
-        
+        private readonly IPlatformUtilsService _platformUtilsService;
+
         private bool _autofillServiceToggled;
         private bool _inlineAutofillToggled;
         private bool _accessibilityToggled;
@@ -25,7 +29,11 @@ namespace Bit.App.Pages
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService") as MobileI18nService;
+            _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             PageTitle = AppResources.AutofillServices;
+            ToggleAccessibilityCommand = new AsyncCommand(ToggleAccessibilityAsync,
+                onException: ex => Console.WriteLine(ex.ToString()),
+                allowsMultipleExecutions: false);
         }
         
         #region Autofill Service
@@ -70,10 +78,12 @@ namespace Bit.App.Pages
                 }
             }
         }
-        
+
         #endregion
-        
-        #region Accessibility
+
+        #region
+
+        public ICommand ToggleAccessibilityCommand { get; }
 
         public string AccessibilityDescriptionLabel
         {
@@ -177,8 +187,18 @@ namespace Bit.App.Pages
             InlineAutofillToggled = !InlineAutofillToggled;
         }
 
-        public void ToggleAccessibility()
+        public async Task ToggleAccessibilityAsync()
         {
+            if (!_deviceActionService.AutofillAccessibilityServiceRunning())
+            {
+                var accept = await _platformUtilsService.ShowDialogAsync(AppResources.AccessibilityDisclosureText,
+                    AppResources.AccessibilityServiceDisclosure, AppResources.Accept,
+                    AppResources.Decline);
+                if (!accept)
+                {
+                    return;
+                }
+            }
             _deviceActionService.OpenAccessibilitySettings();
         }
 
@@ -193,7 +213,8 @@ namespace Bit.App.Pages
         
         public void UpdateEnabled()
         {
-            AutofillServiceToggled = _deviceActionService.AutofillServiceEnabled();
+            AutofillServiceToggled =
+                _deviceActionService.SupportsAutofillService() && _deviceActionService.AutofillServiceEnabled();
             AccessibilityToggled = _deviceActionService.AutofillAccessibilityServiceRunning();
             DrawOverToggled = _deviceActionService.AutofillAccessibilityOverlayPermitted();
         }
