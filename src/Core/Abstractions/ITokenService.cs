@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 
@@ -28,9 +28,9 @@ namespace Bit.Core.Abstractions
         int TokenSecondsRemaining();
 
         #region cozy
-        string ClientId { get; }
-        string RegistrationAccessToken { get; }
-        void SetClientInfos(string clientId, string registrationAccessToken);
+        Task SetClientInfos(string clientId, string registrationAccessToken);
+        Task<string> GetClientId();
+        Task<string> GetRegistrationAccessToken();
         #endregion
     }
 }

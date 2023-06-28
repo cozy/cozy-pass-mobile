@@ -17,6 +17,8 @@ namespace Bit.Core.Services
 
         private const string Keys_AccessToken = "accessToken";
         private const string Keys_RefreshToken = "refreshToken";
+        private const string Keys_RegistrationAccessToken = "cozyRegistrationAccessToken";
+        private const string Keys_ClientId = "cozyClientId";
         private const string Keys_TwoFactorTokenFormat = "twoFactorToken_{0}";
 
         public TokenService(IStorageService storageService)
@@ -116,7 +118,9 @@ namespace Bit.Core.Services
             _refreshToken = null;
             await Task.WhenAll(
                 _storageService.RemoveAsync(Keys_AccessToken),
-                _storageService.RemoveAsync(Keys_RefreshToken));
+                _storageService.RemoveAsync(Keys_RefreshToken),
+                _storageService.RemoveAsync(Keys_ClientId),
+                _storageService.RemoveAsync(Keys_RegistrationAccessToken));
         }
 
         public JObject DecodeToken()
@@ -238,13 +242,31 @@ namespace Bit.Core.Services
         }
 
         #region cozy
-        public string RegistrationAccessToken { get; private set; }
-        public string ClientId { get; private set; }
-
-        public void SetClientInfos(string clientId, string registrationAccessToken)
+        public async Task SetClientInfos(string clientId, string registrationAccessToken)
         {
-            ClientId = clientId;
-            RegistrationAccessToken = registrationAccessToken;
+            await SetClientId(clientId);
+            await SetRegistrationAccessToken(registrationAccessToken);
+
+        }
+
+        private async Task SetClientId(string registrationAccessToken)
+        {
+            await _storageService.SaveAsync(Keys_ClientId, registrationAccessToken);
+        }
+
+        public async Task<string> GetClientId()
+        {
+            return await _storageService.GetAsync<string>(Keys_ClientId);
+        }
+
+        private async Task SetRegistrationAccessToken(string registrationAccessToken)
+        {
+            await _storageService.SaveAsync(Keys_RegistrationAccessToken, registrationAccessToken);
+        }
+
+        public async Task<string> GetRegistrationAccessToken()
+        {
+            return await _storageService.GetAsync<string>(Keys_RegistrationAccessToken);
         }
         #endregion
     }

@@ -136,8 +136,8 @@ namespace Bit.Core.Services
         }
 
         public async Task<LogoutResponse> LogoutAsync() {
-            var clientId = _tokenService.ClientId;
-            var registrationAccessToken = _tokenService.RegistrationAccessToken;
+            var clientId = await _tokenService.GetClientId();
+            var registrationAccessToken = await _tokenService.GetRegistrationAccessToken();
             try
             {
                 var resp = await FetchJSONAsync<object, LogoutResponse>(
