@@ -29,6 +29,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="PCLCrypto" Version="2.0.147" />
     <PackageReference Include="zxcvbn-core" Version="7.0.92" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
 </Project>

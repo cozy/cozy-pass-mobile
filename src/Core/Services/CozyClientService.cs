@@ -1,4 +1,4 @@
-﻿using Bit.Core.Abstractions;
+using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Response;
 using Newtonsoft.Json;
@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Bit.Core.Utilities;
+using Xamarin.Essentials;
 
 namespace Bit.Core.Services
 {
@@ -278,7 +279,7 @@ namespace Bit.Core.Services
             var data = new
             {
                 software_id = softwareID,
-                client_name = "Cozy Pass",
+                client_name = $"Cozy Pass ({DeviceInfo.Name})",
                 client_kind = "mobile",
                 logo_uri = logoURI,
                 policy_uri = policyURI,
