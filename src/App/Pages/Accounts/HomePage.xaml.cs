@@ -25,6 +25,7 @@ namespace Bit.App.Pages
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly II18nService _i18nService;
         private readonly ICozyClientService _cozyClientService;
+        private readonly ICozyClouderyEnvService _cozyClouderyEnvService;
 
         public HomePage(AppOptions appOptions = null)
         {
@@ -33,6 +34,7 @@ namespace Bit.App.Pages
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
+            _cozyClouderyEnvService = ServiceContainer.Resolve<ICozyClouderyEnvService>("cozyClouderyEnvService");
 
             _messagingService.Send("showStatusBar", false);
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
@@ -158,11 +160,7 @@ namespace Bit.App.Pages
         //*
         private async Task StartLoginAsync()
         {
-            var clouderyBaseUri = "https://manager.cozycloud.cc";
-            var clouderyLoginRelativeUri = "/v2/neutral/start";
-            var clouderyQueryString = "redirect_after_email=cozypass%3A%2F%2Fpass%2Fonboarding&redirect_after_login=cozypass%3A%2F%2Fpass%2Flogin";
-
-            var url = $"{clouderyBaseUri}{clouderyLoginRelativeUri}?{clouderyQueryString}";
+            var url = await _cozyClouderyEnvService.GetClouderyUrl();
 
             await Browser.OpenAsync(url, new BrowserLaunchOptions
             {

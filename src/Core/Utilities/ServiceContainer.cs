@@ -1,4 +1,4 @@
-﻿using Bit.Core.Abstractions;
+using Bit.Core.Abstractions;
 using Bit.Core.Services;
 using System;
 using System.Collections.Generic;
@@ -58,6 +58,7 @@ namespace Bit.Core.Utilities
                 });
             var environmentService = new EnvironmentService(apiService, storageService);
             var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
+            var cozyClouderyEnvService = new CozyClouderyEnvService(storageService);
             var syncService = new SyncService(userService, apiService, settingsService, folderService,
                 cipherService, cryptoService, collectionService, storageService, messagingService, policyService, sendService, cozyClientService,
                 (bool expired) =>
@@ -96,6 +97,7 @@ namespace Bit.Core.Utilities
             Register<IEnvironmentService>("environmentService", environmentService);
             Register<IEventService>("eventService", eventService);
             Register<ICozyClientService>("cozyClientService", cozyClientService);
+            Register<ICozyClouderyEnvService>("cozyClouderyEnvService", cozyClouderyEnvService);
         }
 
         public static void Register<T>(string serviceName, T obj)
