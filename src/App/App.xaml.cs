@@ -1,4 +1,4 @@
-﻿using Bit.App.Abstractions;
+using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Pages;
 using Bit.App.Pages.Accounts;
@@ -29,6 +29,7 @@ namespace Bit.App
         private readonly IStorageService _storageService;
         private readonly IStorageService _secureStorageService;
         private readonly IDeviceActionService _deviceActionService;
+        private readonly ICozyClouderyEnvService _cozyClouderyEnvService;
 
         private static bool _isResumed;
 
@@ -51,6 +52,7 @@ namespace Bit.App
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _secureStorageService = ServiceContainer.Resolve<IStorageService>("secureStorageService");
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
+            _cozyClouderyEnvService = ServiceContainer.Resolve<ICozyClouderyEnvService>("cozyClouderyEnvService");
 
             Bootstrap();
             _broadcasterService.Subscribe(nameof(App), async (message) =>
@@ -227,6 +229,10 @@ namespace Bit.App
             else if (uri.LocalPath == "/onboarding" && !string.IsNullOrEmpty(onboardingUrl))
             {
                 await HandleOnboardingLink(onboardingUrl);
+            }
+            else if (uri.LocalPath == "/cozy_env_override")
+            {
+                await CozyEnvironmentOverride.ExtractEnvFromUrl(uri, _cozyClouderyEnvService);
             }
         }
         //*/
