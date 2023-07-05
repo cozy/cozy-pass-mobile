@@ -222,15 +222,17 @@ namespace Bit.App
             var fqdn = queryDictionary.Get("fqdn");
             var onboardingUrl = queryDictionary.Get("onboard_url");
 
-            if ((uri.LocalPath == "/login" || uri.LocalPath == "/onboarding") && !string.IsNullOrEmpty(fqdn))
+            var localPath = uri.LocalPath.StartsWith("/pass") ? uri.LocalPath.Replace("/pass", "") : uri.LocalPath;
+
+            if ((localPath == "/login" || localPath == "/onboarding") && !string.IsNullOrEmpty(fqdn))
             {
                 await HandleLoginLink(fqdn);
             }
-            else if (uri.LocalPath == "/onboarding" && !string.IsNullOrEmpty(onboardingUrl))
+            else if (localPath == "/onboarding" && !string.IsNullOrEmpty(onboardingUrl))
             {
                 await HandleOnboardingLink(onboardingUrl);
             }
-            else if (uri.LocalPath == "/cozy_env_override")
+            else if (localPath == "/cozy_env_override")
             {
                 await CozyEnvironmentOverride.ExtractEnvFromUrl(uri, _cozyClouderyEnvService);
             }
