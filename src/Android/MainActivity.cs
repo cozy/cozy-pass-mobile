@@ -25,9 +25,16 @@ using Xamarin.Forms.Platform.Android.AppLinks;
 namespace Bit.Droid
 {
     [IntentFilter(
-    new[] { Intent.ActionView },
-    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-    DataScheme = "cozypass")]
+        new[] { Intent.ActionView },
+        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+        DataScheme = "cozypass")]
+    [IntentFilter(
+        new[] { Intent.ActionView },
+        Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+        DataScheme = "https",
+        DataHost = "links.mycozy.cloud",
+        DataPathPrefix = "/pass",
+        AutoVerify = true)]
     [Activity(
         Label = "Cozy Pass",
         Icon = "@mipmap/ic_launcher",
