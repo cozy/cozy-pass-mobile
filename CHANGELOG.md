@@ -1,3 +1,29 @@
+# 3.0.6
+
+## ✨ Features
+
+
+## 🐛 Bug Fixes
+
+
+## 🔧 Tech
+
+
+# 3.0.5
+
+## ✨ Features
+
+* Set OAuth client name in the form of `Cozy Pass (device name)`` to ease identification in cozy-settings ([PR #89](https://github.com/cozy/cozy-pass-mobile/pull/89))
+
+## 🐛 Bug Fixes
+
+* Correctly remove the app from cozy-settings' connected devices list on logout ([PR #89](https://github.com/cozy/cozy-pass-mobile/pull/89) and [PR #92](https://github.com/cozy/cozy-pass-mobile/pull/92))
+
+## 🔧 Tech
+
+* Implement ClouderyEnv override using links ([PR #90](https://github.com/cozy/cozy-pass-mobile/pull/90))
+* Add universal links support to Android and iOS ([PR #91](https://github.com/cozy/cozy-pass-mobile/pull/91))
+
 # 3.0.4
 
 ## ✨ Features
