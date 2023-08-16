@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Bit.App.Abstractions;
 using Bit.App.Pages;
 using Bit.App.Resources;
@@ -482,8 +482,19 @@ namespace Bit.App.Utilities
             var cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             var userId = await userService.GetUserIdAsync();
+
+            try
+            {
+                await syncService.SetLastSyncAsync(DateTime.MinValue);
+                await cozyClientService.LogoutAsync();
+            }
+            catch (Exception e)
+            {
+                // Setting last sync date and login out Cozy's Oauth client should not interrupt clearing local data
+                System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", e.GetType(), e.StackTrace);
+            }
+
             await Task.WhenAll(
-                syncService.SetLastSyncAsync(DateTime.MinValue),
                 tokenService.ClearTokenAsync(),
                 cryptoService.ClearKeysAsync(),
                 userService.ClearAsync(),
@@ -494,8 +505,7 @@ namespace Bit.App.Utilities
                 passwordGenerationService.ClearAsync(),
                 vaultTimeoutService.ClearAsync(),
                 stateService.PurgeAsync(),
-                deviceActionService.ClearCacheAsync(),
-                cozyClientService.LogoutAsync());
+                deviceActionService.ClearCacheAsync());
             vaultTimeoutService.BiometricLocked = true;
             searchService.ClearIndex();
         }
