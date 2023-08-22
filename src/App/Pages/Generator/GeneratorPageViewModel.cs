@@ -6,7 +6,6 @@ using Bit.Core.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
 namespace Bit.App.Pages
 {
@@ -312,8 +311,7 @@ namespace Bit.App.Pages
         public async Task CopyAsync()
         {
             await _clipboardService.CopyTextAsync(Password);
-            _platformUtilsService.ShowToast("success", null,
-                string.Format(AppResources.ValueHasBeenCopied, AppResources.Password));
+            _platformUtilsService.ShowToastForCopiedValue(AppResources.Password);
         }
 
         public bool OptionsToggled

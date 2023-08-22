@@ -23,6 +23,7 @@ namespace Bit.Core.Abstractions
         Task<bool> ShowPasswordDialogAsync(string title, string body, Func<string, Task<bool>> validator);
         void ShowToast(string type, string title, string text, Dictionary<string, object> options = null);
         void ShowToast(string type, string title, string[] text, Dictionary<string, object> options = null);
+        void ShowToastForCopiedValue(string valueNameCopied);
         bool SupportsFido2();
         bool SupportsDuo();
         Task<bool> SupportsBiometricAsync();

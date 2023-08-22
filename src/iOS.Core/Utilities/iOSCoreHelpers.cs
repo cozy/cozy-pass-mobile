@@ -57,7 +57,7 @@ namespace Bit.iOS.Core.Utilities
             var mobileStorageService = new MobileStorageService(preferencesStorage, liteDbStorage);
             var deviceActionService = new DeviceActionService(mobileStorageService, messagingService);
             var clipboardService = new ClipboardService(mobileStorageService);
-            var platformUtilsService = new MobilePlatformUtilsService(deviceActionService, messagingService,
+            var platformUtilsService = new MobilePlatformUtilsService(deviceActionService, clipboardService, messagingService,
                 broadcasterService);
             var biometricService = new BiometricService(mobileStorageService);
             var cryptoFunctionService = new PclCryptoFunctionService(cryptoPrimitiveService);
