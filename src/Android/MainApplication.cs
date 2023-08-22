@@ -12,7 +12,6 @@ using Bit.Core.Abstractions;
 using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Bit.Droid.Services;
-using Bit.Droid.Utilities;
 using Plugin.CurrentActivity;
 using Plugin.Fingerprint;
 using Xamarin.Android.Net;
@@ -94,10 +93,11 @@ namespace Bit.Droid
             var secureStorageService = new SecureStorageService();
             var cryptoPrimitiveService = new CryptoPrimitiveService();
             var mobileStorageService = new MobileStorageService(preferencesStorage, liteDbStorage);
-            var deviceActionService = new DeviceActionService(mobileStorageService, messagingService,
+            var clipboardService = new ClipboardService(mobileStorageService);
+            var deviceActionService = new DeviceActionService(clipboardService, mobileStorageService, messagingService,
                 broadcasterService, () => ServiceContainer.Resolve<IEventService>("eventService"));
-            var platformUtilsService = new MobilePlatformUtilsService(deviceActionService, messagingService,
-                broadcasterService);
+            var platformUtilsService = new MobilePlatformUtilsService(deviceActionService, clipboardService,
+                messagingService, broadcasterService);
             var biometricService = new BiometricService();
             var cryptoFunctionService = new PclCryptoFunctionService(cryptoPrimitiveService);
             var cryptoService = new CryptoService(mobileStorageService, secureStorageService, cryptoFunctionService);
@@ -110,7 +110,7 @@ namespace Bit.Droid
             ServiceContainer.Register<ICryptoPrimitiveService>("cryptoPrimitiveService", cryptoPrimitiveService);
             ServiceContainer.Register<IStorageService>("storageService", mobileStorageService);
             ServiceContainer.Register<IStorageService>("secureStorageService", secureStorageService);
-            ServiceContainer.Register<IClipboardService>("clipboardService", new ClipboardService(mobileStorageService));
+            ServiceContainer.Register<IClipboardService>("clipboardService", clipboardService);
             ServiceContainer.Register<IDeviceActionService>("deviceActionService", deviceActionService);
             ServiceContainer.Register<IPlatformUtilsService>("platformUtilsService", platformUtilsService);
             ServiceContainer.Register<IBiometricService>("biometricService", biometricService);

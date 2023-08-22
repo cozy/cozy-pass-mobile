@@ -19,6 +19,7 @@ namespace Bit.App.Services
         private const int DialogPromiseExpiration = 600000; // 10 minutes
 
         private readonly IDeviceActionService _deviceActionService;
+        private readonly IClipboardService _clipboardService;
         private readonly IMessagingService _messagingService;
         private readonly IBroadcasterService _broadcasterService;
         private readonly Dictionary<int, Tuple<TaskCompletionSource<bool>, DateTime>> _showDialogResolves =
@@ -26,10 +27,12 @@ namespace Bit.App.Services
 
         public MobilePlatformUtilsService(
             IDeviceActionService deviceActionService,
+            IClipboardService clipboardService,
             IMessagingService messagingService,
             IBroadcasterService broadcasterService)
         {
             _deviceActionService = deviceActionService;
+            _clipboardService = clipboardService;
             _messagingService = messagingService;
             _broadcasterService = broadcasterService;
         }
@@ -122,6 +125,15 @@ namespace Bit.App.Services
         public bool SupportsDuo()
         {
             return true;
+        }
+
+        public void ShowToastForCopiedValue(string valueNameCopied)
+        {
+            if (!_clipboardService.IsCopyNotificationHandledByPlatform())
+            {
+                ShowToast("info", null,
+                    string.Format(AppResources.ValueHasBeenCopied, valueNameCopied));
+            }
         }
 
         public bool SupportsFido2()
