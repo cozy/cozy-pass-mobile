@@ -29,6 +29,7 @@ namespace Bit.App.Pages
         private readonly IPolicyService _policyService;
         private readonly ICozyClientService _cozyClientService;
         private readonly II18nService _i18nService;
+        private readonly IClipboardService _clipboardService;
 
         private const int CustomVaultTimeoutValue = -100;
 
@@ -77,6 +78,7 @@ namespace Bit.App.Pages
             _policyService = ServiceContainer.Resolve<IPolicyService>("policyService");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
+            _clipboardService = ServiceContainer.Resolve<IClipboardService>("clipboardService");
 
             GroupedItems = new ObservableRangeCollection<ISettingsPageListItem>();
             PageTitle = AppResources.Settings;
@@ -130,7 +132,7 @@ namespace Bit.App.Pages
                 AppResources.Close);
             if (copy)
             {
-                await _platformUtilsService.CopyToClipboardAsync(debugText);
+                await _clipboardService.CopyTextAsync(debugText);
             }
         }
 

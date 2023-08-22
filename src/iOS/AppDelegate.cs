@@ -75,14 +75,6 @@ namespace Bit.iOS
                         iOSCoreHelpers.AppearanceAdjustments();
                     });
                 }
-                else if (message.Command == "copiedToClipboard")
-                {
-
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        var task = ClearClipboardTimerAsync(message.Data as Tuple<string, int?, bool>);
-                    });
-                }
                 else if (message.Command == "listenYubiKeyOTP")
                 {
                     iOSCoreHelpers.ListenYubiKey((bool)message.Data, _deviceActionService, _nfcSession, _nfcDelegate);

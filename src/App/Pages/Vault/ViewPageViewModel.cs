@@ -25,6 +25,8 @@ namespace Bit.App.Pages
         private readonly IMessagingService _messagingService;
         private readonly IEventService _eventService;
         private readonly IPasswordRepromptService _passwordRepromptService;
+        private readonly IClipboardService _clipboardService;
+
         private CipherView _cipher;
         private List<ViewPageFieldViewModel> _fields;
         private bool _canAccessPremium;
@@ -56,6 +58,8 @@ namespace Bit.App.Pages
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
             _passwordRepromptService = ServiceContainer.Resolve<IPasswordRepromptService>("passwordRepromptService");
+            _clipboardService = ServiceContainer.Resolve<IClipboardService>("clipboardService");
+
             CopyCommand = new Command<string>((id) => CopyAsync(id, null));
             CopyUriCommand = new Command<LoginUriView>(CopyUri);
             CopyFieldCommand = new Command<FieldView>(CopyField);
@@ -693,7 +697,7 @@ namespace Bit.App.Pages
 
             if (text != null)
             {
-                await _platformUtilsService.CopyToClipboardAsync(text);
+                await _clipboardService.CopyTextAsync(text);
                 if (!string.IsNullOrWhiteSpace(name))
                 {
                     _platformUtilsService.ShowToast("info", null, string.Format(AppResources.ValueHasBeenCopied, name));
