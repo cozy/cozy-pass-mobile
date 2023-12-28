@@ -424,8 +424,8 @@
     <Reference Include="Xamarin.iOS" Condition=" '$(OS)' == 'Unix' ">
       <HintPath>\Library\Frameworks\Xamarin.iOS.framework\Versions\Current\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.iOS" Condition=" '$(OS)' == 'Windows_NT' AND '$(VisualStudioVersion)' == '16.0' ">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
+    <Reference Include="Xamarin.iOS" Condition=" '$(OS)' == 'Windows_NT' ">
+      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

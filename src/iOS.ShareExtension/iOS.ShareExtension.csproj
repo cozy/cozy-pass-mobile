@@ -73,7 +73,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
@@ -161,7 +160,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhone' ">
     <CodesignProvision>Cozy Pass Share Extension</CodesignProvision>
     <CodesignKey>Apple Distribution: Cozy Cloud (3AKXFMV43J)</CodesignKey>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <CodesignProvision>Cozy Pass Share Extension</CodesignProvision>

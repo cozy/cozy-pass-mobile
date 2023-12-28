@@ -31,7 +31,6 @@
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler</MtouchExtraArgs>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' OR '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhone' ">
     <DebugType>none</DebugType>
@@ -63,8 +62,6 @@
     <MtouchFloat32>false</MtouchFloat32>
     <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
-    <MtouchInterpreter>-all</MtouchInterpreter>
-    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' OR '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhone' ">
     <DebugType>none</DebugType>
@@ -77,7 +74,7 @@
     <CodesignKey>Apple Distribution: Cozy Cloud (3AKXFMV43J)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>Full</MtouchLink>
-    <MtouchExtraArgs>--optimize=experimental-xforms-product-type --nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
+    <MtouchExtraArgs>--nodevcodeshare --http-message-handler=NSUrlSessionHandler --linkskip=BitwardeniOS --linkskip=BitwardeniOSCore --linkskip=BitwardeniOSAutofill --linkskip=BitwardeniOSExtension --linkskip=BitwardenApp --linkskip=BitwardenCore --linkskip=LiteDB --linkskip=CsvHelper --linkskip=BitwardeniOSShareExtension</MtouchExtraArgs>
     <OptimizePNGs>true</OptimizePNGs>
     <CodesignProvision>Cozy Pass Distribution Profile</CodesignProvision>
   </PropertyGroup>
@@ -137,9 +134,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CozyReleaseIOS|iPhone' ">
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
