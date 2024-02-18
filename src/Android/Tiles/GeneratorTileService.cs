@@ -17,7 +17,7 @@ namespace Bit.Droid.Tile
     [Service(Permission = Android.Manifest.Permission.BindQuickSettingsTile, Exported = true, Label = "@string/PasswordGenerator",
         Icon = "@drawable/generate")]
     [IntentFilter(new string[] { ActionQsTile })]
-    [Register("com.x8bit.bitwarden.GeneratorTileService")]
+    [Register("io.cozy.pass.mobile.GeneratorTileService")]
     public class GeneratorTileService : TileService
     {
         public override void OnTileAdded()

@@ -7,7 +7,7 @@ using Bit.Core.Utilities;
 
 namespace Bit.Droid.Receivers
 {
-    [BroadcastReceiver(Name = "com.x8bit.bitwarden.PackageReplacedReceiver", Exported = false)]
+    [BroadcastReceiver(Name = "io.cozy.pass.mobile.PackageReplacedReceiver", Exported = false)]
     [IntentFilter(new[] { Intent.ActionMyPackageReplaced })]
     public class PackageReplacedReceiver : BroadcastReceiver
     {

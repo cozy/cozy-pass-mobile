@@ -3,7 +3,7 @@ import Foundation
 final class KeychainHelper {
     
     static let standard = KeychainHelper()
-    let genericService = "com.8bit.bitwarden.watch.kc"
+    let genericService = "io.cozy.pass.mobile.watch.kc"
     
     private init() {}
     

@@ -4,7 +4,7 @@ using Bit.Core.Utilities;
 
 namespace Bit.Droid.Receivers
 {
-    [BroadcastReceiver(Name = "com.x8bit.bitwarden.EventUploadReceiver", Exported = false)]
+    [BroadcastReceiver(Name = "io.cozy.pass.mobile.EventUploadReceiver", Exported = false)]
     public class EventUploadReceiver : BroadcastReceiver
     {
         public async override void OnReceive(Context context, Intent intent)

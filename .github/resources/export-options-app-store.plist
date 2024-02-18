@@ -6,17 +6,17 @@
     <string>app-store</string>
     <key>provisioningProfiles</key>
     <dict>
-        <key>com.8bit.bitwarden</key>
+        <key>io.cozy.pass.mobile</key>
         <string>Dist: Bitwarden</string>
-        <key>com.8bit.bitwarden.autofill</key>
+        <key>io.cozy.pass.mobile.autofill</key>
         <string>Dist: Autofill</string>
-        <key>com.8bit.bitwarden.find-login-action-extension</key>
+        <key>io.cozy.pass.mobile.find-login-action-extension</key>
         <string>Dist: Extension</string>
-        <key>com.8bit.bitwarden.share-extension</key>
+        <key>io.cozy.pass.mobile.share-extension</key>
         <string>Dist: Share Extension</string>
-        <key>com.8bit.bitwarden.watchkitapp</key>
+        <key>io.cozy.pass.mobile.watchkitapp</key>
         <string>Dist: Bitwarden Watch App</string>
-        <key>com.8bit.bitwarden.watchkitapp.watchkitextension</key>
+        <key>io.cozy.pass.mobile.watchkitapp.watchkitextension</key>
         <string>Dist: Bitwarden Watch App Extension</string>
     </dict>
 </dict>

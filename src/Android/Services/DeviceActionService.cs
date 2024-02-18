@@ -466,14 +466,14 @@ namespace Bit.Droid.Services
             try
             {
                 var intent = new Intent(Settings.ActionManageOverlayPermission);
-                intent.SetData(Android.Net.Uri.Parse("package:com.x8bit.bitwarden"));
+                intent.SetData(Android.Net.Uri.Parse("package:io.cozy.pass.mobile"));
                 activity.StartActivity(intent);
             }
             catch (ActivityNotFoundException)
             {
                 // can't open overlay permission management, fall back to app settings
                 var intent = new Intent(Settings.ActionApplicationDetailsSettings);
-                intent.SetData(Android.Net.Uri.Parse("package:com.x8bit.bitwarden"));
+                intent.SetData(Android.Net.Uri.Parse("package:io.cozy.pass.mobile"));
                 activity.StartActivity(intent);
             }
             catch
@@ -506,7 +506,7 @@ namespace Bit.Droid.Services
             try
             {
                 var intent = new Intent(Settings.ActionRequestSetAutofillService);
-                intent.SetData(Android.Net.Uri.Parse("package:com.x8bit.bitwarden"));
+                intent.SetData(Android.Net.Uri.Parse("package:io.cozy.pass.mobile"));
                 activity.StartActivity(intent);
             }
             catch (ActivityNotFoundException)

@@ -19,7 +19,7 @@ namespace Bit.Droid.Autofill
     [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Bitwarden", Exported = true)]
     [IntentFilter(new string[] { "android.service.autofill.AutofillService" })]
     [MetaData("android.autofill", Resource = "@xml/autofillservice")]
-    [Register("com.x8bit.bitwarden.Autofill.AutofillService")]
+    [Register("io.cozy.pass.mobile.Autofill.AutofillService")]
     public class AutofillService : Android.Service.Autofill.AutofillService
     {
         private ICipherService _cipherService;

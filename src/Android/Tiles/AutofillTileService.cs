@@ -14,7 +14,7 @@ namespace Bit.Droid.Tile
     [Service(Permission = Manifest.Permission.BindQuickSettingsTile, Label = "@string/AutoFillTile",
         Icon = "@drawable/shield", Exported = true)]
     [IntentFilter(new string[] { ActionQsTile })]
-    [Register("com.x8bit.bitwarden.AutofillTileService")]
+    [Register("io.cozy.pass.mobile.AutofillTileService")]
     public class AutofillTileService : TileService
     {
         private IStateService _stateService;

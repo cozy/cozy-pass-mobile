@@ -33,7 +33,7 @@ namespace Bit.Droid
     // They have been hardcoded so we can use the default LaunchMode on Android 11+
     // LaunchMode defined in values/manifest.xml for Android 10- and values-v30/manifest.xml for Android 11+
     // See https://github.com/bitwarden/mobile/pull/1673 for details
-    [Register("com.x8bit.bitwarden.MainActivity")]
+    [Register("io.cozy.pass.mobile.MainActivity")]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private IDeviceActionService _deviceActionService;
@@ -250,7 +250,7 @@ namespace Bit.Droid
                     // camera
                     var tmpDir = new Java.IO.File(FilesDir, Constants.TEMP_CAMERA_IMAGE_DIR);
                     var file = new Java.IO.File(tmpDir, Constants.TEMP_CAMERA_IMAGE_NAME);
-                    uri = FileProvider.GetUriForFile(this, "com.x8bit.bitwarden.fileprovider", file);
+                    uri = FileProvider.GetUriForFile(this, "io.cozy.pass.mobile.fileprovider", file);
                     fileName = $"photo_{DateTime.UtcNow.ToString("yyyyMMddHHmmss")}.jpg";
                 }
 

@@ -33,7 +33,7 @@ namespace Bit.Droid
 #else
     [Application(Debuggable = false)]
 #endif
-    [Register("com.x8bit.bitwarden.MainApplication")]
+    [Register("io.cozy.pass.mobile.MainApplication")]
 #if FDROID
     public class MainApplication : Application
 #else

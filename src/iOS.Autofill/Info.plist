@@ -9,7 +9,7 @@
 	<key>CFBundleName</key>
 	<string>Bitwarden Autofill</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.8bit.bitwarden.autofill</string>
+	<string>io.cozy.pass.mobile.autofill</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2024.2.0</string>
 	<key>CFBundleVersion</key>

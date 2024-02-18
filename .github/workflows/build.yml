@@ -177,11 +177,11 @@ jobs:
           UPLOAD_KEYSTORE_PASSWORD: ${{ secrets.UPLOAD_KEYSTORE_PASSWORD }}
         run: |
           $androidPath = $($env:GITHUB_WORKSPACE + "/src/Android/Android.csproj");
-          $packageName = "com.x8bit.bitwarden";
+          $packageName = "io.cozy.pass.mobile";
 
           if ("${{ matrix.variant }}" -ne "prod")
           {
-            $packageName = "com.x8bit.bitwarden.${{ matrix.variant }}";
+            $packageName = "io.cozy.pass.mobile.${{ matrix.variant }}";
           }
           Write-Output "########################################"
           Write-Output "##### Sign Google Play Bundle Release Configuration"
@@ -222,36 +222,36 @@ jobs:
         if: ${{ matrix.variant == 'prod' }}
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         with:
-          name: com.x8bit.bitwarden.aab
-          path: ./com.x8bit.bitwarden.aab
+          name: io.cozy.pass.mobile.aab
+          path: ./io.cozy.pass.mobile.aab
           if-no-files-found: error
 
       - name: Upload Prod .apk artifact
         if: ${{ matrix.variant == 'prod' }}
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         with:
-          name: com.x8bit.bitwarden.apk
-          path: ./com.x8bit.bitwarden.apk
+          name: io.cozy.pass.mobile.apk
+          path: ./io.cozy.pass.mobile.apk
           if-no-files-found: error
 
       - name: Upload Other .apk artifact
         if: ${{ matrix.variant != 'prod' }}
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         with:
-          name: com.x8bit.bitwarden.${{ matrix.variant }}.apk
-          path: ./com.x8bit.bitwarden.${{ matrix.variant }}.apk
+          name: io.cozy.pass.mobile.${{ matrix.variant }}.apk
+          path: ./io.cozy.pass.mobile.${{ matrix.variant }}.apk
           if-no-files-found: error
 
       - name: Create checksum for Prod .apk artifact
         if: ${{ matrix.variant == 'prod' }}
         run: |
-          checksum -f="./com.x8bit.bitwarden.apk" `
+          checksum -f="./io.cozy.pass.mobile.apk" `
             -t sha256 | Out-File -Encoding ASCII ./bw-android-apk-sha256.txt
 
       - name: Create checksum for Other .apk artifact
         if: ${{ matrix.variant != 'prod' }}
         run: |
-          checksum -f="./com.x8bit.bitwarden.${{ matrix.variant }}.apk" `
+          checksum -f="./io.cozy.pass.mobile.${{ matrix.variant }}.apk" `
             -t sha256 | Out-File -Encoding ASCII ./bw-android-${{ matrix.variant }}-apk-sha256.txt
 
       - name: Upload .apk sha file for prod
@@ -279,7 +279,7 @@ jobs:
         run: |
           PUBLISHER_PATH="$GITHUB_WORKSPACE/store/google/Publisher/bin/Release/netcoreapp3.1/Publisher.dll"
           CREDS_PATH="$HOME/secrets/play_creds.json"
-          AAB_PATH="$GITHUB_WORKSPACE/com.x8bit.bitwarden.aab"
+          AAB_PATH="$GITHUB_WORKSPACE/io.cozy.pass.mobile.aab"
           TRACK="internal"
 
           dotnet $PUBLISHER_PATH $CREDS_PATH $AAB_PATH $TRACK
@@ -442,21 +442,21 @@ jobs:
           Write-Output "##### Copy FDroid apk to project root"
           Write-Output "########################################"
 
-          $signedApkPath = $($env:GITHUB_WORKSPACE + "/src/Android/bin/FDroid/com.x8bit.bitwarden-Signed.apk");
-          $signedApkDestPath = $($env:GITHUB_WORKSPACE + "/com.x8bit.bitwarden-fdroid.apk");
+          $signedApkPath = $($env:GITHUB_WORKSPACE + "/src/Android/bin/FDroid/io.cozy.pass.mobile-Signed.apk");
+          $signedApkDestPath = $($env:GITHUB_WORKSPACE + "/io.cozy.pass.mobile-fdroid.apk");
 
           Copy-Item $signedApkPath $signedApkDestPath
 
       - name: Upload F-Droid .apk artifact
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4.3.0
         with:
-          name: com.x8bit.bitwarden-fdroid.apk
-          path: ./com.x8bit.bitwarden-fdroid.apk
+          name: io.cozy.pass.mobile-fdroid.apk
+          path: ./io.cozy.pass.mobile-fdroid.apk
           if-no-files-found: error
 
       - name: Create checksum for F-Droid artifact
         run: |
-          checksum -f="./com.x8bit.bitwarden-fdroid.apk" `
+          checksum -f="./io.cozy.pass.mobile-fdroid.apk" `
             -t sha256 | Out-File -Encoding ASCII ./bw-fdroid-apk-sha256.txt
 
       - name: Upload F-Droid sha file

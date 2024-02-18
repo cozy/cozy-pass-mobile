@@ -11,7 +11,7 @@ namespace Bit.Publisher
 {
     public class Program
     {
-        private const string Package = "com.x8bit.bitwarden";
+        private const string Package = "io.cozy.pass.mobile";
 
         private static string _aabFilePath;
         private static string _credsFilePath;

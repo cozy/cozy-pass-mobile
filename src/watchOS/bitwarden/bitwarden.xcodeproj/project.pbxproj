@@ -1046,7 +1046,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2022.12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bit.bitwarden.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cozy.pass.mobile.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1080,7 +1080,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2022.12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bit.bitwarden.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cozy.pass.mobile.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "Dist: Bitwarden Watch App Extension";
 				SDKROOT = watchos;
@@ -1107,9 +1107,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = bitwarden_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.8bit.bitwarden;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = io.cozy.pass.mobile;
 				MARKETING_VERSION = 2022.12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bit.bitwarden.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cozy.pass.mobile.watchkitapp;
 				PRODUCT_NAME = Bitwarden;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1134,9 +1134,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = bitwarden_WatchKit_Extension;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.8bit.bitwarden;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = io.cozy.pass.mobile;
 				MARKETING_VERSION = 2022.12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bit.bitwarden.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cozy.pass.mobile.watchkitapp;
 				PRODUCT_NAME = Bitwarden;
 				PROVISIONING_PROFILE_SPECIFIER = "Dist: Bitwarden Watch App";
 				SDKROOT = watchos;
@@ -1173,7 +1173,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2022.12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bit.bitwarden;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cozy.pass.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
@@ -1207,7 +1207,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2022.12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.8bit.bitwarden;
+				PRODUCT_BUNDLE_IDENTIFIER = io.cozy.pass.mobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Dist: Bitwarden";
 				SDKROOT = iphoneos;

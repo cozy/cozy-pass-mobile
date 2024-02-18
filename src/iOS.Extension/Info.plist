@@ -9,7 +9,7 @@
 	<key>CFBundleName</key>
 	<string>Bitwarden Extension</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.8bit.bitwarden.find-login-action-extension</string>
+	<string>io.cozy.pass.mobile.find-login-action-extension</string>
 	<key>CFBundleShortVersionString</key>
 	<string>2024.2.0</string>
 	<key>CFBundleLocalizations</key>
@@ -103,7 +103,7 @@
 			||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.change-password-action"
 			||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.fill-webview-action"
 			||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.fill-browser-action"
-            ||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.8bit.bitwarden.extension-setup"
+            ||  ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "io.cozy.pass.mobile.extension-setup"
 		).@count == $extensionItem.attachments.@count
 	).@count == 1</string>
 		</dict>
