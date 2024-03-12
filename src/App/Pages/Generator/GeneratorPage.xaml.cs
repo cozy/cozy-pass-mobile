@@ -156,5 +156,13 @@ namespace Bit.App.Pages
                 }
             });
         }
+
+        // Cozy customization, generation options are collapsible
+        //*
+        private async void ToggleOptions_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await _vm.ToggleOptionsAsync();
+        }
+        //*/
     }
 }

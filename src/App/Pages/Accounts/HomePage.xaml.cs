@@ -14,11 +14,17 @@ namespace Bit.App.Pages
         private readonly HomeViewModel _vm;
         private readonly AppOptions _appOptions;
         private IBroadcasterService _broadcasterService;
+        private readonly IPlatformUtilsService _platformUtilsService;
+        private readonly II18nService _i18nService;
+        private readonly ICozyClientService _cozyClientService;
 
         readonly LazyResolve<ILogger> _logger = new LazyResolve<ILogger>();
 
         public HomePage(AppOptions appOptions = null)
         {
+            _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
+            _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
             _appOptions = appOptions;
             InitializeComponent();
@@ -34,7 +40,11 @@ namespace Bit.App.Pages
                 await _accountListOverlay.HideAsync();
                 await Navigation.PopModalAsync();
             };
+            // Cozy customization, disable UpdateLogo()
+            // Since we force Inverted theme for HomePage, there is no need to compute Logo based on theme
+            /*
             UpdateLogo();
+            //*/
 
             if (!_vm.ShowCancelButton)
             {
@@ -54,9 +64,11 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             _mainContent.Content = _mainLayout;
             _accountAvatar?.OnAppearing();
+            CheckOnboarded();
 
             if (!_appOptions?.HideAccountSwitcher ?? false)
             {
@@ -64,11 +76,20 @@ namespace Bit.App.Pages
             }
             _broadcasterService.Subscribe(nameof(HomePage), (message) =>
             {
+                if (message.Command == "onboarded")
+                {
+                    CheckOnboarded();
+                }
+
                 if (message.Command is ThemeManager.UPDATED_THEME_MESSAGE_KEY)
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
+                        // Cozy customization, disable UpdateLogo()
+                        // Since we force Inverted theme for HomePage, there is no need to compute Logo based on theme
+                        /*
                         UpdateLogo();
+                        //*/
                     });
                 }
             });
@@ -79,6 +100,15 @@ namespace Bit.App.Pages
             catch (Exception ex)
             {
                 _logger.Value?.Exception(ex);
+            }
+        }
+
+        public void CheckOnboarded()
+        {
+            if (_cozyClientService.CheckStateAndSecretInOnboardingCallbackURL())
+            {
+                _cozyClientService.OnboardedURL = null;
+                HasOnboarded();
             }
         }
 
@@ -112,16 +142,66 @@ namespace Bit.App.Pages
             }
         }
 
+        private void OpenRegistrationPageIOS(string url) {
+#if __IOS__
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var vc = window.RootViewController;
+            var sfvc = new SFSafariViewController(new NSUrl(url), true);
+            vc.PresentViewController(sfvc, true, null);
+#endif
+
+            // After subscribing, the user is redirected to a URL custom scheme
+            // that is picked up in AppDelegate. The SafariViewController is
+            // closed there since messages on the broadcast service are not
+            // received by the HomePage while the SafariViewController is
+            // presented
+        }
+
+
+        private void OpenRegistrationPageAndroid(string url)
+        {
+            _platformUtilsService.LaunchUri(url);
+        }
+
+        private void OpenRegistrationPage()
+        {
+            var lang = _i18nService.Culture.TwoLetterISOLanguageName;
+            var url = _cozyClientService.GetRegistrationURL(lang: lang);
+            if (Device.RuntimePlatform == Device.iOS) {
+                OpenRegistrationPageIOS(url);
+            } else {
+                OpenRegistrationPageAndroid(url);
+            }
+        }
+
         private async Task StartLoginAsync()
         {
+            // Cozy customization, Call ClouderyView from InAppBrowser
+            /*
             var page = new LoginPage(_vm.Email, _appOptions);
             await Navigation.PushModalAsync(new NavigationPage(page));
+            /*/
+            var url = await _cozyClouderyEnvService.GetClouderyUrl();
+
+            await Browser.OpenAsync(url, new BrowserLaunchOptions
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show,
+                Flags = BrowserLaunchFlags.PresentAsPageSheet
+            });
+            //*/
         }
 
         private async Task StartRegisterAsync()
         {
+            // Cozy customization:
+            // - Registration is not made in app but from cozy website
+            /*
             var page = new RegisterPage(this);
             await Navigation.PushModalAsync(new NavigationPage(page));
+            /*/
+            OpenRegistrationPage();
+            //*/
         }
 
         private void LogInSso_Clicked(object sender, EventArgs e)
@@ -144,5 +224,27 @@ namespace Bit.App.Pages
             var page = new EnvironmentPage();
             await Navigation.PushModalAsync(new NavigationPage(page));
         }
+
+        private void HasOnboarded()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                // A delay is needed here since otherwise we can show the Dialog
+                // while a splashscreen is showing, and this prevents the splashscreen
+                // to be removed.
+                await Task.Delay(500);
+                await DisplayOnboardedDialogAsync();
+                await Navigation.PushModalAsync(new NavigationPage(new LoginPage()));
+            });
+
+        }
+
+        #region cozy
+        private async Task DisplayOnboardedDialogAsync()
+        {
+            await _platformUtilsService.ShowDialogAsync(AppResources.RegistrationSuccess, AppResources.CozyPass,
+                            AppResources.Close);
+        }
+        #endregion
     }
 }

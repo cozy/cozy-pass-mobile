@@ -47,8 +47,10 @@ namespace Bit.Droid.Services
             {
                 if (string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"Bitwarden_Mobile/{Xamarin.Essentials.AppInfo.VersionString} " +
-                        $"(Android {Build.VERSION.Release}; SDK {Build.VERSION.Sdk}; Model {Build.Model})";
+                    // Related commit: https://github.com/cozy/cozy-pass-mobile/commit/7b97db7ea85d6a7e8ef7849d9c859ce15fe21f58
+                    // Related commit: https://github.com/cozy/cozy-pass-mobile/commit/6859b43c311ccda2d81ccc0d121d1f0e979e9b80
+                    _userAgent = $"io.cozy.pass.mobile-{Xamarin.Essentials.AppInfo.VersionString} " +
+                        $"(Android {Build.VERSION.Release}; SDK {(int)Build.VERSION.SdkInt}; Model {Build.Model})";
                 }
                 return _userAgent;
             }

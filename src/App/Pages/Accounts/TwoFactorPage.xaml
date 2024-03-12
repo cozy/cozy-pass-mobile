@@ -159,12 +159,16 @@
                     Margin="10, 20, 10, 10"
                     HorizontalTextAlignment="Center" />
             </StackLayout>
+            <!-- Cozy customization -->
+            <!-- Continue button set as Primary button -->
             <Button Text="{u:I18n Continue}"
                     IsEnabled="{Binding EnableContinue}"
                     IsVisible="{Binding ShowContinue}"
                     Clicked="Continue_Clicked"
                     Margin="10, 0"
+                    StyleClass="btn-primary"
                     x:Name="_continue"></Button>
+            <!-- End Cozy customization -->
             <Button Text="{u:I18n SendVerificationCodeAgain}"
                     IsVisible="{Binding EmailMethod}"
                     Clicked="ResendEmail_Clicked"

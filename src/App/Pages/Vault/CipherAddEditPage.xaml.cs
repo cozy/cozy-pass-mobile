@@ -64,7 +64,11 @@ namespace Bit.App.Pages
             SetActivityIndicator();
             if (_vm.EditMode && !_vm.CloneMode && Device.RuntimePlatform == Device.Android)
             {
+                // Cozy customization, disable attachment
+                // Disable attachment as they are not implemented in Cozy Stack
+                /*
                 ToolbarItems.Add(_attachmentsItem);
+                //*/
                 ToolbarItems.Add(_deleteItem);
             }
             if (Device.RuntimePlatform == Device.iOS)
@@ -84,7 +88,11 @@ namespace Bit.App.Pages
             _cardBrandPicker.ItemDisplayBinding = new Binding("Key");
             _cardExpMonthPicker.ItemDisplayBinding = new Binding("Key");
             _identityTitlePicker.ItemDisplayBinding = new Binding("Key");
+            // Cozy customization, disable folders
+            // Disable Folder (bitwarden concept) selection from here, we only handle Sharing to folder from toolbar menu
+            /*
             _folderPicker.ItemDisplayBinding = new Binding("Key");
+            //*/
             _ownershipPicker.ItemDisplayBinding = new Binding("Key");
 
             _loginPasswordEntry.Keyboard = Keyboard.Create(KeyboardFlags.None);
@@ -235,6 +243,17 @@ namespace Bit.App.Pages
             if (DoOnce())
             {
                 var page = new SharePage(_vm.CipherId);
+
+                // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+                //*
+                page.OnShared += async (object sender2, OnSharedEventArgs args) =>
+                {
+                    _vm.Cipher.OrganizationId = args.OrganizationId;
+                    _vm.Cipher.CollectionIds = args.CollectionIds;
+                    await _vm.UpdateOrganizationName();
+                };
+                //*/
+
                 await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(page));
             }
         }
@@ -282,10 +301,23 @@ namespace Bit.App.Pages
             {
                 return;
             }
+            // Cozy customization, disable attachment
+            // Disable attachment as they are not implemented in Cozy Stack
+            /*
             var options = new List<string> { AppResources.Attachments };
+            /*/
+            var options = new List<string> { };
+            //*/
             if (_vm.EditMode)
             {
+                // Cozy customization, replace collection action by move action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 options.Add(_vm.Cipher.OrganizationId == null ? AppResources.MoveToOrganization : AppResources.Collections);
+                /*/
+                options.Add(AppResources.MoveToOrganization);
+                //*/
             }
             var selection = await DisplayActionSheet(AppResources.Options, AppResources.Cancel,
                 (_vm.EditMode && !_vm.CloneMode) ? AppResources.Delete : null, options.ToArray());
@@ -365,6 +397,10 @@ namespace Bit.App.Pages
                 {
                     return;
                 }
+                // Cozy customization, replace collection action by move action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 if (_vm.Cipher.OrganizationId == null)
                 {
                     if (ToolbarItems.Contains(_collectionsItem))
@@ -387,6 +423,12 @@ namespace Bit.App.Pages
                         ToolbarItems.Insert(2, _collectionsItem);
                     }
                 }
+                /*/
+                if (!ToolbarItems.Contains(_shareItem) && !_vm.CloneMode)
+                {
+                    ToolbarItems.Insert(2, _shareItem);
+                }
+                //*/
             }
         }
 
@@ -394,5 +436,18 @@ namespace Bit.App.Pages
         {
             _vm.Cipher.Reprompt = e.Value ? CipherRepromptType.Password : CipherRepromptType.None;
         }
+
+        // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+        //*
+        public string GetSavedOrganizationId()
+        {
+            return _vm.Cipher.OrganizationId;
+        }
+
+        public HashSet<string> GetSavedCollectionId()
+        {
+            return _vm.Cipher.CollectionIds;
+        }
+        //*/
     }
 }

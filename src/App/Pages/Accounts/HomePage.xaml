@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cozy customization -->
+<!-- Many edits have been made in this file to fit Cozy's design
+     Notable edits:
+     - Actions buttons are now in the screen's bottom
+     - SSO button is disabled
+-->
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -7,8 +13,7 @@
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:HomeViewModel"
-    x:Name="_page"
-    Title="{Binding PageTitle}">
+    x:Name="_page">
     <ContentPage.BindingContext>
         <pages:HomeViewModel />
     </ContentPage.BindingContext>
@@ -34,10 +39,14 @@
             <StackLayout x:Name="_mainLayout" x:Key="mainLayout" Spacing="30" Padding="20, 50, 20, 0">
                 <Image
                     x:Name="_logo"
-                    Source="logo.png"
+                    Source="home_logo.png"
                     VerticalOptions="Center" />
+                <Label Text="{u:I18n CozyHomeTitle}"
+                        FontSize="35"
+                        HorizontalTextAlignment="Center">
+                </Label>
                 <Label Text="{u:I18n LoginOrCreateNewAccount}"
-                        StyleClass="text-lg"
+                        StyleClass="Medium"
                         HorizontalTextAlignment="Center"/>
                 <StackLayout
                     StyleClass="box-row">

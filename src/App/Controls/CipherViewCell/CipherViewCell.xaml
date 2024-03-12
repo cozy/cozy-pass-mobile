@@ -86,6 +86,11 @@
             IsVisible="{Binding Source={RelativeSource Self}, Path=Text,
                         Converter={StaticResource stringHasValueConverter}}"
             AutomationId="CipherSubTitleLabel" />
+        <!--
+        Cozy customisation: Replace shared IconLabel by CozyShared image
+        We did this because of that
+        -->
+        <!--
         <controls:IconLabel
             Grid.Column="1"
             Grid.Row="0"
@@ -98,6 +103,15 @@
             AutomationProperties.IsInAccessibleTree="True"
             AutomationProperties.Name="{u:I18n Shared}"
             AutomationId="CipherInCollectionIcon" />
+        -->
+        <ff:CachedImage
+            Grid.Column="1"
+            Grid.Row="0"
+            Margin="4, 4, 0, 0"
+            HorizontalOptions="Start"
+            IsVisible="{Binding CozyShared, Mode=OneWay}"
+            Source="shared_with_cozy_icon.png" />
+        <!---->
         <controls:IconLabel
             Grid.Column="2"
             Grid.Row="0"

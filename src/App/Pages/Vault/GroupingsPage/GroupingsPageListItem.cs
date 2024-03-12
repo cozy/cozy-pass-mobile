@@ -3,6 +3,7 @@ using Bit.App.Utilities.Automation;
 using Bit.Core;
 using Bit.Core.Enums;
 using Bit.Core.Models.View;
+using System.Collections.Generic;
 
 namespace Bit.App.Pages
 {
@@ -16,6 +17,7 @@ namespace Bit.App.Pages
         public CipherView Cipher { get; set; }
         public CipherType? Type { get; set; }
         public string ItemCount { get; set; }
+        public List<CipherView> Items { get; set; }
         public bool FuzzyAutofill { get; set; }
         public bool IsTrash { get; set; }
         public bool IsTotpCode { get; set; }
@@ -46,6 +48,8 @@ namespace Bit.App.Pages
                 }
                 else if (Type != null)
                 {
+                    // Cozy customization, ADD description
+                    /*
                     switch (Type.Value)
                     {
                         case CipherType.Login:
@@ -63,10 +67,33 @@ namespace Bit.App.Pages
                         default:
                             break;
                     }
+                    /*/
+                    return GetNameFromType(Type);
+                    //*/
                 }
                 return _name;
             }
         }
+
+        // Cozy customization, ADD description
+        //*
+        static public string GetNameFromType(CipherType? type)
+        {
+            switch (type.Value)
+            {
+                case CipherType.Login:
+                    return AppResources.TypeLogin;
+                case CipherType.SecureNote:
+                    return AppResources.TypeSecureNote;
+                case CipherType.Card:
+                    return AppResources.TypeCard;
+                case CipherType.Identity:
+                    return AppResources.TypeIdentity;
+                default:
+                    return null;
+            }
+        }
+        //*/
 
         public string Icon
         {

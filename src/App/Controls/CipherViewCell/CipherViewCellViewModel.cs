@@ -12,6 +12,10 @@ namespace Bit.App.Controls
 
         public CipherViewCellViewModel(CipherView cipherView, bool websiteIconsEnabled)
         {
+            // Cozy customization, show "Cozy shared" icon next to Cozy's shared ciphers
+            //*
+            _organizationService = ServiceContainer.Resolve<IOrganizationService>("organizationService");
+            //*/
             Cipher = cipherView;
             WebsiteIconsEnabled = websiteIconsEnabled;
         }
@@ -19,7 +23,19 @@ namespace Bit.App.Controls
         public CipherView Cipher
         {
             get => _cipher;
+            // Cozy customization, show "Cozy shared" icon next to Cozy's shared ciphers
+            /*
             set => SetProperty(ref _cipher, value);
+            /*/
+            set
+            {
+                SetProperty(ref _cipher, value, () => {
+                    #region cozy
+                    TriggerPropertyChanged(nameof(CozyShared));
+                    #endregion
+                });
+            }
+            //*/
         }
 
         public bool WebsiteIconsEnabled
@@ -47,5 +63,26 @@ namespace Bit.App.Controls
             }
 
         }
+
+        // Cozy customization, show "Cozy shared" icon next to Cozy's shared ciphers
+        //*
+        private IOrganizationService _organizationService;
+
+        public static readonly BindableProperty CozySharedProperty = BindableProperty.Create(
+           nameof(CozyShared),
+           typeof(bool),
+           typeof(CipherViewCellViewModel),
+           false
+        );
+
+        public bool CozyShared
+        {
+            get
+            {
+                var cozyOrganizationId = _organizationService.CozyOrganizationId;
+                return _cipher.OrganizationId == cozyOrganizationId;
+            }
+        }
+        //*/
     }
 }

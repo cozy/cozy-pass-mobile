@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:versionCode="1" android:versionName="2024.2.0" android:installLocation="internalOnly" package="io.cozy.pass.mobile">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:versionCode="3000501" android:versionName="3.0.5" android:installLocation="internalOnly" package="io.cozy.pass.mobile">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.NFC" />
@@ -13,8 +13,23 @@
 	<uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
 	<uses-feature android:name="android.hardware.camera" android:required="false" />
 	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
-	<application android:label="Bitwarden" android:theme="@style/LaunchTheme" android:allowBackup="false" tools:replace="android:allowBackup" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:networkSecurityConfig="@xml/network_security_config">
+	<!-- Cozy customization -->
+	<!-- Set Cozy specific info -->
+	<!---->
+	<application android:label="Cozy Pass" android:theme="@style/CozyTheme.Splash" android:allowBackup="false" tools:replace="android:allowBackup" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:networkSecurityConfig="@xml/network_security_config">
+		<!---->
+		<!-- Cozy customization -->
+		<!-- Disable Tracking libraries -->
+		<!---->
+		<meta-data android:name="firebase_analytics_collection_deactivated" android:value="true" />
+    <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
+    <meta-data android:name="google_analytics_ssaid_collection_enabled" android:value="false" />
+		<!---->
+		<!-- Cozy customization -->
+		<!-- Set Cozy specific info -->
+		<!---->
 		<provider android:name="androidx.core.content.FileProvider" android:authorities="io.cozy.pass.mobile.fileprovider" android:exported="false" android:grantUriPermissions="true">
+		<!---->
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths" />
 		</provider>
 		<meta-data android:name="android.max_aspect" android:value="2.1" />
@@ -25,7 +40,11 @@
 		<!-- Support for LG "Dual Window" mode (for Android < 7.0 users) -->
 		<meta-data android:name="com.lge.support.SPLIT_WINDOW" android:value="true" />
 		<!-- Declare MainActivity manually so we can set LaunchMode using API dependant resource -->
-		<activity android:name="io.cozy.pass.mobile.MainActivity" android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|uiMode" android:exported="true" android:icon="@mipmap/ic_launcher" android:label="Bitwarden" android:launchMode="@integer/launchModeAPIlevel" android:theme="@style/LaunchTheme">
+		<!-- Cozy customization -->
+		<!-- Set Cozy specific info -->
+		<!---->
+		<activity android:name="io.cozy.pass.mobile.MainActivity" android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|uiMode" android:exported="true" android:icon="@mipmap/ic_launcher" android:label="Cozy Pass" android:launchMode="@integer/launchModeAPIlevel" android:theme="@style/CozyTheme.Splash">
+		<!---->
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -38,6 +57,16 @@
 				<data android:mimeType="video/*" />
 				<data android:mimeType="text/*" />
 			</intent-filter>
+			<!-- Cozy customization -->
+			<!-- Support onboarded callback in Android -->
+			<!---->
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="cozy" />
+			</intent-filter>
+			<!---->
 		</activity>
 	</application>
 	<!-- Support for Xamarin.Essentials.Browser.OpenAsync  (for Android > 11) -->

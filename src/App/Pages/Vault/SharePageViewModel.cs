@@ -10,6 +10,7 @@ using Bit.Core.Exceptions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
 using Xamarin.CommunityToolkit.ObjectModel;
+using System;
 
 namespace Bit.App.Pages
 {
@@ -25,6 +26,11 @@ namespace Bit.App.Pages
         private bool _hasCollections;
         private bool _hasOrganizations;
         private List<Core.Models.View.CollectionView> _writeableCollections;
+
+        // Cozy customization, handle OnShared
+        //*
+        public event EventHandler<OnSharedEventArgs> OnShared;
+        //*/
 
         public SharePageViewModel()
         {
@@ -79,9 +85,22 @@ namespace Bit.App.Pages
                 .Select(o => new KeyValuePair<string, string>(o.Name, o.Id)).ToList();
             HasOrganizations = OrganizationOptions.Any();
 
+            // Cozy customization, add "None" collection
+            //*
+            OrganizationOptions.Insert(0, new KeyValuePair<string, string>(AppResources.ShareNone, "None"));
+            //*/
+
             var cipherDomain = await _cipherService.GetAsync(CipherId);
             _cipher = await cipherDomain.DecryptAsync();
+            // Cozy customization, use HasOrganizations instead of OrganizationOptions.Any()
+            // this is needed because we added "None" option
+            // also try to synchronize with cipher current organization
+            /*
             if (OrganizationId == null && OrganizationOptions.Any())
+            /*/
+            OrganizationId = _cipher.OrganizationId;
+            if (OrganizationId == null && HasOrganizations)
+            //*/
             {
                 OrganizationId = OrganizationOptions.First().Value;
             }
@@ -92,8 +111,32 @@ namespace Bit.App.Pages
 
         public async Task<bool> MoveAsync()
         {
+            // Cozy customization, select ALL collections
+            //*
+            var cipherDomain = await _cipherService.GetAsync(CipherId);
+            var cipherView = await cipherDomain.DecryptAsync();
+            var isCipherInOrganization = !string.IsNullOrEmpty(cipherView.OrganizationId);
+            //*/
+
+            // Cozy customization, select ALL collections
+            // At Cozy we force 1-1 relationship between Orgnanizations and Collections
+            // so when an Organization is select we know that the corresponding Collection should be also selected
+            /*
             var selectedCollectionIds = Collections?.Where(c => c.Checked).Select(c => c.Collection.Id);
+            /*/
+            var selectedCollectionIds = Collections?.Select(c => c.Collection.Id);
+            //*/
+
+            // Cozy customization, add Unshare feature
+            /*
             if (!selectedCollectionIds?.Any() ?? true)
+            /*/
+            if (isCipherInOrganization && selectedCollectionIds?.Count() == 0)
+            {
+                return await Unshare(cipherView);
+            }
+            else if (!isCipherInOrganization && (!selectedCollectionIds?.Any() ?? true))
+            //*/
             {
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred, AppResources.SelectOneCollection,
                     AppResources.Ok);
@@ -106,8 +149,11 @@ namespace Bit.App.Pages
                 return false;
             }
 
+            // Cozy customization, moved on function top
+            /*
             var cipherDomain = await _cipherService.GetAsync(CipherId);
             var cipherView = await cipherDomain.DecryptAsync();
+            //*/
 
             var checkedCollectionIds = new HashSet<string>(selectedCollectionIds);
             try
@@ -119,6 +165,12 @@ namespace Bit.App.Pages
                 var movedItemToOrgText = string.Format(AppResources.MovedItemToOrg, cipherView.Name,
                    (await _organizationService.GetAsync(OrganizationId)).Name);
                 _platformUtilsService.ShowToast("success", null, movedItemToOrgText);
+
+                // Cozy customization, trigger OnShare
+                //*
+                HandleOnShared(OrganizationId, checkedCollectionIds);
+                //*/
+
                 await Page.Navigation.PopModalAsync();
                 return true;
             }
@@ -165,5 +217,45 @@ namespace Bit.App.Pages
             }
             HasCollections = Collections.Any();
         }
+
+        private async Task<bool> Unshare(CipherView cipherView)
+        {
+            try
+            {
+                await _cipherService.UnshareWithServerAsync(cipherView);
+                HandleOnShared(null, null);
+                _platformUtilsService.ShowToast("success", null, AppResources.ItemUnshared);
+                await Page.Navigation.PopModalAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // Cozy customization, handle OnShared
+        //*
+        private void HandleOnShared(string organizationId, HashSet<string> collectionIds)
+        {
+            if (OnShared != null)
+            {
+                OnShared.Invoke(this, new OnSharedEventArgs()
+                {
+                    OrganizationId = organizationId,
+                    CollectionIds = collectionIds
+                });
+            }
+        }
+        //*/
     }
+
+    // Cozy customization, handle OnShared
+    //*
+    public class OnSharedEventArgs : EventArgs
+    {
+        public string OrganizationId { get; set; }
+        public HashSet<string> CollectionIds { get; set; }
+    }
+    //*/
 }

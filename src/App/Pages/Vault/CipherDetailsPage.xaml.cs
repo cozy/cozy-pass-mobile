@@ -35,7 +35,11 @@ namespace Bit.App.Pages
             else
             {
                 _mainLayout.Padding = new Thickness(0, 0, 0, 75);
+                // Cozy customization, disable attachment
+                // Disable attachment as they are not implemented in Cozy Stack
+                /*
                 ToolbarItems.Add(_attachmentsItem);
+                //*/
                 ToolbarItems.Add(_deleteItem);
             }
         }
@@ -140,7 +144,19 @@ namespace Bit.App.Pages
                     {
                         return;
                     }
+                    // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+                    /*
                     await Navigation.PushModalAsync(new NavigationPage(new CipherAddEditPage(_vm.CipherId)));
+                    /*/
+                    var page = new CipherAddEditPage(_vm.CipherId);
+                    page.Disappearing += async (object sender2, EventArgs e2) =>
+                    {
+                        _vm.Cipher.OrganizationId = page.GetSavedOrganizationId();
+                        _vm.Cipher.CollectionIds = page.GetSavedCollectionId();
+                        await _vm.UpdateOrganizationName();
+                    };
+                    await Navigation.PushModalAsync(new NavigationPage(page));
+                    //*/
                 }
             }
         }
@@ -172,6 +188,15 @@ namespace Bit.App.Pages
                     return;
                 }
                 var page = new SharePage(_vm.CipherId);
+                // Cozy customization, synchronize organization and collection ids after a ShareCipher action
+                //*
+                page.OnShared += async (object sender2, OnSharedEventArgs args) =>
+                {
+                    _vm.Cipher.OrganizationId = args.OrganizationId;
+                    _vm.Cipher.CollectionIds = args.CollectionIds;
+                    await _vm.UpdateOrganizationName();
+                };
+                //*/
                 await Navigation.PushModalAsync(new NavigationPage(page));
             }
         }
@@ -211,7 +236,13 @@ namespace Bit.App.Pages
                 return;
             }
 
+            // Cozy customization, disable attachment
+            // Disable attachment as they are not implemented in Cozy Stack
+            /*
             var options = new List<string> { AppResources.Attachments };
+            /*/
+            var options = new List<string> { };
+            //*/
             if (_vm.Cipher.OrganizationId == null)
             {
                 if (_vm.CanClone)
@@ -223,7 +254,14 @@ namespace Bit.App.Pages
             }
             else
             {
+                // Cozy customization, replace collection action by move action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 options.Add(AppResources.Collections);
+                /*/
+                options.Add(AppResources.MoveToOrganization);
+                //*/
             }
 
             var selection = await DisplayActionSheet(AppResources.Options, AppResources.Cancel,
@@ -288,10 +326,15 @@ namespace Bit.App.Pages
             }
             if (_vm.Cipher.OrganizationId == null)
             {
+                // Cozy customization, remove collection action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 if (ToolbarItems.Contains(_collectionsItem))
                 {
                     ToolbarItems.Remove(_collectionsItem);
                 }
+                //*/
                 if (_vm.CanClone && !ToolbarItems.Contains(_cloneItem))
                 {
                     ToolbarItems.Insert(1, _cloneItem);
@@ -307,6 +350,10 @@ namespace Bit.App.Pages
                 {
                     ToolbarItems.Remove(_cloneItem);
                 }
+                // Cozy customization, remove collection action
+                // Collections and Organizations are merged into a single concept (folders) at Cozy
+                // so there is no need to use a different action
+                /*
                 if (ToolbarItems.Contains(_shareItem))
                 {
                     ToolbarItems.Remove(_shareItem);
@@ -315,6 +362,12 @@ namespace Bit.App.Pages
                 {
                     ToolbarItems.Insert(1, _collectionsItem);
                 }
+                /*/
+                if (!ToolbarItems.Contains(_shareItem))
+                {
+                    ToolbarItems.Insert(1, _shareItem);
+                }
+                //*/
             }
             if (_vm.Cipher.IsDeleted && !ToolbarItems.Contains(_editItem))
             {

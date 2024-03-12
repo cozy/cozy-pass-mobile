@@ -31,6 +31,9 @@ namespace Bit.App.Pages
             _vm.Page = this;
             _vm.UnlockedAction = () => Device.BeginInvokeOnMainThread(async () => await UnlockedAsync());
 
+            // Cozy customization, disable menu
+            // logout will be not requested from the login form
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -39,6 +42,12 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_logOut);
             }
+            //*/
+
+            // Cozy customization, Disable multi-account
+            //*
+            ToolbarItems.Remove(_accountAvatar);
+            //*/
         }
 
         public Entry SecretEntry
@@ -68,6 +77,7 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             _broadcasterService.Subscribe(nameof(LockPage), message =>
             {

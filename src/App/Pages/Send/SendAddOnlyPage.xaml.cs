@@ -50,6 +50,11 @@ namespace Bit.App.Pages
                 _nameEntry.ReturnType = ReturnType.Next;
                 _nameEntry.ReturnCommand = new Command(() => _textEditor.Focus());
             }
+
+            // Cozy customization, Disable multi-account
+            //*
+            ToolbarItems.Remove(_accountAvatar);
+            //*/
         }
 
         protected override async void OnAppearing()

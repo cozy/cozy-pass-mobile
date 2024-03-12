@@ -711,6 +711,25 @@
                             </controls:RepeaterView.ItemTemplate>
                         </controls:RepeaterView>
                     </StackLayout>
+                    <!-- Cozy customization -->
+                    <!-- Display folders (Cozy concept) -->
+                    <StackLayout StyleClass="box" IsVisible="{Binding HasOrganization}">
+                        <StackLayout StyleClass="box-row-header">
+                            <Label Text="{u:I18n Folder, Header=True}"
+                                   StyleClass="box-header, box-header-platform" />
+                        </StackLayout>
+                        <StackLayout StyleClass="box-row">
+                            <Label
+                                Text="{Binding OrganizationName, Mode=OneWay}"
+                                StyleClass="box-value">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Share_Clicked" NumberOfTapsRequired="1" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                        <BoxView StyleClass="box-row-separator" />
+                    </StackLayout>
+                    <!-- End Cozy customization -->
                     <StackLayout StyleClass="box-bottom">
                         <Label FormattedText="{Binding UpdatedText}"
                                StyleClass="box-footer-label"

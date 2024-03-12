@@ -16,7 +16,7 @@ using Bit.Core.Utilities;
 
 namespace Bit.Droid.Autofill
 {
-    [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Bitwarden", Exported = true)]
+    [Service(Permission = Manifest.Permission.BindAutofillService, Label = "Cozy Pass", Exported = true)]
     [IntentFilter(new string[] { "android.service.autofill.AutofillService" })]
     [MetaData("android.autofill", Resource = "@xml/autofillservice")]
     [Register("io.cozy.pass.mobile.Autofill.AutofillService")]

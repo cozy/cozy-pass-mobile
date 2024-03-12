@@ -38,6 +38,7 @@ namespace Bit.App.Pages
         private Dictionary<string, int> _folderCounts = new Dictionary<string, int>();
         private Dictionary<string, int> _collectionCounts = new Dictionary<string, int>();
         private Dictionary<CipherType, int> _typeCounts = new Dictionary<CipherType, int>();
+        private readonly Dictionary<CipherType, List<CipherView>> _cipherPerType = new Dictionary<CipherType, List<CipherView>>();
         private int _deletedCount = 0;
         private CancellationTokenSource _totpTickCts;
         private Task _totpTickTask;
@@ -100,9 +101,12 @@ namespace Bit.App.Pages
         public bool HasCiphers { get; set; }
         public bool HasFolders { get; set; }
         public bool HasCollections { get; set; }
+        // Cozy customization, ADD description
+        /*
         public bool ShowNoFolderCipherGroup => NoFolderCiphers != null
                                                && NoFolderCiphers.Count < NoFolderListSize
                                                && (Collections is null || !Collections.Any());
+        //*/
         public List<CipherView> Ciphers { get; set; }
         public List<CipherView> TOTPCiphers { get; set; }
         public List<CipherView> FavoriteCiphers { get; set; }
@@ -217,7 +221,12 @@ namespace Bit.App.Pages
             try
             {
                 await LoadDataAsync();
+                // Cozy customization, ADD description
+                /*
                 if (ShowNoFolderCipherGroup && (NestedFolders?.Any() ?? false))
+                /*/
+                if ((NestedFolders?.Any() ?? false))
+                //*/
                 {
                     // Remove "No Folder" folder from folders group
                     NestedFolders = NestedFolders.GetRange(0, NestedFolders.Count - 1);
@@ -233,6 +242,8 @@ namespace Bit.App.Pages
                 }
                 if (MainPage)
                 {
+                    // Cozy customization, ADD description
+                    /*
                     AddTotpGroupItem(groupedItems, uppercaseGroupNames);
 
                     var types = new CipherType[] { CipherType.Login, CipherType.Card, CipherType.Identity, CipherType.SecureNote };
@@ -246,8 +257,36 @@ namespace Bit.App.Pages
                         });
                     }
                     groupedItems.Add(typesGroup);
+                    /*/
+                    var order = new List<CipherType>
+                    {
+                        CipherType.Identity,
+                        CipherType.Card,
+                        CipherType.Login
+                    };
+                    foreach (var type in order)
+                    {
+                        List<CipherView> ciphers;
+                        if (!_cipherPerType.TryGetValue(type, out ciphers))
+                        {
+                            continue;
+                        }
+                        var items = ciphers.Select(c => new GroupingsPageListItem { Cipher = c }).ToList();
+                        if (items.Count > 0)
+                        {
+                            groupedItems.Add(new GroupingsPageListGroup(items, GroupingsPageListItem.GetNameFromType(type),
+                                items.Count, uppercaseGroupNames, true));
+                        }
+                    }
+                    //*/
                 }
+                // Cozy customization, ADD description
+                /*
                 if (NestedFolders?.Any() ?? false)
+                /*/
+                var hasAnyFolder = NestedFolders?.Any() ?? false;
+                if (hasAnyFolder)
+                //*/
                 {
                     var folderListItems = NestedFolders.Select(f =>
                     {
@@ -261,7 +300,14 @@ namespace Bit.App.Pages
                     groupedItems.Add(new GroupingsPageListGroup(folderListItems, AppResources.Folders,
                         folderListItems.Count, uppercaseGroupNames, !MainPage));
                 }
+                // Cozy customization, ADD description
+                /*
                 if (NestedCollections?.Any() ?? false)
+                /*/
+                var hasAnyCollections = NestedCollections?.Any() ?? false;
+                var shouldShowCollections = hasAnyCollections && false;
+                if (shouldShowCollections)
+                //*/
                 {
                     var collectionListItems = NestedCollections.Select(c => new GroupingsPageListItem
                     {
@@ -281,6 +327,8 @@ namespace Bit.App.Pages
                     Page.Navigation.PopAsync();
                     return;
                 }
+                // Cozy customization, We deactivate folders
+                /*/
                 if (ShowNoFolderCipherGroup)
                 {
                     var noFolderCiphersListItems = NoFolderCiphers.Select(
@@ -288,6 +336,7 @@ namespace Bit.App.Pages
                     groupedItems.Add(new GroupingsPageListGroup(noFolderCiphersListItems, AppResources.FolderNone,
                         noFolderCiphersListItems.Count, uppercaseGroupNames, false));
                 }
+                //*/
                 // Ensure this is last in the list (appears at the bottom)
                 if (MainPage && !Deleted)
                 {
@@ -541,6 +590,14 @@ namespace Bit.App.Pages
             _folderCounts.Clear();
             _collectionCounts.Clear();
             _typeCounts.Clear();
+            // Cozy customization, ADD description
+            //*
+            _cipherPerType.Clear();
+            _cipherPerType[CipherType.Login] = new List<CipherView>();
+            _cipherPerType[CipherType.SecureNote] = new List<CipherView>();
+            _cipherPerType[CipherType.Identity] = new List<CipherView>();
+            _cipherPerType[CipherType.SecureNote] = new List<CipherView>();
+            //*/
             HasFolders = false;
             HasCollections = false;
             Filter = null;
@@ -553,6 +610,11 @@ namespace Bit.App.Pages
                 HasFolders = NestedFolders.Any(f => f.Node?.Id != null);
                 NestedCollections = Collections != null ? await _collectionService.GetAllNestedAsync(Collections) : null;
                 HasCollections = NestedCollections?.Any() ?? false;
+                
+                // Cozy customization, ADD description
+                //*
+                await _organizationService.CacheCozyOrganizationId();
+                //*/
             }
             else
             {
@@ -639,6 +701,15 @@ namespace Bit.App.Pages
                     _typeCounts[c.Type] = _typeCounts.TryGetValue(c.Type, out var currentTypeCount)
                                                 ? currentTypeCount + 1
                                                 : 1;
+
+                    // Cozy customization, ADD description
+                    //*
+                    if(!_cipherPerType.ContainsKey(c.Type))
+                    {
+                        _cipherPerType[c.Type] = new List<CipherView>();
+                    }
+                    _cipherPerType[c.Type].Add(c);
+                    //*/
                 }
 
                 if (c.IsDeleted)

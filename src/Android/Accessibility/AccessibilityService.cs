@@ -15,7 +15,7 @@ using Bit.Core.Utilities;
 
 namespace Bit.Droid.Accessibility
 {
-    [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Bitwarden", Exported = true)]
+    [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Cozy Pass", Exported = true)]
     [IntentFilter(new string[] { "android.accessibilityservice.AccessibilityService" })]
     [MetaData("android.accessibilityservice", Resource = "@xml/accessibilityservice")]
     [Register("io.cozy.pass.mobile.Accessibility.AccessibilityService")]
@@ -76,10 +76,14 @@ namespace Bit.Droid.Accessibility
                 {
                     return;
                 }
+                // Cozy customization, this is not needed anymore as minSdkVersion is 21
+                // This removes deprecation warning https://developer.android.com/reference/android/os/PowerManager#isScreenOn()
+                /*
                 else if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop && !powerManager.IsScreenOn)
                 {
                     return;
                 }
+                //*/
 
                 if (SkipPackage(e?.PackageName))
                 {

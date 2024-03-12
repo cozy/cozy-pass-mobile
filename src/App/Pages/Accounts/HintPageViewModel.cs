@@ -14,6 +14,7 @@ namespace Bit.App.Pages
         private readonly IDeviceActionService _deviceActionService;
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly IApiService _apiService;
+        private readonly ICozyClientService _cozyClientService;
         private readonly ILogger _logger;
         private string _email;
 
@@ -22,6 +23,7 @@ namespace Bit.App.Pages
             _deviceActionService = ServiceContainer.Resolve<IDeviceActionService>("deviceActionService");
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _apiService = ServiceContainer.Resolve<IApiService>("apiService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _logger = ServiceContainer.Resolve<ILogger>();
 
             PageTitle = AppResources.PasswordHint;
@@ -57,11 +59,19 @@ namespace Bit.App.Pages
                     AppResources.Ok);
                 return;
             }
+
+            // Cozy customization, Email is not an email, it represents the Cozy URL as in
+            // the login page : email validation check is disabled.
+            /*
             if (!Email.Contains("@"))
             {
                 await _deviceActionService.DisplayAlertAsync(AppResources.AnErrorHasOccurred, AppResources.InvalidEmail, AppResources.Ok);
                 return;
             }
+            /*/
+            var cozyURL = Email;
+            await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
+            //*/
 
             try
             {

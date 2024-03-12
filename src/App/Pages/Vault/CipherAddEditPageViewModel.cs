@@ -45,6 +45,10 @@ namespace Bit.App.Pages
         private int _ownershipSelectedIndex;
         private bool _hasCollections;
         private string _previousCipherId;
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        private string _organizationName;
+        //*/
         private List<Core.Models.View.CollectionView> _writeableCollections;
         private bool _fromOtp;
 
@@ -107,7 +111,10 @@ namespace Bit.App.Pages
                 new KeyValuePair<string, CipherType>(AppResources.TypeLogin, CipherType.Login),
                 new KeyValuePair<string, CipherType>(AppResources.TypeCard, CipherType.Card),
                 new KeyValuePair<string, CipherType>(AppResources.TypeIdentity, CipherType.Identity),
+                // Cozy customization, remove SecureNote field
+                /*
                 new KeyValuePair<string, CipherType>(AppResources.TypeSecureNote, CipherType.SecureNote),
+                //*/
             };
             CardBrandOptions = new List<KeyValuePair<string, string>>
             {
@@ -311,6 +318,23 @@ namespace Bit.App.Pages
         public string SetupTotpText => $"{BitwardenIcons.Camera} {AppResources.SetupTotp}";
         public bool ShowPasskeyInfo => Cipher?.HasFido2Credential == true && !CloneMode;
 
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        public string OrganizationName
+        {
+            get => _organizationName;
+            set => SetProperty(ref _organizationName, value,
+                additionalPropertyNames: new string[]
+                {
+                    nameof(HasOrganization),
+                    nameof(ShowOrganizations)
+                });
+        }
+
+        public bool HasOrganization => !string.IsNullOrEmpty(_organizationName);
+        public bool ShowOrganizations => HasOrganization && EditMode;
+        //*/
+
         public void Init()
         {
             PageTitle = EditMode && !CloneMode ? AppResources.EditItem : AppResources.AddItem;
@@ -450,6 +474,11 @@ namespace Bit.App.Pages
                 {
                     _platformUtilsService.ShowToast(null, AppResources.AuthenticatorKey, AppResources.AuthenticatorKeyAdded);
                 }
+
+                // Cozy customization, display folder (Cozy concept)
+                //*
+                await UpdateOrganizationName();
+                //*/
             }
 
             if (EditMode && _previousCipherId != CipherId)
@@ -460,6 +489,23 @@ namespace Bit.App.Pages
 
             return true;
         }
+
+        // Cozy customization, display folder (Cozy concept)
+        //*
+        public async Task UpdateOrganizationName()
+        {
+            if (!string.IsNullOrEmpty(Cipher.OrganizationId))
+            {
+                var organization = await _organizationService.GetAsync(Cipher.OrganizationId);
+
+                OrganizationName = organization.Name;
+            }
+            else
+            {
+                OrganizationName = AppResources.ShareNone;
+            }
+        }
+        //*/
 
         public async Task<bool> SubmitAsync()
         {

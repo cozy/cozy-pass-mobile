@@ -34,6 +34,8 @@ namespace Bit.App.Pages
         private readonly IApiService _apiService;
         private readonly IAppIdService _appIdService;
         private readonly IAccountsManager _accountManager;
+        private readonly ICozyClientService _cozyClientService;
+
         private bool _showPassword;
         private bool _showCancelButton;
         private string _email;
@@ -42,6 +44,11 @@ namespace Bit.App.Pages
         private bool _isKnownDevice;
         private bool _isExecutingLogin;
         private string _environmentHostName;
+
+        // Cozy customization, display error message on form
+        //*
+        private string _errorMsg;
+        //*/
 
         public LoginPageViewModel()
         {
@@ -57,8 +64,9 @@ namespace Bit.App.Pages
             _apiService = ServiceContainer.Resolve<IApiService>();
             _appIdService = ServiceContainer.Resolve<IAppIdService>();
             _accountManager = ServiceContainer.Resolve<IAccountsManager>();
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
-            PageTitle = AppResources.Bitwarden;
+            PageTitle = AppResources.CozyPass;
             TogglePasswordCommand = new Command(TogglePassword);
             LogInCommand = new Command(async () => await LogInAsync());
             MoreCommand = new AsyncCommand(MoreAsync, onException: _logger.Exception, allowsMultipleExecutions: false);
@@ -127,6 +135,16 @@ namespace Bit.App.Pages
         }
 
         public AccountSwitchingOverlayViewModel AccountSwitchingOverlayViewModel { get; }
+
+        // Cozy customization, display error message on form
+        //*
+        public string ErrorMsg
+        {
+            get => _errorMsg;
+            set => SetProperty(ref _errorMsg, value);
+        }
+        //*/
+
         public Command LogInCommand { get; }
         public Command TogglePasswordCommand { get; }
         public ICommand MoreCommand { get; internal set; }
@@ -181,30 +199,55 @@ namespace Bit.App.Pages
 
         public async Task LogInAsync(bool showLoading = true, bool checkForExistingAccount = false)
         {
+            // Cozy customization, display error message on form
+            //*
+            ErrorMsg = "";
+            //*/
+
             if (Xamarin.Essentials.Connectivity.NetworkAccess == Xamarin.Essentials.NetworkAccess.None)
             {
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(AppResources.InternetConnectionRequiredMessage,
                     AppResources.InternetConnectionRequiredTitle, AppResources.Ok);
+                /*/
+                ErrorMsg = AppResources.InternetConnectionRequiredMessage;
+                //*/
                 return;
             }
             if (string.IsNullOrWhiteSpace(Email))
             {
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(
                     string.Format(AppResources.ValidationFieldRequired, AppResources.EmailAddress),
                     AppResources.AnErrorHasOccurred, AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.EmailAddress);
+                //*/
                 return;
             }
+            
+            // Cozy customization, deactivate test on Email since Email has been used for the CozyURL
+            /*
             if (!Email.Contains("@"))
             {
                 await _platformUtilsService.ShowDialogAsync(AppResources.InvalidEmail, AppResources.AnErrorHasOccurred,
                     AppResources.Ok);
                 return;
             }
+            /*/
+
             if (string.IsNullOrWhiteSpace(MasterPassword))
             {
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(
                     string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword),
                     AppResources.AnErrorHasOccurred, AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword);
+                //*/
                 return;
             }
 
@@ -231,7 +274,16 @@ namespace Bit.App.Pages
                     await _deviceActionService.ShowLoadingAsync(AppResources.LoggingIn);
                 }
 
+                // Cozy customization, Email field is used as CozyURL, it is not renamed not to change the original code
+                // too much.
+                /*
                 var response = await _authService.LogInAsync(Email, MasterPassword, _captchaToken);
+                /*/
+                var cozyURL = UrlHelper.SanitizeUrl(Email);
+                await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
+                var email = _cozyClientService.GetEmailFromCozyURL(cozyURL);
+                var response = await _authService.LogInAsync(email, MasterPassword, _captchaToken);
+                //*/
                 await AppHelpers.ResetInvalidUnlockAttemptsAsync();
 
                 if (response.CaptchaNeeded)
@@ -270,6 +322,16 @@ namespace Bit.App.Pages
                     LogInSuccessAction?.Invoke();
                 }
             }
+            // Cozy customization, intercept SanitizeUrl exceptions
+            //*
+            catch (CozyException e)
+            {
+                await _deviceActionService.HideLoadingAsync();
+                var translatedErrorMessage = AppResources.ResourceManager.GetString(e.GetType().Name, AppResources.Culture);
+                // await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                ErrorMsg = translatedErrorMessage;
+            }
+            //*/
             catch (ApiException e)
             {
                 _captchaToken = null;
@@ -277,8 +339,25 @@ namespace Bit.App.Pages
                 await _deviceActionService.HideLoadingAsync();
                 if (e?.Error != null)
                 {
+                    // Cozy customization, set custom message for 401 response
+                    // As the stack does not translate error messages and 401 is the most common error
+                    // then we intercept this specific error to translate it on client side
+                    /*
                     await _platformUtilsService.ShowDialogAsync(e.Error.GetSingleMessage(),
                         AppResources.AnErrorHasOccurred, AppResources.Ok);
+                    /*/
+                    if (e.Error.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        var translatedErrorMessage = AppResources.ResourceManager.GetString("CozyInvalidLoginException", AppResources.Culture);
+                        // await _platformUtilsService.ShowDialogAsync(translatedErrorMessage, AppResources.AnErrorHasOccurred, AppResources.Ok);
+                        ErrorMsg = translatedErrorMessage;
+                    }
+                    else
+                    {
+                        await _platformUtilsService.ShowDialogAsync(e.Error.GetSingleMessage(),
+                            AppResources.AnErrorHasOccurred, AppResources.Ok);
+                    }
+                    //*/
                 }
             }
             finally
@@ -354,5 +433,17 @@ namespace Bit.App.Pages
                 _logger.Exception(e);
             }
         }
+
+        // Cozy customization, get cozy address if user forgot it
+        //*
+        public ICommand GetCozyAddressCommand => new Command<string>((url) =>
+        {
+            var lang = _i18nService.Culture.TwoLetterISOLanguageName;
+
+            var remindUrl = _cozyClientService.GetRemindCozyAddressUrl(lang: lang);
+
+            _platformUtilsService.LaunchUri(remindUrl);
+        });
+        //*/
     }
 }

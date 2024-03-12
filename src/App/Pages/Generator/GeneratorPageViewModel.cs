@@ -52,6 +52,11 @@ namespace Bit.App.Pages
         private string _emailWebsite;
         private bool _showForwardedEmailApiSecret;
         private bool _editMode;
+        // Cozy customization, generation options are collapsible
+        //*
+        private bool _optionsToggled = false;
+        private int _optionsOpacity = 0;
+        //*/
 
         public GeneratorPageViewModel()
         {
@@ -767,6 +772,32 @@ namespace Bit.App.Pages
             await _clipboardService.CopyTextAsync(IsUsername ? Username : Password);
             _platformUtilsService.ShowToastForCopiedValue(IsUsername ? AppResources.Username : AppResources.Password);
         }
+        
+        // Cozy customization, generation options are collapsible
+        //*
+        public bool OptionsToggled
+        {
+            get => _optionsToggled;
+            set
+            {
+                SetProperty(ref _optionsToggled, value);
+            }
+        }
+        public int OptionsOpacity
+        {
+            get => _optionsOpacity;
+            set
+            {
+                SetProperty(ref _optionsOpacity, value);
+            }
+        }
+
+        public async Task ToggleOptionsAsync()
+        {
+            OptionsToggled = !OptionsToggled;
+            OptionsOpacity = OptionsToggled ? 1 : 0;
+        }
+        //*/
 
         public void UsernameTypePromptHelp()
         {

@@ -49,6 +49,20 @@ namespace Bit.App.Pages
         private string _biometricButtonText;
         private string _loggedInAsText;
         private string _lockedVerifyText;
+        // Cozy customization, handle avatar url
+        //*
+        private string _avatarUrl;
+        //*/
+
+        // Cozy customization, display error message on form
+        //*
+        private string _errorMsg;
+        //*/
+
+        // Cozy customization, handle FaceId vs Fingerprint
+        //*
+        private string _biometricLockImageSrc = "cozy_fingerprint.png";
+        //*/
 
         public LockPageViewModel()
         {
@@ -154,6 +168,33 @@ namespace Bit.App.Pages
         public bool CheckPendingAuthRequests { get; set; }
 
         public AccountSwitchingOverlayViewModel AccountSwitchingOverlayViewModel { get; }
+        
+        // Cozy customization, handle avatar url
+        //*
+        public string AvatarUrl
+        {
+            get => _avatarUrl;
+            set => SetProperty(ref _avatarUrl, value);
+        }
+
+        //*/
+        // Cozy customization, handle FaceId vs Fingerprint
+        //*
+        public string BiometricLockImageSrc
+        {
+            get => _biometricLockImageSrc;
+            set => SetProperty(ref _biometricLockImageSrc, value);
+        }
+        //*/
+
+        // Cozy customization, display error message on form
+        //*
+        public string ErrorMsg
+        {
+            get => _errorMsg;
+            set => SetProperty(ref _errorMsg, value);
+        }
+        //*/
 
         public Command SubmitCommand { get; }
         public Command TogglePasswordCommand { get; }
@@ -207,6 +248,18 @@ namespace Bit.App.Pages
                 return;
             }
 
+            // Cozy customization, set LoggedInAsText with only the cozy instance's url
+            /*
+            LoggedInAsText = string.Format(AppResources.LoggedInAsOn, _email, webVaultHostname);
+            /*/
+            LoggedInAsText = webVaultHostname;
+            //*/
+
+            // Cozy customization, handle avatar url
+            //*/
+            ComputeAvatarUrl(webVault);
+            //*/
+
             LoggedInAsText = string.Format(AppResources.LoggedInAsOn, _email, _environmentService.GetCurrentDomain());
             if (PinEnabled)
             {
@@ -236,12 +289,37 @@ namespace Bit.App.Pages
                     var supportsFace = await _deviceActionService.SupportsFaceBiometricAsync();
                     BiometricButtonText = supportsFace ? AppResources.UseFaceIDToUnlock :
                         AppResources.UseFingerprintToUnlock;
+
+                    // Cozy customization, handle FaceId vs Fingerprint
+                    //*
+                    BiometricLockImageSrc = supportsFace ? "cozy_faceid.png" : "cozy_fingerprint.png";
+                    //*/
                 }
             }
         }
 
+        // Cozy customization, handle avatar url
+        //*/
+        private void ComputeAvatarUrl(string webVault)
+        {
+            string baseUrl = webVault;
+
+            if (baseUrl.EndsWith("/bitwarden"))
+            {
+                baseUrl = baseUrl.Replace("/bitwarden", "");
+            }
+
+            AvatarUrl = baseUrl + "/public/avatar";
+        }
+        //*/
+
         public async Task SubmitAsync()
         {
+            // Cozy customization, display error message on form
+            //*
+            ErrorMsg = "";
+            //*/
+
             ShowPassword = false;
             try
             {
@@ -266,9 +344,14 @@ namespace Bit.App.Pages
         {
             if (PinEnabled && string.IsNullOrWhiteSpace(Pin))
             {
+                // Cozy customization, display error message on form
+                /*
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred,
                     string.Format(AppResources.ValidationFieldRequired, AppResources.PIN),
                     AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.PIN);
+                //*/
                 return;
             }
 
@@ -342,8 +425,13 @@ namespace Bit.App.Pages
                     _messagingService.Send("logout");
                     return;
                 }
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(AppResources.InvalidPIN,
                     AppResources.AnErrorHasOccurred);
+                /*/
+                ErrorMsg = AppResources.InvalidPIN;
+                //*/
             }
         }
 
@@ -351,9 +439,14 @@ namespace Bit.App.Pages
         {
             if (!PinEnabled && string.IsNullOrWhiteSpace(MasterPassword))
             {
+                // Cozy customization, display error message on form
+                /*
                 await Page.DisplayAlert(AppResources.AnErrorHasOccurred,
                     string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword),
                     AppResources.Ok);
+                /*/
+                ErrorMsg = string.Format(AppResources.ValidationFieldRequired, AppResources.MasterPassword);
+                //*/
                 return;
             }
 
@@ -427,8 +520,13 @@ namespace Bit.App.Pages
                     _messagingService.Send("logout");
                     return;
                 }
+                // Cozy customization, display error message on form
+                /*
                 await _platformUtilsService.ShowDialogAsync(AppResources.InvalidMasterPassword,
                     AppResources.AnErrorHasOccurred);
+                /*/
+                ErrorMsg = AppResources.InvalidMasterPassword;
+                //*/
             }
         }
 

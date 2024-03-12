@@ -44,6 +44,10 @@ namespace Bit.Droid
         private IAppIdService _appIdService;
         private IEventService _eventService;
         private IPushNotificationListenerService _pushNotificationListenerService;
+        // Cozy customization, Support onboarded callback in Android
+        //*
+        private ICozyClientService _cozyClientService;
+        //*/
         private ILogger _logger;
         private PendingIntent _eventUploadPendingIntent;
         private AppOptions _appOptions;
@@ -69,6 +73,7 @@ namespace Bit.Droid
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
             _pushNotificationListenerService = ServiceContainer.Resolve<IPushNotificationListenerService>();
             _logger = ServiceContainer.Resolve<ILogger>("logger");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
@@ -141,6 +146,14 @@ namespace Bit.Droid
 
             ThemeManager.UpdateThemeOnPagesAsync();
 
+            // Cozy customization, Support onboarded callback in Android
+            //*
+            if (Intent.Data?.Scheme == "cozypass")
+            {
+                OnOpenURL(Intent.DataString);
+            }
+            //*/
+
             if (_deviceActionService.SupportsNfc())
             {
                 try
@@ -162,6 +175,18 @@ namespace Bit.Droid
                 }
             }
         }
+
+        // Cozy customization, Support onboarded callback in Android
+        //*
+        public void OnOpenURL(string urlStr)
+        {
+            if (urlStr.Contains("onboarded"))
+            {
+                _cozyClientService.OnboardedURL = new Uri(urlStr);
+                _messagingService.Send("onboarded");
+            }
+        }
+        //*/
 
         protected override void OnNewIntent(Intent intent)
         {

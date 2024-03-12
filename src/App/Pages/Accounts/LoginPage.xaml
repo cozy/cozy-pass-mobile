@@ -1,4 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cozy customization -->
+<!-- Many edits have been made in this file to fit Cozy's design
+     Notable edits:
+     - Page title removed from NavigationBar
+     - Page title is now in the login form
+     - Form labels are dimmed
+     - NavigationBar's actions have been removed (getHint)
+     - Links to retrieve cozy address and password's hint have been added in the form
+-->
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -9,8 +18,7 @@
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:LoginPageViewModel"
     x:Name="_page"
-    Title="{Binding PageTitle}"
-    AutomationId="PageTitleLabel">
+    Title="{Binding PageTitle}">
     
     <ContentPage.BindingContext>
         <pages:LoginPageViewModel />

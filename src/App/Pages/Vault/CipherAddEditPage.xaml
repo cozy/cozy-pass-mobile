@@ -704,11 +704,34 @@
                         Clicked="NewUri_Clicked"
                         AutomationId="LoginAddNewUriButton"></Button>
             </StackLayout>
+            <!-- Cozy customization -->
+            <!-- Add Folder (Cozy concept) display and selection -->
+            <!---->
+            <StackLayout StyleClass="box" IsVisible="{Binding ShowOrganizations}">
+                <StackLayout StyleClass="box-row-header">
+                    <Label Text="{u:I18n Folder, Header=True}"
+                                   StyleClass="box-header, box-header-platform" />
+                </StackLayout>
+                <StackLayout StyleClass="box-row">
+                    <Label
+                                Text="{Binding OrganizationName, Mode=OneWay}"
+                                StyleClass="box-value">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Share_Clicked" NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <BoxView StyleClass="box-row-separator" />
+            </StackLayout>
+            <!---->
             <StackLayout StyleClass="box">
                 <StackLayout StyleClass="box-row-header">
                     <Label Text="{u:I18n Miscellaneous, Header=True}"
                            StyleClass="box-header, box-header-platform" />
                 </StackLayout>
+                <!-- Cozy customization -->
+                <!-- Disable Folder (bitwarden concept) selection from here, we only handle Sharing to folder from toolbar menu -->
+                <!--
                 <StackLayout StyleClass="box-row, box-row-input">
                     <Label
                         Text="{u:I18n Folder}"
@@ -720,6 +743,7 @@
                         StyleClass="box-value"
                         AutomationId="FolderPicker" />
                 </StackLayout>
+                -->
                 <StackLayout StyleClass="box-row, box-row-switch">
                     <Label
                         Text="{u:I18n Favorite}"
@@ -734,7 +758,11 @@
                 <StackLayout x:Name="_passwordPrompt" StyleClass="box-row, box-row-switch">
                     <Label
                         Text="{u:I18n PasswordPrompt}"
-                        StyleClass="box-label-regular" />
+                        StyleClass="box-label-regular"
+                        HorizontalOptions="StartAndExpand" />
+                    <!-- Cozy customization -->
+                    <!-- Disable the Help button as we don't have any help page at Cozy that describes this feature -->
+                    <!--
                     <controls:IconButton 
                         StyleClass="box-row-button, box-row-button-platform"
                         Text="{Binding Source={x:Static core:BitwardenIcons.QuestionCircle}}"
@@ -743,6 +771,7 @@
                         AutomationProperties.IsInAccessibleTree="True"
                         AutomationProperties.Name="{u:I18n MasterPasswordRePromptHelp}"
                         HorizontalOptions="StartAndExpand" />
+                    -->
                     <Switch
                         IsToggled="{Binding PasswordPrompt}"
                         Toggled="PasswordPrompt_Toggled"

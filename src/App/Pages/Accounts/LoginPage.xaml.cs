@@ -49,6 +49,9 @@ namespace Bit.App.Pages
             _vm.Email = email;
             MasterPasswordEntry = _masterPassword;
 
+            // Cozy customization, disable menu
+            // password hint will be not requested from the login form
+            /*
             if (Device.RuntimePlatform == Device.iOS)
             {
                 ToolbarItems.Add(_moreItem);
@@ -57,6 +60,7 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Add(_getPasswordHint);
             }
+            //*/
 
             if (_appOptions?.IosExtension ?? false)
             {
@@ -73,6 +77,10 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
+            // Cozy customization, force inverted theme on login form
+            //*
+            ThemeManager.SetInvertedTheme();
+            //*/
             base.OnAppearing();
             _broadcasterService.Subscribe(nameof(LoginPage), message =>
             {

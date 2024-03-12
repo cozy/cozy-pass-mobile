@@ -1,4 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Cozy customization -->
+<!-- Many edits have been made in this file to fit Cozy's design
+     Notable edits:
+     - Page title removed from NavigationBar
+     - Page title is now in the login form, with user's avatar displayed and Cozy address
+     - Biometric login button is now placed on the NavigationBar
+     - NavigationBar's actions have been removed (logout)
+     - Logout button has been added in the form
+-->
 <pages:BaseContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -7,8 +16,7 @@
     xmlns:controls="clr-namespace:Bit.App.Controls"
     xmlns:u="clr-namespace:Bit.App.Utilities"
     x:DataType="pages:LockPageViewModel"
-    x:Name="_page"
-    Title="{Binding PageTitle}">
+    x:Name="_page">
 
     <ContentPage.BindingContext>
         <pages:LockPageViewModel />
@@ -44,6 +52,35 @@
             <ScrollView x:Name="_mainLayout" x:Key="mainLayout">
                 <StackLayout Spacing="20">
                     <StackLayout StyleClass="box">
+                        <Frame HasShadow="False"
+                               Padding="0"
+                               Margin="0,0,0,20"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               BackgroundColor="{DynamicResource PrimaryColor}"
+                               CornerRadius="41"
+                               BorderColor="White"
+                               WidthRequest="84"
+                               HeightRequest="84">
+                            <Frame HasShadow="False"
+                                   Padding="0"
+                                   Margin="2"
+                                   CornerRadius="40"
+                                   BackgroundColor="LightGray"
+                                   WidthRequest="80"
+                                   HeightRequest="80"
+                                   IsClippedToBounds="True">
+                                <Image Source="{Binding AvatarUrl}"
+                                       Margin="-1,-1,-1,-1"
+                                       WidthRequest="80"
+                                       HeightRequest="80"></Image>
+                            </Frame>
+                        </Frame>
+                        <Label Text="{Binding PageTitle}" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="Title"/>
+                        <Label Text="{Binding LoggedInAsText}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Small" Opacity="0.64"/>
+
+                        <Label Text="{Binding ErrorMsg}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Medium" StyleClass="text-danger" />
+
                         <Grid
                             StyleClass="box-row"
                             IsVisible="{Binding PinEnabled}"
@@ -129,6 +166,9 @@
                                 AutomationId="PasswordVisibilityToggle"
                                 />
                         </Grid>
+                        <!-- Cozy customization -->
+                        <!-- remove instance info -->
+                        <!--
                         <StackLayout
                             StyleClass="box-row"
                             Padding="0, 10, 0, 0">
@@ -140,26 +180,54 @@
                                 StyleClass="box-footer-label"
                                 Margin="0, 10, 0, 0" />
                         </StackLayout>
+                        -->
                     </StackLayout>
                     <StackLayout Padding="10, 0">
                         <Label
                             Text="{u:I18n AccountBiometricInvalidated}"
                             StyleClass="box-footer-label,text-danger,text-bold"
                             IsVisible="{Binding BiometricIntegrityValid, Converter={StaticResource inverseBool}}" />
+                        <!-- Cozy customization -->
+                        <!-- biometric button -->
+                        <!--
                         <Button Text="{Binding BiometricButtonText}" Clicked="Biometric_Clicked"
                                 IsVisible="{Binding BiometricButtonVisible}">
                         </Button>
+                        -->
                         <Button
                             x:Name="_unlockButton"
                             Text="{u:I18n Unlock}"
                             StyleClass="btn-primary"
                             Clicked="Unlock_Clicked"
                             AutomationId="UnlockVaultButton" />
+                        <!-- Cozy customization -->
+                        <!-- Add logout option -->
+                        <!---->
+                        <Button Text="{u:I18n LogOut}"
+                            StyleClass="btn-error"
+                            Clicked="LogOut_Clicked" />
+                        <!---->
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
         </ResourceDictionary>
     </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="End" Orientation="Horizontal" Margin="20, 0" IsVisible="{Binding BiometricButtonVisible}">
+            <Image Source="{Binding BiometricLockImageSrc}"
+                   VerticalOptions="Start"
+                   Margin="0,3,0,0"
+                   WidthRequest="16"
+                   HeightRequest="16"
+                   AutomationProperties.IsInAccessibleTree="true"
+                   AutomationProperties.Name="{u:I18n Fingerprint}" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Biometric_Clicked" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <AbsoluteLayout
         x:Name="_absLayout"

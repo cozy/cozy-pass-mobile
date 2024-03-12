@@ -112,6 +112,10 @@ namespace Bit.Droid
         private void RegisterLocalServices()
         {
             ServiceContainer.Register<INativeLogService>("nativeLogService", new AndroidLogService());
+
+            // Cozy customization, disable "AppCenter" functionality
+            // We do not use it at Cozy
+            /*
 #if FDROID
             var logger = new StubLogger();
 #elif DEBUG
@@ -119,6 +123,13 @@ namespace Bit.Droid
 #else
             var logger = Logger.Instance;
 #endif
+            /*/
+#if DEBUG
+            var logger = DebugLogger.Instance;
+#else
+            var logger = new StubLogger();
+#endif
+            //*/
             ServiceContainer.Register("logger", logger);
 
             // Note: This might cause a race condition. Investigate more.

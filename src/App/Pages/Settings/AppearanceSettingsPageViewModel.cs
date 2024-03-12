@@ -133,7 +133,8 @@ namespace Bit.App.Pages
                 [ThemeManager.Dark] = AppResources.Dark,
                 [ThemeManager.Black] = AppResources.Black,
                 [ThemeManager.Nord] = AppResources.Nord,
-                [ThemeManager.SolarizedDark] = AppResources.SolarizedDark
+                [ThemeManager.SolarizedDark] = AppResources.SolarizedDark,
+                [ThemeManager.Cozy] = "Cozy"
             };
 
             var selectedKey = await _stateService.GetThemeAsync() ?? string.Empty;
