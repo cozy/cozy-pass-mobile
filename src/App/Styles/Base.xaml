@@ -474,15 +474,18 @@
         <Setter Property="Color"
                 Value="{DynamicResource BoxBorderColor}" />
     </Style>
+    <!-- Cozy customization -->
+    <!-- box-label should not be bold -->
     <Style TargetType="Label"
            Class="box-label">
         <Setter Property="FontSize"
                 Value="Small" />
         <Setter Property="FontAttributes"
-                Value="Bold" />
+                Value="None" />
         <Setter Property="TextColor"
                 Value="{DynamicResource MutedColor}" />
     </Style>
+    <!-- End Cozy customization -->
     <Style TargetType="Label"
            Class="box-label-regular">
         <Setter Property="FontSize"

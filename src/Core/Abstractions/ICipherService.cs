@@ -31,6 +31,10 @@ namespace Bit.Core.Abstractions
         Task SaveCollectionsWithServerAsync(Cipher cipher);
         Task SaveWithServerAsync(Cipher cipher);
         Task ShareWithServerAsync(CipherView cipher, string organizationId, HashSet<string> collectionIds);
+        // Cozy customization, add UnshareWithServerAsync
+        //*
+        Task UnshareWithServerAsync(CipherView cipher);
+        //*/
         Task UpdateLastUsedDateAsync(string id);
         Task UpsertAsync(CipherData cipher);
         Task UpsertAsync(List<CipherData> cipher);

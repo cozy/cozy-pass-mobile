@@ -161,7 +161,7 @@ Sécurisez et partagez des données sensibles dans votre coffre Bitwarden à par
     <value>Générer automatiquement des mots de passe robustes, aléatoires et sécurisés</value>
   </data>
   <data name="Screenshot3" xml:space="preserve">
-    <value>Protéger votre coffre avec Touch ID, un code PIN ou un mot de passe principal</value>
+    <value>Protéger votre coffre avec Touch ID, un code PIN ou un mot de passe</value>
   </data>
   <data name="Screenshot4" xml:space="preserve">
     <value>Saisie automatique des identifiants depuis Safari, Chrome et des centaines d'autres applications</value>

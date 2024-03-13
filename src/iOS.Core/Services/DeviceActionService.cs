@@ -27,7 +27,7 @@ namespace Bit.iOS.Core.Services
             {
                 if (string.IsNullOrWhiteSpace(_userAgent))
                 {
-                    _userAgent = $"Bitwarden_Mobile/{Xamarin.Essentials.AppInfo.VersionString} " +
+                    _userAgent = $"io.cozy.pass.mobile-{Xamarin.Essentials.AppInfo.VersionString} " +
                         $"(iOS {UIDevice.CurrentDevice.SystemVersion}; Model {UIDevice.CurrentDevice.Model})";
                 }
                 return _userAgent;
@@ -158,12 +158,25 @@ namespace Bit.iOS.Core.Services
             string uri = null;
             if (SystemMajorVersion() < 11)
             {
+                // Cozy customization, Use Cozy's ids
+                /*
                 uri = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews" +
                     "?id=1137397744&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software";
+                /*/
+                uri = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews" +
+                    "?id=1502262449&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software";
+                //*/
             }
             else
             {
+                // Cozy customization, Use Cozy's ids
+                /*
                 uri = "itms-apps://itunes.apple.com/us/app/id1137397744?action=write-review";
+                /*/
+                uri = "itms-apps://itunes.apple.com/us/app/1502262449?action=write-review";
+                //*/
+
+
             }
             Device.OpenUri(new Uri(uri));
         }

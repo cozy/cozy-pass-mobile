@@ -30,5 +30,12 @@ namespace Bit.Core.Models.Response
         public AccountDecryptionOptions UserDecryptionOptions { get; set; }
         [JsonIgnore]
         public KdfConfig KdfConfig => new KdfConfig(Kdf, KdfIterations, KdfMemory, KdfParallelism);
+
+        #region cozy
+        [JsonProperty("client_id")]
+        public string ClientId { get; set; }
+        [JsonProperty("registration_access_token")]
+        public string RegistrationAccessToken { get; set; }
+        #endregion cozy
     }
 }

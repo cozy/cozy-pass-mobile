@@ -120,7 +120,7 @@
         <Setter Property="FontSize"
                 Value="Medium" />
         <Setter Property="CornerRadius"
-                Value="5" />
+                Value="3" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -131,8 +131,8 @@
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor"
                                     Value="{DynamicResource ButtonBackgroundColorDisabled}" />
-                            <Setter Property="BorderWidth"
-                                    Value="0" />
+                            <Setter Property="BorderColor"
+                                    Value="{DynamicResource ButtonBorderColorDisabled}" />
                             <Setter Property="TextColor"
                                     Value="{DynamicResource ButtonTextColorDisabled}" />
                         </VisualState.Setters>
@@ -148,7 +148,7 @@
         <Setter Property="BorderColor"
                 Value="{DynamicResource PrimaryColor}" />
         <Setter Property="BorderWidth" 
-                Value="1" />
+                Value="0" />
         <Setter Property="TextColor"
                 Value="{DynamicResource ButtonPrimaryTextColor}" />
         <Setter Property="FontSize"
@@ -156,7 +156,7 @@
         <Setter Property="FontAttributes"
                 Value="Bold" />
         <Setter Property="CornerRadius"
-                Value="5" />
+                Value="3" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -177,6 +177,44 @@
             </VisualStateGroupList>
         </Setter>
     </Style>
+    
+    <!-- Cozy customization -->
+    <!-- Add Error button style -->
+    <Style TargetType="Button"
+           Class="btn-error">
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource ButtonErrorBackgroundColor}" />
+        <Setter Property="BorderColor"
+                Value="{DynamicResource ButtonErrorBorderColor}" />
+        <Setter Property="BorderWidth" 
+                Value="1" />
+        <Setter Property="TextColor"
+                Value="{DynamicResource ButtonErrorTextColor}" />
+        <Setter Property="FontSize"
+                Value="18" />
+        <Setter Property="CornerRadius"
+                Value="3" />
+        <Setter Property="Margin"
+                Value="0, 5, 0, 0" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor"
+                                    Value="{DynamicResource ButtonErrorBackgroundColorDisabled}" />
+                            <Setter Property="BackgroundColor"
+                                    Value="{DynamicResource ButtonErrorBorderColorDisabled}" />
+                            <Setter Property="BorderColor"
+                                    Value="{DynamicResource ButtonErrorTextColorDisabled}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    <!-- End Cozy customization -->
     
     <Style TargetType="Button"
            Class="btn-secondary">

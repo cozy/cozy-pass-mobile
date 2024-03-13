@@ -495,6 +495,11 @@ namespace Bit.Core.Services
             {
                 await _tokenService.SetTwoFactorTokenAsync(tokenResponse.TwoFactorToken, email);
             }
+
+            #region cozy
+            _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
+            #endregion
+
             await _tokenService.SetAccessTokenAsync(tokenResponse.AccessToken, true);
             await _stateService.AddAccountAsync(
                 new Account(

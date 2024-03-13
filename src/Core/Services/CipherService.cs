@@ -308,7 +308,17 @@ namespace Bit.Core.Services
                         decCiphers.Add(c);
                     }
                     var tasks = new List<Task>();
+                    // Cozy customization, ADD description
+                    /*
                     IEnumerable<Cipher> ciphers = await GetAllAsync();
+                    /*/
+                    var orgKeys = await _cryptoService.GetOrgKeysAsync();
+                    var orgIds = orgKeys.Keys;
+
+                    var ciphers = (await GetAllAsync())
+                        .Where(cipher => cipher.OrganizationId == null || orgIds.Contains(cipher.OrganizationId))
+                        .ToList();
+                    //*/
                     if (filter != null)
                     {
                         ciphers = ciphers.Where(filter);
@@ -587,6 +597,17 @@ namespace Bit.Core.Services
             var data = new CipherData(response, userId, collectionIds);
             await UpsertAsync(data);
         }
+
+        // Cozy customization, ADD description
+        //*
+        public async Task UnshareWithServerAsync(CipherView cipher)
+        {
+            cipher.OrganizationId = null;
+            cipher.CollectionIds = null;
+            var encCipher = await EncryptAsync(cipher);
+            await SaveWithServerAsync(encCipher);
+        }
+        //*/
 
         public async Task<Cipher> SaveAttachmentRawWithServerAsync(Cipher cipher, CipherView cipherView, string filename, byte[] data)
         {

@@ -572,10 +572,12 @@ namespace Bit.App.Utilities
             var searchService = ServiceContainer.Resolve<ISearchService>("searchService");
             var usernameGenerationService = ServiceContainer.Resolve<IUsernameGenerationService>(
                 "usernameGenerationService");
+            var cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             await Task.WhenAll(
                 cipherService.ClearCacheAsync(),
-                fileService.ClearCacheAsync());
+                fileService.ClearCacheAsync(),
+                cozyClientService.LogoutAsync());
             tokenService.ClearCache();
             cryptoService.ClearCache();
             settingsService.ClearCache();

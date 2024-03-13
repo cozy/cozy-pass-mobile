@@ -232,5 +232,17 @@ namespace Bit.Core.Services
             var action = await _stateService.GetVaultTimeoutActionAsync();
             return timeout.HasValue && action == VaultTimeoutAction.Logout;
         }
+
+        // Cozy customization, ADD description
+        //*
+        public string RegistrationAccessToken { get; private set; }
+        public string ClientId { get; private set; }
+
+        public void SetClientInfos(string clientId, string registrationAccessToken)
+        {
+            ClientId = clientId;
+            RegistrationAccessToken = registrationAccessToken;
+        }
+        //*/
     }
 }

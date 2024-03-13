@@ -2,6 +2,7 @@ using System;
 using Bit.App.Abstractions;
 using Bit.App.Controls;
 using Bit.App.Resources;
+using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using Bit.iOS.Autofill.Models;
@@ -37,6 +38,7 @@ namespace Bit.iOS.Autofill
 
         public async override void ViewDidLoad()
         {
+            ThemeManager.UnsetInvertedTheme();
             base.ViewDidLoad();
 
             SubscribeSyncCompleted();

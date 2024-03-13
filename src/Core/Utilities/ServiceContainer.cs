@@ -71,6 +71,11 @@ namespace Bit.Core.Utilities
                     messagingService.Send("logout", extras);
                     return Task.CompletedTask;
                 });
+            // Cozy customization, ADD description
+            //*
+            var environmentService = new EnvironmentService(apiService, stateService);
+            var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
+            //*/
             var syncService = new SyncService(stateService, apiService, settingsService, folderService, cipherService,
                 cryptoService, collectionService, organizationService, messagingService, policyService, sendService,
                 keyConnectorService, logger, (extras) =>
@@ -87,7 +92,10 @@ namespace Bit.Core.Utilities
                 keyConnectorService, passwordGenerationService, policyService, deviceTrustCryptoService, passwordResetEnrollmentService);
             var exportService = new ExportService(folderService, cipherService, cryptoService);
             var auditService = new AuditService(cryptoFunctionService, apiService);
+            // Cozy customization, Declaration moved on earlier lines
+            /*
             var environmentService = new EnvironmentService(apiService, stateService, conditionedRunner);
+            //*/
             var eventService = new EventService(apiService, stateService, organizationService, cipherService);
             var usernameGenerationService = new UsernameGenerationService(cryptoService, apiService, stateService);
 
@@ -118,6 +126,10 @@ namespace Bit.Core.Utilities
             Register<IUsernameGenerationService>(usernameGenerationService);
             Register<IDeviceTrustCryptoService>(deviceTrustCryptoService);
             Register<IPasswordResetEnrollmentService>(passwordResetEnrollmentService);
+            // Cozy customization, ADD description
+            //*
+            Register<ICozyClientService>("cozyClientService", cozyClientService);
+            //*/
         }
 
         public static void Register<T>(string serviceName, T obj)

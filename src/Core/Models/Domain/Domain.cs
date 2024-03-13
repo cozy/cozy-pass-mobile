@@ -23,8 +23,20 @@ namespace Bit.Core.Models.Domain
                 }
                 else
                 {
+                    // Cozy customization, Do not crash when uri field is null or whitespace
+                    // Origin commit: https://github.com/cozy/cozy-pass-mobile/commit/905776634f0b19bcd2d6cfaad472c6d45024dd8b
+                    /*
                     domainPropInfo.SetValue(domain,
                         dataObjProp != null ? new EncString(dataObjProp as string) : null, null);
+                    /*/
+                    domainPropInfo.SetValue(
+                        domain,
+                        dataObjProp != null && !string.IsNullOrWhiteSpace(dataObjProp as string)
+                            ? new EncString(dataObjProp as string)
+                            : null,
+                        null
+                    );
+                    //*/
                 }
             }
         }

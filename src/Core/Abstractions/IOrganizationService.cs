@@ -14,5 +14,10 @@ namespace Bit.Core.Abstractions
         Task ReplaceAsync(Dictionary<string, OrganizationData> organizations);
         Task ClearAllAsync(string userId);
         Task<OrganizationDomainSsoDetailsResponse> GetClaimedOrganizationDomainAsync(string userEmail);
+
+        #region cozy
+        string CozyOrganizationId { get; }
+        Task CacheCozyOrganizationId();
+        #endregion
     }
 }

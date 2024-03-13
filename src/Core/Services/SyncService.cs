@@ -26,6 +26,7 @@ namespace Bit.Core.Services
         private readonly ISendService _sendService;
         private readonly IKeyConnectorService _keyConnectorService;
         private readonly ILogger _logger;
+        private readonly ICozyClientService _cozyClientService;
         private readonly Func<Tuple<string, bool, bool>, Task> _logoutCallbackAsync;
 
         private readonly LazyResolve<IWatchDeviceService> _watchDeviceService = new LazyResolve<IWatchDeviceService>();
@@ -44,6 +45,7 @@ namespace Bit.Core.Services
             ISendService sendService,
             IKeyConnectorService keyConnectorService,
             ILogger logger,
+            ICozyClientService cozyClientService,
             Func<Tuple<string, bool, bool>, Task> logoutCallbackAsync)
         {
             _stateService = stateService;
@@ -59,6 +61,7 @@ namespace Bit.Core.Services
             _sendService = sendService;
             _keyConnectorService = keyConnectorService;
             _logger = logger;
+            _cozyClientService = cozyClientService;
             _logoutCallbackAsync = logoutCallbackAsync;
         }
 
@@ -80,6 +83,11 @@ namespace Bit.Core.Services
                 return;
             }
             await _stateService.SetLastSyncAsync(date);
+
+            // Cozy customization, ADD description
+            //*
+            await _cozyClientService.UpdateSynchronizedAtAsync();
+            //*/
         }
 
         public async Task<bool> FullSyncAsync(bool forceSync, bool allowThrowOnError = false)

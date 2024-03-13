@@ -48,7 +48,11 @@ namespace Bit.Core.Models.Request
             var obj = new Dictionary<string, string>
             {
                 ["scope"] = "api offline_access",
-                ["client_id"] = clientId
+                ["client_id"] = clientId,
+
+                #region cozy
+                ["clientName"] = "Cozy Pass"
+                #endregion cozy
             };
 
             if (MasterPasswordHash != null && Email != null)

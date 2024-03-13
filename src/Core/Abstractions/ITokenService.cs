@@ -29,5 +29,11 @@ namespace Bit.Core.Abstractions
         bool TokenNeedsRefresh(int minutes = 5);
         int TokenSecondsRemaining();
         Task PrepareTokenForDecodingAsync();
+
+        #region cozy
+        string ClientId { get; }
+        string RegistrationAccessToken { get; }
+        void SetClientInfos(string clientId, string registrationAccessToken);
+        #endregion
     }
 }

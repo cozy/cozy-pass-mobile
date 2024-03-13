@@ -42,6 +42,8 @@ namespace Bit.iOS
         private IStorageService _storageService;
         private IStateService _stateService;
         private IEventService _eventService;
+        private IPlatformUtilsService _platformUtilsService;
+        private ICozyClientService _cozyClientService;
 
         private LazyResolve<IDeepLinkContext> _deepLinkContext = new LazyResolve<IDeepLinkContext>();
 
@@ -56,6 +58,8 @@ namespace Bit.iOS
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _stateService = ServiceContainer.Resolve<IStateService>("stateService");
             _eventService = ServiceContainer.Resolve<IEventService>("eventService");
+            _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
+            _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             LoadApplication(new App.App(null));
             iOSCoreHelpers.AppearanceAdjustments();
@@ -236,8 +240,27 @@ namespace Bit.iOS
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
             NSObject annotation)
         {
+            // Cozy customization, ADD description
+            //*
+            var urlStr = url.ToString();
+            if (urlStr.Contains("onboarded"))
+            {
+                _cozyClientService.OnboardedURL = new Uri(urlStr);
+                _messagingService.Send("onboarded");
+                DismissRegistrationController();
+            }
+            //*/
             return true;
         }
+
+        // Cozy customization, ADD description
+        //*
+        private void DismissRegistrationController() {
+            var window = UIApplication.SharedApplication.KeyWindow;
+            var vc = window.RootViewController;
+            vc.DismissViewController(true, null);
+        }
+        //*/
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {

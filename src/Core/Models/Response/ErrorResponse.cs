@@ -29,6 +29,19 @@ namespace Bit.Core.Models.Response
             if (errorModel != null)
             {
                 var model = errorModel.ToObject<ErrorModel>();
+
+                // Cozy customization, add specific parser for Stack error messages
+                // CozyStack error messages do not fit Bitwarden's errors format
+                // so we have to create a custom parser for them
+                //*
+                if (model.Message == null && model.ValidationErrors == null)
+                {
+                    var cozyModel = errorModel.ToObject<CozyErrorModel>();
+
+                    model.Message = cozyModel.Error;
+                }
+                //*/
+
                 Message = model.Message;
                 ValidationErrors = model.ValidationErrors ?? new Dictionary<string, List<string>>();
                 CaptchaSiteKey = ValidationErrors.ContainsKey("HCaptcha_SiteKey") ?
@@ -99,5 +112,15 @@ namespace Bit.Core.Models.Response
             public string Message { get; set; }
             public Dictionary<string, List<string>> ValidationErrors { get; set; }
         }
+
+        // Cozy customization, add specific parser for Stack error messages
+        // CozyStack error messages do not fit Bitwarden's errors format
+        // so we have to create a custom parser for them
+        //*
+        private class CozyErrorModel
+        {
+            public string Error { get; set; }
+        }
+        //*/
     }
 }

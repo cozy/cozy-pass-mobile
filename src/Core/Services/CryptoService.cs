@@ -318,7 +318,14 @@ namespace Bit.Core.Services
 
         public Task SetOrgKeysAsync(IEnumerable<ProfileOrganizationResponse> orgs)
         {
+            // Cozy customization, ADD description
+            /*
             var orgKeys = orgs.ToDictionary(org => org.Id, org => org.Key);
+            /*/
+            var orgKeys = orgs
+                .Where(org => org.Key != "")
+                .ToDictionary(org => org.Id, org => org.Key);
+            //*/
             _orgKeys = null;
             return _stateService.SetOrgKeysEncryptedAsync(orgKeys);
         }
@@ -360,6 +367,11 @@ namespace Bit.Core.Services
                     var setKey = false;
                     foreach (var org in encOrgKeys)
                     {
+                        // Cozy customization, ADD description
+                        //*
+                        if (string.IsNullOrWhiteSpace(org.Value)) continue;
+                        //*/
+
                         var decValue = await RsaDecryptAsync(org.Value);
                         orgKeys.Add(org.Key, new OrgKey(decValue));
                         setKey = true;

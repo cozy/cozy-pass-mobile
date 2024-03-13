@@ -5,15 +5,15 @@
 	<key>MinimumOSVersion</key>
 	<string>11.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>Bitwarden</string>
+	<string>Cozy Pass</string>
 	<key>CFBundleName</key>
-	<string>Bitwarden</string>
+	<string>Cozy Pass</string>
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2024.2.0</string>
+	<string>3.0.2</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3000200</string>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>CFBundleURLTypes</key>
@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>bitwarden</string>
+				<string>cozypass</string>
 				<string>org-appextension-feature-password-management</string>
 			</array>
 			<key>CFBundleTypeRole</key>
@@ -127,8 +127,6 @@
 	<string>Resources/Assets.xcassets/AppIcons.appiconset</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<true/>
-	<key>ITSEncryptionExportComplianceCode</key>
-	<string>ecf076d3-4824-4d7b-b716-2a9a47d7d296</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app does not require access to the photo library.</string>
 	<key>NSCameraUsageDescription</key>
@@ -137,5 +135,16 @@
 	<string>Use Face ID to unlock your vault.</string>
 	<key>NFCReaderUsageDescription</key>
 	<string>Use Yubikeys for two-facor authentication.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>cozy.tools</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

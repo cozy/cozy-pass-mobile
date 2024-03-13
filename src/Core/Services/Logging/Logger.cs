@@ -1,4 +1,7 @@
-﻿#if !FDROID
+﻿// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
+#if !FDROID
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -134,3 +137,4 @@ namespace Bit.Core.Services
     }
 }
 #endif
+*/
