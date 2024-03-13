@@ -179,6 +179,11 @@
     <BundleResource Include="Resources\generate.png" />
     <BundleResource Include="Resources\generate%402x.png" />
     <BundleResource Include="Resources\generate%403x.png" />
+    <BundleResource Include="Resources\shared_with_cozy_icon.png" />
+    <BundleResource Include="Resources\shared_with_cozy_icon%402x.png" />
+    <BundleResource Include="Resources\cozy_faceid.png" />
+    <BundleResource Include="Resources\cozy_faceid%402x.png" />
+    <BundleResource Include="Resources\cozy_faceid%403x.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
     <ImageAsset Include="Resources\Assets.xcassets\empty_items_state.imageset\Empty-items-state-dark.pdf" />
     <ImageAsset Include="Resources\Assets.xcassets\empty_items_state.imageset\Empty-items-state.pdf" />
@@ -420,6 +425,24 @@
   <ItemGroup>
     <Folder Include="Resources\Assets.xcassets\LaunchScreen.imageset\" />
     <Folder Include="Resources\Assets.xcassets\ic_warning.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cozy_fingerprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cozy_fingerprint%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cozy_fingerprint%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home_logo%403x.png" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)' == 'Debug' AND Exists('$(WatchAppBundleFullPath)') ">
       <_ResolvedWatchAppReferences Include="$(WatchAppBundleFullPath)" />

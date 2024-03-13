@@ -30,11 +30,23 @@
 
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <!--
+    Cozy customisation: Flurl is needed bu UrlHelper
+    -->
+    <!---->
+    <PackageReference Include="Flurl" Version="3.0.2" />
+    <!---->
     <PackageReference Include="LiteDB" Version="5.0.17" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="PCLCrypto" Version="2.0.147" />
     <PackageReference Include="zxcvbn-core" Version="7.0.92" />
+    <!--
+    Cozy customisation: disable "AppCenter" functionality
+    We do not use it at Cozy
+    -->
+    <!--
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.2" />
+    -->
     <PackageReference Include="MessagePack" Version="2.4.59" />
     <PackageReference Include="MessagePack.MSBuild.Tasks" Version="2.4.59">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
