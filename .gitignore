@@ -336,3 +336,6 @@ Dependencies/
 
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,objective-c
+
+# COZY
+src/Android/debug.keystore

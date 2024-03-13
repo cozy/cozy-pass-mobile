@@ -1,0 +1,181 @@
+[
+  {
+    "dests": [
+      "../src/iOS/Resources/logo.png",
+      "../src/iOS.Extension/Resources/logo.png",
+      "../src/iOS.Autofill/Resources/logo.png",
+      "../src/Android/Resources/drawable/logo.png"
+    ],
+    "src": "./Resources/common/logo.png"
+  },
+  {
+    "dests": [
+      "../src/iOS.Extension/Resources/logo@2x.png",
+      "../src/iOS.Autofill/Resources/logo@2x.png",
+      "../src/iOS/Resources/logo@2x.png",
+      "../src/Android/Resources/drawable-hdpi/logo.png"
+    ],
+    "src": "./Resources/common/logo@2x.png"
+  },
+  {
+    "dests": [
+      "../src/iOS/Resources/logo@3x.png",
+      "../src/iOS.Extension/Resources/logo@3x.png",
+      "../src/iOS.Autofill/Resources/logo@3x.png",
+      "../src/Android/Resources/drawable-xxhdpi/logo.png"
+    ],
+    "src": "./Resources/common/logo@3x.png"
+  },
+  {
+    "dests": [
+      "../src/iOS/Resources/logo_white.png",
+      "../src/iOS.Extension/Resources/logo_white.png",
+      "../src/iOS.Autofill/Resources/logo_white.png",
+      "../src/Android/Resources/drawable/logo_white.png"
+    ],
+    "src": "./Resources/common/logo_white.png"
+  },
+  {
+    "dests": [
+      "../src/iOS.Extension/Resources/logo_white@2x.png",
+      "../src/iOS.Autofill/Resources/logo_white@2x.png",
+      "../src/iOS/Resources/logo_white@2x.png",
+      "../src/Android/Resources/drawable-hdpi/logo_white.png"
+    ],
+    "src": "./Resources/common/logo_white@2x.png"
+  },
+  {
+    "dests": [
+      "../src/iOS.Autofill/Resources/logo_white@3x.png",
+      "../src/iOS.Extension/Resources/logo_white@3x.png",
+      "../src/iOS/Resources/logo_white@3x.png",
+      "../src/Android/Resources/drawable-xxhdpi/logo_white.png"
+    ],
+    "src": "./Resources/common/logo_white@2x.png"
+  },
+  {
+    "dests": [
+      "../store/google/icons/hi-res-icon.png"
+    ],
+    "src": "./Resources/android/icon-pass-512.png"
+  },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-1024.png"], "src": "Resources/ios/icon-pass-1024.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-120.png"], "src": "Resources/ios/icon-pass-120.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-152.png"], "src": "Resources/ios/icon-pass-152.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-167.png"], "src": "Resources/ios/icon-pass-167.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-180.png"], "src": "Resources/ios/icon-pass-180.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-20.png"], "src": "Resources/ios/icon-pass-20.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-29.png"], "src": "Resources/ios/icon-pass-29.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-40.png"], "src": "Resources/ios/icon-pass-40.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-58.png"], "src": "Resources/ios/icon-pass-58.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-60.png"], "src": "Resources/ios/icon-pass-60.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-76.png"], "src": "Resources/ios/icon-pass-76.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-80.png"], "src": "Resources/ios/icon-pass-80.png" },
+  { "dests":["../src/iOS/Resources/Assets.xcassets/AppIcons.appiconset/Icon-87.png"], "src": "Resources/ios/icon-pass-87.png" },
+  { "dests": ["../src/Android/Resources/drawable/icon.png"], "src": "Resources/android/icon-pass-48.png" },
+  { "dests": ["../src/Android/Resources/drawable-hdpi/icon.png"], "src": "Resources/android/icon-pass-72.png" },
+  { "dests": ["../src/Android/Resources/drawable-xhdpi/icon.png"], "src": "Resources/android/icon-pass-96.png" },
+  { "dests": ["../src/Android/Resources/drawable-xxhdpi/icon.png"], "src": "Resources/android/icon-pass-144.png" },
+  { "dests": ["../src/Android/Resources/drawable-xxxhdpi/icon.png"], "src": "Resources/android/icon-pass-192.png" },
+
+  { "dests":[
+    "../src/iOS.Autofill/Resources/Icon.png",
+    "../src/iOS.Extension/Resources/Icon.png"
+  ], "src": "Resources/ios/icon-pass-mono.png" },
+  { "dests":[
+    "../src/iOS.Autofill/Resources/Icon@2x.png",
+    "../src/iOS.Extension/Resources/Icon@2x.png"
+  ], "src": "Resources/ios/icon-pass-mono@2x.png" },
+  { "dests":[
+    "../src/iOS.Autofill/Resources/Icon@3x.png",
+    "../src/iOS.Extension/Resources/Icon@3x.png"
+  ], "src": "Resources/ios/icon-pass-mono@2x.png" },
+
+  {
+    "src": "Resources/iOS/ext-icon.png",
+    "dests": ["../src/iOS.Extension/Resources/ext-icon.png"]
+  },
+  {
+    "src": "Resources/iOS/ext-icon@2x.png",
+    "dests": ["../src/iOS.Extension/Resources/ext-icon@2x.png"]
+  },
+  {
+    "src": "Resources/iOS/ext-icon@3x.png",
+    "dests": ["../src/iOS.Extension/Resources/ext-icon@3x.png"]
+  },
+
+  {
+    "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher.png"],
+    "src": "./Resources/android/icon-pass-72.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher_foreground.png"],
+    "src": "./Resources/android/ic_launcher_foreground-162.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-hdpi/ic_launcher_round.png"],
+    "src": "./Resources/android/ic_launcher_round-72.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-mdpi/ic_launcher.png"],
+    "src": "./Resources/android/icon-pass-48.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-mdpi/ic_launcher_foreground.png"],
+    "src": "./Resources/android/ic_launcher_foreground-108.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-mdpi/ic_launcher_round.png"],
+    "src": "./Resources/android/ic_launcher_round-48.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xhdpi/ic_launcher.png"],
+    "src": "./Resources/android/icon-pass-96.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xhdpi/ic_launcher_foreground.png"],
+    "src": "./Resources/android/ic_launcher_foreground-216.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xhdpi/ic_launcher_round.png"],
+    "src": "./Resources/android/ic_launcher_round-96.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xxhdpi/ic_launcher.png"],
+    "src": "./Resources/android/icon-pass-144.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xxhdpi/ic_launcher_foreground.png"],
+    "src": "./Resources/android/ic_launcher_foreground-324.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xxhdpi/ic_launcher_round.png"],
+    "src": "./Resources/android/ic_launcher_round-144.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xxxhdpi/ic_launcher.png"],
+    "src": "./Resources/android/icon-pass-192.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xxxhdpi/ic_launcher_foreground.png"],
+    "src": "./Resources/android/ic_launcher_foreground-432.png"
+  },
+  {
+    "dests": ["../src/Android/Resources/mipmap-xxxhdpi/ic_launcher_round.png"],
+    "src": "./Resources/android/ic_launcher_round-192.png"
+  },
+  {
+    "dests": [
+      "../src/Android/Resources/drawable/shared-with-cozy-icon.png",
+      "../src/iOS/Resources/shared-with-cozy-icon.png"
+    ],
+    "src": "./Resources/common/shared-with-cozy-icon.png"
+  },
+  {
+    "dests": [
+      "../src/Android/Resources/drawable-hdpi/shared-with-cozy-icon.png",
+      "../src/iOS/Resources/shared-with-cozy-icon@2x.png"
+    ],
+    "src": "./Resources/common/shared-with-cozy-icon@2x.png"
+  }
+]
