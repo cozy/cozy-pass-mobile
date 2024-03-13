@@ -776,7 +776,7 @@ namespace Bit.Core.Services
                 await _tokenService.SetTokensAsync(tokenResponse.AccessToken, tokenResponse.RefreshToken);
 
                 #region cozy
-                _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
+                await _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
                 #endregion
 
                 return tokenResponse;

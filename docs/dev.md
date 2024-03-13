@@ -23,6 +23,10 @@ In order to release on iOS:
 ## Debug on Android
 
 In order to debug on Android:
+- Copy the Android's `debug.keystore` from Cozy's password-store into `src/Android/debug.keystore`
+  - Run `pass show cozy-pass/androidOK/debug.keystore > src/Android/debug.keystore`
+  - If you don't have access to Cozy's password-store, just generate a new `debug.keystore` file
+    - Run `keytool -genkey -v -keystore src/Android/debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
 - Run `Android.csproj` using `CozyDebugAndroid|Any CPU` (or just `CozyReleaseAndroid` on `Visual Studio for Mac`)
 
 ## Release on Android

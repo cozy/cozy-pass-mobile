@@ -4,6 +4,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using Bit.Core.Enums;
 using Bit.Core.Utilities;
+using Xamarin.Essentials;
 
 namespace Bit.Core.Models.Request
 {
@@ -51,7 +52,7 @@ namespace Bit.Core.Models.Request
                 ["client_id"] = clientId,
 
                 #region cozy
-                ["clientName"] = "Cozy Pass"
+                ["clientName"] = $"Cozy Pass ({DeviceInfo.Name})"
                 #endregion cozy
             };
 

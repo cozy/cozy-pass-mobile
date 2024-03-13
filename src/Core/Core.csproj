@@ -31,7 +31,7 @@
   <ItemGroup>
     <PackageReference Include="CsvHelper" Version="30.0.1" />
     <!--
-    Cozy customisation: Flurl is needed bu UrlHelper
+    Cozy customisation: Flurl is needed by UrlHelper
     -->
     <!---->
     <PackageReference Include="Flurl" Version="3.0.2" />
@@ -52,6 +52,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <!--
+    Cozy customisation: Xamarin.Essentials is needed by CozyClient for setting client name with device name
+    -->
+    <!---->
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <!---->
   </ItemGroup>
 
   <ItemGroup>

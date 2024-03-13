@@ -75,6 +75,7 @@ namespace Bit.Core.Utilities
             //*
             var environmentService = new EnvironmentService(apiService, stateService);
             var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
+            var cozyClouderyEnvService = new CozyClouderyEnvService(storageService);
             //*/
             var syncService = new SyncService(stateService, apiService, settingsService, folderService, cipherService,
                 cryptoService, collectionService, organizationService, messagingService, policyService, sendService,
@@ -129,6 +130,7 @@ namespace Bit.Core.Utilities
             // Cozy customization, ADD description
             //*
             Register<ICozyClientService>("cozyClientService", cozyClientService);
+            Register<ICozyClouderyEnvService>("cozyClouderyEnvService", cozyClouderyEnvService);
             //*/
         }
 

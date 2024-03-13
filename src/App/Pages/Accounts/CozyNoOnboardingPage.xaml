@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Bit.App.Pages"
+    xmlns:u="clr-namespace:Bit.App.Utilities"
+    x:Class="Bit.App.Pages.Accounts.CozyNoOnboardingPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{u:I18n Close}" Clicked="Close_Clicked" Order="Primary" Priority="-1" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        <StackLayout Spacing="0" Padding="16, 5">
+            <StackLayout VerticalOptions="CenterAndExpand" Spacing="20">
+                <Image x:Name="_logo"
+                       Source="install_flagship_app.png"
+                       VerticalOptions="Center" />
+                <Label Text="{u:I18n CozyInstallFlagshipTitle}"
+                        FontSize="35"
+                        HorizontalTextAlignment="Center" />
+                <Label Text="{u:I18n CozyInstallFlagshipDescription}"
+                        FontSize="Medium"
+                        HorizontalTextAlignment="Center" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout Spacing="0" Padding="16, 16" Grid.Row="1">
+                <StackLayout>
+                    <StackLayout Spacing="8">
+                        <Button Text="{u:I18n CozyInstallFlagshipButton}"
+                                StyleClass="btn-primary"
+                    	        Clicked="Flagship_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</pages:BaseContentPage>

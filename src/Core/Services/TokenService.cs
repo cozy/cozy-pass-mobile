@@ -88,7 +88,9 @@ namespace Bit.Core.Services
             ClearCache();
             await Task.WhenAll(
                 _stateService.SetAccessTokenAsync(null, false, userId),
-                _stateService.SetRefreshTokenAsync(null, false, userId));
+                _stateService.SetRefreshTokenAsync(null, false, userId),
+                _stateService.SetClientIdAsync(null, false, userId),
+                _stateService.SetRegistrationAccessTokenAsync(null, false, userId));
         }
 
         public void ClearCache()
@@ -235,13 +237,30 @@ namespace Bit.Core.Services
 
         // Cozy customization, ADD description
         //*
-        public string RegistrationAccessToken { get; private set; }
-        public string ClientId { get; private set; }
-
-        public void SetClientInfos(string clientId, string registrationAccessToken)
+        public async Task SetClientInfos(string clientId, string registrationAccessToken)
         {
-            ClientId = clientId;
-            RegistrationAccessToken = registrationAccessToken;
+            await SetClientId(clientId);
+            await SetRegistrationAccessToken(registrationAccessToken);
+        }
+
+        private async Task SetClientId(string registrationAccessToken)
+        {
+            await _storageService.SetClientIdAsync(registrationAccessToken);
+        }
+
+        public async Task<string> GetClientId()
+        {
+            return await _stateService.GetClientIdAsync();
+        }
+
+        private async Task SetRegistrationAccessToken(string registrationAccessToken)
+        {
+            await _storageService.SetRegistrationAccessTokenAsync(registrationAccessToken);
+        }
+
+        public async Task<string> GetRegistrationAccessToken()
+        {
+            return await _stateService.GetRegistrationAccessTokenAsync();
         }
         //*/
     }

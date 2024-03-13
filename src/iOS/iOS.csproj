@@ -184,6 +184,9 @@
     <BundleResource Include="Resources\cozy_faceid.png" />
     <BundleResource Include="Resources\cozy_faceid%402x.png" />
     <BundleResource Include="Resources\cozy_faceid%403x.png" />
+    <BundleResource Include="Resources\install_flagship_app.png" />
+    <BundleResource Include="Resources\install_flagship_app%402x.png" />
+    <BundleResource Include="Resources\install_flagship_app%403x.png" />
     <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
     <ImageAsset Include="Resources\Assets.xcassets\empty_items_state.imageset\Empty-items-state-dark.pdf" />
     <ImageAsset Include="Resources\Assets.xcassets\empty_items_state.imageset\Empty-items-state.pdf" />

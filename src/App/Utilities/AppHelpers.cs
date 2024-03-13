@@ -574,10 +574,23 @@ namespace Bit.App.Utilities
                 "usernameGenerationService");
             var cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
+            // Cozy customization, ADD description
+            //*
+            try
+            {
+                await syncService.SetLastSyncAsync(DateTime.MinValue);
+                await cozyClientService.LogoutAsync();
+            }
+            catch (Exception e)
+            {
+                // Setting last sync date and login out Cozy's Oauth client should not interrupt clearing local data
+                System.Diagnostics.Debug.WriteLine(">>> {0}: {1}", e.GetType(), e.StackTrace);
+            }
+            //*/
+
             await Task.WhenAll(
                 cipherService.ClearCacheAsync(),
-                fileService.ClearCacheAsync(),
-                cozyClientService.LogoutAsync());
+                fileService.ClearCacheAsync());
             tokenService.ClearCache();
             cryptoService.ClearCache();
             settingsService.ClearCache();

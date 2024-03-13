@@ -31,9 +31,9 @@ namespace Bit.Core.Abstractions
         Task PrepareTokenForDecodingAsync();
 
         #region cozy
-        string ClientId { get; }
-        string RegistrationAccessToken { get; }
-        void SetClientInfos(string clientId, string registrationAccessToken);
+        Task SetClientInfos(string clientId, string registrationAccessToken);
+        Task<string> GetClientId();
+        Task<string> GetRegistrationAccessToken();
         #endregion
     }
 }

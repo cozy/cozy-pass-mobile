@@ -236,19 +236,28 @@ namespace Bit.iOS
             _messagingService?.Send(AppHelpers.RESUMED_MESSAGE_COMMAND);
             base.WillEnterForeground(uiApplication);
         }
+        
+        // Cozy customization, Handle deep links for Onboarding and Login
+        //*
+        public void handleDeepLink(NSUrl url)
+        {
+            DismissRegistrationController();
+
+            var urlStr = url.ToString();
+            var uri = new Uri(url.ToString());
+
+            var formsApp = Xamarin.Forms.Application.Current;
+            formsApp.SendOnAppLinkRequestReceived(uri);  
+        }
+        //*/
 
         public override bool OpenUrl(UIApplication application, NSUrl url, string sourceApplication,
             NSObject annotation)
         {
-            // Cozy customization, ADD description
-            //*
-            var urlStr = url.ToString();
-            if (urlStr.Contains("onboarded"))
-            {
-                _cozyClientService.OnboardedURL = new Uri(urlStr);
-                _messagingService.Send("onboarded");
-                DismissRegistrationController();
-            }
+            // Cozy customization, Handle deep links for Onboarding and Login
+            // TODO CHECK IF NEEDED
+            /*
+            handleDeepLink(url);
             //*/
             return true;
         }
@@ -264,6 +273,11 @@ namespace Bit.iOS
 
         public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         {
+            // Cozy customization, Handle deep links for Onboarding and Login
+            // TODO CHECK IF NEEDED
+            /*
+            handleDeepLink(url);
+            //*/
             return _deepLinkContext.Value.OnNewUri(url) || Xamarin.Essentials.Platform.OpenUrl(app, url, options);
         }
 

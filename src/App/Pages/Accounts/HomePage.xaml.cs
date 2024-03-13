@@ -17,6 +17,7 @@ namespace Bit.App.Pages
         private readonly IPlatformUtilsService _platformUtilsService;
         private readonly II18nService _i18nService;
         private readonly ICozyClientService _cozyClientService;
+        private readonly ICozyClouderyEnvService _cozyClouderyEnvService;
 
         readonly LazyResolve<ILogger> _logger = new LazyResolve<ILogger>();
 
@@ -26,6 +27,7 @@ namespace Bit.App.Pages
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
+            _cozyClouderyEnvService = ServiceContainer.Resolve<ICozyClouderyEnvService>("cozyClouderyEnvService");
             _appOptions = appOptions;
             InitializeComponent();
             _vm = BindingContext as HomeViewModel;
@@ -64,7 +66,7 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
-            ThemeManager.SetInvertedTheme();
+            ThemeManager.UnsetInvertedTheme();
             base.OnAppearing();
             _mainContent.Content = _mainLayout;
             _accountAvatar?.OnAppearing();

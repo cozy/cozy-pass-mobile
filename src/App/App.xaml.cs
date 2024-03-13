@@ -39,6 +39,7 @@ namespace Bit.App
         private readonly IAccountsManager _accountsManager;
         private readonly IPushNotificationService _pushNotificationService;
         private readonly IConfigService _configService;
+        private readonly ICozyClouderyEnvService _cozyClouderyEnvService;
         private static bool _isResumed;
         // these variables are static because the app is launching new activities on notification click, creating new instances of App. 
         private static bool _pendingCheckPasswordlessLoginRequests;
@@ -63,6 +64,7 @@ namespace Bit.App
             _accountsManager = ServiceContainer.Resolve<IAccountsManager>("accountsManager");
             _pushNotificationService = ServiceContainer.Resolve<IPushNotificationService>();
             _configService = ServiceContainer.Resolve<IConfigService>();
+            _cozyClouderyEnvService = ServiceContainer.Resolve<ICozyClouderyEnvService>("cozyClouderyEnvService");
 
             _accountsManager.Init(() => Options, this);
 
@@ -341,6 +343,50 @@ namespace Bit.App
                 ResumedAsync().FireAndForget();
             }
         }
+
+        // Cozy customization:
+        // - Handle deep links for Onboarding and Login
+        //*
+        public async Task HandleLoginLink(string fqdn)
+        {
+            var page = new LoginPage(fqdn, null);
+            await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page));
+        }
+
+        public async Task HandleOnboardingLink(string onboardingUrl)
+        {
+            var page = new CozyNoOnboardingPage();
+            await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page)
+            {
+                BarBackgroundColor = ThemeManager.GetResourceColor("BackgroundColor"),
+                BarTextColor = ThemeManager.GetResourceColor("PrimaryColor")
+            });
+        }
+
+        protected override async void OnAppLinkRequestReceived(Uri uri)
+        {
+            string queryString = uri.Query;
+            var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
+
+            var fqdn = queryDictionary.Get("fqdn");
+            var onboardingUrl = queryDictionary.Get("onboard_url");
+
+            var localPath = uri.LocalPath.StartsWith("/pass") ? uri.LocalPath.Replace("/pass", "") : uri.LocalPath;
+
+            if ((localPath == "/login" || localPath == "/onboarding") && !string.IsNullOrEmpty(fqdn))
+            {
+                await HandleLoginLink(fqdn);
+            }
+            else if (localPath == "/onboarding" && !string.IsNullOrEmpty(onboardingUrl))
+            {
+                await HandleOnboardingLink(onboardingUrl);
+            }
+            else if (localPath == "/cozy_env_override")
+            {
+                await CozyEnvironmentOverride.ExtractEnvFromUrl(uri, _cozyClouderyEnvService);
+            }
+        }
+        //*/
 
         private async Task SleptAsync()
         {

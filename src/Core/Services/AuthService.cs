@@ -497,7 +497,7 @@ namespace Bit.Core.Services
             }
 
             #region cozy
-            _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
+            await _tokenService.SetClientInfos(tokenResponse.ClientId, tokenResponse.RegistrationAccessToken);
             #endregion
 
             await _tokenService.SetAccessTokenAsync(tokenResponse.AccessToken, true);
