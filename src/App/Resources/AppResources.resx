@@ -140,7 +140,7 @@
     <comment>Navigate back to the previous screen.</comment>
   </data>
   <data name="Bitwarden" xml:space="preserve">
-    <value>Bitwarden</value>
+    <value>Cozy Pass</value>
     <comment>App name. Shouldn't ever change.</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
@@ -158,6 +158,57 @@
   <data name="CopyUsername" xml:space="preserve">
     <value>Copy username</value>
     <comment>The button text that allows a user to copy the login's username to their clipboard.</comment>
+  </data>
+  <data name="CozyPass" xml:space="preserve">
+    <value>Cozy Pass</value>
+    <comment>Name of the app</comment>
+  </data>
+  <data name="CozyURL" xml:space="preserve">
+    <value>Your Cozy URL</value>
+    <comment>Label for Cozy URL input</comment>
+  </data>
+  <data name="CozyURLPlaceholder" xml:space="preserve">
+    <value>claudedouillet.mycozy.cloud</value>
+    <comment>Placeholder for Cozy URL input</comment>
+  </data>
+  <data name="CozyPassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>Label for Cozy password</comment>
+  </data>
+  <data name="CozyLoginTitle" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login screen title</comment>
+  </data>
+  <data name="CozyHomeTitle" xml:space="preserve">
+    <value>Cozy Pass</value>
+  </data>
+  <data name="CozyHomeHaveAccount" xml:space="preserve">
+    <value>LET'S GO</value>
+  </data>
+  <data name="CozyUrlRequiredException" xml:space="preserve">
+    <value>Cozy address is required</value>
+    <comment>Exception message when no CozyUrl is set</comment>
+  </data>
+  <data name="CozyInstallFlagshipTitle" xml:space="preserve">
+    <value>Install the Cozy app</value>
+  </data>
+  <data name="CozyInstallFlagshipDescription" xml:space="preserve">
+    <value>You don't have a Cozy, please install the Cozy app to create your Cozy and use Cozy Pass</value>
+  </data>
+  <data name="CozyInstallFlagshipButton" xml:space="preserve">
+    <value>INSTALL THE COZY APP</value>
+  </data>
+  <data name="NoEmailAsCozyUrlException" xml:space="preserve">
+    <value>The Cozy address is not your email</value>
+    <comment>Exception message when no user set an email in login field</comment>
+  </data>
+  <data name="HasMispelledCozyException" xml:space="preserve">
+    <value>Woops, the address is not correct. Try with "cozy" with a "z"!</value>
+    <comment>Exception message when user mispels Cozy with Cosy</comment>
+  </data>
+  <data name="CozyInvalidLoginException" xml:space="preserve">
+    <value>The address and password you entered seems to not match</value>
+    <comment>Exception message when user enter wrong login or password</comment>
   </data>
   <data name="Credits" xml:space="preserve">
     <value>Credits</value>
@@ -288,7 +339,7 @@
     <value>Would you like to switch to it now?</value>
   </data>
   <data name="MasterPassword" xml:space="preserve">
-    <value>Master password</value>
+    <value>Password</value>
     <comment>Label for a master password.</comment>
   </data>
   <data name="More" xml:space="preserve">
@@ -382,7 +433,7 @@
     <value>Verify fingerprint</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Verify master password</value>
+    <value>Unlock my Cozy</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>Verify PIN</value>
@@ -394,7 +445,10 @@
     <value>View</value>
   </data>
   <data name="VisitOurWebsite" xml:space="preserve">
-    <value>Visit our website</value>
+    <value>Visit our Website</value>
+  </data>
+  <data name="VisitOurWebsiteDescription" xml:space="preserve">
+    <value>Visit our website to get help, news, email us, and/or learn more about how to use Cozy Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Website</value>
@@ -416,7 +470,7 @@
     <value>App extension</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Use the Bitwarden accessibility service to auto-fill your logins across apps and the web.</value>
+    <value>Use the Cozy Pass accessibility service to auto-fill your logins across apps and the web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Auto-fill service</value>
@@ -425,19 +479,19 @@
     <value>Avoid ambiguous characters</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Bitwarden app extension</value>
+    <value>Cozy Pass App Extension</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden app extension. Learn more about using the Bitwarden app extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Cozy Pass App Extension. Learn more about using the Cozy Pass App Extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Use Bitwarden in Safari and other apps to auto-fill your logins.</value>
+    <value>Use Cozy Pass in Safari and other apps to auto-fill your logins.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Bitwarden Auto-fill Service</value>
+    <value>Cozy Pass Auto-fill Service</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Use the Bitwarden accessibility service to auto-fill your logins.</value>
+    <value>Use the Cozy Pass accessibility service to auto-fill your logins.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Change email</value>
@@ -446,7 +500,10 @@
     <value>You can change your email address on the bitwarden.com web vault. Do you want to visit the website now?</value>
   </data>
   <data name="ChangeMasterPassword" xml:space="preserve">
-    <value>Change master password</value>
+    <value>Change Password</value>
+  </data>
+  <data name="ChangePasswordConfirmation" xml:space="preserve">
+    <value>You can change your password on the bitwarden.com web vault. Do you want to visit the website now?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
@@ -455,7 +512,7 @@
     <value>Continue</value>
   </data>
   <data name="CreateAccount" xml:space="preserve">
-    <value>Create account</value>
+    <value>Create my Cozy</value>
   </data>
   <data name="CreatingAccount" xml:space="preserve">
     <value>Creating account...</value>
@@ -468,7 +525,10 @@
     <value>Allow automatic syncing</value>
   </data>
   <data name="EnterEmailForHint" xml:space="preserve">
-    <value>Enter your account email address to receive your master password hint.</value>
+    <value>Enter your account email address to receive your password hint.</value>
+  </data>
+  <data name="EnterCozyURLForHint" xml:space="preserve">
+    <value>Enter your Cozy URL to receive your password hint.</value>
   </data>
   <data name="ExntesionReenable" xml:space="preserve">
     <value>Reactivate app extension</value>
@@ -480,7 +540,7 @@
     <value>Activate app extension</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>In Safari, find Bitwarden using the share icon (hint: scroll to the right on the bottom row of the menu).</value>
+    <value>In Safari, find Cozy Pass using the share icon (hint: scroll to the right on the bottom row of the menu).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -493,13 +553,13 @@
     <value>Your logins are now easily accessible from Safari, Chrome, and other supported apps.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>In Safari and Chrome, find Bitwarden using the share icon (hint: scroll to the right on the bottom row of the share menu).</value>
+    <value>In Safari and Chrome, find Cozy Pass using the share icon (hint: scroll to the right on the bottom row of the share menu).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Tap the Bitwarden icon in the menu to launch the extension.</value>
+    <value>Tap the Cozy Pass icon in the menu to launch the extension.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>To turn on Bitwarden in Safari and other apps, tap the "more" icon on the bottom row of the menu.</value>
+    <value>To turn on Cozy Pass in Safari and other apps, tap the "more" icon on the bottom row of the menu.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favorite</value>
@@ -511,7 +571,10 @@
     <value>Generate password</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Get your master password hint</value>
+    <value>I forgot my password</value>
+  </data>
+  <data name="GetCozyAddress" xml:space="preserve">
+    <value>I forgot my Cozy address</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Import items</value>
@@ -560,7 +623,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Log in or create a new account to access your secure vault.</value>
+    <value>Access your Personnal Cloud now, the digital home for all your data</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Manage</value>
@@ -569,13 +632,13 @@
     <value>Password confirmation is not correct.</value>
   </data>
   <data name="MasterPasswordDescription" xml:space="preserve">
-    <value>The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it.</value>
+    <value>The master password is the password you use to access your vault. It is very important that you do not forget your password. There is no way to recover the password in the event that you forget it.</value>
   </data>
   <data name="MasterPasswordHint" xml:space="preserve">
-    <value>Master password hint (optional)</value>
+    <value>Password Hint (optional)</value>
   </data>
   <data name="MasterPasswordHintDescription" xml:space="preserve">
-    <value>A master password hint can help you remember your password if you forget it.</value>
+    <value>A password hint can help you remember your password if you forget it.</value>
   </data>
   <data name="MasterPasswordLengthValMessageX" xml:space="preserve">
     <value>Master password must be at least {0} characters long.</value>
@@ -592,7 +655,7 @@
     <value>More settings</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>You must log into the main Bitwarden app before you can use the extension.</value>
+    <value>You must log into the main Cozy Pass app before you can use the extension.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Never</value>
@@ -617,7 +680,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Option defaults are set from the main Bitwarden app's password generator tool.</value>
+    <value>Option defaults are set from the main Cozy Pass app's password generator tool.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
@@ -635,13 +698,13 @@
     <value>Password hint</value>
   </data>
   <data name="PasswordHintAlert" xml:space="preserve">
-    <value>We've sent you an email with your master password hint.</value>
+    <value>We've sent you an email with your password hint.</value>
   </data>
   <data name="PasswordOverrideAlert" xml:space="preserve">
     <value>Are you sure you want to overwrite the current password?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Bitwarden keeps your vault automatically synced by using push notifications. For the best possible experience, please select "Allow" on the following prompt when asked to allow push notifications.</value>
+    <value>Cozy Pass keeps your vault automatically synced by using push notifications. For the best possible experience, please select "Allow" on the following prompt when asked to enable push notifications.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -654,7 +717,7 @@
     <value>Regenerate password</value>
   </data>
   <data name="RetypeMasterPassword" xml:space="preserve">
-    <value>Re-type master password</value>
+    <value>Re-type Password</value>
   </data>
   <data name="SearchVault" xml:space="preserve">
     <value>Search vault</value>
@@ -718,7 +781,7 @@
     <value>View item</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Bitwarden web vault</value>
+    <value>Cozy Pass Web Vault</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Lost authenticator app?</value>
@@ -745,7 +808,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>When you select an input field and see a Bitwarden auto-fill overlay, you can tap it to launch the auto-fill service.</value>
+    <value>When you select an input field and see a Cozy Pass auto-fill overlay, you can tap it to launch the auto-fill service.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Tap this notification to auto-fill an item from your vault.</value>
@@ -754,7 +817,7 @@
     <value>Open Accessibility Settings</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. On the Android Accessibility Settings screen, touch "Bitwarden" under the Services heading.</value>
+    <value>1. On the Android Accessibility Settings screen, touch "Cozy Pass" under the Services heading.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Switch on the toggle and press OK to accept.</value>
@@ -775,7 +838,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Bitwarden Auto-fill Service by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Cozy Pass Auto-fill Service by navigating to the "Settings" screen.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Auto-fill</value>
@@ -975,7 +1038,7 @@ Scanning will happen automatically.</value>
     <value>Self-hosted environment</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Specify the base URL of your on-premise hosted Bitwarden installation.</value>
+    <value>Specify the base URL of your on-premise hosted Cozy Pass installation.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Server URL</value>
@@ -1143,7 +1206,7 @@ Scanning will happen automatically.</value>
     <value>Icons server URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Auto-fill with Bitwarden</value>
+    <value>Auto-fill with Cozy Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Vault is locked</value>
@@ -1167,10 +1230,10 @@ Scanning will happen automatically.</value>
     <value>Auto-fill Accessibility Service</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>The Bitwarden auto-fill service uses the Android Autofill Framework to assist in filling login information into other apps on your device.</value>
+    <value>The Cozy Pass auto-fill service uses the Android Autofill Framework to assist in filling logins, credit cards, and identity information into other apps on your device.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Use the Bitwarden auto-fill service to fill login information into other apps.</value>
+    <value>Use the Cozy Pass auto-fill service to fill logins, credit cards, and identity information into other apps.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Open Autofill Settings</value>
@@ -1286,7 +1349,7 @@ Scanning will happen automatically.</value>
     <value>AutoFill activated!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>You must log into the main Bitwarden app before you can use AutoFill.</value>
+    <value>You must log into the main Cozy Pass app before you can use AutoFill.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Your logins are now easily accessible right from your keyboard while logging into apps and websites.</value>
@@ -1313,13 +1376,13 @@ Scanning will happen automatically.</value>
     <value>4. Turn on AutoFill</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Select "Bitwarden"</value>
+    <value>5. Select "Cozy Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Password auto-fill</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Bitwarden Password AutoFill extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Invalid email address.</value>
@@ -1425,13 +1488,13 @@ Scanning will happen automatically.</value>
     <value>Share Item</value>
   </data>
   <data name="MoveToOrganization" xml:space="preserve">
-    <value>Move to Organization</value>
+    <value>Move to folder</value>
   </data>
   <data name="NoOrgsToList" xml:space="preserve">
-    <value>No organizations to list.</value>
+    <value>No folder to list.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved.</value>
+    <value>Choose a folder to store this item.&#10;&#10;Tips: after selecting a shared folder, you will be able to securely share this element with other Cozy users. You can create a shared folder by using the web version of Cozy Pass (if the feature is enabled on your Cozy).</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Number of words</value>
@@ -1462,7 +1525,7 @@ Scanning will happen automatically.</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Bitwarden allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export vault</value>
@@ -1483,14 +1546,14 @@ Scanning will happen automatically.</value>
     <value>30 minutes</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application.</value>
+    <value>Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Logged in as {0} on {1}.</value>
     <comment>ex: Logged in as user@example.com on bitwarden.com.</comment>
   </data>
   <data name="VaultLockedMasterPassword" xml:space="preserve">
-    <value>Your vault is locked. Verify your master password to continue.</value>
+    <value>Your vault is locked. Verify your password to continue.</value>
   </data>
   <data name="VaultLockedPIN" xml:space="preserve">
     <value>Your vault is locked. Verify your PIN code to continue.</value>
@@ -1556,10 +1619,10 @@ Scanning will happen automatically.</value>
     <value>Exit</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Are you sure you want to exit Bitwarden?</value>
+    <value>Are you sure you want to exit Cozy Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
-    <value>Do you want to require unlocking with your master password when the application is restarted?</value>
+    <value>Do you want to require unlocking with your password when the application is restarted?</value>
   </data>
   <data name="Black" xml:space="preserve">
     <value>Black</value>
@@ -1620,10 +1683,10 @@ Scanning will happen automatically.</value>
     <value>Use biometrics to unlock</value>
   </data>
   <data name="AccessibilityOverlayPermissionAlert" xml:space="preserve">
-    <value>Bitwarden needs attention - See "Auto-fill Accessibility Service" from Bitwarden settings</value>
+    <value>Cozy Pass needs attention - See "Auto-fill Accessibility Service" from Cozy Pass Settings</value>
   </data>
   <data name="BitwardenAutofillServiceOverlayPermission" xml:space="preserve">
-    <value>3. On the Android App Settings screen for Bitwarden, go to the "Display over other apps" options (under Advanced) and tap the toggle to allow overlay support.</value>
+    <value>3. On the Android App Settings screen for Cozy Pass, go to the "Display over other apps" options (under Advanced) and tap the toggle to enable overlay support.</value>
   </data>
   <data name="OverlayPermission" xml:space="preserve">
     <value>Permission</value>
@@ -1632,7 +1695,7 @@ Scanning will happen automatically.</value>
     <value>Open Overlay Permission Settings</value>
   </data>
   <data name="BitwardenAutofillServiceStep3" xml:space="preserve">
-    <value>3. On the Android App Settings screen for Bitwarden, select "Display over other apps" (under "Advanced") and switch on the toggle to allow the overlay.</value>
+    <value>3. On the Android App Settings screen for Cozy Pass, select "Display over other apps" (under "Advanced") and switch on the toggle to allow the overlay.</value>
   </data>
   <data name="Denied" xml:space="preserve">
     <value>Denied</value>
@@ -1644,7 +1707,7 @@ Scanning will happen automatically.</value>
     <value>File format</value>
   </data>
   <data name="ExportVaultMasterPasswordDescription" xml:space="preserve">
-    <value>Enter your master password to export your vault data.</value>
+    <value>Enter your password to export your vault data.</value>
   </data>
   <data name="SendVerificationCodeToEmail" xml:space="preserve">
     <value>Send a verification code to your email</value>
@@ -1741,7 +1804,7 @@ Scanning will happen automatically.</value>
     <comment>Confirmation alert message when soft-deleting a cipher.</comment>
   </data>
   <data name="AccountBiometricInvalidated" xml:space="preserve">
-    <value>Biometric unlock for this account is disabled pending verification of master password.</value>
+    <value>Please enter your Cozy password.</value>
   </data>
   <data name="AccountBiometricInvalidatedExtension" xml:space="preserve">
     <value>Autofill biometric unlock for this account is disabled pending verification of master password.</value>
@@ -2466,7 +2529,7 @@ select Add TOTP to store the key safely</value>
     <value>Accessibility Service Disclosure</value>
   </data>
   <data name="AccessibilityDisclosureText" xml:space="preserve">
-    <value>Bitwarden uses the Accessibility Service to search for login fields in apps and websites, then establish the appropriate field IDs for entering a username &amp; password when a match for the app or site is found. We do not store any of the information presented to us by the service, nor do we make any attempt to control any on-screen elements beyond text entry of credentials.</value>
+    <value>Cozy Pass uses the Accessibility Service to search for login fields in apps and websites, then establish the appropriate field IDs for entering a username &amp; password when a match for the app or site is found. We do not store any of the information presented to us by the service, nor do we make any attempt to control any on-screen elements beyond text entry of credentials.</value>
   </data>
   <data name="Accept" xml:space="preserve">
     <value>Accept</value>
@@ -2876,5 +2939,14 @@ Do you want to switch to this account?</value>
   </data>
   <data name="SetUpAnUnlockOptionToChangeYourVaultTimeoutAction" xml:space="preserve">
     <value>Set up an unlock option to change your vault timeout action.</value>
+  </data>
+  <data name="RegistrationSuccess" xml:space="preserve">
+    <value>Registration was successful, you can login now</value>
+  </data>
+  <data name="ShareNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ItemUnshared" xml:space="preserve">
+    <value>Item removed from folder.</value>
   </data>
 </root>
