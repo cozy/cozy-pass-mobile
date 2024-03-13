@@ -25,5 +25,30 @@
 
   <style name="ButtonStyle" parent="Widget.AppCompat.Button">
     <item name="android:textAllCaps">false</item>
-  </style>      
+  </style>
+     
+  <!-- Cozy theme -->
+  <style name="CozyTheme" parent="CozyTheme.Base">
+  </style>
+  
+  <style name="CozyTheme.Splash" parent="CozyTheme.Base">
+    <item name="android:windowBackground">@drawable/splash_screen</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  
+  <style name="CozyTheme.Base"  parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="colorPrimary">@color/cozy_primary</item>
+    <item name="colorPrimaryDark">@color/cozy_notificationBar</item>
+    <item name="colorAccent">@color/cozy_primary</item>
+    <item name="colorControlNormal">@color/border</item>
+    <item name="android:navigationBarColor">@android:color/black</item>
+    <item name="windowActionModeOverlay">true</item>
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+    <item name="android:colorActivatedHighlight">@android:color/transparent</item>
+    <item name="android:textCursorDrawable">@null</item>
+    <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    <item name="colorControlActivated">#C27AE3</item>
+  </style>
 </resources>

@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <!--
+  Cozy customisation: Original lines for colors below, without
+  changing those lines, colors are not right for the Cozy
+  theme.
+  -->
+
   <!-- Light System -->
+  <!--
   <color name="colorPrimary">#175DDC</color>
   <color name="colorPrimaryDark">#1A3B66</color>
   <color name="primary">#175DDC</color>
   <color name="notificationBar">#1452BC</color>
   <color name="border">#dddddd</color>
+  -->
+
+  <!-- Cozy colors -->
+  <color name="colorPrimary">#297EF2</color>
+  <color name="colorPrimaryDark">#0d60d1</color>
+  <color name="primary">#297EF2</color>
+  <color name="notificationBar">#0d60d1</color>
+  <color name="border">#dddddd</color>
+  <!-- End Cozy colors -->
 
   <!-- Dark System -->
   <color name="dark_primary">#52bdfb</color>
@@ -19,4 +35,8 @@
   <color name="darkgray">#333333</color>
   <color name="gray">#738182</color>
   <color name="lightgray">#efeff4</color>
+
+  <!-- Cozy theme -->
+  <color name="cozy_primary">#297EF2</color>
+  <color name="cozy_notificationBar">#0d60d1</color>
 </resources>
