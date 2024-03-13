@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Bit.App.Abstractions;
 using Bit.App.Models;
 using Bit.App.Pages;
+using Bit.App.Pages.Accounts;
 using Bit.App.Resources;
 using Bit.App.Services;
 using Bit.App.Utilities;
