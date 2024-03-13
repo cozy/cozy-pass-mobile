@@ -1,4 +1,4 @@
-using Bit.Core.Abstractions;
+﻿using Bit.Core.Abstractions;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Response;
 using Newtonsoft.Json;
@@ -206,7 +206,7 @@ namespace Bit.Core.Services
             var cozyURL = NormalizeUserCozyURL(userCozyURL); 
             var baseURL = $"{cozyURL}/bitwarden";
             environmentData.Base = baseURL;
-            await _environmentService.SetUrlsAsync(environmentData);
+            await _environmentService.SetRegionAsync(environmentData.Region, environmentData);
         }
 
         public async Task<string> GetURLForApp(string appName, string fragment = null)

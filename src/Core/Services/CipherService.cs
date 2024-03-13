@@ -321,7 +321,12 @@ namespace Bit.Core.Services
                     //*/
                     if (filter != null)
                     {
+                        // Cozy customization, ADD description
+                        /*
                         ciphers = ciphers.Where(filter);
+                        /*/
+                        ciphers = ciphers.Where(filter).ToList();
+                        //*/
                     }
 
                     foreach (var cipher in ciphers)

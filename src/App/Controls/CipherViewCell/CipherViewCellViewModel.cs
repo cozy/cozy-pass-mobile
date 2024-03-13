@@ -1,6 +1,10 @@
-﻿using Bit.App.Utilities;
+﻿using System;
+using System.ComponentModel;
+using Bit.App.Utilities;
+using Bit.Core.Abstractions;
 using Bit.Core.Models.View;
 using Bit.Core.Utilities;
+using Xamarin.Forms;
 
 namespace Bit.App.Controls
 {
@@ -30,9 +34,7 @@ namespace Bit.App.Controls
             set
             {
                 SetProperty(ref _cipher, value, () => {
-                    #region cozy
                     TriggerPropertyChanged(nameof(CozyShared));
-                    #endregion
                 });
             }
             //*/

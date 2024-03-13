@@ -5,6 +5,8 @@ using Bit.App.Utilities;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using Xamarin.Forms;
+using Bit.App.Resources;
+using Xamarin.Essentials;
 
 namespace Bit.App.Pages
 {
@@ -26,6 +28,7 @@ namespace Bit.App.Pages
             _platformUtilsService = ServiceContainer.Resolve<IPlatformUtilsService>("platformUtilsService");
             _i18nService = ServiceContainer.Resolve<II18nService>("i18nService");
             _cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            _cozyClouderyEnvService = ServiceContainer.Resolve<ICozyClouderyEnvService>("cozyClouderyEnvService");
             _broadcasterService = ServiceContainer.Resolve<IBroadcasterService>("broadcasterService");
             _cozyClouderyEnvService = ServiceContainer.Resolve<ICozyClouderyEnvService>("cozyClouderyEnvService");
             _appOptions = appOptions;

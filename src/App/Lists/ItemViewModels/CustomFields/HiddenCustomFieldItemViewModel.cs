@@ -32,9 +32,13 @@ namespace Bit.App.Lists.ItemViewModels.CustomFields
             CopyFieldCommand = new Command(() => copyFieldCommand?.Execute(Field));
             ToggleHiddenValueCommand = new AsyncCommand(ToggleHiddenValueAsync, (Func<bool>)null, ex =>
             {
+// Cozy customization, disable "AppCenter" functionality
+// We do not use it at Cozy
+/*
 #if !FDROID
                 Microsoft.AppCenter.Crashes.Crashes.TrackError(ex);
 #endif
+*/
             });
         }
 

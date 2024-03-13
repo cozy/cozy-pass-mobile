@@ -158,6 +158,13 @@ namespace Bit.Core.Abstractions
         Task SetAccessTokenAsync(string value, bool skipTokenStorage, string userId = null);
         Task<string> GetRefreshTokenAsync(string userId = null);
         Task SetRefreshTokenAsync(string value, bool skipTokenStorage, string userId = null);
+        // Cozy Customization, ADD description
+        //*
+        Task<string> GetClientIdAsync(string userId = null);
+        Task SetClientIdAsync(string value, bool skipTokenStorage, string userId = null);
+        Task<string> GetRegistrationAccessTokenAsync(string userId = null);
+        Task SetRegistrationAccessTokenAsync(string value, bool skipTokenStorage, string userId = null);
+        //*/
         Task<string> GetTwoFactorTokenAsync(string email = null);
         Task SetTwoFactorTokenAsync(string value, string email = null);
         Task<bool> GetScreenCaptureAllowedAsync(string userId = null);

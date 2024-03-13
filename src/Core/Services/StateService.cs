@@ -1247,6 +1247,43 @@ namespace Bit.Core.Services
             await SaveAccountAsync(account, reconciledOptions);
         }
 
+        // Cozy Customization, ADD description
+        //*
+        public async Task<string> GetClientIdAsync(string userId = null)
+        {
+            return (await GetAccountAsync(
+                ReconcileOptions(new StorageOptions { UserId = userId }, await GetDefaultStorageOptionsAsync())
+            ))?.Tokens?.ClientId;
+        }
+
+        public async Task SetClientIdAsync(string value, bool skipTokenStorage, string userId = null)
+        {
+            var reconciledOptions = ReconcileOptions(
+                new StorageOptions { UserId = userId, SkipTokenStorage = skipTokenStorage },
+                await GetDefaultStorageOptionsAsync());
+            var account = await GetAccountAsync(reconciledOptions);
+            account.Tokens.ClientId = value;
+            await SaveAccountAsync(account, reconciledOptions);
+        }
+
+        public async Task<string> GetRegistrationAccessTokenAsync(string userId = null)
+        {
+            return (await GetAccountAsync(
+                ReconcileOptions(new StorageOptions { UserId = userId }, await GetDefaultStorageOptionsAsync())
+            ))?.Tokens?.RegistrationAccessToken;
+        }
+
+        public async Task SetRegistrationAccessTokenAsync(string value, bool skipTokenStorage, string userId = null)
+        {
+            var reconciledOptions = ReconcileOptions(
+                new StorageOptions { UserId = userId, SkipTokenStorage = skipTokenStorage },
+                await GetDefaultStorageOptionsAsync());
+            var account = await GetAccountAsync(reconciledOptions);
+            account.Tokens.RegistrationAccessToken = value;
+            await SaveAccountAsync(account, reconciledOptions);
+        }
+        //*/
+
         public async Task<string> GetTwoFactorTokenAsync(string email = null)
         {
             var reconciledOptions =

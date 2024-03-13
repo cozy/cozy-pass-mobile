@@ -73,13 +73,13 @@ namespace Bit.Core.Utilities
                 });
             // Cozy customization, ADD description
             //*
-            var environmentService = new EnvironmentService(apiService, stateService);
+            var environmentService = new EnvironmentService(apiService, stateService, conditionedRunner);
             var cozyClientService = new CozyClientService(tokenService, apiService, environmentService);
             var cozyClouderyEnvService = new CozyClouderyEnvService(storageService);
             //*/
             var syncService = new SyncService(stateService, apiService, settingsService, folderService, cipherService,
                 cryptoService, collectionService, organizationService, messagingService, policyService, sendService,
-                keyConnectorService, logger, (extras) =>
+                keyConnectorService, logger, cozyClientService, (extras) =>
                 {
                     messagingService.Send("logout", extras);
                     return Task.CompletedTask;

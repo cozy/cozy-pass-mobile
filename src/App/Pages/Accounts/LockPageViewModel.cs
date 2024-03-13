@@ -248,19 +248,17 @@ namespace Bit.App.Pages
                 return;
             }
 
-            // Cozy customization, set LoggedInAsText with only the cozy instance's url
-            /*
-            LoggedInAsText = string.Format(AppResources.LoggedInAsOn, _email, webVaultHostname);
-            /*/
-            LoggedInAsText = webVaultHostname;
-            //*/
-
             // Cozy customization, handle avatar url
             //*/
-            ComputeAvatarUrl(webVault);
+            ComputeAvatarUrl(_environmentService.GetWebVaultUrl());
             //*/
 
+            // Cozy customization, set LoggedInAsText with only the cozy instance's url
+            /*
             LoggedInAsText = string.Format(AppResources.LoggedInAsOn, _email, _environmentService.GetCurrentDomain());
+            /*/
+            LoggedInAsText = _environmentService.GetCurrentDomain();
+            //*/
             if (PinEnabled)
             {
                 PageTitle = AppResources.VerifyPIN;

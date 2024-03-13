@@ -572,10 +572,12 @@ namespace Bit.App.Utilities
             var searchService = ServiceContainer.Resolve<ISearchService>("searchService");
             var usernameGenerationService = ServiceContainer.Resolve<IUsernameGenerationService>(
                 "usernameGenerationService");
-            var cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
 
             // Cozy customization, ADD description
             //*
+            var cozyClientService = ServiceContainer.Resolve<ICozyClientService>("cozyClientService");
+            var syncService = ServiceContainer.Resolve<ISyncService>("syncService");
+
             try
             {
                 await syncService.SetLastSyncAsync(DateTime.MinValue);

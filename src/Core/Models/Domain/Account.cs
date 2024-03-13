@@ -85,10 +85,14 @@ namespace Bit.Core.Models.Domain
 
                 AccessToken = copy.AccessToken;
                 RefreshToken = copy.RefreshToken;
+                ClientId = copy.ClientId;
+                RegistrationAccessToken = copy.RegistrationAccessToken;
             }
 
             public string AccessToken;
             public string RefreshToken;
+            public string ClientId;
+            public string RegistrationAccessToken;
         }
 
         public class AccountSettings

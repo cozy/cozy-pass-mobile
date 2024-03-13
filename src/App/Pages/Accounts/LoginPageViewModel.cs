@@ -17,6 +17,7 @@ using Bit.Core.Services;
 using Bit.Core.Utilities;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
+using System.Net;
 
 namespace Bit.App.Pages
 {

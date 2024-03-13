@@ -245,7 +245,7 @@ namespace Bit.Core.Services
 
         private async Task SetClientId(string registrationAccessToken)
         {
-            await _storageService.SetClientIdAsync(registrationAccessToken);
+            await _stateService.SetClientIdAsync(registrationAccessToken, await SkipTokenStorage());
         }
 
         public async Task<string> GetClientId()
@@ -255,7 +255,7 @@ namespace Bit.Core.Services
 
         private async Task SetRegistrationAccessToken(string registrationAccessToken)
         {
-            await _storageService.SetRegistrationAccessTokenAsync(registrationAccessToken);
+            await _stateService.SetRegistrationAccessTokenAsync(registrationAccessToken, await SkipTokenStorage());
         }
 
         public async Task<string> GetRegistrationAccessToken()
