@@ -105,7 +105,10 @@ namespace Bit.App.Pages
             {
                 new KeyValuePair<string, CipherType>(AppResources.TypeLogin, CipherType.Login),
                 new KeyValuePair<string, CipherType>(AppResources.TypeCard, CipherType.Card),
+                // Cozy Customization, Prevent to create Profiles as they will be replaced by Cozy Contacts
+                /*
                 new KeyValuePair<string, CipherType>(AppResources.TypeIdentity, CipherType.Identity)
+                //*/
             };
             CardBrandOptions = new List<KeyValuePair<string, string>>
             {
