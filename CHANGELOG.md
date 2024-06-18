@@ -1,4 +1,4 @@
-# 3.0.6
+# 3.0.7
 
 ## ✨ Features
 
@@ -8,6 +8,20 @@
 
 ## 🔧 Tech
 
+
+# 3.0.6
+
+## ✨ Features
+
+* Add support for Android 13 clipboard management ([PR #93](https://github.com/cozy/cozy-pass-mobile/pull/93))
+
+## 🐛 Bug Fixes
+
+* Fix login by email to make it work on Firefox browsers ([PR #95](https://github.com/cozy/cozy-pass-mobile/pull/95))
+
+## 🔧 Tech
+
+* Change Android TargetSDK for 33 ([PR #93](https://github.com/cozy/cozy-pass-mobile/pull/93))
 
 # 3.0.5
 

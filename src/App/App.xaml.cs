@@ -8,8 +8,10 @@ using Bit.App.Utilities;
 using Bit.Core;
 using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
+using Flurl;
 using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -204,6 +206,16 @@ namespace Bit.App
             await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page));
         }
 
+        public async Task HandleManagerLink(string managerLink)
+        {
+            await Browser.OpenAsync(managerLink, new BrowserLaunchOptions
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show,
+                Flags = BrowserLaunchFlags.PresentAsPageSheet
+            });
+        }
+
         public async Task HandleOnboardingLink(string onboardingUrl)
         {
             var page = new CozyNoOnboardingPage();
@@ -223,6 +235,22 @@ namespace Bit.App
             var onboardingUrl = queryDictionary.Get("onboard_url");
 
             var localPath = uri.LocalPath.StartsWith("/pass") ? uri.LocalPath.Replace("/pass", "") : uri.LocalPath;
+
+            if ((localPath == "/manager"))
+            {
+                var fallback = queryDictionary.Get("fallback");
+                var fallbackUrl = new Uri(fallback);
+                var fallbackQueryDictionary = System.Web.HttpUtility.ParseQueryString(fallbackUrl.Query);
+                var fallbackFqdn = fallbackQueryDictionary.Get("fqdn");
+
+                if (!string.IsNullOrEmpty(fallbackFqdn))
+                {
+                    await HandleLoginLink(fallbackFqdn);
+                } else
+                {
+                    await HandleManagerLink(fallback);
+                }
+            }
 
             if ((localPath == "/login" || localPath == "/onboarding") && !string.IsNullOrEmpty(fqdn))
             {

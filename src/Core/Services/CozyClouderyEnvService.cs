@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Bit.Core.Abstractions;
 using Flurl;
@@ -17,7 +17,7 @@ namespace Bit.Core.Services
 
         private const string LOGIN_RELATIVE_URI = "/v2/neutral/start";
 
-        private const string QUERY_STRING = "redirect_after_email=https%3A%2F%2Flinks.mycozy.cloud%2Fpass%2Fonboarding%3Ffallback%3Dcozypass%253A%252F%252Fpass%252Fonboarding&redirect_after_login=cozypass%3A%2F%2Fpass%2Flogin";
+        private const string QUERY_STRING = "app_will_ask_password=true&universallink_for_email=https%3A%2F%2Flinks.mycozy.cloud%2Fpass%2Fmanager&redirect_after_email=https%3A%2F%2Flinks.mycozy.cloud%2Fpass%2Fonboarding%3Ffallback%3Dcozypass%253A%252F%252Fpass%252Fonboarding&redirect_after_login=cozypass%3A%2F%2Fpass%2Flogin";
 
         private readonly IStorageService _storageService;
 
