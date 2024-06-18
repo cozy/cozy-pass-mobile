@@ -8,12 +8,18 @@ on:
 jobs:
   ios:
     name: Apple iOS
-    runs-on: macos-12
+    runs-on: macos-14
     steps:
+      - run: brew install --cask xamarin-ios
+        name: 'Install Xamarin.iOS package using Homebrew'
+
+      - run: brew install --cask xamarin-android
+        name: 'Install Xamarin.Android package using Homebrew'
+
       - name: Setup NuGet
         uses: nuget/setup-nuget@296fd3ccf8528660c91106efefe2364482f86d6f # v1.2.0
         with:
-          nuget-version: 5.9.0
+          nuget-version: 6.4.0
 
       - name: Print environment
         run: |
