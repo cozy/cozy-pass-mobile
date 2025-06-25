@@ -36,7 +36,7 @@ namespace Bit.Droid
         DataPathPrefix = "/pass",
         AutoVerify = true)]
     [Activity(
-        Label = "Cozy Pass",
+        Label = "Twake Pass",
         Icon = "@mipmap/ic_launcher",
         Theme = "@style/CozyTheme.Splash",
         MainLauncher = true,
