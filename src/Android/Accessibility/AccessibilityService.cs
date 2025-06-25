@@ -16,7 +16,7 @@ using Bit.Core.Utilities;
 
 namespace Bit.Droid.Accessibility
 {
-    [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Cozy Pass", Exported = true)]
+    [Service(Permission = Android.Manifest.Permission.BindAccessibilityService, Label = "Twake Pass", Exported = true)]
     [IntentFilter(new string[] { "android.accessibilityservice.AccessibilityService" })]
     [MetaData("android.accessibilityservice", Resource = "@xml/accessibilityservice")]
     [Register("io.cozy.pass.Accessibility.AccessibilityService")]
