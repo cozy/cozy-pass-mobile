@@ -30,6 +30,10 @@ The Cozy Pass mobile application is written in C# with Xamarin Android, Xamarin 
 - [Visual Studio](https://visualstudio.microsoft.com/)
 - [Xamarin](https://docs.microsoft.com/en-us/xamarin/get-started/installation/?pivots=windows)
 
+We need to use Xcode 16 to build the app if we want to be able to deploy it on the App Store. However, this version of Xcode is not supported by Visual Studio and Xamarin. So we need some fixes to make it work : 
+- Profiles not found : create a symlink as explained [here](https://stackoverflow.com/a/79404594)
+- AppThinning not found : copy AppThinning as explained [here](https://github.com/dotnet/macios/issues/20802#issuecomment-2394969129)
+
 **Run the app**
 
 - Open the solution file in Visual Studio.
