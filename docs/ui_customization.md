@@ -32,9 +32,3 @@ Another option is to load them into [ShapeShifter](https://shapeshifter.design/)
 In order to export pictures from Cozy specifications, two options are available:
 - Install [Android Vector Drawable plugin](https://www.figma.com/community/plugin/797369763563831541/Android-Vector-Drawable) on Figma and use it to export pictures
 - Export picutres as usual using SVG, import them in [ShapeShifter](https://shapeshifter.design/) and export them as `Vector Drawable`
-
-## Folder `cozy-customization`
-
-`cozy-customization` contains some tools to ease Cozy customization
-
-Those tools are not used anymore
