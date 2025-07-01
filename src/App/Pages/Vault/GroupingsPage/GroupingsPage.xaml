@@ -68,9 +68,23 @@
                 </controls:ExtendedStackLayout>
             </DataTemplate>
 
+            <DataTemplate x:Key="headerTemplate" x:DataType="pages:GroupingsPageListGroup">
+                <StackLayout
+                    Spacing="0" Padding="0" VerticalOptions="FillAndExpand"
+                    StyleClass="list-row-header-container, list-row-header-container-platform">
+                    <BoxView StyleClass="list-section-separator-top, list-section-separator-top-platform" />
+                    <StackLayout StyleClass="list-row-header, list-row-header-platform">
+                        <Label Text="{Binding Name}" StyleClass="list-header, list-header-platform" />
+                        <Label Text="{Binding ItemCount}" StyleClass="list-header-sub" />
+                    </StackLayout>
+                    <BoxView StyleClass="list-section-separator-bottom, list-section-separator-bottom-platform" />
+                </StackLayout>
+            </DataTemplate>
+
             <pages:GroupingsPageListItemSelector x:Key="listItemDataTemplateSelector"
                                                  CipherTemplate="{StaticResource cipherTemplate}"
-                                                 GroupTemplate="{StaticResource groupTemplate}" />
+                                                 GroupTemplate="{StaticResource groupTemplate}"
+                                                 HeaderTemplate="{StaticResource headerTemplate}" />
 
             <StackLayout x:Key="mainLayout" x:Name="_mainLayout">
                 <StackLayout
@@ -92,34 +106,12 @@
                     IsRefreshing="{Binding Refreshing}"
                     Command="{Binding RefreshCommand}">
                     <controls:ExtendedCollectionView
-                        ItemsSource="{Binding GroupedItems}"
+                        ItemsSource="{Binding FlatList}"
                         VerticalOptions="FillAndExpand"
                         ItemTemplate="{StaticResource listItemDataTemplateSelector}"
-                        IsGrouped="True"
                         SelectionMode="Single"
                         SelectionChanged="RowSelected"
-                        StyleClass="list, list-platform">
-
-                        <CollectionView.GroupHeaderTemplate>
-                            <DataTemplate x:DataType="pages:GroupingsPageListGroup">
-                                <StackLayout
-                                    Spacing="0" Padding="0" VerticalOptions="FillAndExpand"
-                                    StyleClass="list-row-header-container, list-row-header-container-platform">
-                                    <BoxView
-                                        StyleClass="list-section-separator-top, list-section-separator-top-platform" />
-                                    <StackLayout StyleClass="list-row-header, list-row-header-platform">
-                                        <Label
-                                            Text="{Binding Name}"
-                                            StyleClass="list-header, list-header-platform" />
-                                        <Label
-                                            Text="{Binding ItemCount}"
-                                            StyleClass="list-header-sub" />
-                                    </StackLayout>
-                                    <BoxView StyleClass="list-section-separator-bottom, list-section-separator-bottom-platform" />
-                                </StackLayout>
-                            </DataTemplate>
-                        </CollectionView.GroupHeaderTemplate>
-                    </controls:ExtendedCollectionView>
+                        StyleClass="list, list-platform" />
                 </RefreshView>
             </StackLayout>
         </ResourceDictionary>
