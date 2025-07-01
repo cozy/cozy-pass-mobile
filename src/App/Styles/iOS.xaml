@@ -106,6 +106,8 @@
                 Value="{DynamicResource ButtonTextColor}" />
         <Setter Property="FontSize"
                 Value="18" />
+        <Setter Property="CornerRadius"
+                Value="100" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -146,6 +148,8 @@
                 Value="18" />
         <Setter Property="FontAttributes"
                 Value="Bold" />
+        <Setter Property="CornerRadius"
+                Value="100" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -187,7 +191,7 @@
         <Setter Property="FontSize"
                 Value="18" />
         <Setter Property="CornerRadius"
-                Value="3" />
+                Value="100" />
         <Setter Property="Margin"
                 Value="0, 5, 0, 0" />
         <Setter Property="VisualStateManager.VisualStateGroups">
