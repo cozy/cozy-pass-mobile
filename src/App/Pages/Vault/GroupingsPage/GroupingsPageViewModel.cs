@@ -142,6 +142,7 @@ namespace Bit.App.Pages
         public Command RefreshCommand { get; set; }
         public Command<CipherView> CipherOptionsCommand { get; set; }
         public bool LoadedOnce { get; set; }
+        public ExtendedObservableCollection<object> FlatList { get; set; } = new ExtendedObservableCollection<object>();
 
         public async Task LoadAsync()
         {
@@ -277,6 +278,21 @@ namespace Bit.App.Pages
                     }, AppResources.Trash, _deletedCount, uppercaseGroupNames, false));
                 }
                 GroupedItems.ResetWithRange(groupedItems);
+
+                var flatList = new List<object>();
+                foreach (var group in groupedItems)
+                {
+                    flatList.Add(group); // header
+                    foreach (var item in group)
+                    {
+                        flatList.Add(item);
+                    }
+                }
+                FlatList.Clear();
+                foreach (var obj in flatList)
+                {
+                    FlatList.Add(obj);
+                }
             }
             finally
             {
