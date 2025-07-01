@@ -147,9 +147,6 @@
     <Compile Update="Styles\Black.xaml.cs">
       <DependentUpon>Black.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Styles\CozyInverted.xaml.cs">
-      <DependentUpon>CozyInverted.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Styles\Nord.xaml.cs">
       <DependentUpon>Nord.xaml</DependentUpon>
     </Compile>

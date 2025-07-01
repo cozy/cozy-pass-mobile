@@ -64,7 +64,6 @@ namespace Bit.App.Pages
 
         protected override async void OnAppearing()
         {
-            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             await _vm.InitAsync();
             if (!_inputFocused)

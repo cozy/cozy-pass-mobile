@@ -65,7 +65,6 @@ namespace Bit.App.Pages
 
         protected async override void OnAppearing()
         {
-            ThemeManager.SetInvertedTheme();
             base.OnAppearing();
             _broadcasterService.Subscribe(nameof(TwoFactorPage), (message) =>
             {

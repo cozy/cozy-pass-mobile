@@ -29,7 +29,6 @@ namespace Bit.iOS.Autofill
 
         public async override void ViewDidLoad()
         {
-            ThemeManager.UnsetInvertedTheme();
             base.ViewDidLoad();
             NavItem.Title = AppResources.Items;
             CancelBarButton.Title = AppResources.Cancel;
