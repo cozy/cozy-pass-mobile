@@ -47,11 +47,6 @@ namespace Bit.App.Utilities
                 resources.MergedDictionaries.Add(new Cozy());
                 UsingLightTheme = true;
             }
-            else if (name == "cozy_inverted")
-            {
-                resources.MergedDictionaries.Add(new CozyInverted());
-                UsingLightTheme = false;
-            }
             //*/
             else if(name == "light")
             {
@@ -86,35 +81,10 @@ namespace Bit.App.Utilities
             }
         }
 
-        // Cozy customization, handle Inverted theme
-        //*
-        public static void SetInvertedTheme()
-        {
-            IsInvertedTheme = true;
-            SetTheme(Device.RuntimePlatform == Device.Android, Application.Current.Resources);
-        }
-        public static void UnsetInvertedTheme()
-        {
-            IsInvertedTheme = false;
-            SetTheme(Device.RuntimePlatform == Device.Android, Application.Current.Resources);
-        }
-        //*/
-
         public static void SetTheme(bool android, ResourceDictionary resources)
         {
-            // Cozy customization, handle Inverted theme
-            /*
+
             SetThemeStyle(GetTheme(android), resources);
-            //*/
-            if (IsInvertedTheme)
-            {
-                SetThemeStyle("cozy_inverted", Application.Current.Resources);
-            }
-            else
-            {
-                SetThemeStyle(GetTheme(android), resources);
-            }
-            //*/
         }
 
         public static string GetTheme(bool android)

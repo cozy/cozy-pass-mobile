@@ -74,7 +74,6 @@ namespace Bit.App.Pages
             {
                 ResetToSendPage();
             }
-            ThemeManager.UnsetInvertedTheme();
         }
 
         public void ResetToVaultPage()

@@ -21,12 +21,6 @@ namespace Bit.App.Pages.Accounts
             InitializeComponent ();
         }
 
-        protected override void OnAppearing()
-        {
-            ThemeManager.UnsetInvertedTheme();
-            base.OnAppearing();
-        }
-
         private async void Close_Clicked(object sender, EventArgs e)
         {
             _messagingService.Send("showStatusBar", false);

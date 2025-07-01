@@ -34,7 +34,6 @@ namespace Bit.App.Pages
 
         protected async override void OnAppearing()
         {
-            ThemeManager.UnsetInvertedTheme();
             base.OnAppearing();
             if (!await AppHelpers.IsVaultTimeoutImmediateAsync())
             {
