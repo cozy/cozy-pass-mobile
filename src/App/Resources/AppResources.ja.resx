@@ -384,7 +384,7 @@
     <value>ウェブサイトを開く</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>私たちのウェブサイトでヘルプ、ニュース、問い合わせや Cozy Pass の詳しい使い方をチェックしてください。</value>
+    <value>私たちのウェブサイトでヘルプ、ニュース、問い合わせや Twake Pass の詳しい使い方をチェックしてください。</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>ウェブサイト</value>
@@ -406,7 +406,7 @@
     <value>App Extension</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Cozy Pass ユーザー補助サービスを使ってアプリやウェブサイトでログイン情報を自動入力します。</value>
+    <value>Twake Pass ユーザー補助サービスを使ってアプリやウェブサイトでログイン情報を自動入力します。</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>自動入力サービス</value>
@@ -415,19 +415,19 @@
     <value>あいまいな文字を省く</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass App Extension</value>
+    <value>Twake Pass App Extension</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
     <value>ログイン情報を保管庫に追加する一番簡単な方法はApp Extensionを使うことです。詳しくは「設定」画面に進んでください。</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Safari などのアプリで Cozy Pass を使ってログイン情報を自動入力します。</value>
+    <value>Safari などのアプリで Twake Pass を使ってログイン情報を自動入力します。</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Pass 自動入力サービス</value>
+    <value>Twake Pass 自動入力サービス</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Cozy Pass ユーザー補助サービスを使ってログイン情報を自動入力します。</value>
+    <value>Twake Pass ユーザー補助サービスを使ってログイン情報を自動入力します。</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>メールアドレスの変更</value>
@@ -473,7 +473,7 @@
     <value>アプリの拡張機能を有効化</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Safari では、共有アイコンを使って Cozy Pass を見つけてください（ヒント：メニューの一番下の行を右側にスクロール）</value>
+    <value>Safari では、共有アイコンを使って Twake Pass を見つけてください（ヒント：メニューの一番下の行を右側にスクロール）</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Safari やChrome などの対応アプリでログイン情報に簡単にアクセスできます。</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Safari と Chrome では、共有アイコンを使って Cozy Pass を見つけてください（ヒント：メニューの一番下の行を右側にスクロール）</value>
+    <value>Safari と Chrome では、共有アイコンを使って Twake Pass を見つけてください（ヒント：メニューの一番下の行を右側にスクロール）</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>メニューの Cozy Pass アイコンをタップして拡張機能を起動してください。</value>
+    <value>メニューの Twake Pass アイコンをタップして拡張機能を起動してください。</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Cozy Pass を Safari などのアプリで開くには、メニューの一番下の行の「詳細」をタップしてください。</value>
+    <value>Twake Pass を Safari などのアプリで開くには、メニューの一番下の行の「詳細」をタップしてください。</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>お気に入り</value>
@@ -510,7 +510,7 @@
     <value>アイテムのインポート</value>
   </data>
   <data name="ImportItemsConfirmation" xml:space="preserve">
-    <value>Cozy Pass.com ウェブ保管庫から一括でインポートできます。ウェブサイトを開きますか？</value>
+    <value>Twake Pass.com ウェブ保管庫から一括でインポートできます。ウェブサイトを開きますか？</value>
   </data>
   <data name="ImportItemsDescription" xml:space="preserve">
     <value>他のパスワード管理アプリからアイテムを一括インポートします。</value>
@@ -585,7 +585,7 @@
     <value>その他の設定</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>この拡張機能を使用する前に、メインの Cozy Pass アプリにログインしてください。</value>
+    <value>この拡張機能を使用する前に、メインの Twake Pass アプリにログインしてください。</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>なし</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>デフォルトのオプションはメインの Cozy Pass アプリのパスワード生成ツールから設定されます。</value>
+    <value>デフォルトのオプションはメインの Twake Pass アプリのパスワード生成ツールから設定されます。</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>オプション</value>
@@ -634,7 +634,7 @@
     <value>現在のパスワードを上書きしてよろしいですか?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass はプッシュ通知を使って自動的に保管庫を同期します。プッシュ通知を有効化するかどうかプロンプトが出たら「許可する」を押してください。</value>
+    <value>Twake Pass はプッシュ通知を使って自動的に保管庫を同期します。プッシュ通知を有効化するかどうかプロンプトが出たら「許可する」を押してください。</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -695,7 +695,7 @@
     <value>2段階認証</value>
   </data>
   <data name="TwoStepLoginConfirmation" xml:space="preserve">
-    <value>2段階認証を使うと、ログイン時にセキュリティキーや認証アプリ、SMS、電話やメールでの認証を必要にすることでアカウントをさらに安全に出来ます。2段階認証は Cozy Pass ウェブ保管庫で有効化できます。ウェブサイトを開きますか？</value>
+    <value>2段階認証を使うと、ログイン時にセキュリティキーや認証アプリ、SMS、電話やメールでの認証を必要にすることでアカウントをさらに安全に出来ます。2段階認証は Twake Pass ウェブ保管庫で有効化できます。ウェブサイトを開きますか？</value>
   </data>
   <data name="UnlockWith" xml:space="preserve">
     <value>{0}でロック解除</value>
@@ -714,7 +714,7 @@
     <value>アイテムの表示</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Pass ウェブ保管庫</value>
+    <value>Twake Pass ウェブ保管庫</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>認証アプリを無くしてしまった場合</value>
@@ -750,7 +750,7 @@
     <value>ユーザー補助設定を開く</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Android のユーザー補助設定で「Cozy Pass」をタッチしてください。</value>
+    <value>1. Android のユーザー補助設定で「Twake Pass」をタッチしてください。</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. トグルをオンにして、「OK」を押してください。</value>
@@ -964,7 +964,7 @@
     <value>セルフホスティング環境</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>セルフホスティングしている Cozy Pass のベース URL を指定してください。</value>
+    <value>セルフホスティングしている Twake Pass のベース URL を指定してください。</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>サーバー URL</value>
@@ -1126,7 +1126,7 @@
     <value>アイコンのサーバー URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Cozy Pass で自動入力</value>
+    <value>Twake Pass で自動入力</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>保管庫はロックされています</value>
@@ -1150,10 +1150,10 @@
     <value>自動入力ユーザー補助サービス</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Cozy Pass 自動入力サービスは Android の Autofill Framework を使ってログイン情報やクレジットカード、ID情報をお使いのアプリに入力するのを補助します。</value>
+    <value>Twake Pass 自動入力サービスは Android の Autofill Framework を使ってログイン情報やクレジットカード、ID情報をお使いのアプリに入力するのを補助します。</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Cozy Pass 自動入力サービスを使ってログイン情報やクレジットカード、ID情報などをアプリで自動入力します。</value>
+    <value>Twake Pass 自動入力サービスを使ってログイン情報やクレジットカード、ID情報などをアプリで自動入力します。</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>自動入力設定を開く</value>
@@ -1266,7 +1266,7 @@
     <value>自動入力を有効化しました！</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>自動入力を使うには、まず Cozy Pass アプリでログインしてください。</value>
+    <value>自動入力を使うには、まず Twake Pass アプリでログインしてください。</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>アプリやサイトにログインするときに、ログイン情報に簡単にキーボードでアクセス可能となります。</value>
@@ -1293,13 +1293,13 @@
     <value>4. 自動入力を有効化</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. 「Cozy Pass」を選択</value>
+    <value>5. 「Twake Pass」を選択</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>パスワード自動入力</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>ログイン情報を保管庫に加える一番簡単な方法は、Cozy Passのパスワード自動入力拡張機能を使うことです。詳しい情報は「設定」画面でご覧ください。</value>
+    <value>ログイン情報を保管庫に加える一番簡単な方法は、Twake Passのパスワード自動入力拡張機能を使うことです。詳しい情報は「設定」画面でご覧ください。</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>無効なメールアドレスです。</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Passでは、組織アカウントを使用して保管庫を他の人と共有できます。 詳細はbitwarden.comのウェブサイトをご覧ください。</value>
+    <value>Twake Passでは、組織アカウントを使用して保管庫を他の人と共有できます。 詳細はbitwarden.comのウェブサイトをご覧ください。</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>保管庫のエクスポート</value>
@@ -1456,7 +1456,7 @@
     <value>30分</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Cozy Pass のロックを解除するための PIN コードを設定します。アプリから完全にログアウトすると、PIN 設定はリセットされます。</value>
+    <value>Twake Pass のロックを解除するための PIN コードを設定します。アプリから完全にログアウトすると、PIN 設定はリセットされます。</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>{0} として {1} にログインしました。</value>
@@ -1523,7 +1523,7 @@
     <value>終了</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Cozy Pass を終了しますか？</value>
+    <value>Twake Pass を終了しますか？</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>アプリを再起動したときにマスターパスワードでのロック解除を必須としますか？</value>
@@ -1548,7 +1548,7 @@
     <value>アプリ再起動時</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>自動入力を使うと、他のウェブサイトやアプリから Bitwarden 保管庫に、より安全・簡単にアクセスできます。現在 Cozy Pass の自動入力サービスを有効にしていないようです。設定画面で自動入力を有効化できます。</value>
+    <value>自動入力を使うと、他のウェブサイトやアプリから Bitwarden 保管庫に、より安全・簡単にアクセスできます。現在 Twake Pass の自動入力サービスを有効にしていないようです。設定画面で自動入力を有効化できます。</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>テーマの変更はアプリを再起動すると反映されます。</value>

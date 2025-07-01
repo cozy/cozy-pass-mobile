@@ -384,7 +384,7 @@
     <value>Ghé thăm trang web của chúng tôi</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Truy cập trang web của chúng tôi để nhận trợ giúp, tin tức, địa chỉ email liên lạc và tìm hiểu thêm về cách sử dụng Cozy Pass.</value>
+    <value>Truy cập trang web của chúng tôi để nhận trợ giúp, tin tức, địa chỉ email liên lạc và tìm hiểu thêm về cách sử dụng Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Trang web</value>
@@ -406,7 +406,7 @@
     <value>Phần mở rộng ứng dụng</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Cấp quyền truy cập sử dụng để Cozy Pass tự động điền thông tin đăng nhập của bạn vào các ứng dụng và trang web.</value>
+    <value>Cấp quyền truy cập sử dụng để Twake Pass tự động điền thông tin đăng nhập của bạn vào các ứng dụng và trang web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Tự động điền tiêu chuẩn</value>
@@ -415,31 +415,31 @@
     <value>Tránh các ký tự không rõ ràng</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Phần mở rộng Cozy Pass</value>
+    <value>Phần mở rộng Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Cách dễ nhất để thêm đăng nhập mới vào kho của bạn là từ Phần mở rộng Cozy Pass. Tìm hiểu thêm về cách sử dụng Phần mở rộng Cozy Pass bằng cách điều hướng đến màn hình "Cài đặt".</value>
+    <value>Cách dễ nhất để thêm đăng nhập mới vào kho của bạn là từ Phần mở rộng Twake Pass. Tìm hiểu thêm về cách sử dụng Phần mở rộng Twake Pass bằng cách điều hướng đến màn hình "Cài đặt".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Sử dụng Cozy Pass trong Safari và các ứng dụng khác để tự động điền thông tin đăng nhập của bạn.</value>
+    <value>Sử dụng Twake Pass trong Safari và các ứng dụng khác để tự động điền thông tin đăng nhập của bạn.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Dịch vụ tự động điền Cozy Pass</value>
+    <value>Dịch vụ tự động điền Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Cấp quyền truy cập sử dụng để Cozy Pass tự động điền thông tin đăng nhập giúp bạn.</value>
+    <value>Cấp quyền truy cập sử dụng để Twake Pass tự động điền thông tin đăng nhập giúp bạn.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Thay đổi email</value>
   </data>
   <data name="ChangeEmailConfirmation" xml:space="preserve">
-    <value>Bạn có thể thay đổi địa chỉ email trong trang web Cozy Pass. Bạn có muốn truy cập bitwarden.com bây giờ?</value>
+    <value>Bạn có thể thay đổi địa chỉ email trong trang web Twake Pass. Bạn có muốn truy cập bitwarden.com bây giờ?</value>
   </data>
   <data name="ChangeMasterPassword" xml:space="preserve">
     <value>Thay đổi mật khẩu</value>
   </data>
   <data name="ChangePasswordConfirmation" xml:space="preserve">
-    <value>Bạn có thể thay đổi mật khẩu chủ trong trang web Cozy Pass. Bạn có muốn truy cập bitwarden.com bây giờ?</value>
+    <value>Bạn có thể thay đổi mật khẩu chủ trong trang web Twake Pass. Bạn có muốn truy cập bitwarden.com bây giờ?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Đóng</value>
@@ -473,7 +473,7 @@
     <value>Bật phần mở rộng ứng dụng</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Trong Safari, tìm Cozy Pass bằng cách sử dụng biểu tượng chia sẻ (gợi ý: di chuyển sang phải ở cuối cùng của trình đơn).</value>
+    <value>Trong Safari, tìm Twake Pass bằng cách sử dụng biểu tượng chia sẻ (gợi ý: di chuyển sang phải ở cuối cùng của trình đơn).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Thông tin đăng nhập của bạn giờ đây có thể dễ dàng truy cập từ Safari, Chrome và các ứng dụng được hỗ trợ khác.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Trong Safari và Chrome, tìm Cozy Pass bằng cách sử dụng biểu tượng chia sẻ (gợi ý: di chuyển sang phải ở cuối cùng của trình đơn chia sẻ).</value>
+    <value>Trong Safari và Chrome, tìm Twake Pass bằng cách sử dụng biểu tượng chia sẻ (gợi ý: di chuyển sang phải ở cuối cùng của trình đơn chia sẻ).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Chạm vào biểu tượng Cozy Pass trong trình đơn để khởi chạy phần mở rộng.</value>
+    <value>Chạm vào biểu tượng Twake Pass trong trình đơn để khởi chạy phần mở rộng.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Để bật Cozy Pass trong Safari và các ứng dụng khác, nhấn vào biểu tượng "thêm" ở hàng dưới cùng của trình đơn.</value>
+    <value>Để bật Twake Pass trong Safari và các ứng dụng khác, nhấn vào biểu tượng "thêm" ở hàng dưới cùng của trình đơn.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Yêu thích</value>
@@ -504,13 +504,13 @@
     <value>Tạo mật khẩu</value>
   </data>
   <data name="GetPasswordHint" xml:space="preserve">
-    <value>Nhận gợi ý mật khẩu Cozy Pass</value>
+    <value>Nhận gợi ý mật khẩu Twake Pass</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Nhập mục</value>
   </data>
   <data name="ImportItemsConfirmation" xml:space="preserve">
-    <value>Bạn có thể nhập mật khẩu hàng loạt trên trang chủ Cozy Pass. Bạn có muốn truy cập bitwarden.com bây giờ?</value>
+    <value>Bạn có thể nhập mật khẩu hàng loạt trên trang chủ Twake Pass. Bạn có muốn truy cập bitwarden.com bây giờ?</value>
   </data>
   <data name="ImportItemsDescription" xml:space="preserve">
     <value>Dễ dàng nhập toàn bộ mật khẩu của bạn từ các ứng dụng quản lý mật khẩu khác.</value>
@@ -585,7 +585,7 @@
     <value>Cài đặt Khác</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Bạn phải đăng nhập vào ứng dụng Cozy Pass trước khi sử dụng phần mở rộng.</value>
+    <value>Bạn phải đăng nhập vào ứng dụng Twake Pass trước khi sử dụng phần mở rộng.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Không bao giờ</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Các tùy chọn mặc định được thiết lập trong trình tạo mật khẩu của ứng dụng Cozy Pass.</value>
+    <value>Các tùy chọn mặc định được thiết lập trong trình tạo mật khẩu của ứng dụng Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Tùy chọn</value>
@@ -634,7 +634,7 @@
     <value>Bạn có chắc chắn muốn ghi đè mật khẩu hiện tại không?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass giữ kho mật khẩu của bạn luôn được đồng bộ tự động hóa bằng cách sử dụng thông báo đẩy. Để mang lại trải nghiệm tốt nhất, hãy chọn "Đồng ý" trên bảng thông báo sau khi được yêu cầu bật thông báo đẩy.</value>
+    <value>Twake Pass giữ kho mật khẩu của bạn luôn được đồng bộ tự động hóa bằng cách sử dụng thông báo đẩy. Để mang lại trải nghiệm tốt nhất, hãy chọn "Đồng ý" trên bảng thông báo sau khi được yêu cầu bật thông báo đẩy.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -695,7 +695,7 @@
     <value>Xác thực hai lớp</value>
   </data>
   <data name="TwoStepLoginConfirmation" xml:space="preserve">
-    <value>Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh đăng nhập của bạn bằng khóa bảo mật, ứng dụng xác thực, tin nhắn, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong trang web Cozy Pass. Bạn có muốn ghé thăm bitwarden.com bây giờ?</value>
+    <value>Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh đăng nhập của bạn bằng khóa bảo mật, ứng dụng xác thực, tin nhắn, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong trang web Twake Pass. Bạn có muốn ghé thăm bitwarden.com bây giờ?</value>
   </data>
   <data name="UnlockWith" xml:space="preserve">
     <value>Mở khóa với {0}</value>
@@ -714,7 +714,7 @@
     <value>Xem mục</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Trang web Cozy Pass</value>
+    <value>Trang web Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Mất ứng dụng xác thực?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Khi bạn chọn một trường nhập liệu và thấy thông báo tự động điền của Cozy Pass, bạn có thể chạp vào nó để mở tự động điền tiêu chuẩn.</value>
+    <value>Khi bạn chọn một trường nhập liệu và thấy thông báo tự động điền của Twake Pass, bạn có thể chạp vào nó để mở tự động điền tiêu chuẩn.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Chạm vào thông báo này để tự động điền thông tin đăng nhập từ kho của bạn.</value>
@@ -750,7 +750,7 @@
     <value>Mở cài đặt trợ năng</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Trên màn hình Cài đặt Trợ năng, chọn "Cozy Pass" trong phần 'Các dịch vụ đã tải xuống'.</value>
+    <value>1. Trên màn hình Cài đặt Trợ năng, chọn "Twake Pass" trong phần 'Các dịch vụ đã tải xuống'.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Gạt công tắc và nhấn OK để chấp nhận.</value>
@@ -765,7 +765,7 @@
     <value>Trạng thái</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Cách dễ nhất để thêm một đăng nhập mới vào kho của bạn là bằng dịch vụ Tự động điền của Cozy Pass. Tìm hiểu thêm về cách sử dụng dịch vụ Tự động điền của Cozy Pass trong trang 'Cài đặt'.</value>
+    <value>Cách dễ nhất để thêm một đăng nhập mới vào kho của bạn là bằng dịch vụ Tự động điền của Twake Pass. Tìm hiểu thêm về cách sử dụng dịch vụ Tự động điền của Twake Pass trong trang 'Cài đặt'.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Tự động điền</value>
@@ -964,7 +964,7 @@
     <value>Môi trường độc lập</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Chỉ định URL cơ sở on-premise của bạn để cài đặt máy chủ Cozy Pass.</value>
+    <value>Chỉ định URL cơ sở on-premise của bạn để cài đặt máy chủ Twake Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Địa chỉ máy chủ</value>
@@ -1126,7 +1126,7 @@
     <value>Biểu tượng địa chỉ máy chủ</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Tự động điền với Cozy Pass</value>
+    <value>Tự động điền với Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Kho đã khóa</value>
@@ -1150,10 +1150,10 @@
     <value>Tự động điền bằng trợ năng</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Dịch vụ tự động điền của Cozy Pass sử dụng Bộ khung Tự động điền của Android để hỗ trợ điền thông tin đăng nhập, thẻ tín dụng và thông tin danh tính vào các ứng dụng khác trên thiết bị của bạn.</value>
+    <value>Dịch vụ tự động điền của Twake Pass sử dụng Bộ khung Tự động điền của Android để hỗ trợ điền thông tin đăng nhập, thẻ tín dụng và thông tin danh tính vào các ứng dụng khác trên thiết bị của bạn.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Sử dụng dịch vụ tự động điền của Cozy Pass để điền thông tin đăng nhập, thẻ tín dụng và thông tin danh tính vào các ứng dụng khác.</value>
+    <value>Sử dụng dịch vụ tự động điền của Twake Pass để điền thông tin đăng nhập, thẻ tín dụng và thông tin danh tính vào các ứng dụng khác.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Mở cài đặt Tự động điền</value>
@@ -1266,7 +1266,7 @@
     <value>Tự động điền đã được kích hoạt!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Bạn phải đăng nhập vào ứng dụng Cozy Pass trước khi sử dụng Tự động điền.</value>
+    <value>Bạn phải đăng nhập vào ứng dụng Twake Pass trước khi sử dụng Tự động điền.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Tên và mật khẩu có quyền tự động điền từ bàn phím khi bạn sử dụng ứng dụng hay website.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Mở Tự động điền mật khẩu</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Chọn "Cozy Pass"</value>
+    <value>5. Chọn "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Tự động điền mật khẩu</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Cách dễ nhất để thêm đăng nhập mới vào kho của bạn là bằng cách sử dụng tiện ích mở rộng Tự động điền mật khẩu của Cozy Pass. Tìm hiểu thêm về cách sử dụng tiện ích mở rộng Tự động điền mật khẩu của Cozy Pass bằng cách điều hướng đến màn hình "Cài đặt".</value>
+    <value>Cách dễ nhất để thêm đăng nhập mới vào kho của bạn là bằng cách sử dụng tiện ích mở rộng Tự động điền mật khẩu của Twake Pass. Tìm hiểu thêm về cách sử dụng tiện ích mở rộng Tự động điền mật khẩu của Twake Pass bằng cách điều hướng đến màn hình "Cài đặt".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Địa chỉ email không hợp lệ.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Twake Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Trích xuất kho</value>
@@ -1456,7 +1456,7 @@
     <value>30 phút</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Đặt mã PIN của bạn để mở khóa Cozy Pass. Cài đặt mã PIN của bạn sẽ bị xóa nếu bạn hoàn toàn đăng xuất khỏi ứng dụng.</value>
+    <value>Đặt mã PIN của bạn để mở khóa Twake Pass. Cài đặt mã PIN của bạn sẽ bị xóa nếu bạn hoàn toàn đăng xuất khỏi ứng dụng.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Đã đăng nhập là {0} trên {1}</value>
@@ -1523,7 +1523,7 @@
     <value>Thoát</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Bạn có chắc muốn thoát Cozy Pass?</value>
+    <value>Bạn có chắc muốn thoát Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your password when the application is restarted?</value>
@@ -1548,7 +1548,7 @@
     <value>Khi khởi động lại ứng dụng</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Tự động điền giúp dễ dàng an toàn truy cập kho Cozy Pass của bạn từ các trang web khác và các ứng dụng. Có vẻ như không mở chức năng tự động điền cho Cozy Pass. Mở chức năng tự động điền cho Cozy Pass ở màn hình "Cài đặt".</value>
+    <value>Tự động điền giúp dễ dàng an toàn truy cập kho Twake Pass của bạn từ các trang web khác và các ứng dụng. Có vẻ như không mở chức năng tự động điền cho Twake Pass. Mở chức năng tự động điền cho Twake Pass ở màn hình "Cài đặt".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Thay đổi về giao diện của bạn sẽ được áp dụng khi ứng dụng khởi động lại.</value>

@@ -406,7 +406,7 @@
     <value>Uygulama uzantısı</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Uygulamalarda ve web'de giriş bilgilerinizi otomatik doldurmak için Cozy Pass erişilebilirlik hizmetini kullanabilirsiniz.</value>
+    <value>Uygulamalarda ve web'de giriş bilgilerinizi otomatik doldurmak için Twake Pass erişilebilirlik hizmetini kullanabilirsiniz.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Otomatik doldurma hizmeti</value>
@@ -415,16 +415,16 @@
     <value>Okurken karışabilecek karakterleri kullanma</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass Uygulama Uzantısı</value>
+    <value>Twake Pass Uygulama Uzantısı</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Cozy Pass uygulama uzantısıdır. Cozy Pass uygulama uzantısı hakkında daha fazla bilgi almak için "Ayarlar" ekranına bakabilirsiniz.</value>
+    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Twake Pass uygulama uzantısıdır. Twake Pass uygulama uzantısı hakkında daha fazla bilgi almak için "Ayarlar" ekranına bakabilirsiniz.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Giriş bilgilerinizi otomatik doldurmak için Safari'de ve diğer uygulamalarda Cozy Pass'ı kullanın.</value>
+    <value>Giriş bilgilerinizi otomatik doldurmak için Safari'de ve diğer uygulamalarda Twake Pass'ı kullanın.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Pass otomatik doldurma hizmeti</value>
+    <value>Twake Pass otomatik doldurma hizmeti</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Giriş bilgilerinizi otomatik olarak doldurmak için Bitwarden erişilebilirlik hizmetini kullanabilirsiniz.</value>
@@ -714,7 +714,7 @@
     <value>Kaydı görüntüle</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Pass web kasası</value>
+    <value>Twake Pass web kasası</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Kimlik doğrulama uygulamanızı kayıp mı ettiniz?</value>
@@ -765,7 +765,7 @@
     <value>Durum</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Cozy Pass Otomatik Doldurma Hizmeti'dir. Bu özellik hakkında daha fazla bilgi almak için "Ayarlar" ekranına gidin.</value>
+    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Twake Pass Otomatik Doldurma Hizmeti'dir. Bu özellik hakkında daha fazla bilgi almak için "Ayarlar" ekranına gidin.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Otomatik doldur</value>
@@ -1266,7 +1266,7 @@
     <value>Otomatik doldurma etkinleştirildi!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Otomatik doldurmayı kullanabilmek için Cozy Pass ana uygulamasına giriş yapmalısınız.</value>
+    <value>Otomatik doldurmayı kullanabilmek için Twake Pass ana uygulamasına giriş yapmalısınız.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Uygulamalara ve web sitelerine giriş yaparken artık hesaplarınıza klavyenizden kolayca ulaşabilirsiniz.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Otomatik doldurmayı etkinleştirin</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. "Cozy Pass"ı seçin</value>
+    <value>5. "Twake Pass"ı seçin</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Otomatik parola doldurma</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Cozy Pass Otomatik Parola Doldurma uzantısını kullanmaktır. Cozy Pass Otomatik Parola Doldurma uzantısı hakkında daha fazla bilgi almak için "Ayarlar" ekranına bakabilirsiniz.</value>
+    <value>Kasanıza yeni hesaplar eklemenin en kolay yolu Twake Pass Otomatik Parola Doldurma uzantısını kullanmaktır. Twake Pass Otomatik Parola Doldurma uzantısı hakkında daha fazla bilgi almak için "Ayarlar" ekranına bakabilirsiniz.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Geçersiz e-posta adresi.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass bir kuruluş hesabı kullanarak başkalarıyla kasanızı paylaşmanızı sağlar. Daha fazla bilgi için bitwarden.com sitesini ziyaret etmek ister misiniz?</value>
+    <value>Twake Pass bir kuruluş hesabı kullanarak başkalarıyla kasanızı paylaşmanızı sağlar. Daha fazla bilgi için bitwarden.com sitesini ziyaret etmek ister misiniz?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Kasayı dışa aktar</value>
@@ -1456,7 +1456,7 @@
     <value>30 dakika</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Cozy Pass'ı açarken kullanacağınız PIN kodunu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır.</value>
+    <value>Twake Pass'ı açarken kullanacağınız PIN kodunu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>{1} sitesine {0} olarak giriş yapıldı.</value>
@@ -1523,7 +1523,7 @@
     <value>Çıkış</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Cozy Pass'dan çıkmak istediğinize emin misiniz?</value>
+    <value>Twake Pass'dan çıkmak istediğinize emin misiniz?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Uygulama yeniden başlatılınca ana parola girilmesine zorunlu tutmak ister misiniz?</value>
@@ -1548,7 +1548,7 @@
     <value>Uygulama yeniden başlatılınca</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Otomatik doldurma, web sitelerinden ve uygulamalardan Cozy Pass kasanıza güvenle erişmenizi kolaylaştırır. Cozy Pass otomatik doldurma hizmetini henüz etkinleştirmemişsiniz. "Ayarlar" ekranından otomatik doldurmayı etkinleştirin.</value>
+    <value>Otomatik doldurma, web sitelerinden ve uygulamalardan Twake Pass kasanıza güvenle erişmenizi kolaylaştırır. Twake Pass otomatik doldurma hizmetini henüz etkinleştirmemişsiniz. "Ayarlar" ekranından otomatik doldurmayı etkinleştirin.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Tema değişiklikleriniz uygulama yeniden başlatılınca uygulanacaktır.</value>

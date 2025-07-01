@@ -1293,7 +1293,7 @@
     <value>4. Включете автоматичното дописване (AutoFill)</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Изберете „Битуорден“ (Cozy Pass)</value>
+    <value>5. Изберете „Битуорден“ (Twake Pass)</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Автоматично дописване на пароли</value>

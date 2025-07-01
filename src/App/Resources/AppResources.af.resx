@@ -384,7 +384,7 @@
     <value>Besoek ons webwerf</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Besoek ons webwerf vir hulp, nuus, om ’n e-pos aan ons te stuur en/of om meer te leer oor die gebruik van Cozy Pass.</value>
+    <value>Besoek ons webwerf vir hulp, nuus, om ’n e-pos aan ons te stuur en/of om meer te leer oor die gebruik van Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Webwerf</value>
@@ -406,7 +406,7 @@
     <value>Toepuitbreiding</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Gebruik die Cozy Pass toeganklikheidsdiens om u aantekeninge oor toeps en die web heen outomaties in te vul.</value>
+    <value>Gebruik die Twake Pass toeganklikheidsdiens om u aantekeninge oor toeps en die web heen outomaties in te vul.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Outovuldiens</value>
@@ -415,19 +415,19 @@
     <value>Vermy dubbelsinnige karakters</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass toepuitbreiding</value>
+    <value>Twake Pass toepuitbreiding</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Die eenvoudigste manier om nuwe aantekeninge tot u kluis toe te voeg is vanuit die Cozy Pass-toepuitbreiding. Leer meer oor die gebruik van die Cozy Pass-toepuitbreiding in “Instellings”.</value>
+    <value>Die eenvoudigste manier om nuwe aantekeninge tot u kluis toe te voeg is vanuit die Twake Pass-toepuitbreiding. Leer meer oor die gebruik van die Twake Pass-toepuitbreiding in “Instellings”.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Gebruik Cozy Pass in Safari en ander toeps om u aantekeninge outomaties in te vul.</value>
+    <value>Gebruik Twake Pass in Safari en ander toeps om u aantekeninge outomaties in te vul.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Pass Outovuldiens</value>
+    <value>Twake Pass Outovuldiens</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Gebruik die Cozy Pass toeganklikheidsdiens om u aantekeninge outomaties in te vul.</value>
+    <value>Gebruik die Twake Pass toeganklikheidsdiens om u aantekeninge outomaties in te vul.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Verander e-pos</value>
@@ -473,7 +473,7 @@
     <value>Aktiveer toepuitbreiding</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>In Safari vind u Cozy Pass onder die Deel-piktogram (wenk: rol na regs op die onderste ry van het kieslys).</value>
+    <value>In Safari vind u Twake Pass onder die Deel-piktogram (wenk: rol na regs op die onderste ry van het kieslys).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>U aantekeninge is nou maklik bereikbaar vanuit Safari, Chrome en ander ondersteunde toeps.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>In Safari en Chrome vind u Cozy Pass onder die Deel-piktogram (wenk: rol na regs op die onderste ry van het kieslys).</value>
+    <value>In Safari en Chrome vind u Twake Pass onder die Deel-piktogram (wenk: rol na regs op die onderste ry van het kieslys).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Tik op die Cozy Pass-ikoon in die kieslys om die uitbreiding te lanseer.</value>
+    <value>Tik op die Twake Pass-ikoon in die kieslys om die uitbreiding te lanseer.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>D.m.v. die “meer”-piktogram op die onderste ry van die kieslys kan u Cozy Pass in Safari en ander toeps aktiveer.</value>
+    <value>D.m.v. die “meer”-piktogram op die onderste ry van die kieslys kan u Twake Pass in Safari en ander toeps aktiveer.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Gunsteling</value>
@@ -585,7 +585,7 @@
     <value>Nog instellings</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>U moet op die hoof-Cozy Pass-toep aanteken alvorens u die uitbreiding kan gebruik.</value>
+    <value>U moet op die hoof-Twake Pass-toep aanteken alvorens u die uitbreiding kan gebruik.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Nooit</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Opsieverstekke is vanaf die Cozy Pass-toep se wagwoordgenereerder instelbaar.</value>
+    <value>Opsieverstekke is vanaf die Twake Pass-toep se wagwoordgenereerder instelbaar.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opsies</value>
@@ -634,7 +634,7 @@
     <value>Is u seker u wil oor die huidige wagwoord skryf?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass hou u kluis outomaties gesinchroniseer d.m.v. stootkennisgewings. Kies “Laat toe” wanneer gevra word om stootkennisgewings te aktiveer, vir die beste moontlike ervaring.</value>
+    <value>Twake Pass hou u kluis outomaties gesinchroniseer d.m.v. stootkennisgewings. Kies “Laat toe” wanneer gevra word om stootkennisgewings te aktiveer, vir die beste moontlike ervaring.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Bekyk Item</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Pass-webkluis</value>
+    <value>Twake Pass-webkluis</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Het u u waarmerktoep verloor?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Wanneer u ’n toevoerveld kies en ’n Cozy Pass-outovuloorleg sien, kan u daarop tik om die outovuldiens te lanseer.</value>
+    <value>Wanneer u ’n toevoerveld kies en ’n Twake Pass-outovuloorleg sien, kan u daarop tik om die outovuldiens te lanseer.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Tik hierdie kennisgewing om ’n item vanuit u kluis outomaties in te vul.</value>
@@ -750,7 +750,7 @@
     <value>Open toeganklikheidsinstellings</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Kies Cozy Pass onder die Dienste-kop in Android se toeganklikheidsinstellings.</value>
+    <value>1. Kies Twake Pass onder die Dienste-kop in Android se toeganklikheidsinstellings.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Wissel die skakelaar en kies Goed om te aanvaar.</value>
@@ -765,7 +765,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Die eenvoudigste manier om nuwe aantekeninge tot u kluis toe te voeg is vanuit die Cozy Pass-outovuldiens. Leer meer oor die gebruik van die Cozy Pass-outovuldiens in “Instellings”.</value>
+    <value>Die eenvoudigste manier om nuwe aantekeninge tot u kluis toe te voeg is vanuit die Twake Pass-outovuldiens. Leer meer oor die gebruik van die Twake Pass-outovuldiens in “Instellings”.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Outovul</value>
@@ -964,7 +964,7 @@
     <value>Selfgehuisveste omgewing</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Spesifiseer die basisbronadres van u selfgehuisveste Cozy Pass-installasie.</value>
+    <value>Spesifiseer die basisbronadres van u selfgehuisveste Twake Pass-installasie.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Bedienerbronadres</value>
@@ -1126,7 +1126,7 @@
     <value>Ikoonbedienerbronadres</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Outovul met Cozy Pass</value>
+    <value>Outovul met Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Kluis is vergrendel</value>
@@ -1150,10 +1150,10 @@
     <value>Outovul Toeganklikheidsdiens</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Die Cozy Pass-outovuldiens gebruik die Android-outovulraamwerk om te help met die invul van aantekeninge, kredietkaarte en identiteitsinligting in ander toeps op u toestel.</value>
+    <value>Die Twake Pass-outovuldiens gebruik die Android-outovulraamwerk om te help met die invul van aantekeninge, kredietkaarte en identiteitsinligting in ander toeps op u toestel.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Gebruik Cozy Pass se outovuldiens om aantekeninge, kredietkaarte en identiteitsinligting in ander toeps in te vul.</value>
+    <value>Gebruik Twake Pass se outovuldiens om aantekeninge, kredietkaarte en identiteitsinligting in ander toeps in te vul.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Open outovulinstellings</value>
@@ -1266,7 +1266,7 @@
     <value>Outovul geaktiveer!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>U moet op die hoof-Cozy Pass-toep aanteken alvorens u Outovul kan gebruik.</value>
+    <value>U moet op die hoof-Twake Pass-toep aanteken alvorens u Outovul kan gebruik.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>U aantekeninge is nou maklik bereikbaar vanaf u toetsbord terwyl op toeps en webwerwe aangeteken word.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Aktiveer Outovul</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Kies “Cozy Pass”</value>
+    <value>5. Kies “Twake Pass”</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Wagwoord-outovul</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Die eenvoudigste manier om nuwe aantekeninge tot u kluis toe te voeg is deur gebruik te maak van die Cozy Pass wagwoordoutovuluitbreiding. Leer meer oor die gebruik van die Cozy Pass wagwoordoutovuluitbreiding in “Instellings”.</value>
+    <value>Die eenvoudigste manier om nuwe aantekeninge tot u kluis toe te voeg is deur gebruik te maak van die Twake Pass wagwoordoutovuluitbreiding. Leer meer oor die gebruik van die Twake Pass wagwoordoutovuluitbreiding in “Instellings”.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Ongeldige e-posadres.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Twake Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Stuur kluis uit</value>
@@ -1456,7 +1456,7 @@
     <value>30 minute</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Stel u PIN-kode in om Cozy Pass te ontgrendel. U PIN-kode word heringestel indien u ooit volledig by die toep uitteken.</value>
+    <value>Stel u PIN-kode in om Twake Pass te ontgrendel. U PIN-kode word heringestel indien u ooit volledig by die toep uitteken.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Op {0} aangeteken as {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Verlaat</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Is u seker u wil Cozy Pass verlaat?</value>
+    <value>Is u seker u wil Twake Pass verlaat?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Wil u vereis dat met die hoofwagwoord ontgrendel word wanneer die toep geherlanseer is?</value>
@@ -1548,7 +1548,7 @@
     <value>Nadat toep herbegin is</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Outovul vereenvoudig veilige toegang tot u Cozy Pass-kluis vanuit ander webwerwe en toeps. Dit kom voor of u nog nie ’n outovuldiens vir Cozy Pass geaktiveer het nie. Aktiveer outovul vir Cozy Pass in die “Instellings”.</value>
+    <value>Outovul vereenvoudig veilige toegang tot u Twake Pass-kluis vanuit ander webwerwe en toeps. Dit kom voor of u nog nie ’n outovuldiens vir Twake Pass geaktiveer het nie. Aktiveer outovul vir Twake Pass in die “Instellings”.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>U temaveranderinge word toegepas wanneer die toep herbegin word.</value>

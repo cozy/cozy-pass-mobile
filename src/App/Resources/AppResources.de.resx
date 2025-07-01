@@ -384,7 +384,7 @@
     <value>Besuche unsere Website</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Besuche unsere Webseite um Hilfe zu erhalten, Neuigkeiten zu erfahren, Kontakt aufzunehmen und mehr über die Verwendung von Cozy Pass zu lernen.</value>
+    <value>Besuche unsere Webseite um Hilfe zu erhalten, Neuigkeiten zu erfahren, Kontakt aufzunehmen und mehr über die Verwendung von Twake Pass zu lernen.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Webseite</value>
@@ -406,7 +406,7 @@
     <value>App Erweiterung</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Verwende den Cozy Pass Dienst in den Bedienungshilfen, um deine Zugangsdaten in Apps und im Web automatisch ausfüllen zu lassen.</value>
+    <value>Verwende den Twake Pass Dienst in den Bedienungshilfen, um deine Zugangsdaten in Apps und im Web automatisch ausfüllen zu lassen.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Auto-Ausfüllen Funktion</value>
@@ -415,31 +415,31 @@
     <value>Mehrdeutige Zeichen vermeiden</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass App Erweiterung</value>
+    <value>Twake Pass App Erweiterung</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Die einfachste Möglichkeit, neue Anmeldedaten zu deinemTresor hinzuzufügen, ist die Cozy Pass App Erweiterung. Erfahre mehr über die Cozy Pass App Erweiterung, indem du zu den "Einstellungen" wechselst.</value>
+    <value>Die einfachste Möglichkeit, neue Anmeldedaten zu deinemTresor hinzuzufügen, ist die Twake Pass App Erweiterung. Erfahre mehr über die Twake Pass App Erweiterung, indem du zu den "Einstellungen" wechselst.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Nutze Cozy Pass in Safari und anderen Apps, um Zugangsdaten automatisch einzufügen.</value>
+    <value>Nutze Twake Pass in Safari und anderen Apps, um Zugangsdaten automatisch einzufügen.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Pass Auto-Ausfüllen Funktion</value>
+    <value>Twake Pass Auto-Ausfüllen Funktion</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Verwende den Cozy Pass Dienst in den Bedienungshilfen um deine Zugangsdaten automatisch einzufügen.</value>
+    <value>Verwende den Twake Pass Dienst in den Bedienungshilfen um deine Zugangsdaten automatisch einzufügen.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>E-Mail Adresse ändern</value>
   </data>
   <data name="ChangeEmailConfirmation" xml:space="preserve">
-    <value>Du kannst deine E-Mail Adresse im Cozy Pass.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?</value>
+    <value>Du kannst deine E-Mail Adresse im Twake Pass.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?</value>
   </data>
   <data name="ChangeMasterPassword" xml:space="preserve">
     <value>Masterpasswort ändern</value>
   </data>
   <data name="ChangePasswordConfirmation" xml:space="preserve">
-    <value>Du kannst dein Master-Passwort im Cozy Pass.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?</value>
+    <value>Du kannst dein Master-Passwort im Twake Pass.com Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
@@ -473,7 +473,7 @@
     <value>App Erweiterung aktivieren</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>In Safari findest du Cozy Pass unter dem Teilen-Symbol (Hinweis: scrolle auf der untersten Zeile des Menüs nach rechts).</value>
+    <value>In Safari findest du Twake Pass unter dem Teilen-Symbol (Hinweis: scrolle auf der untersten Zeile des Menüs nach rechts).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Deine Zugangsdaten sind jetzt in Safari, Chrome und anderen unterstützten Apps einfach zu erreichen.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>In Safari und Chrome findest du Cozy Pass unter dem Teilen-Symbol (Hinweis: scrolle auf der untersten Zeile des Menüs nach rechts).</value>
+    <value>In Safari und Chrome findest du Twake Pass unter dem Teilen-Symbol (Hinweis: scrolle auf der untersten Zeile des Menüs nach rechts).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Tippe auf das Cozy Pass Symbol im Menü, um die Erweiterung zu starten.</value>
+    <value>Tippe auf das Twake Pass Symbol im Menü, um die Erweiterung zu starten.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Um Cozy Pass in Safari und anderen Apps zu aktivieren, tippe auf das "Mehr"-Symbol in der untersten Zeile des Menüs.</value>
+    <value>Um Twake Pass in Safari und anderen Apps zu aktivieren, tippe auf das "Mehr"-Symbol in der untersten Zeile des Menüs.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favorit</value>
@@ -510,7 +510,7 @@
     <value>Einträge importieren</value>
   </data>
   <data name="ImportItemsConfirmation" xml:space="preserve">
-    <value>Du kannst deine Logins über den Cozy Pass.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?</value>
+    <value>Du kannst deine Logins über den Twake Pass.com Web-Tresor importieren. Möchtest du die Seite jetzt öffnen?</value>
   </data>
   <data name="ImportItemsDescription" xml:space="preserve">
     <value>Importiere all deine Zugangsdaten schnell und einfach von anderen Passwortmanagern.</value>
@@ -585,7 +585,7 @@
     <value>Weitere Einstellungen</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Du musst dich in der Cozy Pass App einloggen, bevor du die Erweiterung benutzen kannst.</value>
+    <value>Du musst dich in der Twake Pass App einloggen, bevor du die Erweiterung benutzen kannst.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Niemals</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Die Standardeinstellungen können mit dem Passwortgenerator der Cozy Pass App definiert werden.</value>
+    <value>Die Standardeinstellungen können mit dem Passwortgenerator der Twake Pass App definiert werden.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Optionen</value>
@@ -634,7 +634,7 @@
     <value>Bist du sicher, dass du das aktuelle Passwort überschreiben möchtest?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass aktualisiert deinen Tresor mit Pushbenachrichtigungen. Für die bestmögliche Benutzererfahrung tippe im folgenden Dialogfenster auf "Ok", um Pushbenachrichtigungen zu aktivieren.</value>
+    <value>Twake Pass aktualisiert deinen Tresor mit Pushbenachrichtigungen. Für die bestmögliche Benutzererfahrung tippe im folgenden Dialogfenster auf "Ok", um Pushbenachrichtigungen zu aktivieren.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -695,7 +695,7 @@
     <value>Zwei-Faktor Authentifizierung</value>
   </data>
   <data name="TwoStepLoginConfirmation" xml:space="preserve">
-    <value>Mit der Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor Authentifizierung kann im Cozy Pass.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?</value>
+    <value>Mit der Zwei-Faktor Authentifizierung wird dein Account zusätzlich abgesichert, da jede Anmeldung durch einen Sicherheitscode, eine Authentifizierungs-App, SMS, einen Anruf oder eine E-Mail verifiziert werden muss. Die Zwei-Faktor Authentifizierung kann im Twake Pass.com Web-Tresor aktiviert werden. Möchtest du die Seite jetzt öffnen?</value>
   </data>
   <data name="UnlockWith" xml:space="preserve">
     <value>Mit {0} entsperren</value>
@@ -714,7 +714,7 @@
     <value>Eintrag anzeigen</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Pass Web-Tresor</value>
+    <value>Twake Pass Web-Tresor</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Authentifizierungs-App verloren?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Wenn Sie ein Eingabefeld auswählen und ein Auto-Fill-Overlay von Cozy Pass sehen, können Sie darauf tippen, um den Dienst zum automatischen Ausfüllen zu starten.</value>
+    <value>Wenn Sie ein Eingabefeld auswählen und ein Auto-Fill-Overlay von Twake Pass sehen, können Sie darauf tippen, um den Dienst zum automatischen Ausfüllen zu starten.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Tippe auf diese Benachrichtigung, um automatisch Zugangsdaten aus deinem Tresor einzufügen.</value>
@@ -750,7 +750,7 @@
     <value>Einstellungen für Bedienungshilfen öffnen</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Tippe auf "Cozy Pass" unter "Heruntergeladene Dienste" in den Android Bedienungshilfen.</value>
+    <value>1. Tippe auf "Twake Pass" unter "Heruntergeladene Dienste" in den Android Bedienungshilfen.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Aktiviere den Schalter und tippe auf "Ok".</value>
@@ -765,7 +765,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Die einfachste Möglichkeit, neue Zugangsdaten zu deinem Tresor hinzuzufügen, ist der Cozy Pass Auto-Ausfüllen Dienst. Erfahre mehr über den Cozy Pass Auto-Ausfüllen Dienst, indem du zu "Einstellungen" wechselst.</value>
+    <value>Die einfachste Möglichkeit, neue Zugangsdaten zu deinem Tresor hinzuzufügen, ist der Twake Pass Auto-Ausfüllen Dienst. Erfahre mehr über den Twake Pass Auto-Ausfüllen Dienst, indem du zu "Einstellungen" wechselst.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Automatisch Einfügen</value>
@@ -964,7 +964,7 @@
     <value>Selbstgehostete Umgebung</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Bitte gebe die Basis-URL deiner selbst gehosteten Cozy Pass-Installation an.</value>
+    <value>Bitte gebe die Basis-URL deiner selbst gehosteten Twake Pass-Installation an.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Server URL</value>
@@ -1126,7 +1126,7 @@
     <value>Icons Server URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Mit Cozy Pass automatisch ausfüllen</value>
+    <value>Mit Twake Pass automatisch ausfüllen</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Tresor ist gesperrt</value>
@@ -1150,10 +1150,10 @@
     <value>Auto-Fill Bedienungshilfe</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Der Cozy Pass Auto-Fill Service benutzt das Android Autofill Framework, um Logins, Kreditkarten und Identitätsinformationen in anderen Apps auf Ihrem Gerät zu befüllen.</value>
+    <value>Der Twake Pass Auto-Fill Service benutzt das Android Autofill Framework, um Logins, Kreditkarten und Identitätsinformationen in anderen Apps auf Ihrem Gerät zu befüllen.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Verwende den Cozy Pass Dienst in den Bedienungshilfen, um deine Zugangsdaten automatisch einzufügen.</value>
+    <value>Verwende den Twake Pass Dienst in den Bedienungshilfen, um deine Zugangsdaten automatisch einzufügen.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Öffne Auto-Fill Einstellungen</value>
@@ -1266,7 +1266,7 @@
     <value>AutoFill aktiviert!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Du musst dich in der Cozy Pass App einloggen, bevor du AutoFill nutzen kannst.</value>
+    <value>Du musst dich in der Twake Pass App einloggen, bevor du AutoFill nutzen kannst.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Du kannst nun direkt von der Tastatur auf deine Zugangsdaten zugreifen, wenn du dich auf Webseiten oder in Apps anmeldest.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Schalte Automatisch ausfüllen ein</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Wähle "Cozy Pass"</value>
+    <value>5. Wähle "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Passwort AutoFill</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Die einfachste Möglichkeit, neue Zugangsdaten zu deinemTresor hinzuzufügen, ist die Cozy Pass Passwort Auto-Ausfüllen Erweiterung. Erfahre mehr über die Cozy Pass Passwort Auto-Ausfüllen Funktion, indem du zur "Einstellungen" wechselst.</value>
+    <value>Die einfachste Möglichkeit, neue Zugangsdaten zu deinemTresor hinzuzufügen, ist die Twake Pass Passwort Auto-Ausfüllen Erweiterung. Erfahre mehr über die Twake Pass Passwort Auto-Ausfüllen Funktion, indem du zur "Einstellungen" wechselst.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Ungültige E-Mail-Adresse.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass erlaubt es Ihnen, Ihren Tresor mit anderen zu teilen, indem Sie ein Organisationskonto verwenden. Möchten Sie die bitwarden.com Website besuchen, um mehr zu erfahren?</value>
+    <value>Twake Pass erlaubt es Ihnen, Ihren Tresor mit anderen zu teilen, indem Sie ein Organisationskonto verwenden. Möchten Sie die bitwarden.com Website besuchen, um mehr zu erfahren?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Tresor exportieren</value>
@@ -1456,7 +1456,7 @@
     <value>30 Minuten</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Gebe deinen PIN-Code für das Entsperren von Cozy Pass ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmeldest.</value>
+    <value>Gebe deinen PIN-Code für das Entsperren von Twake Pass ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmeldest.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Als {0} angemeldet auf {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Beenden</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Bist du sicher, dass du Cozy Pass verlassen möchtest?</value>
+    <value>Bist du sicher, dass du Twake Pass verlassen möchtest?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Möchtest du mit deinem Passwort entsperren, wenn die Anwendung neu gestartet wird?</value>
@@ -1548,8 +1548,8 @@
     <value>Bei App Neustart</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automatisches Ausfüllen vereinfacht es, sicher auf deinen Cozy Pass Tresor über andere Webseiten und Apps zuzugreifen. Es sieht aus, als ob du den automatischen Ausfülldienst für Cozy Pass nicht aktiviert hast. Aktiviere automatisches Ausfüllen in der "Einstellungen" Ansicht.</value>
-    <value>Durch automatisches Füllen ist es leicht, auf Ihren Bitwarden Tresor von anderen Webseiten und Apps sicher zuzugreifen. Es sieht aus, als ob Sie den Automatisches Fülldienst für Cozy Pass nicht aktiviert haben. Aktivieren Sie automatisches Füllen im "Einstellungen"-Bildschirm.</value>
+    <value>Automatisches Ausfüllen vereinfacht es, sicher auf deinen Twake Pass Tresor über andere Webseiten und Apps zuzugreifen. Es sieht aus, als ob du den automatischen Ausfülldienst für Twake Pass nicht aktiviert hast. Aktiviere automatisches Ausfüllen in der "Einstellungen" Ansicht.</value>
+    <value>Durch automatisches Füllen ist es leicht, auf Ihren Bitwarden Tresor von anderen Webseiten und Apps sicher zuzugreifen. Es sieht aus, als ob Sie den Automatisches Fülldienst für Twake Pass nicht aktiviert haben. Aktivieren Sie automatisches Füllen im "Einstellungen"-Bildschirm.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Deine Änderungen am Aussehen der App werden beim nächsten Neustart der App angewendet.</value>

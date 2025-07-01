@@ -152,7 +152,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass uses the Accessibility Service to search for login fields in apps and websites, then establish the appropriate field IDs for entering a username &amp; password when a match for the app or site is found. We do not store any of the information presented to us by the service, nor do we make any attempt to control any on-screen elements beyond text entry of credentials..
+        ///   Recherche une chaîne localisée semblable à Twake Pass uses the Accessibility Service to search for login fields in apps and websites, then establish the appropriate field IDs for entering a username &amp; password when a match for the app or site is found. We do not store any of the information presented to us by the service, nor do we make any attempt to control any on-screen elements beyond text entry of credentials..
         /// </summary>
         public static string AccessibilityDisclosureText {
             get {
@@ -179,7 +179,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass needs attention - See &quot;Auto-fill Accessibility Service&quot; from Cozy Pass Settings.
+        ///   Recherche une chaîne localisée semblable à Twake Pass needs attention - See &quot;Auto-fill Accessibility Service&quot; from Twake Pass Settings.
         /// </summary>
         public static string AccessibilityOverlayPermissionAlert {
             get {
@@ -467,7 +467,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Use the Cozy Pass accessibility service to auto-fill your logins across apps and the web..
+        ///   Recherche une chaîne localisée semblable à Use the Twake Pass accessibility service to auto-fill your logins across apps and the web..
         /// </summary>
         public static string AutofillAccessibilityDescription {
             get {
@@ -521,7 +521,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The Cozy Pass auto-fill service uses the Android Autofill Framework to assist in filling logins, credit cards, and identity information into other apps on your device..
+        ///   Recherche une chaîne localisée semblable à The Twake Pass auto-fill service uses the Android Autofill Framework to assist in filling logins, credit cards, and identity information into other apps on your device..
         /// </summary>
         public static string AutofillServiceDescription {
             get {
@@ -530,7 +530,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Cozy Pass from the &quot;Settings&quot; screen..
+        ///   Recherche une chaîne localisée semblable à Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Twake Pass from the &quot;Settings&quot; screen..
         /// </summary>
         public static string AutofillServiceNotEnabled {
             get {
@@ -629,7 +629,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 5. Select &quot;Cozy Pass&quot;.
+        ///   Recherche une chaîne localisée semblable à 5. Select &quot;Twake Pass&quot;.
         /// </summary>
         public static string AutofillTurnOn5 {
             get {
@@ -638,7 +638,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Auto-fill with Cozy Pass.
+        ///   Recherche une chaîne localisée semblable à Auto-fill with Twake Pass.
         /// </summary>
         public static string AutofillWithBitwarden {
             get {
@@ -719,7 +719,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass App Extension.
+        ///   Recherche une chaîne localisée semblable à Twake Pass App Extension.
         /// </summary>
         public static string BitwardenAppExtension {
             get {
@@ -728,7 +728,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The easiest way to add new logins to your vault is from the Cozy Pass App Extension. Learn more about using the Cozy Pass App Extension by navigating to the &quot;Settings&quot; screen..
+        ///   Recherche une chaîne localisée semblable à The easiest way to add new logins to your vault is from the Twake Pass App Extension. Learn more about using the Twake Pass App Extension by navigating to the &quot;Settings&quot; screen..
         /// </summary>
         public static string BitwardenAppExtensionAlert2 {
             get {
@@ -737,7 +737,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Use Cozy Pass in Safari and other apps to auto-fill your logins..
+        ///   Recherche une chaîne localisée semblable à Use Twake Pass in Safari and other apps to auto-fill your logins..
         /// </summary>
         public static string BitwardenAppExtensionDescription {
             get {
@@ -746,7 +746,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Use the Cozy Pass accessibility service to auto-fill your logins..
+        ///   Recherche une chaîne localisée semblable à Use the Twake Pass accessibility service to auto-fill your logins..
         /// </summary>
         public static string BitwardenAutofillAccessibilityServiceDescription {
             get {
@@ -764,7 +764,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the &quot;Settings&quot; screen..
+        ///   Recherche une chaîne localisée semblable à The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Twake Pass Password AutoFill extension by navigating to the &quot;Settings&quot; screen..
         /// </summary>
         public static string BitwardenAutofillAlert2 {
             get {
@@ -791,7 +791,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass Auto-fill Service.
+        ///   Recherche une chaîne localisée semblable à Twake Pass Auto-fill Service.
         /// </summary>
         public static string BitwardenAutofillService {
             get {
@@ -800,7 +800,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Cozy Pass Auto-fill Service by navigating to the &quot;Settings&quot; screen..
+        ///   Recherche une chaîne localisée semblable à The easiest way to add new logins to your vault is from the Bitwarden Auto-fill Service. Learn more about using the Twake Pass Auto-fill Service by navigating to the &quot;Settings&quot; screen..
         /// </summary>
         public static string BitwardenAutofillServiceAlert2 {
             get {
@@ -809,7 +809,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Use the Cozy Pass auto-fill service to fill logins, credit cards, and identity information into other apps..
+        ///   Recherche une chaîne localisée semblable à Use the Twake Pass auto-fill service to fill logins, credit cards, and identity information into other apps..
         /// </summary>
         public static string BitwardenAutofillServiceDescription {
             get {
@@ -872,7 +872,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à When you select an input field and see a Cozy Pass auto-fill overlay, you can tap it to launch the auto-fill service..
+        ///   Recherche une chaîne localisée semblable à When you select an input field and see a Twake Pass auto-fill overlay, you can tap it to launch the auto-fill service..
         /// </summary>
         public static string BitwardenAutofillServiceOverlay {
             get {
@@ -881,7 +881,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 3. On the Android App Settings screen for Cozy Pass, go to the &quot;Display over other apps&quot; options (under Advanced) and tap the toggle to enable overlay support..
+        ///   Recherche une chaîne localisée semblable à 3. On the Android App Settings screen for Twake Pass, go to the &quot;Display over other apps&quot; options (under Advanced) and tap the toggle to enable overlay support..
         /// </summary>
         public static string BitwardenAutofillServiceOverlayPermission {
             get {
@@ -899,7 +899,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 1. On the Android Accessibility Settings screen, touch &quot;Cozy Pass&quot; under the Services heading..
+        ///   Recherche une chaîne localisée semblable à 1. On the Android Accessibility Settings screen, touch &quot;Twake Pass&quot; under the Services heading..
         /// </summary>
         public static string BitwardenAutofillServiceStep1 {
             get {
@@ -917,7 +917,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à 3. On the Android App Settings screen for Cozy Pass, select &quot;Display over other apps&quot; (under &quot;Advanced&quot;) and switch on the toggle to allow the overlay..
+        ///   Recherche une chaîne localisée semblable à 3. On the Android App Settings screen for Twake Pass, select &quot;Display over other apps&quot; (under &quot;Advanced&quot;) and switch on the toggle to allow the overlay..
         /// </summary>
         public static string BitwardenAutofillServiceStep3 {
             get {
@@ -1277,7 +1277,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass.
+        ///   Recherche une chaîne localisée semblable à Twake Pass.
         /// </summary>
         public static string CozyPass {
             get {
@@ -1295,7 +1295,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Your Cozy URL.
+        ///   Recherche une chaîne localisée semblable à Your Twake URL.
         /// </summary>
         public static string CozyURL {
             get {
@@ -1826,7 +1826,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Enter your Cozy URL to receive your password hint..
+        ///   Recherche une chaîne localisée semblable à Enter your Twake URL to receive your password hint..
         /// </summary>
         public static string EnterCozyURLForHint {
             get {
@@ -1898,7 +1898,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Are you sure you want to exit Cozy Pass?.
+        ///   Recherche une chaîne localisée semblable à Are you sure you want to exit Twake Pass?.
         /// </summary>
         public static string ExitConfirmation {
             get {
@@ -2060,7 +2060,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à In Safari, find Cozy Pass using the share icon (hint: scroll to the right on the bottom row of the menu)..
+        ///   Recherche une chaîne localisée semblable à In Safari, find Twake Pass using the share icon (hint: scroll to the right on the bottom row of the menu)..
         /// </summary>
         public static string ExtensionInSafari {
             get {
@@ -2096,7 +2096,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à In Safari and Chrome, find Cozy Pass using the share icon (hint: scroll to the right on the bottom row of the share menu)..
+        ///   Recherche une chaîne localisée semblable à In Safari and Chrome, find Twake Pass using the share icon (hint: scroll to the right on the bottom row of the share menu)..
         /// </summary>
         public static string ExtensionSetup2 {
             get {
@@ -2105,7 +2105,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Tap the Cozy Pass icon in the menu to launch the extension..
+        ///   Recherche une chaîne localisée semblable à Tap the Twake Pass icon in the menu to launch the extension..
         /// </summary>
         public static string ExtensionTapIcon {
             get {
@@ -2114,7 +2114,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à To turn on Cozy Pass in Safari and other apps, tap the &quot;more&quot; icon on the bottom row of the menu..
+        ///   Recherche une chaîne localisée semblable à To turn on Twake Pass in Safari and other apps, tap the &quot;more&quot; icon on the bottom row of the menu..
         /// </summary>
         public static string ExtensionTurnOn {
             get {
@@ -2852,7 +2852,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?.
+        ///   Recherche une chaîne localisée semblable à Twake Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?.
         /// </summary>
         public static string LearnOrgConfirmation {
             get {
@@ -3338,7 +3338,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à You must log into the main Cozy Pass app before you can use the extension..
+        ///   Recherche une chaîne localisée semblable à You must log into the main Twake Pass app before you can use the extension..
         /// </summary>
         public static string MustLogInMainApp {
             get {
@@ -3347,7 +3347,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à You must log into the main Cozy Pass app before you can use AutoFill..
+        ///   Recherche une chaîne localisée semblable à You must log into the main Twake Pass app before you can use AutoFill..
         /// </summary>
         public static string MustLogInMainAppAutofill {
             get {
@@ -3716,7 +3716,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Option defaults are set from the main Cozy Pass app&apos;s password generator tool..
+        ///   Recherche une chaîne localisée semblable à Option defaults are set from the main Twake Pass app&apos;s password generator tool..
         /// </summary>
         public static string OptionDefaults {
             get {
@@ -4085,7 +4085,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass keeps your vault automatically synced by using push notifications. For the best possible experience, please select &quot;Allow&quot; on the following prompt when asked to enable push notifications..
+        ///   Recherche une chaîne localisée semblable à Twake Pass keeps your vault automatically synced by using push notifications. For the best possible experience, please select &quot;Allow&quot; on the following prompt when asked to enable push notifications..
         /// </summary>
         public static string PushNotificationAlert {
             get {
@@ -4382,7 +4382,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Specify the base URL of your on-premise hosted Cozy Pass installation..
+        ///   Recherche une chaîne localisée semblable à Specify the base URL of your on-premise hosted Twake Pass installation..
         /// </summary>
         public static string SelfHostedEnvironmentFooter {
             get {
@@ -4535,7 +4535,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application..
+        ///   Recherche une chaîne localisée semblable à Set your PIN code for unlocking Twake Pass. Your PIN settings will be reset if you ever fully log out of the application..
         /// </summary>
         public static string SetPINDescription {
             get {
@@ -5453,7 +5453,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Visit our website to get help, news, email us, and/or learn more about how to use Cozy Pass..
+        ///   Recherche une chaîne localisée semblable à Visit our website to get help, news, email us, and/or learn more about how to use Twake Pass..
         /// </summary>
         public static string VisitOurWebsiteDescription {
             get {
@@ -5480,7 +5480,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Cozy Pass Web Vault.
+        ///   Recherche une chaîne localisée semblable à Twake Pass Web Vault.
         /// </summary>
         public static string WebVault {
             get {

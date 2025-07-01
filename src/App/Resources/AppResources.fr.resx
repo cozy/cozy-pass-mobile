@@ -140,7 +140,7 @@
     <comment>Navigate back to the previous screen.</comment>
   </data>
   <data name="Bitwarden" xml:space="preserve">
-    <value>Cozy Pass</value>
+    <value>Twake Pass</value>
     <comment>App name. Shouldn't ever change.</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
@@ -160,51 +160,51 @@
     <comment>The button text that allows a user to copy the login's username to their clipboard.</comment>
   </data>
   <data name="CozyPass" xml:space="preserve">
-    <value>Cozy Pass</value>
+    <value>Twake Pass</value>
     <comment>Name of the app</comment>
   </data>
   <data name="CozyURL" xml:space="preserve">
-    <value>Adresse de votre Cozy</value>
-    <comment>Label for Cozy URL input</comment>
+    <value>Adresse de votre Twake</value>
+    <comment>Label for Twake URL input</comment>
   </data>
   <data name="CozyURLPlaceholder" xml:space="preserve">
     <value>claudedouillet.mycozy.cloud</value>
-    <comment>Placeholder for Cozy URL input</comment>
+    <comment>Placeholder for Twake URL input</comment>
   </data>
   <data name="CozyPassword" xml:space="preserve">
     <value>Mot de passe</value>
-    <comment>Label for Cozy password</comment>
+    <comment>Label for Twake password</comment>
   </data>
   <data name="CozyLoginTitle" xml:space="preserve">
     <value>Se connecter</value>
     <comment>Login screen title</comment>
   </data>
   <data name="CozyHomeTitle" xml:space="preserve">
-    <value>Cozy Pass</value>
+    <value>Twake Pass</value>
   </data>
   <data name="CozyHomeHaveAccount" xml:space="preserve">
     <value>C'EST PARTI</value>
   </data>
   <data name="CozyUrlRequiredException" xml:space="preserve">
-    <value>L'adresse du Cozy est requise</value>
+    <value>L'adresse du Twake est requise</value>
     <comment>Exception message when no CozyUrl is set</comment>
   </data>
   <data name="CozyInstallFlagshipTitle" xml:space="preserve">
-    <value>Installer l’app Cozy</value>
+    <value>Installer l’app Twake</value>
   </data>
   <data name="CozyInstallFlagshipDescription" xml:space="preserve">
-    <value>Vous ne possédez pas encore de Cozy, installez l’app Cozy pour créer votre Cozy et profiter de l’app Cozy Pass</value>
+    <value>Vous ne possédez pas encore de Twake, installez l’app Twake pour créer votre Twake et profiter de l’app Twake Pass</value>
   </data>
   <data name="CozyInstallFlagshipButton" xml:space="preserve">
     <value>INSTALLER L’APP COZY</value>
   </data>
   <data name="NoEmailAsCozyUrlException" xml:space="preserve">
-    <value>L'adresse de votre Cozy n'est pas votre email</value>
+    <value>L'adresse de votre Twake n'est pas votre email</value>
     <comment>Exception message when no user set an email in login field</comment>
   </data>
   <data name="HasMispelledCozyException" xml:space="preserve">
     <value>Oups, ce n'est pas la bonne adresse. Essayez d'écrire "cozy" avec un "z" !</value>
-    <comment>Exception message when user mispels Cozy with Cosy</comment>
+    <comment>Exception message when user mispels Twake with Cosy</comment>
   </data>
   <data name="CozyInvalidLoginException" xml:space="preserve">
     <value>L'adresse et le mot de passe que vous avez saisi ne semblent pas correspondre</value>
@@ -420,7 +420,7 @@
     <value>S'authentifier avec l'empreinte</value>
   </data>
   <data name="VerifyMasterPassword" xml:space="preserve">
-    <value>Déverrouiller mon Cozy</value>
+    <value>Déverrouiller mon Twake</value>
   </data>
   <data name="VerifyPIN" xml:space="preserve">
     <value>S'authentifier avec un code PIN</value>
@@ -435,7 +435,7 @@
     <value>Visiter notre site web</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Visitez notre site web pour obtenir de l'aide, lire les actualités, nous écrire et/ou apprendre à mieux utiliser Cozy Pass.</value>
+    <value>Visitez notre site web pour obtenir de l'aide, lire les actualités, nous écrire et/ou apprendre à mieux utiliser Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Site web</value>
@@ -457,7 +457,7 @@
     <value>Extension de l'application</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Utiliser le service d'accessibilité de Cozy Pass pour remplir automatiquement vos identifiants sur les applis et le web.</value>
+    <value>Utiliser le service d'accessibilité de Twake Pass pour remplir automatiquement vos identifiants sur les applis et le web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Service de remplissage automatique</value>
@@ -466,19 +466,19 @@
     <value>Éviter les caractères ambigus</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extension de l'application Cozy Pass</value>
+    <value>Extension de l'application Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de l'application Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
+    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de l'application Twake Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Utilisez Cozy Pass dans Safari et d'autres applications pour le remplissage automatique de vos identifiants.</value>
+    <value>Utilisez Twake Pass dans Safari et d'autres applications pour le remplissage automatique de vos identifiants.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Service de remplissage automatique Cozy Pass</value>
+    <value>Service de remplissage automatique Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Utilisez le service d'accessibilité de Cozy Pass pour remplir automatiquement vos identifiants.</value>
+    <value>Utilisez le service d'accessibilité de Twake Pass pour remplir automatiquement vos identifiants.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Changer d'e-mail</value>
@@ -499,7 +499,7 @@
     <value>Continuer</value>
   </data>
   <data name="CreateAccount" xml:space="preserve">
-    <value>Créer mon Cozy</value>
+    <value>Créer mon Twake</value>
   </data>
   <data name="CreatingAccount" xml:space="preserve">
     <value>Création du compte...</value>
@@ -515,7 +515,7 @@
     <value>Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe.</value>
   </data>
   <data name="EnterEmailForHint" xml:space="preserve">
-    <value>Saisissez l'URL de votre Cozy pour recevoir l'indice de votre mot de passe.</value>
+    <value>Saisissez l'URL de votre Twake pour recevoir l'indice de votre mot de passe.</value>
   </data>
   <data name="ExntesionReenable" xml:space="preserve">
     <value>Activez à nouveau l'extension de l'application</value>
@@ -527,7 +527,7 @@
     <value>Activez l'extension de l'application</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Sur Safari, trouvez Cozy Pass en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
+    <value>Sur Safari, trouvez Twake Pass en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -540,13 +540,13 @@
     <value>Vos identifiants sont désormais facilement accessibles depuis Safari, Chrome, et d'autres applications supportées.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Sur Safari et Chrome, trouvez Cozy Pass en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
+    <value>Sur Safari et Chrome, trouvez Twake Pass en utilisant l'icône de partage (aide : faire défiler sur la droite sur la ligne du bas du menu).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Appuyez sur l'icône Cozy Pass dans le menu pour lancer l'extension.</value>
+    <value>Appuyez sur l'icône Twake Pass dans le menu pour lancer l'extension.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Pour activer Cozy Pass sur Safari et d'autres applications, appuyez sur l'icône "plus" sur la ligne du bas du menu.</value>
+    <value>Pour activer Twake Pass sur Safari et d'autres applications, appuyez sur l'icône "plus" sur la ligne du bas du menu.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favori</value>
@@ -561,7 +561,7 @@
     <value>J'ai oublié mon mot de passe</value>
   </data>
   <data name="GetCozyAddress" xml:space="preserve">
-    <value>J'ai oublié l'adresse de mon Cozy</value>
+    <value>J'ai oublié l'adresse de mon Twake</value>
   </data>
   <data name="ImportItems" xml:space="preserve">
     <value>Importer des éléments</value>
@@ -642,7 +642,7 @@
     <value>Plus de paramètres</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Vous devez vous identifier sur l'application principale Cozy Pass avant d'utiliser l'extension.</value>
+    <value>Vous devez vous identifier sur l'application principale Twake Pass avant d'utiliser l'extension.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Jamais</value>
@@ -667,7 +667,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Les options par défaut sont définies depuis l'outil de génération de mot de passe de l'application principale Cozy Pass.</value>
+    <value>Les options par défaut sont définies depuis l'outil de génération de mot de passe de l'application principale Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
@@ -691,7 +691,7 @@
     <value>Êtes-vous sûr de vouloir écraser le mot de passe existant ?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass conserve automatiquement votre coffre synchronisé en utilisant des notifications push. Pour la meilleure expérience possible, veuillez choisir "Ok" sur la boîte de dialogue suivante (activation des notifications push).</value>
+    <value>Twake Pass conserve automatiquement votre coffre synchronisé en utilisant des notifications push. Pour la meilleure expérience possible, veuillez choisir "Ok" sur la boîte de dialogue suivante (activation des notifications push).</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -771,7 +771,7 @@
     <value>Voir</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Coffre web Cozy Pass</value>
+    <value>Coffre web Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Application d'authentification perdue ?</value>
@@ -798,7 +798,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Lorsque vous sélectionnez un champ de saisie et que vous voyez une proposition de remplissage automatique de Cozy Pass, vous pouvez appuyer dessus pour lancer le service de remplissage automatique.</value>
+    <value>Lorsque vous sélectionnez un champ de saisie et que vous voyez une proposition de remplissage automatique de Twake Pass, vous pouvez appuyer dessus pour lancer le service de remplissage automatique.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Touchez cette notification pour remplir automatiquement vos informations de connexion à partir de votre coffre.</value>
@@ -807,7 +807,7 @@
     <value>Ouvrir les paramètres d'accessibilité</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Dans les paramètres d'accessibilité d'Android, sélectionnez « Cozy Pass » dans la section « Services ».</value>
+    <value>1. Dans les paramètres d'accessibilité d'Android, sélectionnez « Twake Pass » dans la section « Services ».</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Activez l'option et appuyez sur OK pour accepter.</value>
@@ -822,7 +822,7 @@
     <value>État</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser le service de remplissage automatique de Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
+    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser le service de remplissage automatique de Twake Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Remplissage automatique</value>
@@ -1021,7 +1021,7 @@
     <value>Environnement auto-hébergé</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Spécifiez l'URL de base de votre installation Cozy Pass auto-hébergée.</value>
+    <value>Spécifiez l'URL de base de votre installation Twake Pass auto-hébergée.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL du serveur</value>
@@ -1183,7 +1183,7 @@
     <value>URL du serveur d’icônes</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Remplissage automatique avec Cozy Pass</value>
+    <value>Remplissage automatique avec Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Le coffre est verrouillé</value>
@@ -1207,10 +1207,10 @@
     <value>Service d'accessibilité pour le remplissage automatique</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Le service de remplissage automatique de Cozy Pass utilise l'outil de remplissage automatique d'Android pour aider à saisir les identifiants, les cartes de crédit et les informations d'identité dans d'autres applications sur votre appareil.</value>
+    <value>Le service de remplissage automatique de Twake Pass utilise l'outil de remplissage automatique d'Android pour aider à saisir les identifiants, les cartes de crédit et les informations d'identité dans d'autres applications sur votre appareil.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Utilisez le service d'accessibilité de Cozy Pass pour le remplissage automatique de vos identifiants.</value>
+    <value>Utilisez le service d'accessibilité de Twake Pass pour le remplissage automatique de vos identifiants.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Ouvrir les paramètres de remplissage automatique</value>
@@ -1323,7 +1323,7 @@
     <value>Remplissage automatique activé !</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Vous devez vous identifier sur l'application principale Cozy Pass avant d'utiliser le remplissage automatique des mots de passe.</value>
+    <value>Vous devez vous identifier sur l'application principale Twake Pass avant d'utiliser le remplissage automatique des mots de passe.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Vos identifiants sont désormais facilement accessibles directement depuis votre clavier lorsque vous vous connectez à des applications et des sites web.</value>
@@ -1350,13 +1350,13 @@
     <value>4. Activez "Préremplir mots de passe"</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Sélectionnez "Cozy Pass"</value>
+    <value>5. Sélectionnez "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Remplissage automatique des mots de passe</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de remplissage automatique de mots de passe de Cozy Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
+    <value>Le meilleur moyen d'ajouter de nouveaux sites à votre coffre est d'utiliser l'extension de remplissage automatique de mots de passe de Twake Pass. Parcourez le menu "Paramètres" pour en apprendre davantage.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Adresse e-mail invalide.</value>
@@ -1470,7 +1470,7 @@
     <value>Aucun dossier à afficher.</value>
   </data>
   <data name="MoveToOrgDesc" xml:space="preserve">
-    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisée à d'autres utilisateurs qui possèdent un Cozy. Pour pouvez créer un dossier partagé, à condition que l'offre de votre Cozy le permette, en accédant à Cozy Pass depuis un navigateur web d'ordinateur.</value>
+    <value>Choisissez un dossier dans lequel vous souhaitez ranger cet élément.&#10;&#10;Astuce : en sélectionnant un dossier partagé, vous pourrez ainsi transmettre cet élément de manière sécurisée à d'autres utilisateurs qui possèdent un Twake. Pour pouvez créer un dossier partagé, à condition que l'offre de votre Twake le permette, en accédant à Twake Pass depuis un navigateur web d'ordinateur.</value>
   </data>
   <data name="NumberOfWords" xml:space="preserve">
     <value>Nombre de mots</value>
@@ -1501,7 +1501,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass vous permet de partager votre coffre avec d'autres personnes en utilisant un compte d'organisation. Souhaitez-vous visiter le site web bitwarden.com pour en savoir plus ?</value>
+    <value>Twake Pass vous permet de partager votre coffre avec d'autres personnes en utilisant un compte d'organisation. Souhaitez-vous visiter le site web bitwarden.com pour en savoir plus ?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exporter le coffre</value>
@@ -1519,7 +1519,7 @@
     <value>30 minutes</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Définissez votre code PIN pour déverrouiller Cozy Pass. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application.</value>
+    <value>Définissez votre code PIN pour déverrouiller Twake Pass. Les paramètres relatifs à votre code PIN seront réinitialisés si vous vous déconnectez complètement de l'application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Connecté sur {1}.</value>
@@ -1586,7 +1586,7 @@
     <value>Quitter</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Êtes-vous sûr de vouloir quitter Cozy Pass ?</value>
+    <value>Êtes-vous sûr de vouloir quitter Twake Pass ?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Voulez-vous avoir à déverrouiller avec votre mot de passe lorsque l'application est redémarrée ?</value>
@@ -1611,7 +1611,7 @@
     <value>Au redémarrage de l'application</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Le remplissage automatique permet d'accéder facilement à votre coffre Bitwarden depuis d'autres sites et applications. Il semble que vous n'ayez pas activé de service de remplissage automatique pour Bitwarden. Activez le remplissage automatique pour Cozy Pass à partir de l'écran "Paramètres".</value>
+    <value>Le remplissage automatique permet d'accéder facilement à votre coffre Bitwarden depuis d'autres sites et applications. Il semble que vous n'ayez pas activé de service de remplissage automatique pour Bitwarden. Activez le remplissage automatique pour Twake Pass à partir de l'écran "Paramètres".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Vos modifications de thème s'appliqueront lorsque l'application sera redémarrée.</value>
@@ -1757,7 +1757,7 @@
     <comment>Confirmation alert message when soft-deleting a cipher.</comment>
   </data>
   <data name="BiometricInvalidated" xml:space="preserve">
-    <value>Veuillez entrer votre mot de passe Cozy.</value>
+    <value>Veuillez entrer votre mot de passe Twake.</value>
   </data>
   <data name="BiometricInvalidatedExtension" xml:space="preserve">
     <value>Le déverrouillage biométrique pour le remplissage automatique est désactivé en attendant la vérification du mot de passe maître.</value>
@@ -2132,7 +2132,7 @@
     <value>Confidentialité du Service d'accessibilité</value>
   </data>
   <data name="AccessibilityDisclosureText" xml:space="preserve">
-    <value>Cozy Pass utilise le Service d'Accessibilité pour rechercher des champs de connexion dans les applis et les sites web, puis trouvent les IDs des champs liés pour saisir un nom d'utilisateur et un mot de passe lorsqu'une correspondance pour l'appli ou le site est trouvée. Nous ne stockons aucune information que nous recevons via le service, et nous n'essayons pas de contrôler des éléments qui se superposeraient aux entrées de saisie des identifiants.</value>
+    <value>Twake Pass utilise le Service d'Accessibilité pour rechercher des champs de connexion dans les applis et les sites web, puis trouvent les IDs des champs liés pour saisir un nom d'utilisateur et un mot de passe lorsqu'une correspondance pour l'appli ou le site est trouvée. Nous ne stockons aucune information que nous recevons via le service, et nous n'essayons pas de contrôler des éléments qui se superposeraient aux entrées de saisie des identifiants.</value>
   </data>
   <data name="Accept" xml:space="preserve">
     <value>Accepter</value>

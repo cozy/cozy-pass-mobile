@@ -418,7 +418,7 @@
     <value>Bitwarden rozšírenie aplikácie</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Bitwarden rozšírenia aplikácie. Ďalšie informácie o používaní Cozy Pass rozšírenia aplikácie získate prechodom do obrazovky Nastavení.</value>
+    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Bitwarden rozšírenia aplikácie. Ďalšie informácie o používaní Twake Pass rozšírenia aplikácie získate prechodom do obrazovky Nastavení.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Použiť bitwarden v Safari a iných aplikáciach pre automatické vypĺňanie prihlasovacích údajov.</value>
@@ -1150,7 +1150,7 @@
     <value>Služba automatického vypĺňania pre zjednodušený prístup</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Cozy Pass služba automatického vypĺňania využíva Android Autofill Framework pre zjednodušenie vypĺňania prihlasovacích údajov, kreditných kariet a identít v aplikáciách vo vašom zariadení.</value>
+    <value>Twake Pass služba automatického vypĺňania využíva Android Autofill Framework pre zjednodušenie vypĺňania prihlasovacích údajov, kreditných kariet a identít v aplikáciách vo vašom zariadení.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Použite službu automatického vypĺňania Bitwardenu na vypĺňanie prihlasovacích údajov, kreditných kariet a informácii identít do iných aplikácií.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Zapnite automatické dopĺňanie</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Vyberte "Cozy Pass"</value>
+    <value>5. Vyberte "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Automatické vypĺňanie hesiel</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Cozy Pass rozšírenia pre automatické vypĺňanie. Ďalšie informácie o používaní rozšírenia pre automatické dopĺňanie získate prechodom na obrazovku Nastavení.</value>
+    <value>Najjednoduchší spôsob, ako pridať nové prihlasovacie údaje do trezora, je z Twake Pass rozšírenia pre automatické vypĺňanie. Ďalšie informácie o používaní rozšírenia pre automatické dopĺňanie získate prechodom na obrazovku Nastavení.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Neplatná emailová adresa.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass vám umožňuje zdieľať váš trezor s ostatnými ak používate konto v Organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?</value>
+    <value>Twake Pass vám umožňuje zdieľať váš trezor s ostatnými ak používate konto v Organizácii. Chcete navštíviť stránku bitwarden.com a dozvedieť sa viac?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export trezoru</value>
@@ -1456,7 +1456,7 @@
     <value>30 minút</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Nastaviť kód PIN na odomknutie Cozy Pass. Nastavenie PIN sa vynuluje, ak úplne odhlásite z aplikácie.</value>
+    <value>Nastaviť kód PIN na odomknutie Twake Pass. Nastavenie PIN sa vynuluje, ak úplne odhlásite z aplikácie.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Prihlásený ako {0} na {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Ukončiť</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Naozaj chcete ukončiť Cozy Pass?</value>
+    <value>Naozaj chcete ukončiť Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Chcete po reštarte aplikácie požadovať odomykanie vaším hlavným heslom?</value>
@@ -1548,7 +1548,7 @@
     <value>Po reštarte aplikácie</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automatické dopĺňanie umožňuje jednoducho pristupovať k vašemu trezoru z iných stránok a plaikácii. Vyzerá že ste službu automatického dopĺňania pomocou Cozy Pass nezapli. Zapnúť ju môžete na obrazove "Nastavenia".</value>
+    <value>Automatické dopĺňanie umožňuje jednoducho pristupovať k vašemu trezoru z iných stránok a plaikácii. Vyzerá že ste službu automatického dopĺňania pomocou Twake Pass nezapli. Zapnúť ju môžete na obrazove "Nastavenia".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Zmena nastavení vzhľadu sa prejaví po opätovnom štarte aplikácie.</value>

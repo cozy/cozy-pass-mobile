@@ -384,7 +384,7 @@
     <value>Látogasd meg a weboldalunkat</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>A fejlesztői webhely felkeresése segítségért, hírekért, email küldése a fejlesztőknek és/vagy további információk a Cozy Pass használatáról.</value>
+    <value>A fejlesztői webhely felkeresése segítségért, hírekért, email küldése a fejlesztőknek és/vagy további információk a Twake Pass használatáról.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Weboldal</value>
@@ -406,7 +406,7 @@
     <value>App kiterjesztés</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>A Cozy Pass kisegítő szolgáltatás használata bejelentkezések automatikus kitöltéséhez alkalmazásból és weben.</value>
+    <value>A Twake Pass kisegítő szolgáltatás használata bejelentkezések automatikus kitöltéséhez alkalmazásból és weben.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Automatikus kitöltő szolgáltatás</value>
@@ -415,19 +415,19 @@
     <value>Félreérthető karakterek mellőzése</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass alkalmazás bővítmény</value>
+    <value>Twake Pass alkalmazás bővítmény</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden alkalmazás kiegészítőből. További információ olvasható a Cozy Pass alkalmazás kiegészítő használatáról a  "Beállítások" képernyőn.</value>
+    <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden alkalmazás kiegészítőből. További információ olvasható a Twake Pass alkalmazás kiegészítő használatáról a  "Beállítások" képernyőn.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>A Cozy Pass használata Safariban és más alkalmazásokban a bejelentkezések automatikus kitöltéséhez.</value>
+    <value>A Twake Pass használata Safariban és más alkalmazásokban a bejelentkezések automatikus kitöltéséhez.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Pass automatikus kitöltő szolgáltatás</value>
+    <value>Twake Pass automatikus kitöltő szolgáltatás</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>A Cozy Pass kisegítő szolgáltatás használata bejelentkezések automatikus kitöltéséhez.</value>
+    <value>A Twake Pass kisegítő szolgáltatás használata bejelentkezések automatikus kitöltéséhez.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>E-mail cím módosítása</value>
@@ -473,7 +473,7 @@
     <value>Bővítmény engedélyezése</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>A Safariban keressük meg a Cozy Passt a megosztás ikon használatával (tipp: gördítés a menü alsó sorának jobb oldalára).</value>
+    <value>A Safariban keressük meg a Twake Passt a megosztás ikon használatával (tipp: gördítés a menü alsó sorának jobb oldalára).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>A bejelentkezések mostantól könnyen hozzáférhetők a Safariból, a Chrome-ból és más támogatott alkalmazásból.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>A Safariban és a Chrome-ban keressük meg a Cozy Passt a megosztás ikon használatával (tipp: gördítés a menü alsó sorának jobb oldalára).</value>
+    <value>A Safariban és a Chrome-ban keressük meg a Twake Passt a megosztás ikon használatával (tipp: gördítés a menü alsó sorának jobb oldalára).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Koppintás a Cozy Pass ikonra a menüben a bővítmény elindításához.</value>
+    <value>Koppintás a Twake Pass ikonra a menüben a bővítmény elindításához.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>A Safariban és más alkalmazásban a Cozy Pass bekapcsolásához koppintsunk az "egyéb" ikonra a menü alsó sorában.</value>
+    <value>A Safariban és más alkalmazásban a Twake Pass bekapcsolásához koppintsunk az "egyéb" ikonra a menü alsó sorában.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Kedvenc</value>
@@ -765,7 +765,7 @@
     <value>Állapot</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden automatikus kitöltés szolgáltatásból. További információ olvasható a Cozy Pass automatikus kitöltés szolgáltatás használatáról a  "Beállítások" képernyőn.</value>
+    <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden automatikus kitöltés szolgáltatásból. További információ olvasható a Twake Pass automatikus kitöltés szolgáltatás használatáról a  "Beállítások" képernyőn.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Automatikus kitöltés</value>
@@ -1266,7 +1266,7 @@
     <value>Az automatikus kitöltés bekapcsolásra került.</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Az automatikus kitöltő szolgáltatás használata előtt be kell jelentkezni a fő Cozy Pass alkalmazásba.</value>
+    <value>Az automatikus kitöltő szolgáltatás használata előtt be kell jelentkezni a fő Twake Pass alkalmazásba.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Az alkalmazásokba és webhelyekre a belépési adatok most már könnyedén elérhető a billentyűzetről.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Kapcsoljuk be az Automatikus kitöltést</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Válasszuk ki a "Cozy Pass"-t</value>
+    <value>5. Válasszuk ki a "Twake Pass"-t</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Jelszó automatikus kitöltése</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden automatikus jelszó kitöltés bővítmény. További információ olvasható a Cozy Pass automatikus jelszó kitöltés bővítmény használatáról a  "Beállítások" képernyőn.</value>
+    <value>A legkönnyebb módja új bejelentkezések széfbe helyezéséhez a Bitwarden automatikus jelszó kitöltés bővítmény. További információ olvasható a Twake Pass automatikus jelszó kitöltés bővítmény használatáról a  "Beállítások" képernyőn.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Az email cím érvénytelen.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass lehetővé teszi egy szervezeti fiók használatával a fiók megosztását másokkal. Szeretnél többet megtudni a bitwarden.com weboldalon?</value>
+    <value>Twake Pass lehetővé teszi egy szervezeti fiók használatával a fiók megosztását másokkal. Szeretnél többet megtudni a bitwarden.com weboldalon?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Széf exportálása</value>
@@ -1456,7 +1456,7 @@
     <value>30 perc</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>A pinkód beállítása a Cozy Pass feloldásához. A pinkód beállítás alaphelyzetbe kerül, ha teljesen kijelentkezünk az alkalmazásból.</value>
+    <value>A pinkód beállítása a Twake Pass feloldásához. A pinkód beállítás alaphelyzetbe kerül, ha teljesen kijelentkezünk az alkalmazásból.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Bejelentkezve mint {0} :: {1}.</value>
@@ -1548,7 +1548,7 @@
     <value>Újraindításkor</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Az automatikus kitöltés megkönnyíti a Bitwarden széf biztonságos elérését más webhelyekről és alkalmazásokból. Úgy tűnik, hogy nem engedélyezett az automatikus kitöltés a Bitwardennél. Az automatikus kitöltés a Cozy Passnél a "Beállítások" képernyőn engedélyezhető.</value>
+    <value>Az automatikus kitöltés megkönnyíti a Bitwarden széf biztonságos elérését más webhelyekről és alkalmazásokból. Úgy tűnik, hogy nem engedélyezett az automatikus kitöltés a Bitwardennél. Az automatikus kitöltés a Twake Passnél a "Beállítások" képernyőn engedélyezhető.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>A témaváltás az alkalmazás újraindítása után lép életbe.</value>

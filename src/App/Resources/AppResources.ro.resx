@@ -384,7 +384,7 @@
     <value>Vizitați-ne saitul web</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Vizitați saitul nostru pentru a primi ajutor, știri, pentru a trimite e-mail, și/sau aflați mai multe despre cum să utilizați Cozy Pass.</value>
+    <value>Vizitați saitul nostru pentru a primi ajutor, știri, pentru a trimite e-mail, și/sau aflați mai multe despre cum să utilizați Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Sait web</value>
@@ -406,7 +406,7 @@
     <value>Extensie aplicație</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Utilizați serviciul de accesibilitate Cozy Pass pentru a completa automat datele de autentificare între aplicații și pagini web.</value>
+    <value>Utilizați serviciul de accesibilitate Twake Pass pentru a completa automat datele de autentificare între aplicații și pagini web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Serviciul de auto-completare</value>
@@ -415,19 +415,19 @@
     <value>Se evită caracterele ambigue</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extensia aplicației Cozy Pass</value>
+    <value>Extensia aplicației Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicației Cozy Pass. Aflați mai multe despre utilizarea extensiei aplicației Cozy Pass accesând ecranul "Setări".</value>
+    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este din extensia aplicației Twake Pass. Aflați mai multe despre utilizarea extensiei aplicației Twake Pass accesând ecranul "Setări".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Utilizați Cozy Pass în Safari și în alte aplicații pentru a completa automat datele de autentificare.</value>
+    <value>Utilizați Twake Pass în Safari și în alte aplicații pentru a completa automat datele de autentificare.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Serviciul de auto-completare Cozy Pass</value>
+    <value>Serviciul de auto-completare Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Utilizați serviciul Cozy Pass pentru a completa automat datele de autentificare.</value>
+    <value>Utilizați serviciul Twake Pass pentru a completa automat datele de autentificare.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Schimbare e-mail</value>
@@ -473,7 +473,7 @@
     <value>Activare extensie aplicație</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>În Safari, găsiți Cozy Pass utilizând iconul de partajare (indiciu: derulați la dreapta pe rândul de jos al meniului).</value>
+    <value>În Safari, găsiți Twake Pass utilizând iconul de partajare (indiciu: derulați la dreapta pe rândul de jos al meniului).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Datele dvs. de conectare sunt acum ușor accesibile din Safari, Chrome și alte aplicații suportate.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>În Safari și Chrome, găsiți Cozy Pass utilizând iconul de partajare (indiciu: derulați la dreapta pe rândul de jos al meniului partajare).</value>
+    <value>În Safari și Chrome, găsiți Twake Pass utilizând iconul de partajare (indiciu: derulați la dreapta pe rândul de jos al meniului partajare).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Atingeți iconul Cozy Pass din meniu pentru a lansa extensia.</value>
+    <value>Atingeți iconul Twake Pass din meniu pentru a lansa extensia.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Pentru a activa Cozy Pass în Safari și alte aplicații, atingeți iconul "mai multe" pe rândul de jos al meniului.</value>
+    <value>Pentru a activa Twake Pass în Safari și alte aplicații, atingeți iconul "mai multe" pe rândul de jos al meniului.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favorit</value>
@@ -585,7 +585,7 @@
     <value>Mai multe setări</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Trebuie să vă conectați la aplicația principală Cozy Pass înainte de a putea utiliza extensia.</value>
+    <value>Trebuie să vă conectați la aplicația principală Twake Pass înainte de a putea utiliza extensia.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Niciodată</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Opțiunile implicite sunt setate din instrumentul principal de generare de parole al aplicației Cozy Pass.</value>
+    <value>Opțiunile implicite sunt setate din instrumentul principal de generare de parole al aplicației Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opțiuni</value>
@@ -634,7 +634,7 @@
     <value>Sigur doriți să suprascrieți parola curentă?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass păstrează seiful dvs. sincronizat utilizând notificările "push". Pentru cele mai bune rezultate posibile, selectați "Permite" la următorul mesaj când vi se solicită să activați notificările "push".</value>
+    <value>Twake Pass păstrează seiful dvs. sincronizat utilizând notificările "push". Pentru cele mai bune rezultate posibile, selectați "Permite" la următorul mesaj când vi se solicită să activați notificările "push".</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Afișare articol</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Seif web Cozy Pass</value>
+    <value>Seif web Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Ați pierdut aplicația de autentificare?</value>
@@ -750,7 +750,7 @@
     <value>Deschidere setări de accesibilitate</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. În ecranul Accesibilitate din setările Android, atingeți "Cozy Pass" sub titlul Servicii.</value>
+    <value>1. În ecranul Accesibilitate din setările Android, atingeți "Twake Pass" sub titlul Servicii.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Activați comutatorul și apăsați OK pentru a accepta.</value>
@@ -765,7 +765,7 @@
     <value>Stare</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este cu Serviciul de Auto-completare Cozy Pass. Aflați mai multe despre folosirea acestui serviciu Cozy Pass din ecranul "Setări".</value>
+    <value>Cea mai ușoară modalitate de a adăuga noi autentificări în seif este cu Serviciul de Auto-completare Twake Pass. Aflați mai multe despre folosirea acestui serviciu Twake Pass din ecranul "Setări".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Auto-completare</value>
@@ -964,7 +964,7 @@
     <value>Mediu de găzduire personal</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Specificați URL-ul de bază al instalării Cozy Pass.</value>
+    <value>Specificați URL-ul de bază al instalării Twake Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL server</value>
@@ -1126,7 +1126,7 @@
     <value>URL server de iconuri</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Auto-completare cu Cozy Pass</value>
+    <value>Auto-completare cu Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Seiful este blocat</value>
@@ -1150,10 +1150,10 @@
     <value>Serviciul de accesibilitate pentru auto-completare</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Serviciul de auto-completare Cozy Pass folosește Android Autofill Framework pentru a asista completarea informațiilor de autentificare și a celor asociate cardurilor și identităților în alte aplicații de pe dispozitivul dvs.</value>
+    <value>Serviciul de auto-completare Twake Pass folosește Android Autofill Framework pentru a asista completarea informațiilor de autentificare și a celor asociate cardurilor și identităților în alte aplicații de pe dispozitivul dvs.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Serviciul de auto-completare Cozy Pass se folosește pentru a completa informațiile de autentificare și cele asociate cardurilor și identităților în alte aplicații.</value>
+    <value>Serviciul de auto-completare Twake Pass se folosește pentru a completa informațiile de autentificare și cele asociate cardurilor și identităților în alte aplicații.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Setări de auto-completare</value>
@@ -1266,7 +1266,7 @@
     <value>Auto-completare activată!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Trebuie să vă conectați la aplicația principală Cozy Pass înainte de a putea utiliza auto-completarea.</value>
+    <value>Trebuie să vă conectați la aplicația principală Twake Pass înainte de a putea utiliza auto-completarea.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Conectările dvs. sunt acum ușor accesibile chiar de la tastatură în timp ce vă conectați la aplicații și saituri web.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Activați "Completare automată"</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Selectați "Cozy Pass"</value>
+    <value>5. Selectați "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Auto-completare parolă</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Cel mai simplu mod de a adăuga noi autentificări în seiful dvs. este prin utilizarea extensiei "Cozy Pass Auto-completare parole". Aflați mai multe despre utilizarea acestei extensii navigând la ecranul "Setări".</value>
+    <value>Cel mai simplu mod de a adăuga noi autentificări în seiful dvs. este prin utilizarea extensiei "Twake Pass Auto-completare parole". Aflați mai multe despre utilizarea acestei extensii navigând la ecranul "Setări".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Adresă de e-mail greșită.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?</value>
+    <value>Twake Pass vă permite să vă împărtășiți seiful cu alte persoane utilizând un cont pentru organizații. Doriți să vizitați site-ul bitwarden.com pentru a afla mai multe?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Export seif</value>
@@ -1456,7 +1456,7 @@
     <value>30 de minute</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Stabiliți codul PIN de deblocare Cozy Pass. Setările codului PIN vor fi reinițializate dacă vă deconectați vreodată din aplicație.</value>
+    <value>Stabiliți codul PIN de deblocare Twake Pass. Setările codului PIN vor fi reinițializate dacă vă deconectați vreodată din aplicație.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Autentificat ca {0} pe {1}.</value>
@@ -1548,7 +1548,7 @@
     <value>La repornirea aplicației</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-completarea ușurează accesul securizat al seifului Cozy Pass de pe alte saituri și aplicații. Se pare că nu ați activat serviciul de auto-completare pentru Cozy Pass. Activați auto-completarea pentru Cozy Pass din ecranul "Setări".</value>
+    <value>Auto-completarea ușurează accesul securizat al seifului Twake Pass de pe alte saituri și aplicații. Se pare că nu ați activat serviciul de auto-completare pentru Twake Pass. Activați auto-completarea pentru Twake Pass din ecranul "Setări".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Modificările temei se vor aplica după repornirea aplicației.</value>
