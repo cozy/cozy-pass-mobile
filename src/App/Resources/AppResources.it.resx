@@ -384,7 +384,7 @@
     <value>Visita il nostro sito</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Visita il nostro sito per ottenere aiuto, notizie, mandarci una email e/o imparare di più su come usare Cozy Pass.</value>
+    <value>Visita il nostro sito per ottenere aiuto, notizie, mandarci una email e/o imparare di più su come usare Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Sito web</value>
@@ -406,7 +406,7 @@
     <value>Estensione app</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Usa il servizio di accessibilità di Cozy Pass per l'auto-completamento dei tuoi login su app e web.</value>
+    <value>Usa il servizio di accessibilità di Twake Pass per l'auto-completamento dei tuoi login su app e web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Servizio di auto-completamento</value>
@@ -415,19 +415,19 @@
     <value>Evita caratteri ambigui</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Estensione app di Cozy Pass</value>
+    <value>Estensione app di Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Il modo più semplice per aggiungere nuovi login alla tua cassaforte è dall'estensione dell'applicazione Cozy Pass. Scopri di più sull'utilizzo dell'estensione dell'applicazione Cozy Pass navigando nella schermata "Impostazioni".</value>
+    <value>Il modo più semplice per aggiungere nuovi login alla tua cassaforte è dall'estensione dell'applicazione Twake Pass. Scopri di più sull'utilizzo dell'estensione dell'applicazione Twake Pass navigando nella schermata "Impostazioni".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Usa Cozy Pass su Safari e altre app per auto-completare i tuoi login.</value>
+    <value>Usa Twake Pass su Safari e altre app per auto-completare i tuoi login.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Servizio auto-completamento di Cozy Pass</value>
+    <value>Servizio auto-completamento di Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Usa il servizio di accessibilità Cozy Pass per auto-completare i tuoi login.</value>
+    <value>Usa il servizio di accessibilità Twake Pass per auto-completare i tuoi login.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Cambia email</value>
@@ -473,7 +473,7 @@
     <value>Abilita l'Estensione App</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Su Safari, trova Cozy Pass utilizzando l'icona di condivisione (suggerimento: scorri a destra sulla riga inferiore del menu).</value>
+    <value>Su Safari, trova Twake Pass utilizzando l'icona di condivisione (suggerimento: scorri a destra sulla riga inferiore del menu).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>I tuoi login sono ora facilmente accessibili da Safari, Chrome e altre applicazioni supportate.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>In Safari e Chrome, trova Cozy Pass utilizzando l'icona di condivisione (suggerimento: scorri a destra sulla riga in basso del menu Condividi).</value>
+    <value>In Safari e Chrome, trova Twake Pass utilizzando l'icona di condivisione (suggerimento: scorri a destra sulla riga in basso del menu Condividi).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Tocca l'icona di Cozy Pass nel menu per avviare l'estensione.</value>
+    <value>Tocca l'icona di Twake Pass nel menu per avviare l'estensione.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Per attivare Cozy Pass su Safari e altre applicazioni, tocca l'icona "altro" sull'ultima riga del menu.</value>
+    <value>Per attivare Twake Pass su Safari e altre applicazioni, tocca l'icona "altro" sull'ultima riga del menu.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Preferito</value>
@@ -585,7 +585,7 @@
     <value>Altre impostazioni</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>È necessario accedere all'app di Cozy Pass principale prima di poter utilizzare l'estensione.</value>
+    <value>È necessario accedere all'app di Twake Pass principale prima di poter utilizzare l'estensione.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Mai</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Le opzioni predefinite sono impostate dal generatore di password dell'app principale Cozy Pass.</value>
+    <value>Le opzioni predefinite sono impostate dal generatore di password dell'app principale Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opzioni</value>
@@ -634,7 +634,7 @@
     <value>Sei sicuro di voler sovrascrivere la password corrente?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass mantiene la tua cassaforte automaticamente sincronizzata utilizzando le notifiche push. Per la migliore esperienza possibile, seleziona "Consenti" alla domanda successiva quando viene richiesto di abilitare le notifiche push.</value>
+    <value>Twake Pass mantiene la tua cassaforte automaticamente sincronizzata utilizzando le notifiche push. Per la migliore esperienza possibile, seleziona "Consenti" alla domanda successiva quando viene richiesto di abilitare le notifiche push.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,9 +714,9 @@
     <value>Visualizza elemento</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cassaforte web Cozy Pass</value>
+    <value>Cassaforte web Twake Pass</value>
   </data>
-    <value>Cassaforte web Cozy Pass</value>
+    <value>Cassaforte web Twake Pass</value>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Hai perso l'app di autenticazione?</value>
   </data>
@@ -742,7 +742,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Quando selezioni un campo di inserimento e vedi un overlay di autocompletamento di Cozy Pass, puoi toccarlo per lanciare il servizio di completamento automatico.</value>
+    <value>Quando selezioni un campo di inserimento e vedi un overlay di autocompletamento di Twake Pass, puoi toccarlo per lanciare il servizio di completamento automatico.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Tocca questa notifica per auto-completare un login dal tuo vault.</value>
@@ -751,7 +751,7 @@
     <value>Apri impostazioni di accessibilità</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Nella schermata impostazioni di accessibilità di Android, tocca "Cozy Pass".</value>
+    <value>1. Nella schermata impostazioni di accessibilità di Android, tocca "Twake Pass".</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Attiva l'interruttore e premi OK per accettare.</value>
@@ -766,7 +766,7 @@
     <value>Stato</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Il modo più semplice per aggiungere nuovi login alla tua cassaforte è dal servizio di completamento automatico Cozy Pass. Scopri di più sull'utilizzo del servizio di completamento automatico di Cozy Pass navigando nella schermata "Impostazioni".</value>
+    <value>Il modo più semplice per aggiungere nuovi login alla tua cassaforte è dal servizio di completamento automatico Twake Pass. Scopri di più sull'utilizzo del servizio di completamento automatico di Twake Pass navigando nella schermata "Impostazioni".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Auto-completamento</value>
@@ -1127,7 +1127,7 @@
     <value>URL del server di icone</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Auto-completamento con Cozy Pass</value>
+    <value>Auto-completamento con Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>La cassaforte è bloccata</value>
@@ -1151,10 +1151,10 @@
     <value>Servizio di accessibilità dell'auto-completamento</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Il servizio di auto-completamento Cozy Pass usa l'Android Autofill Framework per assistenza nel completare informazioni su login, carte di credito e identità su altre app nel tuo dispositivo.</value>
+    <value>Il servizio di auto-completamento Twake Pass usa l'Android Autofill Framework per assistenza nel completare informazioni su login, carte di credito e identità su altre app nel tuo dispositivo.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Usa il servizio di auto-completamento di Cozy Pass per riempire le informazioni su login, carte di credito e identità su altre app.</value>
+    <value>Usa il servizio di auto-completamento di Twake Pass per riempire le informazioni su login, carte di credito e identità su altre app.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Apri impostazioni di auto-completamento</value>
@@ -1176,7 +1176,7 @@
     <value>Windows Hello</value>
   </data>
   <data name="BitwardenAutofillGoToSettings" xml:space="preserve">
-    <value>Non è stato possibile aprire il menu di impostazioni di completamento automatico. Puoi navigare manualmente nel menu delle impostazioni di completamento automatico dalle Impostazioni Android &gt; Accessibilità &gt; Servizi &gt; Cozy Pass.</value>
+    <value>Non è stato possibile aprire il menu di impostazioni di completamento automatico. Puoi navigare manualmente nel menu delle impostazioni di completamento automatico dalle Impostazioni Android &gt; Accessibilità &gt; Servizi &gt; Twake Pass.</value>
   </data>
   <data name="CustomFieldName" xml:space="preserve">
     <value>Nome campo personalizzato</value>
@@ -1267,7 +1267,7 @@
     <value>Completamento automatico attivato!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>È necessario accedere all'applicazione principale di Cozy Pass prima di poter utilizzare il completamento automatico.</value>
+    <value>È necessario accedere all'applicazione principale di Twake Pass prima di poter utilizzare il completamento automatico.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>I tuoi login sono ora facilmente accessibili direttamente dalla tastiera durante l'accesso ad applicazioni e siti web.</value>
@@ -1294,13 +1294,13 @@
     <value>4. Attiva completamento automatico</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Seleziona "Cozy Pass"</value>
+    <value>5. Seleziona "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Completamento automatico password</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Il modo più semplice per aggiungere nuovi login alla tua cassaforte è l'estensione Bitwarden Password AutoFill. Scopri di più sull'utilizzo dell'estensione Cozy Pass Password AutoFill navigando nella schermata "Impostazioni".</value>
+    <value>Il modo più semplice per aggiungere nuovi login alla tua cassaforte è l'estensione Bitwarden Password AutoFill. Scopri di più sull'utilizzo dell'estensione Twake Pass Password AutoFill navigando nella schermata "Impostazioni".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Indirizzo email non valido.</value>
@@ -1439,7 +1439,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass ti permette di condividere la tua cassaforte con altri utilizzando un account di organizzazione. Vuoi visitare il sito di bitwarden.com per saperne di più?</value>
+    <value>Twake Pass ti permette di condividere la tua cassaforte con altri utilizzando un account di organizzazione. Vuoi visitare il sito di bitwarden.com per saperne di più?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Esporta cassaforte</value>
@@ -1457,7 +1457,7 @@
     <value>30 minuti</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Imposta il tuo codice PIN per sbloccare Cozy Pass. Le impostazioni PIN verranno reimpostate se ti disconnetti completamente dall'applicazione.</value>
+    <value>Imposta il tuo codice PIN per sbloccare Twake Pass. Le impostazioni PIN verranno reimpostate se ti disconnetti completamente dall'applicazione.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Accesso effettuato come {0} su {1}.</value>
@@ -1524,7 +1524,7 @@
     <value>Esci</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Sei sicuro di voler uscire da Cozy Pass?</value>
+    <value>Sei sicuro di voler uscire da Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Vuoi richiedere lo sblocco con la password principale quando l'applicazione viene riavviata?</value>
@@ -1549,7 +1549,7 @@
     <value>Al riavvio dell'applicazione</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>L'autocompletamento rende facile accedere in modo sicuro alla tua cassaforte Cozy Pass da altri siti web e applicazioni. Sembra che tu non abbia abilitato un servizio di completamento automatico per Cozy Pass. Abilita l'autocompletamento per Cozy Pass dalla schermata "Impostazioni".</value>
+    <value>L'autocompletamento rende facile accedere in modo sicuro alla tua cassaforte Twake Pass da altri siti web e applicazioni. Sembra che tu non abbia abilitato un servizio di completamento automatico per Twake Pass. Abilita l'autocompletamento per Twake Pass dalla schermata "Impostazioni".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Le modifiche del tema verranno applicate al riavvio dell'applicazione.</value>

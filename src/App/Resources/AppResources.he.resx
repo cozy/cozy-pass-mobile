@@ -406,7 +406,7 @@
     <value>הרחבת אפליקציה</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>השתמש בשירות הנגישות של Cozy Pass עבור השלמה אוטמטית של פרטי כניסה לאפליקציות ולאתרים באינטרנט.</value>
+    <value>השתמש בשירות הנגישות של Twake Pass עבור השלמה אוטמטית של פרטי כניסה לאפליקציות ולאתרים באינטרנט.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>שירות השלמה אוטומטית</value>
@@ -415,19 +415,19 @@
     <value>המנע מאותיות ותוים דומים</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>תוסף האפליקציה של Cozy Pass</value>
+    <value>תוסף האפליקציה של Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>הדרך הקלה ביותר להוספת סיסמאות לכספת היא דרך התוסף של Bitwarden. למד עוד אודות השימוש בתוסף של Cozy Pass בעזרת פתיחת חלון "הגדרות".</value>
+    <value>הדרך הקלה ביותר להוספת סיסמאות לכספת היא דרך התוסף של Bitwarden. למד עוד אודות השימוש בתוסף של Twake Pass בעזרת פתיחת חלון "הגדרות".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>השתמש בCozy Pass בדפדפן Safari ואפליקציות נוספות כדי לבצע כתיבה אוטומטית של הסיסמאות שלך.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>שירות השלמה אוטומטית של Cozy Pass</value>
+    <value>שירות השלמה אוטומטית של Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>השתמש בשירות הנגישות של Cozy Pass כדי למלא בצורה אוטומטית את פרטי החיבור שלך.</value>
+    <value>השתמש בשירות הנגישות של Twake Pass כדי למלא בצורה אוטומטית את פרטי החיבור שלך.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>החלף אימייל</value>
@@ -473,7 +473,7 @@
     <value>הפעל הרחבת אפליקציה</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>בדפדפן Safari, חפש את Cozy Pass בעזרת לחצן השיתוף (רמז: גלול לצד ימין בשורה התחתונה של התפריט).</value>
+    <value>בדפדפן Safari, חפש את Twake Pass בעזרת לחצן השיתוף (רמז: גלול לצד ימין בשורה התחתונה של התפריט).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>כל הסיסמאות שלך נגישות דרך הדפדפנים Safari, כרום, ואפליקציות נוספות שאנו תומכים בהם.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>בדפדפנים ספארי וכרום, חפש את Cozy Pass בעזרת לחצן השיתוף (רמז: גלול לצד ימין בשורה התחתונה של תפריט השיתוף).</value>
+    <value>בדפדפנים ספארי וכרום, חפש את Twake Pass בעזרת לחצן השיתוף (רמז: גלול לצד ימין בשורה התחתונה של תפריט השיתוף).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>לחץ על האייקון של Cozy Pass בתפריט כדי לפתוח את התוסף.</value>
+    <value>לחץ על האייקון של Twake Pass בתפריט כדי לפתוח את התוסף.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>בכדי להפעיל את Cozy Pass בדפדפן Safari ובאפליקציות נוספות, לחץ על האייקון "עוד" בשורה התחתונה של התפריט.</value>
+    <value>בכדי להפעיל את Twake Pass בדפדפן Safari ובאפליקציות נוספות, לחץ על האייקון "עוד" בשורה התחתונה של התפריט.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>מועדף</value>
@@ -585,7 +585,7 @@
     <value>הגדרות נוספות</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>חובה להתחבר לאפליקציה הראשית של Cozy Pass לפני שתוכל להשתמש בהרחבה זו.</value>
+    <value>חובה להתחבר לאפליקציה הראשית של Twake Pass לפני שתוכל להשתמש בהרחבה זו.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>לעולם לא</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>ברירות המחדל נקבעו דרך הגדרות כלי מחולל הסיסמאות של Cozy Pass.</value>
+    <value>ברירות המחדל נקבעו דרך הגדרות כלי מחולל הסיסמאות של Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>אפשרויות</value>
@@ -634,7 +634,7 @@
     <value>האם אתה בטוח שברצונך לדרוס את הסיסמה הקיימת?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>תוכנת Cozy Pass מסנכרנת את הכספת שלך בעזרת הודעות push. לחוויה הטובה ביותר, אנא בחר "התר" או "אפשר" בחלון הבא אם תתבקש לאפשר את הרשאת "הודעות push".</value>
+    <value>תוכנת Twake Pass מסנכרנת את הכספת שלך בעזרת הודעות push. לחוויה הטובה ביותר, אנא בחר "התר" או "אפשר" בחלון הבא אם תתבקש לאפשר את הרשאת "הודעות push".</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>צפה בפריט</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>כספת באתר Cozy Pass</value>
+    <value>כספת באתר Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>הסרת את אפליקצית האימות?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>כשלוחצים על שדה להזנה ורואים את ההצעה להשלמה אוטומטית של Cozy Pass, ניתן ללחוץ על ההצעה בכדי להפעיל את שירות ההשלמה האוטומטית.</value>
+    <value>כשלוחצים על שדה להזנה ורואים את ההצעה להשלמה אוטומטית של Twake Pass, ניתן ללחוץ על ההצעה בכדי להפעיל את שירות ההשלמה האוטומטית.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>לחץ על הודעה זו בכדי למלא את הטופס לפי הפרטים השמורים בכספת שלך.</value>
@@ -750,7 +750,7 @@
     <value>פתח הגדרות נגישות</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. בחלון מצב הנגישות של אנדרואיד, לחץ על "Cozy Pass" תחת הכותרת "שירותים".</value>
+    <value>1. בחלון מצב הנגישות של אנדרואיד, לחץ על "Twake Pass" תחת הכותרת "שירותים".</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. הפעל את האפשרות ולחץ אישור.</value>
@@ -965,7 +965,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>סביבה על שרתים מקומיים</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>הזן את כתובת השרת המקומי של Cozy Pass.</value>
+    <value>הזן את כתובת השרת המקומי של Twake Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>כתובת שרת</value>
@@ -1127,7 +1127,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>כתובת השרת עבור האייקון</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>השלמה אוטומטית עם Cozy Pass</value>
+    <value>השלמה אוטומטית עם Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>הכספת נעולה</value>
@@ -1154,7 +1154,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>שירות ההשלמה האוטומטית משתמש ביכולת ההשלמה האוטומטית של מערכת ההפעלה אנדרואיד בכדי לעזור לך בהשלמת פרטי הכניסה, כרטיסי אשראי, ופרטי זהות לתוך אפליקציות שונות במכשירך.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>השתמש בשירות ההשלמה האוטומטי של Cozy Pass בכדי למלא טפסי כניסה, פרטי כרטיס אשראי, ופרטי זהות בצורה מאובטחת לתוך אפליקציות אחרות.</value>
+    <value>השתמש בשירות ההשלמה האוטומטי של Twake Pass בכדי למלא טפסי כניסה, פרטי כרטיס אשראי, ופרטי זהות בצורה מאובטחת לתוך אפליקציות אחרות.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>פתח את הגדרות ההשלמה האוטומטית</value>
@@ -1267,7 +1267,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>השלמה אוטומטית הופעלה!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>חובה להתחבר לאפליקציה הראשית של Cozy Pass לפני שתוכל להשתמש בהשלמה האוטומטית.</value>
+    <value>חובה להתחבר לאפליקציה הראשית של Twake Pass לפני שתוכל להשתמש בהשלמה האוטומטית.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>כל פרטי הכניסה שלך נגישים ישירות מהמקלדת ברגע החיבור לאפליקציות ולאתרים.</value>
@@ -1294,13 +1294,13 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>4. הפעל השלמה אוטומטית</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. בחר את "Cozy Pass"</value>
+    <value>5. בחר את "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>השלמת סיסמאות אוטומטית</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>הדרך הקלה ביותר להוספת פרטי כניסה לכספת שלך היא בעזרת התוסף של Bitwarden להשלמת סיסמאות. למד עוד אודות השימוש בתוסף של Cozy Pass להשלמת סיסמאות בעזרת פתיחת חלון "הגדרות".</value>
+    <value>הדרך הקלה ביותר להוספת פרטי כניסה לכספת שלך היא בעזרת התוסף של Bitwarden להשלמת סיסמאות. למד עוד אודות השימוש בתוסף של Twake Pass להשלמת סיסמאות בעזרת פתיחת חלון "הגדרות".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>כתובת אימייל לא תקינה.</value>
@@ -1439,7 +1439,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>תוכנת Cozy Pass מאפשרת לך לשתף את הכספת עם אחרים בעזרת חשבון ארגון. האם תרצה לבקר באתר bitwarden.com ללמוד עוד בנושא זה?</value>
+    <value>תוכנת Twake Pass מאפשרת לך לשתף את הכספת עם אחרים בעזרת חשבון ארגון. האם תרצה לבקר באתר bitwarden.com ללמוד עוד בנושא זה?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>יצוא כספת</value>
@@ -1457,7 +1457,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>30 דקות</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>קבע קוד PIN לביטול נעילת Cozy Pass. הגדרות הPIN יאופסו אם תבצע יציאה מהתוכנה.</value>
+    <value>קבע קוד PIN לביטול נעילת Twake Pass. הגדרות הPIN יאופסו אם תבצע יציאה מהתוכנה.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>התחברת כ-{0} ל {1}.</value>
@@ -1524,7 +1524,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>יציאה</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>האם את/ה בטוח/ה שברצונך לצאת מ-Cozy Pass?</value>
+    <value>האם את/ה בטוח/ה שברצונך לצאת מ-Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>האם ברצונך לחייב הזנת סיסמה ראשית כשהאפליקציה מופעלת מחדש?</value>
@@ -1549,7 +1549,7 @@ Bitwarden בעזרת פתיחת חלון "הגדרות".</value>
     <value>באתחול האפליקציה</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>השלמה אוטומטית הופכת את תהליך הכניסה לאתרים לקל ומאובטח בעת גישה לאתרים ואפליקציות. נראה שלא הפעלת את שירות ההשלמה האוטומטית עבור Cozy Pass. אנא הפעל את השירות דרך חלון "הגדרות".</value>
+    <value>השלמה אוטומטית הופכת את תהליך הכניסה לאתרים לקל ומאובטח בעת גישה לאתרים ואפליקציות. נראה שלא הפעלת את שירות ההשלמה האוטומטית עבור Twake Pass. אנא הפעל את השירות דרך חלון "הגדרות".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>שינוי בערכת הנושא יוחל בהפעלה הבאה של האפליקציה.</value>

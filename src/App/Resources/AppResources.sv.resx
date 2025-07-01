@@ -384,7 +384,7 @@
     <value>Besök vår webbplats</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Besök vår webbplats för att få hjälp, nyheter, mejla oss och/eller lära er mer om hur man använder Cozy Pass.</value>
+    <value>Besök vår webbplats för att få hjälp, nyheter, mejla oss och/eller lära er mer om hur man använder Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Webbsida</value>
@@ -406,7 +406,7 @@
     <value>Apptillägg</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Använd Cozy Passs tillgänglighetstjänst för att automatiskt fylla i dina inloggningar i applikationer och på webben.</value>
+    <value>Använd Twake Passs tillgänglighetstjänst för att automatiskt fylla i dina inloggningar i applikationer och på webben.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Hjälpmedelsservice för automatisk ifyllnad</value>
@@ -415,19 +415,19 @@
     <value>Undvik tvetydiga tecken</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass apptillägg</value>
+    <value>Twake Pass apptillägg</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Det enklaste sättet att lägga till nya inloggningar i ditt valv är genom apptillägget. Läs mer om Cozy Pass apptillägg genom att navigera till fliken "Inställningar".</value>
+    <value>Det enklaste sättet att lägga till nya inloggningar i ditt valv är genom apptillägget. Läs mer om Twake Pass apptillägg genom att navigera till fliken "Inställningar".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Använd Cozy Pass i Safari och andra applikationer för att automatiskt fylla i din inloggningsinformation.</value>
+    <value>Använd Twake Pass i Safari och andra applikationer för att automatiskt fylla i din inloggningsinformation.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Passs hjälpmedelsservice för automatisk ifyllnad</value>
+    <value>Twake Passs hjälpmedelsservice för automatisk ifyllnad</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Använd Cozy Passs tillgänglighetstjänst för att automatiskt fylla i din inloggningsinformation.</value>
+    <value>Använd Twake Passs tillgänglighetstjänst för att automatiskt fylla i din inloggningsinformation.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Ändra e-postadress</value>
@@ -473,7 +473,7 @@
     <value>Aktivera apptillägg</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Inuti Safari hittar du Cozy Pass genom att trycka på dela-ikonen (scrolla till höger på den nedersta raden i dela-menyn).</value>
+    <value>Inuti Safari hittar du Twake Pass genom att trycka på dela-ikonen (scrolla till höger på den nedersta raden i dela-menyn).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Dina inloggningar är nu enkelt åtkomna från Safari, Chrome och andra appar som stöds.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Inuti Safari och Chrome hittar du Cozy Pass genom att trycka på dela-ikonen (hjälp: skrolla till höger på den nedersta raden i dela-menyn).</value>
+    <value>Inuti Safari och Chrome hittar du Twake Pass genom att trycka på dela-ikonen (hjälp: skrolla till höger på den nedersta raden i dela-menyn).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Tryck på Cozy Pass-ikonen i menyn för att öppna tillägget.</value>
+    <value>Tryck på Twake Pass-ikonen i menyn för att öppna tillägget.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>För att starta Cozy Pass i Safari och andra appar, tryck på "mer"-ikonen i den nedersta raden på menyn.</value>
+    <value>För att starta Twake Pass i Safari och andra appar, tryck på "mer"-ikonen i den nedersta raden på menyn.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favorit</value>
@@ -585,7 +585,7 @@
     <value>Fler inställningar</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Du måste logga in i Cozy Pass-appen innan du kan använda tillägget.</value>
+    <value>Du måste logga in i Twake Pass-appen innan du kan använda tillägget.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Aldrig</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Standardinställningar ställs in genom Cozy Pass-appens lösenordsgenerator-verktyg.</value>
+    <value>Standardinställningar ställs in genom Twake Pass-appens lösenordsgenerator-verktyg.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Alternativ</value>
@@ -634,7 +634,7 @@
     <value>Är du säker på att du vill skriva över det nuvarande lösenordet?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass håller ditt valv uppdaterat automatiskt genom att använda push-aviseringar. För den bästa möjliga upplevelsen vänligen välj "Tillåt" på förfrågan om du vill aktivera push-aviseringar.</value>
+    <value>Twake Pass håller ditt valv uppdaterat automatiskt genom att använda push-aviseringar. För den bästa möjliga upplevelsen vänligen välj "Tillåt" på förfrågan om du vill aktivera push-aviseringar.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Visa objekt</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Pass webbvalv</value>
+    <value>Twake Pass webbvalv</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Förlorat autentiseringsapp?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>När du väljer ett inmatningsfält och ser en ruta för automatisk ifyllnad från Cozy Pass, kan du trycka på den för att starta tjänsten för automatisk ifyllnad.</value>
+    <value>När du väljer ett inmatningsfält och ser en ruta för automatisk ifyllnad från Twake Pass, kan du trycka på den för att starta tjänsten för automatisk ifyllnad.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Tryck på den här aviseringen för att automatiskt fylla i en inloggning från ditt valv.</value>
@@ -750,7 +750,7 @@
     <value>Öppna tillgänglighetsinställningar</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. I Androids tillgänglighetsinställningar trycker du på "Cozy Pass" under tjänster.</value>
+    <value>1. I Androids tillgänglighetsinställningar trycker du på "Twake Pass" under tjänster.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Växla till på-läget och tryck på OK för att acceptera.</value>
@@ -765,7 +765,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Det lättaste sättet att lägga till nya inloggningar till ditt valv är från Cozy Pass hjälpmedelsservice för automatisk ifyllnad. Läs mer om hur man använder Cozy Pass hjälpmedelsservice för automatisk ifyllnad genom att navigera till fliken "Inställningar".</value>
+    <value>Det lättaste sättet att lägga till nya inloggningar till ditt valv är från Twake Pass hjälpmedelsservice för automatisk ifyllnad. Läs mer om hur man använder Twake Pass hjälpmedelsservice för automatisk ifyllnad genom att navigera till fliken "Inställningar".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Automatisk ifyllnad</value>
@@ -964,7 +964,7 @@
     <value>Egen-hostad miljö</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Ange bas-URL:en för din "on-premise"-hostade Cozy Pass-installation.</value>
+    <value>Ange bas-URL:en för din "on-premise"-hostade Twake Pass-installation.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Server-URL</value>
@@ -1126,7 +1126,7 @@
     <value>Ikoner Server-URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Fyll i automatiskt med Cozy Pass</value>
+    <value>Fyll i automatiskt med Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Valvet är låst</value>
@@ -1150,10 +1150,10 @@
     <value>Tillgänglighetstjänst för automatisk ifyllnad</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Cozy Passs tillgänglighetstjänst för automatisk ifyllnad använder Android Autofill Framework för att assistera med att fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar på din enhet.</value>
+    <value>Twake Passs tillgänglighetstjänst för automatisk ifyllnad använder Android Autofill Framework för att assistera med att fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar på din enhet.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Använd Cozy Passs tillgänglighetstjänst för att automatiskt fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar.</value>
+    <value>Använd Twake Passs tillgänglighetstjänst för att automatiskt fylla i inloggningar, kreditkort och identitetsinformation inuti andra appar.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Öppna inställningar för automatisk ifyllnad</value>
@@ -1266,7 +1266,7 @@
     <value>Automatisk ifyllnad aktiverat!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Du måste logga in i Cozy Pass-appen innan du kan använda automatisk ifyllnad.</value>
+    <value>Du måste logga in i Twake Pass-appen innan du kan använda automatisk ifyllnad.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Dina inloggningar är nu enkelt åtkomna direkt från ditt tangentbord när du loggar in i appar och webbplatser.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Sätt på autofyll</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Välj "Cozy Pass"</value>
+    <value>5. Välj "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Automatisk ifyllnad av lösenord</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Det lättaste sättet att lägga till nya inloggningar till ditt valv är genom att använda Cozy Pass hjälpmedelsservice för automatisk ifyllnad. Läs mer om hur man använder Cozy Pass hjälpmedelsservice för automatisk ifyllnad genom att navigera till "Inställningar"-skärmen.</value>
+    <value>Det lättaste sättet att lägga till nya inloggningar till ditt valv är genom att använda Twake Pass hjälpmedelsservice för automatisk ifyllnad. Läs mer om hur man använder Twake Pass hjälpmedelsservice för automatisk ifyllnad genom att navigera till "Inställningar"-skärmen.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Ogiltig e-postadress.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Twake Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exportera valv</value>
@@ -1456,7 +1456,7 @@
     <value>30 minuter</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Ange en PIN-kod att låsa upp Cozy Pass med. Dina PIN-kodsinställningar återställs om du någonsin loggar ut helt från appen.</value>
+    <value>Ange en PIN-kod att låsa upp Twake Pass med. Dina PIN-kodsinställningar återställs om du någonsin loggar ut helt från appen.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Inloggad som {0} på {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Avsluta</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Är du säker på att du vill avsluta Cozy Pass?</value>
+    <value>Är du säker på att du vill avsluta Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Vill du behöva låsa upp med ditt huvudlösenord när programmet startas om?</value>
@@ -1548,7 +1548,7 @@
     <value>Vid omstart av appen</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automatisk ifyllning gör det enkelt att säkert komma åt ditt Cozy Pass-valv från andra webbplatser och appar. Det verkar som om du inte har aktiverat en tjänst för automatisk ifyllning för Cozy Pass. Aktivera automatisk ifyllning för Cozy Pass från fliken "Inställningar".</value>
+    <value>Automatisk ifyllning gör det enkelt att säkert komma åt ditt Twake Pass-valv från andra webbplatser och appar. Det verkar som om du inte har aktiverat en tjänst för automatisk ifyllning för Twake Pass. Aktivera automatisk ifyllning för Twake Pass från fliken "Inställningar".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Ditt tema ändras när appen startas om.</value>

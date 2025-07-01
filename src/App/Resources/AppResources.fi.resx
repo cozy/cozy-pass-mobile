@@ -384,7 +384,7 @@
     <value>Käy sivustollamme</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Käy sivustollamme, jossa voit saada apua Cozy Passin käyttämisessä, lukea palvelun uutisia tai lähettää meille sähköpostia.</value>
+    <value>Käy sivustollamme, jossa voit saada apua Twake Passin käyttämisessä, lukea palvelun uutisia tai lähettää meille sähköpostia.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>SIvusto</value>
@@ -406,7 +406,7 @@
     <value>Sovelluslaajennus</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Käytä Cozy Passin esteettömyyspalvelua kirjautumistietojesi automaattiseen täyttöön sovelluksissa ja verkossa.</value>
+    <value>Käytä Twake Passin esteettömyyspalvelua kirjautumistietojesi automaattiseen täyttöön sovelluksissa ja verkossa.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Automaattisen täytön palvelu</value>
@@ -415,17 +415,17 @@
     <value>Vältä epäselviä merkkejä</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass-sovelluslaajennus</value>
-    <value>Cozy Pass sovelluslaajennus</value>
+    <value>Twake Pass-sovelluslaajennus</value>
+    <value>Twake Pass sovelluslaajennus</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Helpoin tapa lisätä holviisi uusia kirjautumistietoja on käyttää Cozy Passin sovelluslaajennusta. Asetuksista löydät lisätietoja laajennuksesta.</value>
+    <value>Helpoin tapa lisätä holviisi uusia kirjautumistietoja on käyttää Twake Passin sovelluslaajennusta. Asetuksista löydät lisätietoja laajennuksesta.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Käytä Bitwardenia kirjautumistietojesi automaattiseen täyttöön Safarissa ja muissa sovelluksissa.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Passin automaattisen täytön palvelu</value>
+    <value>Twake Passin automaattisen täytön palvelu</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
     <value>Käytä Bitwardenin esteettömyyspalvelua kirjautumistietojesi automaattiseen täyttöön.</value>
@@ -715,7 +715,7 @@
     <value>Näytä kohde</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Passin verkkoholvi</value>
+    <value>Twake Passin verkkoholvi</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Etkö pysty käyttämään todennussovellustasi?</value>
@@ -751,7 +751,7 @@
     <value>Avaa "Esteettömyys" -asetukset</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Valitse esteettömyysasetusten "Palvelut" -otsikon alta ”Cozy Pass”.</value>
+    <value>1. Valitse esteettömyysasetusten "Palvelut" -otsikon alta ”Twake Pass”.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Laita asetus päälle ja paina OK-painiketta hyväksyäksesi.</value>
@@ -766,7 +766,7 @@
     <value>Tila</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Helpoin tapa lisätä holviisi uusia kirjautumistietoja on Cozy Passin automaattisen täytön palvelu. Asetuksista löydät lisätietoja palvelun käytöstä.</value>
+    <value>Helpoin tapa lisätä holviisi uusia kirjautumistietoja on Twake Passin automaattisen täytön palvelu. Asetuksista löydät lisätietoja palvelun käytöstä.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Automaattinen täyttö</value>
@@ -965,7 +965,7 @@
     <value>Oma palvelinympäristö</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Määritä omassa palvelinympäristössäsi suoritettavan Cozy Pass-asennuksen pääverkkotunnus.</value>
+    <value>Määritä omassa palvelinympäristössäsi suoritettavan Twake Pass-asennuksen pääverkkotunnus.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Palvelimen URL</value>
@@ -1127,7 +1127,7 @@
     <value>Kuvakepalvelimen URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Täytä automaattisesti Cozy Passilla</value>
+    <value>Täytä automaattisesti Twake Passilla</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Holvi on lukittu</value>
@@ -1154,7 +1154,7 @@
     <value>Bitwardenin automaattisen täytön palvelu käyttää Android Autofill Framework -rajapintaa kirjautumistietojen, korttien ja henkilöllisyyksien täyttöön laitteesi sovelluksissa.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Käytä Cozy Passin esteettömyyspalvelua kirjautumistietojen, korttien ja henkilöllisyyksien automaattiseen täyttöön sovelluksissa.</value>
+    <value>Käytä Twake Passin esteettömyyspalvelua kirjautumistietojen, korttien ja henkilöllisyyksien automaattiseen täyttöön sovelluksissa.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Avaa "Automaattinen täyttö -palvelu" -asetukset</value>
@@ -1267,7 +1267,7 @@
     <value>Automaattinen täyttö on otettu käyttöön!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Sinun on kirjauduttava Cozy Passin pääsovellukseen ennen kuin voit käyttää automaattista täyttöä.</value>
+    <value>Sinun on kirjauduttava Twake Passin pääsovellukseen ennen kuin voit käyttää automaattista täyttöä.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Kirjautumistietosi ovat nyt helposti saatavilla suoraan näppäimistöltäsi kun olet kirjautumassa sovelluksiin ja verkkosivustoille.</value>
@@ -1294,13 +1294,13 @@
     <value>4. Kytke automaattinen täyttö käyttöön</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Valitse "Cozy Pass"</value>
+    <value>5. Valitse "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Salasanojen automaattinen täyttö</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on Cozy Passin automaattisen täytön laajennus. Asetuksista löydät lisätietoja laajennuksen käytöstä.</value>
+    <value>Helpoin tapa lisätä uusia kirjautumistietoja holviisi on Twake Passin automaattisen täytön laajennus. Asetuksista löydät lisätietoja laajennuksen käytöstä.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Virheellinen sähköpostiosoite.</value>
@@ -1439,7 +1439,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Voit jakaa Cozy Passilla holvisi sisällön muiden kanssa käyttämällä organisaatiotiliä. Haluatko käydä bitwarden.com-sivustolla lukemassa lisää?</value>
+    <value>Voit jakaa Twake Passilla holvisi sisällön muiden kanssa käyttämällä organisaatiotiliä. Haluatko käydä bitwarden.com-sivustolla lukemassa lisää?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Vie holvi</value>
@@ -1457,7 +1457,7 @@
     <value>30 minuuttia</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Aseta PIN-koodi Cozy Passin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta.</value>
+    <value>Aseta PIN-koodi Twake Passin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Kirjautunut tunnuksella {0} palveluun {1}.</value>
@@ -1524,7 +1524,7 @@
     <value>Poistu</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Haluatko varmasti poistua Cozy Passista?</value>
+    <value>Haluatko varmasti poistua Twake Passista?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Vaaditaanko lukituksen avaus pääsalasanalla, kun sovellus käynnistetään uudelleen?</value>
@@ -1549,7 +1549,7 @@
     <value>Kun sovellus käynnistetään uudelleen</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automaattinen täyttö tekee Cozy Pass-holvisi käytöstä sivustoilla ja muissa sovelluksissa helppoa. Näyttää siltä, ettei automaattista täyttöä ole otettu käyttöön. Voit tehdä sen "Asetukset" -näytöstä.</value>
+    <value>Automaattinen täyttö tekee Twake Pass-holvisi käytöstä sivustoilla ja muissa sovelluksissa helppoa. Näyttää siltä, ettei automaattista täyttöä ole otettu käyttöön. Voit tehdä sen "Asetukset" -näytöstä.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Teema vaihtuu kun sovellus käynnistetään uudelleen.</value>

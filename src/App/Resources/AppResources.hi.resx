@@ -418,7 +418,7 @@
     <value>bitwarden App Extension</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>अपने तिजोरी में नए आइटम डालने का सबसे सरल तरीका है Cozy Pass ऐप विस्तारण। Cozy Pass ऐप विस्तरण के उपयोग संबंधी जानकारी पाने के लिए "सेटिंग्स" में जाएं।</value>
+    <value>अपने तिजोरी में नए आइटम डालने का सबसे सरल तरीका है Twake Pass ऐप विस्तारण। Twake Pass ऐप विस्तरण के उपयोग संबंधी जानकारी पाने के लिए "सेटिंग्स" में जाएं।</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
     <value>Use bitwarden in Safari and other apps to auto-fill your logins.</value>
@@ -439,7 +439,7 @@
     <value>मास्टर पासवर्ड बदलें</value>
   </data>
   <data name="ChangePasswordConfirmation" xml:space="preserve">
-    <value>मास्टर पासवर्ड Cozy Pass के वेब-तिजोरी पर जाकर बदला जा सकता है। क्या आप वहां जाना चाहते हैं?</value>
+    <value>मास्टर पासवर्ड Twake Pass के वेब-तिजोरी पर जाकर बदला जा सकता है। क्या आप वहां जाना चाहते हैं?</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>बंद करें</value>
@@ -1267,7 +1267,7 @@
     <value>AutoFill Activated!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>You must log into the main Cozy Pass app before you can use AutoFill.</value>
+    <value>You must log into the main Twake Pass app before you can use AutoFill.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Your logins are now easily accessable right from your keyboard while logging into apps and websites.</value>
@@ -1294,13 +1294,13 @@
     <value>4. Turn on AutoFill</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Select "Cozy Pass"</value>
+    <value>5. Select "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Password AutoFill</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Cozy Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
+    <value>The easiest way to add new logins to your vault is by using the Bitwarden Password AutoFill extension. Learn more about using the Twake Pass Password AutoFill extension by navigating to the "Settings" screen.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Invalid email address.</value>
@@ -1439,7 +1439,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Twake Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>निर्यात तिजोरी</value>
@@ -1457,7 +1457,7 @@
     <value>30 मिनिट</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Set your PIN code for unlocking Cozy Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
+    <value>Set your PIN code for unlocking Twake Pass. Your PIN settings will be reset if you ever fully log out of the application.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Logged in as {0} on {1}.</value>
@@ -1524,7 +1524,7 @@
     <value>निकास</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Are you sure you want to exit Cozy Pass?</value>
+    <value>Are you sure you want to exit Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>एप्लीकेशन पुनर्प्रारंभ करते समय मास्टर पासवर्ड पूछे?</value>
@@ -1549,7 +1549,7 @@
     <value>On App Restart</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Cozy Pass from the "Settings" screen.</value>
+    <value>Auto-fill makes it easy to securely access your Bitwarden vault from other websites and apps. It looks like you have not enabled an auto-fill service for Bitwarden. Enable auto-fill for Twake Pass from the "Settings" screen.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Your theme changes will apply when the app is restarted.</value>

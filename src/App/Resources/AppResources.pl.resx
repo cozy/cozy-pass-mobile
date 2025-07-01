@@ -384,7 +384,7 @@
     <value>Odwiedź naszą stronę</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i/lub dowiedzieć się, jak używać Cozy Pass.</value>
+    <value>Odwiedź naszą stronę, aby uzyskać pomoc, zobaczyć aktualności, napisać do nas i/lub dowiedzieć się, jak używać Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Strona</value>
@@ -406,7 +406,7 @@
     <value>Rozszerzenie aplikacji</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Użyj usługi ułatwienia dostępu Cozy Pass, aby korzystać z autouzupełniania danych logowania w aplikacjach i na stronach internetowych.</value>
+    <value>Użyj usługi ułatwienia dostępu Twake Pass, aby korzystać z autouzupełniania danych logowania w aplikacjach i na stronach internetowych.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Usługa autouzupełniania</value>
@@ -415,19 +415,19 @@
     <value>Unikaj niejednoznacznych znaków</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Rozszerzenie aplikacji Cozy Pass</value>
+    <value>Rozszerzenie aplikacji Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest Rozszerzenie Aplikacji Bitwarden. Więcej informacji o używaniu Rozszerzenia Aplikacji Cozy Pass znajdziesz w widoku "Ustawienia".</value>
+    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest Rozszerzenie Aplikacji Bitwarden. Więcej informacji o używaniu Rozszerzenia Aplikacji Twake Pass znajdziesz w widoku "Ustawienia".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Użyj Cozy Pass do autouzupełniania danych logowania w przeglądarce Safari i innych aplikacjach.</value>
+    <value>Użyj Twake Pass do autouzupełniania danych logowania w przeglądarce Safari i innych aplikacjach.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Usługa autouzupełniania Cozy Pass</value>
+    <value>Usługa autouzupełniania Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Użyj usługi ułatwienia dostępu Cozy Pass, aby korzystać z autouzupełniania danych logowania.</value>
+    <value>Użyj usługi ułatwienia dostępu Twake Pass, aby korzystać z autouzupełniania danych logowania.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Zmień adres e-mail</value>
@@ -473,7 +473,7 @@
     <value>Włącz Rozszerzenie Aplikacji</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>W Safari, znajdź Cozy Pass przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu do prawej strony).</value>
+    <value>W Safari, znajdź Twake Pass przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu do prawej strony).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,10 +486,10 @@
     <value>Dane logowania są teraz łatwo dostępne z przeglądarki Safari, Chrome i innych obsługiwanych aplikacji.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>W przeglądarce Safari i Chrome, znajdź Cozy Pass przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu udostępniania do prawej strony).</value>
+    <value>W przeglądarce Safari i Chrome, znajdź Twake Pass przy użyciu ikony udostępniania (podpowiedź: przewiń dolny rząd menu udostępniania do prawej strony).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Naciśnij ikonę Cozy Pass w menu, aby uruchomić rozszerzenie.</value>
+    <value>Naciśnij ikonę Twake Pass w menu, aby uruchomić rozszerzenie.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
     <value>Aby włączyć Bbitwarden w Safari i innych aplikacjach, dotknij ikonę "więcej" w dolnym rzędzie menu.</value>
@@ -585,7 +585,7 @@
     <value>Więcej ustawień</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Musisz zalogować się do aplikacji głównej Cozy Pass, zanim będziesz mógł używać rozszerzenia.</value>
+    <value>Musisz zalogować się do aplikacji głównej Twake Pass, zanim będziesz mógł używać rozszerzenia.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Nigdy</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Opcje domyślne są pobierane z narzędzia generatora haseł głównej aplikacji Cozy Pass.</value>
+    <value>Opcje domyślne są pobierane z narzędzia generatora haseł głównej aplikacji Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opcje</value>
@@ -634,7 +634,7 @@
     <value>Czy na pewno chcesz zastąpić obecne hasło?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass przeprowadza automatyczną synchronizację sejfu przy użyciu powiadomień push. Aby uzyskać najlepsze możliwe wyniki, wybierz "Zezwalaj", gdy za chwilę zostaniesz poproszony o włączenie powiadomień push.</value>
+    <value>Twake Pass przeprowadza automatyczną synchronizację sejfu przy użyciu powiadomień push. Aby uzyskać najlepsze możliwe wyniki, wybierz "Zezwalaj", gdy za chwilę zostaniesz poproszony o włączenie powiadomień push.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Zobacz element</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Sejf internetowy Cozy Pass</value>
+    <value>Sejf internetowy Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Utraciłeś dostęp do aplikacji uwierzytelniającej?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Kiedy wybierzesz pole formularza i zobaczysz usługę autouzupełniania Cozy Pass, dotknij ją, aby ją uruchomić.</value>
+    <value>Kiedy wybierzesz pole formularza i zobaczysz usługę autouzupełniania Twake Pass, dotknij ją, aby ją uruchomić.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Dotknij to powiadomienie, aby automatycznie uzupełnić dane z sejfu.</value>
@@ -750,7 +750,7 @@
     <value>Otwórz ustawienia ułatwienia dostępu</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Na ekranie ustawień usługi ułatwienia dostępu dotknij "Cozy Pass" na liście usług.</value>
+    <value>1. Na ekranie ustawień usługi ułatwienia dostępu dotknij "Twake Pass" na liście usług.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Przestaw przełącznik i naciśnij OK, aby zaakceptować.</value>
@@ -765,7 +765,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest usługa autouzupełniania Cozy Pass. Więcej informacji o usłudze znajdziesz w ustawieniach.</value>
+    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest usługa autouzupełniania Twake Pass. Więcej informacji o usłudze znajdziesz w ustawieniach.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Autouzupełnianie</value>
@@ -964,7 +964,7 @@
     <value>Samodzielnie hostowane środowisko</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Wpisz podstawowy adres URL hostowanej instalacji Cozy Pass.</value>
+    <value>Wpisz podstawowy adres URL hostowanej instalacji Twake Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Adres URL serwera</value>
@@ -1150,10 +1150,10 @@
     <value>Usługa ułatwienia dostępu</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Usługa autouzupełniania Cozy Pass wykorzystuje funkcję Androida, aby wypełniać dane logowania, kart kredytowych i osobistych informacji w aplikacjach na Twoim urządzeniu.</value>
+    <value>Usługa autouzupełniania Twake Pass wykorzystuje funkcję Androida, aby wypełniać dane logowania, kart kredytowych i osobistych informacji w aplikacjach na Twoim urządzeniu.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Użyj usługi autouzupełniania Cozy Pass, aby wypełniać dane logowania, kart kredytowych i informacje osobiste w innych aplikacjach.</value>
+    <value>Użyj usługi autouzupełniania Twake Pass, aby wypełniać dane logowania, kart kredytowych i informacje osobiste w innych aplikacjach.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Otwórz ustawienia autouzupełniania</value>
@@ -1266,7 +1266,7 @@
     <value>Usługa autouzupełniania została aktywowana!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Musisz zalogować się do aplikacji Cozy Pass, zanim będziesz mógł używać usługi autouzupełniania.</value>
+    <value>Musisz zalogować się do aplikacji Twake Pass, zanim będziesz mógł używać usługi autouzupełniania.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Twoje dane logowania są teraz łatwo dostępne bezpośrednio z klawiatury podczas logowania się do aplikacji i witryn internetowych.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Włącz usługę autouzupełniania</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Wybierz "Cozy Pass"</value>
+    <value>5. Wybierz "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Usługa autouzupełniania haseł</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest rozszerzenie autouzupełniania haseł Cozy Pass. Więcej informacji o używaniu rozszerzenia autouzupełniania znajdziesz w widoku "Ustawienia".</value>
+    <value>Najprostszym sposobem dodania nowych danych logowania do sejfu jest rozszerzenie autouzupełniania haseł Twake Pass. Więcej informacji o używaniu rozszerzenia autouzupełniania znajdziesz w widoku "Ustawienia".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Adres e-mail jest nieprawidłowy.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass pozwala na udostępnianie zawartości skarbca innym osobom, przy użyciu konta organizacji. Czy chcesz odwiedź witrynę bitwarden.com, aby dowiedzieć się więcej?</value>
+    <value>Twake Pass pozwala na udostępnianie zawartości skarbca innym osobom, przy użyciu konta organizacji. Czy chcesz odwiedź witrynę bitwarden.com, aby dowiedzieć się więcej?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Eksportuj sejf</value>
@@ -1523,7 +1523,7 @@
     <value>Wyjdź</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Czy na pewno chcesz zamknąć Cozy Pass?</value>
+    <value>Czy na pewno chcesz zamknąć Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Czy chcesz wymagać odblokowywania hasłem głównym po ponownym uruchomieniu aplikacji?</value>
@@ -1548,7 +1548,7 @@
     <value>Po restarcie aplikacji</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Autouzupełnianie ułatwia bezpieczny dostęp do sejfu Cozy Pass z innych stron i aplikacji. Wygląda na to, że nie włączyłeś usługi autouzupełniania dla Cozy Pass. Włącz ją na ekranie "Ustawienia".</value>
+    <value>Autouzupełnianie ułatwia bezpieczny dostęp do sejfu Twake Pass z innych stron i aplikacji. Wygląda na to, że nie włączyłeś usługi autouzupełniania dla Twake Pass. Włącz ją na ekranie "Ustawienia".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Zmiana motywu zostanie zastosowana po uruchomieniu ponownym.</value>

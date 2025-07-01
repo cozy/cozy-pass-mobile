@@ -384,7 +384,7 @@
     <value>Visiteu el nostre lloc web</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Visiteu el nostre lloc web per obtenir ajuda, notícies, enviar-nos un correu electrònic i obtenir més informació sobre com utilitzar Cozy Pass.</value>
+    <value>Visiteu el nostre lloc web per obtenir ajuda, notícies, enviar-nos un correu electrònic i obtenir més informació sobre com utilitzar Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Lloc web</value>
@@ -406,7 +406,7 @@
     <value>Extensió de l'aplicació</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Utilitzeu el servei d'accessibilitat de Cozy Pass per omplir automàticament els inicis de sessió a través de les aplicacions i de la web.</value>
+    <value>Utilitzeu el servei d'accessibilitat de Twake Pass per omplir automàticament els inicis de sessió a través de les aplicacions i de la web.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Servei d'emplenament automàtic</value>
@@ -415,19 +415,19 @@
     <value>Eviteu caràcters ambigus</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Extensió de l'aplicació Cozy Pass</value>
+    <value>Extensió de l'aplicació Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és amb l'extensió d'aplicació Cozy Pass. Obteniu més informació sobre el seu ús en la pantalla "Eines".</value>
+    <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és amb l'extensió d'aplicació Twake Pass. Obteniu més informació sobre el seu ús en la pantalla "Eines".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Utilitzeu Cozy Pass en Safari i altres aplicacions per omplir automàticament els vostres inicis de sessió.</value>
+    <value>Utilitzeu Twake Pass en Safari i altres aplicacions per omplir automàticament els vostres inicis de sessió.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Servei d'emplenament automàtic de Cozy Pass</value>
+    <value>Servei d'emplenament automàtic de Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Utilitzeu el servei d'accessibilitat Cozy Pass per omplir automàticament els inicis de sessió.</value>
+    <value>Utilitzeu el servei d'accessibilitat Twake Pass per omplir automàticament els inicis de sessió.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Canvia el correu electrònic</value>
@@ -473,7 +473,7 @@
     <value>Habilita l'extensió de l'aplicació</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>A Safari, busqueu Cozy Pass amb la icona de compartir (pista: desplaceu-vos cap a la dreta a la fila inferior del menú).</value>
+    <value>A Safari, busqueu Twake Pass amb la icona de compartir (pista: desplaceu-vos cap a la dreta a la fila inferior del menú).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Ara, els inicis de sessió són fàcilment accessibles des de Safari, Chrome i altres aplicacions compatibles.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>A Safari i Chrome, busqueu Cozy Pass amb la icona de compartir (pista: desplaceu-vos cap a la dreta a la fila inferior del menú).</value>
+    <value>A Safari i Chrome, busqueu Twake Pass amb la icona de compartir (pista: desplaceu-vos cap a la dreta a la fila inferior del menú).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Premeu la icona Cozy Pass en el menú per iniciar l'extensió.</value>
+    <value>Premeu la icona Twake Pass en el menú per iniciar l'extensió.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Per activar Cozy Pass a Safari i a altres aplicacions, toqueu la icona "més" a la fila inferior del menú.</value>
+    <value>Per activar Twake Pass a Safari i a altres aplicacions, toqueu la icona "més" a la fila inferior del menú.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Preferit</value>
@@ -585,7 +585,7 @@
     <value>Més opcions</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Heu d'iniciar sessió a l'aplicació principal de Cozy Pass abans de poder utilitzar l'extensió.</value>
+    <value>Heu d'iniciar sessió a l'aplicació principal de Twake Pass abans de poder utilitzar l'extensió.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Mai</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Els valors per defecte s'estableixen des de l'aplicació principal de Cozy Pass al generador de contrasenyes.</value>
+    <value>Els valors per defecte s'estableixen des de l'aplicació principal de Twake Pass al generador de contrasenyes.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opcions</value>
@@ -634,7 +634,7 @@
     <value>Esteu segur que voleu sobreescriure la contrasenya actual?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass manté la vostra caixa forta sincronitzada automàticament mitjançant notificacions push. Per obtenir la millor experiència possible, seleccioneu "Permetre" al següent indicador quan se us demane que habiliteu les notificacions push.</value>
+    <value>Twake Pass manté la vostra caixa forta sincronitzada automàticament mitjançant notificacions push. Per obtenir la millor experiència possible, seleccioneu "Permetre" al següent indicador quan se us demane que habiliteu les notificacions push.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Visualitza l'element</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Caixa forta web de Cozy Pass</value>
+    <value>Caixa forta web de Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Heu perdut l'aplicació autenticadora?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Quan seleccioneu un camp d’entrada i vegeu una superposició d’emplenament automàtic de Cozy Pass, podeu tocar-lo per iniciar el servei d’emplenament automàtic.</value>
+    <value>Quan seleccioneu un camp d’entrada i vegeu una superposició d’emplenament automàtic de Twake Pass, podeu tocar-lo per iniciar el servei d’emplenament automàtic.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Toqueu aquesta notificació per omplir automàticament un element des de la caixa forta.</value>
@@ -750,7 +750,7 @@
     <value>Obri la configuració d'accessibilitat</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. A la configuració d'accessibilitat d'Android, toqueu "Cozy Pass" en Serveis.</value>
+    <value>1. A la configuració d'accessibilitat d'Android, toqueu "Twake Pass" en Serveis.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Activeu el commutador i premeu d'acord per acceptar.</value>
@@ -765,7 +765,7 @@
     <value>Estat</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és amb el servei d'emplenament automàtic de Cozy Pass. Obteniu més informació sobre com utilitzar el servei en la pantalla "Eines".</value>
+    <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és amb el servei d'emplenament automàtic de Twake Pass. Obteniu més informació sobre com utilitzar el servei en la pantalla "Eines".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Emplenament automàtic</value>
@@ -964,7 +964,7 @@
     <value>Entorn d'allotjament propi</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Especifiqueu l'URL base de la vostra instal·lació de Cozy Pass allotjada en un entorn propi.</value>
+    <value>Especifiqueu l'URL base de la vostra instal·lació de Twake Pass allotjada en un entorn propi.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL del servidor</value>
@@ -1126,7 +1126,7 @@
     <value>URL del servidor d'icones</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Ompli automàticament amb Cozy Pass</value>
+    <value>Ompli automàticament amb Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>La caixa forta està bloquejada</value>
@@ -1150,10 +1150,10 @@
     <value>Ompli automàticament el servei d'accessibilitat</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>El servei d'emplenament automàtic de Cozy Pass utilitza el marc d'emplenament automàtic d'Android per ajudar a omplir els inicis de sessió, les targetes de crèdit i la informació d'identitat en altres aplicacions del dispositiu.</value>
+    <value>El servei d'emplenament automàtic de Twake Pass utilitza el marc d'emplenament automàtic d'Android per ajudar a omplir els inicis de sessió, les targetes de crèdit i la informació d'identitat en altres aplicacions del dispositiu.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Utilitzeu el servei d'emplenament automàtic de Cozy Pass per omplir els inicis de sessió, les targetes de crèdit i la informació d'identitat en altres aplicacions.</value>
+    <value>Utilitzeu el servei d'emplenament automàtic de Twake Pass per omplir els inicis de sessió, les targetes de crèdit i la informació d'identitat en altres aplicacions.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Configuració d'emplenament automàtic</value>
@@ -1266,7 +1266,7 @@
     <value>Emplenament automàtic activat!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Heu d'iniciar sessió a l'aplicació principal de Cozy Pass abans de poder utilitzar l'emplenament automàtic.</value>
+    <value>Heu d'iniciar sessió a l'aplicació principal de Twake Pass abans de poder utilitzar l'emplenament automàtic.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Els inicis de sessió ara són fàcilment accessibles des del teclat mentre inicieu sessió a aplicacions i llocs web.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Activeu l'emplenament automàtic</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Seleccioneu "Cozy Pass"</value>
+    <value>5. Seleccioneu "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Emplenament automàtic de contrasenya</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és mitjançant l'extensió Emplenament automàtic de contrasenya de Bitwarden. Obteniu més informació sobre l'ús de l'extensió de Cozy Pass a la pantalla "Eines".</value>
+    <value>La forma més senzilla d'afegir nous inicis de sessió a la vostra caixa forta és mitjançant l'extensió Emplenament automàtic de contrasenya de Bitwarden. Obteniu més informació sobre l'ús de l'extensió de Twake Pass a la pantalla "Eines".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>L’adreça electrònica no és vàlida.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass us permet compartir la vostra caixa forta amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?</value>
+    <value>Twake Pass us permet compartir la vostra caixa forta amb altres usuaris mitjançant un compte d'organització. Voleu visitar el lloc web de bitwarden.com per obtenir més informació?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exporta caixa forta</value>
@@ -1456,7 +1456,7 @@
     <value>30 minuts</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Estableix el teu codi PIN per desbloquejar Cozy Pass. La configuració PIN es restablirà si tanqueu sessió de manera completa de l'aplicació.</value>
+    <value>Estableix el teu codi PIN per desbloquejar Twake Pass. La configuració PIN es restablirà si tanqueu sessió de manera completa de l'aplicació.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Heu iniciat la sessió com a {0} en {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Tanca</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Esteu segur que voleu tancar Cozy Pass?</value>
+    <value>Esteu segur que voleu tancar Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Voleu sol·licitar el desbloqueig amb la vostra contrasenya mestra quan es reinicie l’aplicació?</value>
@@ -1548,7 +1548,7 @@
     <value>En reiniciar l'aplicació</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>L'emplenament automàtic facilita l'accés de forma segura a la vostra caixa forta de Bitwarden des d'altres llocs web i aplicacions. Sembla que no heu habilitat un servei d’emplenament automàtic per a Cozy Pass. Habiliteu-lo a la pantalla "Configuració".</value>
+    <value>L'emplenament automàtic facilita l'accés de forma segura a la vostra caixa forta de Bitwarden des d'altres llocs web i aplicacions. Sembla que no heu habilitat un servei d’emplenament automàtic per a Twake Pass. Habiliteu-lo a la pantalla "Configuració".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Els canvis de tema s'aplicaran quan es reinicie l’aplicació.</value>

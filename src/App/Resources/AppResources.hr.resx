@@ -384,7 +384,7 @@
     <value>Posjeti naš web</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Posjeti naš web kako bi pronašli pomoć, vijesti, poslali nam e-poštu i/ili saznali više o tome kako koristiti Cozy Pass.</value>
+    <value>Posjeti naš web kako bi pronašli pomoć, vijesti, poslali nam e-poštu i/ili saznali više o tome kako koristiti Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Web stranica</value>
@@ -406,7 +406,7 @@
     <value>Proširenje aplikacije</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Koristi uslugu Cozy Pass pristupačnosti za auto-ispunu svojih prijava u aplikacijama i na webu.</value>
+    <value>Koristi uslugu Twake Pass pristupačnosti za auto-ispunu svojih prijava u aplikacijama i na webu.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Usluga auto-ispune</value>
@@ -415,19 +415,19 @@
     <value>Izbjegavaj dvosmislene znakove</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Proširenje aplikacije Cozy Pass </value>
+    <value>Proširenje aplikacije Twake Pass </value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Najlakši način za dodavanje novih prijava u tvoj trezor je iz proširenja aplikacije Cozy Pass. Saznaj više o korištenju proširenja aplikacije Cozy Pass u Postavkama.</value>
+    <value>Najlakši način za dodavanje novih prijava u tvoj trezor je iz proširenja aplikacije Twake Pass. Saznaj više o korištenju proširenja aplikacije Twake Pass u Postavkama.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Upotrijebi Cozy Pass u pregledniku Safari i drugim aplikacijama kako bi auto-ispunili svoje prijave.</value>
+    <value>Upotrijebi Twake Pass u pregledniku Safari i drugim aplikacijama kako bi auto-ispunili svoje prijave.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Pass usluga auto-ispune</value>
+    <value>Twake Pass usluga auto-ispune</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Koristi uslugu Cozy Pass pristupačnosti za auto-ispunu tvojih prijava.</value>
+    <value>Koristi uslugu Twake Pass pristupačnosti za auto-ispunu tvojih prijava.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Promijeni e-poštu</value>
@@ -473,7 +473,7 @@
     <value>Omogući proširenje aplikacije</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Pronađite Cozy Pass u Safariju pomoću ikone dijeljenja (desno u donjem retku izbornika).</value>
+    <value>Pronađite Twake Pass u Safariju pomoću ikone dijeljenja (desno u donjem retku izbornika).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Tvoje prijave sada su lako dostupne u Safariju, Chromu i drugim podržanim aplikacijama.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Pronađite Cozy Pass u Safariju i Chromu pomoću ikone dijeljenja (desno u donjem retku izbornika za dijeljenje).</value>
+    <value>Pronađite Twake Pass u Safariju i Chromu pomoću ikone dijeljenja (desno u donjem retku izbornika za dijeljenje).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Dodirni Cozy Pass ikonu u izborniku za pokretanje proširenja.</value>
+    <value>Dodirni Twake Pass ikonu u izborniku za pokretanje proširenja.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Za uključiti Cozy Passa u Safariju i drugim aplikacijama, dodirnite ikonu „Više” u donjem retku izbornika.</value>
+    <value>Za uključiti Twake Passa u Safariju i drugim aplikacijama, dodirnite ikonu „Više” u donjem retku izbornika.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Favorit</value>
@@ -585,7 +585,7 @@
     <value>Više postavki</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Prije korištenja proširenja, moraš se prijaviti u glavnu Cozy Pass aplikaciju. </value>
+    <value>Prije korištenja proširenja, moraš se prijaviti u glavnu Twake Pass aplikaciju. </value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Nikad</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Zadane postavke preuzete iz generatora lozinki glavne aplikacije Cozy Pass.</value>
+    <value>Zadane postavke preuzete iz generatora lozinki glavne aplikacije Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opcije</value>
@@ -634,7 +634,7 @@
     <value>Sigurno želiš prebrisati trenutnu lozinku?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Obzirom Cozy Pass automatski sinkronizira tvoj trezor pomoću push obavijesti, za najbolje moguće iskustvo, u sljedećem upitu odobri Cozy Passu slanje push obavijesti.</value>
+    <value>Obzirom Twake Pass automatski sinkronizira tvoj trezor pomoću push obavijesti, za najbolje moguće iskustvo, u sljedećem upitu odobri Twake Passu slanje push obavijesti.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Prikaz stavke</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Pass web trezor</value>
+    <value>Twake Pass web trezor</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Izgubljena aplikacija autentifikatora?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Kada odabereš polje za unos i vidiš Cozy Pass sloj auto-ispune, možeš ga dodirnuti za pokretanje auto-ispune.</value>
+    <value>Kada odabereš polje za unos i vidiš Twake Pass sloj auto-ispune, možeš ga dodirnuti za pokretanje auto-ispune.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Dodirni ovu obavijest za auto-ispunu iz tvog trezora.</value>
@@ -750,7 +750,7 @@
     <value>Otvori postavke pristupačnosti</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Otvori Android postavke -> Dodatne postavke -> Pristupačnost -> Preuzete usluge -> Cozy Pass i uključite Dostupnost.</value>
+    <value>1. Otvori Android postavke -> Dodatne postavke -> Pristupačnost -> Preuzete usluge -> Twake Pass i uključite Dostupnost.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Uključi prekidač i odaberi „Dopusti”</value>
@@ -765,7 +765,7 @@
     <value>Status</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Najlakši način za dodavanje novih prijava u tvoj trezor je Cozy Pass uslugom auto-ispune. Saznajte više o korištenju usluge auto-ispune u Postavkama.</value>
+    <value>Najlakši način za dodavanje novih prijava u tvoj trezor je Twake Pass uslugom auto-ispune. Saznajte više o korištenju usluge auto-ispune u Postavkama.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Auto-ispuna</value>
@@ -1126,7 +1126,7 @@
     <value>URL poslužitelja ikona</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Cozy Pass auto-ispuna</value>
+    <value>Twake Pass auto-ispuna</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Trezor je zaključan</value>
@@ -1150,10 +1150,10 @@
     <value>Usluga auto-ispune kroz pristupačnost</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Usluga Cozy Pass auto-ispune koristi Android Autofill Framework za pomoć pri ispunjavanju prijava, platnih kartica i identifikacijskih podataka u drugim aplikacijama na tvojem uređaju.</value>
+    <value>Usluga Twake Pass auto-ispune koristi Android Autofill Framework za pomoć pri ispunjavanju prijava, platnih kartica i identifikacijskih podataka u drugim aplikacijama na tvojem uređaju.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Koristi uslugu Cozy Pass auto-ispune za ispunjavanje prijava, platnih kartica i identifikacijskih podataka u drugim aplikacijama.</value>
+    <value>Koristi uslugu Twake Pass auto-ispune za ispunjavanje prijava, platnih kartica i identifikacijskih podataka u drugim aplikacijama.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Otvori postavke auto-ispune</value>
@@ -1266,7 +1266,7 @@
     <value>Automatsko popunjavanje aktivirano!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Prije korištenja automatskog popunjavanja, moraš se prijaviti u glavnu Cozy Pass aplikaciju. </value>
+    <value>Prije korištenja automatskog popunjavanja, moraš se prijaviti u glavnu Twake Pass aplikaciju. </value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Tvojim prijavama sada je lako pristupiti izravno s tipkovnice prilikom prijava u aplikacijama i na web stranicama.</value>
@@ -1293,14 +1293,14 @@
     <value>4. Uključi Automatsko popunjavanje</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Odaberi „Cozy Pass”</value>
+    <value>5. Odaberi „Twake Pass”</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Automatsko popunjavanje lozinki</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Najlakši način za dodavanje novih prijava u tvoj trezor je korištenjem Cozy Pass proširenja za automatsko popunjavanje lozinki. Saznaj više o korištenju Cozy Pass proširenja za automatsko popunjavanje lozinki u Postavkama.</value>
-    <value>Najlakši način za dodavanje novih prijava u Vaš trezor je korištenjem Bitwarden proširenja za automatsko popunjavanje lozinki. Saznajte više o korištenju Cozy Pass prošienja za automatsko popunjavanje lozinki odlaskom na zaslon "Postavke".</value>
+    <value>Najlakši način za dodavanje novih prijava u tvoj trezor je korištenjem Twake Pass proširenja za automatsko popunjavanje lozinki. Saznaj više o korištenju Twake Pass proširenja za automatsko popunjavanje lozinki u Postavkama.</value>
+    <value>Najlakši način za dodavanje novih prijava u Vaš trezor je korištenjem Bitwarden proširenja za automatsko popunjavanje lozinki. Saznajte više o korištenju Twake Pass prošienja za automatsko popunjavanje lozinki odlaskom na zaslon "Postavke".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Nevažeća adresa e-pošte.</value>
@@ -1439,7 +1439,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass omogućuje dijeljenje trezora s drugima pomoću računa organizacije. Želite li posjetiti web stranicu bitwarden.com da biste saznali više?</value>
+    <value>Twake Pass omogućuje dijeljenje trezora s drugima pomoću računa organizacije. Želite li posjetiti web stranicu bitwarden.com da biste saznali više?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Izvoz trezora</value>
@@ -1457,7 +1457,7 @@
     <value>30 minuta</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Postavi svoj PIN kôd za otključavanje Cozy Passa. Postavke PIN-a se resetiraju ako se potpuno odjaviš iz aplikacije.</value>
+    <value>Postavi svoj PIN kôd za otključavanje Twake Passa. Postavke PIN-a se resetiraju ako se potpuno odjaviš iz aplikacije.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Prijavljen/a kao {0} na {1}.</value>
@@ -1524,7 +1524,7 @@
     <value>Izlaz</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Sigurno želiš izaći iz Cozy Pass-a?</value>
+    <value>Sigurno želiš izaći iz Twake Pass-a?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Obavezno otključavanje glavnom lozinkom pri ponovnom pokretanju aplikacije?</value>
@@ -1549,7 +1549,7 @@
     <value>Kod ponovnog pokretanja</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Auto-ispuna olakšava siguran pristup tvom Cozy Pass trezoru iz drugih aplikacija i na web stranicama. Izgleda da nije omogućena usluga auto-ispune za Cozy Passa. Omogući uslugu auto-ispune u Cozy Passa postavkama.</value>
+    <value>Auto-ispuna olakšava siguran pristup tvom Twake Pass trezoru iz drugih aplikacija i na web stranicama. Izgleda da nije omogućena usluga auto-ispune za Twake Passa. Omogući uslugu auto-ispune u Twake Passa postavkama.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Promjene teme su aktivne nakon ponovog pokretanja aplikacije.</value>

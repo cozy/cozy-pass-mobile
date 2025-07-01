@@ -384,7 +384,7 @@
     <value>Відвідайте наш вебсайт</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Відвідайте наш вебсайт, щоб отримати допомогу, дізнатися про новини, написати нам, або дізнатися більше про те, як використовувати Cozy Pass.</value>
+    <value>Відвідайте наш вебсайт, щоб отримати допомогу, дізнатися про новини, написати нам, або дізнатися більше про те, як використовувати Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Вебсайт</value>
@@ -406,7 +406,7 @@
     <value>Розширення</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Використовуйте службу спеціальних можливостей Cozy Pass, щоб автоматично вводити паролі в програмах та на вебсайтах.</value>
+    <value>Використовуйте службу спеціальних можливостей Twake Pass, щоб автоматично вводити паролі в програмах та на вебсайтах.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Служба автозаповнення</value>
@@ -415,19 +415,19 @@
     <value>Уникати неоднозначних символів</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Розширення Cozy Pass</value>
+    <value>Розширення Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Найлегшим способом додавання нових записів у сховище є використання розширення Bitwarden. Дізнайтеся більше про використання розширення Cozy Pass в меню "Налаштування".</value>
+    <value>Найлегшим способом додавання нових записів у сховище є використання розширення Bitwarden. Дізнайтеся більше про використання розширення Twake Pass в меню "Налаштування".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Використовуйте Cozy Pass в Safari та інших програмах для автоматичного заповнення паролів.</value>
+    <value>Використовуйте Twake Pass в Safari та інших програмах для автоматичного заповнення паролів.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Служба автозаповнення Cozy Pass</value>
+    <value>Служба автозаповнення Twake Pass</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Використовуйте службу спеціальних можливостей Cozy Pass, щоб автоматично вводити паролі.</value>
+    <value>Використовуйте службу спеціальних можливостей Twake Pass, щоб автоматично вводити паролі.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Змінити адресу е-пошти</value>
@@ -473,7 +473,7 @@
     <value>Увімкнути розширення</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>В Safari знайдіть Cozy Pass, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню).</value>
+    <value>В Safari знайдіть Twake Pass, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Тепер ви можете легко отримувати доступ до своїх записів з Safari, Chrome та інших підтримуваних програм.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>В Safari та Chrome знайдіть Cozy Pass, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню Поділитися).</value>
+    <value>В Safari та Chrome знайдіть Twake Pass, використовуючи піктограму Поділитися (підказка: прокрутіть вправо в нижньому рядку меню Поділитися).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Торкніться піктограми Cozy Pass в меню для запуску розширення.</value>
+    <value>Торкніться піктограми Twake Pass в меню для запуску розширення.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Щоб увімкнути Cozy Pass в Safari та інших програмах, торкніться піктограми "Ще" в нижньому рядку меню.</value>
+    <value>Щоб увімкнути Twake Pass в Safari та інших програмах, торкніться піктограми "Ще" в нижньому рядку меню.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Обране</value>
@@ -585,7 +585,7 @@
     <value>Додаткові налаштування</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Ви повинні увійти в основну програму Cozy Pass, щоб використовувати розширення.</value>
+    <value>Ви повинні увійти в основну програму Twake Pass, щоб використовувати розширення.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Ніколи</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Типові параметри задаються в генераторі паролів основної програми Cozy Pass.</value>
+    <value>Типові параметри задаються в генераторі паролів основної програми Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Додатково</value>
@@ -634,7 +634,7 @@
     <value>Ви дійсно хочете перезаписати поточний пароль?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass автоматично синхронізує ваше сховище за допомогою push-сповіщень. Для найкращої роботи оберіть "Дозволити" в наступному запиті про увімкнення push-сповіщень.</value>
+    <value>Twake Pass автоматично синхронізує ваше сховище за допомогою push-сповіщень. Для найкращої роботи оберіть "Дозволити" в наступному запиті про увімкнення push-сповіщень.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Перегляд запису</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Веб сховище Cozy Pass</value>
+    <value>Веб сховище Twake Pass</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Втратили доступ до програми перевірки?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>При виборі поля введення ви побачите накладання автозаповнення Cozy Pass, до якого ви можете торкнутися, щоб запустити службу автозаповнення.</value>
+    <value>При виборі поля введення ви побачите накладання автозаповнення Twake Pass, до якого ви можете торкнутися, щоб запустити службу автозаповнення.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Торкніться цього сповіщення для автозаповнення пароля.</value>
@@ -750,7 +750,7 @@
     <value>Відкрити налаштування спеціальних можливостей</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. На екрані налаштувань Android "Спеціальні можливості" в розділі "Завантажені служби" оберіть "Cozy Pass".</value>
+    <value>1. На екрані налаштувань Android "Спеціальні можливості" в розділі "Завантажені служби" оберіть "Twake Pass".</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Змініть положення перемикача й схваліть запит.</value>
@@ -765,7 +765,7 @@
     <value>Статус</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Найлегшим способом додавання нових записів у сховище є використання служби автозаповнення Bitwarden. Дізнайтеся більше про використання служби автозаповнення Cozy Pass в меню "Налаштування".</value>
+    <value>Найлегшим способом додавання нових записів у сховище є використання служби автозаповнення Bitwarden. Дізнайтеся більше про використання служби автозаповнення Twake Pass в меню "Налаштування".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Автозаповнення</value>
@@ -964,7 +964,7 @@
     <value>Середовище власного хостингу</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Вкажіть основну URL-адресу вашого локально розміщеного встановлення Cozy Pass.</value>
+    <value>Вкажіть основну URL-адресу вашого локально розміщеного встановлення Twake Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL-адреса сервера</value>
@@ -1126,7 +1126,7 @@
     <value>URL-адреса сервера піктограм</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Автозаповнення з Cozy Pass</value>
+    <value>Автозаповнення з Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Сховище заблоковано</value>
@@ -1150,10 +1150,10 @@
     <value>Служба спеціальних можливостей автозаповнення</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Служба автозаповнення Cozy Pass використовує Android Autofill Framework для заповнення паролів, кредитних карток та особистої інформації в інших програмах на вашому пристрої.</value>
+    <value>Служба автозаповнення Twake Pass використовує Android Autofill Framework для заповнення паролів, кредитних карток та особистої інформації в інших програмах на вашому пристрої.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Використовуйте службу автозаповнення Cozy Pass, щоб автоматично вводити паролі, кредитні картки та особисту інформацію в інших програмах.</value>
+    <value>Використовуйте службу автозаповнення Twake Pass, щоб автоматично вводити паролі, кредитні картки та особисту інформацію в інших програмах.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Відкрити налаштування автозаповнення</value>
@@ -1266,7 +1266,7 @@
     <value>Автозаповнення активовано!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Ви повинні увійти в основну програму Cozy Pass, щоб використовувати автозаповнення.</value>
+    <value>Ви повинні увійти в основну програму Twake Pass, щоб використовувати автозаповнення.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Тепер ви можете легко отримувати доступ до своїх записів з клавіатури під час входу в програмах і на вебсайтах.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Увімкніть автозаповнення</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Оберіть "Cozy Pass"</value>
+    <value>5. Оберіть "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Автозаповнення паролів</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Найлегшим способом додавання нових записів у сховище є використання розширення для автозаповнення Bitwarden. Дізнайтеся більше про використання розширення для автозаповнення Cozy Pass в меню "Налаштування".</value>
+    <value>Найлегшим способом додавання нових записів у сховище є використання розширення для автозаповнення Bitwarden. Дізнайтеся більше про використання розширення для автозаповнення Twake Pass в меню "Налаштування".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Неправильна адреса е-пошти.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
+    <value>Twake Pass allows you to share your vault items with others by using an organization account. Would you like to visit the bitwarden.com website to learn more?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Експорт сховища</value>
@@ -1456,7 +1456,7 @@
     <value>30 хвилин</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Встановіть PIN-код для розблокування Cozy Pass. Налаштування PIN-коду будуть скинуті, якщо ви коли-небудь повністю вийдете з програми.</value>
+    <value>Встановіть PIN-код для розблокування Twake Pass. Налаштування PIN-коду будуть скинуті, якщо ви коли-небудь повністю вийдете з програми.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Ви увійшли як {0} на {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Вийти</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Ви впевнені, що хочете вийти з Cozy Pass?</value>
+    <value>Ви впевнені, що хочете вийти з Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Ви хочете вимагати розблокування головним паролем при перезапуску програми?</value>
@@ -1548,7 +1548,7 @@
     <value>При перезапуску програми</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Автозаповнення дозволяє безпечно отримувати доступ до вашого сховища Cozy Pass з інших вебсайтів та програм. Схоже, що ви не активували функцію автозаповнення Cozy Pass. Увімкніть автозаповнення на екрані налаштувань.</value>
+    <value>Автозаповнення дозволяє безпечно отримувати доступ до вашого сховища Twake Pass з інших вебсайтів та програм. Схоже, що ви не активували функцію автозаповнення Twake Pass. Увімкніть автозаповнення на екрані налаштувань.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Зміни теми застосуються після перезапуску програми.</value>

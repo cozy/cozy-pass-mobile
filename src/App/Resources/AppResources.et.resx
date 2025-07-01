@@ -384,7 +384,7 @@
     <value>Külasta meie kodulehte</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Külasta kodulehte abi saamiseks, meiega kontakteerumiseks, uudiste lugemiseks või Cozy Passi kohta rohkema teabe saamiseks.</value>
+    <value>Külasta kodulehte abi saamiseks, meiega kontakteerumiseks, uudiste lugemiseks või Twake Passi kohta rohkema teabe saamiseks.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Veebisait</value>
@@ -406,7 +406,7 @@
     <value>Rakenduse laiendus</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Kasuta Cozy Passi juurdepääsetavuse teenust, et erinevatel veebilehtedel ja rakendustes kontoandmeid sisestada.</value>
+    <value>Kasuta Twake Passi juurdepääsetavuse teenust, et erinevatel veebilehtedel ja rakendustes kontoandmeid sisestada.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Automaattäite teenus</value>
@@ -415,19 +415,19 @@
     <value>Väldi ebamääraseid kirjamärke</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Cozy Pass rakenduse laiendus</value>
+    <value>Twake Pass rakenduse laiendus</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Lihtsaim viis uute sisselogimise andmete lisamiseks on kasutada Bitwardeni rakenduse laiendust. Lisateavet Cozy Passi rakenduse laienduse kasutamiseks leiad menüüst "Seaded".</value>
+    <value>Lihtsaim viis uute sisselogimise andmete lisamiseks on kasutada Bitwardeni rakenduse laiendust. Lisateavet Twake Passi rakenduse laienduse kasutamiseks leiad menüüst "Seaded".</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Kasuta Cozy Passit Safaris ja teistes rakendustes kontoandmete sisestamiseks.</value>
+    <value>Kasuta Twake Passit Safaris ja teistes rakendustes kontoandmete sisestamiseks.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
-    <value>Cozy Passi automaattäite teenus</value>
+    <value>Twake Passi automaattäite teenus</value>
   </data>
   <data name="BitwardenAutofillAccessibilityServiceDescription" xml:space="preserve">
-    <value>Kasuta kontoandmete sisestamiseks Cozy Passi juurdepääsetavuse teenust.</value>
+    <value>Kasuta kontoandmete sisestamiseks Twake Passi juurdepääsetavuse teenust.</value>
   </data>
   <data name="ChangeEmail" xml:space="preserve">
     <value>Muuda e-posti</value>
@@ -473,7 +473,7 @@
     <value>Aktiveeri rakenduse laiendus</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>Safaris pääsed Cozy Passile ligi läbi jagamise ikooni (vihje: vaata jagamise menüüs paremale-alla).</value>
+    <value>Safaris pääsed Twake Passile ligi läbi jagamise ikooni (vihje: vaata jagamise menüüs paremale-alla).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Pääsed nüüd oma kontoandmetele lihtsasti ligi nii Safaris, Chromes kui ka teistes toetatud rakendustes.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>Safaris ja Chromes pääsed Cozy Passile ligi läbi jagamise ikooni (vihje: vaata jagamise menüüs paremale-alla).</value>
+    <value>Safaris ja Chromes pääsed Twake Passile ligi läbi jagamise ikooni (vihje: vaata jagamise menüüs paremale-alla).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Lisa käivitamiseks vajuta menüüs Cozy Passi ikoonile.</value>
+    <value>Lisa käivitamiseks vajuta menüüs Twake Passi ikoonile.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Cozy Passi sisselülitamiseks Safaris ja teistes rakendustes vajuta alumisel menüül "more" ikoonile.</value>
+    <value>Twake Passi sisselülitamiseks Safaris ja teistes rakendustes vajuta alumisel menüül "more" ikoonile.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Lemmik</value>
@@ -510,7 +510,7 @@
     <value>Impordi andmed</value>
   </data>
   <data name="ImportItemsConfirmation" xml:space="preserve">
-    <value>Saad suurema koguse kontoandmeid importida Cozy Passi veebihoidlas. Soovid seda kohe teha?</value>
+    <value>Saad suurema koguse kontoandmeid importida Twake Passi veebihoidlas. Soovid seda kohe teha?</value>
   </data>
   <data name="ImportItemsDescription" xml:space="preserve">
     <value>Kiire viis oma konto- ja muude andmete importimiseks teistest paroolihalduritest.</value>
@@ -585,7 +585,7 @@
     <value>Rohkem seadeid</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Pead enne lisarakenduse kasutamist Cozy Passi rakendusse sisse logima.</value>
+    <value>Pead enne lisarakenduse kasutamist Twake Passi rakendusse sisse logima.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Mitte kunagi</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Vaikeväärtused on seatud Cozy Passi paroolide genereerimise tööriista poolt.</value>
+    <value>Vaikeväärtused on seatud Twake Passi paroolide genereerimise tööriista poolt.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Valikud</value>
@@ -634,7 +634,7 @@
     <value>Oled kindel, et soovid olemasolevat parooli asendada?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass hoiab hoidla automaatselt sünkroonis läbi push teavituste. Parima võimaliku kogemuse saamiseks vajuta järgnevas märkekastis "Allow", et sünkroniseerimine lubada.</value>
+    <value>Twake Pass hoiab hoidla automaatselt sünkroonis läbi push teavituste. Parima võimaliku kogemuse saamiseks vajuta järgnevas märkekastis "Allow", et sünkroniseerimine lubada.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -714,7 +714,7 @@
     <value>Kirje vaatamine</value>
   </data>
   <data name="WebVault" xml:space="preserve">
-    <value>Cozy Passi Veebihoidla</value>
+    <value>Twake Passi Veebihoidla</value>
   </data>
   <data name="Lost2FAApp" xml:space="preserve">
     <value>Kaotasid autentimise rakenduse?</value>
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Kui vajutad sisendväljale ning näed Cozy Passi akent, saad sellele vajutada ning kontoandmeid ja paroole sisestada.</value>
+    <value>Kui vajutad sisendväljale ning näed Twake Passi akent, saad sellele vajutada ning kontoandmeid ja paroole sisestada.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Vajuta andmete automaatseks sisestamiseks.</value>
@@ -750,7 +750,7 @@
     <value>Ava Juurdepääsetavuse seaded</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. Vajuta Androidi Juurdepääsetavuse seadete menüüs "Cozy Passi" kirjele.</value>
+    <value>1. Vajuta Androidi Juurdepääsetavuse seadete menüüs "Twake Passi" kirjele.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Lülita valik sisse ja seejärel OK, et sellega nõustuda.</value>
@@ -765,7 +765,7 @@
     <value>Olek:</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Lihtsaim viis hoidlasse kontosid lisada on läbi Bitwardeni automaattäite teenuse. Rohkem infot selle kohta leiad Cozy Passi rakenduse menüüst "Seaded".</value>
+    <value>Lihtsaim viis hoidlasse kontosid lisada on läbi Bitwardeni automaattäite teenuse. Rohkem infot selle kohta leiad Twake Passi rakenduse menüüst "Seaded".</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Täida automaatselt</value>
@@ -964,7 +964,7 @@
     <value>Self-hosted Environment</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Sisesta baas URL, kus sinu või ettevõtte majutatud Cozy Pass asub.</value>
+    <value>Sisesta baas URL, kus sinu või ettevõtte majutatud Twake Pass asub.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>Serveri URL</value>
@@ -1126,7 +1126,7 @@
     <value>Ikoonide serveri URL</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Täida Cozy Passiga</value>
+    <value>Täida Twake Passiga</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Hoidla on lukus</value>
@@ -1150,10 +1150,10 @@
     <value>Juurdepääsetavuse teenus</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Cozy Passi automaattäite teenus kasutab Androidi Autofill raamistikku. See aitab telefonis olevatesse rakendustesse sisestada kontoandmeid, krediitkaardi andmeid ja muud personaalset infot.</value>
+    <value>Twake Passi automaattäite teenus kasutab Androidi Autofill raamistikku. See aitab telefonis olevatesse rakendustesse sisestada kontoandmeid, krediitkaardi andmeid ja muud personaalset infot.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
-    <value>Kasuta Cozy Passi automaattäite teenust, et sisestada teistesse rakendustesse kontoandmeid, krediitkaardi andmeid ja muud informatsiooni.</value>
+    <value>Kasuta Twake Passi automaattäite teenust, et sisestada teistesse rakendustesse kontoandmeid, krediitkaardi andmeid ja muud informatsiooni.</value>
   </data>
   <data name="BitwardenAutofillServiceOpenAutofillSettings" xml:space="preserve">
     <value>Ava Automaattäite seaded</value>
@@ -1266,7 +1266,7 @@
     <value>Automaattäide on aktiveeritud!</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Pead enne Automaattäite kasutamist Cozy Passi rakendusse sisse logima.</value>
+    <value>Pead enne Automaattäite kasutamist Twake Passi rakendusse sisse logima.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Sinu kontoandmed on otse klaviatuurilt ligipääsetavad. Saad nüüd kergemini äppides ja veebilehtedel sisse logida.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Lülita AutoFill sisse</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Vali "Cozy Pass"</value>
+    <value>5. Vali "Twake Pass"</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Paroolide Automaatne täitmine</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Kõige lihtsam viis uute kontoandmete sisestamiseks on kasutada Cozy Passi Automaattäite lisatööriista. Rohkem teavet selle kasutamise kohta leiad menüüst "Seaded".</value>
+    <value>Kõige lihtsam viis uute kontoandmete sisestamiseks on kasutada Twake Passi Automaattäite lisatööriista. Rohkem teavet selle kasutamise kohta leiad menüüst "Seaded".</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Vigane e-posti aadress.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Passiga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?</value>
+    <value>Twake Passiga saad oma hoidlat teistega jagada, kasutades seleks organisatsiooni kontot. Kas soovid selle kohta lisateavet ja avada bitwarden.com veebilehe?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Ekspordi hoidla</value>
@@ -1456,7 +1456,7 @@
     <value>30 minuti pärast</value>
   </data>
   <data name="SetPINDescription" xml:space="preserve">
-    <value>Määra Cozy Passi lahtilukustamiseks PIN kood. Rakendusest täielikult välja logides nullitakse ka PIN koodi seaded.</value>
+    <value>Määra Twake Passi lahtilukustamiseks PIN kood. Rakendusest täielikult välja logides nullitakse ka PIN koodi seaded.</value>
   </data>
   <data name="LoggedInAsOn" xml:space="preserve">
     <value>Sisse logitud kontoga {0} lehel {1}.</value>
@@ -1523,7 +1523,7 @@
     <value>Välju</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Soovid tõesti Cozy Passi sulgeda?</value>
+    <value>Soovid tõesti Twake Passi sulgeda?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>You you want to require unlocking with your password when the application is restarted?</value>
@@ -1548,7 +1548,7 @@
     <value>Äpi taaskäivitamisel</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automaattäite teenus võimaldab teistes äppides Bitwardeni kirjetele hõlpsasti ligi pääseda. Paistab, et selles seadmes ei ole Cozy Passi Automaattäite teenus sisselülitatud. Saad selle sisse lülitada menüüst "Seaded".</value>
+    <value>Automaattäite teenus võimaldab teistes äppides Bitwardeni kirjetele hõlpsasti ligi pääseda. Paistab, et selles seadmes ei ole Twake Passi Automaattäite teenus sisselülitatud. Saad selle sisse lülitada menüüst "Seaded".</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Välimuse muudatus rakendatakse äpi taaskäivitamisel.</value>

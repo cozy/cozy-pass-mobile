@@ -384,7 +384,7 @@
     <value>Navštivit naší webovou stránku</value>
   </data>
   <data name="VisitOurWebsiteDescription" xml:space="preserve">
-    <value>Navštivte náš web pro získání nápovědy, novinek, kontaktu, nebo návodů, jak používat Cozy Pass.</value>
+    <value>Navštivte náš web pro získání nápovědy, novinek, kontaktu, nebo návodů, jak používat Twake Pass.</value>
   </data>
   <data name="Website" xml:space="preserve">
     <value>Webová stránka</value>
@@ -406,7 +406,7 @@
     <value>Rozšíření aplikace</value>
   </data>
   <data name="AutofillAccessibilityDescription" xml:space="preserve">
-    <value>Služba přístupnosti Cozy Pass umožňuje automatické vyplňování přihlašovacích údajů v aplikacích a na webových stránkách.</value>
+    <value>Služba přístupnosti Twake Pass umožňuje automatické vyplňování přihlašovacích údajů v aplikacích a na webových stránkách.</value>
   </data>
   <data name="AutofillService" xml:space="preserve">
     <value>Služba automatického vyplňování</value>
@@ -415,13 +415,13 @@
     <value>Použít nezaměnitelné znaky</value>
   </data>
   <data name="BitwardenAppExtension" xml:space="preserve">
-    <value>Rozšíření aplikace Cozy Pass</value>
+    <value>Rozšíření aplikace Twake Pass</value>
   </data>
   <data name="BitwardenAppExtensionAlert2" xml:space="preserve">
-    <value>Nejjednodušší způsob přidání nových přihlášení do trezoru je z rozšíření Bitwarden. Další informace o používání rozšíření Cozy Pass získáte klepnutím na obrazovku Nastavení.</value>
+    <value>Nejjednodušší způsob přidání nových přihlášení do trezoru je z rozšíření Bitwarden. Další informace o používání rozšíření Twake Pass získáte klepnutím na obrazovku Nastavení.</value>
   </data>
   <data name="BitwardenAppExtensionDescription" xml:space="preserve">
-    <value>Použijte Cozy Pass v Safari a ostatních prohlížečích pro automatické vyplnění přihlašovacích údajů.</value>
+    <value>Použijte Twake Pass v Safari a ostatních prohlížečích pro automatické vyplnění přihlašovacích údajů.</value>
   </data>
   <data name="BitwardenAutofillService" xml:space="preserve">
     <value>Služba automatického vyplňování</value>
@@ -473,7 +473,7 @@
     <value>Zapnout rozšíření aplikace</value>
   </data>
   <data name="ExtensionInSafari" xml:space="preserve">
-    <value>V Safari používá Cozy Pass ikonku pro sdílení (nápověda: nachází se vpravo dole v menu).</value>
+    <value>V Safari používá Twake Pass ikonku pro sdílení (nápověda: nachází se vpravo dole v menu).</value>
     <comment>Safari is the name of apple's web browser</comment>
   </data>
   <data name="ExtensionInstantAccess" xml:space="preserve">
@@ -486,13 +486,13 @@
     <value>Vaše přihlašovací údaje jsou nyní snadno přístupné ze Safari, Chromu a dalších podporovaných aplikací.</value>
   </data>
   <data name="ExtensionSetup2" xml:space="preserve">
-    <value>V Safari a Chromu najdete Cozy Pass pomocí ikony sdílení (nápověda: nachází se vpravo dole v menu).</value>
+    <value>V Safari a Chromu najdete Twake Pass pomocí ikony sdílení (nápověda: nachází se vpravo dole v menu).</value>
   </data>
   <data name="ExtensionTapIcon" xml:space="preserve">
-    <value>Pro spuštění rozšíření klikněte na ikonku Cozy Pass v menu.</value>
+    <value>Pro spuštění rozšíření klikněte na ikonku Twake Pass v menu.</value>
   </data>
   <data name="ExtensionTurnOn" xml:space="preserve">
-    <value>Pro zapnutí Cozy Pass v prohlížeči Safari a dalších aplikacích klepněte na ikonku „více“ v dolní části menu.</value>
+    <value>Pro zapnutí Twake Pass v prohlížeči Safari a dalších aplikacích klepněte na ikonku „více“ v dolní části menu.</value>
   </data>
   <data name="Favorite" xml:space="preserve">
     <value>Oblíbené</value>
@@ -585,7 +585,7 @@
     <value>Další nastavení</value>
   </data>
   <data name="MustLogInMainApp" xml:space="preserve">
-    <value>Před použitím rozšíření se musíte nejdříve přihlásit v hlavní aplikaci Cozy Pass.</value>
+    <value>Před použitím rozšíření se musíte nejdříve přihlásit v hlavní aplikaci Twake Pass.</value>
   </data>
   <data name="Never" xml:space="preserve">
     <value>Nikdy</value>
@@ -610,7 +610,7 @@
     <comment>Confirmation, like "Ok, I understand it"</comment>
   </data>
   <data name="OptionDefaults" xml:space="preserve">
-    <value>Výchozí nastavení je převzato z nastavení generování hesel v aplikaci Cozy Pass.</value>
+    <value>Výchozí nastavení je převzato z nastavení generování hesel v aplikaci Twake Pass.</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Možnosti</value>
@@ -634,7 +634,7 @@
     <value>Opravdu chcete přepsat aktuální heslo?</value>
   </data>
   <data name="PushNotificationAlert" xml:space="preserve">
-    <value>Cozy Pass udržuje váš trezor automaticky synchronizovaný pomocí nabízených oznámení. Pro nejlepší možný zážitek klikněte prosím na následující výzvě na "Ok", pokud budete požádáni o jejich povolení.</value>
+    <value>Twake Pass udržuje váš trezor automaticky synchronizovaný pomocí nabízených oznámení. Pro nejlepší možný zážitek klikněte prosím na následující výzvě na "Ok", pokud budete požádáni o jejich povolení.</value>
     <comment>Push notifications for apple products</comment>
   </data>
   <data name="RateTheApp" xml:space="preserve">
@@ -741,7 +741,7 @@
     <comment>This is used for the autofill service. ex. "There are no items in your vault for twitter.com".</comment>
   </data>
   <data name="BitwardenAutofillServiceOverlay" xml:space="preserve">
-    <value>Když vyberete vstupní pole a uvidíte překrytí Cozy Pass automatického vyplnění, můžete na něj klepnout a spustit službu automatického vyplnění.</value>
+    <value>Když vyberete vstupní pole a uvidíte překrytí Twake Pass automatického vyplnění, můžete na něj klepnout a spustit službu automatického vyplnění.</value>
   </data>
   <data name="BitwardenAutofillServiceNotificationContent" xml:space="preserve">
     <value>Klikněte pro automatické vyplnění přihlašovacích údajů.</value>
@@ -750,7 +750,7 @@
     <value>Otevřít nastavení přístupnosti</value>
   </data>
   <data name="BitwardenAutofillServiceStep1" xml:space="preserve">
-    <value>1. V nastavení Přístupnosti systému Android klepněte na „Cozy Pass“ v části „Stažené služby“.</value>
+    <value>1. V nastavení Přístupnosti systému Android klepněte na „Twake Pass“ v části „Stažené služby“.</value>
   </data>
   <data name="BitwardenAutofillServiceStep2" xml:space="preserve">
     <value>2. Zapněte přepínač a potvrďte stisknutím tlačítka OK.</value>
@@ -765,7 +765,7 @@
     <value>Stav</value>
   </data>
   <data name="BitwardenAutofillServiceAlert2" xml:space="preserve">
-    <value>Nejjednodušší způsob, jak přidat nové přihlašovací údaje do trezoru, je pomocí služby automatického vyplňování Bitwarden. Další informace o používání služby automatického vyplňování Cozy Pass naleznete na obrazovce Nastavení.</value>
+    <value>Nejjednodušší způsob, jak přidat nové přihlašovací údaje do trezoru, je pomocí služby automatického vyplňování Bitwarden. Další informace o používání služby automatického vyplňování Twake Pass naleznete na obrazovce Nastavení.</value>
   </data>
   <data name="Autofill" xml:space="preserve">
     <value>Automatické vyplnění</value>
@@ -964,7 +964,7 @@
     <value>Vlastnoručně hostované prostředí</value>
   </data>
   <data name="SelfHostedEnvironmentFooter" xml:space="preserve">
-    <value>Zadejte základní URL adresu vlastnoručně hostované aplikace Cozy Pass.</value>
+    <value>Zadejte základní URL adresu vlastnoručně hostované aplikace Twake Pass.</value>
   </data>
   <data name="ServerUrl" xml:space="preserve">
     <value>URL serveru</value>
@@ -1126,7 +1126,7 @@
     <value>URL serveru ikonek</value>
   </data>
   <data name="AutofillWithBitwarden" xml:space="preserve">
-    <value>Automatické vyplnění s aplikací Cozy Pass</value>
+    <value>Automatické vyplnění s aplikací Twake Pass</value>
   </data>
   <data name="VaultIsLocked" xml:space="preserve">
     <value>Trezor je zamknutý</value>
@@ -1150,7 +1150,7 @@
     <value>Služba přístupnosti</value>
   </data>
   <data name="AutofillServiceDescription" xml:space="preserve">
-    <value>Služba Cozy Pass automatického vyplnění používá Android Autofill framework pro vyplnění přihlašovacích údajů, čísel platebních karet a dalších osobních informací do dalších aplikací ve vašem zařízení.</value>
+    <value>Služba Twake Pass automatického vyplnění používá Android Autofill framework pro vyplnění přihlašovacích údajů, čísel platebních karet a dalších osobních informací do dalších aplikací ve vašem zařízení.</value>
   </data>
   <data name="BitwardenAutofillServiceDescription" xml:space="preserve">
     <value>Použijte službu přístupnosti pro automatické vyplňování přihlašovacích údajů, platebních karet či identit v ostatních aplikacích.</value>
@@ -1266,7 +1266,7 @@
     <value>Automatické vyplňování zapnuto.</value>
   </data>
   <data name="MustLogInMainAppAutofill" xml:space="preserve">
-    <value>Před použitím automatického vyplňování se musíte nejdříve přihlásit v hlavní aplikaci Cozy Pass.</value>
+    <value>Před použitím automatického vyplňování se musíte nejdříve přihlásit v hlavní aplikaci Twake Pass.</value>
   </data>
   <data name="AutofillSetup" xml:space="preserve">
     <value>Vaše přihlašovací údaje jsou nyní snadno přístupné přímo z vaší klávesnice během přihlašování do aplikací či webů.</value>
@@ -1293,13 +1293,13 @@
     <value>4. Zapněte automatické vyplňování</value>
   </data>
   <data name="AutofillTurnOn5" xml:space="preserve">
-    <value>5. Vyberte „Cozy Pass“</value>
+    <value>5. Vyberte „Twake Pass“</value>
   </data>
   <data name="PasswordAutofill" xml:space="preserve">
     <value>Automatické vyplnění hesel</value>
   </data>
   <data name="BitwardenAutofillAlert2" xml:space="preserve">
-    <value>Nejjednodušší způsob, jak přidat nové přihlašovací údaje do trezoru, je pomocí rozšíření automatického vyplňování Bitwarden. Další informace o používání rozšíření automatického vyplňování Cozy Pass naleznete na obrazovce Nastavení.</value>
+    <value>Nejjednodušší způsob, jak přidat nové přihlašovací údaje do trezoru, je pomocí rozšíření automatického vyplňování Bitwarden. Další informace o používání rozšíření automatického vyplňování Twake Pass naleznete na obrazovce Nastavení.</value>
   </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Neplatná e-mailová adresa.</value>
@@ -1438,7 +1438,7 @@
     <comment>A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing.</comment>
   </data>
   <data name="LearnOrgConfirmation" xml:space="preserve">
-    <value>Cozy Pass umožňuje sdílet váš trezor s ostatními prostřednictvím účtu organizace. Chcete přejít na bitwarden.com a dozvědět se víc?</value>
+    <value>Twake Pass umožňuje sdílet váš trezor s ostatními prostřednictvím účtu organizace. Chcete přejít na bitwarden.com a dozvědět se víc?</value>
   </data>
   <data name="ExportVault" xml:space="preserve">
     <value>Exportovat přihlašovací údaje</value>
@@ -1523,7 +1523,7 @@
     <value>Ukončit</value>
   </data>
   <data name="ExitConfirmation" xml:space="preserve">
-    <value>Opravdu chcete ukončit Cozy Pass?</value>
+    <value>Opravdu chcete ukončit Twake Pass?</value>
   </data>
   <data name="PINRequireMasterPasswordRestart" xml:space="preserve">
     <value>Chcete po restartování aplikace vyžadovat hlavní heslo pro odemknutí trezoru?</value>
@@ -1548,7 +1548,7 @@
     <value>Při restartu aplikace</value>
   </data>
   <data name="AutofillServiceNotEnabled" xml:space="preserve">
-    <value>Automatické vyplňování usnadňuje bezpečný přístup k trezoru Bitwarden z jiných webových stránek a aplikací. Vypadá to, že jste službu Bitwarden nepovolili. Povolte automatické vyplnění pro Cozy Pass z obrazovky „Nastavení“.</value>
+    <value>Automatické vyplňování usnadňuje bezpečný přístup k trezoru Bitwarden z jiných webových stránek a aplikací. Vypadá to, že jste službu Bitwarden nepovolili. Povolte automatické vyplnění pro Twake Pass z obrazovky „Nastavení“.</value>
   </data>
   <data name="ThemeAppliedOnRestart" xml:space="preserve">
     <value>Změna motivu se projeví po restartování aplikace.</value>
