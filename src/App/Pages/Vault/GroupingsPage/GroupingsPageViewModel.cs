@@ -288,11 +288,7 @@ namespace Bit.App.Pages
                         flatList.Add(item);
                     }
                 }
-                FlatList.Clear();
-                foreach (var obj in flatList)
-                {
-                    FlatList.Add(obj);
-                }
+                FlatList.ResetWithRange(flatList);
             }
             finally
             {
