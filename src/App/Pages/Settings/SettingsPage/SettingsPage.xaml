@@ -65,14 +65,11 @@
                 <StackLayout
                     Padding="0" Spacing="0" VerticalOptions="FillAndExpand"
                     StyleClass="list-row-header-container, list-row-header-container-platform">
-                    <BoxView
-                        StyleClass="list-section-separator-top, list-section-separator-top-platform" />
                     <StackLayout StyleClass="list-row-header, list-row-header-platform">
                         <Label
                             Text="{Binding Title}"
                             StyleClass="list-header, list-header-platform" />
                     </StackLayout>
-                    <BoxView StyleClass="list-section-separator-bottom, list-section-separator-bottom-platform" />
                 </StackLayout>
 	        </DataTemplate>
 
