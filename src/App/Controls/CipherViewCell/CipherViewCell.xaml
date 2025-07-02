@@ -105,6 +105,7 @@
         VerticalOptions="CenterAndExpand"
         HorizontalOptions="EndAndExpand"
         AutomationProperties.IsInAccessibleTree="True"
-        AutomationProperties.Name="{u:I18n Options}" />
+        AutomationProperties.Name="{u:I18n Options}"
+        TextColor="{DynamicResource MutedColor}" />
 
 </controls:ExtendedGrid>
