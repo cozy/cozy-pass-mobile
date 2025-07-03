@@ -127,8 +127,6 @@
                 Value="{DynamicResource ButtonPrimaryTextColor}" />
         <Setter Property="FontSize"
                 Value="18" />
-        <Setter Property="FontAttributes"
-                Value="Bold" />
         <Setter Property="CornerRadius"
                 Value="100" />
         <Setter Property="Margin"
@@ -219,7 +217,7 @@
     <Style TargetType="StackLayout"
            Class="list-row-header-platform">
         <Setter Property="Padding"
-                Value="10, 12" />
+                Value="10, 10" />
         <Setter Property="VerticalOptions"
                 Value="CenterAndExpand" />
     </Style>
