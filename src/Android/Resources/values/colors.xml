@@ -16,9 +16,9 @@
   -->
 
   <!-- Cozy colors -->
-  <color name="colorPrimary">#297EF2</color>
+  <color name="colorPrimary">#0A84FF</color>
   <color name="colorPrimaryDark">#0d60d1</color>
-  <color name="primary">#297EF2</color>
+  <color name="primary">#0A84FF</color>
   <color name="notificationBar">#0d60d1</color>
   <color name="border">#dddddd</color>
   <!-- End Cozy colors -->
@@ -37,6 +37,6 @@
   <color name="lightgray">#efeff4</color>
 
   <!-- Cozy theme -->
-  <color name="cozy_primary">#297EF2</color>
+  <color name="cozy_primary">#0A84FF</color>
   <color name="cozy_notificationBar">#0d60d1</color>
 </resources>

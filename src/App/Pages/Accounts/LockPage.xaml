@@ -71,7 +71,7 @@
                            Padding="0"
                            Margin="2"
                            CornerRadius="40"
-                           BackgroundColor="LightGray"
+                           BackgroundColor="Transparent"
                            WidthRequest="80"
                            HeightRequest="80"
                            IsClippedToBounds="True">
