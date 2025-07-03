@@ -610,7 +610,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Accédez dès maintenant à votre Cloud Personnel, le domicile numérique pour réunir toutes vos données</value>
+    <value>Connectez-vous à votre Twake Pass pour accéder à votre coffre sécurisé</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Gérer</value>

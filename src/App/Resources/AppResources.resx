@@ -610,7 +610,7 @@
     <comment>Message shown when interacting with the server</comment>
   </data>
   <data name="LoginOrCreateNewAccount" xml:space="preserve">
-    <value>Access your Personnal Cloud now, the digital home for all your data</value>
+    <value>Log in to your Twake Pass to access your secure vault</value>
   </data>
   <data name="Manage" xml:space="preserve">
     <value>Manage</value>
