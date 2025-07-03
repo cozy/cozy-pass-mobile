@@ -90,12 +90,30 @@ namespace Bit.iOS.Core.Utilities
             var bootstrapTask = BootstrapAsync(postBootstrapFunc);
         }
 
+        // Cozy customization, set status bar to dark content if theme is cozy because of the white background for the status bar
+        //*
+        public static void AppearanceAdjustments()
+        {
+            var theme = ThemeManager.GetTheme(false);
+            ThemeHelpers.SetAppearance(theme, ThemeManager.OsDarkModeEnabled());
+            UIApplication.SharedApplication.StatusBarHidden = false;
+            if (theme == null || theme == "cozy")
+            {
+                UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.DarkContent;
+            }
+            else
+            {
+                UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
+            }
+        }
+        /*/
         public static void AppearanceAdjustments()
         {
             ThemeHelpers.SetAppearance(ThemeManager.GetTheme(false), ThemeManager.OsDarkModeEnabled());
             UIApplication.SharedApplication.StatusBarHidden = false;
             UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
         }
+        //*/
 
         public static void SubscribeBroadcastReceiver(UIViewController controller, NFCNdefReaderSession nfcSession,
             NFCReaderDelegate nfcDelegate)

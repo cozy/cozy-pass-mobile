@@ -101,6 +101,8 @@ namespace Bit.Droid
             _appOptions = GetOptions();
             LoadApplication(new App.App(_appOptions));
 
+            AppearanceAdjustments();
+
             _broadcasterService.Subscribe(_activityKey, (message) =>
             {
                 if (message.Command == "startEventTimer")
@@ -401,7 +403,27 @@ namespace Bit.Droid
         {
             Window?.SetStatusBarColor(ThemeHelpers.NavBarBackgroundColor);
             Window?.DecorView.SetBackgroundColor(ThemeHelpers.BackgroundColor);
-            ThemeHelpers.SetAppearance(ThemeManager.GetTheme(true), ThemeManager.OsDarkModeEnabled());
+            var theme = ThemeManager.GetTheme(true);
+            ThemeHelpers.SetAppearance(theme, ThemeManager.OsDarkModeEnabled());
+
+            // Cozy customization, set status bar to dark content if theme is cozy because of the white background for the status bar
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+            {
+                var decorView = Window.DecorView;
+                var flags = (StatusBarVisibility)decorView.SystemUiVisibility;
+
+                if (theme == "cozy" || theme == null)
+                {
+                    // Add the LIGHT_STATUS_BAR flag for dark icons
+                    flags |= (StatusBarVisibility)SystemUiFlags.LightStatusBar;
+                }
+                else
+                {
+                    // Remove the LIGHT_STATUS_BAR flag for light icons
+                    flags &= ~(StatusBarVisibility)SystemUiFlags.LightStatusBar;
+                }
+                decorView.SystemUiVisibility = (StatusBarVisibility)flags;
+            }
         }
 
         private void ExitApp()
