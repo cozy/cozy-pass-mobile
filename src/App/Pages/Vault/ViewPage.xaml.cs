@@ -378,6 +378,15 @@ namespace Bit.App.Pages
             {
                 ToolbarItems.Insert(1, _editItem);
             }
+            // Cozy customization, Prevent to restore/edit/clone/move Profiles as they will be replaced by Cozy Contacts
+            //*
+            if (_vm.Cipher.Type == Core.Enums.CipherType.Identity)
+            {
+                ToolbarItems.Remove(_editItem);
+                ToolbarItems.Remove(_cloneItem);
+                ToolbarItems.Remove(_shareItem);
+            }
+            //*/
         }
     }
 }

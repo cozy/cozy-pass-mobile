@@ -30,7 +30,13 @@ namespace Bit.App.Utilities
             var clipboardService = ServiceContainer.Resolve<IClipboardService>("clipboardService");
 
             var options = new List<string> { AppResources.View };
+
+            // Cozy customization, Prevent to edit Profiles as they will be replaced by Cozy Contacts
+            /*
             if (!cipher.IsDeleted)
+            /*/
+            if (!cipher.IsDeleted && cipher.Type != CipherType.Identity)
+            //*/
             {
                 options.Add(AppResources.Edit);
             }
