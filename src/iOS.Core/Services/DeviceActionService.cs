@@ -278,10 +278,6 @@ namespace Bit.iOS.Core.Services
 
         public bool SupportsNfc()
         {
-            if(Application.Current is App.App currentApp && !currentApp.Options.IosExtension)
-            {
-                return CoreNFC.NFCNdefReaderSession.ReadingAvailable;
-            }
             return false;
         }
 
