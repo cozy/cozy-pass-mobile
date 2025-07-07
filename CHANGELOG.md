@@ -1,4 +1,4 @@
-# 3.0.6
+# 3.0.8
 
 ## ✨ Features
 
@@ -8,6 +8,18 @@
 
 ## 🔧 Tech
 
+
+# 3.0.7
+
+## ✨ Features
+- Twake UI migration ([PR #100](https://github.com/cozy/cozy-pass-mobile/pull/100))
+
+## 🐛 Bug Fixes
+
+
+## 🔧 Tech
+- Build for iOS 18 ([PR #99](https://github.com/cozy/cozy-pass-mobile/pull/99))
+- Remove NFC permission on iOS ([PR #102](https://github.com/cozy/cozy-pass-mobile/pull/102))
 
 # 3.0.5
 
