@@ -123,8 +123,6 @@
 	<string>Scan QR codes</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Use Face ID to unlock your vault.</string>
-	<key>NFCReaderUsageDescription</key>
-	<string>Use Yubikeys for two-factor authentication.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
