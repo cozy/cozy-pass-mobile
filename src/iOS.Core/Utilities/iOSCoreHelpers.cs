@@ -97,7 +97,7 @@ namespace Bit.iOS.Core.Utilities
             var theme = ThemeManager.GetTheme(false);
             ThemeHelpers.SetAppearance(theme, ThemeManager.OsDarkModeEnabled());
             UIApplication.SharedApplication.StatusBarHidden = false;
-            if (theme == null || theme == "cozy")
+            if (theme == "cozy" || (theme == null && !ThemeManager.OsDarkModeEnabled()))
             {
                 UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.DarkContent;
             }

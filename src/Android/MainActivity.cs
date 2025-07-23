@@ -412,7 +412,7 @@ namespace Bit.Droid
                 var decorView = Window.DecorView;
                 var flags = (StatusBarVisibility)decorView.SystemUiVisibility;
 
-                if (theme == "cozy" || theme == null)
+                if (theme == "cozy" || (theme == null && !ThemeManager.OsDarkModeEnabled()))
                 {
                     // Add the LIGHT_STATUS_BAR flag for dark icons
                     flags |= (StatusBarVisibility)SystemUiFlags.LightStatusBar;
