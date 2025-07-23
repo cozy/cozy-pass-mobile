@@ -33,13 +33,17 @@
                     Text="&#xe5c4;"
                     VerticalOptions="CenterAndExpand"
                     Clicked="BackButton_Clicked"
-                    x:Name="_backButton" />
+                    x:Name="_backButton"
+                    TextColor="{DynamicResource MutedColor}" />
                 <controls:ExtendedSearchBar
                     x:Name="_searchBar"
                     HorizontalOptions="FillAndExpand"
                     TextChanged="SearchBar_TextChanged"
                     SearchButtonPressed="SearchBar_SearchButtonPressed"
-                    Placeholder="{Binding PageTitle}" />
+                    Placeholder="{Binding PageTitle}"
+                    PlaceholderColor="{DynamicResource MutedColor}"
+                    TextColor="{DynamicResource MutedColor}"
+                    CancelButtonColor="{DynamicResource MutedColor}" />
             </StackLayout>
             <BoxView StyleClass="list-section-separator-bottom, list-section-separator-bottom-platform"
                      x:Name="_separator" x:Key="separator" />
