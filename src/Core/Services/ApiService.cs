@@ -118,6 +118,39 @@ namespace Bit.Core.Services
             return identityResponse;
         }
 
+        public async Task<IdentityResponse> PostTwakeOidc(string instance, string code, DeviceRequest device = null)
+        {
+            using (var client = new HttpClient())
+            {
+                var url = $"https://{instance}/oidc/bitwarden/twake";
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("code", code),
+                    new KeyValuePair<string, string>("client_id", _platformUtilsService.IdentityClientId),
+                    new KeyValuePair<string, string>("deviceType", ((int)device.Type).ToString()),
+                    new KeyValuePair<string, string>("deviceIdentifier", device.Identifier),
+                    new KeyValuePair<string, string>("deviceName", device.Name),
+                    new KeyValuePair<string, string>("clientName", $"Cozy Pass ({device.Name})"),
+                    new KeyValuePair<string, string>("devicePushToken", device.PushToken)
+                });
+                var response = await client.PostAsync(url, content);
+                JObject responseJObject = null;
+                if (IsJsonResponse(response))
+                {
+                    var responseJsonString = await response.Content.ReadAsStringAsync();
+                    responseJObject = JObject.Parse(responseJsonString);
+                }
+
+                var identityResponse = new IdentityResponse(response.StatusCode, responseJObject);
+                if (identityResponse.FailedToParse)
+                {
+                    throw new ApiException(new ErrorResponse(responseJObject, response.StatusCode, true));
+                }
+
+                return identityResponse;
+            }
+        }
+
         public async Task RefreshIdentityTokenAsync()
         {
             try

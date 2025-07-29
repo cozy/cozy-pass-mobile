@@ -21,7 +21,7 @@ namespace Bit.Core.Abstractions
         bool AuthingWithSso();
         bool AuthingWithPassword();
         List<TwoFactorProvider> GetSupportedTwoFactorProviders();
-        Task<AuthResult> LogInAsync(string email, string masterPassword, string captchaToken);
+        Task<AuthResult> LogInAsync(string email, string masterPassword, string captchaToken, string oidcCode);
         Task<AuthResult> LogInSsoAsync(string code, string codeVerifier, string redirectUrl);
         Task<AuthResult> LogInCompleteAsync(string email, string masterPassword, TwoFactorProviderType twoFactorProvider, string twoFactorToken, bool? remember = null);
         Task<AuthResult> LogInTwoFactorAsync(TwoFactorProviderType twoFactorProvider, string twoFactorToken, bool? remember = null);

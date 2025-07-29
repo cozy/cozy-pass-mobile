@@ -198,6 +198,12 @@ namespace Bit.App
         // Cozy customization:
         // - Handle deep links for Onboarding and Login
         //*
+        public async Task HandleOidcLoginLink(string fqdn, string code)
+        {
+            var page = new LoginPage(fqdn, null, code);
+            await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page));
+        }
+
         public async Task HandleLoginLink(string fqdn)
         {
             var page = new LoginPage(fqdn, null);
@@ -217,7 +223,22 @@ namespace Bit.App
         protected override async void OnAppLinkRequestReceived(Uri uri)
         {
             string queryString = uri.Query;
+            string host = uri.Host;
+
             var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
+
+            // OIDC login
+
+            if (host == "oidc") {
+                var instance = queryDictionary.Get("instance");
+                var code = queryDictionary.Get("code");
+
+                await HandleOidcLoginLink(instance, code);
+
+                return;
+            }
+
+            // Old login
 
             var fqdn = queryDictionary.Get("fqdn");
             var onboardingUrl = queryDictionary.Get("onboard_url");
