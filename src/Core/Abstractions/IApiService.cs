@@ -30,6 +30,7 @@ namespace Bit.Core.Abstractions
         Task<CipherResponse> PostCipherAsync(CipherRequest request);
         Task<CipherResponse> PostCipherCreateAsync(CipherCreateRequest request);
         Task<FolderResponse> PostFolderAsync(FolderRequest request);
+        Task<IdentityResponse> PostTwakeOidc(string instance, string code, DeviceRequest deviceRequest);
         Task<IdentityResponse> PostIdentityTokenAsync(TokenRequest request);
         Task PostPasswordHintAsync(PasswordHintRequest request);
         Task SetPasswordAsync(SetPasswordRequest request);

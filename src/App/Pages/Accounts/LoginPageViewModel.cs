@@ -36,6 +36,10 @@ namespace Bit.App.Pages
         //*
         private string _errorMsg;
         //*/
+        // Cozy customization, forward OIDC code to login page
+        //*
+        private string _oidcCode;
+        //*/
 
         public LoginPageViewModel()
         {
@@ -51,7 +55,7 @@ namespace Bit.App.Pages
 
             PageTitle = AppResources.CozyPass;
             TogglePasswordCommand = new Command(TogglePassword);
-            LogInCommand = new Command(async () => await LogInAsync());
+            LogInCommand = new Command(async () => await LogInAsync(true, this.OidcCode));
         }
 
         public bool ShowPassword
@@ -84,6 +88,14 @@ namespace Bit.App.Pages
             set => SetProperty(ref _errorMsg, value);
         }
         //*/
+        // Cozy customization, forward OIDC code to login page
+        //*
+        public string OidcCode
+        {
+            get => _oidcCode;
+            set => SetProperty(ref _oidcCode, value);
+        }
+        //*/
 
         public Command LogInCommand { get; }
         public Command TogglePasswordCommand { get; }
@@ -109,7 +121,7 @@ namespace Bit.App.Pages
             RememberEmail = rememberEmail.GetValueOrDefault(true);
         }
 
-        public async Task LogInAsync(bool showLoading = true)
+        public async Task LogInAsync(bool showLoading = true, string oidcCode = null)
         {
             // Cozy customization, display error message on form
             //*
@@ -179,7 +191,7 @@ namespace Bit.App.Pages
                 var cozyURL = UrlHelper.SanitizeUrl(Email);
                 await _cozyClientService.ConfigureEnvironmentFromCozyURLAsync(cozyURL);
                 var email = _cozyClientService.GetEmailFromCozyURL(cozyURL);
-                var response = await _authService.LogInAsync(email, MasterPassword, _captchaToken);
+                var response = await _authService.LogInAsync(email, MasterPassword, _captchaToken, oidcCode);
                 #endregion
 
                 if (RememberEmail)
