@@ -43,6 +43,7 @@ namespace Bit.App.Pages
             _vm = BindingContext as HomeViewModel;
             _vm.Page = this;
             _vm.StartLoginAction = () => Device.BeginInvokeOnMainThread(async () => await StartLoginAsync());
+            _vm.StartLoginTwakeAction = () => Device.BeginInvokeOnMainThread(async () => await StartLoginTwakeAsync());
             _vm.StartRegisterAction = () => Device.BeginInvokeOnMainThread(async () => await StartRegisterAsync());
             _vm.StartSsoLoginAction = () => Device.BeginInvokeOnMainThread(async () => await StartSsoLoginAsync());
             _vm.StartEnvironmentAction = () => Device.BeginInvokeOnMainThread(async () => await StartEnvironmentAsync());
@@ -113,7 +114,14 @@ namespace Bit.App.Pages
             }
         }
 
-        
+        private void LogInTwake_Clicked(object sender, EventArgs e)
+        {
+            if (DoOnce())
+            {
+                _vm.StartLoginTwakeAction();
+            }
+        }
+
         private void OpenRegistrationPageIOS(string url) {
 #if __IOS__
             var window = UIApplication.SharedApplication.KeyWindow;
@@ -148,10 +156,23 @@ namespace Bit.App.Pages
 
         // Cozy customization:
         // - Call ClouderyView from InAppBrowser
+        // - Open stack OIDC view from InAppBrowser
         //*
         private async Task StartLoginAsync()
         {
             var url = await _cozyClouderyEnvService.GetClouderyUrl();
+
+            await Browser.OpenAsync(url, new BrowserLaunchOptions
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show,
+                Flags = BrowserLaunchFlags.PresentAsPageSheet
+            });
+        }
+
+        private async Task StartLoginTwakeAsync()
+        {
+            var url = await _cozyClouderyEnvService.GetStackOidcUrl();
 
             await Browser.OpenAsync(url, new BrowserLaunchOptions
             {
