@@ -3,6 +3,7 @@ using Bit.Core.Enums;
 using Bit.Core.Exceptions;
 using Bit.Core.Models.Domain;
 using Bit.Core.Models.Request;
+using Bit.Core.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -120,14 +121,14 @@ namespace Bit.Core.Services
             TwoFactorProviders[TwoFactorProviderType.YubiKey].Description = _i18nService.T("YubiKeyDesc");
         }
 
-        public async Task<AuthResult> LogInAsync(string email, string masterPassword, string captchaToken)
+        public async Task<AuthResult> LogInAsync(string email, string masterPassword, string captchaToken, string oidcCode)
         {
             SelectedTwoFactorProviderType = null;
             var key = await MakePreloginKeyAsync(masterPassword, email);
             var hashedPassword = await _cryptoService.HashPasswordAsync(masterPassword, key);
             var localHashedPassword = await _cryptoService.HashPasswordAsync(masterPassword, key, HashPurpose.LocalAuthorization);
             return await LogInHelperAsync(email, hashedPassword, localHashedPassword, null, null, null, key, null, null,
-                null, captchaToken);
+                null, captchaToken, oidcCode);
         }
 
         public async Task<AuthResult> LogInSsoAsync(string code, string codeVerifier, string redirectUrl)
@@ -275,7 +276,7 @@ namespace Bit.Core.Services
         private async Task<AuthResult> LogInHelperAsync(string email, string hashedPassword, string localHashedPassword,
             string code, string codeVerifier, string redirectUrl, SymmetricCryptoKey key,
             TwoFactorProviderType? twoFactorProvider = null, string twoFactorToken = null, bool? remember = null,
-            string captchaToken = null)
+            string captchaToken = null, string oidcCode = null)
         {
             var storedTwoFactorToken = await _tokenService.GetTwoFactorTokenAsync(email);
             var appId = await _appIdService.GetAppIdAsync();
@@ -316,7 +317,12 @@ namespace Bit.Core.Services
                 request = new TokenRequest(emailPassword, codeCodeVerifier, null, null, false, captchaToken, deviceRequest);
             }
 
-            var response = await _apiService.PostIdentityTokenAsync(request);
+            IdentityResponse response;
+            if (oidcCode != null) {
+                response = await _apiService.PostTwakeOidc(email, oidcCode, deviceRequest);
+            } else {
+                response = await _apiService.PostIdentityTokenAsync(request);
+            }
             ClearState();
             var result = new AuthResult { TwoFactor = response.TwoFactorNeeded, CaptchaSiteKey = response.CaptchaResponse?.SiteKey };
 
