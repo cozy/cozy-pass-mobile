@@ -62,10 +62,9 @@
                     <Button Text="{u:I18n CozyHomeHaveAccount}"
                         StyleClass="btn-primary"
                     	Clicked="LogIn_Clicked"></Button>
-                <!-- Cozy customization: SSO is disabled
-                <Button Text="{u:I18n LogInSso}"
-                        Clicked="LogInSso_Clicked" />
-                -->
+                    <!-- Cozy customization: Login with Twake -->
+                    <Button Text="Login with Twake"
+                        Clicked="LogInTwake_Clicked" />
             </StackLayout>
         </StackLayout>
     </StackLayout>

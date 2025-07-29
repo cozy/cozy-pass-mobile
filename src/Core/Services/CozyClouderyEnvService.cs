@@ -15,6 +15,11 @@ namespace Bit.Core.Services
         private const string INT_BASE_URI = "https://staging-manager.cozycloud.cc";
         private const string DEV_BASE_URI = "https://manager-dev.cozycloud.cc";
 
+
+        private const string PROD_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.mycozy.cloud";
+        private const string INT_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.cozy.works";
+        private const string DEV_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.cozy.wtf";
+
         private const string LOGIN_RELATIVE_URI = "/v2/neutral/start";
 
         private const string QUERY_STRING = "redirect_after_email=https%3A%2F%2Flinks.mycozy.cloud%2Fpass%2Fonboarding%3Ffallback%3Dcozypass%253A%252F%252Fpass%252Fonboarding&redirect_after_login=cozypass%3A%2F%2Fpass%2Flogin";
@@ -46,6 +51,22 @@ namespace Bit.Core.Services
             var clouderyUrl = $"{baseUri}{LOGIN_RELATIVE_URI}?{QUERY_STRING}";
 
             return clouderyUrl;
+        }
+
+        public async Task<string> GetStackOidcUrl()
+        {
+            var clouderyEnv = await GetClouderyEnvFromAsyncStorage();
+
+            var baseUris = new Dictionary<string, string>() {
+                { "PROD", PROD_STACK_OAUTHCALLBACK_URI },
+                { "INT", INT_STACK_OAUTHCALLBACK_URI },
+                { "DEV", DEV_STACK_OAUTHCALLBACK_URI },
+            };
+            var baseUri = baseUris[clouderyEnv];
+
+            var stackOidcUrl = $"{baseUri}/oidc/bitwarden/twake?redirect_uri=cozypass://oidc";
+
+            return stackOidcUrl;
         }
 
         /// <summary>
