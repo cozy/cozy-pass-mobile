@@ -10,6 +10,7 @@ using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -204,6 +205,19 @@ namespace Bit.App
             await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page));
         }
 
+        public async Task HandleOidcContextLoginLink(string context)
+        {
+            var url = await _cozyClouderyEnvService.GetStackOidcUrl(context);
+
+            await Browser.OpenAsync(url, new BrowserLaunchOptions
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show,
+                Flags = BrowserLaunchFlags.PresentAsPageSheet
+            });
+        }
+
+
         public async Task HandleLoginLink(string fqdn)
         {
             var page = new LoginPage(fqdn, null);
@@ -234,6 +248,14 @@ namespace Bit.App
                 var code = queryDictionary.Get("code");
 
                 await HandleOidcLoginLink(instance, code);
+
+                return;
+            }
+
+            if (host == "oidccontext") {
+                var context = queryDictionary.Get("context");
+
+                await HandleOidcContextLoginLink(context);
 
                 return;
             }

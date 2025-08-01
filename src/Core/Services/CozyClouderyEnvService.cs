@@ -53,7 +53,7 @@ namespace Bit.Core.Services
             return clouderyUrl;
         }
 
-        public async Task<string> GetStackOidcUrl()
+        public async Task<string> GetStackOidcUrl(string context = "twake")
         {
             var clouderyEnv = await GetClouderyEnvFromAsyncStorage();
 
@@ -64,7 +64,7 @@ namespace Bit.Core.Services
             };
             var baseUri = baseUris[clouderyEnv];
 
-            var stackOidcUrl = $"{baseUri}/oidc/bitwarden/twake?redirect_uri=cozypass://oidc";
+            var stackOidcUrl = $"{baseUri}/oidc/bitwarden/{context}?redirect_uri=cozypass://oidc";
 
             return stackOidcUrl;
         }
