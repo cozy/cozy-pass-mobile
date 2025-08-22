@@ -55,5 +55,11 @@ namespace Bit.App.Pages
                 _vm.CloseAction();
             }
         }
+
+        private async void UseMyTwakeURL_Clicked(object sender, EventArgs e)
+        {
+            var page = new LoginPage(null, null);
+            await Navigation.PushModalAsync(new NavigationPage(page));
+        }
     }
 }
