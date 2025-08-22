@@ -2132,6 +2132,9 @@
   <data name="CompanyServerLoginDescription" xml:space="preserve">
     <value>Enter your company email address to continue</value>
   </data>
+  <data name="CompanyServerLoginByUrlDescription" xml:space="preserve">
+    <value>Use my Twake URL</value>
+  </data>
   <data name="CompanyServerLoginError" xml:space="preserve">
     <value>Company server not found</value>
   </data>

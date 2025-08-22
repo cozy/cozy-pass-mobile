@@ -37,6 +37,21 @@
                         StyleClass="btn-primary"
                         Clicked="LogIn_Clicked"></Button>
             </StackLayout>
+            <StackLayout Padding="10, 0">
+                <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{u:I18n CompanyServerLoginByUrlDescription}"
+                                        TextColor="{DynamicResource HyperlinkColor}"
+                                        TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="UseMyTwakeURL_Clicked" NumberOfTapsRequired="1" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+            </StackLayout>
         </StackLayout>
     </ScrollView>
 
