@@ -47,6 +47,7 @@ namespace Bit.App.Pages
             _vm.StartRegisterAction = () => Device.BeginInvokeOnMainThread(async () => await StartRegisterAsync());
             _vm.StartSsoLoginAction = () => Device.BeginInvokeOnMainThread(async () => await StartSsoLoginAsync());
             _vm.StartEnvironmentAction = () => Device.BeginInvokeOnMainThread(async () => await StartEnvironmentAsync());
+            _vm.StartCompanyServerLoginAction = () => Device.BeginInvokeOnMainThread(async () => await StartCompanyServerLoginAsync());
             UpdateLogo();
         }
 
@@ -230,6 +231,21 @@ namespace Bit.App.Pages
             var page = new EnvironmentPage();
             await Navigation.PushModalAsync(new NavigationPage(page));
         }
+
+        private void CompanyServerLogin_Clicked(object sender, EventArgs e)
+        {
+            if (DoOnce())
+            {
+                _vm.StartCompanyServerLoginAction();
+            }
+        }
+
+        private async Task StartCompanyServerLoginAsync()
+        {
+            var page = new CompanyServerLoginPage();
+            await Navigation.PushModalAsync(new NavigationPage(page));
+        }
+
         private void HasOnboarded()
         {
             Device.BeginInvokeOnMainThread(async () =>
