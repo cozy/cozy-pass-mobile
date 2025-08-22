@@ -59,12 +59,17 @@
                         StyleClass="btn-primary"
                         Clicked="Register_Clicked" />
                     -->
+                    <!-- Cozy customization: Disable login with cloudery
                     <Button Text="{u:I18n CozyHomeHaveAccount}"
                         StyleClass="btn-primary"
                     	Clicked="LogIn_Clicked"></Button>
+                    -->
                     <!-- Cozy customization: Login with Twake -->
                     <Button Text="Login with Twake"
+                        StyleClass="btn-primary"
                         Clicked="LogInTwake_Clicked" />
+                    <Button Text="Use your company server"
+                        Clicked="CompanyServerLogin_Clicked" />
             </StackLayout>
         </StackLayout>
     </StackLayout>

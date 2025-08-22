@@ -1183,6 +1183,33 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Utiliser le serveur de votre entreprise.
+        /// </summary>
+        internal static string CompanyServerLogin {
+            get {
+                return ResourceManager.GetString("CompanyServerLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrez l&apos;adresse e-mail de votre entreprise pour continuer.
+        /// </summary>
+        internal static string CompanyServerLoginDescription {
+            get {
+                return ResourceManager.GetString("CompanyServerLoginDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serveur d&apos;entreprise introuvable.
+        /// </summary>
+        internal static string CompanyServerLoginError {
+            get {
+                return ResourceManager.GetString("CompanyServerLoginError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Continuer.
         /// </summary>
         internal static string Continue {
