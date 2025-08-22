@@ -1192,6 +1192,15 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Utiliser l&apos;URL de mon Twake.
+        /// </summary>
+        internal static string CompanyServerLoginByUrlDescription {
+            get {
+                return ResourceManager.GetString("CompanyServerLoginByUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Entrez l&apos;adresse e-mail de votre entreprise pour continuer.
         /// </summary>
         internal static string CompanyServerLoginDescription {
