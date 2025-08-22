@@ -86,9 +86,14 @@ namespace Bit.App.Pages
                         TitleMode = BrowserTitleMode.Show,
                         Flags = BrowserLaunchFlags.PresentAsPageSheet
                     });
+                    await _deviceActionService.HideLoadingAsync();
+                    return;
                 }
       
                 await _deviceActionService.HideLoadingAsync();
+                await _platformUtilsService.ShowDialogAsync(
+                    (AppResources.CompanyServerLoginError),
+                    AppResources.AnErrorHasOccurred);
                 return;
             }
             catch (Exception e)

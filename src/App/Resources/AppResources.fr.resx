@@ -2129,7 +2129,7 @@
     <value>Utiliser le serveur de votre entreprise</value>
   </data>
   <data name="CompanyServerLoginDescription" xml:space="preserve">
-    <value>Entrez l'adresse e-mail de votre entreprise pour continuer</value>
+    <value>Adresse e-mail de votre entreprise</value>
   </data>
   <data name="CompanyServerLoginByUrlDescription" xml:space="preserve">
     <value>Utiliser l'URL de mon Twake</value>

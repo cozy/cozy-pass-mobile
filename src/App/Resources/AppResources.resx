@@ -2130,7 +2130,7 @@
     <value>Use your company server</value>
   </data>
   <data name="CompanyServerLoginDescription" xml:space="preserve">
-    <value>Enter your company email address to continue</value>
+    <value>Company email address</value>
   </data>
   <data name="CompanyServerLoginByUrlDescription" xml:space="preserve">
     <value>Use my Twake URL</value>
