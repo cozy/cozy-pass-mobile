@@ -1202,7 +1202,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter your company email address to continue.
+        ///   Looks up a localized string similar to Company email address.
         /// </summary>
         public static string CompanyServerLoginDescription {
             get {
