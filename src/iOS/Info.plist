@@ -11,7 +11,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>io.cozy.pass.mobile</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.0.7</string>
+	<string>3.0.8</string>
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>CFBundleURLTypes</key>
@@ -135,6 +135,6 @@
 		</dict>
 	</dict>
 	<key>CFBundleVersion</key>
-	<string>3000706</string>
+	<string>3000800</string>
 </dict>
 </plist>
