@@ -65,10 +65,10 @@
                     	Clicked="LogIn_Clicked"></Button>
                     -->
                     <!-- Cozy customization: Login with Twake -->
-                    <Button Text="Login with Twake"
+                    <Button Text="{u:I18n TwakeLogin}"
                         StyleClass="btn-primary"
                         Clicked="LogInTwake_Clicked" />
-                    <Button Text="Use your company server"
+                    <Button Text="{u:I18n CompanyServerLogin}"
                         Clicked="CompanyServerLogin_Clicked" />
             </StackLayout>
         </StackLayout>
