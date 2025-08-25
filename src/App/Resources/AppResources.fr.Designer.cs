@@ -5028,6 +5028,15 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Se connecter.
+        /// </summary>
+        internal static string TwakeLogin {
+            get {
+                return ResourceManager.GetString("TwakeLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 20 secondes.
         /// </summary>
         internal static string TwentySeconds {
