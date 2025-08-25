@@ -2125,6 +2125,9 @@
   <data name="RegistrationSuccess" xml:space="preserve">
     <value>L'inscription s'est déroulée sans anicroche, vous pouvez vous connecter maintenant.</value>
   </data>
+  <data name="TwakeLogin" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
   <data name="CompanyServerLogin" xml:space="preserve">
     <value>Utiliser le serveur de votre entreprise</value>
   </data>

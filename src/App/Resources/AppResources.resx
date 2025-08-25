@@ -2126,6 +2126,9 @@
   <data name="RegistrationSuccess" xml:space="preserve">
     <value>Registration was successful, you can login now</value>
   </data>
+  <data name="TwakeLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="CompanyServerLogin" xml:space="preserve">
     <value>Use your company server</value>
   </data>
