@@ -18,7 +18,7 @@ namespace Bit.App.Pages
 
         private bool _inputFocused;
 
-        public LoginPage(string email = null, AppOptions appOptions = null)
+        public LoginPage(string email = null, AppOptions appOptions = null, string oidcCode = null)
         {
             _storageService = ServiceContainer.Resolve<IStorageService>("storageService");
             _messagingService = ServiceContainer.Resolve<IMessagingService>("messagingService");
@@ -37,6 +37,7 @@ namespace Bit.App.Pages
                 await Navigation.PopModalAsync();
             };
             _vm.Email = email;
+            _vm.OidcCode = oidcCode;
             MasterPasswordEntry = _masterPassword;
             if (Device.RuntimePlatform == Device.Android)
             {
@@ -82,7 +83,7 @@ namespace Bit.App.Pages
         {
             if (DoOnce())
             {
-                await _vm.LogInAsync();
+                await _vm.LogInAsync(true, _vm.OidcCode);
             }
         }
 

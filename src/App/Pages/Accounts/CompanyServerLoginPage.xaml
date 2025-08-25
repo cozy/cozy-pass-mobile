@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Bit.App.Pages.CompanyServerLoginPage"
+    xmlns:pages="clr-namespace:Bit.App.Pages"
+    xmlns:u="clr-namespace:Bit.App.Utilities"
+    x:DataType="pages:CompanyServerLoginPageModel">
+    
+    <ContentPage.BindingContext>
+        <pages:CompanyServerLoginPageModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{u:I18n Cancel}" Clicked="Close_Clicked" Order="Primary" Priority="-1" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout Spacing="20">
+            <StackLayout StyleClass="box">
+                <Label Text="{u:I18n CompanyServerLogin}" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Title"/>
+                <StackLayout StyleClass="box-row">
+                    <Label
+                        Text="{u:I18n CompanyServerLoginDescription}"
+                        StyleClass="box-label" />
+                    <Entry
+                            x:Name="_email"
+                            Text="{Binding Email}"
+                            Keyboard="Default"
+                            StyleClass="box-value" 
+                            ReturnType="Go"
+                            ReturnCommand="{Binding LogInCommand}" />
+                </StackLayout>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{u:I18n CompanyServerLoginByUrlDescription}"
+                                    TextColor="{DynamicResource HyperlinkColor}"
+                                    TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="UseMyTwakeURL_Clicked" NumberOfTapsRequired="1" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+            <StackLayout Padding="10, 0">
+                <Button Text="{u:I18n LogIn}" 
+                        StyleClass="btn-primary"
+                        Clicked="LogIn_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</pages:BaseContentPage>

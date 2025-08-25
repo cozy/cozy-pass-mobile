@@ -10,6 +10,7 @@ using Bit.Core.Abstractions;
 using Bit.Core.Utilities;
 using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -198,6 +199,25 @@ namespace Bit.App
         // Cozy customization:
         // - Handle deep links for Onboarding and Login
         //*
+        public async Task HandleOidcLoginLink(string fqdn, string code)
+        {
+            var page = new LoginPage(fqdn, null, code);
+            await Current.MainPage.Navigation.PushModalAsync(new NavigationPage(page));
+        }
+
+        public async Task HandleOidcContextLoginLink(string context)
+        {
+            var url = await _cozyClouderyEnvService.GetStackOidcUrl(context);
+
+            await Browser.OpenAsync(url, new BrowserLaunchOptions
+            {
+                LaunchMode = BrowserLaunchMode.SystemPreferred,
+                TitleMode = BrowserTitleMode.Show,
+                Flags = BrowserLaunchFlags.PresentAsPageSheet
+            });
+        }
+
+
         public async Task HandleLoginLink(string fqdn)
         {
             var page = new LoginPage(fqdn, null);
@@ -217,7 +237,30 @@ namespace Bit.App
         protected override async void OnAppLinkRequestReceived(Uri uri)
         {
             string queryString = uri.Query;
+            string host = uri.Host;
+
             var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
+
+            // OIDC login
+
+            if (host == "oidc") {
+                var instance = queryDictionary.Get("instance");
+                var code = queryDictionary.Get("code");
+
+                await HandleOidcLoginLink(instance, code);
+
+                return;
+            }
+
+            if (host == "oidccontext") {
+                var context = queryDictionary.Get("context");
+
+                await HandleOidcContextLoginLink(context);
+
+                return;
+            }
+
+            // Old login
 
             var fqdn = queryDictionary.Get("fqdn");
             var onboardingUrl = queryDictionary.Get("onboard_url");

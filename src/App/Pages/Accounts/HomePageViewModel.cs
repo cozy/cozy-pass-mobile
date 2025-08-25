@@ -11,9 +11,11 @@ namespace Bit.App.Pages
         }
         
         public Action StartLoginAction { get; set; }
+        public Action StartLoginTwakeAction { get; set; }
         public Action StartRegisterAction { get; set; }
         public Action StartSsoLoginAction { get; set; }
         public Action StartEnvironmentAction { get; set; }
+        public Action StartCompanyServerLoginAction { get; set; }
         public Action CloseAction { get; set; }
     }
 }

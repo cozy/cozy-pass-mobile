@@ -2126,6 +2126,21 @@
   <data name="RegistrationSuccess" xml:space="preserve">
     <value>Registration was successful, you can login now</value>
   </data>
+  <data name="TwakeLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="CompanyServerLogin" xml:space="preserve">
+    <value>Use your company server</value>
+  </data>
+  <data name="CompanyServerLoginDescription" xml:space="preserve">
+    <value>Company email address</value>
+  </data>
+  <data name="CompanyServerLoginByUrlDescription" xml:space="preserve">
+    <value>Use my Twake URL</value>
+  </data>
+  <data name="CompanyServerLoginError" xml:space="preserve">
+    <value>Company server not found</value>
+  </data>
   <data name="PurchasePremiumMembership" xml:space="preserve">
     <value>Premium Membership</value>
   </data>

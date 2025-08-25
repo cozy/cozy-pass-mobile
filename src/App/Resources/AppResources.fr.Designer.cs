@@ -1183,6 +1183,42 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Utiliser le serveur de votre entreprise.
+        /// </summary>
+        internal static string CompanyServerLogin {
+            get {
+                return ResourceManager.GetString("CompanyServerLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Utiliser l&apos;URL de mon Twake.
+        /// </summary>
+        internal static string CompanyServerLoginByUrlDescription {
+            get {
+                return ResourceManager.GetString("CompanyServerLoginByUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adresse e-mail de votre entreprise.
+        /// </summary>
+        internal static string CompanyServerLoginDescription {
+            get {
+                return ResourceManager.GetString("CompanyServerLoginDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Serveur d&apos;entreprise introuvable.
+        /// </summary>
+        internal static string CompanyServerLoginError {
+            get {
+                return ResourceManager.GetString("CompanyServerLoginError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Continuer.
         /// </summary>
         internal static string Continue {
@@ -4988,6 +5024,15 @@ namespace Bit.App.Resources {
         internal static string TryAgain {
             get {
                 return ResourceManager.GetString("TryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se connecter.
+        /// </summary>
+        internal static string TwakeLogin {
+            get {
+                return ResourceManager.GetString("TwakeLogin", resourceCulture);
             }
         }
         
