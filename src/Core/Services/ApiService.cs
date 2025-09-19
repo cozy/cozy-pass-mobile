@@ -118,7 +118,7 @@ namespace Bit.Core.Services
             return identityResponse;
         }
 
-        public async Task<IdentityResponse> PostTwakeOidc(string instance, string code, DeviceRequest device = null)
+        public async Task<IdentityResponse> PostTwakeOidc(string instance, string code, string passwordHash, DeviceRequest device = null)
         {
             using (var client = new HttpClient())
             {
@@ -131,7 +131,8 @@ namespace Bit.Core.Services
                     new KeyValuePair<string, string>("deviceIdentifier", device.Identifier),
                     new KeyValuePair<string, string>("deviceName", device.Name),
                     new KeyValuePair<string, string>("clientName", $"Cozy Pass ({device.Name})"),
-                    new KeyValuePair<string, string>("devicePushToken", device.PushToken)
+                    new KeyValuePair<string, string>("devicePushToken", device.PushToken),
+                    new KeyValuePair<string, string>("password", passwordHash)
                 });
                 var response = await client.PostAsync(url, content);
                 JObject responseJObject = null;

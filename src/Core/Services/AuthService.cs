@@ -319,7 +319,7 @@ namespace Bit.Core.Services
 
             IdentityResponse response;
             if (oidcCode != null) {
-                response = await _apiService.PostTwakeOidc(email, oidcCode, deviceRequest);
+                response = await _apiService.PostTwakeOidc(email, oidcCode, hashedPassword, deviceRequest);
             } else {
                 response = await _apiService.PostIdentityTokenAsync(request);
             }
