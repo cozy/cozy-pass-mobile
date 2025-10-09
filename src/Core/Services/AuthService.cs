@@ -254,6 +254,7 @@ namespace Bit.Core.Services
             email = email.Trim().ToLower();
             KdfType? kdf = null;
             int? kdfIterations = null;
+            string salt = null;
             try
             {
                 var preloginResponse = await _apiService.PostPreloginAsync(new PreloginRequest { Email = email });
@@ -261,6 +262,7 @@ namespace Bit.Core.Services
                 {
                     kdf = preloginResponse.Kdf;
                     kdfIterations = preloginResponse.KdfIterations;
+                    salt = preloginResponse.Salt;
                 }
             }
             catch (ApiException e)
@@ -270,7 +272,7 @@ namespace Bit.Core.Services
                     throw e;
                 }
             }
-            return await _cryptoService.MakeKeyAsync(masterPassword, email, kdf, kdfIterations);
+            return await _cryptoService.MakeKeyAsync(masterPassword, salt, kdf, kdfIterations);
         }
 
         private async Task<AuthResult> LogInHelperAsync(string email, string hashedPassword, string localHashedPassword,
