@@ -2129,16 +2129,16 @@
     <value>Se connecter</value>
   </data>
   <data name="CompanyServerLogin" xml:space="preserve">
-    <value>Utiliser le serveur de votre entreprise</value>
+    <value>Utiliser le serveur de votre organisation</value>
   </data>
   <data name="CompanyServerLoginDescription" xml:space="preserve">
-    <value>Adresse e-mail de votre entreprise</value>
+    <value>Adresse e-mail de votre organisation</value>
   </data>
   <data name="CompanyServerLoginByUrlDescription" xml:space="preserve">
     <value>Utiliser l'URL de mon Twake</value>
   </data>
   <data name="CompanyServerLoginError" xml:space="preserve">
-    <value>Serveur d'entreprise introuvable</value>
+    <value>Serveur d'organisation introuvable</value>
   </data>
   <data name="PurchasePremiumMembership" xml:space="preserve">
     <value>Adhésion Premium</value>
