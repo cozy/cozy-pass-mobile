@@ -8,7 +8,7 @@ namespace Bit.Core.Abstractions
         string ParseClouderyEnvFromUrl(Url uri);
 
         Task<string> GetClouderyUrl();
-        Task<string> GetStackOidcUrl(string context = "twake");
+        Task<string> GetStackOidcUrl(string context = null);
 
         Task<string> GetClouderyEnvFromAsyncStorage();
         Task SaveClouderyEnvOnAsyncStorage(string clouderyEnv);
