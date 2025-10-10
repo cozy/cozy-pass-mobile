@@ -1184,7 +1184,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use your company server.
+        ///   Looks up a localized string similar to Use your organization server.
         /// </summary>
         public static string CompanyServerLogin {
             get {
@@ -1202,7 +1202,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company email address.
+        ///   Looks up a localized string similar to Organization email address.
         /// </summary>
         public static string CompanyServerLoginDescription {
             get {
@@ -1211,7 +1211,7 @@ namespace Bit.App.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company server not found.
+        ///   Looks up a localized string similar to Organization server not found.
         /// </summary>
         public static string CompanyServerLoginError {
             get {
