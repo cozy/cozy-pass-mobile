@@ -15,10 +15,16 @@ namespace Bit.Core.Services
         private const string INT_BASE_URI = "https://staging-manager.cozycloud.cc";
         private const string DEV_BASE_URI = "https://manager-dev.cozycloud.cc";
 
-
+        // prod : .twake.app (stack prod)
+        // int : .stg.lin-saas.com (stack int)
+        // dev : on.cozy.lin-saas.com (stack int)
         private const string PROD_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.mycozy.cloud";
         private const string INT_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.cozy.works";
-        private const string DEV_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.cozy.wtf";
+        private const string DEV_STACK_OAUTHCALLBACK_URI = "https://oauthcallback.cozy.works";
+
+        private const string PROD_STACK_OAUTHCALLBACK_CONTEXT = "twake_default";
+        private const string INT_STACK_OAUTHCALLBACK_CONTEXT = "twake_default";
+        private const string DEV_STACK_OAUTHCALLBACK_CONTEXT = "twake";
 
         private const string LOGIN_RELATIVE_URI = "/v2/neutral/start";
 
@@ -53,7 +59,7 @@ namespace Bit.Core.Services
             return clouderyUrl;
         }
 
-        public async Task<string> GetStackOidcUrl(string context = "twake")
+        public async Task<string> GetStackOidcUrl(string context)
         {
             var clouderyEnv = await GetClouderyEnvFromAsyncStorage();
 
@@ -64,7 +70,14 @@ namespace Bit.Core.Services
             };
             var baseUri = baseUris[clouderyEnv];
 
-            var stackOidcUrl = $"{baseUri}/oidc/bitwarden/{context}?redirect_uri=cozypass://oidc";
+            var baseContexts = new Dictionary<string, string>() {
+                { "PROD", PROD_STACK_OAUTHCALLBACK_CONTEXT },
+                { "INT", INT_STACK_OAUTHCALLBACK_CONTEXT },
+                { "DEV", DEV_STACK_OAUTHCALLBACK_CONTEXT },
+            };
+            var baseContext = baseContexts[clouderyEnv];
+
+            var stackOidcUrl = $"{baseUri}/oidc/bitwarden/{context ?? baseContext}?redirect_uri=cozypass://oidc";
 
             return stackOidcUrl;
         }
@@ -121,4 +134,3 @@ namespace Bit.Core.Services
         }
     }
 }
-
