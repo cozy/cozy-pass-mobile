@@ -40,6 +40,10 @@ namespace Bit.App.Pages
         //*
         private string _oidcCode;
         //*/
+        // Cozy customization, disable email if prefilled from link
+        //*
+        private bool _isEmailEditable;
+        //*/
 
         public LoginPageViewModel()
         {
@@ -72,6 +76,12 @@ namespace Bit.App.Pages
         {
             get => _email;
             set => SetProperty(ref _email, value);
+        }
+
+        public bool IsEmailEditable
+        {
+            get => _isEmailEditable;
+            set => SetProperty(ref _isEmailEditable, value);
         }
 
         public string MasterPassword
@@ -113,6 +123,8 @@ namespace Bit.App.Pages
 
         public async Task InitAsync()
         {
+            IsEmailEditable = string.IsNullOrWhiteSpace(Email);
+
             if (string.IsNullOrWhiteSpace(Email))
             {
                 Email = await _storageService.GetAsync<string>(Keys_RememberedEmail);
