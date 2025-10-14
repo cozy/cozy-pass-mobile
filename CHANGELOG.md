@@ -1,10 +1,21 @@
-# 3.0.8
+# 3.0.10
 
 ## ✨ Features
 
 
 ## 🐛 Bug Fixes
 
+
+## 🔧 Tech
+
+
+# 3.0.9
+
+## ✨ Features
+- Add Twake and custom SSO ([PR #103](https://github.com/cozy/cozy-pass-mobile/pull/104), [PR #107](https://github.com/cozy/cozy-pass-mobile/pull/107))
+
+## 🐛 Bug Fixes
+- Fix UI issues related to dark theme ([PR #103](https://github.com/cozy/cozy-pass-mobile/pull/103))
 
 ## 🔧 Tech
 
