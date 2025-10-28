@@ -238,7 +238,7 @@ namespace Bit.App.Pages
             }
         }
         public bool IsDeleted => Cipher.IsDeleted;
-        public bool CanEdit => !Cipher.IsDeleted;
+        public bool CanEdit => !Cipher.IsDeleted && Cipher.Type != CipherType.Identity;
 
         // Cozy customization, display folder (Cozy concept)
         //*
